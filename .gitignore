@@ -1,5 +1,6 @@
 external/
-envs/
+envs/*
+!envs/*.md
 models
 results/
 build/
