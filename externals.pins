@@ -1,0 +1,4 @@
+# 上游源码固定版本。格式：<目录名> <仓库地址> <tag 或 commit>
+# 修改版本时只改这里，然后运行 scripts/fetch_externals.sh
+mstar       https://github.com/mstar-project/mstar.git        2c8ffde8f7fd321c29aad3d1aad3e8cc8e8dc175
+vllm-omni   https://github.com/vllm-project/vllm-omni.git      v0.34.0
