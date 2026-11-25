@@ -1,8 +1,8 @@
 # 场景
 
-每个场景对应 `bench/plan.py` 中的一条 `Scenario`。输入夹具（图片、视频、音频、prompt 列表）放在本目录下，按场景名分子目录，夹具文件应可由脚本再生成，不手工编辑。
+image→text 的请求序列 S1–S4 定义在 `bench/sequences.py`（DESIGN 5.1）。图像在代码中确定性生成（主色 + 按图像 id 播种的低幅度噪声），不需要夹具文件：
 
-待建立：
-- `phase0-profile-bagel/`：阶段 0 的图片与 prompt。
-- `h1-same-image-n-prompts/`：同一参考图 + N 个 prompt。
-- `h4-video-fixed-text-varies/`：固定视频 + 文本变体。
+- 每张图的字节不同，内容哈希不同，不同序列、重复、臂之间不会互相命中缓存；
+- 主色是确定答案，用来核对回答。
+
+需要真实素材的场景（Qwen3-Omni 的视频、音频）在这里按场景名建子目录，素材应可由脚本再生成或注明来源，不手工编辑。

@@ -1,0 +1,24 @@
+# G0 审计用：比 smoke 配置更小的 KV（512 页）与显存份额 0.6，给图像编辑的 CFG 分支留出空间。只用于计数，不用于性能比较。
+model: "bagel"
+max_seq_len: 32768
+
+node_groups:
+  - node_names:
+      - vit_encoder
+    ranks:
+      - 0
+  
+  - node_names:
+      - vae_encoder
+      - vae_decoder
+    ranks:
+      - 0
+  
+  - node_names:
+      - LLM
+    ranks:
+      - 0
+resources:
+  kv:
+    max_num_pages: 512
+gpu_memory_fraction: 0.6

@@ -18,13 +18,14 @@
 
 | 臂 | GPU | 端口 | 服务日志 | 文本 | 图生文（i2t） | 文生图（t2i 512） |
 |---|---|---|---|---|---|---|
-| flash-attn 可用 | 1 | 18202 | `results/smoke/bagel-flash-gpu1.server.log` | 通过 | 通过（输出 "red"） | 通过，`results/smoke/t2i_flash.png` |
-| flash-attn 屏蔽 | 2 | 18203 | `results/smoke/bagel-noflash-gpu2.server.log` | — | 通过（输出 "Red."） | 通过，`results/smoke/t2i_noflash.json` |
+| flash-attn 可用 | 1 | 18202 | `results/smoke/5880/bagel-flash-gpu1.server.log` | 通过 | 通过（输出 "red"） | 通过，`results/smoke/5880/t2i_flash.png` |
+| flash-attn 屏蔽 | 2 | 18203 | `results/smoke/5880/bagel-noflash-gpu2.server.log` | — | 通过（输出 "Red."） | 通过，`results/smoke/5880/t2i_noflash.json` |
 
 屏蔽方式：`scripts/smoke_noflash/flash_attn/__init__.py` 抛出 ImportError，经 `PYTHONPATH` 作用于所有子进程（包括 worker，ViT 实际在 worker 中运行）。服务日志中两臂的差异可以用 `flash_attn is not available` 这条 WARNING 确认（屏蔽臂 3 条，flash 臂 0 条）。
 
 ## 遗留
 
-- 第一次尝试（GPU 0，端口 18201）的服务器仍被记录为运行中；其 shutdown 日志见 `results/smoke/bagel-flash.server.log`。
-- 服务进程（端口 18202、18203）仍在运行，需要人工停止（见下方 PID）。
+- 第一次尝试（GPU 0，端口 18201）的服务器仍被记录为运行中；其 shutdown 日志见 `results/smoke/5880/bagel-flash.server.log`。
+- 服务进程（端口 18202，PID 2691670，GPU 1；端口 18203，PID 2701936，GPU 2）已由用户授权停止，并已停止（shutdown 日志见各自的 server log）。
+- 后续 G0 审计使用的服务（端口 18301 的 smoke 配置，以及端口 18302 的 `configs/bagel_single_gpu_audit.yaml`）是另外的进程，不属于本节的 smoke 记录。
 - 结果目录 `results/` 与 `configs/` 中的文件：`results/` 不进 git，`configs/bagel_single_gpu_smoke.yaml` 进 git。

@@ -5,4 +5,5 @@ _ENV_CUDA_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 export HF_HUB_CACHE="$_ENV_CUDA_ROOT/models/cache"
 export HF_HUB_OFFLINE=1
 export TOKENIZERS_PARALLELISM=false
+export MM_MACHINE="${MM_MACHINE:-5880}"   # 结果目录的机器层级（results/<实验>/<机器>/<框架>/）
 unset _ENV_CUDA_ROOT

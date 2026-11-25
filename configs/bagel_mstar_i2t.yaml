@@ -1,0 +1,26 @@
+# image→text 对照用（DESIGN 5.1、12）：上游 configs/bagel_single_gpu.yaml，只加 gpu_memory_fraction 0.85，
+# 与 vLLM-Omni 阶段 0 的 gpu_memory_utilization 0.85 对齐。
+# 注意语义不同：M* 的 gpu_memory_fraction 约束 CUDA 图捕获的规划（serving.mdx），不是总显存上限；
+# vLLM 的 gpu_memory_utilization 约束权重 + 激活 + KV。两者只是"同一档预算"，不是同一个量。
+# 图像编辑的 CFG 分支在上游默认配置下会 OOM（见 docs/SMOKE-5880-bagel.md），本配置不用于编辑。
+model: "bagel"
+max_seq_len: 32768
+
+node_groups:
+  - node_names:
+      - vit_encoder
+    ranks:
+      - 0
+
+  - node_names:
+      - vae_encoder
+      - vae_decoder
+    ranks:
+      - 0
+
+  - node_names:
+      - LLM
+    ranks:
+      - 0
+
+gpu_memory_fraction: 0.85
