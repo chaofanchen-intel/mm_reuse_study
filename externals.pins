@@ -1,4 +1,5 @@
 # 上游源码固定版本。格式：<目录名> <仓库地址> <tag 或 commit>
 # 修改版本时只改这里，然后运行 scripts/fetch_externals.sh
+# 2026-11-25 核对：mstar 2c8ffde8 为 main 最新提交；vllm-omni v0.34.0 为最新正式发布（无更高 v0.3x tag）。
 mstar       https://github.com/mstar-project/mstar.git        2c8ffde8f7fd321c29aad3d1aad3e8cc8e8dc175
 vllm-omni   https://github.com/vllm-project/vllm-omni.git      v0.34.0

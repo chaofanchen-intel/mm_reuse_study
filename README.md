@@ -31,4 +31,4 @@ python3 bench/plan.py          # 打印实验矩阵（不运行推理）
 - 5880（CUDA）：Qwen3-Omni 相关实验。
 - B70（Intel XPU）：BAGEL 相关实验。
 
-环境搭建步骤记录在 `envs/README.md`（待补充）。
+环境搭建与检查：`envs/README.md` 为总览，平台细节分别见 `envs/CUDA.md` 与 `envs/XPU.md`。
