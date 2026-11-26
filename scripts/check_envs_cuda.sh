@@ -23,10 +23,28 @@ echo "== envs/vllm-omni"
 (
   source scripts/env_cuda_vllm_omni.sh
   envs/vllm-omni/bin/python - <<'PY' 2>&1 | grep -v -i "warn\|deprecated"
+import os
 import torch, vllm, vllm_omni, flashinfer, flashinfer_cubin
+from flashinfer.jit.env import FLASHINFER_AOT_PROVIDERS
+
+expected_cache = {
+    "8.9": ("flashinfer-jit-cache-sm89", "sm89"),
+    "9.0": ("flashinfer-jit-cache-sm90a", "sm90a"),
+}.get(os.environ.get("MM_CUDA_ARCH"))
+if expected_cache is None:
+    raise RuntimeError(f"unsupported MM_CUDA_ARCH={os.environ.get('MM_CUDA_ARCH')}")
+cache_name, expected_arch = expected_cache
+if not any(
+    provider.distribution == cache_name
+    and expected_arch in provider.cuda_architectures
+    for provider in FLASHINFER_AOT_PROVIDERS
+):
+    raise RuntimeError(f"missing FlashInfer JIT cache provider: {cache_name}")
+
 print(f"torch {torch.__version__} cuda {torch.version.cuda} gpus {torch.cuda.device_count()}")
 print(f"vllm {vllm.__version__}; vllm_omni {vllm_omni.__file__}")
 print(f"flashinfer {flashinfer.__version__}; flashinfer_cubin {flashinfer_cubin.__version__}")
+print(f"flashinfer JIT cache {cache_name} ({expected_arch})")
 PY
   nvcc --version | tail -n 1
   ninja --version

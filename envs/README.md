@@ -1,9 +1,10 @@
 # 本机环境总览
 
-本仓库的实验要在两台机器上跑，环境互不相同，**不要混用**：
+本仓库的实验环境按机器隔离，**不要混用**：
 
 | 机器 | 硬件 | 平台 | 环境文档 | 建立脚本 | 检查脚本 |
 |---|---|---|---|---|---|
+| H200 | 1 × NVIDIA H200 NVL（sm_90a） | CUDA 13.0 | [CUDA.md](CUDA.md) | `scripts/setup_envs_cuda.sh` | `scripts/check_envs_cuda.sh` |
 | 5880 | 8 × NVIDIA RTX 5880 Ada（sm_89） | CUDA 13.0 | [CUDA.md](CUDA.md) | `scripts/setup_envs_cuda.sh` | `scripts/check_envs_cuda.sh` |
 | B70 | 3 × Intel Arc Pro B70（XPU） | XPU（原生，uv） | [XPU.md](XPU.md) | `scripts/setup_envs_xpu.sh` | `scripts/check_envs_xpu.sh` |
 

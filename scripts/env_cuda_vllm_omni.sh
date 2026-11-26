@@ -12,6 +12,6 @@ else
   export CUDACXX="$_cuda/bin/nvcc"
   export PATH="$_cuda/bin:$_env/bin:$PATH"
   export LD_LIBRARY_PATH="$_cuda/lib:$_env/lib${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
-  export TORCH_CUDA_ARCH_LIST="${TORCH_CUDA_ARCH_LIST:-8.9}"
+  export TORCH_CUDA_ARCH_LIST="${TORCH_CUDA_ARCH_LIST:-$MM_CUDA_ARCH}"
 fi
 unset _FW_ROOT _env _cuda

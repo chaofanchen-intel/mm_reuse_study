@@ -12,7 +12,7 @@ else
   export CUDACXX="$_cuda/bin/nvcc"
   export PATH="$_cuda/bin:$_FW_ROOT/envs/mstar/bin:$PATH"
   export LD_LIBRARY_PATH="$_cuda/lib:$_FW_ROOT/envs/mstar/lib${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
-  export TORCH_CUDA_ARCH_LIST="${TORCH_CUDA_ARCH_LIST:-8.9}"   # 5880 为 sm_89
+  export TORCH_CUDA_ARCH_LIST="${TORCH_CUDA_ARCH_LIST:-$MM_CUDA_ARCH}"
 fi
 export MSTAR_SERVER_BIN="${MSTAR_SERVER_BIN:-$_FW_ROOT/external/mstar/rust/server/target/release/mstar-server}"
 unset _FW_ROOT _cuda
