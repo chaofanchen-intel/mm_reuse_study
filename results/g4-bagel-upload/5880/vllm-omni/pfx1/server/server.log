@@ -1,0 +1,1007 @@
+W1126 22:58:33.044000 3393434 torch/_opaque_base.py:6] torch._opaque_base is deprecated, use torch._custom_class_base instead
+W1126 22:58:33.045000 3393434 torch/_library/opaque_object.py:288] register_opaque_type is deprecated, use register_custom_class instead
+W1126 22:58:33.045000 3393434 torch/_library/opaque_object.py:211] typ='value' is deprecated, use typ='constant' instead
+[0;36m(MainProcess pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:58:44[0m [90m[serve.py:369][0m Detected diffusion model: /home/chaofan/workspaces/mm_reuse_study/models/cache/models--ByteDance-Seed--BAGEL-7B-MoT/snapshots/5019f57d168e5816e8f3f701b17cc816bb7cf24b
+[0;36m(MainProcess pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:58:44[0m [90m[logo.py:52][0m        [97m█     █     █▄   ▄█[0m    [34m   ▄▀▀[38;5;208m▀▀▄ [0m[97m█▄   ▄█ █▄    █ ▀█▀ [0m
+[0;36m(MainProcess pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:58:44[0m [90m[logo.py:52][0m  [38;5;208m▄▄[0m [34m▄█[0m [97m█     █     █ ▀▄▀ █[0m[97m  ▄▄▄ [0m[34m █    [38;5;208m█ [0m[97m█ ▀▄▀ █ █ ▀▄  █  █  [0m
+[0;36m(MainProcess pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:58:44[0m [90m[logo.py:52][0m   [38;5;208m█[0m[34m▄█▀[0m [97m█     █     █     █[0m[97m      [0m[34m █    [38;5;208m█ [0m[97m█     █ █   ▀▄█  █  [0m
+[0;36m(MainProcess pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:58:44[0m [90m[logo.py:52][0m    [34m▀▀[0m  [97m▀▀▀▀▀ ▀▀▀▀▀ ▀     ▀[0m      [35m  ▀▀▀▀  [0m[97m▀     ▀ ▀     ▀ ▀▀▀ [0m
+[0;36m(MainProcess pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:58:44[0m [90m[logo.py:52][0m 
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:58:44[0m [90m[startup.py:38][0m vLLM server version 0.34.0, serving model /home/chaofan/workspaces/mm_reuse_study/models/cache/models--ByteDance-Seed--BAGEL-7B-MoT/snapshots/5019f57d168e5816e8f3f701b17cc816bb7cf24b
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:58:44[0m [90m[startup.py:96][0m non-default args: {'model_tag': '/home/chaofan/workspaces/mm_reuse_study/models/cache/models--ByteDance-Seed--BAGEL-7B-MoT/snapshots/5019f57d168e5816e8f3f701b17cc816bb7cf24b', 'port': 18602, 'model': '/home/chaofan/workspaces/mm_reuse_study/models/cache/models--ByteDance-Seed--BAGEL-7B-MoT/snapshots/5019f57d168e5816e8f3f701b17cc816bb7cf24b', 'served_model_name': ['bagel']}
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:58:44[0m [90m[omni_base.py:217][0m [AsyncOmni] Initializing with model /home/chaofan/workspaces/mm_reuse_study/models/cache/models--ByteDance-Seed--BAGEL-7B-MoT/snapshots/5019f57d168e5816e8f3f701b17cc816bb7cf24b
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:58:44[0m [90m[omni_engine_base.py:206][0m [OmniEngine] Initializing with model /home/chaofan/workspaces/mm_reuse_study/models/cache/models--ByteDance-Seed--BAGEL-7B-MoT/snapshots/5019f57d168e5816e8f3f701b17cc816bb7cf24b
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:58:44[0m [90m[omni_engine_base.py:368][0m [OmniEngine] Launching Orchestrator thread with 2 stages
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:58:44[0m [90m[initialization.py:452][0m Loaded OmniTransferConfig with 1 connector configurations
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:58:45[0m [90m[model.py:761][0m Resolved architecture: OmniBagelForConditionalGeneration
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:58:45[0m [90m[model.py:2214][0m Using max model len 32768
+[0;36m(APIServer pid=3393434)[0;0m [33mWARNING[0m [90m11-26 22:58:45[0m [90m[model.py:1136][0m Model does not support mm_device_do_normalize, forcing mm_device_do_normalize = False.
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:58:45[0m [90m[scheduler.py:354][0m Chunked prefill is enabled with max_num_batched_tokens=32768.
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:58:45[0m [90m[kernel.py:517][0m Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['native'], fused_add_rms_norm=['native'], gelu_and_mul_sparse=['triton', 'native'])
+[0;36m(APIServer pid=3393434)[0;0m [33mWARNING[0m [90m11-26 22:58:45[0m [90m[cuda.py:382][0m Forcing --disable_chunked_mm_input for models with multimodal-bidirectional attention.
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:58:45[0m [90m[stage_utils.py:178][0m Stage 0 logical-to-physical device mapping: 0->0
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:58:45[0m [90m[stage_utils.py:178][0m Stage 1 logical-to-physical device mapping: 1->1
+W1126 22:58:46.907000 3394966 torch/_opaque_base.py:6] torch._opaque_base is deprecated, use torch._custom_class_base instead
+W1126 22:58:46.908000 3394966 torch/_library/opaque_object.py:288] register_opaque_type is deprecated, use register_custom_class instead
+W1126 22:58:46.909000 3394966 torch/_library/opaque_object.py:211] typ='value' is deprecated, use typ='constant' instead
+[transformers] You are using a model of type `bagel` to instantiate a model of type ``. This may be expected if you are loading a checkpoint that shares a subset of the architecture (e.g., loading a `sam2_video` checkpoint into `Sam2Model`), but is otherwise not supported and can yield errors. Please verify that the checkpoint is compatible with the model you are instantiating.
+Multi-thread loading shards:   0% Completed | 0/2 [00:00<?, ?it/s]
+Attempted to load weight vae.decoder.conv_in.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.conv_in.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.conv_out.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.conv_out.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.mid.attn_1.k.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.mid.attn_1.k.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.mid.attn_1.norm.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.mid.attn_1.norm.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.mid.attn_1.proj_out.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.mid.attn_1.proj_out.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.mid.attn_1.q.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.mid.attn_1.q.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.mid.attn_1.v.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.mid.attn_1.v.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.mid.block_1.conv1.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.mid.block_1.conv1.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.mid.block_1.conv2.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.mid.block_1.conv2.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.mid.block_1.norm1.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.mid.block_1.norm1.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.mid.block_1.norm2.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.mid.block_1.norm2.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.mid.block_2.conv1.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.mid.block_2.conv1.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.mid.block_2.conv2.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.mid.block_2.conv2.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.mid.block_2.norm1.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.mid.block_2.norm1.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.mid.block_2.norm2.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.mid.block_2.norm2.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.norm_out.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.norm_out.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.0.block.0.conv1.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.0.block.0.conv1.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.0.block.0.conv2.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.0.block.0.conv2.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.0.block.0.nin_shortcut.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.0.block.0.nin_shortcut.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.0.block.0.norm1.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.0.block.0.norm1.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.0.block.0.norm2.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.0.block.0.norm2.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.0.block.1.conv1.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.0.block.1.conv1.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.0.block.1.conv2.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.0.block.1.conv2.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.0.block.1.norm1.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.0.block.1.norm1.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.0.block.1.norm2.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.0.block.1.norm2.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.0.block.2.conv1.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.0.block.2.conv1.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.0.block.2.conv2.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.0.block.2.conv2.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.0.block.2.norm1.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.0.block.2.norm1.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.0.block.2.norm2.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.0.block.2.norm2.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.1.block.0.conv1.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.1.block.0.conv1.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.1.block.0.conv2.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.1.block.0.conv2.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.1.block.0.nin_shortcut.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.1.block.0.nin_shortcut.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.1.block.0.norm1.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.1.block.0.norm1.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.1.block.0.norm2.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.1.block.0.norm2.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.1.block.1.conv1.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.1.block.1.conv1.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.1.block.1.conv2.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.1.block.1.conv2.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.1.block.1.norm1.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.1.block.1.norm1.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.1.block.1.norm2.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.1.block.1.norm2.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.1.block.2.conv1.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.1.block.2.conv1.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.1.block.2.conv2.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.1.block.2.conv2.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.1.block.2.norm1.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.1.block.2.norm1.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.1.block.2.norm2.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.1.block.2.norm2.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.1.upsample.conv.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.1.upsample.conv.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.2.block.0.conv1.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.2.block.0.conv1.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.2.block.0.conv2.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.2.block.0.conv2.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.2.block.0.norm1.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.2.block.0.norm1.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.2.block.0.norm2.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.2.block.0.norm2.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.2.block.1.conv1.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.2.block.1.conv1.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.2.block.1.conv2.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.2.block.1.conv2.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.2.block.1.norm1.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.2.block.1.norm1.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.2.block.1.norm2.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.2.block.1.norm2.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.2.block.2.conv1.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.2.block.2.conv1.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.2.block.2.conv2.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.2.block.2.conv2.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.2.block.2.norm1.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.2.block.2.norm1.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.2.block.2.norm2.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.2.block.2.norm2.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.2.upsample.conv.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.2.upsample.conv.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.3.block.0.conv1.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.3.block.0.conv1.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.3.block.0.conv2.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.3.block.0.conv2.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.3.block.0.norm1.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.3.block.0.norm1.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.3.block.0.norm2.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.3.block.0.norm2.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.3.block.1.conv1.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.3.block.1.conv1.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.3.block.1.conv2.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.3.block.1.conv2.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.3.block.1.norm1.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.3.block.1.norm1.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.3.block.1.norm2.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.3.block.1.norm2.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.3.block.2.conv1.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.3.block.2.conv1.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.3.block.2.conv2.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.3.block.2.conv2.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.3.block.2.norm1.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.3.block.2.norm1.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.3.block.2.norm2.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.3.block.2.norm2.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.3.upsample.conv.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.decoder.up.3.upsample.conv.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.conv_in.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.conv_in.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.conv_out.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.conv_out.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.down.0.block.0.conv1.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.down.0.block.0.conv1.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.down.0.block.0.conv2.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.down.0.block.0.conv2.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.down.0.block.0.norm1.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.down.0.block.0.norm1.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.down.0.block.0.norm2.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.down.0.block.0.norm2.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.down.0.block.1.conv1.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.down.0.block.1.conv1.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.down.0.block.1.conv2.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.down.0.block.1.conv2.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.down.0.block.1.norm1.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.down.0.block.1.norm1.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.down.0.block.1.norm2.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.down.0.block.1.norm2.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.down.0.downsample.conv.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.down.0.downsample.conv.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.down.1.block.0.conv1.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.down.1.block.0.conv1.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.down.1.block.0.conv2.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.down.1.block.0.conv2.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.down.1.block.0.nin_shortcut.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.down.1.block.0.nin_shortcut.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.down.1.block.0.norm1.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.down.1.block.0.norm1.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.down.1.block.0.norm2.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.down.1.block.0.norm2.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.down.1.block.1.conv1.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.down.1.block.1.conv1.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.down.1.block.1.conv2.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.down.1.block.1.conv2.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.down.1.block.1.norm1.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.down.1.block.1.norm1.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.down.1.block.1.norm2.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.down.1.block.1.norm2.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.down.1.downsample.conv.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.down.1.downsample.conv.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.down.2.block.0.conv1.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.down.2.block.0.conv1.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.down.2.block.0.conv2.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.down.2.block.0.conv2.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.down.2.block.0.nin_shortcut.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.down.2.block.0.nin_shortcut.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.down.2.block.0.norm1.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.down.2.block.0.norm1.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.down.2.block.0.norm2.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.down.2.block.0.norm2.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.down.2.block.1.conv1.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.down.2.block.1.conv1.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.down.2.block.1.conv2.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.down.2.block.1.conv2.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.down.2.block.1.norm1.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.down.2.block.1.norm1.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.down.2.block.1.norm2.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.down.2.block.1.norm2.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.down.2.downsample.conv.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.down.2.downsample.conv.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.down.3.block.0.conv1.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.down.3.block.0.conv1.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.down.3.block.0.conv2.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.down.3.block.0.conv2.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.down.3.block.0.norm1.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.down.3.block.0.norm1.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.down.3.block.0.norm2.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.down.3.block.0.norm2.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.down.3.block.1.conv1.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.down.3.block.1.conv1.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.down.3.block.1.conv2.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.down.3.block.1.conv2.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.down.3.block.1.norm1.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.down.3.block.1.norm1.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.down.3.block.1.norm2.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.down.3.block.1.norm2.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.mid.attn_1.k.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.mid.attn_1.k.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.mid.attn_1.norm.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.mid.attn_1.norm.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.mid.attn_1.proj_out.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.mid.attn_1.proj_out.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.mid.attn_1.q.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.mid.attn_1.q.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.mid.attn_1.v.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.mid.attn_1.v.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.mid.block_1.conv1.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.mid.block_1.conv1.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.mid.block_1.conv2.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.mid.block_1.conv2.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.mid.block_1.norm1.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.mid.block_1.norm1.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.mid.block_1.norm2.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.mid.block_1.norm2.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.mid.block_2.conv1.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.mid.block_2.conv1.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.mid.block_2.conv2.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.mid.block_2.conv2.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.mid.block_2.norm1.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.mid.block_2.norm1.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.mid.block_2.norm2.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.mid.block_2.norm2.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.norm_out.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+Attempted to load weight vae.encoder.norm_out.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+Multi-thread loading shards: 100% Completed | 2/2 [00:04<00:00,  2.38s/it]
+Multi-thread loading shards: 100% Completed | 2/2 [00:04<00:00,  2.38s/it]
+
+
+================================================================================
+ ⚠️  [WARNING] No tuned MoT config found.
+ Searched paths: /home/chaofan/workspaces/mm_reuse_study/external/vllm-omni/vllm_omni/diffusion/models/bagel/mot/configs/device_name=RTX5880AdaGeneration,dtype=w16a16.json
+ Using conservative default configs which are NOT optimal.
+ Run `python benchmarks/kernels/mot_linear_benchmarks.py --tune` 
+ to generate hardware-specific optimal configs.
+================================================================================
+
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:06[0m [90m[stage_diffusion_client.py:140][0m [StageDiffusionClient] stage-1 [rep-0] initialized (owns_process=True)
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:06[0m [90m[stage_runtime.py:1452][0m [StageRuntime] Stage 1 replica 0 initialized (diffusion)
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:06[0m [90m[stage_utils.py:178][0m Stage 0 logical-to-physical device mapping: 0->0
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:06[0m [90m[numa_utils.py:140][0m Auto-detected NUMA nodes for GPUs: [0]
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:06[0m [90m[numa_utils.py:607][0m Launching worker subprocess (local_rank=0, dp_local_rank=0) with numactl --cpunodebind=0 --preferred=0
+W1126 22:59:07.994000 3396715 torch/_opaque_base.py:6] torch._opaque_base is deprecated, use torch._custom_class_base instead
+W1126 22:59:07.994000 3396715 torch/_library/opaque_object.py:288] register_opaque_type is deprecated, use register_custom_class instead
+W1126 22:59:07.995000 3396715 torch/_library/opaque_object.py:211] typ='value' is deprecated, use typ='constant' instead
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [32mINFO[0m [90m11-26 22:59:18[0m [90m[core.py:153][0m Initializing a V1 LLM engine (v0.34.0) with config: model='/home/chaofan/workspaces/mm_reuse_study/models/cache/models--ByteDance-Seed--BAGEL-7B-MoT/snapshots/5019f57d168e5816e8f3f701b17cc816bb7cf24b', speculative_config=None, tokenizer='/home/chaofan/workspaces/mm_reuse_study/models/cache/models--ByteDance-Seed--BAGEL-7B-MoT/snapshots/5019f57d168e5816e8f3f701b17cc816bb7cf24b', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=True, dtype=torch.bfloat16, max_seq_len=32768, download_dir=None, load_format=auto, tensor_parallel_size=1, pipeline_parallel_size=1, data_parallel_size=1, decode_context_parallel_size=1, dcp_comm_backend=ag_rs, disable_custom_all_reduce=False, quantization=None, quantization_config=None, enforce_eager=False, aux_output_config=AuxOutputConfig(enable_return_routed_experts=False, max_bytes=None), kv_cache_dtype=auto, device_config=cuda, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser='', reasoning_parser_plugin='', enable_in_reasoning=False), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None, per_request_spec_decode_metrics='none', kv_cache_metrics=False, kv_cache_metrics_sample=0.01, custom_histogram_buckets=None, cudagraph_metrics=False, enable_layerwise_nvtx_tracing=False, enable_mfu_metrics=False, enable_mm_processor_stats=False, enable_logging_iteration_details=False, jit_monitor_mode='warn', jit_monitor_verbose=False), seed=0, served_model_name=bagel, enable_prefix_caching=True, enable_chunked_prefill=True, pooler_config=None, compilation_config={'mode': <CompilationMode.VLLM_COMPILE: 3>, 'debug_dump_path': None, 'cache_dir': '', 'compile_cache_save_format': 'binary', 'backend': 'inductor', 'custom_ops': ['none'], 'ir_enable_torch_wrap': True, 'splitting_ops': ['vllm::unified_attention_with_output', 'vllm::unified_mla_attention_with_output', 'vllm::mamba_mixer2', 'vllm::mamba_mixer', 'vllm::short_conv', 'vllm::zaya_cca', 'vllm::qwen4_exp_ple_short_conv', 'vllm::qwen4_exp_qsa_with_output', 'vllm::qwen4_exp_qsa_prepare_with_output', 'vllm::linear_attention', 'vllm::qwen_gdn_attention_core', 'vllm::qwen_gdn_attention_core_fused_norm_packed', 'vllm::gdn_attention_core_xpu', 'vllm::olmo_hybrid_gdn_full_forward', 'vllm::sparse_attn_indexer', 'vllm::rocm_aiter_sparse_attn_indexer', 'vllm::deepseek_v4_attention', 'vllm::hpc_rope_norm_forward', 'vllm::step5_csa_attention', 'vllm::unified_kv_cache_update', 'vllm::unified_mla_kv_cache_update'], 'compile_mm_encoder': False, 'cudagraph_mm_encoder': False, 'encoder_cudagraph_token_budgets': [], 'encoder_cudagraph_max_token_budget': 5120, 'encoder_cudagraph_max_vision_items_per_batch': 0, 'encoder_cudagraph_max_frames_per_batch': None, 'cudagraph_decoder_replay': True, 'decoder_replay_cudagraph_capture_sizes': [], 'decoder_replay_trim_threshold': 768, 'compile_sizes': [], 'compile_ranges_endpoints': [32768], 'inductor_compile_config': {'enable_auto_functionalized_v2': False, 'combo_kernels': True, 'benchmark_combo_kernel': True}, 'inductor_passes': {}, 'cudagraph_mode': <CUDAGraphMode.FULL_AND_PIECEWISE: (2, 1)>, 'use_breakable_cudagraph': False, 'cudagraph_num_of_warmups': 1, 'cudagraph_capture_sizes': [1, 2, 3, 4], 'prefill_cudagraph_capture_token_sizes': [1, 2, 3, 4], 'max_prefill_cudagraph_capture_tokens': 4, 'decode_cudagraph_capture_request_sizes': [1, 2, 3], 'max_decode_cudagraph_capture_requests': 3, 'max_decode_cudagraph_capture_tokens': None, 'cudagraph_copy_inputs': False, 'cudagraph_specialize_lora': True, 'use_inductor_graph_partition': False, 'pass_config': {'fuse_norm_quant': False, 'fuse_act_quant': False, 'fuse_attn_quant': False, 'fuse_allreduce_rms': False, 'enable_qk_norm_rope_fusion': False, 'fuse_rope_kvcache_cat_mla': False, 'fuse_act_padding': False, 'fuse_qk_norm_rope_kvcache': False}, 'max_cudagraph_capture_size': 4, 'dynamic_shapes_config': {'type': <DynamicShapesType.BACKED: 'backed'>, 'evaluate_guards': False, 'assume_32_bit_indexing': False}, 'local_cache_dir': None, 'fast_moe_cold_start': False, 'static_all_moe_layers': []}, kernel_config=KernelConfig(ir_op_priority=IrOpPriorityConfig(rms_norm=['native'], fused_add_rms_norm=['native'], gelu_and_mul_sparse=['triton', 'native']), enable_flashinfer_autotune=True, enable_rocm_segmented_attn_autotune=False, enable_rocm_aiter_gemm_warmup=False, enable_cutedsl_warmup=True, enable_jit_warmup=True, monokernel=False, moe_backend='auto', sparse_indexer_topk_backend='auto', linear_backend='auto', linear_backend_per_quant=None, rdna_hybrid_w4a16_prefill_dequant='disable')
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [32mINFO[0m [90m11-26 22:59:18[0m [90m[parallel_state.py:1935][0m world_size=1 rank=0 local_rank=0 distributed_init_method=file:///tmp/vllm_dist_03bf65a0e0b7424990ffa11b21d019bd backend=nccl
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [32mINFO[0m [90m11-26 22:59:18[0m [90m[parallel_state.py:2394][0m rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, PCP rank 0, TP rank 0, ETP rank 0, EP rank N/A, EPLB rank N/A
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [32mINFO[0m [90m11-26 22:59:18[0m [90m[gpu_ar_worker.py:140][0m Using MR v2 OmniARModelRunner for omni AR stage (stage_id=0 model_stage=thinker).
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [32mINFO[0m [90m11-26 22:59:18[0m [90m[cuda.py:239][0m NVIDIA Confidential Computing not detected via NVML
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:18[0m [90m[base.py:473][0m [LLM Worker 0] Sleep Mode DISABLED.
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:18[0m [90m[base.py:473][0m [LLM Worker 0] Sleep Mode DISABLED.
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [32mINFO[0m [90m11-26 22:59:19[0m [90m[model_runner.py:412][0m Loading model from scratch...
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [32mINFO[0m [90m11-26 22:59:19[0m [90m[cuda.py:549][0m Using TRITON_ATTN attention backend out of potential backends: ['TRITON_ATTN', 'FLEX_ATTENTION'].
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:19[0m [90m[bagel.py:373][0m Overriding vit_config.num_hidden_layers from 27 to 26 to match the Bagel model checkpoint.
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:19[0m [90m[bagel.py:379][0m Setting vit_config.vision_use_head to False as it is not present in the Bagel model checkpoint.
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [32mINFO[0m [90m11-26 22:59:19[0m [90m[cuda.py:608][0m Using backend AttentionBackendEnum.FLASH_ATTN for vit attention
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [32mINFO[0m [90m11-26 22:59:19[0m [90m[mm_encoder_attention.py:372][0m Using AttentionBackendEnum.FLASH_ATTN for MMEncoderAttention.
+[transformers] You are using a model of type `bagel` to instantiate a model of type ``. This may be expected if you are loading a checkpoint that shares a subset of the architecture (e.g., loading a `sam2_video` checkpoint into `Sam2Model`), but is otherwise not supported and can yield errors. Please verify that the checkpoint is compatible with the model you are instantiating.
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [32mINFO[0m [90m11-26 22:59:20[0m [90m[base_loader.py:95][0m Initializing model took 1.127474 seconds
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [32mINFO[0m [90m11-26 22:59:20[0m [90m[weight_utils.py:1154][0m Filesystem type for checkpoints: EXT4. Checkpoint size: 27.52 GiB. Available RAM: 843.42 GiB.
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [32mINFO[0m [90m11-26 22:59:20[0m [90m[weight_utils.py:1177][0m Auto-prefetch is disabled because the filesystem (EXT4) is not a recognized network FS (NFS/Lustre). If you want to force prefetching, start vLLM with --safetensors-load-strategy=prefetch.
+Loading safetensors checkpoint shards:   0% Completed | 0/2 [00:00<?, ?it/s]
+Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:00<00:00, 68.13it/s]
+
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.conv_in.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.conv_in.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.conv_out.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.conv_out.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.down.0.block.0.conv1.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.down.0.block.0.conv1.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.down.0.block.0.conv2.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.down.0.block.0.conv2.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.down.0.block.0.norm1.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.down.0.block.0.norm1.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.down.0.block.0.norm2.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.down.0.block.0.norm2.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.down.0.block.1.conv1.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.down.0.block.1.conv1.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.down.0.block.1.conv2.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.down.0.block.1.conv2.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.down.0.block.1.norm1.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.down.0.block.1.norm1.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.down.0.block.1.norm2.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.down.0.block.1.norm2.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.down.0.downsample.conv.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.down.0.downsample.conv.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.down.1.block.0.conv1.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.down.1.block.0.conv1.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.down.1.block.0.conv2.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.down.1.block.0.conv2.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.down.1.block.0.nin_shortcut.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.down.1.block.0.nin_shortcut.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.down.1.block.0.norm1.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.down.1.block.0.norm1.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.down.1.block.0.norm2.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.down.1.block.0.norm2.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.down.1.block.1.conv1.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.down.1.block.1.conv1.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.down.1.block.1.conv2.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.down.1.block.1.conv2.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.down.1.block.1.norm1.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.down.1.block.1.norm1.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.down.1.block.1.norm2.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.down.1.block.1.norm2.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.down.1.downsample.conv.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.down.1.downsample.conv.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.down.2.block.0.conv1.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.down.2.block.0.conv1.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.down.2.block.0.conv2.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.down.2.block.0.conv2.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.down.2.block.0.nin_shortcut.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.down.2.block.0.nin_shortcut.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.down.2.block.0.norm1.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.down.2.block.0.norm1.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.down.2.block.0.norm2.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.down.2.block.0.norm2.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.down.2.block.1.conv1.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.down.2.block.1.conv1.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.down.2.block.1.conv2.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.down.2.block.1.conv2.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.down.2.block.1.norm1.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.down.2.block.1.norm1.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.down.2.block.1.norm2.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.down.2.block.1.norm2.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.down.2.downsample.conv.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.down.2.downsample.conv.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.down.3.block.0.conv1.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.down.3.block.0.conv1.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.down.3.block.0.conv2.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.down.3.block.0.conv2.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.down.3.block.0.norm1.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.down.3.block.0.norm1.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.down.3.block.0.norm2.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.down.3.block.0.norm2.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.down.3.block.1.conv1.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.down.3.block.1.conv1.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.down.3.block.1.conv2.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.down.3.block.1.conv2.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.down.3.block.1.norm1.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.down.3.block.1.norm1.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.down.3.block.1.norm2.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.down.3.block.1.norm2.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.mid.attn_1.k.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.mid.attn_1.k.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.mid.attn_1.norm.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.mid.attn_1.norm.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.mid.attn_1.proj_out.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.mid.attn_1.proj_out.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.mid.attn_1.q.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.mid.attn_1.q.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.mid.attn_1.v.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.mid.attn_1.v.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.mid.block_1.conv1.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.mid.block_1.conv1.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.mid.block_1.conv2.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.mid.block_1.conv2.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.mid.block_1.norm1.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.mid.block_1.norm1.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.mid.block_1.norm2.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.mid.block_1.norm2.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.mid.block_2.conv1.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.mid.block_2.conv1.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.mid.block_2.conv2.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.mid.block_2.conv2.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.mid.block_2.norm1.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.mid.block_2.norm1.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.mid.block_2.norm2.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.mid.block_2.norm2.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.norm_out.bias with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:20[0m [90m[utils.py:345][0m Attempted to load weight vae.encoder.norm_out.weight with dtype torch.float32 into parameter with dtype torch.bfloat16
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [32mINFO[0m [90m11-26 22:59:24[0m [90m[default_loader.py:543][0m Loading weights took 4.52 seconds
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [32mINFO[0m [90m11-26 22:59:25[0m [90m[model_runner.py:441][0m Model loading took 27.45 GiB memory and 6.829115 seconds
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [32mINFO[0m [90m11-26 22:59:25[0m [90m[topk_topp_sampler.py:119][0m Using FlashInfer for top-p & top-k sampling.
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [32mINFO[0m [90m11-26 22:59:25[0m [90m[torch_utils.py:301][0m Reducing Torch threads from 64 to 1 for serving. Set OMP_NUM_THREADS in the external environment to override.
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [32mINFO[0m [90m11-26 22:59:26[0m [90m[utils.py:419][0m Using LBNHC KV cache layout.
+[transformers] `OmniBagelProcessor` defines `image_processor_class = 'SiglipImageProcessor'`, which is deprecated. Register the correct mapping in `AutoImageProcessor` instead.
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [32mINFO[0m [90m11-26 22:59:28[0m [90m[encoder_runner.py:131][0m Encoder cache will be initialized with a budget of 32768 tokens, and profiled with 3 img2img items of the maximum feature size.
+/home/chaofan/workspaces/mm_reuse_study/external/vllm-omni/vllm_omni/diffusion/models/bagel/bagel_transformer.py:1254: UserWarning: Using a non-tuple sequence for multidimensional indexing is deprecated and will be changed in pytorch 2.9; use x[tuple(seq)] instead of x[seq]. In pytorch 2.9 this will be interpreted as tensor index, x[torch.tensor(seq)], which will result either in an error or a different result (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/python_variable_indexing.cpp:356.)
+  return self.pos_embed[position_ids]
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [32mINFO[0m [90m11-26 22:59:30[0m [90m[caching.py:368][0m reconstructed serializable fn from standalone compile artifacts. num_artifacts=4 num_submods=29
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [32mINFO[0m [90m11-26 22:59:30[0m [90m[decorators.py:326][0m [backbone] Directly load AOT compilation from path /home/chaofan/.cache/vllm/torch_compile_cache/torch_aot_compile/a97b115811d26a21409be147a998a52c7d47cca02ad88ba4c98dfaed3621b7f3/rank_0_0/model
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [32mINFO[0m [90m11-26 22:59:30[0m [90m[monitor.py:62][0m [backbone] torch.compile took 0.28 s in total
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [32mINFO[0m [90m11-26 22:59:30[0m [90m[monitor.py:91][0m [backbone] Initial profiling/warmup run took 0.01 s
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [32mINFO[0m [90m11-26 22:59:33[0m [90m[base.py:402][0m Available KV cache memory: 8.19 GiB (device-level profiling)
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:33[0m [90m[base.py:473][0m [LLM Worker 0] Sleep Mode DISABLED.
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:33[0m [90m[base.py:473][0m [LLM Worker 0] Sleep Mode DISABLED.
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [32mINFO[0m [90m11-26 22:59:34[0m [90m[kernel_warmup.py:294][0m JIT kernel warmup starting.
+JIT kernel warmup (24 compile keys):   0%|          | 0/4 [00:00<?, ?kernel/s]JIT kernel warmup (24 compile keys): 100%|██████████| 4/4 [00:00<00:00, 52.29kernel/s, _DecoratedTritonJitKernel (4 keys)]
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [32mINFO[0m [90m11-26 22:59:34[0m [90m[kernel_warmup.py:304][0m JIT kernel warmup finished in 0.10s.
+Capturing CUDA graphs (PIECEWISE):   0%|          | 0/4 [00:00<?, ?it/s]Capturing CUDA graphs (PIECEWISE):  50%|█████     | 2/4 [00:00<00:00, 19.56it/s]Capturing CUDA graphs (PIECEWISE): 100%|██████████| 4/4 [00:00<00:00, 22.05it/s]
+Capturing CUDA graphs (FULL):   0%|          | 0/3 [00:00<?, ?it/s]Capturing CUDA graphs (FULL): 100%|██████████| 3/3 [00:00<00:00, 34.84it/s]
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [32mINFO[0m [90m11-26 22:59:44[0m [90m[model_runner.py:1216][0m Graph capturing finished in 1 secs, took 0.05 GiB
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [32mINFO[0m [90m11-26 22:59:44[0m [90m[gpu_worker.py:1175][0m Free memory on device (47.03/47.37 GiB) on startup. Desired GPU memory utilization is (0.85, 40.27 GiB). Actual usage is 28.01 GiB for consumed memory (weights + non-torch), 4.3 GiB for peak activation, and 0.05 GiB for CUDAGraph memory. Replace gpu_memory_utilization config with `--kv-cache-memory=8328540365` (7.76 GiB) to fit into requested memory, or `--kv-cache-memory=15596250112` (14.53 GiB) to fully utilize gpu memory. Current kv cache memory in use is 8.19 GiB.
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [32mINFO[0m [90m11-26 22:59:45[0m [90m[jit_monitor.py:87][0m Kernel JIT monitor activated; monitored JIT compilations during inference will use mode=warn.
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:45[0m [90m[extensible_kv_cache.py:662][0m gpu_memory_utilization=0.85 caps this instance at 40.27 GiB, keeping 3.55 GiB of free device memory out of the KV cache. The extensible KV cache is sized from the memory measured after warmup and CUDA graph capture, so vLLM's own use needs no headroom below 1.0. Leave gpu_memory_utilization unset unless it leaves room for memory vLLM does not measure: other processes sharing the GPU (including ones that allocate on it later), the CPU on a unified-memory device, weight transfer buffers for weight updates, or a KV connector's own device buffers.
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [32mINFO[0m [90m11-26 22:59:45[0m [90m[extensible_kv_cache.py:693][0m Memory after warmup: 18.91 GiB free, 0.05 GiB committed to the KV cache, 5.35 GiB kept for transient activations (4.3 GiB allocated at peak, 5.35 GiB of torch reservation growth); 2000 KV cache blocks (6.84 GiB) fit within the requested 40.27 GiB. Torch may reserve up to 39.58 GiB.
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [32mINFO[0m [90m11-26 22:59:45[0m [90m[kv_cache_utils.py:1168][0m GPU KV cache size: 128,000 tokens, Maximum concurrency for 32,768 tokens per request: 3.91x
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [32mINFO[0m [90m11-26 22:59:45[0m [90m[extensible_kv_cache.py:536][0m Extended KV cache to 2000 blocks (6.84 GiB).
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [32mINFO[0m [90m11-26 22:59:45[0m [90m[core.py:451][0m init engine (profile, create kv cache, warmup model) took 19.34 s (compilation: 0.28 s)
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:45[0m [90m[scheduler.py:282][0m Using custom scheduler class vllm_omni.core.sched.omni_ar_scheduler.OmniARAsyncScheduler. This scheduler interface is not public and compatibility may not be maintained. If you have subclassed Scheduler instead of AsyncScheduler, you will see degraded performance due to async scheduling being disabled.
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [32mINFO[0m [90m11-26 22:59:45[0m [90m[kernel.py:517][0m Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['native'], fused_add_rms_norm=['native'], gelu_and_mul_sparse=['triton', 'native'])
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:45[0m [90m[stage_engine_core_client.py:196][0m [StageEngineCoreClient] stage-0 [rep-0] initializing EngineCore
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:45[0m [90m[stage_engine_core_client.py:256][0m [StageEngineCoreClient] stage-0 [rep-0] EngineCore running
+[transformers] `OmniBagelProcessor` defines `image_processor_class = 'SiglipImageProcessor'`, which is deprecated. Register the correct mapping in `AutoImageProcessor` instead.
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:49[0m [90m[orchestrator.py:620][0m [Orchestrator] Starting event loop
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:49[0m [90m[orchestrator.py:1586][0m [Orchestrator] Event-driven orchestration loop enabled (VLLM_OMNI_EVENT_DRIVEN_ORCH): 1 LLM replica readers, 1 diffusion pollers
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:49[0m [90m[omni_engine_base.py:401][0m [OmniEngine] Orchestrator ready with 2 stages
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:49[0m [90m[omni_base.py:238][0m [AsyncOmni] AsyncOmniEngine initialized in 65.15 seconds
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:49[0m [90m[omni_base.py:257][0m [AsyncOmni] Initialized with 2 stages for model /home/chaofan/workspaces/mm_reuse_study/models/cache/models--ByteDance-Seed--BAGEL-7B-MoT/snapshots/5019f57d168e5816e8f3f701b17cc816bb7cf24b
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:50[0m [90m[factories.py:105][0m Scale-out endpoints are disabled. Restart vllm serve with --enable-scale-out to enable them.
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:50[0m [90m[api_server.py:1041][0m Supported tasks: {'x2i', 'generate'}
+[0;36m(APIServer pid=3393434)[0;0m [33mWARNING[0m [90m11-26 22:59:50[0m [90m[model.py:1931][0m Default vLLM sampling parameters have been overridden by the model's `generation_config.json`: `{'repetition_penalty': 1.05, 'temperature': 0.7, 'top_k': 20, 'top_p': 0.8}`. If this is not intended, please relaunch vLLM instance with `--generation-config vllm`.
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:50[0m [90m[hf.py:743][0m Detected the chat template content format to be 'openai'. You can set `--chat-template-content-format` to override this.
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:55[0m [90m[base.py:283][0m Multi-modal warmup completed in 5.714s
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:55[0m [90m[serving.py:108][0m Robot OpenPI serving disabled for model bagel
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:55[0m [90m[api_server.py:558][0m Starting vLLM API server 0 on http://0.0.0.0:18602
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:55[0m [90m[launcher.py:188][0m Available routes are:
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:55[0m [90m[launcher.py:197][0m Route: /openapi.json, Methods: HEAD, GET
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:55[0m [90m[launcher.py:197][0m Route: /docs, Methods: HEAD, GET
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:55[0m [90m[launcher.py:197][0m Route: /docs/oauth2-redirect, Methods: HEAD, GET
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:55[0m [90m[launcher.py:197][0m Route: /redoc, Methods: HEAD, GET
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:55[0m [90m[launcher.py:197][0m Route: /load, Methods: GET
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:55[0m [90m[launcher.py:197][0m Route: /version, Methods: GET
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:55[0m [90m[launcher.py:197][0m Route: /kv_event_sources, Methods: GET
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:55[0m [90m[launcher.py:197][0m Route: /metrics, Methods: GET
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:55[0m [90m[launcher.py:197][0m Route: /tokenize, Methods: POST
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:55[0m [90m[launcher.py:197][0m Route: /detokenize, Methods: POST
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:55[0m [90m[launcher.py:197][0m Route: /v1/systemone, Methods: POST
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:55[0m [90m[launcher.py:197][0m Route: /v1/decisions, Methods: POST
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:55[0m [90m[launcher.py:197][0m Route: /ping, Methods: GET
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:55[0m [90m[launcher.py:197][0m Route: /ping, Methods: POST
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:55[0m [90m[launcher.py:197][0m Route: /invocations, Methods: POST
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:55[0m [90m[launcher.py:197][0m Route: /v1/responses, Methods: POST
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:55[0m [90m[launcher.py:197][0m Route: /v1/responses/{response_id}, Methods: GET
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:55[0m [90m[launcher.py:197][0m Route: /v1/responses/{response_id}/cancel, Methods: POST
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:55[0m [90m[launcher.py:197][0m Route: /v1/completions, Methods: POST
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:55[0m [90m[launcher.py:197][0m Route: /v1/messages, Methods: POST
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:55[0m [90m[launcher.py:197][0m Route: /v1/messages/count_tokens, Methods: POST
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:55[0m [90m[launcher.py:197][0m Route: /generative_scoring, Methods: POST
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:55[0m [90m[launcher.py:197][0m Route: /scale_elastic_ep, Methods: POST
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:55[0m [90m[launcher.py:197][0m Route: /is_scaling_elastic_ep, Methods: POST
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:55[0m [90m[launcher.py:197][0m Route: /v1/chat/completions/render, Methods: POST
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:55[0m [90m[launcher.py:197][0m Route: /v1/messages/render, Methods: POST
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:55[0m [90m[launcher.py:197][0m Route: /v1/completions/render, Methods: POST
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:55[0m [90m[launcher.py:197][0m Route: /v1/responses/render, Methods: POST
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:55[0m [90m[launcher.py:197][0m Route: /v1/chat/completions/derender, Methods: POST
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:55[0m [90m[launcher.py:197][0m Route: /v1/completions/derender, Methods: POST
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:55[0m [90m[launcher.py:197][0m Route: /inference/v1/generate, Methods: POST
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:55[0m [90m[launcher.py:197][0m Route: /inference/v1/abort_requests, Methods: POST
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:55[0m [90m[launcher.py:197][0m Route: /v1/chat/completions, Methods: POST
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:55[0m [90m[launcher.py:197][0m Route: /v1/chat/completions/batch, Methods: POST
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:55[0m [90m[launcher.py:197][0m Route: /v1/audio/speech, Methods: POST
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:55[0m [90m[launcher.py:197][0m Route: /v1/audio/speech/batch, Methods: POST
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:55[0m [90m[launcher.py:197][0m Route: /v1/audio/generate, Methods: POST
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:55[0m [90m[launcher.py:197][0m Route: /v1/audio/voices, Methods: GET
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:55[0m [90m[launcher.py:197][0m Route: /v1/audio/voices, Methods: POST
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:55[0m [90m[launcher.py:197][0m Route: /v1/audio/voices/{name}, Methods: DELETE
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:55[0m [90m[launcher.py:197][0m Route: /v1/realtime/sessions, Methods: POST
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:55[0m [90m[launcher.py:197][0m Route: /v1/realtime/sessions/{session_id}/step, Methods: POST
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:55[0m [90m[launcher.py:197][0m Route: /v1/realtime/sessions/{session_id}/reset, Methods: POST
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:55[0m [90m[launcher.py:197][0m Route: /v1/realtime/sessions/{session_id}/close, Methods: POST
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:55[0m [90m[launcher.py:197][0m Route: /v1/realtime/sessions/{session_id}/status, Methods: GET
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:55[0m [90m[launcher.py:197][0m Route: /health, Methods: GET
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:55[0m [90m[launcher.py:197][0m Route: /v1/models, Methods: GET
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:55[0m [90m[launcher.py:197][0m Route: /v1/images/generations, Methods: POST
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:55[0m [90m[launcher.py:197][0m Route: /v1/images/edits, Methods: POST
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:55[0m [90m[launcher.py:197][0m Route: /v1/images/segmentations, Methods: POST
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:55[0m [90m[launcher.py:197][0m Route: /v1/videos/segmentations, Methods: POST
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:55[0m [90m[launcher.py:197][0m Route: /v1/videos/depth, Methods: POST
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:55[0m [90m[launcher.py:197][0m Route: /v1/videos, Methods: POST
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:55[0m [90m[launcher.py:197][0m Route: /v1/videos/sync, Methods: POST
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:55[0m [90m[launcher.py:197][0m Route: /v1/videos, Methods: GET
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:55[0m [90m[launcher.py:197][0m Route: /v1/videos/{video_id}, Methods: GET
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:55[0m [90m[launcher.py:197][0m Route: /v1/videos/{video_id}, Methods: DELETE
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:55[0m [90m[launcher.py:197][0m Route: /v1/videos/{video_id}/content, Methods: GET
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:55[0m [90m[launcher.py:197][0m Route: /v1/omni/sleep, Methods: POST
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:55[0m [90m[launcher.py:197][0m Route: /v1/omni/wakeup, Methods: POST
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:55[0m [90m[launcher.py:197][0m Route: /v1/run, Methods: POST
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:55[0m [90m[launcher.py:208][0m Route: /v1/audio/speech/stream, Endpoint: streaming_speech
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:55[0m [90m[launcher.py:208][0m Route: /v1/video/chat/stream, Endpoint: streaming_video_chat
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:55[0m [90m[launcher.py:208][0m Route: /v1/realtime/video, Endpoint: streaming_video_output
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:55[0m [90m[launcher.py:208][0m Route: /v1/realtime, Endpoint: realtime_websocket
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:55[0m [90m[launcher.py:208][0m Route: /v1/duplex, Endpoint: duplex_websocket
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 22:59:55[0m [90m[launcher.py:208][0m Route: /v1/realtime/robot/openpi, Endpoint: realtime_robot_openpi
+INFO:     Started server process [3393434]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:47890 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47892 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47894 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=3396715)[0;0m [33mWARNING[0m [90m11-26 22:59:59[0m [90m[jit_monitor.py:143][0m Triton kernel JIT compilation during inference: kernel_unified_attention. This causes a latency spike; consider extending warmup to cover this shape/config.
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:00:00[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-9613e16ddea42593-a4e55366 total=0.23s preprocess=0.00s engine=0.23s stages=[0:0.23s]
+INFO:     127.0.0.1:47896 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47898 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47900 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:00:02[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-ae898c112b1dbffa-9784c0da total=0.07s preprocess=0.00s engine=0.07s stages=[0:0.08s]
+INFO:     127.0.0.1:47902 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47904 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47906 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:00:04[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-8d5f52a93bf9e0a3-8fe2593d total=0.07s preprocess=0.00s engine=0.07s stages=[0:0.07s]
+INFO:     127.0.0.1:47908 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47912 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47914 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:00:07[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-87e0e024e6c1a064-82ae396e total=0.23s preprocess=0.00s engine=0.23s stages=[0:0.23s]
+INFO:     127.0.0.1:47916 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47918 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47920 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:00:09[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-a2420689aaade154-bb56972e total=0.07s preprocess=0.00s engine=0.07s stages=[0:0.07s]
+INFO:     127.0.0.1:47922 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47924 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47926 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:00:11[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-9fd227d92dacc56f-8d768e34 total=0.07s preprocess=0.00s engine=0.07s stages=[0:0.07s]
+INFO:     127.0.0.1:47928 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47930 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47932 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:00:14[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-95a73f6393db7772-856817ad total=0.23s preprocess=0.00s engine=0.23s stages=[0:0.23s]
+INFO:     127.0.0.1:47934 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47936 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47938 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:00:16[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-8e38e9815d1aaa8e-afacbaaf total=0.07s preprocess=0.00s engine=0.07s stages=[0:0.07s]
+INFO:     127.0.0.1:47942 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47944 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47946 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:00:18[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-85d886ca75104594-ba7bff87 total=0.07s preprocess=0.00s engine=0.07s stages=[0:0.07s]
+INFO:     127.0.0.1:47948 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47950 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47952 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:00:21[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-ac0f10d3aab0a611-a0e2aaa2 total=0.22s preprocess=0.00s engine=0.22s stages=[0:0.22s]
+INFO:     127.0.0.1:47954 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47956 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47958 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:00:23[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-abc00b4f5b708d5a-bd2de5b8 total=0.07s preprocess=0.00s engine=0.07s stages=[0:0.07s]
+INFO:     127.0.0.1:47960 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47962 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47964 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:00:25[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-887304c4a4a8c1c8-87f69bed total=0.07s preprocess=0.00s engine=0.07s stages=[0:0.07s]
+INFO:     127.0.0.1:47966 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47968 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47970 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:00:28[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-8083923586240d67-adffa272 total=0.19s preprocess=0.00s engine=0.19s stages=[0:0.20s]
+INFO:     127.0.0.1:47972 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47974 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47976 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:00:30[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-83621c0be4d7f5fc-a5b264fb total=0.05s preprocess=0.00s engine=0.05s stages=[0:0.05s]
+INFO:     127.0.0.1:47978 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47982 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47984 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:00:32[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-813768ebfd6edec4-829d3093 total=0.07s preprocess=0.00s engine=0.07s stages=[0:0.07s]
+INFO:     127.0.0.1:47986 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47988 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47990 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:00:35[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-bbb4564598371617-a4905857 total=0.07s preprocess=0.00s engine=0.07s stages=[0:0.07s]
+INFO:     127.0.0.1:47992 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47994 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47996 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:00:37[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-84ddd5065829890a-88ac29ef total=0.20s preprocess=0.00s engine=0.20s stages=[0:0.20s]
+INFO:     127.0.0.1:47998 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48000 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48002 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:00:40[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-a97f5de71d4eb683-b86fa1c6 total=0.05s preprocess=0.00s engine=0.05s stages=[0:0.05s]
+INFO:     127.0.0.1:48004 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48006 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48008 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:00:42[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-a8bb14e05a0a5f4d-bd155eea total=0.07s preprocess=0.00s engine=0.07s stages=[0:0.07s]
+INFO:     127.0.0.1:48012 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48014 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48016 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:00:44[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-a204a80413412e78-9d4a64b4 total=0.07s preprocess=0.00s engine=0.07s stages=[0:0.07s]
+INFO:     127.0.0.1:48018 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48020 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48022 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:00:47[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-8a2b00024f0a3bca-800e5652 total=0.21s preprocess=0.00s engine=0.21s stages=[0:0.21s]
+INFO:     127.0.0.1:48024 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48026 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48028 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:00:49[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-b41f36b3dea1c2b5-881e1656 total=0.05s preprocess=0.00s engine=0.05s stages=[0:0.05s]
+INFO:     127.0.0.1:48030 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48032 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48034 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:00:51[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-b4080f4fdb0871aa-ac7a0e40 total=0.07s preprocess=0.00s engine=0.07s stages=[0:0.07s]
+INFO:     127.0.0.1:48036 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48038 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48040 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:00:53[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-bf5c2a9445c80f1c-9a05cdd1 total=0.07s preprocess=0.00s engine=0.07s stages=[0:0.07s]
+INFO:     127.0.0.1:48042 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48044 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48046 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:00:56[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-b1c90e9acd847ae6-bc34db32 total=0.18s preprocess=0.00s engine=0.18s stages=[0:0.18s]
+INFO:     127.0.0.1:48048 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48050 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48052 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:00:58[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-9a1cd0736e46a14e-97c38e63 total=0.05s preprocess=0.00s engine=0.05s stages=[0:0.05s]
+INFO:     127.0.0.1:48054 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48056 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48058 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:01:00[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-ab732c15e9fdc37b-b6287aea total=0.07s preprocess=0.00s engine=0.07s stages=[0:0.07s]
+INFO:     127.0.0.1:48060 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48062 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48064 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:01:02[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-a680ca530d57a455-ac72a991 total=0.07s preprocess=0.00s engine=0.07s stages=[0:0.07s]
+INFO:     127.0.0.1:48066 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48068 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48070 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:01:05[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-8fa29c6c847a3c0f-91ca5df2 total=0.21s preprocess=0.00s engine=0.21s stages=[0:0.21s]
+INFO:     127.0.0.1:48072 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48074 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48076 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:01:08[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-a0ab759b39c13cd3-b554546e total=0.05s preprocess=0.00s engine=0.05s stages=[0:0.05s]
+INFO:     127.0.0.1:48078 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48082 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48084 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:01:10[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-8e4bca3d09a22ef4-bb01d48a total=0.07s preprocess=0.00s engine=0.07s stages=[0:0.07s]
+INFO:     127.0.0.1:48086 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48088 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48090 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:01:12[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-8626daa7f55eaba9-915b0343 total=0.07s preprocess=0.00s engine=0.07s stages=[0:0.07s]
+INFO:     127.0.0.1:48092 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48094 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48096 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:01:15[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-872bed2a64d3ccc7-be4eee7e total=0.18s preprocess=0.00s engine=0.18s stages=[0:0.18s]
+INFO:     127.0.0.1:48098 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48100 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48102 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:01:17[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-afefeb7b11064795-a76a3e96 total=0.05s preprocess=0.00s engine=0.05s stages=[0:0.05s]
+INFO:     127.0.0.1:48104 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48106 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48110 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:01:19[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-940b94aaf75f48ed-a826d7ec total=0.07s preprocess=0.00s engine=0.07s stages=[0:0.07s]
+INFO:     127.0.0.1:48112 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48114 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48116 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:01:21[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-89ae34a07f9fe83e-83b1531c total=0.07s preprocess=0.00s engine=0.07s stages=[0:0.07s]
+INFO:     127.0.0.1:48118 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48120 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48122 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:01:24[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-b69ce88d0c414b80-9a7bfd3e total=0.21s preprocess=0.00s engine=0.20s stages=[0:0.21s]
+INFO:     127.0.0.1:48124 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48126 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48130 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:01:26[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-a28ef1597a80c4bf-af13fcfe total=0.05s preprocess=0.00s engine=0.05s stages=[0:0.05s]
+INFO:     127.0.0.1:48132 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48134 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48138 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:01:28[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-a7b41430d5e10cd3-aaee834d total=0.07s preprocess=0.00s engine=0.07s stages=[0:0.07s]
+INFO:     127.0.0.1:48140 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48142 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48144 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:01:30[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-bd562ca45fbfe962-adf249c0 total=0.07s preprocess=0.00s engine=0.07s stages=[0:0.07s]
+INFO:     127.0.0.1:48146 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48148 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48150 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:01:33[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-9df3d8086f8d83f4-96bf4879 total=0.20s preprocess=0.00s engine=0.20s stages=[0:0.20s]
+INFO:     127.0.0.1:48152 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48154 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48156 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:01:35[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-86ceff76d1368284-95dae67a total=0.05s preprocess=0.00s engine=0.05s stages=[0:0.05s]
+INFO:     127.0.0.1:48158 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48160 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48162 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:01:37[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-9832f6e6108da714-81f4a706 total=0.07s preprocess=0.00s engine=0.07s stages=[0:0.07s]
+INFO:     127.0.0.1:48164 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48166 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48168 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:01:39[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-8a258faca033e7c9-aef913d7 total=0.07s preprocess=0.00s engine=0.07s stages=[0:0.07s]
+INFO:     127.0.0.1:48170 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48172 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48174 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:01:43[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-bf494dfb41d3d462-88099998 total=0.23s preprocess=0.00s engine=0.23s stages=[0:0.23s]
+INFO:     127.0.0.1:48176 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48178 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48180 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:01:45[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-94492d8a5737f224-b5054421 total=0.07s preprocess=0.00s engine=0.07s stages=[0:0.07s]
+INFO:     127.0.0.1:48182 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48184 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48186 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:01:47[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-926a47524b3f89aa-9de8b902 total=0.07s preprocess=0.00s engine=0.07s stages=[0:0.07s]
+INFO:     127.0.0.1:48188 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48190 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48192 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:01:50[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-ba69f7f87a28ad44-8a6d2745 total=0.22s preprocess=0.00s engine=0.22s stages=[0:0.22s]
+INFO:     127.0.0.1:48194 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48196 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48198 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:01:52[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-a98e8fce84c17c0b-96a1b9f2 total=0.07s preprocess=0.00s engine=0.07s stages=[0:0.07s]
+INFO:     127.0.0.1:48200 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48202 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48204 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:01:54[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-adc47b165031d7c9-a0ab3018 total=0.07s preprocess=0.00s engine=0.07s stages=[0:0.07s]
+INFO:     127.0.0.1:48206 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48208 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48212 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:01:57[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-9047cdfd45223fb8-8e6a4abb total=0.22s preprocess=0.00s engine=0.22s stages=[0:0.22s]
+INFO:     127.0.0.1:48214 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48216 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48218 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:01:59[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-b429c930ca1ad426-b1140bf7 total=0.07s preprocess=0.00s engine=0.07s stages=[0:0.07s]
+INFO:     127.0.0.1:48220 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48222 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48224 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:02:01[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-98e377749a6e9464-89f4c50d total=0.07s preprocess=0.00s engine=0.07s stages=[0:0.07s]
+INFO:     127.0.0.1:48226 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48228 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48230 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:02:04[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-b42f24b7bdb1a66b-b22855f0 total=0.23s preprocess=0.00s engine=0.23s stages=[0:0.23s]
+INFO:     127.0.0.1:48232 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48234 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48236 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:02:06[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-8fab6757158b6c46-b56caba6 total=0.07s preprocess=0.00s engine=0.07s stages=[0:0.07s]
+INFO:     127.0.0.1:48238 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48240 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48242 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:02:08[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-a54518ad9fc2555c-ba1aae85 total=0.07s preprocess=0.00s engine=0.07s stages=[0:0.07s]
+INFO:     127.0.0.1:48244 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48246 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48248 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:02:12[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-82b0af6834ce8f92-896b3230 total=0.96s preprocess=0.00s engine=0.96s stages=[0:0.96s]
+INFO:     127.0.0.1:48250 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48252 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48254 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:02:14[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-8eb29398cce4b595-8052b1d2 total=0.07s preprocess=0.00s engine=0.07s stages=[0:0.08s]
+INFO:     127.0.0.1:48256 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48258 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48262 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:02:17[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-a684c07f414bf4e5-a0db06a6 total=0.07s preprocess=0.00s engine=0.07s stages=[0:0.07s]
+INFO:     127.0.0.1:48264 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48266 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48268 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:02:20[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-9eefcb64a36406b6-b63da741 total=0.94s preprocess=0.00s engine=0.94s stages=[0:0.94s]
+INFO:     127.0.0.1:48270 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48272 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48274 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:02:23[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-8b3b29c1b7ceaf2c-9f92fbc5 total=0.07s preprocess=0.00s engine=0.07s stages=[0:0.08s]
+INFO:     127.0.0.1:48276 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48278 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48280 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:02:25[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-bc02614a471d88e9-9afa382b total=0.07s preprocess=0.00s engine=0.07s stages=[0:0.07s]
+INFO:     127.0.0.1:48282 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48284 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48286 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:02:29[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-b24a00959730e411-a98b1cc0 total=0.95s preprocess=0.00s engine=0.95s stages=[0:0.95s]
+INFO:     127.0.0.1:48288 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48292 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48296 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:02:31[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-91d019483606e811-a399846f total=0.07s preprocess=0.00s engine=0.07s stages=[0:0.07s]
+INFO:     127.0.0.1:48298 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48302 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48304 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:02:33[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-b21c91949c2b545c-ae28ecf0 total=0.07s preprocess=0.00s engine=0.07s stages=[0:0.08s]
+INFO:     127.0.0.1:48306 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48308 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48310 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:02:37[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-8ca3ddee5df859c6-b2dd5a5b total=0.93s preprocess=0.00s engine=0.93s stages=[0:0.93s]
+INFO:     127.0.0.1:48312 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48314 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48316 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:02:39[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-8cb1558604035a5c-83bd4206 total=0.07s preprocess=0.00s engine=0.07s stages=[0:0.07s]
+INFO:     127.0.0.1:48318 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48320 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48322 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:02:41[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-b511ef87ae413004-80cbb885 total=0.07s preprocess=0.00s engine=0.07s stages=[0:0.07s]
+INFO:     127.0.0.1:48324 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48326 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48328 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:02:45[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-97329f6db144d163-9dfa97aa total=0.93s preprocess=0.00s engine=0.93s stages=[0:0.93s]
+INFO:     127.0.0.1:48330 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48332 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48334 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:02:47[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-a1dbe35046c0cc86-a2207063 total=0.06s preprocess=0.00s engine=0.06s stages=[0:0.06s]
+INFO:     127.0.0.1:48336 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48338 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48340 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:02:49[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-9e48cac32099f90c-bb1a9bf0 total=0.07s preprocess=0.00s engine=0.07s stages=[0:0.07s]
+INFO:     127.0.0.1:48342 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48344 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48346 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:02:52[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-b5c84ba6f1174298-8fc10407 total=0.07s preprocess=0.00s engine=0.07s stages=[0:0.07s]
+INFO:     127.0.0.1:48348 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48350 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48352 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:02:55[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-82651e7c12b4ab01-b6e3fec3 total=0.91s preprocess=0.00s engine=0.91s stages=[0:0.92s]
+INFO:     127.0.0.1:48354 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48356 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48358 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:02:58[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-8b8238cfc757800b-8d7d5338 total=0.06s preprocess=0.00s engine=0.06s stages=[0:0.06s]
+INFO:     127.0.0.1:48360 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48362 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48364 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:03:00[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-b65d08a4564ab02b-a0306960 total=0.07s preprocess=0.00s engine=0.07s stages=[0:0.07s]
+INFO:     127.0.0.1:48366 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48368 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48370 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:03:02[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-90a65989f0499c8d-bb9e3511 total=0.07s preprocess=0.00s engine=0.07s stages=[0:0.07s]
+INFO:     127.0.0.1:48372 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48374 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48376 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:03:06[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-89c6985ac70343a4-bb8145aa total=0.92s preprocess=0.00s engine=0.92s stages=[0:0.92s]
+INFO:     127.0.0.1:48378 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48380 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48382 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:03:08[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-baaf2cdb8210c76d-8c01b5ad total=0.06s preprocess=0.00s engine=0.06s stages=[0:0.06s]
+INFO:     127.0.0.1:48384 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48386 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48388 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:03:10[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-832f54e3d3e1fe2e-a0df3d1c total=0.07s preprocess=0.00s engine=0.07s stages=[0:0.07s]
+INFO:     127.0.0.1:48390 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48392 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48394 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:03:12[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-b544bd796978f8a2-8acead7b total=0.07s preprocess=0.00s engine=0.07s stages=[0:0.07s]
+INFO:     127.0.0.1:48396 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48398 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48400 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:03:16[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-a1293082c01dc2bf-be559e68 total=0.93s preprocess=0.00s engine=0.93s stages=[0:0.93s]
+INFO:     127.0.0.1:48402 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48404 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48406 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:03:18[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-a38ada68ae7f0419-9be0ffb2 total=0.06s preprocess=0.00s engine=0.06s stages=[0:0.06s]
+INFO:     127.0.0.1:48408 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48410 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48412 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:03:20[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-9b07411a102f2404-a7523ba7 total=0.07s preprocess=0.00s engine=0.07s stages=[0:0.07s]
+INFO:     127.0.0.1:48414 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48416 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48418 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:03:23[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-b78f08a2f897c682-8518e798 total=0.07s preprocess=0.00s engine=0.07s stages=[0:0.07s]
+INFO:     127.0.0.1:48422 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48424 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48426 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:03:26[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-893dc2e274608904-966bf45f total=0.91s preprocess=0.00s engine=0.91s stages=[0:0.91s]
+INFO:     127.0.0.1:48428 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48430 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48432 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:03:29[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-95bcb66458163876-9e2fa24c total=0.06s preprocess=0.00s engine=0.06s stages=[0:0.06s]
+INFO:     127.0.0.1:48434 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48436 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48438 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:03:31[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-863a62d38ba36271-b62d586f total=0.07s preprocess=0.00s engine=0.07s stages=[0:0.07s]
+INFO:     127.0.0.1:48440 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48442 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48444 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:03:33[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-a2d527b6239110d7-ac60a5cc total=0.07s preprocess=0.00s engine=0.07s stages=[0:0.07s]
+INFO:     127.0.0.1:48446 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48448 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48450 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:03:37[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-99fc79a2e33c5f5a-81856a31 total=0.92s preprocess=0.00s engine=0.92s stages=[0:0.92s]
+INFO:     127.0.0.1:48452 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48454 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48456 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:03:39[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-86e0c21c9855ac1b-8b6ed983 total=0.06s preprocess=0.00s engine=0.05s stages=[0:0.06s]
+INFO:     127.0.0.1:48458 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48460 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48462 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:03:41[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-8fbc7f964217d4a8-9f29092a total=0.07s preprocess=0.00s engine=0.07s stages=[0:0.07s]
+INFO:     127.0.0.1:48464 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48466 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48468 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:03:43[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-99b7b34379ce846c-8b9f827a total=0.07s preprocess=0.00s engine=0.07s stages=[0:0.07s]
+INFO:     127.0.0.1:48470 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48472 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48474 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:03:47[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-8b25984aa26fdd98-a09a6865 total=0.92s preprocess=0.00s engine=0.92s stages=[0:0.92s]
+INFO:     127.0.0.1:48476 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48478 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48480 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:03:49[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-afee82e6a25bdf72-a50c40ee total=0.06s preprocess=0.00s engine=0.06s stages=[0:0.06s]
+INFO:     127.0.0.1:48482 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48484 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48486 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:03:51[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-bb7745cd43529e60-a5f95852 total=0.07s preprocess=0.00s engine=0.07s stages=[0:0.07s]
+INFO:     127.0.0.1:48488 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48490 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48492 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:03:54[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-855c821054bad767-a76aac99 total=0.07s preprocess=0.00s engine=0.07s stages=[0:0.07s]
+INFO:     127.0.0.1:48494 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48496 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48498 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:03:57[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-a54a36394208268c-ad4c19bd total=0.93s preprocess=0.00s engine=0.93s stages=[0:0.93s]
+INFO:     127.0.0.1:48500 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48502 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48504 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:04:00[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-a59e3b0476cc6537-8641a7af total=0.05s preprocess=0.00s engine=0.05s stages=[0:0.06s]
+INFO:     127.0.0.1:48506 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48508 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48510 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:04:02[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-99df1fb48625cc23-8659a521 total=0.07s preprocess=0.00s engine=0.07s stages=[0:0.07s]
+INFO:     127.0.0.1:48514 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48516 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48518 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:04:04[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-be9a621c09e0a96c-a1b9fb9f total=0.07s preprocess=0.00s engine=0.07s stages=[0:0.07s]
+INFO:     127.0.0.1:48520 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48522 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48524 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:04:08[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-b8f6094c0a98119c-951d7090 total=0.93s preprocess=0.00s engine=0.93s stages=[0:0.93s]
+INFO:     127.0.0.1:48526 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48528 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48530 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:04:10[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-9656a08118b1d107-968123cd total=0.07s preprocess=0.00s engine=0.06s stages=[0:0.07s]
+INFO:     127.0.0.1:48532 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48534 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48536 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:04:12[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-a9c644875df883ac-a0c0f97e total=0.07s preprocess=0.00s engine=0.07s stages=[0:0.07s]
+INFO:     127.0.0.1:48538 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48540 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48542 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:04:16[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-87cfe0a33136fc5c-a9e03daf total=0.96s preprocess=0.00s engine=0.96s stages=[0:0.96s]
+INFO:     127.0.0.1:48544 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48546 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48548 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:04:18[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-b687a607becb1cbb-b5925b88 total=0.08s preprocess=0.00s engine=0.07s stages=[0:0.08s]
+INFO:     127.0.0.1:48552 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48554 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48556 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:04:20[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-98d9e422333a862a-a46bf51a total=0.07s preprocess=0.00s engine=0.07s stages=[0:0.07s]
+INFO:     127.0.0.1:48558 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48560 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48562 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:04:24[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-b203288316e40156-b924bb5e total=0.96s preprocess=0.00s engine=0.96s stages=[0:0.96s]
+INFO:     127.0.0.1:48564 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48566 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48568 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:04:26[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-b731c05fada80b7b-a644c4c5 total=0.07s preprocess=0.00s engine=0.07s stages=[0:0.07s]
+INFO:     127.0.0.1:48570 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48572 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48574 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:04:29[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-819eb7ff939ada1e-9d6b1c5a total=0.07s preprocess=0.00s engine=0.07s stages=[0:0.07s]
+INFO:     127.0.0.1:48576 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48578 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48580 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:04:32[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-aa50d73841d6dc3a-b4283bf6 total=0.96s preprocess=0.00s engine=0.96s stages=[0:0.97s]
+INFO:     127.0.0.1:48582 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48584 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48586 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:04:35[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-8ad559a66f16f4b0-a16cbb8a total=0.08s preprocess=0.00s engine=0.07s stages=[0:0.08s]
+INFO:     127.0.0.1:48588 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48590 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48592 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:04:37[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-a006e5fe7d2b15ea-bf97a869 total=0.07s preprocess=0.00s engine=0.07s stages=[0:0.07s]
+INFO:     127.0.0.1:48594 - "GET /metrics HTTP/1.1" 200 OK
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:04:39[0m [90m[launcher.py:256][0m [shutdown] API server: shutdown triggered
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:04:39[0m [90m[launcher.py:269][0m [shutdown] API server: stopping engine client mode=abort timeout=0s
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:04:39[0m [90m[omni_base.py:789][0m [AsyncOmni] Shutting down
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:04:39[0m [90m[omni_engine_base.py:992][0m [OmniEngine] Shutting down Orchestrator
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:04:39[0m [90m[orchestrator.py:817][0m [Orchestrator] Received shutdown signal
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:04:39[0m [90m[orchestrator.py:4006][0m [Orchestrator] Shutting down all 2 client(s)
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:04:39[0m [90m[core_client.py:822][0m [shutdown] MPClient: start timeout=default
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:04:39[0m [90m[core_client.py:824][0m [shutdown] MPClient: stopping engine manager
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:04:39[0m [90m[utils.py:628][0m [shutdown] Process manager: send sigterm to process StageEngineCoreProc_stage0_replica0
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:04:42[0m [90m[core_client.py:826][0m [shutdown] MPClient: engine manager stopped
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:04:42[0m [90m[core_client.py:827][0m [shutdown] MPClient: cleaning up background resources
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:04:42[0m [90m[core_client.py:829][0m [shutdown] MPClient: complete
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:04:42[0m [90m[stage_pool.py:2230][0m [StagePool] Stage 0 replica 0 shut down
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:04:42[0m [90m[utils.py:628][0m [shutdown] Process manager: send sigterm to process StageDiffusionProc
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:04:42[0m [90m[stage_pool.py:2230][0m [StagePool] Stage 1 replica 0 shut down
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:04:42[0m [90m[launcher.py:278][0m [shutdown] API server: engine client stopped
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:04:42[0m [90m[launcher.py:281][0m [shutdown] API server: signalling HTTP server shutdown
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:04:42[0m [90m[launcher.py:304][0m [shutdown] API server: shutting down FastAPI HTTP server
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+[0;36m(APIServer pid=3393434)[0;0m [32mINFO[0m [90m11-26 23:04:43[0m [90m[omni_base.py:789][0m [AsyncOmni] Shutting down

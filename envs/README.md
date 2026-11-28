@@ -11,7 +11,7 @@
 两台机器的环境只在各自机器上存在（`envs/` 在 git 中忽略）。它们之间共享的是：
 
 - **同一个仓库**：`docs/`、`scripts/`、`bench/`、`scenarios/`、`configs/` 都是共用的。
-- **固定的上游版本**：`externals.pins` 指定 M\* 与 vLLM-Omni 的版本，两台机器都用 `scripts/fetch_externals.sh` 检出同一版本。
+- **固定的上游版本**：`externals.pins` 指定 M\* `v0.3.0` 与 vLLM-Omni `v0.34.0`，两台机器都用 `scripts/fetch_externals.sh` 检出同一版本；更新源码后需在各机器重建对应环境。
 - **模型权重**：`models/` 在 5880 上符号链接到 `../Inference_Engine_Investigation_Repo/models`；在 B70 上链接到 `~/workspaces/models`。两者都是 HF 缓存格式，缓存位于 `models/cache`。
 
 ## 命名与隔离规则

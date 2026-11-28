@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/home/chaofan/workspaces/mm_reuse_study/scripts/probes/cached_frames_prof.py", line 10, in <module>
+    print(n, "cold", req(n,sid,q=None)); time.sleep(1)
+                     ^^^^^^^^^^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/scripts/probes/cached_frames_prof.py", line 7, in req
+    t=time.time(); r=requests.post(B+"/v1/chat/completions",json=body); assert r.ok, r.text[:200]; return (time.time()-t)*1000, len(json.dumps(body))
+                                                                               ^^^^
+AssertionError: {"error":{"code":500,"message":"Error in worker: internal error (error id 5ca2814dd226)","type":"server_error"}}

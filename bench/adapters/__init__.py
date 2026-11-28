@@ -50,6 +50,7 @@ class Observation:
     node_ms: dict[str, float] = field(default_factory=dict)
     requests_done: float | None = None        # 窗口内完成的请求数（应为 1，否则归因不可靠）
     mm_keys: list[str] = field(default_factory=list)   # vLLM-Omni：多模态 key，用于核对任务路径
+    per_request_prefix: dict = field(default_factory=dict)  # vLLM-Omni shim：请求 id → (prompt token, 命中 token)
     raw: dict = field(default_factory=dict)
 
 

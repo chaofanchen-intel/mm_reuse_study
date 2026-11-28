@@ -1,0 +1,2 @@
+Synthesized by Qwen3-Omni (vLLM-Omni full pipeline, 2026-11-26), resampled 24k->16k.
+Text output alongside the audio: "What is the main color of the most recent image?"

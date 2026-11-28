@@ -1,0 +1,23 @@
+# 本研究用（M3 大分组）：qwen3omni_mstar_thinker_tp2.yaml + Thinker 每步 token 预算 16384（默认 1024）。
+# 默认预算下，超过 1024 token 的分组行被分块 prefill，与前缀缓存、TP2 一起出错（第二次请求 0 命中，随后 "TP ranks diverged"）。
+# 放大预算后分组行不再分块；代价是一个大 prefill 步会挡住同一步里其他请求的 decode。
+model: "qwen3_omni"
+max_seq_len: 32768
+node_groups:
+  - node_names: [Thinker]
+    ranks: [0, 1]
+    tp_size: 2
+  - node_names: [audio_encoder, vision_encoder]
+    ranks: [0]
+  - node_names: [Talker]
+    ranks: [2]
+  - node_names: [Code2Wav]
+    ranks: [2]
+max_batch_tokens:
+  Thinker:
+    thinker_mixed: 16384
+# 不设 prefill_token_buckets：rank 0 与视觉编码器同卡，大图本就捕获失败（eager）；设了反而把省下的显存给 KV，视觉编码 16 张一组 OOM。
+resources:
+  thinker_kv:
+    prefix_cache_tp: true
+    max_num_pages: 1024

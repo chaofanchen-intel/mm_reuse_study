@@ -1,0 +1,398 @@
+1795702592.296208	3135546	prefix_lookup	req=video-c9c74868223c-ac1d467a prompt=4876 hit=0
+1795702592.296303	3135546	ecm_check	hit=False input_id=0 req=video-c9c74868223c-ac1d4 mm_hash=2275a8914bec4313b287f598
+1795702592.296333	3135546	ecm_check	hit=False input_id=1 req=video-c9c74868223c-ac1d4 mm_hash=b4639af59a72b3136d7502ec
+1795702592.296353	3135546	ecm_check	hit=False input_id=2 req=video-c9c74868223c-ac1d4 mm_hash=f91da5c6357386cf6b9715ad
+1795702592.296370	3135546	ecm_check	hit=False input_id=3 req=video-c9c74868223c-ac1d4 mm_hash=8e78b1c4a30a8dab54df31d4
+1795702592.296384	3135546	ecm_check	hit=False input_id=4 req=video-c9c74868223c-ac1d4 mm_hash=da4b11f83db6095c79e2f03f
+1795702592.296399	3135546	ecm_check	hit=False input_id=5 req=video-c9c74868223c-ac1d4 mm_hash=23e6d07058554017ae2acde8
+1795702592.296413	3135546	ecm_check	hit=False input_id=6 req=video-c9c74868223c-ac1d4 mm_hash=0297312f3fcb665cfba1a229
+1795702592.296426	3135546	ecm_check	hit=False input_id=7 req=video-c9c74868223c-ac1d4 mm_hash=f0986bff4c084af9423c9510
+1795702592.296439	3135546	ecm_check	hit=False input_id=8 req=video-c9c74868223c-ac1d4 mm_hash=e71816a88d5855dd935cc542
+1795702592.296453	3135546	ecm_check	hit=False input_id=9 req=video-c9c74868223c-ac1d4 mm_hash=2f4feaa56826cd8e7c5b9da5
+1795702592.296467	3135546	ecm_check	hit=False input_id=10 req=video-c9c74868223c-ac1d4 mm_hash=5f80a35eae4f747dd8da2045
+1795702592.296481	3135546	ecm_check	hit=False input_id=11 req=video-c9c74868223c-ac1d4 mm_hash=bfb01a3d3f6a8ca45385e588
+1795702592.296494	3135546	ecm_check	hit=False input_id=12 req=video-c9c74868223c-ac1d4 mm_hash=d05a753c05e46018b9f4aeae
+1795702592.296507	3135546	ecm_check	hit=False input_id=13 req=video-c9c74868223c-ac1d4 mm_hash=24042cfb8bfaf5218d4b20ce
+1795702592.296520	3135546	ecm_check	hit=False input_id=14 req=video-c9c74868223c-ac1d4 mm_hash=11e06bf0ced8639ffac5487a
+1795702592.296533	3135546	ecm_check	hit=False input_id=15 req=video-c9c74868223c-ac1d4 mm_hash=d6e756baeb5162ea8f0f9986
+1795702592.358010	3137026	mm_encoder	items=16 reqs=video-c9c74868223c-a
+1795702592.360554	3137028	mm_encoder	items=16 reqs=video-c9c74868223c-a
+1795702593.070267	3135541	prefix_lookup	req=video-c9c74868223c-ac1d467a prompt=4862 hit=0
+1795702600.256779	3135546	prefix_lookup	req=video-4fb16d714a53-b96dfa60 prompt=9731 hit=0
+1795702600.256875	3135546	ecm_check	hit=True input_id=0 req=video-4fb16d714a53-b96df mm_hash=2275a8914bec4313b287f598
+1795702600.256900	3135546	ecm_check	hit=True input_id=1 req=video-4fb16d714a53-b96df mm_hash=b4639af59a72b3136d7502ec
+1795702600.256917	3135546	ecm_check	hit=True input_id=2 req=video-4fb16d714a53-b96df mm_hash=f91da5c6357386cf6b9715ad
+1795702600.256933	3135546	ecm_check	hit=True input_id=3 req=video-4fb16d714a53-b96df mm_hash=8e78b1c4a30a8dab54df31d4
+1795702600.256947	3135546	ecm_check	hit=True input_id=4 req=video-4fb16d714a53-b96df mm_hash=da4b11f83db6095c79e2f03f
+1795702600.256962	3135546	ecm_check	hit=True input_id=5 req=video-4fb16d714a53-b96df mm_hash=23e6d07058554017ae2acde8
+1795702600.256976	3135546	ecm_check	hit=True input_id=6 req=video-4fb16d714a53-b96df mm_hash=0297312f3fcb665cfba1a229
+1795702600.256989	3135546	ecm_check	hit=True input_id=7 req=video-4fb16d714a53-b96df mm_hash=f0986bff4c084af9423c9510
+1795702600.257003	3135546	ecm_check	hit=True input_id=8 req=video-4fb16d714a53-b96df mm_hash=e71816a88d5855dd935cc542
+1795702600.257017	3135546	ecm_check	hit=True input_id=9 req=video-4fb16d714a53-b96df mm_hash=2f4feaa56826cd8e7c5b9da5
+1795702600.257031	3135546	ecm_check	hit=True input_id=10 req=video-4fb16d714a53-b96df mm_hash=5f80a35eae4f747dd8da2045
+1795702600.257045	3135546	ecm_check	hit=True input_id=11 req=video-4fb16d714a53-b96df mm_hash=bfb01a3d3f6a8ca45385e588
+1795702600.257058	3135546	ecm_check	hit=True input_id=12 req=video-4fb16d714a53-b96df mm_hash=d05a753c05e46018b9f4aeae
+1795702600.257071	3135546	ecm_check	hit=True input_id=13 req=video-4fb16d714a53-b96df mm_hash=24042cfb8bfaf5218d4b20ce
+1795702600.257084	3135546	ecm_check	hit=True input_id=14 req=video-4fb16d714a53-b96df mm_hash=11e06bf0ced8639ffac5487a
+1795702600.257104	3135546	ecm_check	hit=True input_id=15 req=video-4fb16d714a53-b96df mm_hash=d6e756baeb5162ea8f0f9986
+1795702600.257116	3135546	ecm_check	hit=False input_id=16 req=video-4fb16d714a53-b96df mm_hash=b113bf3bec1bc1e2452a1335
+1795702600.257133	3135546	ecm_check	hit=False input_id=17 req=video-4fb16d714a53-b96df mm_hash=d9e760f9b2e43805e445632a
+1795702600.257147	3135546	ecm_check	hit=False input_id=18 req=video-4fb16d714a53-b96df mm_hash=7f5594626daee2d2e8d82c90
+1795702600.257160	3135546	ecm_check	hit=False input_id=19 req=video-4fb16d714a53-b96df mm_hash=dde6ddd690029f076a150039
+1795702600.257173	3135546	ecm_check	hit=False input_id=20 req=video-4fb16d714a53-b96df mm_hash=63c4dfa6930d7126af1a7e37
+1795702600.257185	3135546	ecm_check	hit=False input_id=21 req=video-4fb16d714a53-b96df mm_hash=57c9b3dc14f09b628e2a4744
+1795702600.257198	3135546	ecm_check	hit=False input_id=22 req=video-4fb16d714a53-b96df mm_hash=d0665a94ed08f643ec3065c3
+1795702600.257211	3135546	ecm_check	hit=False input_id=23 req=video-4fb16d714a53-b96df mm_hash=383ae304b805c43860020d96
+1795702600.257224	3135546	ecm_check	hit=False input_id=24 req=video-4fb16d714a53-b96df mm_hash=5f4340cda6081daed6ed73e3
+1795702600.257237	3135546	ecm_check	hit=False input_id=25 req=video-4fb16d714a53-b96df mm_hash=feb070f0c06fb9246574e659
+1795702600.257250	3135546	ecm_check	hit=False input_id=26 req=video-4fb16d714a53-b96df mm_hash=9ea22ece77b70ec75d5807b9
+1795702600.257264	3135546	ecm_check	hit=False input_id=27 req=video-4fb16d714a53-b96df mm_hash=87272b0b8ae565cb2b57e682
+1795702600.257277	3135546	ecm_check	hit=False input_id=28 req=video-4fb16d714a53-b96df mm_hash=572b008c3b22041b9203dc66
+1795702600.257290	3135546	ecm_check	hit=False input_id=29 req=video-4fb16d714a53-b96df mm_hash=492cb571be92b7f3cf5d5033
+1795702600.257303	3135546	ecm_check	hit=False input_id=30 req=video-4fb16d714a53-b96df mm_hash=2803dd33c7ca540b3d29dff1
+1795702600.257315	3135546	ecm_check	hit=False input_id=31 req=video-4fb16d714a53-b96df mm_hash=cac1f9fdf7dc44309798d7ca
+1795702600.333760	3137026	mm_encoder	items=16 reqs=video-4fb16d714a53-b
+1795702600.348528	3137028	mm_encoder	items=16 reqs=video-4fb16d714a53-b
+1795702601.440017	3135541	prefix_lookup	req=video-4fb16d714a53-b96dfa60 prompt=9711 hit=0
+1795702608.241149	3135546	prefix_lookup	req=video-30bdd209955f-8f1738e9 prompt=14559 hit=0
+1795702608.241243	3135546	ecm_check	hit=True input_id=0 req=video-30bdd209955f-8f173 mm_hash=2275a8914bec4313b287f598
+1795702608.241265	3135546	ecm_check	hit=True input_id=1 req=video-30bdd209955f-8f173 mm_hash=b4639af59a72b3136d7502ec
+1795702608.241282	3135546	ecm_check	hit=True input_id=2 req=video-30bdd209955f-8f173 mm_hash=f91da5c6357386cf6b9715ad
+1795702608.241297	3135546	ecm_check	hit=True input_id=3 req=video-30bdd209955f-8f173 mm_hash=8e78b1c4a30a8dab54df31d4
+1795702608.241311	3135546	ecm_check	hit=True input_id=4 req=video-30bdd209955f-8f173 mm_hash=da4b11f83db6095c79e2f03f
+1795702608.241325	3135546	ecm_check	hit=True input_id=5 req=video-30bdd209955f-8f173 mm_hash=23e6d07058554017ae2acde8
+1795702608.241339	3135546	ecm_check	hit=True input_id=6 req=video-30bdd209955f-8f173 mm_hash=0297312f3fcb665cfba1a229
+1795702608.241353	3135546	ecm_check	hit=True input_id=7 req=video-30bdd209955f-8f173 mm_hash=f0986bff4c084af9423c9510
+1795702608.241366	3135546	ecm_check	hit=True input_id=8 req=video-30bdd209955f-8f173 mm_hash=e71816a88d5855dd935cc542
+1795702608.241379	3135546	ecm_check	hit=True input_id=9 req=video-30bdd209955f-8f173 mm_hash=2f4feaa56826cd8e7c5b9da5
+1795702608.241393	3135546	ecm_check	hit=True input_id=10 req=video-30bdd209955f-8f173 mm_hash=5f80a35eae4f747dd8da2045
+1795702608.241406	3135546	ecm_check	hit=True input_id=11 req=video-30bdd209955f-8f173 mm_hash=bfb01a3d3f6a8ca45385e588
+1795702608.241418	3135546	ecm_check	hit=True input_id=12 req=video-30bdd209955f-8f173 mm_hash=d05a753c05e46018b9f4aeae
+1795702608.241431	3135546	ecm_check	hit=True input_id=13 req=video-30bdd209955f-8f173 mm_hash=24042cfb8bfaf5218d4b20ce
+1795702608.241444	3135546	ecm_check	hit=True input_id=14 req=video-30bdd209955f-8f173 mm_hash=11e06bf0ced8639ffac5487a
+1795702608.241465	3135546	ecm_check	hit=True input_id=15 req=video-30bdd209955f-8f173 mm_hash=d6e756baeb5162ea8f0f9986
+1795702608.241478	3135546	ecm_check	hit=True input_id=16 req=video-30bdd209955f-8f173 mm_hash=b113bf3bec1bc1e2452a1335
+1795702608.241491	3135546	ecm_check	hit=True input_id=17 req=video-30bdd209955f-8f173 mm_hash=d9e760f9b2e43805e445632a
+1795702608.241505	3135546	ecm_check	hit=True input_id=18 req=video-30bdd209955f-8f173 mm_hash=7f5594626daee2d2e8d82c90
+1795702608.241518	3135546	ecm_check	hit=True input_id=19 req=video-30bdd209955f-8f173 mm_hash=dde6ddd690029f076a150039
+1795702608.241530	3135546	ecm_check	hit=True input_id=20 req=video-30bdd209955f-8f173 mm_hash=63c4dfa6930d7126af1a7e37
+1795702608.241543	3135546	ecm_check	hit=True input_id=21 req=video-30bdd209955f-8f173 mm_hash=57c9b3dc14f09b628e2a4744
+1795702608.241555	3135546	ecm_check	hit=True input_id=22 req=video-30bdd209955f-8f173 mm_hash=d0665a94ed08f643ec3065c3
+1795702608.241568	3135546	ecm_check	hit=True input_id=23 req=video-30bdd209955f-8f173 mm_hash=383ae304b805c43860020d96
+1795702608.241580	3135546	ecm_check	hit=True input_id=24 req=video-30bdd209955f-8f173 mm_hash=5f4340cda6081daed6ed73e3
+1795702608.241593	3135546	ecm_check	hit=True input_id=25 req=video-30bdd209955f-8f173 mm_hash=feb070f0c06fb9246574e659
+1795702608.241605	3135546	ecm_check	hit=True input_id=26 req=video-30bdd209955f-8f173 mm_hash=9ea22ece77b70ec75d5807b9
+1795702608.241618	3135546	ecm_check	hit=True input_id=27 req=video-30bdd209955f-8f173 mm_hash=87272b0b8ae565cb2b57e682
+1795702608.241630	3135546	ecm_check	hit=True input_id=28 req=video-30bdd209955f-8f173 mm_hash=572b008c3b22041b9203dc66
+1795702608.241643	3135546	ecm_check	hit=True input_id=29 req=video-30bdd209955f-8f173 mm_hash=492cb571be92b7f3cf5d5033
+1795702608.241656	3135546	ecm_check	hit=True input_id=30 req=video-30bdd209955f-8f173 mm_hash=2803dd33c7ca540b3d29dff1
+1795702608.241668	3135546	ecm_check	hit=True input_id=31 req=video-30bdd209955f-8f173 mm_hash=cac1f9fdf7dc44309798d7ca
+1795702608.241681	3135546	ecm_check	hit=False input_id=32 req=video-30bdd209955f-8f173 mm_hash=67263ee9b2a8ba5c753f2822
+1795702608.241699	3135546	ecm_check	hit=False input_id=33 req=video-30bdd209955f-8f173 mm_hash=fd88f3e00095a7468f8d9edc
+1795702608.241713	3135546	ecm_check	hit=False input_id=34 req=video-30bdd209955f-8f173 mm_hash=45d0a4c87a75e381f4cfdd4e
+1795702608.241726	3135546	ecm_check	hit=False input_id=35 req=video-30bdd209955f-8f173 mm_hash=cffd07dad84090e929698eb1
+1795702608.241738	3135546	ecm_check	hit=False input_id=36 req=video-30bdd209955f-8f173 mm_hash=fa860ad85bedd0df2aef1506
+1795702608.241752	3135546	ecm_check	hit=False input_id=37 req=video-30bdd209955f-8f173 mm_hash=0bc9adac6aa6e630924d16d8
+1795702608.241766	3135546	ecm_check	hit=False input_id=38 req=video-30bdd209955f-8f173 mm_hash=297fe44bab4ea4105e6ea6ad
+1795702608.241785	3135546	ecm_check	hit=False input_id=39 req=video-30bdd209955f-8f173 mm_hash=0b800b12784c02959e44d595
+1795702608.241799	3135546	ecm_check	hit=False input_id=40 req=video-30bdd209955f-8f173 mm_hash=37db3dbf13a4ac90033c7746
+1795702608.241812	3135546	ecm_check	hit=False input_id=41 req=video-30bdd209955f-8f173 mm_hash=ece0f3fb6b63eb8d26e14452
+1795702608.241826	3135546	ecm_check	hit=False input_id=42 req=video-30bdd209955f-8f173 mm_hash=8e8fa52a9f1a36c08ebe792d
+1795702608.241839	3135546	ecm_check	hit=False input_id=43 req=video-30bdd209955f-8f173 mm_hash=50e31e453471997aa88a58d1
+1795702608.241852	3135546	ecm_check	hit=False input_id=44 req=video-30bdd209955f-8f173 mm_hash=3e52b202541d293fda111535
+1795702608.241864	3135546	ecm_check	hit=False input_id=45 req=video-30bdd209955f-8f173 mm_hash=be486ad9df34953593d9f189
+1795702608.241877	3135546	ecm_check	hit=False input_id=46 req=video-30bdd209955f-8f173 mm_hash=6da4f1b3b6e6a75680273f9f
+1795702608.241890	3135546	ecm_check	hit=False input_id=47 req=video-30bdd209955f-8f173 mm_hash=14a4e4c2a4bd9358588962cc
+1795702608.366967	3137026	mm_encoder	items=16 reqs=video-30bdd209955f-8
+1795702608.371811	3137028	mm_encoder	items=16 reqs=video-30bdd209955f-8
+1795702609.890500	3135541	prefix_lookup	req=video-30bdd209955f-8f1738e9 prompt=14539 hit=0
+1795702610.996365	3135546	prefix_lookup	req=video-warmup-ebbdc4d3b85d-ac781ed2 prompt=330 hit=0
+1795702610.996433	3135546	ecm_check	hit=False input_id=0 req=video-warmup-ebbdc4d3b85 mm_hash=995e3b20bda2c4f1a98e8a96
+1795702611.002061	3137026	mm_encoder	items=1 reqs=video-warmup-ebbdc4d
+1795702611.002100	3137028	mm_encoder	items=1 reqs=video-warmup-ebbdc4d
+1795702611.476753	3135546	prefix_lookup	req=video-warmup-ea0b228f8b15-bf213919 prompt=632 hit=320
+1795702611.476851	3135546	ecm_check	hit=True input_id=0 req=video-warmup-ea0b228f8b1 mm_hash=995e3b20bda2c4f1a98e8a96
+1795702611.476879	3135546	ecm_check	hit=False input_id=1 req=video-warmup-ea0b228f8b1 mm_hash=33b7c1d0399bd381958bd152
+1795702611.492488	3137026	mm_encoder	items=1 reqs=video-warmup-ea0b228
+1795702611.496052	3137028	mm_encoder	items=1 reqs=video-warmup-ea0b228
+1795702611.975016	3135546	prefix_lookup	req=video-warmup-b52110f3424f-80334e84 prompt=934 hit=576
+1795702611.975095	3135546	ecm_check	hit=True input_id=1 req=video-warmup-b52110f3424 mm_hash=33b7c1d0399bd381958bd152
+1795702611.975115	3135546	ecm_check	hit=False input_id=2 req=video-warmup-b52110f3424 mm_hash=19a6464bc086ea0a77a80b34
+1795702611.981679	3137028	mm_encoder	items=1 reqs=video-warmup-b52110f
+1795702611.981681	3137026	mm_encoder	items=1 reqs=video-warmup-b52110f
+1795702612.475660	3135546	prefix_lookup	req=video-warmup-7be55877019d-b7c818c3 prompt=1236 hit=896
+1795702612.475724	3135546	ecm_check	hit=True input_id=2 req=video-warmup-7be55877019 mm_hash=19a6464bc086ea0a77a80b34
+1795702612.475744	3135546	ecm_check	hit=False input_id=3 req=video-warmup-7be55877019 mm_hash=4eb5d9fcb2076cb5b7900c8c
+1795702612.480258	3137026	mm_encoder	items=1 reqs=video-warmup-7be5587
+1795702612.480317	3137028	mm_encoder	items=1 reqs=video-warmup-7be5587
+1795702612.975939	3135546	prefix_lookup	req=video-warmup-d18e42f904d7-8b0dbcba prompt=1538 hit=1216
+1795702612.976004	3135546	ecm_check	hit=True input_id=3 req=video-warmup-d18e42f904d mm_hash=4eb5d9fcb2076cb5b7900c8c
+1795702612.976022	3135546	ecm_check	hit=False input_id=4 req=video-warmup-d18e42f904d mm_hash=c50589f72b3bb141a63246c3
+1795702612.980471	3137026	mm_encoder	items=1 reqs=video-warmup-d18e42f
+1795702612.980520	3137028	mm_encoder	items=1 reqs=video-warmup-d18e42f
+1795702613.487076	3135546	prefix_lookup	req=video-warmup-a5a379e6ca89-9d9296ab prompt=1840 hit=1472
+1795702613.487187	3135546	ecm_check	hit=True input_id=4 req=video-warmup-a5a379e6ca8 mm_hash=c50589f72b3bb141a63246c3
+1795702613.487224	3135546	ecm_check	hit=False input_id=5 req=video-warmup-a5a379e6ca8 mm_hash=69ffdd6040209246589e33a7
+1795702613.492936	3137026	mm_encoder	items=1 reqs=video-warmup-a5a379e
+1795702613.492954	3137028	mm_encoder	items=1 reqs=video-warmup-a5a379e
+1795702613.981742	3135546	prefix_lookup	req=video-warmup-8ad8031de8e1-8799029f prompt=2142 hit=1792
+1795702613.981809	3135546	ecm_check	hit=True input_id=5 req=video-warmup-8ad8031de8e mm_hash=69ffdd6040209246589e33a7
+1795702613.981828	3135546	ecm_check	hit=False input_id=6 req=video-warmup-8ad8031de8e mm_hash=f5fdfa56872e165b23652c1b
+1795702613.986398	3137026	mm_encoder	items=1 reqs=video-warmup-8ad8031
+1795702613.986563	3137028	mm_encoder	items=1 reqs=video-warmup-8ad8031
+1795702614.482225	3135546	prefix_lookup	req=video-warmup-6d9cf48f2a21-8f905aae prompt=2444 hit=2112
+1795702614.482320	3135546	ecm_check	hit=True input_id=6 req=video-warmup-6d9cf48f2a2 mm_hash=f5fdfa56872e165b23652c1b
+1795702614.482352	3135546	ecm_check	hit=False input_id=7 req=video-warmup-6d9cf48f2a2 mm_hash=f7475e239c798a13017911a1
+1795702614.487871	3137026	mm_encoder	items=1 reqs=video-warmup-6d9cf48
+1795702614.488055	3137028	mm_encoder	items=1 reqs=video-warmup-6d9cf48
+1795702614.978844	3135546	prefix_lookup	req=video-warmup-347b97e9d96b-83bab75e prompt=2746 hit=2432
+1795702614.978909	3135546	ecm_check	hit=True input_id=7 req=video-warmup-347b97e9d96 mm_hash=f7475e239c798a13017911a1
+1795702614.978928	3135546	ecm_check	hit=False input_id=8 req=video-warmup-347b97e9d96 mm_hash=59f858e35d1e1432d03b533e
+1795702614.983650	3137028	mm_encoder	items=1 reqs=video-warmup-347b97e
+1795702614.983783	3137026	mm_encoder	items=1 reqs=video-warmup-347b97e
+1795702615.481355	3135546	prefix_lookup	req=video-warmup-e9d4f1b0a50e-8846178b prompt=3048 hit=2688
+1795702615.481430	3135546	ecm_check	hit=True input_id=8 req=video-warmup-e9d4f1b0a50 mm_hash=59f858e35d1e1432d03b533e
+1795702615.481518	3135546	ecm_check	hit=False input_id=9 req=video-warmup-e9d4f1b0a50 mm_hash=df84aa92c70b319095decf47
+1795702615.486385	3137028	mm_encoder	items=1 reqs=video-warmup-e9d4f1b
+1795702615.486448	3137026	mm_encoder	items=1 reqs=video-warmup-e9d4f1b
+1795702615.980429	3135546	prefix_lookup	req=video-warmup-581319694d98-a73defd7 prompt=3350 hit=3008
+1795702615.980497	3135546	ecm_check	hit=True input_id=9 req=video-warmup-581319694d9 mm_hash=df84aa92c70b319095decf47
+1795702615.980516	3135546	ecm_check	hit=False input_id=10 req=video-warmup-581319694d9 mm_hash=0dea9637cff85f7ec971de4c
+1795702615.985462	3137026	mm_encoder	items=1 reqs=video-warmup-5813196
+1795702615.985472	3137028	mm_encoder	items=1 reqs=video-warmup-5813196
+1795702616.481297	3135546	prefix_lookup	req=video-warmup-d31c6c09d7e1-b2cb71cd prompt=3652 hit=3328
+1795702616.481422	3135546	ecm_check	hit=True input_id=10 req=video-warmup-d31c6c09d7e mm_hash=0dea9637cff85f7ec971de4c
+1795702616.481463	3135546	ecm_check	hit=False input_id=11 req=video-warmup-d31c6c09d7e mm_hash=c4f2d1a29f99d365e77d8e99
+1795702616.487522	3137028	mm_encoder	items=1 reqs=video-warmup-d31c6c0
+1795702616.487550	3137026	mm_encoder	items=1 reqs=video-warmup-d31c6c0
+1795702616.980965	3135546	prefix_lookup	req=video-warmup-834cd698f47b-bcf48a24 prompt=3954 hit=3584
+1795702616.981059	3135546	ecm_check	hit=True input_id=11 req=video-warmup-834cd698f47 mm_hash=c4f2d1a29f99d365e77d8e99
+1795702616.981087	3135546	ecm_check	hit=False input_id=12 req=video-warmup-834cd698f47 mm_hash=b049864c6f843f29cb0f4a1b
+1795702616.986627	3137028	mm_encoder	items=1 reqs=video-warmup-834cd69
+1795702616.986641	3137026	mm_encoder	items=1 reqs=video-warmup-834cd69
+1795702617.478477	3135546	prefix_lookup	req=video-warmup-b1615c8ec278-88a6a63f prompt=4256 hit=3904
+1795702617.478545	3135546	ecm_check	hit=True input_id=12 req=video-warmup-b1615c8ec27 mm_hash=b049864c6f843f29cb0f4a1b
+1795702617.478563	3135546	ecm_check	hit=False input_id=13 req=video-warmup-b1615c8ec27 mm_hash=08ea93beb86f9523d1612beb
+1795702617.483857	3137028	mm_encoder	items=1 reqs=video-warmup-b1615c8
+1795702617.483964	3137026	mm_encoder	items=1 reqs=video-warmup-b1615c8
+1795702617.978336	3135546	prefix_lookup	req=video-warmup-3a8fc04a5cda-a26272af prompt=4558 hit=4224
+1795702617.978435	3135546	ecm_check	hit=True input_id=13 req=video-warmup-3a8fc04a5cd mm_hash=08ea93beb86f9523d1612beb
+1795702617.978466	3135546	ecm_check	hit=False input_id=14 req=video-warmup-3a8fc04a5cd mm_hash=b782fd0c28c5110eb693c214
+1795702617.984386	3137028	mm_encoder	items=1 reqs=video-warmup-3a8fc04
+1795702617.984495	3137026	mm_encoder	items=1 reqs=video-warmup-3a8fc04
+1795702618.479462	3135546	prefix_lookup	req=video-warmup-dbe14b866f53-a49a0d32 prompt=4860 hit=4544
+1795702618.479531	3135546	ecm_check	hit=True input_id=14 req=video-warmup-dbe14b866f5 mm_hash=b782fd0c28c5110eb693c214
+1795702618.479549	3135546	ecm_check	hit=False input_id=15 req=video-warmup-dbe14b866f5 mm_hash=b8bcc47962c13828c9c71719
+1795702618.485195	3137026	mm_encoder	items=1 reqs=video-warmup-dbe14b8
+1795702618.485352	3137028	mm_encoder	items=1 reqs=video-warmup-dbe14b8
+1795702618.943703	3135546	prefix_lookup	req=video-960316f27ee3-87788ff2 prompt=4876 hit=4800
+1795702618.943765	3135546	ecm_check	hit=True input_id=15 req=video-960316f27ee3-87788 mm_hash=b8bcc47962c13828c9c71719
+1795702619.016480	3135546	prefix_lookup	req=video-warmup-69ae04d6d897-a9b88b09 prompt=4887 hit=0
+1795702619.016580	3135546	ecm_check	hit=True input_id=0 req=video-warmup-69ae04d6d89 mm_hash=995e3b20bda2c4f1a98e8a96
+1795702619.016618	3135546	ecm_check	hit=True input_id=1 req=video-warmup-69ae04d6d89 mm_hash=33b7c1d0399bd381958bd152
+1795702619.016660	3135546	ecm_check	hit=True input_id=2 req=video-warmup-69ae04d6d89 mm_hash=19a6464bc086ea0a77a80b34
+1795702619.016686	3135546	ecm_check	hit=True input_id=3 req=video-warmup-69ae04d6d89 mm_hash=4eb5d9fcb2076cb5b7900c8c
+1795702619.016712	3135546	ecm_check	hit=True input_id=4 req=video-warmup-69ae04d6d89 mm_hash=c50589f72b3bb141a63246c3
+1795702619.016737	3135546	ecm_check	hit=True input_id=5 req=video-warmup-69ae04d6d89 mm_hash=69ffdd6040209246589e33a7
+1795702619.016761	3135546	ecm_check	hit=True input_id=6 req=video-warmup-69ae04d6d89 mm_hash=f5fdfa56872e165b23652c1b
+1795702619.016785	3135546	ecm_check	hit=True input_id=7 req=video-warmup-69ae04d6d89 mm_hash=f7475e239c798a13017911a1
+1795702619.016808	3135546	ecm_check	hit=True input_id=8 req=video-warmup-69ae04d6d89 mm_hash=59f858e35d1e1432d03b533e
+1795702619.016831	3135546	ecm_check	hit=True input_id=9 req=video-warmup-69ae04d6d89 mm_hash=df84aa92c70b319095decf47
+1795702619.016855	3135546	ecm_check	hit=True input_id=10 req=video-warmup-69ae04d6d89 mm_hash=0dea9637cff85f7ec971de4c
+1795702619.016878	3135546	ecm_check	hit=True input_id=11 req=video-warmup-69ae04d6d89 mm_hash=c4f2d1a29f99d365e77d8e99
+1795702619.016900	3135546	ecm_check	hit=True input_id=12 req=video-warmup-69ae04d6d89 mm_hash=b049864c6f843f29cb0f4a1b
+1795702619.016921	3135546	ecm_check	hit=True input_id=13 req=video-warmup-69ae04d6d89 mm_hash=08ea93beb86f9523d1612beb
+1795702619.016943	3135546	ecm_check	hit=True input_id=14 req=video-warmup-69ae04d6d89 mm_hash=b782fd0c28c5110eb693c214
+1795702619.016965	3135546	ecm_check	hit=True input_id=15 req=video-warmup-69ae04d6d89 mm_hash=b8bcc47962c13828c9c71719
+1795702619.390813	3135546	prefix_lookup	req=video-warmup-cee51f0d23f1-8706e678 prompt=5189 hit=4864
+1795702619.390930	3135546	ecm_check	hit=True input_id=15 req=video-warmup-cee51f0d23f mm_hash=b8bcc47962c13828c9c71719
+1795702619.390989	3135546	ecm_check	hit=False input_id=16 req=video-warmup-cee51f0d23f mm_hash=25bc786b9b479ff58830b9f0
+1795702619.404789	3137028	mm_encoder	items=1 reqs=video-warmup-cee51f0
+1795702619.405698	3137026	mm_encoder	items=1 reqs=video-warmup-cee51f0
+1795702619.528823	3135546	prefix_lookup	req=video-warmup-66dbba8df054-a03ee595 prompt=5491 hit=5184
+1795702619.528909	3135546	ecm_check	hit=False input_id=17 req=video-warmup-66dbba8df05 mm_hash=ef60fe80f1f962ff4a5c1589
+1795702619.536592	3137028	mm_encoder	items=1 reqs=video-warmup-66dbba8
+1795702619.536797	3137026	mm_encoder	items=1 reqs=video-warmup-66dbba8
+1795702619.985877	3135546	prefix_lookup	req=video-warmup-e6deb60b81fc-86869825 prompt=5793 hit=5440
+1795702619.985943	3135546	ecm_check	hit=True input_id=17 req=video-warmup-e6deb60b81f mm_hash=ef60fe80f1f962ff4a5c1589
+1795702619.985961	3135546	ecm_check	hit=False input_id=18 req=video-warmup-e6deb60b81f mm_hash=fbc2042f77967ede6e778262
+1795702619.991787	3137026	mm_encoder	items=1 reqs=video-warmup-e6deb60
+1795702619.991933	3137028	mm_encoder	items=1 reqs=video-warmup-e6deb60
+1795702620.496059	3135546	prefix_lookup	req=video-warmup-8246f6f48d5b-be2cccec prompt=6095 hit=5760
+1795702620.496130	3135546	ecm_check	hit=True input_id=18 req=video-warmup-8246f6f48d5 mm_hash=fbc2042f77967ede6e778262
+1795702620.496149	3135546	ecm_check	hit=False input_id=19 req=video-warmup-8246f6f48d5 mm_hash=d14458a347cd6b29c7420976
+1795702620.503645	3137028	mm_encoder	items=1 reqs=video-warmup-8246f6f
+1795702620.504024	3137026	mm_encoder	items=1 reqs=video-warmup-8246f6f
+1795702620.986373	3135546	prefix_lookup	req=video-warmup-1afc8693c6cc-ba0750d3 prompt=6397 hit=6080
+1795702620.986469	3135546	ecm_check	hit=True input_id=19 req=video-warmup-1afc8693c6c mm_hash=d14458a347cd6b29c7420976
+1795702620.986499	3135546	ecm_check	hit=False input_id=20 req=video-warmup-1afc8693c6c mm_hash=86d38c9e67006b248b17a46e
+1795702620.993829	3137028	mm_encoder	items=1 reqs=video-warmup-1afc869
+1795702620.995949	3137026	mm_encoder	items=1 reqs=video-warmup-1afc869
+1795702621.484995	3135546	prefix_lookup	req=video-warmup-a668918f8ecd-abcb4c3b prompt=6699 hit=6336
+1795702621.485092	3135546	ecm_check	hit=True input_id=20 req=video-warmup-a668918f8ec mm_hash=86d38c9e67006b248b17a46e
+1795702621.485134	3135546	ecm_check	hit=False input_id=21 req=video-warmup-a668918f8ec mm_hash=5bead1da38d9996ebc7c7b27
+1795702621.491749	3137028	mm_encoder	items=1 reqs=video-warmup-a668918
+1795702621.492300	3137026	mm_encoder	items=1 reqs=video-warmup-a668918
+1795702621.984801	3135546	prefix_lookup	req=video-warmup-220e842263f8-8369d152 prompt=7001 hit=6656
+1795702621.984896	3135546	ecm_check	hit=True input_id=21 req=video-warmup-220e842263f mm_hash=5bead1da38d9996ebc7c7b27
+1795702621.984925	3135546	ecm_check	hit=False input_id=22 req=video-warmup-220e842263f mm_hash=6a5882eceea1bfc1f41032e1
+1795702621.991580	3137028	mm_encoder	items=1 reqs=video-warmup-220e842
+1795702621.991855	3137026	mm_encoder	items=1 reqs=video-warmup-220e842
+1795702622.483657	3135546	prefix_lookup	req=video-warmup-573a1550aa5e-83b19ecb prompt=7303 hit=6976
+1795702622.483729	3135546	ecm_check	hit=True input_id=22 req=video-warmup-573a1550aa5 mm_hash=6a5882eceea1bfc1f41032e1
+1795702622.483748	3135546	ecm_check	hit=False input_id=23 req=video-warmup-573a1550aa5 mm_hash=66dd0322c24c6642fe2c9f14
+1795702622.489899	3137028	mm_encoder	items=1 reqs=video-warmup-573a155
+1795702622.489965	3137026	mm_encoder	items=1 reqs=video-warmup-573a155
+1795702622.988394	3135546	prefix_lookup	req=video-warmup-05bcc50b2747-ac0cdafc prompt=7605 hit=7296
+1795702622.988554	3135546	ecm_check	hit=True input_id=23 req=video-warmup-05bcc50b274 mm_hash=66dd0322c24c6642fe2c9f14
+1795702622.988607	3135546	ecm_check	hit=False input_id=24 req=video-warmup-05bcc50b274 mm_hash=36367bcad9eddff38fd2d997
+1795702622.996855	3137028	mm_encoder	items=1 reqs=video-warmup-05bcc50
+1795702622.996911	3137026	mm_encoder	items=1 reqs=video-warmup-05bcc50
+1795702623.489124	3135546	prefix_lookup	req=video-warmup-23cec24ad680-a12d6896 prompt=7907 hit=7552
+1795702623.489322	3135546	ecm_check	hit=True input_id=24 req=video-warmup-23cec24ad68 mm_hash=36367bcad9eddff38fd2d997
+1795702623.489389	3135546	ecm_check	hit=False input_id=25 req=video-warmup-23cec24ad68 mm_hash=18ae4b6f1b19b40b3624f244
+1795702623.498273	3137028	mm_encoder	items=1 reqs=video-warmup-23cec24
+1795702623.498474	3137026	mm_encoder	items=1 reqs=video-warmup-23cec24
+1795702623.987161	3135546	prefix_lookup	req=video-warmup-eddd6e2a8ca4-a108f379 prompt=8209 hit=7872
+1795702623.987289	3135546	ecm_check	hit=True input_id=25 req=video-warmup-eddd6e2a8ca mm_hash=18ae4b6f1b19b40b3624f244
+1795702623.987331	3135546	ecm_check	hit=False input_id=26 req=video-warmup-eddd6e2a8ca mm_hash=a4c9940966b3fd9d43886c53
+1795702623.994924	3137026	mm_encoder	items=1 reqs=video-warmup-eddd6e2
+1795702623.994961	3137028	mm_encoder	items=1 reqs=video-warmup-eddd6e2
+1795702624.489450	3135546	prefix_lookup	req=video-warmup-fa7d2600378b-858b5b65 prompt=8511 hit=8192
+1795702624.489569	3135546	ecm_check	hit=True input_id=26 req=video-warmup-fa7d2600378 mm_hash=a4c9940966b3fd9d43886c53
+1795702624.489604	3135546	ecm_check	hit=False input_id=27 req=video-warmup-fa7d2600378 mm_hash=9702996d62a1b1a8997c21cf
+1795702624.497225	3137028	mm_encoder	items=1 reqs=video-warmup-fa7d260
+1795702624.497308	3137026	mm_encoder	items=1 reqs=video-warmup-fa7d260
+1795702624.995810	3135546	prefix_lookup	req=video-warmup-21ae1f23a9b8-9a01d256 prompt=8813 hit=8448
+1795702624.995999	3135546	ecm_check	hit=True input_id=27 req=video-warmup-21ae1f23a9b mm_hash=9702996d62a1b1a8997c21cf
+1795702624.996063	3135546	ecm_check	hit=False input_id=28 req=video-warmup-21ae1f23a9b mm_hash=4c305cd6483d642ac77ec1e0
+1795702625.005451	3137026	mm_encoder	items=1 reqs=video-warmup-21ae1f2
+1795702625.005482	3137028	mm_encoder	items=1 reqs=video-warmup-21ae1f2
+1795702625.486655	3135546	prefix_lookup	req=video-warmup-e83d976fa010-a22b72f0 prompt=9115 hit=8768
+1795702625.486779	3135546	ecm_check	hit=True input_id=28 req=video-warmup-e83d976fa01 mm_hash=4c305cd6483d642ac77ec1e0
+1795702625.486818	3135546	ecm_check	hit=False input_id=29 req=video-warmup-e83d976fa01 mm_hash=c86b4e6c2e36196bfa9d744f
+1795702625.494639	3137028	mm_encoder	items=1 reqs=video-warmup-e83d976
+1795702625.494889	3137026	mm_encoder	items=1 reqs=video-warmup-e83d976
+1795702625.987023	3135546	prefix_lookup	req=video-warmup-3b38b4524eaf-90e963c6 prompt=9417 hit=9088
+1795702625.987092	3135546	ecm_check	hit=True input_id=29 req=video-warmup-3b38b4524ea mm_hash=c86b4e6c2e36196bfa9d744f
+1795702625.987110	3135546	ecm_check	hit=False input_id=30 req=video-warmup-3b38b4524ea mm_hash=46b57e8dd680cb943855b8e9
+1795702625.994131	3137026	mm_encoder	items=1 reqs=video-warmup-3b38b45
+1795702625.995458	3137028	mm_encoder	items=1 reqs=video-warmup-3b38b45
+1795702626.493705	3135546	prefix_lookup	req=video-warmup-93f3c3a5771c-b5b6dd15 prompt=9719 hit=9408
+1795702626.493777	3135546	ecm_check	hit=True input_id=30 req=video-warmup-93f3c3a5771 mm_hash=46b57e8dd680cb943855b8e9
+1795702626.493796	3135546	ecm_check	hit=False input_id=31 req=video-warmup-93f3c3a5771 mm_hash=73f1d5dd2f1a2a8c471d7f36
+1795702626.500760	3137026	mm_encoder	items=1 reqs=video-warmup-93f3c3a
+1795702626.502078	3137028	mm_encoder	items=1 reqs=video-warmup-93f3c3a
+1795702626.952811	3135546	prefix_lookup	req=video-cd3c6c4dca08-963c07d6 prompt=9731 hit=9664
+1795702626.953002	3135546	ecm_check	hit=True input_id=31 req=video-cd3c6c4dca08-963c0 mm_hash=73f1d5dd2f1a2a8c471d7f36
+1795702627.097196	3135546	prefix_lookup	req=video-warmup-60659eb65b40-a6d824e5 prompt=9715 hit=0
+1795702627.097383	3135546	ecm_check	hit=True input_id=0 req=video-warmup-60659eb65b4 mm_hash=995e3b20bda2c4f1a98e8a96
+1795702627.097462	3135546	ecm_check	hit=True input_id=1 req=video-warmup-60659eb65b4 mm_hash=33b7c1d0399bd381958bd152
+1795702627.097522	3135546	ecm_check	hit=True input_id=2 req=video-warmup-60659eb65b4 mm_hash=19a6464bc086ea0a77a80b34
+1795702627.097578	3135546	ecm_check	hit=True input_id=3 req=video-warmup-60659eb65b4 mm_hash=4eb5d9fcb2076cb5b7900c8c
+1795702627.097630	3135546	ecm_check	hit=True input_id=4 req=video-warmup-60659eb65b4 mm_hash=c50589f72b3bb141a63246c3
+1795702627.097683	3135546	ecm_check	hit=True input_id=5 req=video-warmup-60659eb65b4 mm_hash=69ffdd6040209246589e33a7
+1795702627.097731	3135546	ecm_check	hit=True input_id=6 req=video-warmup-60659eb65b4 mm_hash=f5fdfa56872e165b23652c1b
+1795702627.097779	3135546	ecm_check	hit=True input_id=7 req=video-warmup-60659eb65b4 mm_hash=f7475e239c798a13017911a1
+1795702627.097822	3135546	ecm_check	hit=True input_id=8 req=video-warmup-60659eb65b4 mm_hash=59f858e35d1e1432d03b533e
+1795702627.097867	3135546	ecm_check	hit=True input_id=9 req=video-warmup-60659eb65b4 mm_hash=df84aa92c70b319095decf47
+1795702627.097914	3135546	ecm_check	hit=True input_id=10 req=video-warmup-60659eb65b4 mm_hash=0dea9637cff85f7ec971de4c
+1795702627.097959	3135546	ecm_check	hit=True input_id=11 req=video-warmup-60659eb65b4 mm_hash=c4f2d1a29f99d365e77d8e99
+1795702627.098005	3135546	ecm_check	hit=True input_id=12 req=video-warmup-60659eb65b4 mm_hash=b049864c6f843f29cb0f4a1b
+1795702627.098052	3135546	ecm_check	hit=True input_id=13 req=video-warmup-60659eb65b4 mm_hash=08ea93beb86f9523d1612beb
+1795702627.098099	3135546	ecm_check	hit=True input_id=14 req=video-warmup-60659eb65b4 mm_hash=b782fd0c28c5110eb693c214
+1795702627.098145	3135546	ecm_check	hit=True input_id=15 req=video-warmup-60659eb65b4 mm_hash=b8bcc47962c13828c9c71719
+1795702627.098191	3135546	ecm_check	hit=True input_id=16 req=video-warmup-60659eb65b4 mm_hash=25bc786b9b479ff58830b9f0
+1795702627.098238	3135546	ecm_check	hit=True input_id=17 req=video-warmup-60659eb65b4 mm_hash=ef60fe80f1f962ff4a5c1589
+1795702627.098285	3135546	ecm_check	hit=True input_id=18 req=video-warmup-60659eb65b4 mm_hash=fbc2042f77967ede6e778262
+1795702627.098330	3135546	ecm_check	hit=True input_id=19 req=video-warmup-60659eb65b4 mm_hash=d14458a347cd6b29c7420976
+1795702627.098376	3135546	ecm_check	hit=True input_id=20 req=video-warmup-60659eb65b4 mm_hash=86d38c9e67006b248b17a46e
+1795702627.098423	3135546	ecm_check	hit=True input_id=21 req=video-warmup-60659eb65b4 mm_hash=5bead1da38d9996ebc7c7b27
+1795702627.098468	3135546	ecm_check	hit=True input_id=22 req=video-warmup-60659eb65b4 mm_hash=6a5882eceea1bfc1f41032e1
+1795702627.098532	3135546	ecm_check	hit=True input_id=23 req=video-warmup-60659eb65b4 mm_hash=66dd0322c24c6642fe2c9f14
+1795702627.098577	3135546	ecm_check	hit=True input_id=24 req=video-warmup-60659eb65b4 mm_hash=36367bcad9eddff38fd2d997
+1795702627.098621	3135546	ecm_check	hit=True input_id=25 req=video-warmup-60659eb65b4 mm_hash=18ae4b6f1b19b40b3624f244
+1795702627.098667	3135546	ecm_check	hit=True input_id=26 req=video-warmup-60659eb65b4 mm_hash=a4c9940966b3fd9d43886c53
+1795702627.098711	3135546	ecm_check	hit=True input_id=27 req=video-warmup-60659eb65b4 mm_hash=9702996d62a1b1a8997c21cf
+1795702627.098756	3135546	ecm_check	hit=True input_id=28 req=video-warmup-60659eb65b4 mm_hash=4c305cd6483d642ac77ec1e0
+1795702627.098802	3135546	ecm_check	hit=True input_id=29 req=video-warmup-60659eb65b4 mm_hash=c86b4e6c2e36196bfa9d744f
+1795702627.098848	3135546	ecm_check	hit=True input_id=30 req=video-warmup-60659eb65b4 mm_hash=46b57e8dd680cb943855b8e9
+1795702627.098892	3135546	ecm_check	hit=True input_id=31 req=video-warmup-60659eb65b4 mm_hash=73f1d5dd2f1a2a8c471d7f36
+1795702627.842888	3135546	prefix_lookup	req=video-warmup-b0e067c10618-92f25fd2 prompt=10319 hit=9664
+1795702627.843023	3135546	ecm_check	hit=True input_id=31 req=video-warmup-b0e067c1061 mm_hash=73f1d5dd2f1a2a8c471d7f36
+1795702627.843063	3135546	ecm_check	hit=False input_id=32 req=video-warmup-b0e067c1061 mm_hash=28126122a2583e8c1bcf58c9
+1795702627.843105	3135546	ecm_check	hit=False input_id=33 req=video-warmup-b0e067c1061 mm_hash=7cacaf9fbe4d7143483a5df5
+1795702627.862341	3137028	mm_encoder	items=2 reqs=video-warmup-b0e067c
+1795702627.863089	3137026	mm_encoder	items=2 reqs=video-warmup-b0e067c
+1795702628.046128	3135546	prefix_lookup	req=video-warmup-e43dca054df0-be259c9a prompt=10621 hit=10304
+1795702628.046196	3135546	ecm_check	hit=True input_id=33 req=video-warmup-e43dca054df mm_hash=7cacaf9fbe4d7143483a5df5
+1795702628.046213	3135546	ecm_check	hit=False input_id=34 req=video-warmup-e43dca054df mm_hash=8f707e033774df63e95eb51b
+1795702628.056719	3137028	mm_encoder	items=1 reqs=video-warmup-e43dca0
+1795702628.058340	3137026	mm_encoder	items=1 reqs=video-warmup-e43dca0
+1795702628.486560	3135546	prefix_lookup	req=video-warmup-bcd0e1cb7467-880a5f76 prompt=10923 hit=10560
+1795702628.486658	3135546	ecm_check	hit=True input_id=34 req=video-warmup-bcd0e1cb746 mm_hash=8f707e033774df63e95eb51b
+1795702628.486686	3135546	ecm_check	hit=False input_id=35 req=video-warmup-bcd0e1cb746 mm_hash=453b9ba4591ced611a649235
+1795702628.494834	3137028	mm_encoder	items=1 reqs=video-warmup-bcd0e1c
+1795702628.494851	3137026	mm_encoder	items=1 reqs=video-warmup-bcd0e1c
+1795702628.991532	3135546	prefix_lookup	req=video-warmup-29cc8df205a2-8c81f648 prompt=11225 hit=10880
+1795702628.991600	3135546	ecm_check	hit=True input_id=35 req=video-warmup-29cc8df205a mm_hash=453b9ba4591ced611a649235
+1795702628.991619	3135546	ecm_check	hit=False input_id=36 req=video-warmup-29cc8df205a mm_hash=8cc2ba1502b74417416ca12b
+1795702628.999462	3137026	mm_encoder	items=1 reqs=video-warmup-29cc8df
+1795702628.999494	3137028	mm_encoder	items=1 reqs=video-warmup-29cc8df
+1795702629.495376	3135546	prefix_lookup	req=video-warmup-a16f7fbceb80-9ec3a0fa prompt=11527 hit=11200
+1795702629.495446	3135546	ecm_check	hit=True input_id=36 req=video-warmup-a16f7fbceb8 mm_hash=8cc2ba1502b74417416ca12b
+1795702629.495464	3135546	ecm_check	hit=False input_id=37 req=video-warmup-a16f7fbceb8 mm_hash=2c9802207914bd4970a0eb0c
+1795702629.502847	3137026	mm_encoder	items=1 reqs=video-warmup-a16f7fb
+1795702629.504522	3137028	mm_encoder	items=1 reqs=video-warmup-a16f7fb
+1795702629.988423	3135546	prefix_lookup	req=video-warmup-2957068d94e7-aca4d804 prompt=11829 hit=11520
+1795702629.988491	3135546	ecm_check	hit=True input_id=37 req=video-warmup-2957068d94e mm_hash=2c9802207914bd4970a0eb0c
+1795702629.988509	3135546	ecm_check	hit=False input_id=38 req=video-warmup-2957068d94e mm_hash=9039425c576605cb5c0ebc4c
+1795702629.996861	3137026	mm_encoder	items=1 reqs=video-warmup-2957068
+1795702629.998243	3137028	mm_encoder	items=1 reqs=video-warmup-2957068
+1795702630.485409	3135546	prefix_lookup	req=video-warmup-08547e65c4ad-85cba365 prompt=12131 hit=11776
+1795702630.485475	3135546	ecm_check	hit=True input_id=38 req=video-warmup-08547e65c4a mm_hash=9039425c576605cb5c0ebc4c
+1795702630.485492	3135546	ecm_check	hit=False input_id=39 req=video-warmup-08547e65c4a mm_hash=b893679ffeb4fc7c0273712e
+1795702630.494454	3137028	mm_encoder	items=1 reqs=video-warmup-08547e6
+1795702630.494517	3137026	mm_encoder	items=1 reqs=video-warmup-08547e6
+1795702630.995799	3135546	prefix_lookup	req=video-warmup-565dd9193188-a8f9e93c prompt=12433 hit=12096
+1795702630.995866	3135546	ecm_check	hit=True input_id=39 req=video-warmup-565dd919318 mm_hash=b893679ffeb4fc7c0273712e
+1795702630.995886	3135546	ecm_check	hit=False input_id=40 req=video-warmup-565dd919318 mm_hash=c50dc70d91c27ddc177a8570
+1795702631.003721	3137028	mm_encoder	items=1 reqs=video-warmup-565dd91
+1795702631.003939	3137026	mm_encoder	items=1 reqs=video-warmup-565dd91
+1795702631.495236	3135546	prefix_lookup	req=video-warmup-e62940f20a73-89afa7b8 prompt=12735 hit=12416
+1795702631.495333	3135546	ecm_check	hit=True input_id=40 req=video-warmup-e62940f20a7 mm_hash=c50dc70d91c27ddc177a8570
+1795702631.495363	3135546	ecm_check	hit=False input_id=41 req=video-warmup-e62940f20a7 mm_hash=55011049254a204e688e5245
+1795702631.503975	3137028	mm_encoder	items=1 reqs=video-warmup-e62940f
+1795702631.504364	3137026	mm_encoder	items=1 reqs=video-warmup-e62940f
+1795702631.986203	3135546	prefix_lookup	req=video-warmup-b04e1573f5f5-94f45300 prompt=13037 hit=12672
+1795702631.986268	3135546	ecm_check	hit=True input_id=41 req=video-warmup-b04e1573f5f mm_hash=55011049254a204e688e5245
+1795702631.986286	3135546	ecm_check	hit=False input_id=42 req=video-warmup-b04e1573f5f mm_hash=c71f131ff343a03467f8dbd1
+1795702631.995316	3137026	mm_encoder	items=1 reqs=video-warmup-b04e157
+1795702631.995443	3137028	mm_encoder	items=1 reqs=video-warmup-b04e157
+1795702632.487576	3135546	prefix_lookup	req=video-warmup-7e8795e437c2-9578be05 prompt=13339 hit=12992
+1795702632.487697	3135546	ecm_check	hit=True input_id=42 req=video-warmup-7e8795e437c mm_hash=c71f131ff343a03467f8dbd1
+1795702632.487735	3135546	ecm_check	hit=False input_id=43 req=video-warmup-7e8795e437c mm_hash=13d423b536b18424b55ca8e0
+1795702632.497029	3137028	mm_encoder	items=1 reqs=video-warmup-7e8795e
+1795702632.497167	3137026	mm_encoder	items=1 reqs=video-warmup-7e8795e
+1795702632.985549	3135546	prefix_lookup	req=video-warmup-000f2c6d743c-8b772eb8 prompt=13641 hit=13312
+1795702632.985670	3135546	ecm_check	hit=True input_id=43 req=video-warmup-000f2c6d743 mm_hash=13d423b536b18424b55ca8e0
+1795702632.985710	3135546	ecm_check	hit=False input_id=44 req=video-warmup-000f2c6d743 mm_hash=c6bd27996a6d150d42de32b4
+1795702632.995407	3137026	mm_encoder	items=1 reqs=video-warmup-000f2c6
+1795702632.995460	3137028	mm_encoder	items=1 reqs=video-warmup-000f2c6
+1795702633.483656	3135546	prefix_lookup	req=video-warmup-69f472101a1c-8fbe0e87 prompt=13943 hit=13632
+1795702633.483723	3135546	ecm_check	hit=True input_id=44 req=video-warmup-69f472101a1 mm_hash=c6bd27996a6d150d42de32b4
+1795702633.483742	3135546	ecm_check	hit=False input_id=45 req=video-warmup-69f472101a1 mm_hash=ef5b976dfd49255df396a61b
+1795702633.491863	3137026	mm_encoder	items=1 reqs=video-warmup-69f4721
+1795702633.491930	3137028	mm_encoder	items=1 reqs=video-warmup-69f4721
+1795702633.996130	3135546	prefix_lookup	req=video-warmup-b1711bbec165-87421fea prompt=14245 hit=13888
+1795702633.996201	3135546	ecm_check	hit=True input_id=45 req=video-warmup-b1711bbec16 mm_hash=ef5b976dfd49255df396a61b
+1795702633.996219	3135546	ecm_check	hit=False input_id=46 req=video-warmup-b1711bbec16 mm_hash=66916ba53eb89ca6cd6cedf3
+1795702634.004399	3137026	mm_encoder	items=1 reqs=video-warmup-b1711bb
+1795702634.004570	3137028	mm_encoder	items=1 reqs=video-warmup-b1711bb
+1795702634.493104	3135546	prefix_lookup	req=video-warmup-f8a9d74ab81e-bb7ddf74 prompt=14547 hit=14208
+1795702634.493209	3135546	ecm_check	hit=True input_id=46 req=video-warmup-f8a9d74ab81 mm_hash=66916ba53eb89ca6cd6cedf3
+1795702634.493340	3135546	ecm_check	hit=False input_id=47 req=video-warmup-f8a9d74ab81 mm_hash=d3a782a099b85a83e99a09fa
+1795702634.505155	3137028	mm_encoder	items=1 reqs=video-warmup-f8a9d74
+1795702634.505188	3137026	mm_encoder	items=1 reqs=video-warmup-f8a9d74
+1795702634.958240	3135546	prefix_lookup	req=video-ca1131c5000f-b671a642 prompt=14559 hit=14528
+1795702634.958334	3135546	ecm_check	hit=True input_id=47 req=video-ca1131c5000f-b671a mm_hash=d3a782a099b85a83e99a09fa

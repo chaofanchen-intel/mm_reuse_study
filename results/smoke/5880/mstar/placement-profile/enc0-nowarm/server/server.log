@@ -1,0 +1,428 @@
+
+  ✓ mstar serving 'qwen3_omni' on http://localhost:18512
+
+  Python SDK:
+    from mstar import MStarClient
+    client = MStarClient("http://localhost:18512")
+    print(client.chat("Hello!").text)
+    client.chat("Say hi", output_modalities=("text","audio")).save_audio("out.wav")
+    client.tts("Hello there", voice="Ethan").to_wav("out.wav")
+
+  OpenAI-compatible:
+    from openai import OpenAI
+    oai = OpenAI(base_url="http://localhost:18512/v1", api_key="none")
+    oai.chat.completions.create(model="qwen3_omni", messages=[{"role":"user","content":"hi"}])
+    oai.audio.speech.create(model="qwen3_omni", input="hi", voice="Ethan")
+
+[transformers] Unrecognized keys in `rope_parameters` for 'rope_type'='default': {'interleaved', 'mrope_section'}
+[transformers] Unrecognized keys in `rope_parameters` for 'rope_type'='default': {'interleaved', 'mrope_section'}
+2026-11-28 19:13:31,163 INFO [api_server] mstar.api_server.entrypoint: API server: result threads not pinned (not pinned: the deepest idle state is C1_ACPI at 1 µs on CPUs 0-255, under the 100 µs from which pinning could pay (step_thread_core always pins anyway))
+2026-11-28 19:13:31,166 INFO [api_server] mstar.communication.tensors: SHM: swept 0 entries of dead deployment namespace f231eeaa51ff
+2026-11-28 19:13:31,167 INFO [api_server] mstar.communication.arena: ARENA: /dev/shm has 451222 MiB free for 4 arenas and their spill files; each arena grows to 32 segments of 256 MiB (MSTAR_SHM_ARENA_MAX_SEGMENTS and _SEGMENT_MB override)
+2026-11-28 19:13:31,167 INFO [api_server] mstar.communication.communicator: control mesh transport: rust 0.1.1 from /home/chaofan/workspaces/mm_reuse_study/envs/mstar/lib/python3.12/site-packages/mstar_rust/__init__.py
+2026-11-28 19:13:31,281 INFO [api_server] mstar.communication.arena: ARENA: grew to 1 segments (256 MiB total, 256 MiB free, largest free block 256 MiB, 0 MiB pinned)
+2026-11-28 19:13:31,281 INFO [api_server] mstar.communication.communicator: control mesh transport: rust 0.1.1 from /home/chaofan/workspaces/mm_reuse_study/envs/mstar/lib/python3.12/site-packages/mstar_rust/__init__.py
+2026-11-28 19:13:31,289 INFO [api_server] mstar.api_server.entrypoint: Conductor process started (pid=1025931, model=qwen3_omni)
+2026-11-28 19:13:31,289 INFO [api_server] mstar.api_server.entrypoint: Waiting for workers to finish setup (loading weights, capturing accelerator graphs)...
+2026-11-28 19:13:31,316 INFO [api_server] mstar.engine.resources.spec: Resource specs after YAML overrides: [KVSpec(resource_key='thinker_kv', nodes={'Thinker'}, config=PagedKVConfig(num_layers=48, num_kv_heads=4, head_dim=128, num_qo_heads=32, max_seq_len=65536, max_num_pages=1024, page_size=None, layout=<KVLayout.NHD: 'NHD'>, cpu_offload_pages=0, prefix_cache_salt='', prefix_cache=True, prefix_cache_tp=True, context_parallel=False, kv_lora_rank=None, qk_rope_head_dim=None), leader=None), AttentionSpec(resource_key='thinker_attn', nodes={'Thinker'}, config=AttentionConfig(kv_cache='thinker_kv', backend=<AttnBackend.AUTO: 'auto'>, flashinfer_backend='auto', sm_scale=None, splits=(), decode_tensor_cores=True, decode_fmha=False, sliding_window=None, layers=None)), PositionSpec(resource_key='thinker_pos', nodes={'Thinker'}, config=PositionConfig(kv_cache='thinker_kv', backend=<PosBackend.ROPE: 'rope'>, scheme=<PosScheme.SEQUENTIAL: 'sequential'>, block_step=1, rotary_dim=None, interleave=False, rope_scale=1.0, rope_theta=10000.0, rope_dtype=None, rope_table_dtype=None, low_freq_factor=None, high_freq_factor=None, old_context_len=None, longrope=None)), KVSpec(resource_key='talker_kv', nodes={'Talker'}, config=PagedKVConfig(num_layers=20, num_kv_heads=2, head_dim=128, num_qo_heads=16, max_seq_len=65536, max_num_pages=2048, page_size=None, layout=<KVLayout.NHD: 'NHD'>, cpu_offload_pages=0, prefix_cache_salt='', prefix_cache=True, prefix_cache_tp=False, context_parallel=False, kv_lora_rank=None, qk_rope_head_dim=None), leader=None), AttentionSpec(resource_key='talker_attn', nodes={'Talker'}, config=AttentionConfig(kv_cache='talker_kv', backend=<AttnBackend.AUTO: 'auto'>, flashinfer_backend='auto', sm_scale=None, splits=(), decode_tensor_cores=True, decode_fmha=False, sliding_window=None, layers=None)), PositionSpec(resource_key='talker_pos', nodes={'Talker'}, config=PositionConfig(kv_cache='talker_kv', backend=<PosBackend.ROPE: 'rope'>, scheme=<PosScheme.SEQUENTIAL: 'sequential'>, block_step=1, rotary_dim=None, interleave=False, rope_scale=1.0, rope_theta=1000000.0, rope_dtype=None, rope_table_dtype=None, low_freq_factor=1.0, high_freq_factor=1.0, old_context_len=8192, longrope=None)), RaggedAttentionSpec(resource_key='audio_attn', nodes={'audio_encoder'}, config=RaggedAttentionConfig(num_qo_heads=20, num_kv_heads=20, head_dim=64, sm_scale=0.125, max_segments_per_request=40, max_segments_per_step=None, max_tokens_per_request=None, backend=<RaggedAttnBackend.AUTO: 'auto'>, flashinfer_backend=None, compile_op=False, dtype=None, workspace_mb=256), labels=frozenset({'main'}), sp_exchange='none'), RaggedAttentionSpec(resource_key='vision_attn', nodes={'vision_encoder'}, config=RaggedAttentionConfig(num_qo_heads=16, num_kv_heads=16, head_dim=72, sm_scale=0.11785113019775792, max_segments_per_request=1, max_segments_per_step=32, max_tokens_per_request=None, backend=<RaggedAttnBackend.AUTO: 'auto'>, flashinfer_backend=None, compile_op=False, dtype=None, workspace_mb=128), labels=frozenset({'main'}), sp_exchange='none'), SamplerSpec(resource_key='thinker_sampler', nodes={'Thinker'}, vocab_size=152064, enable_repetition_penalty=True, enable_min_p=False, loopback_state={}, max_repetition_window=0, min_tokens_stop_ids=(), enable_top_p_first=False, enable_logprobs=False, enable_processed_logprobs=False, greedy_capture=None), SamplerSpec(resource_key='talker_sampler', nodes={'Talker'}, vocab_size=3072, enable_repetition_penalty=True, enable_min_p=False, loopback_state={}, max_repetition_window=0, min_tokens_stop_ids=(), enable_top_p_first=False, enable_logprobs=False, enable_processed_logprobs=False, greedy_capture=None), SamplerSpec(resource_key='code_sampler', nodes={'Talker'}, vocab_size=2048, enable_repetition_penalty=False, enable_min_p=False, loopback_state={}, max_repetition_window=0, min_tokens_stop_ids=(), enable_top_p_first=False, enable_logprobs=False, enable_processed_logprobs=False, greedy_capture=None), SeqShardSpec(resource_key='thinker_shard', nodes={'Thinker'}, labels=('main',), axis=0, walks=None, min_tokens=0, exchange='none', exchanges=True)]
+2026-11-28 19:13:33,888 INFO [conductor] mstar.api_server.entrypoint: yaml configs/qwen3omni_mstar_thinker_tp2_bigstep.yaml has no model_kwargs section; using model defaults
+[transformers] Unrecognized keys in `rope_parameters` for 'rope_type'='default': {'mrope_section', 'interleaved'}
+[transformers] Unrecognized keys in `rope_parameters` for 'rope_type'='default': {'mrope_section', 'interleaved'}
+2026-11-28 19:13:36,109 INFO [conductor] mstar.conductor.conductor: Detected worker device type: cuda
+2026-11-28 19:13:36,109 INFO [conductor] mstar.conductor.conductor: Compile caches: Inductor /home/chaofan/.cache/mstar/torchinductor, Triton /home/chaofan/.cache/mstar/torchinductor/triton
+2026-11-28 19:13:36,110 INFO [conductor] mstar.engine.resources.spec: Resource specs after YAML overrides: [KVSpec(resource_key='thinker_kv', nodes={'Thinker'}, config=PagedKVConfig(num_layers=48, num_kv_heads=4, head_dim=128, num_qo_heads=32, max_seq_len=65536, max_num_pages=1024, page_size=None, layout=<KVLayout.NHD: 'NHD'>, cpu_offload_pages=0, prefix_cache_salt='', prefix_cache=True, prefix_cache_tp=True, context_parallel=False, kv_lora_rank=None, qk_rope_head_dim=None), leader=None), AttentionSpec(resource_key='thinker_attn', nodes={'Thinker'}, config=AttentionConfig(kv_cache='thinker_kv', backend=<AttnBackend.AUTO: 'auto'>, flashinfer_backend='auto', sm_scale=None, splits=(), decode_tensor_cores=True, decode_fmha=False, sliding_window=None, layers=None)), PositionSpec(resource_key='thinker_pos', nodes={'Thinker'}, config=PositionConfig(kv_cache='thinker_kv', backend=<PosBackend.ROPE: 'rope'>, scheme=<PosScheme.SEQUENTIAL: 'sequential'>, block_step=1, rotary_dim=None, interleave=False, rope_scale=1.0, rope_theta=10000.0, rope_dtype=None, rope_table_dtype=None, low_freq_factor=None, high_freq_factor=None, old_context_len=None, longrope=None)), KVSpec(resource_key='talker_kv', nodes={'Talker'}, config=PagedKVConfig(num_layers=20, num_kv_heads=2, head_dim=128, num_qo_heads=16, max_seq_len=65536, max_num_pages=2048, page_size=None, layout=<KVLayout.NHD: 'NHD'>, cpu_offload_pages=0, prefix_cache_salt='', prefix_cache=True, prefix_cache_tp=False, context_parallel=False, kv_lora_rank=None, qk_rope_head_dim=None), leader=None), AttentionSpec(resource_key='talker_attn', nodes={'Talker'}, config=AttentionConfig(kv_cache='talker_kv', backend=<AttnBackend.AUTO: 'auto'>, flashinfer_backend='auto', sm_scale=None, splits=(), decode_tensor_cores=True, decode_fmha=False, sliding_window=None, layers=None)), PositionSpec(resource_key='talker_pos', nodes={'Talker'}, config=PositionConfig(kv_cache='talker_kv', backend=<PosBackend.ROPE: 'rope'>, scheme=<PosScheme.SEQUENTIAL: 'sequential'>, block_step=1, rotary_dim=None, interleave=False, rope_scale=1.0, rope_theta=1000000.0, rope_dtype=None, rope_table_dtype=None, low_freq_factor=1.0, high_freq_factor=1.0, old_context_len=8192, longrope=None)), RaggedAttentionSpec(resource_key='audio_attn', nodes={'audio_encoder'}, config=RaggedAttentionConfig(num_qo_heads=20, num_kv_heads=20, head_dim=64, sm_scale=0.125, max_segments_per_request=40, max_segments_per_step=None, max_tokens_per_request=None, backend=<RaggedAttnBackend.AUTO: 'auto'>, flashinfer_backend=None, compile_op=False, dtype=None, workspace_mb=256), labels=frozenset({'main'}), sp_exchange='none'), RaggedAttentionSpec(resource_key='vision_attn', nodes={'vision_encoder'}, config=RaggedAttentionConfig(num_qo_heads=16, num_kv_heads=16, head_dim=72, sm_scale=0.11785113019775792, max_segments_per_request=1, max_segments_per_step=32, max_tokens_per_request=None, backend=<RaggedAttnBackend.AUTO: 'auto'>, flashinfer_backend=None, compile_op=False, dtype=None, workspace_mb=128), labels=frozenset({'main'}), sp_exchange='none'), SamplerSpec(resource_key='thinker_sampler', nodes={'Thinker'}, vocab_size=152064, enable_repetition_penalty=True, enable_min_p=False, loopback_state={}, max_repetition_window=0, min_tokens_stop_ids=(), enable_top_p_first=False, enable_logprobs=False, enable_processed_logprobs=False, greedy_capture=None), SamplerSpec(resource_key='talker_sampler', nodes={'Talker'}, vocab_size=3072, enable_repetition_penalty=True, enable_min_p=False, loopback_state={}, max_repetition_window=0, min_tokens_stop_ids=(), enable_top_p_first=False, enable_logprobs=False, enable_processed_logprobs=False, greedy_capture=None), SamplerSpec(resource_key='code_sampler', nodes={'Talker'}, vocab_size=2048, enable_repetition_penalty=False, enable_min_p=False, loopback_state={}, max_repetition_window=0, min_tokens_stop_ids=(), enable_top_p_first=False, enable_logprobs=False, enable_processed_logprobs=False, greedy_capture=None), SeqShardSpec(resource_key='thinker_shard', nodes={'Thinker'}, labels=('main',), axis=0, walks=None, min_tokens=0, exchange='none', exchanges=True)]
+2026-11-28 19:13:50,352 INFO [conductor] mstar.communication.communicator: control mesh transport: rust 0.1.1 from /home/chaofan/workspaces/mm_reuse_study/envs/mstar/lib/python3.12/site-packages/mstar_rust/__init__.py
+2026-11-28 19:13:50,352 INFO [conductor] mstar.conductor.conductor: Conductor waiting for 3 worker(s) to finish setup
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 1 peer ranks. Expected number of connected peer ranks is : 1
+[Gloo] Rank 1 is connected to 1 peer ranks. Expected number of connected peer ranks is : 1
+2026-11-28 19:13:51,284 INFO [worker_2] mstar.communication.communicator: control mesh transport: rust 0.1.1 from /home/chaofan/workspaces/mm_reuse_study/envs/mstar/lib/python3.12/site-packages/mstar_rust/__init__.py
+2026-11-28 19:13:51,300 INFO [worker_1] mstar.communication.communicator: control mesh transport: rust 0.1.1 from /home/chaofan/workspaces/mm_reuse_study/envs/mstar/lib/python3.12/site-packages/mstar_rust/__init__.py
+2026-11-28 19:13:51,301 INFO [worker_0] mstar.communication.communicator: control mesh transport: rust 0.1.1 from /home/chaofan/workspaces/mm_reuse_study/envs/mstar/lib/python3.12/site-packages/mstar_rust/__init__.py
+2026-11-28 19:13:51,450 INFO [worker_2] mstar.communication.arena: ARENA: grew to 1 segments (256 MiB total, 256 MiB free, largest free block 256 MiB, 256 MiB pinned)
+2026-11-28 19:13:51,458 INFO [worker_2] mstar.engine.resources.spec: Resource specs after YAML overrides: [KVSpec(resource_key='thinker_kv', nodes={'Thinker'}, config=PagedKVConfig(num_layers=48, num_kv_heads=4, head_dim=128, num_qo_heads=32, max_seq_len=65536, max_num_pages=1024, page_size=None, layout=<KVLayout.NHD: 'NHD'>, cpu_offload_pages=0, prefix_cache_salt='', prefix_cache=True, prefix_cache_tp=True, context_parallel=False, kv_lora_rank=None, qk_rope_head_dim=None), leader=None), AttentionSpec(resource_key='thinker_attn', nodes={'Thinker'}, config=AttentionConfig(kv_cache='thinker_kv', backend=<AttnBackend.AUTO: 'auto'>, flashinfer_backend='auto', sm_scale=None, splits=(), decode_tensor_cores=True, decode_fmha=False, sliding_window=None, layers=None)), PositionSpec(resource_key='thinker_pos', nodes={'Thinker'}, config=PositionConfig(kv_cache='thinker_kv', backend=<PosBackend.ROPE: 'rope'>, scheme=<PosScheme.SEQUENTIAL: 'sequential'>, block_step=1, rotary_dim=None, interleave=False, rope_scale=1.0, rope_theta=10000.0, rope_dtype=None, rope_table_dtype=None, low_freq_factor=None, high_freq_factor=None, old_context_len=None, longrope=None)), KVSpec(resource_key='talker_kv', nodes={'Talker'}, config=PagedKVConfig(num_layers=20, num_kv_heads=2, head_dim=128, num_qo_heads=16, max_seq_len=65536, max_num_pages=2048, page_size=None, layout=<KVLayout.NHD: 'NHD'>, cpu_offload_pages=0, prefix_cache_salt='', prefix_cache=True, prefix_cache_tp=False, context_parallel=False, kv_lora_rank=None, qk_rope_head_dim=None), leader=None), AttentionSpec(resource_key='talker_attn', nodes={'Talker'}, config=AttentionConfig(kv_cache='talker_kv', backend=<AttnBackend.AUTO: 'auto'>, flashinfer_backend='auto', sm_scale=None, splits=(), decode_tensor_cores=True, decode_fmha=False, sliding_window=None, layers=None)), PositionSpec(resource_key='talker_pos', nodes={'Talker'}, config=PositionConfig(kv_cache='talker_kv', backend=<PosBackend.ROPE: 'rope'>, scheme=<PosScheme.SEQUENTIAL: 'sequential'>, block_step=1, rotary_dim=None, interleave=False, rope_scale=1.0, rope_theta=1000000.0, rope_dtype=None, rope_table_dtype=None, low_freq_factor=1.0, high_freq_factor=1.0, old_context_len=8192, longrope=None)), RaggedAttentionSpec(resource_key='audio_attn', nodes={'audio_encoder'}, config=RaggedAttentionConfig(num_qo_heads=20, num_kv_heads=20, head_dim=64, sm_scale=0.125, max_segments_per_request=40, max_segments_per_step=None, max_tokens_per_request=None, backend=<RaggedAttnBackend.AUTO: 'auto'>, flashinfer_backend=None, compile_op=False, dtype=None, workspace_mb=256), labels=frozenset({'main'}), sp_exchange='none'), RaggedAttentionSpec(resource_key='vision_attn', nodes={'vision_encoder'}, config=RaggedAttentionConfig(num_qo_heads=16, num_kv_heads=16, head_dim=72, sm_scale=0.11785113019775792, max_segments_per_request=1, max_segments_per_step=32, max_tokens_per_request=None, backend=<RaggedAttnBackend.AUTO: 'auto'>, flashinfer_backend=None, compile_op=False, dtype=None, workspace_mb=128), labels=frozenset({'main'}), sp_exchange='none'), SamplerSpec(resource_key='thinker_sampler', nodes={'Thinker'}, vocab_size=152064, enable_repetition_penalty=True, enable_min_p=False, loopback_state={}, max_repetition_window=0, min_tokens_stop_ids=(), enable_top_p_first=False, enable_logprobs=False, enable_processed_logprobs=False, greedy_capture=None), SamplerSpec(resource_key='talker_sampler', nodes={'Talker'}, vocab_size=3072, enable_repetition_penalty=True, enable_min_p=False, loopback_state={}, max_repetition_window=0, min_tokens_stop_ids=(), enable_top_p_first=False, enable_logprobs=False, enable_processed_logprobs=False, greedy_capture=None), SamplerSpec(resource_key='code_sampler', nodes={'Talker'}, vocab_size=2048, enable_repetition_penalty=False, enable_min_p=False, loopback_state={}, max_repetition_window=0, min_tokens_stop_ids=(), enable_top_p_first=False, enable_logprobs=False, enable_processed_logprobs=False, greedy_capture=None), SeqShardSpec(resource_key='thinker_shard', nodes={'Thinker'}, labels=('main',), axis=0, walks=None, min_tokens=0, exchange='none', exchanges=True)]
+2026-11-28 19:13:51,474 INFO [worker_1] mstar.communication.arena: ARENA: grew to 1 segments (256 MiB total, 256 MiB free, largest free block 256 MiB, 256 MiB pinned)
+2026-11-28 19:13:51,474 INFO [worker_0] mstar.communication.arena: ARENA: grew to 1 segments (256 MiB total, 256 MiB free, largest free block 256 MiB, 256 MiB pinned)
+2026-11-28 19:13:51,485 INFO [worker_1] mstar.engine.resources.spec: Resource specs after YAML overrides: [KVSpec(resource_key='thinker_kv', nodes={'Thinker'}, config=PagedKVConfig(num_layers=48, num_kv_heads=4, head_dim=128, num_qo_heads=32, max_seq_len=65536, max_num_pages=1024, page_size=None, layout=<KVLayout.NHD: 'NHD'>, cpu_offload_pages=0, prefix_cache_salt='', prefix_cache=True, prefix_cache_tp=True, context_parallel=False, kv_lora_rank=None, qk_rope_head_dim=None), leader=None), AttentionSpec(resource_key='thinker_attn', nodes={'Thinker'}, config=AttentionConfig(kv_cache='thinker_kv', backend=<AttnBackend.AUTO: 'auto'>, flashinfer_backend='auto', sm_scale=None, splits=(), decode_tensor_cores=True, decode_fmha=False, sliding_window=None, layers=None)), PositionSpec(resource_key='thinker_pos', nodes={'Thinker'}, config=PositionConfig(kv_cache='thinker_kv', backend=<PosBackend.ROPE: 'rope'>, scheme=<PosScheme.SEQUENTIAL: 'sequential'>, block_step=1, rotary_dim=None, interleave=False, rope_scale=1.0, rope_theta=10000.0, rope_dtype=None, rope_table_dtype=None, low_freq_factor=None, high_freq_factor=None, old_context_len=None, longrope=None)), KVSpec(resource_key='talker_kv', nodes={'Talker'}, config=PagedKVConfig(num_layers=20, num_kv_heads=2, head_dim=128, num_qo_heads=16, max_seq_len=65536, max_num_pages=2048, page_size=None, layout=<KVLayout.NHD: 'NHD'>, cpu_offload_pages=0, prefix_cache_salt='', prefix_cache=True, prefix_cache_tp=False, context_parallel=False, kv_lora_rank=None, qk_rope_head_dim=None), leader=None), AttentionSpec(resource_key='talker_attn', nodes={'Talker'}, config=AttentionConfig(kv_cache='talker_kv', backend=<AttnBackend.AUTO: 'auto'>, flashinfer_backend='auto', sm_scale=None, splits=(), decode_tensor_cores=True, decode_fmha=False, sliding_window=None, layers=None)), PositionSpec(resource_key='talker_pos', nodes={'Talker'}, config=PositionConfig(kv_cache='talker_kv', backend=<PosBackend.ROPE: 'rope'>, scheme=<PosScheme.SEQUENTIAL: 'sequential'>, block_step=1, rotary_dim=None, interleave=False, rope_scale=1.0, rope_theta=1000000.0, rope_dtype=None, rope_table_dtype=None, low_freq_factor=1.0, high_freq_factor=1.0, old_context_len=8192, longrope=None)), RaggedAttentionSpec(resource_key='audio_attn', nodes={'audio_encoder'}, config=RaggedAttentionConfig(num_qo_heads=20, num_kv_heads=20, head_dim=64, sm_scale=0.125, max_segments_per_request=40, max_segments_per_step=None, max_tokens_per_request=None, backend=<RaggedAttnBackend.AUTO: 'auto'>, flashinfer_backend=None, compile_op=False, dtype=None, workspace_mb=256), labels=frozenset({'main'}), sp_exchange='none'), RaggedAttentionSpec(resource_key='vision_attn', nodes={'vision_encoder'}, config=RaggedAttentionConfig(num_qo_heads=16, num_kv_heads=16, head_dim=72, sm_scale=0.11785113019775792, max_segments_per_request=1, max_segments_per_step=32, max_tokens_per_request=None, backend=<RaggedAttnBackend.AUTO: 'auto'>, flashinfer_backend=None, compile_op=False, dtype=None, workspace_mb=128), labels=frozenset({'main'}), sp_exchange='none'), SamplerSpec(resource_key='thinker_sampler', nodes={'Thinker'}, vocab_size=152064, enable_repetition_penalty=True, enable_min_p=False, loopback_state={}, max_repetition_window=0, min_tokens_stop_ids=(), enable_top_p_first=False, enable_logprobs=False, enable_processed_logprobs=False, greedy_capture=None), SamplerSpec(resource_key='talker_sampler', nodes={'Talker'}, vocab_size=3072, enable_repetition_penalty=True, enable_min_p=False, loopback_state={}, max_repetition_window=0, min_tokens_stop_ids=(), enable_top_p_first=False, enable_logprobs=False, enable_processed_logprobs=False, greedy_capture=None), SamplerSpec(resource_key='code_sampler', nodes={'Talker'}, vocab_size=2048, enable_repetition_penalty=False, enable_min_p=False, loopback_state={}, max_repetition_window=0, min_tokens_stop_ids=(), enable_top_p_first=False, enable_logprobs=False, enable_processed_logprobs=False, greedy_capture=None), SeqShardSpec(resource_key='thinker_shard', nodes={'Thinker'}, labels=('main',), axis=0, walks=None, min_tokens=0, exchange='none', exchanges=True)]
+2026-11-28 19:13:51,490 INFO [worker_0] mstar.engine.resources.spec: Resource specs after YAML overrides: [KVSpec(resource_key='thinker_kv', nodes={'Thinker'}, config=PagedKVConfig(num_layers=48, num_kv_heads=4, head_dim=128, num_qo_heads=32, max_seq_len=65536, max_num_pages=1024, page_size=None, layout=<KVLayout.NHD: 'NHD'>, cpu_offload_pages=0, prefix_cache_salt='', prefix_cache=True, prefix_cache_tp=True, context_parallel=False, kv_lora_rank=None, qk_rope_head_dim=None), leader=None), AttentionSpec(resource_key='thinker_attn', nodes={'Thinker'}, config=AttentionConfig(kv_cache='thinker_kv', backend=<AttnBackend.AUTO: 'auto'>, flashinfer_backend='auto', sm_scale=None, splits=(), decode_tensor_cores=True, decode_fmha=False, sliding_window=None, layers=None)), PositionSpec(resource_key='thinker_pos', nodes={'Thinker'}, config=PositionConfig(kv_cache='thinker_kv', backend=<PosBackend.ROPE: 'rope'>, scheme=<PosScheme.SEQUENTIAL: 'sequential'>, block_step=1, rotary_dim=None, interleave=False, rope_scale=1.0, rope_theta=10000.0, rope_dtype=None, rope_table_dtype=None, low_freq_factor=None, high_freq_factor=None, old_context_len=None, longrope=None)), KVSpec(resource_key='talker_kv', nodes={'Talker'}, config=PagedKVConfig(num_layers=20, num_kv_heads=2, head_dim=128, num_qo_heads=16, max_seq_len=65536, max_num_pages=2048, page_size=None, layout=<KVLayout.NHD: 'NHD'>, cpu_offload_pages=0, prefix_cache_salt='', prefix_cache=True, prefix_cache_tp=False, context_parallel=False, kv_lora_rank=None, qk_rope_head_dim=None), leader=None), AttentionSpec(resource_key='talker_attn', nodes={'Talker'}, config=AttentionConfig(kv_cache='talker_kv', backend=<AttnBackend.AUTO: 'auto'>, flashinfer_backend='auto', sm_scale=None, splits=(), decode_tensor_cores=True, decode_fmha=False, sliding_window=None, layers=None)), PositionSpec(resource_key='talker_pos', nodes={'Talker'}, config=PositionConfig(kv_cache='talker_kv', backend=<PosBackend.ROPE: 'rope'>, scheme=<PosScheme.SEQUENTIAL: 'sequential'>, block_step=1, rotary_dim=None, interleave=False, rope_scale=1.0, rope_theta=1000000.0, rope_dtype=None, rope_table_dtype=None, low_freq_factor=1.0, high_freq_factor=1.0, old_context_len=8192, longrope=None)), RaggedAttentionSpec(resource_key='audio_attn', nodes={'audio_encoder'}, config=RaggedAttentionConfig(num_qo_heads=20, num_kv_heads=20, head_dim=64, sm_scale=0.125, max_segments_per_request=40, max_segments_per_step=None, max_tokens_per_request=None, backend=<RaggedAttnBackend.AUTO: 'auto'>, flashinfer_backend=None, compile_op=False, dtype=None, workspace_mb=256), labels=frozenset({'main'}), sp_exchange='none'), RaggedAttentionSpec(resource_key='vision_attn', nodes={'vision_encoder'}, config=RaggedAttentionConfig(num_qo_heads=16, num_kv_heads=16, head_dim=72, sm_scale=0.11785113019775792, max_segments_per_request=1, max_segments_per_step=32, max_tokens_per_request=None, backend=<RaggedAttnBackend.AUTO: 'auto'>, flashinfer_backend=None, compile_op=False, dtype=None, workspace_mb=128), labels=frozenset({'main'}), sp_exchange='none'), SamplerSpec(resource_key='thinker_sampler', nodes={'Thinker'}, vocab_size=152064, enable_repetition_penalty=True, enable_min_p=False, loopback_state={}, max_repetition_window=0, min_tokens_stop_ids=(), enable_top_p_first=False, enable_logprobs=False, enable_processed_logprobs=False, greedy_capture=None), SamplerSpec(resource_key='talker_sampler', nodes={'Talker'}, vocab_size=3072, enable_repetition_penalty=True, enable_min_p=False, loopback_state={}, max_repetition_window=0, min_tokens_stop_ids=(), enable_top_p_first=False, enable_logprobs=False, enable_processed_logprobs=False, greedy_capture=None), SamplerSpec(resource_key='code_sampler', nodes={'Talker'}, vocab_size=2048, enable_repetition_penalty=False, enable_min_p=False, loopback_state={}, max_repetition_window=0, min_tokens_stop_ids=(), enable_top_p_first=False, enable_logprobs=False, enable_processed_logprobs=False, greedy_capture=None), SeqShardSpec(resource_key='thinker_shard', nodes={'Thinker'}, labels=('main',), axis=0, walks=None, min_tokens=0, exchange='none', exchanges=True)]
+2026-11-28 19:13:53,553 INFO [worker_2] mstar.model.qwen3_omni.qwen3_omni_model: Successfully loaded Qwen3-Omni submodule for Code2Wav
+2026-11-28 19:13:56,741 INFO [worker_2] mstar.model.qwen3_omni.submodules: TalkerSubmodule: pre-computed TTS special embeddings via Thinker embed_tokens + Talker text_projection
+2026-11-28 19:13:56,752 INFO [worker_2] mstar.model.qwen3_omni.qwen3_omni_model: Successfully loaded Qwen3-Omni submodule for Talker
+2026-11-28 19:13:56,757 INFO [worker_2] mstar.engine.resources.kv.manager: KV talker_kv: 5.00 GiB on this rank, 2048 pages of 128 slots
+2026-11-28 19:13:56,778 INFO [worker_2] mstar.worker.engine_manager: Engine loaded on device cuda:2 for nodes ['Code2Wav', 'Talker']
+2026-11-28 19:14:03,483 INFO [worker_1] mstar.model.loader.base: Qwen3OmniThinkerModel: 876 checkpoint keys matched no parameter (e.g. ['audio_tower.conv2d1.bias', 'audio_tower.conv2d1.weight', 'audio_tower.conv2d2.bias']); 0 of 435 parameters got no weight
+2026-11-28 19:14:03,489 INFO [worker_1] mstar.model.qwen3_omni.qwen3_omni_model: Successfully loaded Qwen3-Omni submodule for Thinker
+2026-11-28 19:14:03,715 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 6.00 GiB on this rank, 1024 pages of 128 slots
+2026-11-28 19:14:03,724 INFO [worker_1] mstar.engine.engine: KV thinker_kv: prefix cache open for main on Thinker
+2026-11-28 19:14:03,724 WARNING [worker_1] mstar.engine.engine: KV thinker_kv: prefix cache on with cpu_offload_pages 0: a decode step that finds nothing to evict holds its requests until they time out. Set max_concurrent_requests to the pool's pages over the pages one request needs. cpu_offload_pages gives the worker a victim, but one that shares most of its prompt frees little
+2026-11-28 19:14:03,736 INFO [worker_1] mstar.worker.engine_manager: Engine loaded on device cuda:1 for nodes ['Thinker']
+2026-11-28 19:14:03,778 INFO [worker_1] mstar.worker.lockstep: Worker worker_1: TP async scheduling ON for ['Thinker'] (follower)
+2026-11-28 19:14:04,793 INFO [worker_0] mstar.model.loader.base: Qwen3OmniThinkerModel: 876 checkpoint keys matched no parameter (e.g. ['audio_tower.conv2d1.bias', 'audio_tower.conv2d1.weight', 'audio_tower.conv2d2.bias']); 0 of 435 parameters got no weight
+2026-11-28 19:14:04,797 INFO [worker_0] mstar.model.qwen3_omni.qwen3_omni_model: Successfully loaded Qwen3-Omni submodule for Thinker
+2026-11-28 19:14:05,293 INFO [worker_0] mstar.model.qwen3_omni.qwen3_omni_model: Successfully loaded Qwen3-Omni submodule for audio_encoder
+2026-11-28 19:14:05,586 INFO [worker_0] mstar.model.qwen3_omni.qwen3_omni_model: Successfully loaded Qwen3-Omni submodule for vision_encoder
+2026-11-28 19:14:05,618 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 6.00 GiB on this rank, 1024 pages of 128 slots
+2026-11-28 19:14:05,633 INFO [worker_0] mstar.kernels.registry: kernel table: no ragged_attention bfloat16 num_qo_heads=20,num_kv_heads=20,head_dim=64 entry for NVIDIA RTX 5880 Ada Generation; built-in configs. To tune it: python -m benchmark.kernels.sweep ragged_attention --dtype bfloat16 --shape num_qo_heads=20,num_kv_heads=20,head_dim=64
+2026-11-28 19:14:05,633 INFO [worker_0] mstar.kernels.registry: kernel table: no ragged_attention bfloat16 num_qo_heads=16,num_kv_heads=16,head_dim=72 entry for NVIDIA RTX 5880 Ada Generation; built-in configs. To tune it: python -m benchmark.kernels.sweep ragged_attention --dtype bfloat16 --shape num_qo_heads=16,num_kv_heads=16,head_dim=72
+2026-11-28 19:14:05,641 INFO [worker_0] mstar.engine.engine: KV thinker_kv: prefix cache open for main on Thinker
+2026-11-28 19:14:05,641 WARNING [worker_0] mstar.engine.engine: KV thinker_kv: prefix cache on with cpu_offload_pages 0: a decode step that finds nothing to evict holds its requests until they time out. Set max_concurrent_requests to the pool's pages over the pages one request needs. cpu_offload_pages gives the worker a victim, but one that shares most of its prompt frees little
+2026-11-28 19:14:05,659 INFO [worker_0] mstar.worker.engine_manager: Engine loaded on device cuda:0 for nodes ['Thinker', 'audio_encoder', 'vision_encoder']
+2026-11-28 19:14:05,682 INFO [worker_0] mstar.worker.lockstep: Worker worker_0: TP async scheduling ON for ['Thinker'] (leader)
+2026-11-28 19:14:06,123 INFO [worker_2] mstar.engine.engine: CapturePlan[cuda:2]: 35424 MiB free, 0 for the largest eager step
+2026-11-28 19:14:06,126 INFO [worker_2] mstar.engine.accelerator_graph_runner: AcceleratorGraphRunner[Code2Wav]: warmup_and_capture done. shared_static_buffers: 0 entries, 0.00 MB resident (would have been 0.00 MB with per-capture clones — saved 0.00 MB). Total accelerator alloc delta during warmup: 0.00 MB.
+2026-11-28 19:14:06,127 INFO [worker_2] mstar.engine.engine: CapturePlan[cuda:2] Code2Wav: capture took 0 MiB, 0 predicted
+2026-11-28 19:14:06,127 INFO [worker_2] mstar.engine.engine: CapturePlan[cuda:2] Code2Wav piecewise: capture took 0 MiB, 0 predicted
+2026-11-28 19:14:06,127 INFO [worker_2] mstar.engine.accelerator_graph_runner: AcceleratorGraphRunner[Talker]: warmup_and_capture done. shared_static_buffers: 0 entries, 0.00 MB resident (would have been 0.00 MB with per-capture clones — saved 0.00 MB). Total accelerator alloc delta during warmup: 0.00 MB.
+2026-11-28 19:14:06,127 INFO [worker_2] mstar.engine.engine: CapturePlan[cuda:2] Talker: capture took 0 MiB, 0 predicted
+2026-11-28 19:14:06,127 INFO [worker_2] mstar.engine.engine: CapturePlan[cuda:2] Talker piecewise: capture took 0 MiB, 0 predicted
+2026-11-28 19:14:06,127 INFO [worker_2] mstar.engine.engine: CapturePlan[cuda:2]: 35424 MiB free after capture, 0 for the largest eager step
+2026-11-28 19:14:06,128 INFO [worker_2] mstar.engine.engine: Engine: torch.compile disabled for Code2Wav (submodule opt-out)
+2026-11-28 19:14:06,132 INFO [worker_2] mstar.engine.engine: Engine: torch.compile applied to Talker
+/home/chaofan/workspaces/mm_reuse_study/envs/mstar/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py:2056: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS="+dynamo" for a DEBUG stack trace.
+  torch._dynamo.utils.warn_once(msg)
+2026-11-28 19:14:09,387 INFO [worker_1] mstar.kernels.registry: kernel table: no moe_decode bfloat16 H=2048,E=128,I=384,K=8 entry for NVIDIA RTX 5880 Ada Generation; built-in configs. To tune it: the sweep doesn't time this dtype; measure an entry end to end (benchmark/kernels/README.md)
+/home/chaofan/workspaces/mm_reuse_study/envs/mstar/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py:2056: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS="+dynamo" for a DEBUG stack trace.
+  torch._dynamo.utils.warn_once(msg)
+2026-11-28 19:14:09,399 INFO [worker_0] mstar.kernels.registry: kernel table: no moe_decode bfloat16 H=2048,E=128,I=384,K=8 entry for NVIDIA RTX 5880 Ada Generation; built-in configs. To tune it: the sweep doesn't time this dtype; measure an entry end to end (benchmark/kernels/README.md)
+2026-11-28 19:14:09,889 INFO [worker_1] mstar.kernels.registry: kernel table: no moe_gemm bfloat16 E=128,N=768,K=2048,top_k=8 entry for NVIDIA RTX 5880 Ada Generation; built-in configs. To tune it: python -m benchmark.kernels.sweep moe_gemm --dtype bfloat16 --shape E=128,N=768,K=2048,top_k=8
+2026-11-28 19:14:09,977 INFO [worker_0] mstar.kernels.registry: kernel table: no moe_gemm bfloat16 E=128,N=768,K=2048,top_k=8 entry for NVIDIA RTX 5880 Ada Generation; built-in configs. To tune it: python -m benchmark.kernels.sweep moe_gemm --dtype bfloat16 --shape E=128,N=768,K=2048,top_k=8
+2026-11-28 19:14:12,184 INFO [worker_1] mstar.engine.accelerator_graph_runner: Thinker prefill_text[bs=32,tokens=2048] slot=0: graph executable memory, 19436 bytes a node, 28 MiB held for the walk's graphs
+2026-11-28 19:14:12,203 INFO [worker_0] mstar.engine.accelerator_graph_runner: Thinker prefill_text[bs=32,tokens=2048] slot=0: graph executable memory, 19436 bytes a node, 28 MiB held for the walk's graphs
+2026-11-28 19:14:12,888 INFO [worker_0] mstar.engine.accelerator_graph_runner: Thinker prefill_vision[bs=32,tokens=2048,key=deepstack] slot=0: graph executable memory, 19382 bytes a node, 28 MiB held for the walk's graphs
+2026-11-28 19:14:12,888 INFO [worker_1] mstar.engine.accelerator_graph_runner: Thinker prefill_vision[bs=32,tokens=2048,key=deepstack] slot=0: graph executable memory, 19382 bytes a node, 28 MiB held for the walk's graphs
+2026-11-28 19:14:22,921 INFO [worker_0] mstar.engine.accelerator_graph_runner: Thinker thinker_text_decode[bs=32,tokens=32] slot=0: graph executable memory, 20400 bytes a node, 28 MiB held for the walk's graphs
+2026-11-28 19:14:22,927 INFO [worker_1] mstar.engine.accelerator_graph_runner: Thinker thinker_text_decode[bs=32,tokens=32] slot=0: graph executable memory, 20400 bytes a node, 28 MiB held for the walk's graphs
+2026-11-28 19:14:23,654 INFO [worker_0] mstar.engine.accelerator_graph_runner: Thinker thinker_decode[bs=32,tokens=32] slot=0: graph executable memory, 20361 bytes a node, 28 MiB held for the walk's graphs
+2026-11-28 19:14:23,655 INFO [worker_1] mstar.engine.accelerator_graph_runner: Thinker thinker_decode[bs=32,tokens=32] slot=0: graph executable memory, 20361 bytes a node, 28 MiB held for the walk's graphs
+2026-11-28 19:14:52,836 INFO [worker_0] mstar.engine.accelerator_graph_runner: Thinker thinker_text_decode[bs=32,tokens=32,lean=thinker_sampler] slot=0: graph executable memory, 18504 bytes a node, 24 MiB held for the walk's graphs
+2026-11-28 19:14:52,838 INFO [worker_1] mstar.engine.accelerator_graph_runner: Thinker thinker_text_decode[bs=32,tokens=32,lean=thinker_sampler] slot=0: graph executable memory, 18504 bytes a node, 24 MiB held for the walk's graphs
+2026-11-28 19:14:53,146 INFO [worker_0] mstar.engine.accelerator_graph_runner: Thinker thinker_decode[bs=32,tokens=32,lean=thinker_sampler] slot=0: graph executable memory, 20520 bytes a node, 28 MiB held for the walk's graphs
+2026-11-28 19:14:53,148 INFO [worker_1] mstar.engine.accelerator_graph_runner: Thinker thinker_decode[bs=32,tokens=32,lean=thinker_sampler] slot=0: graph executable memory, 20520 bytes a node, 28 MiB held for the walk's graphs
+2026-11-28 19:14:55,791 INFO [worker_0] mstar.engine.accelerator_graph_runner: audio_encoder_aut_encode bs=8 total_tokens=4096: graph executable memory, 10265 bytes a node, 19 MiB held for the walk's graphs
+2026-11-28 19:14:57,035 INFO [worker_0] mstar.engine.accelerator_graph_runner: vision_encoder_vision_block_loop bs=1 total_tokens=8192: graph executable memory, 8797 bytes a node, 21 MiB held for the walk's graphs
+2026-11-28 19:15:01,724 INFO [worker_1] mstar.engine.engine: CapturePlan[cuda:1]: 9344 MiB free, 108 for the largest eager step
+2026-11-28 19:15:01,724 INFO [worker_1] mstar.engine.engine: CapturePlan[cuda:1] Thinker: 74 of 74 buckets (12 of 12 lean twins), 1084 MiB predicted, 2787 outside the allocator
+2026-11-28 19:15:01,724 INFO [worker_1] mstar.engine.resources.attn.workspace: FlashInfer workspaces of thinker_kv: 2, 1024 MiB in all
+2026-11-28 19:15:01,838 INFO [worker_0] mstar.engine.engine: CapturePlan[cuda:0]: 5598 MiB free, 421 for the largest eager step
+2026-11-28 19:15:01,838 INFO [worker_0] mstar.engine.engine: CapturePlan[cuda:0] Thinker: 73 of 74 buckets (11 of 12 lean twins), 1080 MiB predicted, 2747 outside the allocator
+2026-11-28 19:15:01,838 INFO [worker_0] mstar.engine.engine: CapturePlan[cuda:0] audio_encoder piecewise: 12 of 12 buckets, 362 MiB predicted, 170 outside the allocator
+2026-11-28 19:15:01,838 INFO [worker_0] mstar.engine.engine: CapturePlan[cuda:0] vision_encoder piecewise: 6 of 6 buckets, 884 MiB predicted, 122 outside the allocator
+2026-11-28 19:15:01,838 INFO [worker_0] mstar.engine.resources.attn.workspace: FlashInfer workspaces of thinker_kv: 2, 1024 MiB in all
+2026-11-28 19:15:01,838 INFO [worker_0] mstar.engine.resources.attn.workspace: FlashInfer workspaces of audio_attn: 2, 512 MiB in all
+2026-11-28 19:15:01,838 INFO [worker_0] mstar.engine.resources.attn.workspace: FlashInfer workspaces of vision_attn: 2, 256 MiB in all
+2026-11-28 19:15:02,001 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=32,tokens=2048] (2 slots)
+2026-11-28 19:15:02,005 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=32,tokens=2048] (2 slots)
+2026-11-28 19:15:02,142 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_vision[bs=32,tokens=2048,key=deepstack] (2 slots)
+2026-11-28 19:15:02,145 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_vision[bs=32,tokens=2048,key=deepstack] (2 slots)
+2026-11-28 19:15:02,272 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=16,tokens=2048] (2 slots)
+2026-11-28 19:15:02,281 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=16,tokens=2048] (2 slots)
+2026-11-28 19:15:02,419 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_vision[bs=16,tokens=2048,key=deepstack] (2 slots)
+2026-11-28 19:15:02,428 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_vision[bs=16,tokens=2048,key=deepstack] (2 slots)
+2026-11-28 19:15:02,566 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=8,tokens=2048] (2 slots)
+2026-11-28 19:15:02,569 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=8,tokens=2048] (2 slots)
+2026-11-28 19:15:02,704 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=4,tokens=2048] (2 slots)
+2026-11-28 19:15:02,712 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=4,tokens=2048] (2 slots)
+2026-11-28 19:15:02,894 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_vision[bs=4,tokens=2048,key=deepstack] (2 slots)
+2026-11-28 19:15:02,895 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_vision[bs=4,tokens=2048,key=deepstack] (2 slots)
+2026-11-28 19:15:03,049 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=2,tokens=2048] (2 slots)
+2026-11-28 19:15:03,050 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=2,tokens=2048] (2 slots)
+2026-11-28 19:15:03,177 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=1,tokens=2048] (2 slots)
+2026-11-28 19:15:03,178 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=1,tokens=2048] (2 slots)
+2026-11-28 19:15:03,306 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_vision[bs=1,tokens=2048,key=deepstack] (2 slots)
+2026-11-28 19:15:03,306 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_vision[bs=1,tokens=2048,key=deepstack] (2 slots)
+2026-11-28 19:15:03,434 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=32,tokens=1024] (2 slots)
+2026-11-28 19:15:03,435 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=32,tokens=1024] (2 slots)
+2026-11-28 19:15:03,571 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_vision[bs=32,tokens=1024,key=deepstack] (2 slots)
+2026-11-28 19:15:03,571 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_vision[bs=32,tokens=1024,key=deepstack] (2 slots)
+2026-11-28 19:15:03,698 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=16,tokens=1024] (2 slots)
+2026-11-28 19:15:03,704 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=16,tokens=1024] (2 slots)
+2026-11-28 19:15:03,832 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_vision[bs=16,tokens=1024,key=deepstack] (2 slots)
+2026-11-28 19:15:03,833 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_vision[bs=16,tokens=1024,key=deepstack] (2 slots)
+2026-11-28 19:15:03,958 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=8,tokens=1024] (2 slots)
+2026-11-28 19:15:03,961 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=8,tokens=1024] (2 slots)
+2026-11-28 19:15:04,086 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=4,tokens=1024] (2 slots)
+2026-11-28 19:15:04,087 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=4,tokens=1024] (2 slots)
+2026-11-28 19:15:04,218 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_vision[bs=4,tokens=1024,key=deepstack] (2 slots)
+2026-11-28 19:15:04,218 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_vision[bs=4,tokens=1024,key=deepstack] (2 slots)
+2026-11-28 19:15:04,343 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=2,tokens=1024] (2 slots)
+2026-11-28 19:15:04,344 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=2,tokens=1024] (2 slots)
+2026-11-28 19:15:04,496 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=1,tokens=1024] (2 slots)
+2026-11-28 19:15:04,499 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=1,tokens=1024] (2 slots)
+2026-11-28 19:15:04,634 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_vision[bs=1,tokens=1024,key=deepstack] (2 slots)
+2026-11-28 19:15:04,641 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_vision[bs=1,tokens=1024,key=deepstack] (2 slots)
+2026-11-28 19:15:04,778 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=32,tokens=512] (2 slots)
+2026-11-28 19:15:04,783 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=32,tokens=512] (2 slots)
+2026-11-28 19:15:04,922 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_vision[bs=32,tokens=512,key=deepstack] (2 slots)
+2026-11-28 19:15:04,929 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_vision[bs=32,tokens=512,key=deepstack] (2 slots)
+2026-11-28 19:15:05,068 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=32,tokens=256] (2 slots)
+2026-11-28 19:15:05,075 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=32,tokens=256] (2 slots)
+2026-11-28 19:15:05,218 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_vision[bs=32,tokens=256,key=deepstack] (2 slots)
+2026-11-28 19:15:05,220 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_vision[bs=32,tokens=256,key=deepstack] (2 slots)
+2026-11-28 19:15:05,356 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=32,tokens=128] (2 slots)
+2026-11-28 19:15:05,362 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=32,tokens=128] (2 slots)
+2026-11-28 19:15:05,503 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_vision[bs=32,tokens=128,key=deepstack] (2 slots)
+2026-11-28 19:15:05,507 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_vision[bs=32,tokens=128,key=deepstack] (2 slots)
+2026-11-28 19:15:05,647 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_text_decode[bs=32,tokens=32] (2 slots)
+2026-11-28 19:15:05,652 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_text_decode[bs=32,tokens=32] (2 slots)
+2026-11-28 19:15:05,794 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_decode[bs=32,tokens=32] (2 slots)
+2026-11-28 19:15:05,799 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_decode[bs=32,tokens=32] (2 slots)
+2026-11-28 19:15:05,932 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=16,tokens=512] (2 slots)
+2026-11-28 19:15:05,942 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=16,tokens=512] (2 slots)
+2026-11-28 19:15:06,077 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_vision[bs=16,tokens=512,key=deepstack] (2 slots)
+2026-11-28 19:15:06,089 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_vision[bs=16,tokens=512,key=deepstack] (2 slots)
+2026-11-28 19:15:06,223 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=16,tokens=256] (2 slots)
+2026-11-28 19:15:06,235 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=16,tokens=256] (2 slots)
+2026-11-28 19:15:06,373 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_vision[bs=16,tokens=256,key=deepstack] (2 slots)
+2026-11-28 19:15:06,381 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_vision[bs=16,tokens=256,key=deepstack] (2 slots)
+2026-11-28 19:15:06,516 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=8,tokens=256] (2 slots)
+2026-11-28 19:15:06,522 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=8,tokens=256] (2 slots)
+2026-11-28 19:15:06,668 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=4,tokens=256] (2 slots)
+2026-11-28 19:15:06,672 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=4,tokens=256] (2 slots)
+2026-11-28 19:15:06,811 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_vision[bs=4,tokens=256,key=deepstack] (2 slots)
+2026-11-28 19:15:06,818 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_vision[bs=4,tokens=256,key=deepstack] (2 slots)
+2026-11-28 19:15:06,980 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=2,tokens=256] (2 slots)
+2026-11-28 19:15:06,990 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=2,tokens=256] (2 slots)
+2026-11-28 19:15:07,144 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=1,tokens=256] (2 slots)
+2026-11-28 19:15:07,152 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=1,tokens=256] (2 slots)
+2026-11-28 19:15:07,283 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_vision[bs=1,tokens=256,key=deepstack] (2 slots)
+2026-11-28 19:15:07,292 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_vision[bs=1,tokens=256,key=deepstack] (2 slots)
+2026-11-28 19:15:07,432 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=16,tokens=128] (2 slots)
+2026-11-28 19:15:07,445 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=16,tokens=128] (2 slots)
+2026-11-28 19:15:07,582 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_vision[bs=16,tokens=128,key=deepstack] (2 slots)
+2026-11-28 19:15:07,594 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_vision[bs=16,tokens=128,key=deepstack] (2 slots)
+2026-11-28 19:15:07,726 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_text_decode[bs=16,tokens=16] (2 slots)
+2026-11-28 19:15:07,732 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_text_decode[bs=16,tokens=16] (2 slots)
+2026-11-28 19:15:07,861 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_decode[bs=16,tokens=16] (2 slots)
+2026-11-28 19:15:07,861 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_decode[bs=16,tokens=16] (2 slots)
+2026-11-28 19:15:08,004 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=8,tokens=512] (2 slots)
+2026-11-28 19:15:08,008 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=8,tokens=512] (2 slots)
+2026-11-28 19:15:08,153 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=4,tokens=512] (2 slots)
+2026-11-28 19:15:08,163 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=4,tokens=512] (2 slots)
+2026-11-28 19:15:08,306 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_vision[bs=4,tokens=512,key=deepstack] (2 slots)
+2026-11-28 19:15:08,327 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_vision[bs=4,tokens=512,key=deepstack] (2 slots)
+2026-11-28 19:15:08,467 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=2,tokens=512] (2 slots)
+2026-11-28 19:15:08,481 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=2,tokens=512] (2 slots)
+2026-11-28 19:15:08,616 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=1,tokens=512] (2 slots)
+2026-11-28 19:15:08,625 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=1,tokens=512] (2 slots)
+2026-11-28 19:15:08,761 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_vision[bs=1,tokens=512,key=deepstack] (2 slots)
+2026-11-28 19:15:08,767 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_vision[bs=1,tokens=512,key=deepstack] (2 slots)
+2026-11-28 19:15:08,906 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=8,tokens=128] (2 slots)
+2026-11-28 19:15:08,909 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=8,tokens=128] (2 slots)
+2026-11-28 19:15:09,052 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=4,tokens=128] (2 slots)
+2026-11-28 19:15:09,055 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=4,tokens=128] (2 slots)
+2026-11-28 19:15:09,201 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_vision[bs=4,tokens=128,key=deepstack] (2 slots)
+2026-11-28 19:15:09,207 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_vision[bs=4,tokens=128,key=deepstack] (2 slots)
+2026-11-28 19:15:09,357 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=2,tokens=128] (2 slots)
+2026-11-28 19:15:09,366 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=2,tokens=128] (2 slots)
+2026-11-28 19:15:09,512 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=1,tokens=128] (2 slots)
+2026-11-28 19:15:09,517 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=1,tokens=128] (2 slots)
+2026-11-28 19:15:09,661 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_vision[bs=1,tokens=128,key=deepstack] (2 slots)
+2026-11-28 19:15:09,672 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_vision[bs=1,tokens=128,key=deepstack] (2 slots)
+2026-11-28 19:15:09,814 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_text_decode[bs=8,tokens=8] (2 slots)
+2026-11-28 19:15:09,818 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_text_decode[bs=8,tokens=8] (2 slots)
+2026-11-28 19:15:09,947 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_decode[bs=8,tokens=8] (2 slots)
+2026-11-28 19:15:09,958 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_decode[bs=8,tokens=8] (2 slots)
+2026-11-28 19:15:10,088 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_text_decode[bs=4,tokens=4] (2 slots)
+2026-11-28 19:15:10,090 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_text_decode[bs=4,tokens=4] (2 slots)
+2026-11-28 19:15:10,222 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_decode[bs=4,tokens=4] (2 slots)
+2026-11-28 19:15:10,229 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_decode[bs=4,tokens=4] (2 slots)
+2026-11-28 19:15:10,359 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_text_decode[bs=2,tokens=2] (2 slots)
+2026-11-28 19:15:10,368 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_text_decode[bs=2,tokens=2] (2 slots)
+2026-11-28 19:15:10,496 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_decode[bs=2,tokens=2] (2 slots)
+2026-11-28 19:15:10,504 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_decode[bs=2,tokens=2] (2 slots)
+2026-11-28 19:15:10,644 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_text_decode[bs=1,tokens=1] (2 slots)
+2026-11-28 19:15:10,651 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_text_decode[bs=1,tokens=1] (2 slots)
+2026-11-28 19:15:10,780 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_decode[bs=1,tokens=1] (2 slots)
+2026-11-28 19:15:10,784 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_decode[bs=1,tokens=1] (2 slots)
+2026-11-28 19:15:10,921 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_text_decode[bs=32,tokens=32,lean=thinker_sampler] (2 slots)
+2026-11-28 19:15:10,942 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_text_decode[bs=32,tokens=32,lean=thinker_sampler] (2 slots)
+2026-11-28 19:15:11,078 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_text_decode[bs=16,tokens=16,lean=thinker_sampler] (2 slots)
+2026-11-28 19:15:11,086 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_text_decode[bs=16,tokens=16,lean=thinker_sampler] (2 slots)
+2026-11-28 19:15:11,234 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_decode[bs=16,tokens=16,lean=thinker_sampler] (2 slots)
+2026-11-28 19:15:11,242 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_decode[bs=16,tokens=16,lean=thinker_sampler] (2 slots)
+2026-11-28 19:15:11,387 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_text_decode[bs=8,tokens=8,lean=thinker_sampler] (2 slots)
+2026-11-28 19:15:11,409 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_text_decode[bs=8,tokens=8,lean=thinker_sampler] (2 slots)
+2026-11-28 19:15:11,549 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_decode[bs=8,tokens=8,lean=thinker_sampler] (2 slots)
+2026-11-28 19:15:11,553 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_decode[bs=8,tokens=8,lean=thinker_sampler] (2 slots)
+2026-11-28 19:15:11,683 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_text_decode[bs=4,tokens=4,lean=thinker_sampler] (2 slots)
+2026-11-28 19:15:11,685 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_text_decode[bs=4,tokens=4,lean=thinker_sampler] (2 slots)
+2026-11-28 19:15:11,822 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_decode[bs=4,tokens=4,lean=thinker_sampler] (2 slots)
+2026-11-28 19:15:11,828 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_decode[bs=4,tokens=4,lean=thinker_sampler] (2 slots)
+2026-11-28 19:15:11,959 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_text_decode[bs=2,tokens=2,lean=thinker_sampler] (2 slots)
+2026-11-28 19:15:11,960 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_text_decode[bs=2,tokens=2,lean=thinker_sampler] (2 slots)
+2026-11-28 19:15:12,076 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_decode[bs=2,tokens=2,lean=thinker_sampler] (2 slots)
+2026-11-28 19:15:12,082 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_decode[bs=2,tokens=2,lean=thinker_sampler] (2 slots)
+2026-11-28 19:15:12,193 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_text_decode[bs=1,tokens=1,lean=thinker_sampler] (2 slots)
+2026-11-28 19:15:12,193 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_text_decode[bs=1,tokens=1,lean=thinker_sampler] (2 slots)
+2026-11-28 19:15:12,302 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_decode[bs=1,tokens=1,lean=thinker_sampler] (2 slots)
+2026-11-28 19:15:12,304 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_decode[bs=1,tokens=1,lean=thinker_sampler] (2 slots)
+2026-11-28 19:15:12,310 INFO [worker_0] mstar.engine.accelerator_graph_runner: AcceleratorGraphRunner[Thinker]: lean twin thinker_decode[bs=32,tokens=32,lean=thinker_sampler] not captured; its steps replay the plain bucket
+2026-11-28 19:15:12,310 INFO [worker_0] mstar.engine.accelerator_graph_runner: AcceleratorGraphRunner[Thinker]: warmup_and_capture done. shared_static_buffers: 11 entries, 42.00 MB resident (would have been 1738.88 MB with per-capture clones — saved 1696.88 MB). Total accelerator alloc delta during warmup: 630.93 MB.
+2026-11-28 19:15:12,311 INFO [worker_0] mstar.engine.engine: CapturePlan[cuda:0] Thinker: capture took 682 MiB, 1080 predicted
+2026-11-28 19:15:12,311 INFO [worker_0] mstar.engine.engine: CapturePlan[cuda:0] Thinker piecewise: capture took 0 MiB, 0 predicted
+2026-11-28 19:15:12,311 INFO [worker_1] mstar.engine.accelerator_graph_runner: AcceleratorGraphRunner[Thinker]: lean twin thinker_decode[bs=32,tokens=32,lean=thinker_sampler] not captured; its steps replay the plain bucket
+2026-11-28 19:15:12,311 INFO [worker_0] mstar.engine.accelerator_graph_runner: AcceleratorGraphRunner[audio_encoder]: warmup_and_capture done. shared_static_buffers: 0 entries, 0.00 MB resident (would have been 0.00 MB with per-capture clones — saved 0.00 MB). Total accelerator alloc delta during warmup: 0.00 MB.
+2026-11-28 19:15:12,311 INFO [worker_1] mstar.engine.accelerator_graph_runner: AcceleratorGraphRunner[Thinker]: warmup_and_capture done. shared_static_buffers: 11 entries, 42.00 MB resident (would have been 1738.88 MB with per-capture clones — saved 1696.88 MB). Total accelerator alloc delta during warmup: 630.93 MB.
+2026-11-28 19:15:12,311 INFO [worker_0] mstar.engine.engine: CapturePlan[cuda:0] audio_encoder: capture took 0 MiB, 0 predicted
+2026-11-28 19:15:12,312 INFO [worker_1] mstar.engine.engine: CapturePlan[cuda:1] Thinker: capture took 682 MiB, 1084 predicted
+2026-11-28 19:15:12,312 INFO [worker_1] mstar.engine.engine: CapturePlan[cuda:1] Thinker piecewise: capture took 0 MiB, 0 predicted
+2026-11-28 19:15:12,312 INFO [worker_1] mstar.engine.engine: CapturePlan[cuda:1]: 6330 MiB free after capture, 108 for the largest eager step
+2026-11-28 19:15:12,317 INFO [worker_1] mstar.engine.engine: Engine: torch.compile applied to Thinker
+2026-11-28 19:15:12,347 INFO [worker_0] mstar.engine.accelerator_graph_runner: PiecewiseAcceleratorGraphRunner[audio_encoder_aut_encode]: captured bs=8 total_tokens=4096 (2 slots)
+2026-11-28 19:15:12,373 INFO [worker_0] mstar.engine.accelerator_graph_runner: PiecewiseAcceleratorGraphRunner[audio_encoder_aut_encode]: captured bs=8 total_tokens=3072 (2 slots)
+2026-11-28 19:15:12,399 INFO [worker_0] mstar.engine.accelerator_graph_runner: PiecewiseAcceleratorGraphRunner[audio_encoder_aut_encode]: captured bs=8 total_tokens=2048 (2 slots)
+2026-11-28 19:15:12,427 INFO [worker_0] mstar.engine.accelerator_graph_runner: PiecewiseAcceleratorGraphRunner[audio_encoder_aut_encode]: captured bs=8 total_tokens=1536 (2 slots)
+2026-11-28 19:15:12,452 INFO [worker_0] mstar.engine.accelerator_graph_runner: PiecewiseAcceleratorGraphRunner[audio_encoder_aut_encode]: captured bs=8 total_tokens=1024 (2 slots)
+2026-11-28 19:15:12,478 INFO [worker_0] mstar.engine.accelerator_graph_runner: PiecewiseAcceleratorGraphRunner[audio_encoder_aut_encode]: captured bs=8 total_tokens=768 (2 slots)
+2026-11-28 19:15:12,503 INFO [worker_0] mstar.engine.accelerator_graph_runner: PiecewiseAcceleratorGraphRunner[audio_encoder_aut_encode]: captured bs=8 total_tokens=512 (2 slots)
+2026-11-28 19:15:12,530 INFO [worker_0] mstar.engine.accelerator_graph_runner: PiecewiseAcceleratorGraphRunner[audio_encoder_aut_encode]: captured bs=8 total_tokens=384 (2 slots)
+2026-11-28 19:15:12,556 INFO [worker_0] mstar.engine.accelerator_graph_runner: PiecewiseAcceleratorGraphRunner[audio_encoder_aut_encode]: captured bs=8 total_tokens=128 (2 slots)
+2026-11-28 19:15:12,584 INFO [worker_0] mstar.engine.accelerator_graph_runner: PiecewiseAcceleratorGraphRunner[audio_encoder_aut_encode]: captured bs=8 total_tokens=256 (2 slots)
+2026-11-28 19:15:12,611 INFO [worker_0] mstar.engine.accelerator_graph_runner: PiecewiseAcceleratorGraphRunner[audio_encoder_aut_encode]: captured bs=8 total_tokens=192 (2 slots)
+2026-11-28 19:15:12,636 INFO [worker_0] mstar.engine.accelerator_graph_runner: PiecewiseAcceleratorGraphRunner[audio_encoder_aut_encode]: captured bs=8 total_tokens=64 (2 slots)
+2026-11-28 19:15:12,637 INFO [worker_0] mstar.engine.engine: CapturePlan[cuda:0] audio_encoder piecewise: capture took 208 MiB, 362 predicted
+2026-11-28 19:15:12,637 INFO [worker_0] mstar.engine.accelerator_graph_runner: AcceleratorGraphRunner[vision_encoder]: warmup_and_capture done. shared_static_buffers: 0 entries, 0.00 MB resident (would have been 0.00 MB with per-capture clones — saved 0.00 MB). Total accelerator alloc delta during warmup: 0.00 MB.
+2026-11-28 19:15:12,637 INFO [worker_0] mstar.engine.engine: CapturePlan[cuda:0] vision_encoder: capture took 0 MiB, 0 predicted
+2026-11-28 19:15:12,681 INFO [worker_0] mstar.engine.accelerator_graph_runner: PiecewiseAcceleratorGraphRunner[vision_encoder_vision_block_loop]: captured bs=1 total_tokens=8192 (2 slots)
+2026-11-28 19:15:12,719 INFO [worker_0] mstar.engine.accelerator_graph_runner: PiecewiseAcceleratorGraphRunner[vision_encoder_vision_block_loop]: captured bs=1 total_tokens=4096 (2 slots)
+2026-11-28 19:15:12,757 INFO [worker_0] mstar.engine.accelerator_graph_runner: PiecewiseAcceleratorGraphRunner[vision_encoder_vision_block_loop]: captured bs=1 total_tokens=2048 (2 slots)
+2026-11-28 19:15:12,796 INFO [worker_0] mstar.engine.accelerator_graph_runner: PiecewiseAcceleratorGraphRunner[vision_encoder_vision_block_loop]: captured bs=1 total_tokens=1024 (2 slots)
+2026-11-28 19:15:12,833 INFO [worker_0] mstar.engine.accelerator_graph_runner: PiecewiseAcceleratorGraphRunner[vision_encoder_vision_block_loop]: captured bs=1 total_tokens=512 (2 slots)
+2026-11-28 19:15:12,872 INFO [worker_0] mstar.engine.accelerator_graph_runner: PiecewiseAcceleratorGraphRunner[vision_encoder_vision_block_loop]: captured bs=1 total_tokens=256 (2 slots)
+2026-11-28 19:15:12,872 INFO [worker_0] mstar.engine.engine: CapturePlan[cuda:0] vision_encoder piecewise: capture took 808 MiB, 884 predicted
+2026-11-28 19:15:12,872 INFO [worker_0] mstar.engine.engine: CapturePlan[cuda:0]: 1368 MiB free after capture, 421 for the largest eager step
+2026-11-28 19:15:12,876 INFO [worker_0] mstar.engine.engine: Engine: torch.compile applied to Thinker
+2026-11-28 19:15:12,877 INFO [worker_0] mstar.engine.engine: Engine: torch.compile disabled for audio_encoder (submodule opt-out)
+2026-11-28 19:15:12,877 INFO [worker_0] mstar.engine.engine: Engine: torch.compile disabled for vision_encoder (submodule opt-out)
+2026-11-28 19:15:13,385 INFO [worker_2] mstar.worker.worker: Worker worker_2: gc.freeze() after warmup — 512282 objects moved to the permanent generation
+2026-11-28 19:15:13,387 INFO [worker_2] mstar.worker.step_executor: Worker worker_2: engine runs on dedicated GPU thread
+2026-11-28 19:15:13,387 INFO [worker_2] mstar.worker.step_executor: Worker worker_2: plan_executor enabled — speculative plan() pre-runs on a dedicated thread
+2026-11-28 19:15:13,686 INFO [worker_0] mstar.worker.worker: Worker worker_0: gc.freeze() after warmup — 1229822 objects moved to the permanent generation
+2026-11-28 19:15:13,687 INFO [worker_0] mstar.worker.step_executor: Worker worker_0: engine runs on dedicated GPU thread
+2026-11-28 19:15:13,688 INFO [worker_0] mstar.worker.step_executor: Worker worker_0: plan_executor enabled — speculative plan() pre-runs on a dedicated thread
+2026-11-28 19:15:13,929 INFO [worker_1] mstar.worker.worker: Worker worker_1: gc.freeze() after warmup — 1318172 objects moved to the permanent generation
+2026-11-28 19:15:13,930 INFO [worker_1] mstar.worker.step_executor: Worker worker_1: engine runs on dedicated GPU thread
+2026-11-28 19:15:13,931 INFO [worker_1] mstar.worker.step_executor: Worker worker_1: plan_executor enabled — speculative plan() pre-runs on a dedicated thread
+2026-11-28 19:15:13,938 INFO [conductor] mstar.conductor.conductor: Conductor: all 3 worker(s) ready
+2026-11-28 19:15:14,054 INFO [conductor] mstar.utils.gc_freeze: Conductor: gc.freeze() after setup, 440797 objects in the permanent generation
+2026-11-28 19:15:14,066 INFO [api_server] mstar.api_server.entrypoint: All workers ready
+2026-11-28 19:15:14,209 INFO [api_server] mstar.utils.gc_freeze: API server: gc.freeze() after setup, 439195 objects in the permanent generation
+2026-11-28 19:15:14,215 INFO [api_server] mstar.api_server.rust_frontend: Rust frontend started (pid=1038074, port=18512)
+2026-11-28 19:15:14,215 INFO [api_server] mstar.api_server.entrypoint: Starting mstar API server (mstar-server) on port 18512
+2026-11-28 19:15:14,216 INFO [api_server] mstar.api_server.rust_frontend: Rust-frontend bridge serving
+bridging to conductor at /tmp/mstar_rust_frontend_flqp34fu
+compressed speech output (mp3, flac, opus) through /home/chaofan/workspaces/mm_reuse_study/envs/mstar/lib/python3.12/site-packages/_soundfile_data/libsndfile_x86_64.so
+WARNING: no API key set (--api-key or MSTAR_API_KEY): any client that can reach 0.0.0.0:18512 can run requests. Set a key, or bind --host 127.0.0.1, unless a gateway in front of this server authenticates clients.
+mstar-server (Rust frontend) for model "qwen3_omni" on http://0.0.0.0:18512
+2026-11-28 19:15:15,844 INFO [api_server] mstar.communication.arena: ARENA stats: {'segments': 1, 'total_bytes': 268435456, 'free_bytes': 268435456, 'largest_free_block': 268435456, 'pinned_bytes': 0, 'live_slots': 0, 'spill_files': 0}
+2026-11-28 19:15:15,984 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 0 of its 113 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 19:15:15,984 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 0 of its 113 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 19:15:16,535 INFO [worker_0] mstar.communication.arena: ARENA stats: {'segments': 1, 'total_bytes': 268435456, 'free_bytes': 268435456, 'largest_free_block': 268435456, 'pinned_bytes': 536870912, 'live_slots': 0, 'spill_files': 0}
+2026-11-28 19:15:18,590 ERROR [worker_0] mstar.worker.step_pipeline: Worker worker_0 step vision_encoder/prefill_vision failed [error id 5ca2814dd226]: OutOfMemoryError: CUDA out of memory. Tried to allocate 76.00 MiB. GPU 0 has a total capacity of 47.37 GiB of which 59.50 MiB is free. Including non-PyTorch memory, this process has 47.30 GiB memory in use. Of the allocated memory 43.49 GiB is allocated by PyTorch, with 719.06 MiB allocated in private pools (e.g., CUDA Graphs), and 539.90 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+Traceback (most recent call last):
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/worker/step_pipeline.py", line 739, in _step_result
+    return pending.future.result()
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/worker/step_executor.py", line 223, in __call__
+    outputs = engine.exec_and_postprocess(node_batch)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/engine/engine.py", line 2673, in exec_and_postprocess
+    outputs = self.exec(batch)
+              ^^^^^^^^^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/engine/engine.py", line 1979, in exec
+    batch.outputs = self._exec_single(batch)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/engine/engine.py", line 2041, in _exec_single
+    raw, batch.step = self._drive_step(
+                      ^^^^^^^^^^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/engine/engine.py", line 2435, in _drive_step
+    return self._forward_and_commit(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/engine/engine.py", line 2504, in _forward_and_commit
+    raw = self._forward(
+          ^^^^^^^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/engine/engine.py", line 2566, in _forward
+    return self._forward_inner(batch, submodule_mgmt, cg_runner, engine_inputs, preprocessed, lease,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/engine/engine.py", line 2594, in _forward_inner
+    out = submodule_mgmt.forward(
+          ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/model/components/block_loop_encoder.py", line 278, in forward
+    return self.forward_batched(graph_walk, engine_inputs, **kwargs)[rid]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/model/qwen3_omni/submodules.py", line 353, in forward_batched
+    encoded = tower.encode(hidden, cos, sin)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/model/qwen3_omni/components/vision.py", line 93, in encode
+    hidden = block(hidden, cos, sin)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/envs/mstar/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/envs/mstar/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/model/components/qwen3_vit.py", line 387, in forward
+    hidden_states = hidden_states + self.attn(
+                                    ^^^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/envs/mstar/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/envs/mstar/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/model/components/qwen3_vit.py", line 362, in forward
+    out = self.state.read(self.layer, q)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/engine/state/adapters.py", line 1801, in read
+    return self.first_read.run(q, k, v, label=self._plan_label)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/engine/resources/attn/ragged/flashinfer.py", line 62, in run
+    return super().run(q, k, v, label, return_lse)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/engine/resources/attn/ragged/base.py", line 521, in run
+    return self._run(q, k, v, label, return_lse)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/envs/mstar/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 1181, in _fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/engine/resources/attn/ragged/base.py", line 532, in _run
+    return wrapper.run(q, k, v)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/envs/mstar/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 1181, in _fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/engine/resources/attn/ragged/wrappers.py", line 427, in run
+    out = self.attn_wrapper.run(qp, kp, vp, **lse_kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/envs/mstar/lib/python3.12/site-packages/flashinfer/api_logging.py", line 2369, in _auto_dump_wrapper
+    return _inner(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/envs/mstar/lib/python3.12/site-packages/flashinfer/prefill.py", line 5270, in run
+    out = torch.empty(
+          ^^^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 76.00 MiB. GPU 0 has a total capacity of 47.37 GiB of which 59.50 MiB is free. Including non-PyTorch memory, this process has 47.30 GiB memory in use. Of the allocated memory 43.49 GiB is allocated by PyTorch, with 719.06 MiB allocated in private pools (e.g., CUDA Graphs), and 539.90 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2026-11-28 19:15:18,594 ERROR [worker_0] mstar.worker.step_pipeline: Worker worker_0 failing request chatcmpl-c36aa62ee0994e6cb1088154f9caaa94#1: Error in worker: internal error (error id 5ca2814dd226)
+2026-11-28 19:15:18,594 ERROR [conductor] mstar.conductor.conductor: Request chatcmpl-c36aa62ee0994e6cb1088154f9caaa94#1 failed on a worker: Error in worker: internal error (error id 5ca2814dd226)
+2026-11-28 19:15:18,594 INFO [conductor] mstar.conductor.conductor: Draining request chatcmpl-c36aa62ee0994e6cb1088154f9caaa94#1 (4 participants) before teardown
+2026-11-28 19:15:18,600 ERROR [api_server] mstar.api_server.entrypoint: Request chatcmpl-c36aa62ee0994e6cb1088154f9caaa94#1 failed in the engine: Error in worker: internal error (error id 5ca2814dd226)
+mstar-server: shutting down (draining in-flight, 30s cap)
+[rank2]:[W1128 19:15:19.794544290 TCPStore.cpp:125] [c10d] recvValue failed on SocketImpl(fd=73, addr=[localhost]:35148, remote=[localhost]:44969): Connection reset by peer
+Exception raised from recvBytes at /pytorch/torch/csrc/distributed/c10d/Utils.hpp:679 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0x9d (0x7ffa65372fdd in /home/chaofan/workspaces/mm_reuse_study/envs/mstar/lib/python3.12/site-packages/torch/lib/libc10.so)
+frame #1: <unknown function> + 0x6a332f2 (0x7ff9cee912f2 in /home/chaofan/workspaces/mm_reuse_study/envs/mstar/lib/python3.12/site-packages/torch/lib/libtorch_cpu.so)
+frame #2: c10d::TCPStore::check(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&) + 0x273 (0x7ff9cee8f213 in /home/chaofan/workspaces/mm_reuse_study/envs/mstar/lib/python3.12/site-packages/torch/lib/libtorch_cpu.so)
+frame #3: c10d::ProcessGroupNCCL::HeartbeatMonitor::runLoop() + 0x44c (0x7ff9aae37f1c in /home/chaofan/workspaces/mm_reuse_study/envs/mstar/lib/python3.12/site-packages/torch/lib/libtorch_cuda.so)
+frame #4: <unknown function> + 0xecdb4 (0x7ffa3586edb4 in /lib/x86_64-linux-gnu/libstdc++.so.6)
+frame #5: <unknown function> + 0x9cb64 (0x7ffa66bf2b64 in /lib/x86_64-linux-gnu/libc.so.6)
+frame #6: <unknown function> + 0x129e8c (0x7ffa66c7fe8c in /lib/x86_64-linux-gnu/libc.so.6)
+
+[rank2]:[W1128 19:15:19.796803993 ProcessGroupNCCL.cpp:1802] [PG ID 0 PG GUID 0(default_pg) Rank 2] Failed to check the "should dump" flag on TCPStore, (maybe TCPStore server has shut down too early), with error: Connection reset by peer

@@ -1,0 +1,15 @@
+1795620692.744	3525961	embed_multimodal	keys=pixel_values_img2img,vit_pixel_values_img2img
+1795620693.174	3525961	encode_vit	shape=(3, 980, 980) ms=129.84
+1795620693.400	3525961	encode_vit	shape=(3, 980, 980) ms=108.37
+1795620693.581	3525961	encode_vit	shape=(3, 980, 980) ms=107.09
+1795620738.122	3525961	ecm_check	hit=False input_id=0 req=chatcmpl-966 mm_hash=296affc2fa3812cfaffc93ff
+1795620738.136	3525961	embed_multimodal	keys=pixel_values
+1795620738.162	3525961	encode_vit	shape=(3, 518, 518) ms=26.51
+1795620742.905	3525961	ecm_check	hit=True input_id=0 req=chatcmpl-93b mm_hash=296affc2fa3812cfaffc93ff
+1795620747.111	3525961	ecm_check	hit=True input_id=0 req=chatcmpl-ae8 mm_hash=296affc2fa3812cfaffc93ff
+1795620751.219	3525961	ecm_check	hit=True input_id=0 req=chatcmpl-86e mm_hash=296affc2fa3812cfaffc93ff
+1795620755.409	3525961	ecm_check	hit=True input_id=0 req=chatcmpl-913 mm_hash=296affc2fa3812cfaffc93ff
+1795620759.491	3525961	ecm_check	hit=True input_id=0 req=chatcmpl-8e2 mm_hash=296affc2fa3812cfaffc93ff
+1795620763.688	3525961	ecm_check	hit=False input_id=0 req=chatcmpl-a37 mm_hash=a30d7d5a2450246c9688675e
+1795620763.691	3525961	embed_multimodal	keys=pixel_values
+1795620763.720	3525961	encode_vit	shape=(3, 518, 518) ms=28.88

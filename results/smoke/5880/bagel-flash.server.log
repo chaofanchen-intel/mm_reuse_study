@@ -1,0 +1,329 @@
+
+  ✓ mstar serving 'bagel' on http://localhost:18201
+
+  Python SDK:
+    from mstar import MStarClient
+    client = MStarClient("http://localhost:18201")
+    print(client.chat("Hello!").text)
+    open("out.png","wb").write(client.generate_image("a cat in a hat"))
+
+  OpenAI-compatible:
+    from openai import OpenAI
+    oai = OpenAI(base_url="http://localhost:18201/v1", api_key="none")
+    oai.chat.completions.create(model="bagel", messages=[{"role":"user","content":"hi"}])
+    oai.images.generate(model="bagel", prompt="a cat")
+
+2026-11-25 20:55:31,819 INFO [api_server] mstar.api_server.entrypoint: API server: result threads not pinned (not pinned: the deepest idle state is C1_ACPI at 1 µs on CPUs 0-255, under the 100 µs from which pinning could pay (step_thread_core always pins anyway))
+2026-11-25 20:55:31,833 INFO [api_server] mstar.communication.tensors: SHM: swept 0 entries of dead deployment namespace ec28b1b613f6
+2026-11-25 20:55:31,833 INFO [api_server] mstar.communication.arena: ARENA: /dev/shm has 451222 MiB free for 2 arenas and their spill files; each arena grows to 32 segments of 256 MiB (MSTAR_SHM_ARENA_MAX_SEGMENTS and _SEGMENT_MB override)
+2026-11-25 20:55:31,833 INFO [api_server] mstar.communication.communicator: control mesh transport: rust 0.1.1 from /home/chaofan/workspaces/mm_reuse_study/envs/mstar/lib/python3.12/site-packages/mstar_rust/__init__.py
+2026-11-25 20:55:31,922 INFO [api_server] mstar.communication.arena: ARENA: grew to 1 segments (256 MiB total, 256 MiB free, largest free block 256 MiB, 0 MiB pinned)
+2026-11-25 20:55:31,923 INFO [api_server] mstar.communication.communicator: control mesh transport: rust 0.1.1 from /home/chaofan/workspaces/mm_reuse_study/envs/mstar/lib/python3.12/site-packages/mstar_rust/__init__.py
+2026-11-25 20:55:31,946 INFO [api_server] mstar.api_server.entrypoint: Conductor process started (pid=2646419, model=bagel)
+2026-11-25 20:55:31,946 INFO [api_server] mstar.api_server.entrypoint: Waiting for workers to finish setup (loading weights, capturing accelerator graphs)...
+2026-11-25 20:55:34,681 INFO [conductor] mstar.api_server.entrypoint: yaml /home/chaofan/workspaces/mm_reuse_study/external/mstar/configs/bagel_single_gpu.yaml has no model_kwargs section; using model defaults
+2026-11-25 20:55:36,111 INFO [conductor] mstar.conductor.conductor: Detected worker device type: cuda
+2026-11-25 20:55:36,111 INFO [conductor] mstar.conductor.conductor: Compile caches: Inductor /home/chaofan/.cache/mstar/torchinductor, Triton /home/chaofan/.cache/mstar/torchinductor/triton
+2026-11-25 20:55:39,981 INFO [conductor] mstar.communication.communicator: control mesh transport: rust 0.1.1 from /home/chaofan/workspaces/mm_reuse_study/envs/mstar/lib/python3.12/site-packages/mstar_rust/__init__.py
+2026-11-25 20:55:39,981 INFO [conductor] mstar.conductor.conductor: Conductor waiting for 1 worker(s) to finish setup
+2026-11-25 20:55:40,484 INFO [worker_0] mstar.communication.communicator: control mesh transport: rust 0.1.1 from /home/chaofan/workspaces/mm_reuse_study/envs/mstar/lib/python3.12/site-packages/mstar_rust/__init__.py
+2026-11-25 20:55:40,788 INFO [worker_0] mstar.communication.arena: ARENA: grew to 1 segments (256 MiB total, 256 MiB free, largest free block 256 MiB, 256 MiB pinned)
+2026-11-25 20:55:58,890 INFO [worker_0] mstar.model.bagel.bagel_model: Successfully loaded in BAGEL submodule for LLM
+2026-11-25 20:55:59,096 INFO [worker_0] mstar.model.bagel.bagel_model: Successfully loaded in BAGEL submodule for vae_decoder
+2026-11-25 20:55:59,099 INFO [worker_0] mstar.model.bagel.bagel_model: Successfully loaded in BAGEL submodule for vae_encoder
+2026-11-25 20:55:59,833 INFO [worker_0] mstar.model.bagel.bagel_model: Successfully loaded in BAGEL submodule for vit_encoder
+2026-11-25 20:55:59,937 INFO [worker_0] mstar.kernels.registry: kernel table: no ragged_attention bfloat16 num_qo_heads=16,num_kv_heads=16,head_dim=72 entry for NVIDIA RTX 5880 Ada Generation; built-in configs. To tune it: python -m benchmark.kernels.sweep ragged_attention --dtype bfloat16 --shape num_qo_heads=16,num_kv_heads=16,head_dim=72
+2026-11-25 20:55:59,941 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 14.00 GiB on this rank, 2048 pages of 128 slots
+2026-11-25 20:55:59,951 INFO [worker_0] mstar.engine.engine: KV kv: prefix cache open for main on LLM
+2026-11-25 20:55:59,951 WARNING [worker_0] mstar.engine.engine: KV kv: prefix cache on with cpu_offload_pages 0: a decode step that finds nothing to evict holds its requests until they time out. Set max_concurrent_requests to the pool's pages over the pages one request needs. cpu_offload_pages gives the worker a victim, but one that shares most of its prompt frees little
+2026-11-25 20:55:59,977 INFO [worker_0] mstar.worker.engine_manager: Engine loaded on device cuda:0 for nodes ['LLM', 'vae_decoder', 'vae_encoder', 'vit_encoder']
+2026-11-25 20:58:13,285 INFO [worker_0] mstar.engine.accelerator_graph_runner: LLM prefill_text[bs=64,tokens=2048,key=False] slot=0: graph executable memory, 10749 bytes a node, 15 MiB held for the walk's graphs
+2026-11-25 20:58:21,563 INFO [worker_0] mstar.engine.accelerator_graph_runner: LLM decode[bs=64,tokens=128,key=True] slot=0: graph executable memory, 10798 bytes a node, 15 MiB held for the walk's graphs
+2026-11-25 20:58:24,318 INFO [worker_0] mstar.engine.accelerator_graph_runner: LLM decode[bs=64,tokens=64,key=False] slot=0: graph executable memory, 11565 bytes a node, 15 MiB held for the walk's graphs
+2026-11-25 20:59:15,362 INFO [worker_0] mstar.engine.accelerator_graph_runner: LLM decode[bs=64,tokens=128,key=True,lean=sampler] slot=0: graph executable memory, 13443 bytes a node, 20 MiB held for the walk's graphs
+2026-11-25 20:59:15,502 INFO [worker_0] mstar.engine.accelerator_graph_runner: LLM decode[bs=64,tokens=64,key=False,lean=sampler] slot=0: graph executable memory, 11796 bytes a node, 15 MiB held for the walk's graphs
+2026-11-25 20:59:16,905 INFO [worker_0] mstar.engine.engine: CapturePlan[cuda:0]: 2206 MiB free, 278 for the largest eager step
+2026-11-25 20:59:16,905 INFO [worker_0] mstar.engine.engine: CapturePlan[cuda:0] LLM: 63 of 63 buckets (14 of 14 lean twins), 556 MiB predicted, 581 outside the allocator
+2026-11-25 20:59:16,905 INFO [worker_0] mstar.engine.resources.attn.workspace: FlashInfer workspaces of kv: 4, 2048 MiB in all
+2026-11-25 20:59:16,977 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for LLM: prefill_text[bs=64,tokens=2048,key=False] (2 slots)
+2026-11-25 20:59:17,028 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for LLM: prefill_text[bs=64,tokens=512,key=False] (2 slots)
+2026-11-25 20:59:17,075 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for LLM: prefill_text[bs=64,tokens=256,key=False] (2 slots)
+2026-11-25 20:59:17,126 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for LLM: prefill_text[bs=64,tokens=128,key=False] (2 slots)
+2026-11-25 20:59:17,177 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for LLM: prefill_text[bs=32,tokens=2048,key=False] (2 slots)
+2026-11-25 20:59:17,228 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for LLM: prefill_text[bs=32,tokens=1024,key=False] (2 slots)
+2026-11-25 20:59:17,283 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for LLM: prefill_text[bs=32,tokens=512,key=False] (2 slots)
+2026-11-25 20:59:17,333 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for LLM: prefill_text[bs=32,tokens=256,key=False] (2 slots)
+2026-11-25 20:59:17,384 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for LLM: prefill_text[bs=32,tokens=128,key=False] (2 slots)
+2026-11-25 20:59:17,436 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for LLM: prefill_text[bs=16,tokens=2048,key=False] (2 slots)
+2026-11-25 20:59:17,487 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for LLM: prefill_text[bs=16,tokens=1024,key=False] (2 slots)
+2026-11-25 20:59:17,542 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for LLM: prefill_text[bs=16,tokens=512,key=False] (2 slots)
+2026-11-25 20:59:17,593 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for LLM: prefill_text[bs=16,tokens=256,key=False] (2 slots)
+2026-11-25 20:59:17,644 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for LLM: prefill_text[bs=16,tokens=128,key=False] (2 slots)
+2026-11-25 20:59:17,695 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for LLM: prefill_text[bs=8,tokens=2048,key=False] (2 slots)
+2026-11-25 20:59:17,746 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for LLM: prefill_text[bs=8,tokens=1024,key=False] (2 slots)
+2026-11-25 20:59:17,802 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for LLM: prefill_text[bs=8,tokens=512,key=False] (2 slots)
+2026-11-25 20:59:17,855 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for LLM: prefill_text[bs=8,tokens=256,key=False] (2 slots)
+2026-11-25 20:59:17,906 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for LLM: prefill_text[bs=8,tokens=128,key=False] (2 slots)
+2026-11-25 20:59:17,957 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for LLM: prefill_text[bs=4,tokens=2048,key=False] (2 slots)
+2026-11-25 20:59:18,010 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for LLM: prefill_text[bs=4,tokens=1024,key=False] (2 slots)
+2026-11-25 20:59:18,069 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for LLM: prefill_text[bs=4,tokens=512,key=False] (2 slots)
+2026-11-25 20:59:18,120 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for LLM: prefill_text[bs=4,tokens=256,key=False] (2 slots)
+2026-11-25 20:59:18,170 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for LLM: prefill_text[bs=4,tokens=128,key=False] (2 slots)
+2026-11-25 20:59:18,220 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for LLM: prefill_text[bs=2,tokens=2048,key=False] (2 slots)
+2026-11-25 20:59:18,271 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for LLM: prefill_text[bs=2,tokens=1024,key=False] (2 slots)
+2026-11-25 20:59:18,328 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for LLM: prefill_text[bs=2,tokens=512,key=False] (2 slots)
+2026-11-25 20:59:18,378 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for LLM: prefill_text[bs=2,tokens=256,key=False] (2 slots)
+2026-11-25 20:59:18,429 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for LLM: prefill_text[bs=2,tokens=128,key=False] (2 slots)
+2026-11-25 20:59:18,480 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for LLM: prefill_text[bs=1,tokens=2048,key=False] (2 slots)
+2026-11-25 20:59:18,530 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for LLM: prefill_text[bs=1,tokens=1024,key=False] (2 slots)
+2026-11-25 20:59:18,580 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for LLM: prefill_text[bs=1,tokens=512,key=False] (2 slots)
+2026-11-25 20:59:18,624 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for LLM: prefill_text[bs=1,tokens=256,key=False] (2 slots)
+2026-11-25 20:59:18,669 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for LLM: prefill_text[bs=1,tokens=128,key=False] (2 slots)
+2026-11-25 20:59:18,720 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for LLM: prefill_text[bs=64,tokens=1024,key=False] (2 slots)
+2026-11-25 20:59:18,777 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for LLM: decode[bs=64,tokens=128,key=True] (2 slots)
+2026-11-25 20:59:18,829 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for LLM: decode[bs=16,tokens=32,key=True] (2 slots)
+2026-11-25 20:59:18,877 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for LLM: decode[bs=8,tokens=16,key=True] (2 slots)
+2026-11-25 20:59:18,926 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for LLM: decode[bs=4,tokens=8,key=True] (2 slots)
+2026-11-25 20:59:18,974 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for LLM: decode[bs=2,tokens=4,key=True] (2 slots)
+2026-11-25 20:59:19,021 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for LLM: decode[bs=1,tokens=2,key=True] (2 slots)
+2026-11-25 20:59:19,071 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for LLM: decode[bs=64,tokens=64,key=False] (2 slots)
+2026-11-25 20:59:19,118 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for LLM: decode[bs=16,tokens=16,key=False] (2 slots)
+2026-11-25 20:59:19,164 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for LLM: decode[bs=8,tokens=8,key=False] (2 slots)
+2026-11-25 20:59:19,211 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for LLM: decode[bs=4,tokens=4,key=False] (2 slots)
+2026-11-25 20:59:19,259 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for LLM: decode[bs=2,tokens=2,key=False] (2 slots)
+2026-11-25 20:59:19,306 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for LLM: decode[bs=1,tokens=1,key=False] (2 slots)
+2026-11-25 20:59:19,359 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for LLM: decode[bs=32,tokens=64,key=True] (2 slots)
+2026-11-25 20:59:19,408 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for LLM: decode[bs=32,tokens=32,key=False] (2 slots)
+2026-11-25 20:59:19,456 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for LLM: decode[bs=64,tokens=128,key=True,lean=sampler] (2 slots)
+2026-11-25 20:59:19,501 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for LLM: decode[bs=16,tokens=32,key=True,lean=sampler] (2 slots)
+2026-11-25 20:59:19,545 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for LLM: decode[bs=8,tokens=16,key=True,lean=sampler] (2 slots)
+2026-11-25 20:59:19,594 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for LLM: decode[bs=4,tokens=8,key=True,lean=sampler] (2 slots)
+2026-11-25 20:59:19,642 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for LLM: decode[bs=2,tokens=4,key=True,lean=sampler] (2 slots)
+2026-11-25 20:59:19,692 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for LLM: decode[bs=1,tokens=2,key=True,lean=sampler] (2 slots)
+2026-11-25 20:59:19,747 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for LLM: decode[bs=64,tokens=64,key=False,lean=sampler] (2 slots)
+2026-11-25 20:59:19,800 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for LLM: decode[bs=32,tokens=64,key=True,lean=sampler] (2 slots)
+2026-11-25 20:59:19,849 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for LLM: decode[bs=16,tokens=16,key=False,lean=sampler] (2 slots)
+2026-11-25 20:59:19,898 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for LLM: decode[bs=8,tokens=8,key=False,lean=sampler] (2 slots)
+2026-11-25 20:59:19,946 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for LLM: decode[bs=4,tokens=4,key=False,lean=sampler] (2 slots)
+2026-11-25 20:59:19,997 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for LLM: decode[bs=2,tokens=2,key=False,lean=sampler] (2 slots)
+2026-11-25 20:59:20,044 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for LLM: decode[bs=1,tokens=1,key=False,lean=sampler] (2 slots)
+2026-11-25 20:59:20,095 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for LLM: decode[bs=32,tokens=32,key=False,lean=sampler] (2 slots)
+2026-11-25 20:59:20,106 INFO [worker_0] mstar.engine.accelerator_graph_runner: AcceleratorGraphRunner[LLM]: warmup_and_capture done. shared_static_buffers: 3 entries, 0.02 MB resident (would have been 0.86 MB with per-capture clones — saved 0.85 MB). Total accelerator alloc delta during warmup: 8.44 MB.
+2026-11-25 20:59:20,107 INFO [worker_0] mstar.engine.engine: CapturePlan[cuda:0] LLM: capture took 386 MiB, 556 predicted
+2026-11-25 20:59:20,107 INFO [worker_0] mstar.engine.engine: CapturePlan[cuda:0] LLM piecewise: capture took 0 MiB, 0 predicted
+2026-11-25 20:59:20,108 INFO [worker_0] mstar.engine.accelerator_graph_runner: AcceleratorGraphRunner[vae_decoder]: warmup_and_capture done. shared_static_buffers: 0 entries, 0.00 MB resident (would have been 0.00 MB with per-capture clones — saved 0.00 MB). Total accelerator alloc delta during warmup: 0.00 MB.
+2026-11-25 20:59:20,108 INFO [worker_0] mstar.engine.engine: CapturePlan[cuda:0] vae_decoder: capture took 0 MiB, 0 predicted
+2026-11-25 20:59:20,108 INFO [worker_0] mstar.engine.engine: CapturePlan[cuda:0] vae_decoder piecewise: capture took 0 MiB, 0 predicted
+2026-11-25 20:59:20,108 INFO [worker_0] mstar.engine.accelerator_graph_runner: AcceleratorGraphRunner[vae_encoder]: warmup_and_capture done. shared_static_buffers: 0 entries, 0.00 MB resident (would have been 0.00 MB with per-capture clones — saved 0.00 MB). Total accelerator alloc delta during warmup: 0.00 MB.
+2026-11-25 20:59:20,109 INFO [worker_0] mstar.engine.engine: CapturePlan[cuda:0] vae_encoder: capture took 0 MiB, 0 predicted
+2026-11-25 20:59:20,109 INFO [worker_0] mstar.engine.engine: CapturePlan[cuda:0] vae_encoder piecewise: capture took 0 MiB, 0 predicted
+2026-11-25 20:59:20,110 INFO [worker_0] mstar.engine.accelerator_graph_runner: AcceleratorGraphRunner[vit_encoder]: warmup_and_capture done. shared_static_buffers: 0 entries, 0.00 MB resident (would have been 0.00 MB with per-capture clones — saved 0.00 MB). Total accelerator alloc delta during warmup: 0.00 MB.
+2026-11-25 20:59:20,110 INFO [worker_0] mstar.engine.engine: CapturePlan[cuda:0] vit_encoder: capture took 0 MiB, 0 predicted
+2026-11-25 20:59:20,110 INFO [worker_0] mstar.engine.engine: CapturePlan[cuda:0] vit_encoder piecewise: capture took 0 MiB, 0 predicted
+2026-11-25 20:59:20,110 INFO [worker_0] mstar.engine.engine: CapturePlan[cuda:0]: 1392 MiB free after capture, 278 for the largest eager step
+2026-11-25 20:59:20,114 INFO [worker_0] mstar.engine.engine: Engine: torch.compile applied to LLM
+2026-11-25 20:59:20,118 INFO [worker_0] mstar.engine.engine: Engine: torch.compile applied to vae_decoder
+2026-11-25 20:59:20,122 INFO [worker_0] mstar.engine.engine: Engine: torch.compile applied to vae_encoder
+2026-11-25 20:59:20,125 INFO [worker_0] mstar.engine.engine: Engine: torch.compile applied to vit_encoder
+2026-11-25 20:59:20,951 INFO [worker_0] mstar.worker.worker: Worker worker_0: gc.freeze() after warmup — 1529917 objects moved to the permanent generation
+2026-11-25 20:59:20,952 INFO [worker_0] mstar.worker.step_executor: Worker worker_0: engine runs on dedicated GPU thread
+2026-11-25 20:59:20,952 INFO [worker_0] mstar.worker.step_executor: Worker worker_0: plan_executor enabled — speculative plan() pre-runs on a dedicated thread
+2026-11-25 20:59:20,959 INFO [conductor] mstar.conductor.conductor: Conductor: all 1 worker(s) ready
+2026-11-25 20:59:21,076 INFO [conductor] mstar.utils.gc_freeze: Conductor: gc.freeze() after setup, 393959 objects in the permanent generation
+2026-11-25 20:59:21,084 INFO [api_server] mstar.api_server.entrypoint: All workers ready
+2026-11-25 20:59:21,232 INFO [api_server] mstar.utils.gc_freeze: API server: gc.freeze() after setup, 393093 objects in the permanent generation
+2026-11-25 20:59:21,250 INFO [api_server] mstar.api_server.rust_frontend: Rust frontend started (pid=2669249, port=18201)
+2026-11-25 20:59:21,250 INFO [api_server] mstar.api_server.entrypoint: Starting mstar API server (mstar-server) on port 18201
+2026-11-25 20:59:21,250 INFO [api_server] mstar.api_server.rust_frontend: Rust-frontend bridge serving
+bridging to conductor at /tmp/mstar_rust_frontend_ub4udw9h
+compressed speech output (mp3, flac, opus) through /home/chaofan/workspaces/mm_reuse_study/envs/mstar/lib/python3.12/site-packages/_soundfile_data/libsndfile_x86_64.so
+WARNING: no API key set (--api-key or MSTAR_API_KEY): any client that can reach 0.0.0.0:18201 can run requests. Set a key, or bind --host 127.0.0.1, unless a gateway in front of this server authenticates clients.
+mstar-server (Rust frontend) for model "bagel" on http://0.0.0.0:18201
+2026-11-25 20:59:29,310 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 0 of its 0 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-25 20:59:35,700 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 0 of its 11 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-25 20:59:46,591 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 0 of its 0 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-25 21:00:09,718 ERROR [worker_0] mstar.worker.step_pipeline: Worker worker_0 step vae_decoder/image_gen failed [error id d78e54559955]: RuntimeError: cuDNN error: CUDNN_STATUS_INTERNAL_ERROR
+Traceback (most recent call last):
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/worker/step_pipeline.py", line 739, in _step_result
+    return pending.future.result()
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/worker/step_executor.py", line 223, in __call__
+    outputs = engine.exec_and_postprocess(node_batch)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/engine/engine.py", line 2615, in exec_and_postprocess
+    outputs = self.exec(batch)
+              ^^^^^^^^^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/engine/engine.py", line 1942, in exec
+    batch.outputs = self._exec_single(batch)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/engine/engine.py", line 2004, in _exec_single
+    raw, batch.step = self._drive_step(
+                      ^^^^^^^^^^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/engine/engine.py", line 2398, in _drive_step
+    return self._forward_and_commit(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/engine/engine.py", line 2467, in _forward_and_commit
+    raw = self._forward(
+          ^^^^^^^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/engine/engine.py", line 2536, in _forward
+    out = submodule_mgmt.forward(
+          ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/envs/mstar/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 953, in compile_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/model/bagel/submodules.py", line 1841, in forward
+    logger.debug(
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/model/bagel/submodules.py", line 1841, in torch_dynamo_resume_in_forward_at_1841
+    logger.debug(
+  File "/home/chaofan/workspaces/mm_reuse_study/envs/mstar/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 1181, in _fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/envs/mstar/lib/python3.12/site-packages/torch/_functorch/aot_autograd.py", line 1148, in forward
+    return compiled_fn(full_args)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/envs/mstar/lib/python3.12/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 1962, in __call__
+    return self.compiled_fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/envs/mstar/lib/python3.12/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 357, in runtime_wrapper
+    all_outs = call_func_at_runtime_with_args(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/envs/mstar/lib/python3.12/site-packages/torch/_functorch/_aot_autograd/utils.py", line 134, in call_func_at_runtime_with_args
+    out = normalize_as_list(f(args))
+                            ^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/envs/mstar/lib/python3.12/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 531, in wrapper
+    return compiled_fn(runtime_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/envs/mstar/lib/python3.12/site-packages/torch/_inductor/output_code.py", line 638, in __call__
+    return self.current_callable(inputs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/envs/mstar/lib/python3.12/site-packages/torch/_inductor/utils.py", line 3220, in run
+    out = model(new_inputs)
+          ^^^^^^^^^^^^^^^^^
+  File "/home/chaofan/.cache/mstar/torchinductor/u5/cu5jnt32ufxzvtx7o3wky3vi3dfqejga5jdzw3ifrv4yvbi57qhn.py", line 5312, in call
+    buf2 = extern_kernels.convolution(buf0, buf1, stride=(1, 1), padding=(1, 1), dilation=(1, 1), transposed=False, output_padding=(0, 0), groups=1, bias=None)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: cuDNN error: CUDNN_STATUS_INTERNAL_ERROR
+2026-11-25 21:00:09,722 ERROR [worker_0] mstar.worker.step_pipeline: Worker worker_0 failing request img-15254fc1cb284f0eade603097797d5c6#3: Error in worker: internal error (error id d78e54559955)
+2026-11-25 21:00:09,723 ERROR [conductor] mstar.conductor.conductor: Request img-15254fc1cb284f0eade603097797d5c6#3 failed on a worker: Error in worker: internal error (error id d78e54559955)
+2026-11-25 21:00:09,723 INFO [conductor] mstar.conductor.conductor: Draining request img-15254fc1cb284f0eade603097797d5c6#3 (2 participants) before teardown
+2026-11-25 21:00:09,724 ERROR [api_server] mstar.api_server.entrypoint: Request img-15254fc1cb284f0eade603097797d5c6#3 failed in the engine: Error in worker: internal error (error id d78e54559955)
+2026-11-25 21:00:20,961 INFO [conductor] mstar.conductor.conductor: Last 60 s: 2 requests done, 0 queued for admission; 0 running, 0 waiting
+2026-11-25 21:00:46,786 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 0 of its 0 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-25 21:00:46,835 ERROR [worker_0] mstar.worker.step_pipeline: Worker worker_0 step LLM/image_gen_guided2 failed [error id a00ea57e8ca8]: OutOfMemoryError: CUDA out of memory. Tried to allocate 74.00 MiB. GPU 0 has a total capacity of 47.37 GiB of which 1.56 MiB is free. Including non-PyTorch memory, this process has 47.36 GiB memory in use. Of the allocated memory 46.20 GiB is allocated by PyTorch, with 375.81 MiB allocated in private pools (e.g., CUDA Graphs), and 215.72 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+Traceback (most recent call last):
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/worker/step_pipeline.py", line 739, in _step_result
+    return pending.future.result()
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/worker/step_executor.py", line 223, in __call__
+    outputs = engine.exec_and_postprocess(node_batch)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/engine/engine.py", line 2615, in exec_and_postprocess
+    outputs = self.exec(batch)
+              ^^^^^^^^^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/engine/engine.py", line 1942, in exec
+    batch.outputs = self._exec_single(batch)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/engine/engine.py", line 2004, in _exec_single
+    raw, batch.step = self._drive_step(
+                      ^^^^^^^^^^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/engine/engine.py", line 2398, in _drive_step
+    return self._forward_and_commit(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/engine/engine.py", line 2467, in _forward_and_commit
+    raw = self._forward(
+          ^^^^^^^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/engine/engine.py", line 2536, in _forward
+    out = submodule_mgmt.forward(
+          ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/envs/mstar/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 953, in compile_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/model/bagel/submodules.py", line 1354, in forward
+    return self._forward_image_gen(branches=DENOISE_WALKS[graph_walk].branches, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/model/bagel/submodules.py", line 1491, in _forward_image_gen
+    logger.debug("packed_seq = %s", empty_combined_emb)  # tensor repr: keep lazy
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/model/bagel/submodules.py", line 1503, in torch_dynamo_resume_in__forward_image_gen_at_1491
+    v_main, v_cfg_text, v_cfg_img = self._image_gen_branches_forward(
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/model/bagel/submodules.py", line 1559, in _image_gen_branches_forward
+    hidden = self.language_model(
+             ^^^^^^^^^^^^^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/envs/mstar/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/envs/mstar/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/model/bagel/components/language_model.py", line 493, in forward
+    outputs = self.model(
+              ^^^^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/envs/mstar/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/envs/mstar/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/model/bagel/components/language_model.py", line 424, in forward
+    query_sequence = decoder_layer(
+                     ^^^^^^^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/envs/mstar/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/envs/mstar/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/model/bagel/components/language_model.py", line 329, in forward
+    query_sequence = self.self_attn(
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/model/bagel/components/language_model.py", line 329, in torch_dynamo_resume_in_forward_at_329
+    query_sequence = self.self_attn(
+  File "/home/chaofan/workspaces/mm_reuse_study/envs/mstar/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 1181, in _fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/envs/mstar/lib/python3.12/site-packages/torch/_functorch/aot_autograd.py", line 1148, in forward
+    return compiled_fn(full_args)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/envs/mstar/lib/python3.12/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 1962, in __call__
+    return self.compiled_fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/envs/mstar/lib/python3.12/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 357, in runtime_wrapper
+    all_outs = call_func_at_runtime_with_args(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/envs/mstar/lib/python3.12/site-packages/torch/_functorch/_aot_autograd/utils.py", line 134, in call_func_at_runtime_with_args
+    out = normalize_as_list(f(args))
+                            ^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/envs/mstar/lib/python3.12/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 531, in wrapper
+    return compiled_fn(runtime_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/envs/mstar/lib/python3.12/site-packages/torch/_inductor/output_code.py", line 638, in __call__
+    return self.current_callable(inputs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/envs/mstar/lib/python3.12/site-packages/torch/_inductor/utils.py", line 3220, in run
+    out = model(new_inputs)
+          ^^^^^^^^^^^^^^^^^
+  File "/home/chaofan/.cache/mstar/torchinductor/ki/ckijkhjpu2jh3fh3fy2tnjdayunngtw5o6gleolhxevssc4kjsi3.py", line 544, in call
+    buf14 = empty_strided_cuda((2048, 18944), (18944, 1), torch.bfloat16)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 74.00 MiB. GPU 0 has a total capacity of 47.37 GiB of which 1.56 MiB is free. Including non-PyTorch memory, this process has 47.36 GiB memory in use. Of the allocated memory 46.20 GiB is allocated by PyTorch, with 375.81 MiB allocated in private pools (e.g., CUDA Graphs), and 215.72 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2026-11-25 21:00:46,839 ERROR [worker_0] mstar.worker.step_pipeline: Worker worker_0 failing request img-4b445df9525442e2b8b4d0d29abeb857#4: Error in worker: internal error (error id a00ea57e8ca8)
+2026-11-25 21:00:46,839 ERROR [conductor] mstar.conductor.conductor: Request img-4b445df9525442e2b8b4d0d29abeb857#4 failed on a worker: Error in worker: internal error (error id a00ea57e8ca8)
+2026-11-25 21:00:46,840 INFO [conductor] mstar.conductor.conductor: Draining request img-4b445df9525442e2b8b4d0d29abeb857#4 (2 participants) before teardown
+2026-11-25 21:00:46,845 ERROR [api_server] mstar.api_server.entrypoint: Request img-4b445df9525442e2b8b4d0d29abeb857#4 failed in the engine: Error in worker: internal error (error id a00ea57e8ca8)
+mstar-server: shutting down (draining in-flight, 30s cap)
+2026-11-25 21:01:21,395 INFO [conductor] mstar.conductor.conductor: Shutting down conductor...

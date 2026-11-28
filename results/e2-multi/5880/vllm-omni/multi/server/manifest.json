@@ -1,0 +1,40 @@
+{
+  "name": "e2-vo",
+  "framework": "vllm-omni",
+  "machine": "5880",
+  "host": "edgeaihost210",
+  "port": 18501,
+  "base_url": "http://localhost:18501",
+  "gpus": "0,1",
+  "gpu_info": [
+    "0, NVIDIA RTX 5880 Ada Generation, 580.178.04",
+    "1, NVIDIA RTX 5880 Ada Generation, 580.178.04"
+  ],
+  "config": "configs/qwen3omni_vllm_omni_thinker.yaml",
+  "config_sha256": "200a8fe7a1425596f10c33f22e8d28458a5e9e26ba510a8434b3af41fa21916b",
+  "shim_mode": "count",
+  "framework_commit": "06a28821a7f72bdb436c3df656b10f67fded0846",
+  "framework_dirty": true,
+  "framework_diff_sha256": "3f66f8e78ad4e358026dbd797bfff83dfbf9a5d5cb08a17860e7fa97e388b042",
+  "framework_untracked": 0,
+  "study_env": {
+    "VO_AUDIT_LOG": "/home/chaofan/workspaces/mm_reuse_study/results/e2-multi/5880/vllm-omni/multi/server/shim.log",
+    "VO_AUDIT_MODE": "count"
+  },
+  "command": [
+    "/home/chaofan/workspaces/mm_reuse_study/envs/vllm-omni/bin/vllm",
+    "serve",
+    "/home/chaofan/workspaces/mm_reuse_study/models/cache/models--Qwen--Qwen3-Omni-30B-A3B-Instruct/snapshots/26291f793822fb6be9555850f06dfe95f2d7e695",
+    "--omni",
+    "--port",
+    "18501",
+    "--deploy-config",
+    "configs/qwen3omni_vllm_omni_thinker.yaml",
+    "--served-model-name",
+    "qwen3_omni"
+  ],
+  "cwd": "/home/chaofan/workspaces/mm_reuse_study",
+  "pid": 241059,
+  "started_at": "2026-11-28T17:02:38+0800",
+  "log": "results/e2-multi/5880/vllm-omni/multi/server/server.log"
+}

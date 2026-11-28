@@ -1,0 +1,197 @@
+
+  ✓ mstar serving 'bagel' on http://localhost:18601
+
+  Python SDK:
+    from mstar import MStarClient
+    client = MStarClient("http://localhost:18601")
+    print(client.chat("Hello!").text)
+    open("out.png","wb").write(client.generate_image("a cat in a hat"))
+
+  OpenAI-compatible:
+    from openai import OpenAI
+    oai = OpenAI(base_url="http://localhost:18601/v1", api_key="none")
+    oai.chat.completions.create(model="bagel", messages=[{"role":"user","content":"hi"}])
+    oai.images.generate(model="bagel", prompt="a cat")
+
+2026-11-26 22:51:32,862 INFO [api_server] mstar.api_server.entrypoint: API server: result threads not pinned (not pinned: the deepest idle state is C1_ACPI at 1 µs on CPUs 0-255, under the 100 µs from which pinning could pay (step_thread_core always pins anyway))
+2026-11-26 22:51:32,868 INFO [api_server] mstar.communication.tensors: SHM: swept 0 entries of dead deployment namespace 0c6b804709b9
+2026-11-26 22:51:32,869 INFO [api_server] mstar.communication.arena: ARENA: /dev/shm has 451222 MiB free for 2 arenas and their spill files; each arena grows to 32 segments of 256 MiB (MSTAR_SHM_ARENA_MAX_SEGMENTS and _SEGMENT_MB override)
+2026-11-26 22:51:32,869 INFO [api_server] mstar.communication.communicator: control mesh transport: rust 0.1.1 from /home/chaofan/workspaces/mm_reuse_study/envs/mstar/lib/python3.12/site-packages/mstar_rust/__init__.py
+2026-11-26 22:51:32,942 INFO [api_server] mstar.communication.arena: ARENA: grew to 1 segments (256 MiB total, 256 MiB free, largest free block 256 MiB, 0 MiB pinned)
+2026-11-26 22:51:32,945 INFO [api_server] mstar.communication.communicator: control mesh transport: rust 0.1.1 from /home/chaofan/workspaces/mm_reuse_study/envs/mstar/lib/python3.12/site-packages/mstar_rust/__init__.py
+2026-11-26 22:51:32,957 INFO [api_server] mstar.api_server.entrypoint: Conductor process started (pid=3352937, model=bagel)
+2026-11-26 22:51:32,957 INFO [api_server] mstar.api_server.entrypoint: Waiting for workers to finish setup (loading weights, capturing accelerator graphs)...
+2026-11-26 22:51:35,457 INFO [conductor] mstar.api_server.entrypoint: yaml configs/bagel_mstar_i2t.yaml has no model_kwargs section; using model defaults
+2026-11-26 22:51:36,721 INFO [conductor] mstar.conductor.conductor: Detected worker device type: cuda
+2026-11-26 22:51:36,721 INFO [conductor] mstar.conductor.conductor: Compile caches: Inductor /home/chaofan/.cache/mstar/torchinductor, Triton /home/chaofan/.cache/mstar/torchinductor/triton
+2026-11-26 22:51:40,301 INFO [conductor] mstar.communication.communicator: control mesh transport: rust 0.1.1 from /home/chaofan/workspaces/mm_reuse_study/envs/mstar/lib/python3.12/site-packages/mstar_rust/__init__.py
+2026-11-26 22:51:40,301 INFO [conductor] mstar.conductor.conductor: Conductor waiting for 1 worker(s) to finish setup
+2026-11-26 22:51:40,622 INFO [worker_0] mstar.communication.communicator: control mesh transport: rust 0.1.1 from /home/chaofan/workspaces/mm_reuse_study/envs/mstar/lib/python3.12/site-packages/mstar_rust/__init__.py
+2026-11-26 22:51:40,920 INFO [worker_0] mstar.communication.arena: ARENA: grew to 1 segments (256 MiB total, 256 MiB free, largest free block 256 MiB, 256 MiB pinned)
+2026-11-26 22:51:47,714 INFO [worker_0] mstar.model.bagel.bagel_model: Successfully loaded in BAGEL submodule for LLM
+2026-11-26 22:51:47,807 INFO [worker_0] mstar.model.bagel.bagel_model: Successfully loaded in BAGEL submodule for vae_decoder
+2026-11-26 22:51:47,808 INFO [worker_0] mstar.model.bagel.bagel_model: Successfully loaded in BAGEL submodule for vae_encoder
+2026-11-26 22:51:48,222 INFO [worker_0] mstar.model.bagel.bagel_model: Successfully loaded in BAGEL submodule for vit_encoder
+2026-11-26 22:51:48,255 INFO [worker_0] mstar.kernels.registry: kernel table: no ragged_attention bfloat16 num_qo_heads=16,num_kv_heads=16,head_dim=72 entry for NVIDIA RTX 5880 Ada Generation; built-in configs. To tune it: python -m benchmark.kernels.sweep ragged_attention --dtype bfloat16 --shape num_qo_heads=16,num_kv_heads=16,head_dim=72
+2026-11-26 22:51:48,261 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 14.00 GiB on this rank, 2048 pages of 128 slots
+2026-11-26 22:51:48,266 INFO [worker_0] mstar.engine.engine: KV kv: prefix cache open for main on LLM
+2026-11-26 22:51:48,266 WARNING [worker_0] mstar.engine.engine: KV kv: prefix cache on with cpu_offload_pages 0: a decode step that finds nothing to evict holds its requests until they time out. Set max_concurrent_requests to the pool's pages over the pages one request needs. cpu_offload_pages gives the worker a victim, but one that shares most of its prompt frees little
+2026-11-26 22:51:48,281 INFO [worker_0] mstar.worker.engine_manager: Engine loaded on device cuda:0 for nodes ['LLM', 'vae_decoder', 'vae_encoder', 'vit_encoder']
+2026-11-26 22:51:53,489 INFO [worker_0] mstar.engine.accelerator_graph_runner: LLM prefill_text[bs=64,tokens=2048,key=False] slot=0: graph executable memory, 10749 bytes a node, 15 MiB held for the walk's graphs
+2026-11-26 22:51:59,174 INFO [worker_0] mstar.engine.accelerator_graph_runner: LLM decode[bs=64,tokens=128,key=True] slot=0: graph executable memory, 10798 bytes a node, 15 MiB held for the walk's graphs
+2026-11-26 22:52:01,107 INFO [worker_0] mstar.engine.accelerator_graph_runner: LLM decode[bs=64,tokens=64,key=False] slot=0: graph executable memory, 11565 bytes a node, 15 MiB held for the walk's graphs
+2026-11-26 22:52:37,915 INFO [worker_0] mstar.engine.accelerator_graph_runner: LLM decode[bs=64,tokens=128,key=True,lean=sampler] slot=0: graph executable memory, 13443 bytes a node, 20 MiB held for the walk's graphs
+2026-11-26 22:52:38,041 INFO [worker_0] mstar.engine.accelerator_graph_runner: LLM decode[bs=64,tokens=64,key=False,lean=sampler] slot=0: graph executable memory, 11796 bytes a node, 15 MiB held for the walk's graphs
+2026-11-26 22:52:40,591 INFO [worker_0] mstar.engine.engine: CapturePlan[cuda:0]: -4525 MiB free, 278 for the largest eager step
+2026-11-26 22:52:40,591 WARNING [worker_0] mstar.engine.engine: CapturePlan[cuda:0]: no room for graphs beside the largest eager step (gpu_memory_fraction 0.85)
+2026-11-26 22:52:40,591 INFO [worker_0] mstar.engine.engine: CapturePlan[cuda:0] LLM: 0 of 63 buckets (0 of 14 lean twins), 0 MiB predicted, 0 outside the allocator
+2026-11-26 22:52:40,591 INFO [worker_0] mstar.engine.resources.attn.workspace: FlashInfer workspaces of kv: 4, 2048 MiB in all
+2026-11-26 22:52:40,605 ERROR [worker_0] mstar.engine.accelerator_graph_runner: AcceleratorGraphRunner[LLM]: captured 0 of 49 buckets; these run eagerly: [BucketKey(graph_walk='prefill_text', bs=64, num_tokens=2048, cg_key_info=False, lean=frozenset()), BucketKey(graph_walk='prefill_text', bs=64, num_tokens=1024, cg_key_info=False, lean=frozenset()), BucketKey(graph_walk='prefill_text', bs=64, num_tokens=512, cg_key_info=False, lean=frozenset()), BucketKey(graph_walk='prefill_text', bs=64, num_tokens=256, cg_key_info=False, lean=frozenset()), BucketKey(graph_walk='decode', bs=64, num_tokens=128, cg_key_info=True, lean=frozenset()), BucketKey(graph_walk='prefill_text', bs=64, num_tokens=128, cg_key_info=False, lean=frozenset()), BucketKey(graph_walk='decode', bs=64, num_tokens=64, cg_key_info=False, lean=frozenset()), BucketKey(graph_walk='prefill_text', bs=32, num_tokens=2048, cg_key_info=False, lean=frozenset()), BucketKey(graph_walk='prefill_text', bs=32, num_tokens=1024, cg_key_info=False, lean=frozenset()), BucketKey(graph_walk='prefill_text', bs=32, num_tokens=512, cg_key_info=False, lean=frozenset()), BucketKey(graph_walk='prefill_text', bs=32, num_tokens=256, cg_key_info=False, lean=frozenset()), BucketKey(graph_walk='prefill_text', bs=32, num_tokens=128, cg_key_info=False, lean=frozenset()), BucketKey(graph_walk='decode', bs=32, num_tokens=64, cg_key_info=True, lean=frozenset()), BucketKey(graph_walk='decode', bs=32, num_tokens=32, cg_key_info=False, lean=frozenset()), BucketKey(graph_walk='prefill_text', bs=16, num_tokens=2048, cg_key_info=False, lean=frozenset()), BucketKey(graph_walk='prefill_text', bs=16, num_tokens=1024, cg_key_info=False, lean=frozenset()), BucketKey(graph_walk='prefill_text', bs=16, num_tokens=512, cg_key_info=False, lean=frozenset()), BucketKey(graph_walk='prefill_text', bs=16, num_tokens=256, cg_key_info=False, lean=frozenset()), BucketKey(graph_walk='prefill_text', bs=16, num_tokens=128, cg_key_info=False, lean=frozenset()), BucketKey(graph_walk='decode', bs=16, num_tokens=32, cg_key_info=True, lean=frozenset()), BucketKey(graph_walk='decode', bs=16, num_tokens=16, cg_key_info=False, lean=frozenset()), BucketKey(graph_walk='prefill_text', bs=8, num_tokens=2048, cg_key_info=False, lean=frozenset()), BucketKey(graph_walk='prefill_text', bs=8, num_tokens=1024, cg_key_info=False, lean=frozenset()), BucketKey(graph_walk='prefill_text', bs=8, num_tokens=512, cg_key_info=False, lean=frozenset()), BucketKey(graph_walk='prefill_text', bs=8, num_tokens=256, cg_key_info=False, lean=frozenset()), BucketKey(graph_walk='prefill_text', bs=8, num_tokens=128, cg_key_info=False, lean=frozenset()), BucketKey(graph_walk='decode', bs=8, num_tokens=16, cg_key_info=True, lean=frozenset()), BucketKey(graph_walk='decode', bs=8, num_tokens=8, cg_key_info=False, lean=frozenset()), BucketKey(graph_walk='prefill_text', bs=4, num_tokens=2048, cg_key_info=False, lean=frozenset()), BucketKey(graph_walk='prefill_text', bs=4, num_tokens=1024, cg_key_info=False, lean=frozenset()), BucketKey(graph_walk='prefill_text', bs=4, num_tokens=512, cg_key_info=False, lean=frozenset()), BucketKey(graph_walk='prefill_text', bs=4, num_tokens=256, cg_key_info=False, lean=frozenset()), BucketKey(graph_walk='prefill_text', bs=4, num_tokens=128, cg_key_info=False, lean=frozenset()), BucketKey(graph_walk='decode', bs=4, num_tokens=8, cg_key_info=True, lean=frozenset()), BucketKey(graph_walk='decode', bs=4, num_tokens=4, cg_key_info=False, lean=frozenset()), BucketKey(graph_walk='prefill_text', bs=2, num_tokens=2048, cg_key_info=False, lean=frozenset()), BucketKey(graph_walk='prefill_text', bs=2, num_tokens=1024, cg_key_info=False, lean=frozenset()), BucketKey(graph_walk='prefill_text', bs=2, num_tokens=512, cg_key_info=False, lean=frozenset()), BucketKey(graph_walk='prefill_text', bs=2, num_tokens=256, cg_key_info=False, lean=frozenset()), BucketKey(graph_walk='prefill_text', bs=2, num_tokens=128, cg_key_info=False, lean=frozenset()), BucketKey(graph_walk='decode', bs=2, num_tokens=4, cg_key_info=True, lean=frozenset()), BucketKey(graph_walk='decode', bs=2, num_tokens=2, cg_key_info=False, lean=frozenset()), BucketKey(graph_walk='prefill_text', bs=1, num_tokens=2048, cg_key_info=False, lean=frozenset()), BucketKey(graph_walk='prefill_text', bs=1, num_tokens=1024, cg_key_info=False, lean=frozenset()), BucketKey(graph_walk='prefill_text', bs=1, num_tokens=512, cg_key_info=False, lean=frozenset()), BucketKey(graph_walk='prefill_text', bs=1, num_tokens=256, cg_key_info=False, lean=frozenset()), BucketKey(graph_walk='prefill_text', bs=1, num_tokens=128, cg_key_info=False, lean=frozenset()), BucketKey(graph_walk='decode', bs=1, num_tokens=2, cg_key_info=True, lean=frozenset()), BucketKey(graph_walk='decode', bs=1, num_tokens=1, cg_key_info=False, lean=frozenset())]
+2026-11-26 22:52:40,605 INFO [worker_0] mstar.engine.accelerator_graph_runner: AcceleratorGraphRunner[LLM]: warmup_and_capture done. shared_static_buffers: 3 entries, 0.02 MB resident (would have been 0.62 MB with per-capture clones — saved 0.60 MB). Total accelerator alloc delta during warmup: 0.00 MB.
+2026-11-26 22:52:40,605 INFO [worker_0] mstar.engine.engine: CapturePlan[cuda:0] LLM: capture took 0 MiB, 0 predicted
+2026-11-26 22:52:40,606 INFO [worker_0] mstar.engine.engine: CapturePlan[cuda:0] LLM piecewise: capture took 0 MiB, 0 predicted
+2026-11-26 22:52:40,606 INFO [worker_0] mstar.engine.accelerator_graph_runner: AcceleratorGraphRunner[vae_decoder]: warmup_and_capture done. shared_static_buffers: 0 entries, 0.00 MB resident (would have been 0.00 MB with per-capture clones — saved 0.00 MB). Total accelerator alloc delta during warmup: 0.00 MB.
+2026-11-26 22:52:40,606 INFO [worker_0] mstar.engine.engine: CapturePlan[cuda:0] vae_decoder: capture took 0 MiB, 0 predicted
+2026-11-26 22:52:40,606 INFO [worker_0] mstar.engine.engine: CapturePlan[cuda:0] vae_decoder piecewise: capture took 0 MiB, 0 predicted
+2026-11-26 22:52:40,606 INFO [worker_0] mstar.engine.accelerator_graph_runner: AcceleratorGraphRunner[vae_encoder]: warmup_and_capture done. shared_static_buffers: 0 entries, 0.00 MB resident (would have been 0.00 MB with per-capture clones — saved 0.00 MB). Total accelerator alloc delta during warmup: 0.00 MB.
+2026-11-26 22:52:40,607 INFO [worker_0] mstar.engine.engine: CapturePlan[cuda:0] vae_encoder: capture took 0 MiB, 0 predicted
+2026-11-26 22:52:40,607 INFO [worker_0] mstar.engine.engine: CapturePlan[cuda:0] vae_encoder piecewise: capture took 0 MiB, 0 predicted
+2026-11-26 22:52:40,607 INFO [worker_0] mstar.engine.accelerator_graph_runner: AcceleratorGraphRunner[vit_encoder]: warmup_and_capture done. shared_static_buffers: 0 entries, 0.00 MB resident (would have been 0.00 MB with per-capture clones — saved 0.00 MB). Total accelerator alloc delta during warmup: 0.00 MB.
+2026-11-26 22:52:40,608 INFO [worker_0] mstar.engine.engine: CapturePlan[cuda:0] vit_encoder: capture took 0 MiB, 0 predicted
+2026-11-26 22:52:40,608 INFO [worker_0] mstar.engine.engine: CapturePlan[cuda:0] vit_encoder piecewise: capture took 0 MiB, 0 predicted
+2026-11-26 22:52:40,608 INFO [worker_0] mstar.engine.engine: CapturePlan[cuda:0]: 2206 MiB free after capture, 278 for the largest eager step
+2026-11-26 22:52:40,611 INFO [worker_0] mstar.engine.engine: Engine: torch.compile applied to LLM
+2026-11-26 22:52:40,614 INFO [worker_0] mstar.engine.engine: Engine: torch.compile applied to vae_decoder
+2026-11-26 22:52:40,616 INFO [worker_0] mstar.engine.engine: Engine: torch.compile applied to vae_encoder
+2026-11-26 22:52:40,619 INFO [worker_0] mstar.engine.engine: Engine: torch.compile applied to vit_encoder
+2026-11-26 22:52:41,301 INFO [worker_0] mstar.worker.worker: Worker worker_0: gc.freeze() after warmup — 1445855 objects moved to the permanent generation
+2026-11-26 22:52:41,302 INFO [worker_0] mstar.worker.step_executor: Worker worker_0: engine runs on dedicated GPU thread
+2026-11-26 22:52:41,303 INFO [worker_0] mstar.worker.step_executor: Worker worker_0: plan_executor enabled — speculative plan() pre-runs on a dedicated thread
+2026-11-26 22:52:41,307 INFO [conductor] mstar.conductor.conductor: Conductor: all 1 worker(s) ready
+2026-11-26 22:52:41,412 INFO [conductor] mstar.utils.gc_freeze: Conductor: gc.freeze() after setup, 395617 objects in the permanent generation
+2026-11-26 22:52:41,422 INFO [api_server] mstar.api_server.entrypoint: All workers ready
+2026-11-26 22:52:41,547 INFO [api_server] mstar.utils.gc_freeze: API server: gc.freeze() after setup, 394657 objects in the permanent generation
+2026-11-26 22:52:41,556 INFO [api_server] mstar.api_server.rust_frontend: Rust frontend started (pid=3359476, port=18601)
+2026-11-26 22:52:41,556 INFO [api_server] mstar.api_server.entrypoint: Starting mstar API server (mstar-server) on port 18601
+2026-11-26 22:52:41,557 INFO [api_server] mstar.api_server.rust_frontend: Rust-frontend bridge serving
+bridging to conductor at /tmp/mstar_rust_frontend_g4tp8dfl
+compressed speech output (mp3, flac, opus) through /home/chaofan/workspaces/mm_reuse_study/envs/mstar/lib/python3.12/site-packages/_soundfile_data/libsndfile_x86_64.so
+WARNING: no API key set (--api-key or MSTAR_API_KEY): any client that can reach 0.0.0.0:18601 can run requests. Set a key, or bind --host 127.0.0.1, unless a gateway in front of this server authenticates clients.
+mstar-server (Rust frontend) for model "bagel" on http://0.0.0.0:18601
+2026-11-26 22:52:44,862 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 0 of its 11 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-26 22:52:53,021 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 10 of its 10 pages, 0 from the host, whole prompt already cached True, replica worker_0
+2026-11-26 22:52:55,154 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 10 of its 11 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-26 22:52:57,784 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 0 of its 11 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-26 22:53:00,136 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 10 of its 10 pages, 0 from the host, whole prompt already cached True, replica worker_0
+2026-11-26 22:53:02,241 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 10 of its 11 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-26 22:53:04,826 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 0 of its 11 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-26 22:53:07,165 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 10 of its 10 pages, 0 from the host, whole prompt already cached True, replica worker_0
+2026-11-26 22:53:09,323 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 10 of its 11 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-26 22:53:11,986 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 0 of its 11 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-26 22:53:14,334 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 10 of its 10 pages, 0 from the host, whole prompt already cached True, replica worker_0
+2026-11-26 22:53:16,447 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 10 of its 11 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-26 22:53:19,215 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 0 of its 10 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-26 22:53:21,570 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 10 of its 11 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-26 22:53:23,730 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 10 of its 10 pages, 0 from the host, whole prompt already cached True, replica worker_0
+2026-11-26 22:53:25,860 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 10 of its 11 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-26 22:53:28,434 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 0 of its 10 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-26 22:53:30,787 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 10 of its 11 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-26 22:53:32,951 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 10 of its 10 pages, 0 from the host, whole prompt already cached True, replica worker_0
+2026-11-26 22:53:35,111 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 10 of its 11 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-26 22:53:37,766 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 0 of its 10 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-26 22:53:40,079 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 10 of its 11 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-26 22:53:41,308 INFO [conductor] mstar.conductor.conductor: Last 60 s: 22 requests done, 0 queued for admission; 0 running, 0 waiting
+2026-11-26 22:53:42,234 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 10 of its 10 pages, 0 from the host, whole prompt already cached True, replica worker_0
+2026-11-26 22:53:44,399 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 10 of its 11 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-26 22:53:47,046 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 0 of its 10 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-26 22:53:49,399 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 10 of its 11 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-26 22:53:51,521 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 10 of its 10 pages, 0 from the host, whole prompt already cached True, replica worker_0
+2026-11-26 22:53:53,643 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 10 of its 11 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-26 22:53:56,479 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 0 of its 10 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-26 22:53:58,805 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 10 of its 11 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-26 22:54:00,962 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 10 of its 10 pages, 0 from the host, whole prompt already cached True, replica worker_0
+2026-11-26 22:54:03,124 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 10 of its 11 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-26 22:54:05,752 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 0 of its 10 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-26 22:54:08,075 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 10 of its 11 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-26 22:54:10,222 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 10 of its 10 pages, 0 from the host, whole prompt already cached True, replica worker_0
+2026-11-26 22:54:12,397 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 10 of its 11 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-26 22:54:15,076 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 0 of its 10 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-26 22:54:17,405 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 10 of its 11 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-26 22:54:19,518 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 10 of its 10 pages, 0 from the host, whole prompt already cached True, replica worker_0
+2026-11-26 22:54:21,671 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 10 of its 11 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-26 22:54:24,310 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 0 of its 10 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-26 22:54:26,641 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 10 of its 11 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-26 22:54:28,796 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 10 of its 10 pages, 0 from the host, whole prompt already cached True, replica worker_0
+2026-11-26 22:54:30,914 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 10 of its 11 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-26 22:54:33,746 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 0 of its 11 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-26 22:54:36,106 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 10 of its 10 pages, 0 from the host, whole prompt already cached True, replica worker_0
+2026-11-26 22:54:38,264 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 10 of its 11 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-26 22:54:40,901 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 0 of its 11 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-26 22:54:41,309 INFO [conductor] mstar.conductor.conductor: Last 60 s: 26 requests done, 0 queued for admission; 0 running, 0 waiting
+2026-11-26 22:54:43,253 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 10 of its 10 pages, 0 from the host, whole prompt already cached True, replica worker_0
+2026-11-26 22:54:45,368 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 10 of its 11 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-26 22:54:47,934 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 0 of its 11 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-26 22:54:50,291 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 10 of its 10 pages, 0 from the host, whole prompt already cached True, replica worker_0
+2026-11-26 22:54:52,444 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 10 of its 11 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-26 22:54:55,119 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 0 of its 11 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-26 22:54:57,426 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 10 of its 10 pages, 0 from the host, whole prompt already cached True, replica worker_0
+2026-11-26 22:54:59,544 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 10 of its 11 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-26 22:55:02,594 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 0 of its 38 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-26 22:55:06,091 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 38 of its 38 pages, 0 from the host, whole prompt already cached True, replica worker_0
+2026-11-26 22:55:08,310 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 38 of its 38 pages, 0 from the host, whole prompt already cached True, replica worker_0
+2026-11-26 22:55:11,200 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 0 of its 38 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-26 22:55:14,149 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 38 of its 38 pages, 0 from the host, whole prompt already cached True, replica worker_0
+2026-11-26 22:55:16,328 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 38 of its 38 pages, 0 from the host, whole prompt already cached True, replica worker_0
+2026-11-26 22:55:19,215 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 0 of its 38 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-26 22:55:22,206 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 38 of its 38 pages, 0 from the host, whole prompt already cached True, replica worker_0
+2026-11-26 22:55:24,440 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 38 of its 38 pages, 0 from the host, whole prompt already cached True, replica worker_0
+2026-11-26 22:55:27,281 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 0 of its 38 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-26 22:55:30,245 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 38 of its 38 pages, 0 from the host, whole prompt already cached True, replica worker_0
+2026-11-26 22:55:32,440 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 38 of its 38 pages, 0 from the host, whole prompt already cached True, replica worker_0
+2026-11-26 22:55:35,496 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 0 of its 38 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-26 22:55:38,424 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 38 of its 38 pages, 0 from the host, whole prompt already cached True, replica worker_0
+2026-11-26 22:55:40,610 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 38 of its 38 pages, 0 from the host, whole prompt already cached True, replica worker_0
+2026-11-26 22:55:41,309 INFO [conductor] mstar.conductor.conductor: Last 60 s: 23 requests done, 0 queued for admission; 0 running, 0 waiting
+2026-11-26 22:55:42,813 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 38 of its 38 pages, 0 from the host, whole prompt already cached True, replica worker_0
+2026-11-26 22:55:45,652 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 0 of its 38 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-26 22:55:48,602 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 38 of its 38 pages, 0 from the host, whole prompt already cached True, replica worker_0
+2026-11-26 22:55:50,815 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 38 of its 38 pages, 0 from the host, whole prompt already cached True, replica worker_0
+2026-11-26 22:55:52,996 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 38 of its 38 pages, 0 from the host, whole prompt already cached True, replica worker_0
+2026-11-26 22:55:55,793 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 0 of its 38 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-26 22:55:58,732 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 38 of its 38 pages, 0 from the host, whole prompt already cached True, replica worker_0
+2026-11-26 22:56:00,940 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 38 of its 38 pages, 0 from the host, whole prompt already cached True, replica worker_0
+2026-11-26 22:56:03,152 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 38 of its 38 pages, 0 from the host, whole prompt already cached True, replica worker_0
+2026-11-26 22:56:06,074 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 0 of its 38 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-26 22:56:09,021 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 38 of its 38 pages, 0 from the host, whole prompt already cached True, replica worker_0
+2026-11-26 22:56:11,212 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 38 of its 38 pages, 0 from the host, whole prompt already cached True, replica worker_0
+2026-11-26 22:56:13,416 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 38 of its 38 pages, 0 from the host, whole prompt already cached True, replica worker_0
+2026-11-26 22:56:16,433 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 0 of its 38 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-26 22:56:19,377 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 38 of its 38 pages, 0 from the host, whole prompt already cached True, replica worker_0
+2026-11-26 22:56:21,556 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 38 of its 38 pages, 0 from the host, whole prompt already cached True, replica worker_0
+2026-11-26 22:56:23,764 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 38 of its 38 pages, 0 from the host, whole prompt already cached True, replica worker_0
+2026-11-26 22:56:26,593 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 0 of its 38 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-26 22:56:29,567 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 38 of its 38 pages, 0 from the host, whole prompt already cached True, replica worker_0
+2026-11-26 22:56:31,730 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 38 of its 38 pages, 0 from the host, whole prompt already cached True, replica worker_0
+2026-11-26 22:56:33,919 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 38 of its 38 pages, 0 from the host, whole prompt already cached True, replica worker_0
+2026-11-26 22:56:36,775 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 0 of its 38 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-26 22:56:39,721 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 38 of its 38 pages, 0 from the host, whole prompt already cached True, replica worker_0
+2026-11-26 22:56:41,310 INFO [conductor] mstar.conductor.conductor: Last 60 s: 23 requests done, 0 queued for admission; 0 running, 0 waiting
+2026-11-26 22:56:41,942 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 38 of its 38 pages, 0 from the host, whole prompt already cached True, replica worker_0
+2026-11-26 22:56:44,154 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 38 of its 38 pages, 0 from the host, whole prompt already cached True, replica worker_0
+2026-11-26 22:56:46,992 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 0 of its 38 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-26 22:56:49,929 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 38 of its 38 pages, 0 from the host, whole prompt already cached True, replica worker_0
+2026-11-26 22:56:52,109 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 38 of its 38 pages, 0 from the host, whole prompt already cached True, replica worker_0
+2026-11-26 22:56:54,324 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 38 of its 38 pages, 0 from the host, whole prompt already cached True, replica worker_0
+2026-11-26 22:56:57,522 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 0 of its 38 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-26 22:57:00,457 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 38 of its 38 pages, 0 from the host, whole prompt already cached True, replica worker_0
+2026-11-26 22:57:02,680 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 38 of its 38 pages, 0 from the host, whole prompt already cached True, replica worker_0
+2026-11-26 22:57:05,534 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 0 of its 38 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-26 22:57:08,519 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 38 of its 38 pages, 0 from the host, whole prompt already cached True, replica worker_0
+2026-11-26 22:57:10,738 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 38 of its 38 pages, 0 from the host, whole prompt already cached True, replica worker_0
+2026-11-26 22:57:13,577 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 0 of its 38 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-26 22:57:16,558 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 38 of its 38 pages, 0 from the host, whole prompt already cached True, replica worker_0
+2026-11-26 22:57:18,773 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 38 of its 38 pages, 0 from the host, whole prompt already cached True, replica worker_0
+2026-11-26 22:57:21,676 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 0 of its 38 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-26 22:57:24,653 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 38 of its 38 pages, 0 from the host, whole prompt already cached True, replica worker_0
+2026-11-26 22:57:26,869 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 38 of its 38 pages, 0 from the host, whole prompt already cached True, replica worker_0
+mstar-server: shutting down (draining in-flight, 30s cap)

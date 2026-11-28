@@ -1,0 +1,6 @@
+1795864516.071643	chatcmpl-c36aa62ee0994e6cb1088154f9caaa94#1	encoder_prepare	[(device(type='cuda', index=0), torch.bfloat16, (19200, 1536))]
+1795864516.071913	chatcmpl-c36aa62ee0994e6cb1088154f9caaa94#1	first=0	items=16	skip=0
+1795864516.584221	chatcmpl-c36aa62ee0994e6cb1088154f9caaa94#1	thinker_prepare	prefill_vision	rank=cuda:0
+1795864516.585546	chatcmpl-c36aa62ee0994e6cb1088154f9caaa94#1	thinker_prepare	prefill_vision	rank=cuda:1
+1795864518.303858	chatcmpl-c36aa62ee0994e6cb1088154f9caaa94#1	encoder_prepare	[(device(type='cuda', index=0), torch.bfloat16, (19200, 1536))]
+1795864518.303953	chatcmpl-c36aa62ee0994e6cb1088154f9caaa94#1	first=16	items=16	skip=0

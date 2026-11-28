@@ -1,0 +1,10 @@
+1795619206.254	3394623	ecm_check	hit=False input_id=0 req=chatcmpl-8e7
+1795619206.269	3394623	embed_multimodal	keys=pixel_values_img2img,vit_pixel_values_img2img
+1795619206.287	3394623	encode_vit	shape=(3, 518, 518)
+1795619207.333	3394623	ecm_check	hit=False input_id=0 req=chatcmpl-8e7
+1795619207.337	3394623	embed_multimodal	keys=pixel_values_img2img,vit_pixel_values_img2img
+1795619207.359	3394623	encode_vit	shape=(3, 518, 518)
+1795619232.044	3394623	ecm_check	hit=False input_id=0 req=chatcmpl-8dd
+1795619232.057	3394623	embed_multimodal	keys=pixel_values_img2img,vit_pixel_values_img2img
+1795619232.074	3394623	encode_vit	shape=(3, 518, 518)
+1795619232.466	3394623	ecm_check	hit=True input_id=0 req=chatcmpl-8dd

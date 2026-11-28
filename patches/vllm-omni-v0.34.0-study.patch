@@ -1,0 +1,37 @@
+diff --git a/vllm_omni/entrypoints/openai/video_stream_base.py b/vllm_omni/entrypoints/openai/video_stream_base.py
+index 629636aed..bf31d85d1 100644
+--- a/vllm_omni/entrypoints/openai/video_stream_base.py
++++ b/vllm_omni/entrypoints/openai/video_stream_base.py
+@@ -28,6 +28,7 @@ Protocol:
+ """
+ 
+ import asyncio
++import os
+ import base64
+ import hashlib
+ import io
+@@ -295,7 +296,14 @@ class OmniStreamingVideoHandler:
+         return []
+ 
+     def _incremental_prefill_active(self, config: StreamingVideoSessionConfig) -> bool:
+-        """Incremental frame prefill: stage-0 prefix caching on, text-only output."""
++        """Incremental frame prefill: stage-0 prefix caching on, text-only output.
++
++        mm_reuse_study V1: with ``VLLM_OMNI_AUDIO_WARMUP=1`` audio-output sessions
++        warm up too; the warmup asks the engine for text only (thinker stage),
++        while the prompt is rendered as the session's, so its tokens match the query's.
++        """
++        if os.environ.get("VLLM_OMNI_AUDIO_WARMUP") == "1":
++            return self._incremental_prefill_supported
+         return self._incremental_prefill_supported and "audio" not in config.modalities
+ 
+     def on_frame_buffered(
+@@ -1352,6 +1360,8 @@ class OmniStreamingVideoHandler:
+         from vllm import SamplingParams
+ 
+         submitted = asyncio.get_running_loop().create_future()
++        if os.environ.get("VLLM_OMNI_AUDIO_WARMUP") == "1":
++            modalities = ["text"]   # mm_reuse_study V1: the warmup only fills the thinker's prefix cache
+         result_gen = engine_client.generate(
+             prompt=engine_prompt,
+             request_id=request_id,

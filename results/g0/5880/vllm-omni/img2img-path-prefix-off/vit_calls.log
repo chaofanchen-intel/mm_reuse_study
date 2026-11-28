@@ -1,0 +1,42 @@
+1795619655.525	3431125	embed_multimodal	keys=pixel_values_img2img,vit_pixel_values_img2img
+1795619655.825	3431125	encode_vit	shape=(3, 980, 980)
+1795619656.058	3431125	encode_vit	shape=(3, 980, 980)
+1795619656.242	3431125	encode_vit	shape=(3, 980, 980)
+1795619698.108	3431125	ecm_check	hit=False input_id=0 req=chatcmpl-85a mm_hash=eabd533567e0ef4048f1aaff
+1795619698.124	3431125	embed_multimodal	keys=pixel_values_img2img,vit_pixel_values_img2img
+1795619698.141	3431125	encode_vit	shape=(3, 518, 518)
+1795619698.843	3431125	ecm_check	hit=False input_id=0 req=chatcmpl-85a mm_hash=960703e56bd4f2ef53ac7068
+1795619698.847	3431125	embed_multimodal	keys=pixel_values_img2img,vit_pixel_values_img2img
+1795619698.868	3431125	encode_vit	shape=(3, 518, 518)
+1795619724.073	3431125	ecm_check	hit=False input_id=0 req=chatcmpl-8a3 mm_hash=bd34752bc60a2220963e7f1f
+1795619724.086	3431125	embed_multimodal	keys=pixel_values_img2img,vit_pixel_values_img2img
+1795619724.103	3431125	encode_vit	shape=(3, 518, 518)
+1795619724.511	3431125	ecm_check	hit=True input_id=0 req=chatcmpl-8a3 mm_hash=960703e56bd4f2ef53ac7068
+1795619749.799	3431125	ecm_check	hit=False input_id=0 req=chatcmpl-8b4 mm_hash=eb221a6f1d60eb909ebfde77
+1795619749.813	3431125	embed_multimodal	keys=pixel_values_img2img,vit_pixel_values_img2img
+1795619749.830	3431125	encode_vit	shape=(3, 518, 518)
+1795619750.218	3431125	ecm_check	hit=True input_id=0 req=chatcmpl-8b4 mm_hash=960703e56bd4f2ef53ac7068
+1795619775.828	3431125	ecm_check	hit=False input_id=0 req=chatcmpl-893 mm_hash=c06a12e37613799501b66bf6
+1795619775.841	3431125	embed_multimodal	keys=pixel_values_img2img,vit_pixel_values_img2img
+1795619775.858	3431125	encode_vit	shape=(3, 518, 518)
+1795619776.250	3431125	ecm_check	hit=True input_id=0 req=chatcmpl-893 mm_hash=960703e56bd4f2ef53ac7068
+1795619801.951	3431125	ecm_check	hit=False input_id=0 req=chatcmpl-ad6 mm_hash=a1ca796198ea80fe6808292b
+1795619801.964	3431125	embed_multimodal	keys=pixel_values_img2img,vit_pixel_values_img2img
+1795619801.980	3431125	encode_vit	shape=(3, 518, 518)
+1795619802.362	3431125	ecm_check	hit=True input_id=0 req=chatcmpl-ad6 mm_hash=960703e56bd4f2ef53ac7068
+1795619828.243	3431125	ecm_check	hit=False input_id=0 req=chatcmpl-be5 mm_hash=e95c9a28a2b92e62ed467075
+1795619828.256	3431125	embed_multimodal	keys=pixel_values_img2img,vit_pixel_values_img2img
+1795619828.272	3431125	encode_vit	shape=(3, 518, 518)
+1795619828.660	3431125	ecm_check	hit=True input_id=0 req=chatcmpl-be5 mm_hash=960703e56bd4f2ef53ac7068
+1795619854.679	3431125	ecm_check	hit=False input_id=0 req=chatcmpl-9fc mm_hash=9e901321b0cfebd2c8f4a4d8
+1795619854.691	3431125	embed_multimodal	keys=pixel_values_img2img,vit_pixel_values_img2img
+1795619854.708	3431125	encode_vit	shape=(3, 518, 518)
+1795619855.098	3431125	ecm_check	hit=False input_id=0 req=chatcmpl-9fc mm_hash=554f5b00f1d7c5c4765c23a6
+1795619855.101	3431125	embed_multimodal	keys=pixel_values_img2img,vit_pixel_values_img2img
+1795619855.123	3431125	encode_vit	shape=(3, 518, 518)
+1795619905.164	3431125	ecm_check	hit=False input_id=0 req=img_edit-aad mm_hash=1ac0786fbfeaacbb61e70594
+1795619905.176	3431125	embed_multimodal	keys=pixel_values_img2img,vit_pixel_values_img2img
+1795619905.192	3431125	encode_vit	shape=(3, 518, 518)
+1795619905.582	3431125	ecm_check	hit=True input_id=0 req=img_edit-aad mm_hash=960703e56bd4f2ef53ac7068
+1795619931.589	3431125	ecm_check	hit=True input_id=0 req=img_edit-861 mm_hash=1ac0786fbfeaacbb61e70594
+1795619931.976	3431125	ecm_check	hit=True input_id=0 req=img_edit-861 mm_hash=960703e56bd4f2ef53ac7068

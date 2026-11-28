@@ -69,6 +69,10 @@ manifest = {
     "port": int(port), "base_url": f"http://localhost:{port}", "gpus": gpus, "gpu_info": gpu_names,
     "config": config, "config_sha256": sha, "shim_mode": shim,
     "framework_commit": git("rev-parse", "HEAD"), "framework_dirty": bool(git("status", "--porcelain")),
+    # 本研究对框架源码的改动：diff 的哈希（diff 本身用 git -C external/<fw> diff 查看）
+    "framework_diff_sha256": hashlib.sha256((git("diff", "HEAD") or "").encode()).hexdigest(),
+    "framework_untracked": (git("status", "--porcelain", "--untracked-files=all") or "").count("??"),
+    "study_env": {k: v for k, v in os.environ.items() if k.startswith(("MSTAR_", "VO_AUDIT_", "VLLM_OMNI_")) and k != "MSTAR_SERVER_BIN"},
     "command": cmd, "cwd": os.getcwd(), "pid": int(pid),
     "started_at": time.strftime("%Y-%m-%dT%H:%M:%S%z"), "log": os.path.join(out, "server.log"),
 }

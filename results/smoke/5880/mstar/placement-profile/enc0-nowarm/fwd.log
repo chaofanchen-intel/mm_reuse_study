@@ -1,0 +1,4 @@
+4057851.413634	prefill_text	dev=1	graph=True	rows=1	pending_ms=5.3	launch_ms=3.7	gpu_tail_ms=27.0
+4057851.412673	prefill_text	dev=0	graph=True	rows=1	pending_ms=3.5	launch_ms=3.0	gpu_tail_ms=30.5
+4057852.022534	prefill_vision	dev=1	graph=False	rows=1	pending_ms=0.8	launch_ms=1606.5	gpu_tail_ms=92.1
+4057852.018521	prefill_vision	dev=0	graph=False	rows=1	pending_ms=1.2	launch_ms=1643.0	gpu_tail_ms=59.1

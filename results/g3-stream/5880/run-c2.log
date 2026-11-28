@@ -1,0 +1,95 @@
+[19:28:52] g3-mstar-c2：等待 3 张稳定空闲的卡（第 1 次）
+[19:29:53] g3-mstar-c2：GPU 0,1,2
+serve: g3-mstar-c2 已启动（PID 1143001，GPU 0,1,2，端口 18502，日志 results/g3-stream/5880/mstar/stream-c2/server/server.log）
+serve: g3-mstar-c2 就绪（http://localhost:18502/metrics）
+audit-Q-grow-s0-1795865490 q0 frames  16 warmed False inflight False ttft 2896.3 ok 'Green' 
+audit-Q-grow-s0-1795865490 q1 frames  32 warmed False inflight False ttft 961.5 ok 'Yellow' 
+audit-Q-grow-s0-1795865490 q2 frames  48 warmed False inflight False ttft 1099.6 ok 'Purple' 
+audit-Q-grow-s0-1795865490 warmups 0 cancelled 0
+audit-W-grow-s0-1795865527 q0 frames  16 warmed True  inflight False ttft 160.8 ok 'Blue' 
+audit-W-grow-s0-1795865527 q1 frames  32 warmed True  inflight False ttft 212.8 ok 'Purple' 
+audit-W-grow-s0-1795865527 q2 frames  48 warmed True  inflight False ttft 249.6 ok 'White' 
+audit-W-grow-s0-1795865527 warmups 23 cancelled 0
+t-Q-grow-s0-1795865562 q0 frames  16 warmed False inflight False ttft 863.7 ok 'Red' 
+t-Q-grow-s0-1795865562 q1 frames  32 warmed False inflight False ttft 933.5 ok 'Black' 
+t-Q-grow-s0-1795865562 q2 frames  48 warmed False inflight False ttft 1080.0 ok 'Purple' 
+t-Q-grow-s0-1795865562 warmups 0 cancelled 0
+t-Q-grow-s1-1795865592 q0 frames  16 warmed False inflight False ttft 838.4 ok 'Blue' 
+t-Q-grow-s1-1795865592 q1 frames  32 warmed False inflight False ttft 986.3 ok 'White' 
+t-Q-grow-s1-1795865592 q2 frames  48 warmed False inflight False ttft 1085.9 ok 'Black' 
+t-Q-grow-s1-1795865592 warmups 0 cancelled 0
+t-W-grow-s0-1795865622 q0 frames  16 warmed True  inflight False ttft 146.1 ok 'Green' 
+t-W-grow-s0-1795865622 q1 frames  32 warmed True  inflight False ttft 189.1 ok 'Red' 
+t-W-grow-s0-1795865622 q2 frames  48 warmed True  inflight False ttft 232.4 ok 'Black' 
+t-W-grow-s0-1795865622 warmups 48 cancelled 0
+t-W-grow-s1-1795865651 q0 frames  16 warmed True  inflight False ttft 174.0 ok 'White' 
+t-W-grow-s1-1795865651 q1 frames  32 warmed True  inflight False ttft 176.1 ok 'Red' 
+t-W-grow-s1-1795865651 q2 frames  48 warmed True  inflight False ttft 267.4 ok 'Orange' 
+t-W-grow-s1-1795865651 warmups 48 cancelled 0
+t-W-grow-s0-1795865680 q0 frames  16 warmed True  inflight False ttft 150.2 ok 'Yellow' 
+t-W-grow-s0-1795865680 q1 frames  32 warmed True  inflight False ttft 174.7 ok 'White' 
+t-W-grow-s0-1795865680 q2 frames  48 warmed True  inflight False ttft 201.3 ok 'Yellow' 
+t-W-grow-s0-1795865680 warmups 48 cancelled 0
+t-W-grow-s1-1795865709 q0 frames  16 warmed True  inflight False ttft 161.0 ok 'Yellow' 
+t-W-grow-s1-1795865709 q1 frames  32 warmed True  inflight False ttft 211.8 ok 'Orange' 
+t-W-grow-s1-1795865709 q2 frames  48 warmed True  inflight False ttft 231.7 ok 'White' 
+t-W-grow-s1-1795865709 warmups 48 cancelled 0
+t-Q-grow-s0-1795865738 q0 frames  16 warmed False inflight False ttft 866.8 ok 'Orange' 
+t-Q-grow-s0-1795865738 q1 frames  32 warmed False inflight False ttft 991.2 ok 'Blue' 
+t-Q-grow-s0-1795865738 q2 frames  48 warmed False inflight False ttft 1082.6 ok 'Green' 
+t-Q-grow-s0-1795865738 warmups 0 cancelled 0
+t-Q-grow-s1-1795865768 q0 frames  16 warmed False inflight False ttft 800.4 ok 'Black' 
+t-Q-grow-s1-1795865768 q1 frames  32 warmed False inflight False ttft 881.2 ok 'Black' 
+t-Q-grow-s1-1795865768 q2 frames  48 warmed False inflight False ttft 998.4 ok 'Yellow' 
+t-Q-grow-s1-1795865768 warmups 0 cancelled 0
+audit-Q-slide-s0-1795865798 q0 frames  40 warmed False inflight False ttft 1704.1 ok 'Blue' 
+audit-Q-slide-s0-1795865798 q1 frames  31 warmed False inflight False ttft 890.3 ok 'Yellow' 
+audit-Q-slide-s0-1795865798 q2 frames  47 warmed False inflight False ttft 956.4 ok 'Red' 
+audit-Q-slide-s0-1795865798 q3 frames  38 warmed False inflight False ttft 1290.8 ok 'Purple' 
+audit-Q-slide-s0-1795865798 warmups 0 cancelled 0
+audit-W-slide-s0-1795865854 q0 frames  40 warmed True  inflight False ttft 241.5 ok 'Yellow' 
+audit-W-slide-s0-1795865854 q1 frames  31 warmed True  inflight False ttft 202.1 ok 'Black' 
+audit-W-slide-s0-1795865854 q2 frames  47 warmed True  inflight False ttft 258.8 ok 'White' 
+audit-W-slide-s0-1795865854 q3 frames  38 warmed True  inflight False ttft 219.4 ok 'Blue' 
+audit-W-slide-s0-1795865854 warmups 49 cancelled 0
+t-Q-slide-s0-1795865910 q0 frames  40 warmed False inflight False ttft 1707.6 ok 'Blue' 
+t-Q-slide-s0-1795865910 q1 frames  31 warmed False inflight False ttft 1166.8 ok 'Purple' 
+t-Q-slide-s0-1795865910 q2 frames  47 warmed False inflight False ttft 1001.5 ok 'Purple' 
+t-Q-slide-s0-1795865910 q3 frames  38 warmed False inflight False ttft 1302.8 ok 'Purple' 
+t-Q-slide-s0-1795865910 warmups 0 cancelled 0
+t-Q-slide-s1-1795865960 q0 frames  40 warmed False inflight False ttft 1722.6 ok 'Purple' 
+t-Q-slide-s1-1795865960 q1 frames  31 warmed False inflight False ttft 1160.4 ok 'Red' 
+t-Q-slide-s1-1795865960 q2 frames  47 warmed False inflight False ttft 954.2 ok 'Purple' 
+t-Q-slide-s1-1795865960 q3 frames  38 warmed False inflight False ttft 1295.1 ok 'Orange' 
+t-Q-slide-s1-1795865960 warmups 0 cancelled 0
+t-W-slide-s0-1795866010 q0 frames  40 warmed True  inflight False ttft 201.9 ok 'Red' 
+t-W-slide-s0-1795866010 q1 frames  31 warmed True  inflight False ttft 197.0 ok 'Purple' 
+t-W-slide-s0-1795866010 q2 frames  47 warmed True  inflight False ttft 255.5 ok 'Green' 
+t-W-slide-s0-1795866010 q3 frames  38 warmed True  inflight False ttft 207.0 ok 'Red' 
+t-W-slide-s0-1795866010 warmups 88 cancelled 0
+t-W-slide-s1-1795866059 q0 frames  40 warmed True  inflight False ttft 241.5 ok 'Green' 
+t-W-slide-s1-1795866059 q1 frames  31 warmed True  inflight False ttft 166.4 ok 'Red' 
+t-W-slide-s1-1795866059 q2 frames  47 warmed True  inflight False ttft 237.8 ok 'White' 
+t-W-slide-s1-1795866059 q3 frames  38 warmed True  inflight False ttft 226.5 ok 'Purple' 
+t-W-slide-s1-1795866059 warmups 88 cancelled 0
+t-W-slide-s0-1795866108 q0 frames  40 warmed True  inflight False ttft 200.0 ok 'White' 
+t-W-slide-s0-1795866108 q1 frames  31 warmed True  inflight False ttft 185.5 ok 'White' 
+t-W-slide-s0-1795866108 q2 frames  47 warmed True  inflight False ttft 235.6 ok 'Green' 
+t-W-slide-s0-1795866108 q3 frames  38 warmed True  inflight False ttft 198.8 ok 'White' 
+t-W-slide-s0-1795866108 warmups 88 cancelled 0
+t-W-slide-s1-1795866157 q0 frames  40 warmed True  inflight False ttft 207.1 ok 'Yellow' 
+t-W-slide-s1-1795866157 q1 frames  31 warmed True  inflight False ttft 183.0 ok 'Blue' 
+t-W-slide-s1-1795866157 q2 frames  47 warmed True  inflight False ttft 218.1 ok 'Black' 
+t-W-slide-s1-1795866157 q3 frames  38 warmed True  inflight False ttft 205.5 ok 'Purple' 
+t-W-slide-s1-1795866157 warmups 88 cancelled 0
+t-Q-slide-s0-1795866206 q0 frames  40 warmed False inflight False ttft 1686.0 ok 'Purple' 
+t-Q-slide-s0-1795866206 q1 frames  31 warmed False inflight False ttft 934.3 ok 'Yellow' 
+t-Q-slide-s0-1795866206 q2 frames  47 warmed False inflight False ttft 970.6 ok 'Orange' 
+t-Q-slide-s0-1795866206 q3 frames  38 warmed False inflight False ttft 1306.4 ok 'Orange' 
+t-Q-slide-s0-1795866206 warmups 0 cancelled 0
+t-Q-slide-s1-1795866255 q0 frames  40 warmed False inflight False ttft 1668.6 ok 'Red' 
+t-Q-slide-s1-1795866255 q1 frames  31 warmed False inflight False ttft 1147.4 ok 'Yellow' 
+t-Q-slide-s1-1795866255 q2 frames  47 warmed False inflight False ttft 951.4 ok 'Blue' 
+t-Q-slide-s1-1795866255 q3 frames  38 warmed False inflight False ttft 1393.2 ok 'Orange' 
+t-Q-slide-s1-1795866255 warmups 0 cancelled 0
+stop: g3-mstar-c2 已停止

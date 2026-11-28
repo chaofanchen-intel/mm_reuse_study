@@ -1,0 +1,234 @@
+From 6f57158e749a4bfd48a057fb51174c4dc8decf90 Mon Sep 17 00:00:00 2001
+From: mm_reuse_study <study@localhost>
+Date: Sun, 29 Nov 2026 00:38:50 +0800
+Subject: [PATCH] =?UTF-8?q?mm=5Freuse=5Fstudy=20M4:=20=E5=AA=92=E4=BD=93?=
+ =?UTF-8?q?=E9=94=AE=E9=9A=8F=E5=9B=BE=E5=8F=91=E9=80=81=E3=80=81bf16=20?=
+ =?UTF-8?q?=E5=83=8F=E7=B4=A0=E3=80=81=E4=B8=8D=E5=AD=98=E8=A7=A3=E7=A0=81?=
+ =?UTF-8?q?=E5=9B=BE=E3=80=81=E6=96=87=E4=BB=B6=E8=AE=B0=E5=BF=86=EF=BC=88?=
+ =?UTF-8?q?MSTAR=5FMEDIA=5FKEYS=EF=BC=89?=
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+---
+ .../model/components/encoder_output_cache.py  | 15 +++-
+ mstar/model/qwen3_omni/qwen3_omni_model.py    | 87 +++++++++++++++++--
+ mstar/model/qwen3_omni/submodules.py          |  8 +-
+ 3 files changed, 100 insertions(+), 10 deletions(-)
+
+diff --git a/mstar/model/components/encoder_output_cache.py b/mstar/model/components/encoder_output_cache.py
+index d85843958..c1941cee1 100644
+--- a/mstar/model/components/encoder_output_cache.py
++++ b/mstar/model/components/encoder_output_cache.py
+@@ -62,8 +62,16 @@ class EncoderOutputCache:
+ 
+     @torch.compiler.disable   # called from compiled forwards (BAGEL's ViT); host-side bookkeeping
+     def plan(self, rid: str | tuple, pixels: list[torch.Tensor], grids: list[tuple[int, int, int]], merge: int,
+-             extra: tuple = ()) -> ItemPlan:
+-        keys = [self.key(p, g, extra) for p, g in zip(pixels, grids, strict=True)]
++             extra: tuple = (), digests: list | None = None) -> ItemPlan:
++        """``digests``: per item, a key the caller already has (M4: the data worker's), used
++        instead of hashing the pixels; it is paired with the grid, dtype and patch shape all the same."""
++        _t0 = time.perf_counter()
++        if digests is not None:
++            keys = [("given", d, g, str(p.dtype), tuple(p.shape[1:]), *extra)
++                    for d, p, g in zip(digests, pixels, grids, strict=True)]
++        else:
++            keys = [self.key(p, g, extra) for p, g in zip(pixels, grids, strict=True)]
++        _t1 = time.perf_counter()
+         cached = []
+         for k in keys:
+             hit = self.store.get(k)
+@@ -84,7 +92,8 @@ class EncoderOutputCache:
+         if LOG_PATH:
+             hits = sum(c is not None for c in cached)
+             with open(LOG_PATH, "a") as f:
+-                f.write(f"{time.time():.6f}\t{ids[0]}\t{len(keys)}\t{hits}\t{len(encode)}\n")
++                f.write(f"{time.time():.6f}\t{ids[0]}\t{len(keys)}\t{hits}\t{len(encode)}"
++                        f"\tkey_ms={(_t1 - _t0) * 1000:.1f}\tplan_ms={(time.perf_counter() - _t0) * 1000:.1f}\n")
+         return plan
+ 
+     @staticmethod
+diff --git a/mstar/model/qwen3_omni/qwen3_omni_model.py b/mstar/model/qwen3_omni/qwen3_omni_model.py
+index bd8693cbc..d402cf3c9 100644
+--- a/mstar/model/qwen3_omni/qwen3_omni_model.py
++++ b/mstar/model/qwen3_omni/qwen3_omni_model.py
+@@ -229,6 +229,17 @@ def _thinker_steps(plan: list[PromptPart]) -> list[ThinkerStep]:
+ # MSTAR_GROUP_IMAGES=N: at most N images per group (unset/0/1: a walk pair per image, as upstream).
+ # Kept small: a long grouped row (8 images, ~2400 tokens) lost its prefix hits and diverged the TP ranks.
+ GROUP_IMAGES = int(os.environ.get("MSTAR_GROUP_IMAGES", "0") or 0)
++# mm_reuse_study M4 (MSTAR_MEDIA_KEYS=1): the data worker keys each image once (xxh3-128 of the decoded
++# pixels) and sends the key with it, so the vision encoder's output cache (M1) never reads or hashes
++# pixels it serves; pixel_values travel as bf16 (the patch embed casts to bf16 anyway); and the decoded
++# images, which no Qwen3-Omni node reads, are not stored for the workers.
++MEDIA_KEYS = os.environ.get("MSTAR_MEDIA_KEYS", "0") == "1"
++
++
++def _key_tensor(hexdigest: str) -> torch.Tensor:
++    """A 128-bit hex digest as two int64 (M4)."""
++    halves = [int(hexdigest[:16], 16), int(hexdigest[16:32], 16)]
++    return torch.tensor([[h - (1 << 64) if h >= 1 << 63 else h for h in halves]], dtype=torch.int64)
+ 
+ 
+ class _PreprocessCache:
+@@ -274,7 +285,36 @@ class _PreprocessCache:
+ 
+ _PP_LOG = os.environ.get("MSTAR_PREPROCESS_LOG")
+ 
++
++class _FileMemo:
++    """mm_reuse_study M4: an image file seen before (xxh3-128 of its bytes) skips decoding and
++    processing: its (M3b key, processor output) are kept here, within the M3b cap. Thread-safe:
++    the data worker decodes a request's images on a pool."""
++
++    def __init__(self, cap: int):
++        import threading
++        self.cap, self.size, self.lock = cap, 0, threading.Lock()
++        self.store: "OrderedDict[str, tuple]" = OrderedDict()
++
++    def get(self, digest: str):
++        with self.lock:
++            hit = self.store.get(digest)
++            if hit is not None:
++                self.store.move_to_end(digest)
++            return hit
++
++    def put(self, digest: str, entry: tuple) -> None:
++        n = sum(v.numel() * v.element_size() for v in entry[1].values() if isinstance(v, torch.Tensor))
++        with self.lock:
++            if digest in self.store or n > self.cap:
++                return
++            self.store[digest] = entry
++            self.size += n
++            while self.size > self.cap:
++                _, old = self.store.popitem(last=False)
++                self.size -= sum(v.numel() * v.element_size() for v in old[1].values() if isinstance(v, torch.Tensor))
+ _PREPROCESS_CACHE = _PreprocessCache(float(os.environ.get("MSTAR_PREPROCESS_CACHE_MB", "0") or 0))
++_FILE_MEMO = _FileMemo(_PREPROCESS_CACHE.cap if MEDIA_KEYS else 0)
+ 
+ 
+ def _media_groups(plan: list[PromptPart], media: list[int]) -> list[list[int]]:
+@@ -662,7 +702,7 @@ class Qwen3OmniModel(Model):
+                 # image_grid_thw / video_grid_thw carries the (T, H, W) grid
+                 # dimensions per image/video, used by the encoder to compute
+                 # spatial position IDs and patch counts.
+-                input_names=["pixel_values", "image_grid_thw"],
++                input_names=["pixel_values", "image_grid_thw", *(["image_keys"] if MEDIA_KEYS else [])],
+                 outputs=[
+                     GraphEdge(next_node="Thinker", name="vision_embeds"),
+                     GraphEdge(next_node="Thinker", name="deepstack")
+@@ -945,6 +985,7 @@ class Qwen3OmniModel(Model):
+         "image": ("prefill_vision", {
+             "pixel_values": "pixel_values",
+             "image_grid_thw": "image_grid_thw",
++            **({"image_keys": "image_keys"} if MEDIA_KEYS else {}),   # mm_reuse_study M4
+         }),
+         "video": ("prefill_vision", {
+             "pixel_values": "pixel_values_videos",
+@@ -984,6 +1025,23 @@ class Qwen3OmniModel(Model):
+     # Model ABC: prompt processing
+     # -----------------------------------------------------------------------
+ 
++    def load_image(self, filepath: str, device: str) -> TensorAndMetadata:
++        """mm_reuse_study M4: a file whose bytes were processed before comes back as a
++        placeholder carrying that output (``_m4``), without decoding."""
++        if _FILE_MEMO.cap <= 0:
++            return super().load_image(filepath, device)
++        import xxhash
++        with open(filepath, "rb") as f:
++            digest = xxhash.xxh3_128_hexdigest(f.read())
++        hit = _FILE_MEMO.get(digest)
++        if hit is not None:
++            placeholder = torch.zeros(3, 1, 1)
++            placeholder._m4 = hit
++            return TensorAndMetadata(placeholder)
++        out = super().load_image(filepath, device)
++        out.data._m4_file = digest
++        return out
++
+     def load_video(
+         self, filepath: str, device: str
+     ) -> TensorAndMetadata:
+@@ -1081,7 +1139,9 @@ class Qwen3OmniModel(Model):
+ 
+         # HF processors expect uint8 (H, W, C): their default do_rescale=True
+         # would rescale the data worker's [0, 1] floats a second time.
+-        pil_images = [as_uint8_chw(img, truncate=True).permute(1, 2, 0).numpy() for img in raw_image_inputs]
++        # M4: a memoised file needs no conversion (its placeholder carries the processed output)
++        pil_images = [None if hasattr(img, "_m4") else as_uint8_chw(img, truncate=True).permute(1, 2, 0).numpy()
++                      for img in raw_image_inputs]
+ 
+         np_audios: list = []
+         for waveform in raw_audio_inputs:
+@@ -1149,19 +1209,32 @@ class Qwen3OmniModel(Model):
+         # Run image_processor / feature_extractor SEPARATELY for the
+         # modality outputs.  These don't touch text_inputs.
+         _t_img, _hits = time.perf_counter(), 0   # mm_reuse_study M3b timing
+-        for img in pil_images:
++        for raw, img in zip(raw_image_inputs, pil_images, strict=True):
+             img_proc = self._processor.image_processor
+-            key = _PREPROCESS_CACHE.key(img, type(img_proc).__name__) if _PREPROCESS_CACHE.enabled else None
+-            img_out = _PREPROCESS_CACHE.get(key)   # mm_reuse_study M3b
++            memo = getattr(raw, "_m4", None)
++            if memo is not None:
++                key, img_out = memo
++            else:
++                key = (_PREPROCESS_CACHE.key(img, type(img_proc).__name__)
++                       if _PREPROCESS_CACHE.enabled or MEDIA_KEYS else None)
++                img_out = _PREPROCESS_CACHE.get(key)   # mm_reuse_study M3b
+             if img_out is None:
+                 # inferred, a 1, 3 or 4 px tall image would be read as channels first
+                 img_out = img_proc(images=[img], return_tensors="pt", input_data_format="channels_last")
++                if MEDIA_KEYS:   # M4: bf16 once, before caching
++                    img_out = {**img_out, "pixel_values": img_out["pixel_values"].to(torch.bfloat16)}
+                 if _PREPROCESS_CACHE.enabled:
+                     _PREPROCESS_CACHE.put(key, img_out)
+             else:
+                 _hits += 1
++            if memo is None and getattr(raw, "_m4_file", None) is not None:
++                _FILE_MEMO.put(raw._m4_file, (key, img_out))
+             result["pixel_values"].append(img_out["pixel_values"])
+             result["image_grid_thw"] += img_out["image_grid_thw"]
++            if MEDIA_KEYS:
++                result.setdefault("image_keys", []).append(_key_tensor(key[0]))
++        if MEDIA_KEYS and pil_images:
++            result["image_inputs"] = []   # M4: replaces the decoded images in the stored tensors
+         if _PP_LOG and pil_images:
+             with open(_PP_LOG, "a") as f:
+                 f.write(f"{time.time():.6f}\tprocess_prompt images={len(pil_images)} hits={_hits} "
+@@ -1232,6 +1305,10 @@ class Qwen3OmniModel(Model):
+                 out[span_name("image_grid_thw", first)] = [torch.cat(
+                     [out.pop(span_name("image_grid_thw", i))[0].reshape(-1, 3) if i != first
+                      else out[span_name("image_grid_thw", i)][0].reshape(-1, 3) for i in images])]
++                if MEDIA_KEYS:
++                    out[span_name("image_keys", first)] = [torch.cat(
++                        [out.pop(span_name("image_keys", i))[0] if i != first
++                         else out[span_name("image_keys", i)][0] for i in images])]
+         return out
+ 
+     def prompt_tokens(self, tensors: NameToTensorList, kv_layout: dict[str, dict[str, LabelLayout]]) -> int:
+diff --git a/mstar/model/qwen3_omni/submodules.py b/mstar/model/qwen3_omni/submodules.py
+index 914bf6b23..1a45cc4bb 100644
+--- a/mstar/model/qwen3_omni/submodules.py
++++ b/mstar/model/qwen3_omni/submodules.py
+@@ -217,11 +217,15 @@ class VisionEncoderSubmodule(PackedBlockLoopEncoder):
+         # Built here, not in the forward, so the tower reads nothing off the host;
+         # and built on the host, as Qwen3.5's encoder does: on the device, the
+         # grid upload and the per-patch index maths each block on the stream.
+-        pixel_values = torch.cat(list(inputs["pixel_values"]), dim=0)
++        listed = list(inputs["pixel_values"])
++        pixel_values = listed[0] if len(listed) == 1 else torch.cat(listed, dim=0)
+         if self.output_cache.enabled:
+             # mm_reuse_study M1: encode only the images not already cached
+             per_image = list(pixel_values.split([t * h * w for t, h, w in grid]))
+-            plan = self.output_cache.plan((fwd_info.request_id, fwd_info.rid_handle), per_image, grid, merge)
++            keys = inputs.get("image_keys")   # M4: keyed by the data worker, so no pixel is read here
++            digests = None if not keys else [tuple(r) for k in keys for r in k.reshape(-1, 2).tolist()]
++            plan = self.output_cache.plan((fwd_info.request_id, fwd_info.rid_handle), per_image, grid, merge,
++                                          digests=digests if digests and len(digests) == len(grid) else None)
+             if not plan.encode:   # every image cached: the engine takes the outputs (pop_served_outputs)
+                 return NodeInputs(input_seq_len=0, tensor_inputs={})
+             grid = [grid[i] for i in plan.encode]
+-- 
+2.43.0
+

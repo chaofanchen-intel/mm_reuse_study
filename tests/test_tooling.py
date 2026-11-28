@@ -9,6 +9,7 @@ import os
 import subprocess
 import sys
 import threading
+import time
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 
 os.environ.setdefault("MM_SETTLE_S", "0")
@@ -231,3 +232,107 @@ def test_runner_refuses_reused_server(tmp_path):
     srv.shutdown()
     _FakeMStar.counters = {}
     assert r.returncode != 0 and "不是新服务" in (r.stderr + r.stdout)
+
+
+# ---------- 摄像头流客户端（DESIGN 16） ----------
+
+class _FakeStream(_FakeMStar):
+    """每张图像 5 ms 的"编码"；回答为最后一帧的主色（解码 JPEG 求均值，取最近的调色板颜色）。"""
+    calls: list = []
+
+    def do_POST(self):
+        import base64, io
+        import numpy as np
+        from PIL import Image
+        from bench.stream import PALETTE
+        body = json.loads(self.rfile.read(int(self.headers["Content-Length"])))
+        imgs = [p["image_url"]["url"] for m in body["messages"] if isinstance(m["content"], list)
+                for p in m["content"] if p["type"] == "image_url"]
+        with self.lock:
+            self.calls.append((body["max_tokens"], len(imgs)))
+            self._inc(_k("mstar_step_seconds_count", component="vision_encoder", graph_walk="prefill_vision"), len(imgs))
+        time.sleep(0.005 * len(imgs))
+        answer = "none"
+        if imgs:
+            arr = np.asarray(Image.open(io.BytesIO(base64.b64decode(imgs[-1].split(",", 1)[1])))).reshape(-1, 3).mean(0)
+            answer = min(PALETTE, key=lambda c: sum((a - b) ** 2 for a, b in zip(PALETTE[c], arr)))
+        self.send_response(200); self.send_header("Content-Type", "text/event-stream"); self.end_headers()
+        self.wfile.write(f"data: {json.dumps({'choices': [{'delta': {'content': answer}}]})}\n\n".encode())
+        self.wfile.write(b"data: [DONE]\n\n")
+
+
+def _stream_run(tmp_path, arm, mode, load="grow", max_frames=50):
+    _FakeStream.counters, _FakeStream.calls = {}, []
+    srv = ThreadingHTTPServer(("127.0.0.1", 0), _FakeStream)
+    threading.Thread(target=srv.serve_forever, daemon=True).start()
+    server_dir = tmp_path / f"server-{arm}-{mode}-{load}"
+    server_dir.mkdir()
+    (server_dir / "manifest.json").write_text(json.dumps({
+        "name": "fake", "framework": "mstar", "base_url": f"http://127.0.0.1:{srv.server_address[1]}",
+        "command": ["mstar", "serve", "qwen3_omni"], "gpus": "", "log": str(server_dir / "server.log")}))
+    out = tmp_path / f"{arm}-{mode}-{load}.jsonl"
+    r = subprocess.run([sys.executable, "-m", "bench.stream", "--server-dir", str(server_dir), "--arm", arm,
+                        "--mode", mode, "--load", load, "--fps", "20", "--queries", "0.6,1.2",
+                        "--max-frames", str(max_frames), "--res", "64x48", "--out", str(out)],
+                       cwd=ROOT, env=dict(os.environ, MM_SETTLE_S="0"), capture_output=True, text=True)
+    srv.shutdown()
+    assert r.returncode == 0, r.stderr
+    rows = [json.loads(l) for l in out.read_text().splitlines()]
+    return rows[1], list(_FakeStream.calls)
+
+
+def test_stream_query_only(tmp_path):
+    rec, calls = _stream_run(tmp_path, "Q", "timing")
+    assert rec["warmup_count"] == 0 and all(mt != 1 for mt, n in calls if n)  # 0 图的是计数 flush
+    assert [q["n_frames"] for q in rec["queries"]] == [12, 24]
+    assert all(q["correct"] for q in rec["queries"]), rec["queries"]
+    assert rec["session_totals"]["node_calls"]["vision_encoder:prefill_vision"] == 36
+
+
+def test_stream_warmup_audit(tmp_path):
+    rec, calls = _stream_run(tmp_path, "W", "audit")
+    assert rec["warmup_count"] >= 1 and any(mt == 1 for mt, _ in calls)
+    for q in rec["queries"]:
+        assert q["buffer_fully_warmed"] and not q["warmup_inflight_at_query"] and q["correct"]
+        assert q["observation"]["node_calls"]["vision_encoder:prefill_vision"] == q["n_frames"]
+
+
+def test_stream_slide_drops_half(tmp_path):
+    rec, _ = _stream_run(tmp_path, "Q", "timing", load="slide", max_frames=10)
+    assert all(q["n_frames"] <= 10 for q in rec["queries"]) and all(q["correct"] for q in rec["queries"])
+
+
+class _FakeSlowWarm(_FakeStream):
+    """warmup（max_tokens=1、带图）在 2 s 内不发任何字节，模拟长 prefill。"""
+
+    def do_POST(self):
+        n = int(self.headers["Content-Length"])
+        raw = self.rfile.read(n)
+        body = json.loads(raw)
+        if body["max_tokens"] == 1 and "image_url" in raw.decode():
+            time.sleep(2.0)
+        self.rfile = __import__("io").BytesIO(raw)
+        self.headers.replace_header("Content-Length", str(n))
+        super().do_POST()
+
+
+def test_stream_cancel_is_prompt(tmp_path):
+    _FakeSlowWarm.counters, _FakeSlowWarm.calls = {}, []
+    srv = ThreadingHTTPServer(("127.0.0.1", 0), _FakeSlowWarm)
+    threading.Thread(target=srv.serve_forever, daemon=True).start()
+    server_dir = tmp_path / "server"
+    server_dir.mkdir()
+    (server_dir / "manifest.json").write_text(json.dumps({
+        "name": "fake", "framework": "mstar", "base_url": f"http://127.0.0.1:{srv.server_address[1]}",
+        "command": ["mstar", "serve", "qwen3_omni"], "gpus": "", "log": str(server_dir / "server.log")}))
+    out = tmp_path / "o.jsonl"
+    r = subprocess.run([sys.executable, "-m", "bench.stream", "--server-dir", str(server_dir), "--arm", "W",
+                        "--fps", "20", "--queries", "0.6", "--res", "64x48", "--no-counters", "--out", str(out)],
+                       cwd=ROOT, env=dict(os.environ, MM_SETTLE_S="0"), capture_output=True, text=True)
+    srv.shutdown()
+    assert r.returncode == 0, r.stderr
+    rec = json.loads(out.read_text().splitlines()[1])
+    q = rec["queries"][0]
+    assert q["warmup_inflight_at_query"]
+    w = [x for x in rec["warmups"] if x["cancelled"]]
+    assert w and all(x["t_done"] - q["t_start"] < 0.3 for x in w), (w, q["t_start"])

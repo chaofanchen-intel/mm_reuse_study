@@ -66,16 +66,36 @@ class VllmOmniAdapter:
             obs.prefix_hit_tokens = 0
         lines = self._log_lines(before["log_offset"], after["log_offset"])
         checks, ms = [], []
-        for _ts, _pid, kind, detail in (ln[:4] for ln in lines):
+        enc_items: dict[str, int] = {}     # pid → 编码项数（TP>1 时每个 rank 都记录，取一个 rank）
+        enc_ms: dict[str, float] = {}
+        lookups: dict[str, tuple[int, int]] = {}   # 请求 id → (prompt, hit)，取最后一次
+        for _ts, pid, kind, detail in (ln[:4] for ln in lines):
             if kind == "encode_vit":
                 obs.encoder_calls += 1
                 for tok in detail.split():
                     if tok.startswith("ms="):
                         ms.append(float(tok[3:]))
+            elif kind == "mm_encoder":
+                kv = dict(t.split("=", 1) for t in detail.split() if "=" in t)
+                enc_items[pid] = enc_items.get(pid, 0) + int(kv.get("items", 0))
+                if "ms" in kv:
+                    enc_ms[pid] = enc_ms.get(pid, 0.0) + float(kv["ms"])
+            elif kind == "prefix_lookup":
+                kv = dict(t.split("=", 1) for t in detail.split() if "=" in t)
+                lookups[kv["req"]] = (int(kv["prompt"]), int(kv["hit"]))
             elif kind == "ecm_check":
                 checks.append("hit=True" in detail)
             elif kind == "embed_multimodal":
                 obs.mm_keys.append(detail.removeprefix("keys="))
+        if enc_items and not obs.encoder_calls:   # 非 BAGEL 模型（如 Qwen3-Omni）：用模型无关的挂点
+            pid = min(enc_items)
+            obs.encoder_calls = enc_items[pid]
+            if pid in enc_ms:
+                ms = [enc_ms[pid]]
+        if lookups:   # 按请求的命中（优先于聚合计数器，后者在请求紧接请求时会延迟发布）
+            obs.per_request_prefix = lookups
+            obs.prefix_query_tokens = sum(p for p, _ in lookups.values())
+            obs.prefix_hit_tokens = sum(h for _, h in lookups.values())
         obs.encoder_ran = obs.encoder_calls > 0
         obs.encoder_ms = sum(ms) if ms else None
         obs.encoder_cache_hit = (any(checks) if checks else None)

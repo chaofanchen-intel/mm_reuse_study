@@ -1,0 +1,75 @@
+============================================================
+ Request profile: chatcmpl-4f98f729528b4206a33f7b45f751f537
+============================================================
+ Inputs:
+   text         x1         143 B
+   image        x3     218.6 KiB
+ Outputs:
+   text         x6          20 B
+------------------------------------------------------------
+ Timeline:
+   recv → preprocess done                      147.9 ms
+   preprocess done → conductor ingest            1.3 ms
+   conductor ingest → first chunk              411.7 ms
+   first chunk → last chunk                     37.6 ms
+   last chunk → conductor done                   0.3 ms
+   conductor done → finish                       2.1 ms
+   total                                       600.8 ms
+   worker span (same-host clocks)              334.3 ms
+   last chunk after last output read            38.1 ms
+   output postprocess (sum)                      0.5 ms
+------------------------------------------------------------
+ Graph timings (CPU, ms) — total over request (avg per exec):
+                                       all                 fwd                 pre                post*        
+   Thinker
+     prefill_text       n=1          34.1 (   34.1)      31.6 (   31.6)      2.17 (   2.17)      0.34 (   0.34)
+     prefill_vision     n=1         105.5 (  105.5)     102.6 (  102.6)      1.59 (   1.59)      1.27 (   1.27)
+     thinker_text_decode n=5         38.9 (   7.78)      33.0 (   6.59)      3.97 (   0.79)      1.97 (   0.39)
+   vision_encoder
+     prefill_vision     n=1         118.4 (  118.4)     104.0 (  104.0)      5.46 (   5.46)      8.97 (   8.97)
+
+   * post overlaps the next step / another in-flight batch under
+     speculative scheduling, so it is not necessarily additive.
+------------------------------------------------------------
+ Tensor transfer   size / transport-time / count:
+   rx (received over the wire), by source → dest:
+     api_server_preprocess_worker → worker_0
+       image_grid_thw               72 B      0.13 ms  (x1)
+       image_keys                   48 B      0.13 ms  (x1)
+       pixel_values             10.5 MiB      0.13 ms  (x1)
+       text_inputs                 336 B     100.7 ms  (x2)
+     api_server_preprocess_worker → worker_1
+       image_grid_thw               72 B      0.22 ms  (x1)
+       text_inputs                 336 B     103.2 ms  (x2)
+     worker_0 → api_server_preprocess_worker
+       text_output                   8 B      0.22 ms  (x1)
+     worker_0 → worker_1
+       deepstack                10.5 MiB      12.6 ms  (x3)
+       vision_embeds             3.5 MiB      12.6 ms  (x1)
+
+   tx (registered/written for send), by source:
+     api_server_preprocess_worker
+       image_grid_thw.0             72 B      0.02 ms  (x1)
+       image_keys.0                 48 B      0.01 ms  (x1)
+       pixel_values.0           10.5 MiB      5.69 ms  (x1)
+       text_inputs.0               184 B      0.14 ms  (x1)
+       text_inputs.1               152 B      0.02 ms  (x1)
+     worker_0
+       deepstack                10.5 MiB      1.58 ms  (x3)
+       new_token                     8 B      0.05 ms  (x1)
+       vision_embeds             3.5 MiB      0.53 ms  (x1)
+     worker_1
+       new_token                     8 B      0.19 ms  (x1)
+============================================================
+============================================================
+ Request profile: chatcmpl-ce679b7cfd0346ec9998b0d6b950ea9e
+============================================================
+ Inputs:
+   text         x1         142 B
+   image        x3     218.6 KiB
+------------------------------------------------------------
+ Timeline:
+   recv → preprocess done                        7.2 ms
+   preprocess done → finish                     34.8 ms
+   total                                        42.0 ms
+============================================================

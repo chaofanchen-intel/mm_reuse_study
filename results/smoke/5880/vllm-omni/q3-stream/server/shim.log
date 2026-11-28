@@ -1,0 +1,446 @@
+1795688798.469174	1839165	prefix_lookup	req=chatcmpl-9b7733cdd805517d-84973c8d prompt=29 hit=0
+1795688800.673430	1839165	prefix_lookup	req=chatcmpl-b479e6eb40f100f5-b029524c prompt=330 hit=0
+1795688800.673628	1839165	ecm_check	hit=False input_id=0 req=chatcmpl-b479e6eb40f100f mm_hash=bdccf215a89ddb668df94794
+1795688800.684731	1840086	mm_encoder	items=1 reqs=chatcmpl-b479e6eb40f
+1795688800.691323	1840091	mm_encoder	items=1 reqs=chatcmpl-b479e6eb40f
+1795688801.123293	1839165	prefix_lookup	req=chatcmpl-bbd29c9756700d84-8116aab4 prompt=632 hit=320
+1795688801.123361	1839165	ecm_check	hit=True input_id=0 req=chatcmpl-bbd29c9756700d8 mm_hash=bdccf215a89ddb668df94794
+1795688801.123381	1839165	ecm_check	hit=False input_id=1 req=chatcmpl-bbd29c9756700d8 mm_hash=d761da613c05d837f8b01a12
+1795688801.134279	1840086	mm_encoder	items=1 reqs=chatcmpl-bbd29c97567
+1795688801.134334	1840091	mm_encoder	items=1 reqs=chatcmpl-bbd29c97567
+1795688801.614357	1839165	prefix_lookup	req=chatcmpl-a4f67bb32db992bd-88311f83 prompt=934 hit=576
+1795688801.614418	1839165	ecm_check	hit=True input_id=1 req=chatcmpl-a4f67bb32db992b mm_hash=d761da613c05d837f8b01a12
+1795688801.614437	1839165	ecm_check	hit=False input_id=2 req=chatcmpl-a4f67bb32db992b mm_hash=6e6a6a8f45f7110a28051e81
+1795688801.622611	1840091	mm_encoder	items=1 reqs=chatcmpl-a4f67bb32db
+1795688801.622669	1840086	mm_encoder	items=1 reqs=chatcmpl-a4f67bb32db
+1795688802.130260	1839165	prefix_lookup	req=chatcmpl-bae9a8daea5f4fd8-b3808ddf prompt=1236 hit=896
+1795688802.130444	1839165	ecm_check	hit=True input_id=2 req=chatcmpl-bae9a8daea5f4fd mm_hash=6e6a6a8f45f7110a28051e81
+1795688802.130513	1839165	ecm_check	hit=False input_id=3 req=chatcmpl-bae9a8daea5f4fd mm_hash=7783242ec379bc4791c81f83
+1795688802.147032	1840091	mm_encoder	items=1 reqs=chatcmpl-bae9a8daea5
+1795688802.147042	1840086	mm_encoder	items=1 reqs=chatcmpl-bae9a8daea5
+1795688802.628062	1839165	prefix_lookup	req=chatcmpl-8f8aa6fe2a844c04-b0e9815f prompt=1538 hit=1216
+1795688802.628120	1839165	ecm_check	hit=True input_id=3 req=chatcmpl-8f8aa6fe2a844c0 mm_hash=7783242ec379bc4791c81f83
+1795688802.628138	1839165	ecm_check	hit=False input_id=4 req=chatcmpl-8f8aa6fe2a844c0 mm_hash=291461d51e9913067bcf099e
+1795688802.636328	1840086	mm_encoder	items=1 reqs=chatcmpl-8f8aa6fe2a8
+1795688802.636358	1840091	mm_encoder	items=1 reqs=chatcmpl-8f8aa6fe2a8
+1795688803.135316	1839165	prefix_lookup	req=chatcmpl-b30cbe056c8a669c-8bb9d024 prompt=1840 hit=1472
+1795688803.135376	1839165	ecm_check	hit=True input_id=4 req=chatcmpl-b30cbe056c8a669 mm_hash=291461d51e9913067bcf099e
+1795688803.135395	1839165	ecm_check	hit=False input_id=5 req=chatcmpl-b30cbe056c8a669 mm_hash=dca57e1a1859103b9b26941e
+1795688803.143837	1840086	mm_encoder	items=1 reqs=chatcmpl-b30cbe056c8
+1795688803.143872	1840091	mm_encoder	items=1 reqs=chatcmpl-b30cbe056c8
+1795688803.635202	1839165	prefix_lookup	req=chatcmpl-90a6a8f2fe67f182-94644cdd prompt=2142 hit=1792
+1795688803.635259	1839165	ecm_check	hit=True input_id=5 req=chatcmpl-90a6a8f2fe67f18 mm_hash=dca57e1a1859103b9b26941e
+1795688803.635277	1839165	ecm_check	hit=False input_id=6 req=chatcmpl-90a6a8f2fe67f18 mm_hash=027ea4589db05733c0ffee21
+1795688803.643478	1840086	mm_encoder	items=1 reqs=chatcmpl-90a6a8f2fe6
+1795688803.643551	1840091	mm_encoder	items=1 reqs=chatcmpl-90a6a8f2fe6
+1795688804.141601	1839165	prefix_lookup	req=chatcmpl-89d23b375272b532-9c3ca92d prompt=2444 hit=2112
+1795688804.141664	1839165	ecm_check	hit=True input_id=6 req=chatcmpl-89d23b375272b53 mm_hash=027ea4589db05733c0ffee21
+1795688804.141681	1839165	ecm_check	hit=False input_id=7 req=chatcmpl-89d23b375272b53 mm_hash=16f07cd13868b5d3755de047
+1795688804.150095	1840086	mm_encoder	items=1 reqs=chatcmpl-89d23b37527
+1795688804.150130	1840091	mm_encoder	items=1 reqs=chatcmpl-89d23b37527
+1795688804.634282	1839165	prefix_lookup	req=chatcmpl-82c98914311dfb21-af965da2 prompt=2746 hit=2432
+1795688804.634340	1839165	ecm_check	hit=True input_id=7 req=chatcmpl-82c98914311dfb2 mm_hash=16f07cd13868b5d3755de047
+1795688804.634358	1839165	ecm_check	hit=False input_id=8 req=chatcmpl-82c98914311dfb2 mm_hash=f7abae7b3d43275cda050139
+1795688804.642696	1840091	mm_encoder	items=1 reqs=chatcmpl-82c98914311
+1795688804.642706	1840086	mm_encoder	items=1 reqs=chatcmpl-82c98914311
+1795688805.137244	1839165	prefix_lookup	req=chatcmpl-8ad626663c70c14d-bcf9524b prompt=3048 hit=2688
+1795688805.137304	1839165	ecm_check	hit=True input_id=8 req=chatcmpl-8ad626663c70c14 mm_hash=f7abae7b3d43275cda050139
+1795688805.137322	1839165	ecm_check	hit=False input_id=9 req=chatcmpl-8ad626663c70c14 mm_hash=f132bc5c54ecf36f88177e23
+1795688805.145009	1840086	mm_encoder	items=1 reqs=chatcmpl-8ad626663c7
+1795688805.145087	1840091	mm_encoder	items=1 reqs=chatcmpl-8ad626663c7
+1795688805.580226	1839165	prefix_lookup	req=chatcmpl-a8a98e8b57b19270-9583c8ed prompt=29 hit=0
+1795688807.689968	1839165	prefix_lookup	req=chatcmpl-a859715cf7a38f0b-a096571e prompt=3064 hit=3008
+1795688807.690026	1839165	ecm_check	hit=True input_id=9 req=chatcmpl-a859715cf7a38f0 mm_hash=f132bc5c54ecf36f88177e23
+1795688809.768920	1839165	prefix_lookup	req=chatcmpl-8f707358aa9f53f3-950b7b47 prompt=29 hit=0
+1795688811.922240	1839165	prefix_lookup	req=chatcmpl-aad17dd1b3bec1e2-a40cb9bb prompt=3350 hit=3008
+1795688811.922439	1839165	ecm_check	hit=True input_id=9 req=chatcmpl-aad17dd1b3bec1e mm_hash=f132bc5c54ecf36f88177e23
+1795688811.922511	1839165	ecm_check	hit=False input_id=10 req=chatcmpl-aad17dd1b3bec1e mm_hash=c0ea98229738ef3090bf0388
+1795688811.936271	1840091	mm_encoder	items=1 reqs=chatcmpl-aad17dd1b3b
+1795688811.937089	1840086	mm_encoder	items=1 reqs=chatcmpl-aad17dd1b3b
+1795688812.212844	1839165	prefix_lookup	req=chatcmpl-914ab4693e98e846-9c70a82a prompt=6068 hit=3328
+1795688812.212914	1839165	ecm_check	hit=True input_id=10 req=chatcmpl-914ab4693e98e84 mm_hash=c0ea98229738ef3090bf0388
+1795688812.212932	1839165	ecm_check	hit=False input_id=11 req=chatcmpl-914ab4693e98e84 mm_hash=567bf62cefaa15c107be41c1
+1795688812.212950	1839165	ecm_check	hit=False input_id=12 req=chatcmpl-914ab4693e98e84 mm_hash=025824f6f3cdd470acfa0fe6
+1795688812.212965	1839165	ecm_check	hit=False input_id=13 req=chatcmpl-914ab4693e98e84 mm_hash=33e06441f55b1d221429ab33
+1795688812.212978	1839165	ecm_check	hit=False input_id=14 req=chatcmpl-914ab4693e98e84 mm_hash=e720151b595f10b375cb0131
+1795688812.212992	1839165	ecm_check	hit=False input_id=15 req=chatcmpl-914ab4693e98e84 mm_hash=c4a61653eefbb4f29d446b4b
+1795688812.213006	1839165	ecm_check	hit=False input_id=16 req=chatcmpl-914ab4693e98e84 mm_hash=b4c7af7b7446469fc81c78ee
+1795688812.213020	1839165	ecm_check	hit=False input_id=17 req=chatcmpl-914ab4693e98e84 mm_hash=ab9c4aead086b0b771d75a98
+1795688812.213033	1839165	ecm_check	hit=False input_id=18 req=chatcmpl-914ab4693e98e84 mm_hash=61ae5bf1fd9451be3f400e99
+1795688812.213046	1839165	ecm_check	hit=False input_id=19 req=chatcmpl-914ab4693e98e84 mm_hash=af3dcd788d7eaf637452f938
+1795688812.249353	1840091	mm_encoder	items=9 reqs=chatcmpl-914ab4693e9
+1795688812.249725	1840086	mm_encoder	items=9 reqs=chatcmpl-914ab4693e9
+1795688812.614450	1839165	prefix_lookup	req=chatcmpl-bede3e134fc71e13-876b0cce prompt=29 hit=0
+1795688814.756432	1839165	prefix_lookup	req=chatcmpl-880fb7045f706596-b7dc35d6 prompt=6080 hit=6016
+1795688814.756539	1839165	ecm_check	hit=True input_id=19 req=chatcmpl-880fb7045f70659 mm_hash=af3dcd788d7eaf637452f938
+1795688816.835977	1839165	prefix_lookup	req=chatcmpl-9abbae222479c90c-b46fc3fd prompt=29 hit=0
+1795688819.010242	1839165	prefix_lookup	req=chatcmpl-87f30b867e0eef70-b93399df prompt=6370 hit=6016
+1795688819.010302	1839165	ecm_check	hit=True input_id=19 req=chatcmpl-87f30b867e0eef7 mm_hash=af3dcd788d7eaf637452f938
+1795688819.010322	1839165	ecm_check	hit=False input_id=20 req=chatcmpl-87f30b867e0eef7 mm_hash=85b6e71eec7664ba764d9d7f
+1795688819.017965	1840086	mm_encoder	items=1 reqs=chatcmpl-87f30b867e0
+1795688819.026338	1840091	mm_encoder	items=1 reqs=chatcmpl-87f30b867e0
+1795688819.292168	1839165	prefix_lookup	req=chatcmpl-984cfeadd72fa17f-a1bd8972 prompt=9088 hit=6336
+1795688819.292240	1839165	ecm_check	hit=True input_id=20 req=chatcmpl-984cfeadd72fa17 mm_hash=85b6e71eec7664ba764d9d7f
+1795688819.292268	1839165	ecm_check	hit=False input_id=21 req=chatcmpl-984cfeadd72fa17 mm_hash=49018965576d51c862a77bee
+1795688819.292288	1839165	ecm_check	hit=False input_id=22 req=chatcmpl-984cfeadd72fa17 mm_hash=ff886bef7e6bf879ee3c22ea
+1795688819.292303	1839165	ecm_check	hit=False input_id=23 req=chatcmpl-984cfeadd72fa17 mm_hash=cd417a002808ff90fc1a6ef5
+1795688819.292317	1839165	ecm_check	hit=False input_id=24 req=chatcmpl-984cfeadd72fa17 mm_hash=8c1b9c77d7baf0780f7aab4d
+1795688819.292331	1839165	ecm_check	hit=False input_id=25 req=chatcmpl-984cfeadd72fa17 mm_hash=e3086d441ecec0aef8d72e8b
+1795688819.292345	1839165	ecm_check	hit=False input_id=26 req=chatcmpl-984cfeadd72fa17 mm_hash=510a374ef1cc962ab56da0c6
+1795688819.292359	1839165	ecm_check	hit=False input_id=27 req=chatcmpl-984cfeadd72fa17 mm_hash=edad3788eaece2760850731a
+1795688819.292374	1839165	ecm_check	hit=False input_id=28 req=chatcmpl-984cfeadd72fa17 mm_hash=e3e1fda478a58f3b58086dfa
+1795688819.292387	1839165	ecm_check	hit=False input_id=29 req=chatcmpl-984cfeadd72fa17 mm_hash=0a7f065dca0c4f6ad2cd623e
+1795688819.318189	1840086	mm_encoder	items=9 reqs=chatcmpl-984cfeadd72
+1795688819.321935	1840091	mm_encoder	items=9 reqs=chatcmpl-984cfeadd72
+1795688819.697146	1839165	prefix_lookup	req=chatcmpl-b86e91daa5977eeb-896ecf93 prompt=29 hit=0
+1795688821.844411	1839165	prefix_lookup	req=chatcmpl-9c3333c517fcf541-ab4fac64 prompt=9100 hit=9024
+1795688821.844596	1839165	ecm_check	hit=True input_id=29 req=chatcmpl-9c3333c517fcf54 mm_hash=0a7f065dca0c4f6ad2cd623e
+1795688823.929476	1839165	prefix_lookup	req=chatcmpl-86cfba85745f5655-8154a0af prompt=29 hit=0
+1795688826.017102	1839165	prefix_lookup	req=chatcmpl-91adce59befd46f1-9a070a79 prompt=29 hit=0
+1795688837.564464	1839165	prefix_lookup	req=chatcmpl-8d8e08d6a34ef65c-af15400f prompt=29 hit=0
+1795688845.919397	1839165	prefix_lookup	req=chatcmpl-9299add3a7386581-84c56b77 prompt=3668 hit=0
+1795688845.919592	1839165	ecm_check	hit=False input_id=0 req=chatcmpl-9299add3a738658 mm_hash=d5f9e527e8f6be2c4d706237
+1795688845.919675	1839165	ecm_check	hit=False input_id=1 req=chatcmpl-9299add3a738658 mm_hash=bad8ec906352add2bedc5686
+1795688845.919741	1839165	ecm_check	hit=False input_id=2 req=chatcmpl-9299add3a738658 mm_hash=29272b75da9da28eac026379
+1795688845.919795	1839165	ecm_check	hit=False input_id=3 req=chatcmpl-9299add3a738658 mm_hash=73309db35fe3f2175927dc9c
+1795688845.919844	1839165	ecm_check	hit=False input_id=4 req=chatcmpl-9299add3a738658 mm_hash=f35a35686d29dfacab7ba565
+1795688845.919894	1839165	ecm_check	hit=False input_id=5 req=chatcmpl-9299add3a738658 mm_hash=9ea2be604514ff2faf28690f
+1795688845.919943	1839165	ecm_check	hit=False input_id=6 req=chatcmpl-9299add3a738658 mm_hash=f83ae89ddc2b2a4b4e3aa822
+1795688845.920007	1839165	ecm_check	hit=False input_id=7 req=chatcmpl-9299add3a738658 mm_hash=47a2989bc7f345069e9d97b2
+1795688845.920055	1839165	ecm_check	hit=False input_id=8 req=chatcmpl-9299add3a738658 mm_hash=bc1b730fb655cc6a3f010008
+1795688845.920103	1839165	ecm_check	hit=False input_id=9 req=chatcmpl-9299add3a738658 mm_hash=a4a66ffa156af65fba04edc8
+1795688845.920151	1839165	ecm_check	hit=False input_id=10 req=chatcmpl-9299add3a738658 mm_hash=269920d6ca93d534820a501a
+1795688845.920202	1839165	ecm_check	hit=False input_id=11 req=chatcmpl-9299add3a738658 mm_hash=c531af9b4b8840425ccb1b50
+1795688845.953007	1840091	mm_encoder	items=12 reqs=chatcmpl-9299add3a73
+1795688845.958313	1840086	mm_encoder	items=12 reqs=chatcmpl-9299add3a73
+1795688851.914093	1839165	prefix_lookup	req=chatcmpl-aaa1c693b85cc740-84cf96b4 prompt=4268 hit=0
+1795688851.914298	1839165	ecm_check	hit=True input_id=0 req=chatcmpl-aaa1c693b85cc74 mm_hash=269920d6ca93d534820a501a
+1795688851.914374	1839165	ecm_check	hit=True input_id=1 req=chatcmpl-aaa1c693b85cc74 mm_hash=c531af9b4b8840425ccb1b50
+1795688851.914427	1839165	ecm_check	hit=False input_id=2 req=chatcmpl-aaa1c693b85cc74 mm_hash=450d1c851d96df11185b6d45
+1795688851.914489	1839165	ecm_check	hit=False input_id=3 req=chatcmpl-aaa1c693b85cc74 mm_hash=24f074446e1bfddc468d4046
+1795688851.914546	1839165	ecm_check	hit=False input_id=4 req=chatcmpl-aaa1c693b85cc74 mm_hash=7ef57cba7a5cb5e808c249dd
+1795688851.914616	1839165	ecm_check	hit=False input_id=5 req=chatcmpl-aaa1c693b85cc74 mm_hash=0dc5521e1711e2d87a1ac576
+1795688851.914665	1839165	ecm_check	hit=False input_id=6 req=chatcmpl-aaa1c693b85cc74 mm_hash=a0d2dde373e9e45c5e2845dc
+1795688851.914712	1839165	ecm_check	hit=False input_id=7 req=chatcmpl-aaa1c693b85cc74 mm_hash=8636093015324999f3fc6f8e
+1795688851.914761	1839165	ecm_check	hit=False input_id=8 req=chatcmpl-aaa1c693b85cc74 mm_hash=ad70431cea59c9ea493e5a1e
+1795688851.914811	1839165	ecm_check	hit=False input_id=9 req=chatcmpl-aaa1c693b85cc74 mm_hash=658b90d8e731eae4be906a01
+1795688851.914858	1839165	ecm_check	hit=False input_id=10 req=chatcmpl-aaa1c693b85cc74 mm_hash=e27fff05ddef68ace6bb7b7f
+1795688851.914905	1839165	ecm_check	hit=False input_id=11 req=chatcmpl-aaa1c693b85cc74 mm_hash=b34831cf6c6bbb0c0f37095b
+1795688851.915000	1839165	ecm_check	hit=False input_id=12 req=chatcmpl-aaa1c693b85cc74 mm_hash=7a7c7d3ccb75f482ef5c5f2b
+1795688851.915051	1839165	ecm_check	hit=False input_id=13 req=chatcmpl-aaa1c693b85cc74 mm_hash=b86565ead11d015e3b0425ea
+1795688851.952165	1840086	mm_encoder	items=12 reqs=chatcmpl-aaa1c693b85
+1795688851.954031	1840091	mm_encoder	items=12 reqs=chatcmpl-aaa1c693b85
+1795688857.896887	1839165	prefix_lookup	req=chatcmpl-bc0dddc2842ce7db-9d29adc3 prompt=4872 hit=0
+1795688857.897088	1839165	ecm_check	hit=True input_id=0 req=chatcmpl-bc0dddc2842ce7d mm_hash=e27fff05ddef68ace6bb7b7f
+1795688857.897165	1839165	ecm_check	hit=True input_id=1 req=chatcmpl-bc0dddc2842ce7d mm_hash=b34831cf6c6bbb0c0f37095b
+1795688857.897224	1839165	ecm_check	hit=True input_id=2 req=chatcmpl-bc0dddc2842ce7d mm_hash=7a7c7d3ccb75f482ef5c5f2b
+1795688857.897273	1839165	ecm_check	hit=True input_id=3 req=chatcmpl-bc0dddc2842ce7d mm_hash=b86565ead11d015e3b0425ea
+1795688857.897316	1839165	ecm_check	hit=False input_id=4 req=chatcmpl-bc0dddc2842ce7d mm_hash=b20ac62657fbe51945bbfb53
+1795688857.897372	1839165	ecm_check	hit=False input_id=5 req=chatcmpl-bc0dddc2842ce7d mm_hash=8e7d0da10aef548410df3f8c
+1795688857.897425	1839165	ecm_check	hit=False input_id=6 req=chatcmpl-bc0dddc2842ce7d mm_hash=9137e77d69eebec536fc89d9
+1795688857.897472	1839165	ecm_check	hit=False input_id=7 req=chatcmpl-bc0dddc2842ce7d mm_hash=c73dd4bab7a67275f55a82cd
+1795688857.897523	1839165	ecm_check	hit=False input_id=8 req=chatcmpl-bc0dddc2842ce7d mm_hash=b9b122743abc245d90df756a
+1795688857.897574	1839165	ecm_check	hit=False input_id=9 req=chatcmpl-bc0dddc2842ce7d mm_hash=ce856f63a341b90e3f97085d
+1795688857.897623	1839165	ecm_check	hit=False input_id=10 req=chatcmpl-bc0dddc2842ce7d mm_hash=40d11f92ba7cacb822fe8ad2
+1795688857.897669	1839165	ecm_check	hit=False input_id=11 req=chatcmpl-bc0dddc2842ce7d mm_hash=6abff69f285c02e16ead4491
+1795688857.897716	1839165	ecm_check	hit=False input_id=12 req=chatcmpl-bc0dddc2842ce7d mm_hash=08102c8ed370d4974757df91
+1795688857.897763	1839165	ecm_check	hit=False input_id=13 req=chatcmpl-bc0dddc2842ce7d mm_hash=5aa0acb3f18e1b2a30ffbdcb
+1795688857.897810	1839165	ecm_check	hit=False input_id=14 req=chatcmpl-bc0dddc2842ce7d mm_hash=31b5fa0a6f750cbe89d1640d
+1795688857.897857	1839165	ecm_check	hit=False input_id=15 req=chatcmpl-bc0dddc2842ce7d mm_hash=bd131258e9d58b4818e81c68
+1795688857.936838	1840091	mm_encoder	items=12 reqs=chatcmpl-bc0dddc2842
+1795688857.940728	1840086	mm_encoder	items=12 reqs=chatcmpl-bc0dddc2842
+1795688863.906578	1839165	prefix_lookup	req=chatcmpl-87c63f3c89769f32-9269fef2 prompt=5480 hit=0
+1795688863.906789	1839165	ecm_check	hit=True input_id=0 req=chatcmpl-87c63f3c89769f3 mm_hash=40d11f92ba7cacb822fe8ad2
+1795688863.906869	1839165	ecm_check	hit=True input_id=1 req=chatcmpl-87c63f3c89769f3 mm_hash=6abff69f285c02e16ead4491
+1795688863.906927	1839165	ecm_check	hit=True input_id=2 req=chatcmpl-87c63f3c89769f3 mm_hash=08102c8ed370d4974757df91
+1795688863.907002	1839165	ecm_check	hit=True input_id=3 req=chatcmpl-87c63f3c89769f3 mm_hash=5aa0acb3f18e1b2a30ffbdcb
+1795688863.907056	1839165	ecm_check	hit=True input_id=4 req=chatcmpl-87c63f3c89769f3 mm_hash=31b5fa0a6f750cbe89d1640d
+1795688863.907120	1839165	ecm_check	hit=True input_id=5 req=chatcmpl-87c63f3c89769f3 mm_hash=bd131258e9d58b4818e81c68
+1795688863.907165	1839165	ecm_check	hit=False input_id=6 req=chatcmpl-87c63f3c89769f3 mm_hash=a31c61be574e0de1f66696cb
+1795688863.907225	1839165	ecm_check	hit=False input_id=7 req=chatcmpl-87c63f3c89769f3 mm_hash=3849a0234279693757cc7d5a
+1795688863.907276	1839165	ecm_check	hit=False input_id=8 req=chatcmpl-87c63f3c89769f3 mm_hash=7b87fa08a2242a9f08f586b6
+1795688863.907322	1839165	ecm_check	hit=False input_id=9 req=chatcmpl-87c63f3c89769f3 mm_hash=eea0ea15a8c8a1cd6696f116
+1795688863.907368	1839165	ecm_check	hit=False input_id=10 req=chatcmpl-87c63f3c89769f3 mm_hash=251f99eada95bc4ec8d0be96
+1795688863.907416	1839165	ecm_check	hit=False input_id=11 req=chatcmpl-87c63f3c89769f3 mm_hash=aeeb75e85bcb8b4bafca599c
+1795688863.907465	1839165	ecm_check	hit=False input_id=12 req=chatcmpl-87c63f3c89769f3 mm_hash=d56eed0f5631670c90c013e8
+1795688863.907512	1839165	ecm_check	hit=False input_id=13 req=chatcmpl-87c63f3c89769f3 mm_hash=7a0448c854901094f518c6a2
+1795688863.907559	1839165	ecm_check	hit=False input_id=14 req=chatcmpl-87c63f3c89769f3 mm_hash=5e042382db931b98ca0572c7
+1795688863.907604	1839165	ecm_check	hit=False input_id=15 req=chatcmpl-87c63f3c89769f3 mm_hash=5e9efcd1ae55b03b7bad7b3a
+1795688863.907650	1839165	ecm_check	hit=False input_id=16 req=chatcmpl-87c63f3c89769f3 mm_hash=3e8e1c2d2e629b7223633823
+1795688863.907701	1839165	ecm_check	hit=False input_id=17 req=chatcmpl-87c63f3c89769f3 mm_hash=b63f69463dd2c855d7ec356f
+1795688863.971503	1840086	mm_encoder	items=12 reqs=chatcmpl-87c63f3c897
+1795688863.972056	1840091	mm_encoder	items=12 reqs=chatcmpl-87c63f3c897
+1795688864.511189	1839165	prefix_lookup	req=chatcmpl-b2df4d2438a9f787-bd7067d5 prompt=29 hit=0
+1795688867.193717	1839165	prefix_lookup	req=chatcmpl-904377cd6a98b009-83cccd37 prompt=29 hit=0
+1795688869.364126	1839165	prefix_lookup	req=chatcmpl-b947d0ea5e69e1c0-9676c34d prompt=330 hit=0
+1795688869.364184	1839165	ecm_check	hit=False input_id=0 req=chatcmpl-b947d0ea5e69e1c mm_hash=51db70e4d6c26f3ca4c42f66
+1795688869.366906	1840086	mm_encoder	items=1 reqs=chatcmpl-b947d0ea5e6
+1795688869.366922	1840091	mm_encoder	items=1 reqs=chatcmpl-b947d0ea5e6
+1795688869.846722	1839165	prefix_lookup	req=chatcmpl-b012a8ffe7034148-a7714ced prompt=632 hit=320
+1795688869.846783	1839165	ecm_check	hit=True input_id=0 req=chatcmpl-b012a8ffe703414 mm_hash=51db70e4d6c26f3ca4c42f66
+1795688869.846802	1839165	ecm_check	hit=False input_id=1 req=chatcmpl-b012a8ffe703414 mm_hash=b78b80d5e61fef82836ad86c
+1795688869.852690	1840086	mm_encoder	items=1 reqs=chatcmpl-b012a8ffe70
+1795688869.852901	1840091	mm_encoder	items=1 reqs=chatcmpl-b012a8ffe70
+1795688870.348562	1839165	prefix_lookup	req=chatcmpl-8082239bb449a36f-a6707522 prompt=934 hit=576
+1795688870.348622	1839165	ecm_check	hit=True input_id=1 req=chatcmpl-8082239bb449a36 mm_hash=b78b80d5e61fef82836ad86c
+1795688870.348640	1839165	ecm_check	hit=False input_id=2 req=chatcmpl-8082239bb449a36 mm_hash=ecd3f42581a1527385320522
+1795688870.352702	1840086	mm_encoder	items=1 reqs=chatcmpl-8082239bb44
+1795688870.352813	1840091	mm_encoder	items=1 reqs=chatcmpl-8082239bb44
+1795688870.851695	1839165	prefix_lookup	req=chatcmpl-a7f609406bce402c-88992b9e prompt=1236 hit=896
+1795688870.851756	1839165	ecm_check	hit=True input_id=2 req=chatcmpl-a7f609406bce402 mm_hash=ecd3f42581a1527385320522
+1795688870.851775	1839165	ecm_check	hit=False input_id=3 req=chatcmpl-a7f609406bce402 mm_hash=e3f1cb315ff3644ca122e87d
+1795688870.855880	1840091	mm_encoder	items=1 reqs=chatcmpl-a7f609406bc
+1795688870.855888	1840086	mm_encoder	items=1 reqs=chatcmpl-a7f609406bc
+1795688871.356581	1839165	prefix_lookup	req=chatcmpl-8eeacada0317ce3c-a6981f65 prompt=1538 hit=1216
+1795688871.356751	1839165	ecm_check	hit=True input_id=3 req=chatcmpl-8eeacada0317ce3 mm_hash=e3f1cb315ff3644ca122e87d
+1795688871.356814	1839165	ecm_check	hit=False input_id=4 req=chatcmpl-8eeacada0317ce3 mm_hash=b38598ed06061a26b2163be1
+1795688871.362775	1840091	mm_encoder	items=1 reqs=chatcmpl-8eeacada031
+1795688871.362814	1840086	mm_encoder	items=1 reqs=chatcmpl-8eeacada031
+1795688871.854075	1839165	prefix_lookup	req=chatcmpl-ae1c8046678563bd-bcfeb2e1 prompt=1840 hit=1472
+1795688871.854138	1839165	ecm_check	hit=True input_id=4 req=chatcmpl-ae1c8046678563b mm_hash=b38598ed06061a26b2163be1
+1795688871.854157	1839165	ecm_check	hit=False input_id=5 req=chatcmpl-ae1c8046678563b mm_hash=c8208feb44e4cacce2cfa075
+1795688871.858190	1840086	mm_encoder	items=1 reqs=chatcmpl-ae1c8046678
+1795688871.858254	1840091	mm_encoder	items=1 reqs=chatcmpl-ae1c8046678
+1795688872.361884	1839165	prefix_lookup	req=chatcmpl-9f1d5ef0bed4d626-a3b67c84 prompt=2142 hit=1792
+1795688872.361998	1839165	ecm_check	hit=True input_id=5 req=chatcmpl-9f1d5ef0bed4d62 mm_hash=c8208feb44e4cacce2cfa075
+1795688872.362039	1839165	ecm_check	hit=False input_id=6 req=chatcmpl-9f1d5ef0bed4d62 mm_hash=304a4dc4cebaf005efffc4a9
+1795688872.367035	1840091	mm_encoder	items=1 reqs=chatcmpl-9f1d5ef0bed
+1795688872.367132	1840086	mm_encoder	items=1 reqs=chatcmpl-9f1d5ef0bed
+1795688872.858546	1839165	prefix_lookup	req=chatcmpl-978996ea6176280b-a8949a90 prompt=2444 hit=2112
+1795688872.858611	1839165	ecm_check	hit=True input_id=6 req=chatcmpl-978996ea6176280 mm_hash=304a4dc4cebaf005efffc4a9
+1795688872.858631	1839165	ecm_check	hit=False input_id=7 req=chatcmpl-978996ea6176280 mm_hash=41b1feaaab80651007c555b4
+1795688872.863116	1840086	mm_encoder	items=1 reqs=chatcmpl-978996ea617
+1795688872.863159	1840091	mm_encoder	items=1 reqs=chatcmpl-978996ea617
+1795688873.367307	1839165	prefix_lookup	req=chatcmpl-9e16ba1d72332e6c-a10be354 prompt=2746 hit=2432
+1795688873.367492	1839165	ecm_check	hit=True input_id=7 req=chatcmpl-9e16ba1d72332e6 mm_hash=41b1feaaab80651007c555b4
+1795688873.367560	1839165	ecm_check	hit=False input_id=8 req=chatcmpl-9e16ba1d72332e6 mm_hash=6618e372038cc69e0a98888a
+1795688873.374011	1840086	mm_encoder	items=1 reqs=chatcmpl-9e16ba1d723
+1795688873.374036	1840091	mm_encoder	items=1 reqs=chatcmpl-9e16ba1d723
+1795688873.870455	1839165	prefix_lookup	req=chatcmpl-a3cac5499aa1c642-8c486210 prompt=3048 hit=2688
+1795688873.870635	1839165	ecm_check	hit=True input_id=8 req=chatcmpl-a3cac5499aa1c64 mm_hash=6618e372038cc69e0a98888a
+1795688873.870698	1839165	ecm_check	hit=False input_id=9 req=chatcmpl-a3cac5499aa1c64 mm_hash=7c62db79f2c44d42258476f3
+1795688873.877418	1840086	mm_encoder	items=1 reqs=chatcmpl-a3cac5499aa
+1795688873.877431	1840091	mm_encoder	items=1 reqs=chatcmpl-a3cac5499aa
+1795688874.371316	1839165	prefix_lookup	req=chatcmpl-b9188f176c99df16-94f9bcf6 prompt=3350 hit=3008
+1795688874.371382	1839165	ecm_check	hit=True input_id=9 req=chatcmpl-b9188f176c99df1 mm_hash=7c62db79f2c44d42258476f3
+1795688874.371400	1839165	ecm_check	hit=False input_id=10 req=chatcmpl-b9188f176c99df1 mm_hash=85027c01b02f531fd11bf9fb
+1795688874.376010	1840091	mm_encoder	items=1 reqs=chatcmpl-b9188f176c9
+1795688874.376052	1840086	mm_encoder	items=1 reqs=chatcmpl-b9188f176c9
+1795688874.872420	1839165	prefix_lookup	req=chatcmpl-a8467e46f4a8b5f7-9dce5ef7 prompt=3652 hit=3328
+1795688874.872516	1839165	ecm_check	hit=True input_id=10 req=chatcmpl-a8467e46f4a8b5f mm_hash=85027c01b02f531fd11bf9fb
+1795688874.872549	1839165	ecm_check	hit=False input_id=11 req=chatcmpl-a8467e46f4a8b5f mm_hash=0febfb987b21c8ccd35ac76a
+1795688874.877837	1840086	mm_encoder	items=1 reqs=chatcmpl-a8467e46f4a
+1795688874.877854	1840091	mm_encoder	items=1 reqs=chatcmpl-a8467e46f4a
+1795688875.348276	1839165	prefix_lookup	req=chatcmpl-b83e907776a73cbd-9d83ec7f prompt=3668 hit=3584
+1795688875.348341	1839165	ecm_check	hit=True input_id=11 req=chatcmpl-b83e907776a73cb mm_hash=0febfb987b21c8ccd35ac76a
+1795688875.465040	1839165	prefix_lookup	req=chatcmpl-b9ce5e4ea7686e25-855176ce prompt=3954 hit=3584
+1795688875.465106	1839165	ecm_check	hit=True input_id=11 req=chatcmpl-b9ce5e4ea7686e2 mm_hash=0febfb987b21c8ccd35ac76a
+1795688875.465125	1839165	ecm_check	hit=False input_id=12 req=chatcmpl-b9ce5e4ea7686e2 mm_hash=edc955561809fded0c056d5d
+1795688875.469920	1840086	mm_encoder	items=1 reqs=chatcmpl-b9ce5e4ea76
+1795688875.470011	1840091	mm_encoder	items=1 reqs=chatcmpl-b9ce5e4ea76
+1795688875.877676	1839165	prefix_lookup	req=chatcmpl-92b1be239ca3eaf8-bbfb7e7b prompt=4256 hit=3904
+1795688875.877859	1839165	ecm_check	hit=True input_id=12 req=chatcmpl-92b1be239ca3eaf mm_hash=edc955561809fded0c056d5d
+1795688875.877922	1839165	ecm_check	hit=False input_id=13 req=chatcmpl-92b1be239ca3eaf mm_hash=2b78c010e0a2db139988deff
+1795688875.885230	1840091	mm_encoder	items=1 reqs=chatcmpl-92b1be239ca
+1795688875.885281	1840086	mm_encoder	items=1 reqs=chatcmpl-92b1be239ca
+1795688876.390143	1839165	prefix_lookup	req=chatcmpl-97be2435c452b2c5-b0c64cf3 prompt=4558 hit=4224
+1795688876.390340	1839165	ecm_check	hit=True input_id=13 req=chatcmpl-97be2435c452b2c mm_hash=2b78c010e0a2db139988deff
+1795688876.390406	1839165	ecm_check	hit=False input_id=14 req=chatcmpl-97be2435c452b2c mm_hash=b0129a3bfc0d2c98e24bcfa6
+1795688876.398139	1840086	mm_encoder	items=1 reqs=chatcmpl-97be2435c45
+1795688876.398145	1840091	mm_encoder	items=1 reqs=chatcmpl-97be2435c45
+1795688876.894595	1839165	prefix_lookup	req=chatcmpl-a612920cdd40657a-a4f890dd prompt=4860 hit=4544
+1795688876.894663	1839165	ecm_check	hit=True input_id=14 req=chatcmpl-a612920cdd40657 mm_hash=b0129a3bfc0d2c98e24bcfa6
+1795688876.894681	1839165	ecm_check	hit=False input_id=15 req=chatcmpl-a612920cdd40657 mm_hash=decf2b85671333be2ae92236
+1795688876.900266	1840091	mm_encoder	items=1 reqs=chatcmpl-a612920cdd4
+1795688876.900271	1840086	mm_encoder	items=1 reqs=chatcmpl-a612920cdd4
+1795688877.385519	1839165	prefix_lookup	req=chatcmpl-b9b8402fa43fab8b-a6bd1d69 prompt=5162 hit=4800
+1795688877.385704	1839165	ecm_check	hit=True input_id=15 req=chatcmpl-b9b8402fa43fab8 mm_hash=decf2b85671333be2ae92236
+1795688877.385769	1839165	ecm_check	hit=False input_id=16 req=chatcmpl-b9b8402fa43fab8 mm_hash=61530edeca95c5190e05d727
+1795688877.393673	1840091	mm_encoder	items=1 reqs=chatcmpl-b9b8402fa43
+1795688877.393678	1840086	mm_encoder	items=1 reqs=chatcmpl-b9b8402fa43
+1795688877.877325	1839165	prefix_lookup	req=chatcmpl-b62c7ca9f9c542e3-85d2e2ee prompt=5464 hit=5120
+1795688877.877392	1839165	ecm_check	hit=True input_id=16 req=chatcmpl-b62c7ca9f9c542e mm_hash=61530edeca95c5190e05d727
+1795688877.877412	1839165	ecm_check	hit=False input_id=17 req=chatcmpl-b62c7ca9f9c542e mm_hash=12ccb25d56bf597d2b5fecbd
+1795688877.882989	1840086	mm_encoder	items=1 reqs=chatcmpl-b62c7ca9f9c
+1795688877.883012	1840091	mm_encoder	items=1 reqs=chatcmpl-b62c7ca9f9c
+1795688878.386820	1839165	prefix_lookup	req=chatcmpl-9623e72d462d284e-86a29328 prompt=5766 hit=5440
+1795688878.386925	1839165	ecm_check	hit=True input_id=17 req=chatcmpl-9623e72d462d284 mm_hash=12ccb25d56bf597d2b5fecbd
+1795688878.386966	1839165	ecm_check	hit=False input_id=18 req=chatcmpl-9623e72d462d284 mm_hash=bd547f76f1234b40066e0744
+1795688878.393231	1840091	mm_encoder	items=1 reqs=chatcmpl-9623e72d462
+1795688878.393237	1840086	mm_encoder	items=1 reqs=chatcmpl-9623e72d462
+1795688878.883437	1839165	prefix_lookup	req=chatcmpl-81a20548bad35ae1-8eed8391 prompt=6068 hit=5760
+1795688878.883501	1839165	ecm_check	hit=False input_id=19 req=chatcmpl-81a20548bad35ae mm_hash=d87fca393ab3883006ed29df
+1795688878.888220	1840086	mm_encoder	items=1 reqs=chatcmpl-81a20548bad
+1795688878.888246	1840091	mm_encoder	items=1 reqs=chatcmpl-81a20548bad
+1795688879.357295	1839165	prefix_lookup	req=chatcmpl-82d47fc025094f6b-991be186 prompt=3350 hit=0
+1795688879.357365	1839165	ecm_check	hit=True input_id=0 req=chatcmpl-82d47fc025094f6 mm_hash=85027c01b02f531fd11bf9fb
+1795688879.357387	1839165	ecm_check	hit=True input_id=1 req=chatcmpl-82d47fc025094f6 mm_hash=0febfb987b21c8ccd35ac76a
+1795688879.357403	1839165	ecm_check	hit=True input_id=2 req=chatcmpl-82d47fc025094f6 mm_hash=edc955561809fded0c056d5d
+1795688879.357417	1839165	ecm_check	hit=True input_id=3 req=chatcmpl-82d47fc025094f6 mm_hash=2b78c010e0a2db139988deff
+1795688879.357431	1839165	ecm_check	hit=True input_id=4 req=chatcmpl-82d47fc025094f6 mm_hash=b0129a3bfc0d2c98e24bcfa6
+1795688879.357444	1839165	ecm_check	hit=True input_id=5 req=chatcmpl-82d47fc025094f6 mm_hash=decf2b85671333be2ae92236
+1795688879.357466	1839165	ecm_check	hit=True input_id=6 req=chatcmpl-82d47fc025094f6 mm_hash=61530edeca95c5190e05d727
+1795688879.357479	1839165	ecm_check	hit=True input_id=7 req=chatcmpl-82d47fc025094f6 mm_hash=12ccb25d56bf597d2b5fecbd
+1795688879.357492	1839165	ecm_check	hit=True input_id=8 req=chatcmpl-82d47fc025094f6 mm_hash=bd547f76f1234b40066e0744
+1795688879.357506	1839165	ecm_check	hit=True input_id=9 req=chatcmpl-82d47fc025094f6 mm_hash=d87fca393ab3883006ed29df
+1795688879.357518	1839165	ecm_check	hit=False input_id=10 req=chatcmpl-82d47fc025094f6 mm_hash=6489b5454b336907ae8d808f
+1795688879.389989	1840086	mm_encoder	items=1 reqs=chatcmpl-82d47fc0250
+1795688879.394181	1840091	mm_encoder	items=1 reqs=chatcmpl-82d47fc0250
+1795688879.876891	1839165	prefix_lookup	req=chatcmpl-90341a606073c096-820dad43 prompt=3652 hit=3328
+1795688879.877080	1839165	ecm_check	hit=True input_id=10 req=chatcmpl-90341a606073c09 mm_hash=6489b5454b336907ae8d808f
+1795688879.877148	1839165	ecm_check	hit=False input_id=11 req=chatcmpl-90341a606073c09 mm_hash=5dfd0f9f4e5d76cb395b10cc
+1795688879.884631	1840086	mm_encoder	items=1 reqs=chatcmpl-90341a60607
+1795688879.884672	1840091	mm_encoder	items=1 reqs=chatcmpl-90341a60607
+1795688880.365500	1839165	prefix_lookup	req=chatcmpl-af1145e8581cc121-9963ffb5 prompt=3954 hit=3584
+1795688880.365568	1839165	ecm_check	hit=True input_id=11 req=chatcmpl-af1145e8581cc12 mm_hash=5dfd0f9f4e5d76cb395b10cc
+1795688880.365587	1839165	ecm_check	hit=False input_id=12 req=chatcmpl-af1145e8581cc12 mm_hash=080d5c60a077063307e74c76
+1795688880.370538	1840086	mm_encoder	items=1 reqs=chatcmpl-af1145e8581
+1795688880.370614	1840091	mm_encoder	items=1 reqs=chatcmpl-af1145e8581
+1795688880.883353	1839165	prefix_lookup	req=chatcmpl-b6eeb89122064473-a4ea32b1 prompt=4256 hit=3904
+1795688880.883418	1839165	ecm_check	hit=True input_id=12 req=chatcmpl-b6eeb8912206447 mm_hash=080d5c60a077063307e74c76
+1795688880.883436	1839165	ecm_check	hit=False input_id=13 req=chatcmpl-b6eeb8912206447 mm_hash=5dc58966f8ecae5aa8fb6c19
+1795688880.888607	1840086	mm_encoder	items=1 reqs=chatcmpl-b6eeb891220
+1795688880.888662	1840091	mm_encoder	items=1 reqs=chatcmpl-b6eeb891220
+1795688881.357102	1839165	prefix_lookup	req=chatcmpl-a12cd463bc97e802-96cafa4f prompt=4268 hit=4224
+1795688881.357290	1839165	ecm_check	hit=True input_id=13 req=chatcmpl-a12cd463bc97e80 mm_hash=5dc58966f8ecae5aa8fb6c19
+1795688881.492680	1839165	prefix_lookup	req=chatcmpl-99d059e4f2956a7c-b55681ec prompt=4558 hit=4224
+1795688881.492745	1839165	ecm_check	hit=True input_id=13 req=chatcmpl-99d059e4f2956a7 mm_hash=5dc58966f8ecae5aa8fb6c19
+1795688881.492763	1839165	ecm_check	hit=False input_id=14 req=chatcmpl-99d059e4f2956a7 mm_hash=83ab02c7fbf8edcac7cbcae3
+1795688881.497869	1840086	mm_encoder	items=1 reqs=chatcmpl-99d059e4f29
+1795688881.500242	1840091	mm_encoder	items=1 reqs=chatcmpl-99d059e4f29
+1795688881.872311	1839165	prefix_lookup	req=chatcmpl-a27c760536c123e3-94ba7893 prompt=4860 hit=4544
+1795688881.872377	1839165	ecm_check	hit=True input_id=14 req=chatcmpl-a27c760536c123e mm_hash=83ab02c7fbf8edcac7cbcae3
+1795688881.872397	1839165	ecm_check	hit=False input_id=15 req=chatcmpl-a27c760536c123e mm_hash=4d5defceccedd1a7561f978c
+1795688881.877628	1840086	mm_encoder	items=1 reqs=chatcmpl-a27c760536c
+1795688881.880148	1840091	mm_encoder	items=1 reqs=chatcmpl-a27c760536c
+1795688882.384737	1839165	prefix_lookup	req=chatcmpl-9acc619dbe1e915c-b401c7c0 prompt=5162 hit=4800
+1795688882.384924	1839165	ecm_check	hit=True input_id=15 req=chatcmpl-9acc619dbe1e915 mm_hash=4d5defceccedd1a7561f978c
+1795688882.384991	1839165	ecm_check	hit=False input_id=16 req=chatcmpl-9acc619dbe1e915 mm_hash=4a12ab544225718a8f89f680
+1795688882.393115	1840086	mm_encoder	items=1 reqs=chatcmpl-9acc619dbe1
+1795688882.393201	1840091	mm_encoder	items=1 reqs=chatcmpl-9acc619dbe1
+1795688882.876598	1839165	prefix_lookup	req=chatcmpl-9401bd60d0111d8b-b4a9535d prompt=5464 hit=5120
+1795688882.876777	1839165	ecm_check	hit=True input_id=16 req=chatcmpl-9401bd60d0111d8 mm_hash=4a12ab544225718a8f89f680
+1795688882.876842	1839165	ecm_check	hit=False input_id=17 req=chatcmpl-9401bd60d0111d8 mm_hash=8be6ec7fe00ab090f9ae4e4e
+1795688882.884720	1840086	mm_encoder	items=1 reqs=chatcmpl-9401bd60d01
+1795688882.884747	1840091	mm_encoder	items=1 reqs=chatcmpl-9401bd60d01
+1795688883.382247	1839165	prefix_lookup	req=chatcmpl-9caef15b3f0497ea-89f6eb23 prompt=5766 hit=5440
+1795688883.382421	1839165	ecm_check	hit=True input_id=17 req=chatcmpl-9caef15b3f0497e mm_hash=8be6ec7fe00ab090f9ae4e4e
+1795688883.382484	1839165	ecm_check	hit=False input_id=18 req=chatcmpl-9caef15b3f0497e mm_hash=9b9cffa82ab0ffacfb70a8bb
+1795688883.390491	1840091	mm_encoder	items=1 reqs=chatcmpl-9caef15b3f0
+1795688883.390544	1840086	mm_encoder	items=1 reqs=chatcmpl-9caef15b3f0
+1795688883.890601	1839165	prefix_lookup	req=chatcmpl-a8b78d05baadf161-b8f487a3 prompt=6068 hit=5760
+1795688883.890769	1839165	ecm_check	hit=False input_id=19 req=chatcmpl-a8b78d05baadf16 mm_hash=d3fcdb5c991c13980aab8533
+1795688883.897450	1840091	mm_encoder	items=1 reqs=chatcmpl-a8b78d05baa
+1795688883.897464	1840086	mm_encoder	items=1 reqs=chatcmpl-a8b78d05baa
+1795688884.379453	1839165	prefix_lookup	req=chatcmpl-b6fc16d57cd4dfdc-a88c5f05 prompt=3350 hit=0
+1795688884.379646	1839165	ecm_check	hit=True input_id=0 req=chatcmpl-b6fc16d57cd4dfd mm_hash=6489b5454b336907ae8d808f
+1795688884.379728	1839165	ecm_check	hit=True input_id=1 req=chatcmpl-b6fc16d57cd4dfd mm_hash=5dfd0f9f4e5d76cb395b10cc
+1795688884.379791	1839165	ecm_check	hit=True input_id=2 req=chatcmpl-b6fc16d57cd4dfd mm_hash=080d5c60a077063307e74c76
+1795688884.379843	1839165	ecm_check	hit=True input_id=3 req=chatcmpl-b6fc16d57cd4dfd mm_hash=5dc58966f8ecae5aa8fb6c19
+1795688884.379895	1839165	ecm_check	hit=True input_id=4 req=chatcmpl-b6fc16d57cd4dfd mm_hash=83ab02c7fbf8edcac7cbcae3
+1795688884.379942	1839165	ecm_check	hit=True input_id=5 req=chatcmpl-b6fc16d57cd4dfd mm_hash=4d5defceccedd1a7561f978c
+1795688884.379990	1839165	ecm_check	hit=True input_id=6 req=chatcmpl-b6fc16d57cd4dfd mm_hash=4a12ab544225718a8f89f680
+1795688884.380036	1839165	ecm_check	hit=True input_id=7 req=chatcmpl-b6fc16d57cd4dfd mm_hash=8be6ec7fe00ab090f9ae4e4e
+1795688884.380085	1839165	ecm_check	hit=True input_id=8 req=chatcmpl-b6fc16d57cd4dfd mm_hash=9b9cffa82ab0ffacfb70a8bb
+1795688884.380132	1839165	ecm_check	hit=True input_id=9 req=chatcmpl-b6fc16d57cd4dfd mm_hash=d3fcdb5c991c13980aab8533
+1795688884.380177	1839165	ecm_check	hit=False input_id=10 req=chatcmpl-b6fc16d57cd4dfd mm_hash=b7ed1c379cb749b7912aec52
+1795688884.406458	1840086	mm_encoder	items=1 reqs=chatcmpl-b6fc16d57cd
+1795688884.407137	1840091	mm_encoder	items=1 reqs=chatcmpl-b6fc16d57cd
+1795688884.866362	1839165	prefix_lookup	req=chatcmpl-85e75c7a57c19c0f-81546a1c prompt=3652 hit=3328
+1795688884.866540	1839165	ecm_check	hit=True input_id=10 req=chatcmpl-85e75c7a57c19c0 mm_hash=b7ed1c379cb749b7912aec52
+1795688884.866602	1839165	ecm_check	hit=False input_id=11 req=chatcmpl-85e75c7a57c19c0 mm_hash=3a0df5f58abe7fd2c10289af
+1795688884.873918	1840091	mm_encoder	items=1 reqs=chatcmpl-85e75c7a57c
+1795688884.873958	1840086	mm_encoder	items=1 reqs=chatcmpl-85e75c7a57c
+1795688885.375953	1839165	prefix_lookup	req=chatcmpl-82ecd23cb0e9a362-b83386d1 prompt=3954 hit=3584
+1795688885.376131	1839165	ecm_check	hit=True input_id=11 req=chatcmpl-82ecd23cb0e9a36 mm_hash=3a0df5f58abe7fd2c10289af
+1795688885.376195	1839165	ecm_check	hit=False input_id=12 req=chatcmpl-82ecd23cb0e9a36 mm_hash=303dc6e0e27627d68b33f2cf
+1795688885.383526	1840086	mm_encoder	items=1 reqs=chatcmpl-82ecd23cb0e
+1795688885.383640	1840091	mm_encoder	items=1 reqs=chatcmpl-82ecd23cb0e
+1795688885.875627	1839165	prefix_lookup	req=chatcmpl-aa652dea18774273-83937837 prompt=4256 hit=3904
+1795688885.875797	1839165	ecm_check	hit=True input_id=12 req=chatcmpl-aa652dea1877427 mm_hash=303dc6e0e27627d68b33f2cf
+1795688885.875861	1839165	ecm_check	hit=False input_id=13 req=chatcmpl-aa652dea1877427 mm_hash=aa3190cc164cb9d5167859aa
+1795688885.883329	1840091	mm_encoder	items=1 reqs=chatcmpl-aa652dea187
+1795688885.883334	1840086	mm_encoder	items=1 reqs=chatcmpl-aa652dea187
+1795688886.384815	1839165	prefix_lookup	req=chatcmpl-afe060164b8e38ab-a4984545 prompt=4558 hit=4224
+1795688886.385023	1839165	ecm_check	hit=True input_id=13 req=chatcmpl-afe060164b8e38a mm_hash=aa3190cc164cb9d5167859aa
+1795688886.385088	1839165	ecm_check	hit=False input_id=14 req=chatcmpl-afe060164b8e38a mm_hash=5bab2a2b8fd86ce2fc5c5109
+1795688886.392736	1840086	mm_encoder	items=1 reqs=chatcmpl-afe060164b8
+1795688886.392737	1840091	mm_encoder	items=1 reqs=chatcmpl-afe060164b8
+1795688886.872615	1839165	prefix_lookup	req=chatcmpl-92bb1d60ec83b039-802ffedd prompt=4860 hit=4544
+1795688886.872680	1839165	ecm_check	hit=True input_id=14 req=chatcmpl-92bb1d60ec83b03 mm_hash=5bab2a2b8fd86ce2fc5c5109
+1795688886.872698	1839165	ecm_check	hit=False input_id=15 req=chatcmpl-92bb1d60ec83b03 mm_hash=5c2493f0a1e3e43c112111b7
+1795688886.877985	1840086	mm_encoder	items=1 reqs=chatcmpl-92bb1d60ec8
+1795688886.878009	1840091	mm_encoder	items=1 reqs=chatcmpl-92bb1d60ec8
+1795688887.352562	1839165	prefix_lookup	req=chatcmpl-ab792a56e1c6ec53-8bb12d52 prompt=4872 hit=4800
+1795688887.352626	1839165	ecm_check	hit=True input_id=15 req=chatcmpl-ab792a56e1c6ec5 mm_hash=5c2493f0a1e3e43c112111b7
+1795688887.480819	1839165	prefix_lookup	req=chatcmpl-811de2742da778fb-9abf6962 prompt=5162 hit=4800
+1795688887.480884	1839165	ecm_check	hit=True input_id=15 req=chatcmpl-811de2742da778f mm_hash=5c2493f0a1e3e43c112111b7
+1795688887.480903	1839165	ecm_check	hit=False input_id=16 req=chatcmpl-811de2742da778f mm_hash=3521eb03d1299a7f40c50a42
+1795688887.486214	1840086	mm_encoder	items=1 reqs=chatcmpl-811de2742da
+1795688887.486236	1840091	mm_encoder	items=1 reqs=chatcmpl-811de2742da
+1795688887.875812	1839165	prefix_lookup	req=chatcmpl-ae7cccbdb75e99b5-b0b8418b prompt=5464 hit=5120
+1795688887.875997	1839165	ecm_check	hit=True input_id=16 req=chatcmpl-ae7cccbdb75e99b mm_hash=3521eb03d1299a7f40c50a42
+1795688887.876062	1839165	ecm_check	hit=False input_id=17 req=chatcmpl-ae7cccbdb75e99b mm_hash=d5cf77d1cb3bcaa3e03c5dcb
+1795688887.884088	1840086	mm_encoder	items=1 reqs=chatcmpl-ae7cccbdb75
+1795688887.884128	1840091	mm_encoder	items=1 reqs=chatcmpl-ae7cccbdb75
+1795688888.395262	1839165	prefix_lookup	req=chatcmpl-bf89101953a44a7f-92f8c734 prompt=5766 hit=5440
+1795688888.395436	1839165	ecm_check	hit=True input_id=17 req=chatcmpl-bf89101953a44a7 mm_hash=d5cf77d1cb3bcaa3e03c5dcb
+1795688888.395500	1839165	ecm_check	hit=False input_id=18 req=chatcmpl-bf89101953a44a7 mm_hash=7f0fbc5fbacf9ebe7508ed82
+1795688888.403401	1840086	mm_encoder	items=1 reqs=chatcmpl-bf89101953a
+1795688888.403481	1840091	mm_encoder	items=1 reqs=chatcmpl-bf89101953a
+1795688888.886212	1839165	prefix_lookup	req=chatcmpl-82ab1cef04a70cbe-96bef814 prompt=6068 hit=5760
+1795688888.886390	1839165	ecm_check	hit=False input_id=19 req=chatcmpl-82ab1cef04a70cb mm_hash=0179cf312d4f2c3e256a96cd
+1795688888.893180	1840091	mm_encoder	items=1 reqs=chatcmpl-82ab1cef04a
+1795688888.893239	1840086	mm_encoder	items=1 reqs=chatcmpl-82ab1cef04a
+1795688889.371755	1839165	prefix_lookup	req=chatcmpl-9d44834b2c0e82e2-9e81ef8a prompt=3350 hit=0
+1795688889.371955	1839165	ecm_check	hit=True input_id=0 req=chatcmpl-9d44834b2c0e82e mm_hash=b7ed1c379cb749b7912aec52
+1795688889.372032	1839165	ecm_check	hit=True input_id=1 req=chatcmpl-9d44834b2c0e82e mm_hash=3a0df5f58abe7fd2c10289af
+1795688889.372088	1839165	ecm_check	hit=True input_id=2 req=chatcmpl-9d44834b2c0e82e mm_hash=303dc6e0e27627d68b33f2cf
+1795688889.372140	1839165	ecm_check	hit=True input_id=3 req=chatcmpl-9d44834b2c0e82e mm_hash=aa3190cc164cb9d5167859aa
+1795688889.372192	1839165	ecm_check	hit=True input_id=4 req=chatcmpl-9d44834b2c0e82e mm_hash=5bab2a2b8fd86ce2fc5c5109
+1795688889.372238	1839165	ecm_check	hit=True input_id=5 req=chatcmpl-9d44834b2c0e82e mm_hash=5c2493f0a1e3e43c112111b7
+1795688889.372285	1839165	ecm_check	hit=True input_id=6 req=chatcmpl-9d44834b2c0e82e mm_hash=3521eb03d1299a7f40c50a42
+1795688889.372332	1839165	ecm_check	hit=True input_id=7 req=chatcmpl-9d44834b2c0e82e mm_hash=d5cf77d1cb3bcaa3e03c5dcb
+1795688889.372377	1839165	ecm_check	hit=True input_id=8 req=chatcmpl-9d44834b2c0e82e mm_hash=7f0fbc5fbacf9ebe7508ed82
+1795688889.372443	1839165	ecm_check	hit=True input_id=9 req=chatcmpl-9d44834b2c0e82e mm_hash=0179cf312d4f2c3e256a96cd
+1795688889.372489	1839165	ecm_check	hit=False input_id=10 req=chatcmpl-9d44834b2c0e82e mm_hash=da1bdd384ce4998418a894e5
+1795688889.395821	1840091	mm_encoder	items=1 reqs=chatcmpl-9d44834b2c0
+1795688889.397010	1840086	mm_encoder	items=1 reqs=chatcmpl-9d44834b2c0
+1795688889.866807	1839165	prefix_lookup	req=chatcmpl-8fbadd7c736402d8-b1c3b995 prompt=3652 hit=3328
+1795688889.866878	1839165	ecm_check	hit=True input_id=10 req=chatcmpl-8fbadd7c736402d mm_hash=da1bdd384ce4998418a894e5
+1795688889.866896	1839165	ecm_check	hit=False input_id=11 req=chatcmpl-8fbadd7c736402d mm_hash=336b211b64062c170e92584d
+1795688889.871981	1840086	mm_encoder	items=1 reqs=chatcmpl-8fbadd7c736
+1795688889.872080	1840091	mm_encoder	items=1 reqs=chatcmpl-8fbadd7c736
+1795688890.370522	1839165	prefix_lookup	req=chatcmpl-acaa437539a12630-997ea896 prompt=3954 hit=3584
+1795688890.370703	1839165	ecm_check	hit=True input_id=11 req=chatcmpl-acaa437539a1263 mm_hash=336b211b64062c170e92584d
+1795688890.370769	1839165	ecm_check	hit=False input_id=12 req=chatcmpl-acaa437539a1263 mm_hash=cb366450dd8e075ab30753ff
+1795688890.378036	1840091	mm_encoder	items=1 reqs=chatcmpl-acaa437539a
+1795688890.378134	1840086	mm_encoder	items=1 reqs=chatcmpl-acaa437539a
+1795688890.867683	1839165	prefix_lookup	req=chatcmpl-a681a99d4a280c5e-890c41aa prompt=4256 hit=3904
+1795688890.867750	1839165	ecm_check	hit=True input_id=12 req=chatcmpl-a681a99d4a280c5 mm_hash=cb366450dd8e075ab30753ff
+1795688890.867768	1839165	ecm_check	hit=False input_id=13 req=chatcmpl-a681a99d4a280c5 mm_hash=6bf8e9e6abe3a6f59511be52
+1795688890.873413	1840091	mm_encoder	items=1 reqs=chatcmpl-a681a99d4a2
+1795688890.873471	1840086	mm_encoder	items=1 reqs=chatcmpl-a681a99d4a2
+1795688891.373559	1839165	prefix_lookup	req=chatcmpl-9bf75929820ce44c-9d8ad67c prompt=4558 hit=4224
+1795688891.373626	1839165	ecm_check	hit=True input_id=13 req=chatcmpl-9bf75929820ce44 mm_hash=6bf8e9e6abe3a6f59511be52
+1795688891.373645	1839165	ecm_check	hit=False input_id=14 req=chatcmpl-9bf75929820ce44 mm_hash=517add72d0f2bd665fdf7084
+1795688891.378762	1840086	mm_encoder	items=1 reqs=chatcmpl-9bf75929820
+1795688891.378762	1840091	mm_encoder	items=1 reqs=chatcmpl-9bf75929820
+1795688891.874254	1839165	prefix_lookup	req=chatcmpl-acfd95440b4ef5b2-b6f4593a prompt=4860 hit=4544
+1795688891.874323	1839165	ecm_check	hit=True input_id=14 req=chatcmpl-acfd95440b4ef5b mm_hash=517add72d0f2bd665fdf7084
+1795688891.874342	1839165	ecm_check	hit=False input_id=15 req=chatcmpl-acfd95440b4ef5b mm_hash=6a96d6941c1db18368972a93
+1795688891.880827	1840091	mm_encoder	items=1 reqs=chatcmpl-acfd95440b4
+1795688891.880853	1840086	mm_encoder	items=1 reqs=chatcmpl-acfd95440b4
+1795688892.377109	1839165	prefix_lookup	req=chatcmpl-b7efc55abbea0005-930b9f8f prompt=5162 hit=4800
+1795688892.377176	1839165	ecm_check	hit=True input_id=15 req=chatcmpl-b7efc55abbea000 mm_hash=6a96d6941c1db18368972a93
+1795688892.377195	1839165	ecm_check	hit=False input_id=16 req=chatcmpl-b7efc55abbea000 mm_hash=179fb61fd3aec55648e67d44
+1795688892.383483	1840086	mm_encoder	items=1 reqs=chatcmpl-b7efc55abbe
+1795688892.383492	1840091	mm_encoder	items=1 reqs=chatcmpl-b7efc55abbe
+1795688892.897761	1839165	prefix_lookup	req=chatcmpl-894d9ccccebc7ebd-b886ed03 prompt=5464 hit=5120
+1795688892.897945	1839165	ecm_check	hit=True input_id=16 req=chatcmpl-894d9ccccebc7eb mm_hash=179fb61fd3aec55648e67d44
+1795688892.898010	1839165	ecm_check	hit=False input_id=17 req=chatcmpl-894d9ccccebc7eb mm_hash=b9df99f4dbb31dae564a8e3a
+1795688892.905854	1840086	mm_encoder	items=1 reqs=chatcmpl-894d9cccceb
+1795688892.906018	1840091	mm_encoder	items=1 reqs=chatcmpl-894d9cccceb
+1795688893.358432	1839165	prefix_lookup	req=chatcmpl-81b6d82c30222292-8a9dfe6a prompt=5480 hit=5440
+1795688893.358496	1839165	ecm_check	hit=True input_id=17 req=chatcmpl-81b6d82c3022229 mm_hash=b9df99f4dbb31dae564a8e3a
+1795688893.425968	1839165	prefix_lookup	req=chatcmpl-9a25c461c754b518-be7ce63b prompt=29 hit=0

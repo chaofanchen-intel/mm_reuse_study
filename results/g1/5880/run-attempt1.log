@@ -1,0 +1,9 @@
+[00:00:26] M*：等待 1 张空闲卡
+[00:00:26] M*：GPU 0
+serve: g1-mstar 已启动（PID 3735939，GPU 0，端口 18301，日志 results/g1/5880/mstar/pfx-arms/server/server.log）
+serve: g1-mstar 启动出错，日志：
+Traceback (most recent call last):
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 14.00 GiB. GPU 0 has a total capacity of 47.37 GiB of which 4.63 GiB is free. Including non-PyTorch memory, this process has 27.96 GiB memory in use. Process 3734709 has 14.77 GiB memory in use. Of the allocated memory 27.48 GiB is alloca
+Traceback (most recent call last):
+[00:00:51] M* 段失败
+[00:00:51] vLLM-Omni pfx1：等待 2 张空闲卡（阶段 0 与 DiT 阶段各一张）

@@ -1,0 +1,51 @@
+From 7611f954832ebe117f8771ea3b90f840f65c1c8a Mon Sep 17 00:00:00 2001
+From: mm_reuse_study <study@localhost>
+Date: Sat, 28 Nov 2026 23:56:29 +0800
+Subject: [PATCH] =?UTF-8?q?mm=5Freuse=5Fstudy=20M0:=20Qwen3-Omni=20Talker/?=
+ =?UTF-8?q?Code2Wav=20=E5=8F=AF=E4=B8=8D=E5=BB=BA=20CUDA=20graph=EF=BC=88M?=
+ =?UTF-8?q?STAR=5FSPEECH=5FNODES=5FEAGER=EF=BC=89?=
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+---
+ mstar/model/qwen3_omni/submodules.py | 9 +++++++++
+ 1 file changed, 9 insertions(+)
+
+diff --git a/mstar/model/qwen3_omni/submodules.py b/mstar/model/qwen3_omni/submodules.py
+index cbdbcf89d..a4e33c814 100644
+--- a/mstar/model/qwen3_omni/submodules.py
++++ b/mstar/model/qwen3_omni/submodules.py
+@@ -12,6 +12,7 @@
+ 
+ from __future__ import annotations
+ 
++import os
+ import functools
+ import logging
+ from collections.abc import Mapping, Sequence
+@@ -1665,6 +1666,10 @@ class TalkerSubmodule(ARNodeSubmodule):
+     def get_accelerator_graph_configs(
+         self, device: torch.device, tp_world_size: int = 1,
+     ) -> list[AcceleratorGraphConfig]:
++        # mm_reuse_study M0: on 5880 (Ada, 100 KB shared memory) the Talker's capture sizing hits a
++        # Triton kernel that needs 144 KB; text-only runs never use these nodes, so skip their graphs.
++        if os.environ.get("MSTAR_SPEECH_NODES_EAGER") == "1":
++            return []
+         return [
+             BatchedAcceleratorGraphConfig(
+                 capture_graph_walk="talker_decode",
+@@ -1756,6 +1761,10 @@ class Code2WavSubmodule(NodeSubmodule):
+         self.full_seqlen = max(code2wav.chunk_policy().window_sizes(code2wav.codec_left_context_frames))
+ 
+     def get_accelerator_graph_configs(self, device, tp_world_size: int = 1):
++        # mm_reuse_study M0: on 5880 (Ada, 100 KB shared memory) the Talker's capture sizing hits a
++        # Triton kernel that needs 144 KB; text-only runs never use these nodes, so skip their graphs.
++        if os.environ.get("MSTAR_SPEECH_NODES_EAGER") == "1":
++            return []
+         num_quantizers = self.config.code2wav.num_quantizers
+         return [
+             BatchedAcceleratorGraphConfig(
+-- 
+2.43.0
+

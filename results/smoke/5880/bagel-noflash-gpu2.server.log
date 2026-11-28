@@ -1,0 +1,92 @@
+
+  ✓ mstar serving 'bagel' on http://localhost:18203
+
+  Python SDK:
+    from mstar import MStarClient
+    client = MStarClient("http://localhost:18203")
+    print(client.chat("Hello!").text)
+    open("out.png","wb").write(client.generate_image("a cat in a hat"))
+
+  OpenAI-compatible:
+    from openai import OpenAI
+    oai = OpenAI(base_url="http://localhost:18203/v1", api_key="none")
+    oai.chat.completions.create(model="bagel", messages=[{"role":"user","content":"hi"}])
+    oai.images.generate(model="bagel", prompt="a cat")
+
+2026-11-25 21:04:30,001 WARNING [api_server] mstar.model.bagel.components.vit_encoder: flash_attn is not available; BagelViT will fall back to torch SDPA with a block-diagonal mask. This is slower than flash-attn varlen.
+2026-11-25 21:04:30,351 INFO [api_server] mstar.api_server.entrypoint: API server: result threads not pinned (not pinned: the deepest idle state is C1_ACPI at 1 µs on CPUs 0-255, under the 100 µs from which pinning could pay (step_thread_core always pins anyway))
+2026-11-25 21:04:30,357 INFO [api_server] mstar.communication.arena: ARENA: /dev/shm has 450710 MiB free for 2 arenas and their spill files; each arena grows to 32 segments of 256 MiB (MSTAR_SHM_ARENA_MAX_SEGMENTS and _SEGMENT_MB override)
+2026-11-25 21:04:30,357 INFO [api_server] mstar.communication.communicator: control mesh transport: rust 0.1.1 from /home/chaofan/workspaces/mm_reuse_study/envs/mstar/lib/python3.12/site-packages/mstar_rust/__init__.py
+2026-11-25 21:04:30,440 INFO [api_server] mstar.communication.arena: ARENA: grew to 1 segments (256 MiB total, 256 MiB free, largest free block 256 MiB, 0 MiB pinned)
+2026-11-25 21:04:30,442 INFO [api_server] mstar.communication.communicator: control mesh transport: rust 0.1.1 from /home/chaofan/workspaces/mm_reuse_study/envs/mstar/lib/python3.12/site-packages/mstar_rust/__init__.py
+2026-11-25 21:04:30,454 INFO [api_server] mstar.api_server.entrypoint: Conductor process started (pid=2703369, model=bagel)
+2026-11-25 21:04:30,454 INFO [api_server] mstar.api_server.entrypoint: Waiting for workers to finish setup (loading weights, capturing accelerator graphs)...
+2026-11-25 21:04:33,272 INFO [conductor] mstar.api_server.entrypoint: yaml configs/bagel_single_gpu_smoke.yaml has no model_kwargs section; using model defaults
+2026-11-25 21:04:34,335 WARNING [conductor] mstar.model.bagel.components.vit_encoder: flash_attn is not available; BagelViT will fall back to torch SDPA with a block-diagonal mask. This is slower than flash-attn varlen.
+2026-11-25 21:04:34,682 INFO [conductor] mstar.conductor.conductor: Detected worker device type: cuda
+2026-11-25 21:04:34,682 INFO [conductor] mstar.conductor.conductor: Compile caches: Inductor /home/chaofan/.cache/mstar/torchinductor, Triton /home/chaofan/.cache/mstar/torchinductor/triton
+flash_attn is not available; BagelViT will fall back to torch SDPA with a block-diagonal mask. This is slower than flash-attn varlen.
+2026-11-25 21:04:38,409 INFO [conductor] mstar.communication.communicator: control mesh transport: rust 0.1.1 from /home/chaofan/workspaces/mm_reuse_study/envs/mstar/lib/python3.12/site-packages/mstar_rust/__init__.py
+2026-11-25 21:04:38,410 INFO [conductor] mstar.conductor.conductor: Conductor waiting for 1 worker(s) to finish setup
+2026-11-25 21:04:38,758 INFO [worker_0] mstar.communication.communicator: control mesh transport: rust 0.1.1 from /home/chaofan/workspaces/mm_reuse_study/envs/mstar/lib/python3.12/site-packages/mstar_rust/__init__.py
+2026-11-25 21:04:39,076 INFO [worker_0] mstar.communication.arena: ARENA: grew to 1 segments (256 MiB total, 256 MiB free, largest free block 256 MiB, 256 MiB pinned)
+2026-11-25 21:04:47,419 INFO [worker_0] mstar.model.bagel.bagel_model: Successfully loaded in BAGEL submodule for LLM
+2026-11-25 21:04:47,568 INFO [worker_0] mstar.model.bagel.bagel_model: Successfully loaded in BAGEL submodule for vae_decoder
+2026-11-25 21:04:47,570 INFO [worker_0] mstar.model.bagel.bagel_model: Successfully loaded in BAGEL submodule for vae_encoder
+2026-11-25 21:04:48,096 INFO [worker_0] mstar.model.bagel.bagel_model: Successfully loaded in BAGEL submodule for vit_encoder
+2026-11-25 21:04:48,173 INFO [worker_0] mstar.kernels.registry: kernel table: no ragged_attention bfloat16 num_qo_heads=16,num_kv_heads=16,head_dim=72 entry for NVIDIA RTX 5880 Ada Generation; built-in configs. To tune it: python -m benchmark.kernels.sweep ragged_attention --dtype bfloat16 --shape num_qo_heads=16,num_kv_heads=16,head_dim=72
+2026-11-25 21:04:48,180 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 14.00 GiB on this rank, 2048 pages of 128 slots
+2026-11-25 21:04:48,187 INFO [worker_0] mstar.engine.engine: KV kv: prefix cache open for main on LLM
+2026-11-25 21:04:48,187 WARNING [worker_0] mstar.engine.engine: KV kv: prefix cache on with cpu_offload_pages 0: a decode step that finds nothing to evict holds its requests until they time out. Set max_concurrent_requests to the pool's pages over the pages one request needs. cpu_offload_pages gives the worker a victim, but one that shares most of its prompt frees little
+2026-11-25 21:04:48,207 INFO [worker_0] mstar.worker.engine_manager: Engine loaded on device cuda:0 for nodes ['LLM', 'vae_decoder', 'vae_encoder', 'vit_encoder']
+2026-11-25 21:04:54,362 INFO [worker_0] mstar.engine.accelerator_graph_runner: LLM prefill_text[bs=64,tokens=2048,key=False] slot=0: graph executable memory, 10749 bytes a node, 15 MiB held for the walk's graphs
+2026-11-25 21:05:01,154 INFO [worker_0] mstar.engine.accelerator_graph_runner: LLM decode[bs=64,tokens=128,key=True] slot=0: graph executable memory, 10798 bytes a node, 15 MiB held for the walk's graphs
+2026-11-25 21:05:03,530 INFO [worker_0] mstar.engine.accelerator_graph_runner: LLM decode[bs=64,tokens=64,key=False] slot=0: graph executable memory, 11565 bytes a node, 15 MiB held for the walk's graphs
+2026-11-25 21:05:44,072 INFO [worker_0] mstar.engine.accelerator_graph_runner: LLM decode[bs=64,tokens=128,key=True,lean=sampler] slot=0: graph executable memory, 13443 bytes a node, 20 MiB held for the walk's graphs
+2026-11-25 21:05:44,216 INFO [worker_0] mstar.engine.accelerator_graph_runner: LLM decode[bs=64,tokens=64,key=False,lean=sampler] slot=0: graph executable memory, 11796 bytes a node, 15 MiB held for the walk's graphs
+2026-11-25 21:05:47,033 INFO [worker_0] mstar.engine.engine: CapturePlan[cuda:0]: -6951 MiB free, 278 for the largest eager step
+2026-11-25 21:05:47,034 WARNING [worker_0] mstar.engine.engine: CapturePlan[cuda:0]: no room for graphs beside the largest eager step (gpu_memory_fraction 0.8)
+2026-11-25 21:05:47,034 INFO [worker_0] mstar.engine.engine: CapturePlan[cuda:0] LLM: 0 of 63 buckets (0 of 14 lean twins), 0 MiB predicted, 0 outside the allocator
+2026-11-25 21:05:47,034 INFO [worker_0] mstar.engine.resources.attn.workspace: FlashInfer workspaces of kv: 4, 2048 MiB in all
+2026-11-25 21:05:47,049 ERROR [worker_0] mstar.engine.accelerator_graph_runner: AcceleratorGraphRunner[LLM]: captured 0 of 49 buckets; these run eagerly: [BucketKey(graph_walk='prefill_text', bs=64, num_tokens=2048, cg_key_info=False, lean=frozenset()), BucketKey(graph_walk='prefill_text', bs=64, num_tokens=1024, cg_key_info=False, lean=frozenset()), BucketKey(graph_walk='prefill_text', bs=64, num_tokens=512, cg_key_info=False, lean=frozenset()), BucketKey(graph_walk='prefill_text', bs=64, num_tokens=256, cg_key_info=False, lean=frozenset()), BucketKey(graph_walk='decode', bs=64, num_tokens=128, cg_key_info=True, lean=frozenset()), BucketKey(graph_walk='prefill_text', bs=64, num_tokens=128, cg_key_info=False, lean=frozenset()), BucketKey(graph_walk='decode', bs=64, num_tokens=64, cg_key_info=False, lean=frozenset()), BucketKey(graph_walk='prefill_text', bs=32, num_tokens=2048, cg_key_info=False, lean=frozenset()), BucketKey(graph_walk='prefill_text', bs=32, num_tokens=1024, cg_key_info=False, lean=frozenset()), BucketKey(graph_walk='prefill_text', bs=32, num_tokens=512, cg_key_info=False, lean=frozenset()), BucketKey(graph_walk='prefill_text', bs=32, num_tokens=256, cg_key_info=False, lean=frozenset()), BucketKey(graph_walk='prefill_text', bs=32, num_tokens=128, cg_key_info=False, lean=frozenset()), BucketKey(graph_walk='decode', bs=32, num_tokens=64, cg_key_info=True, lean=frozenset()), BucketKey(graph_walk='decode', bs=32, num_tokens=32, cg_key_info=False, lean=frozenset()), BucketKey(graph_walk='prefill_text', bs=16, num_tokens=2048, cg_key_info=False, lean=frozenset()), BucketKey(graph_walk='prefill_text', bs=16, num_tokens=1024, cg_key_info=False, lean=frozenset()), BucketKey(graph_walk='prefill_text', bs=16, num_tokens=512, cg_key_info=False, lean=frozenset()), BucketKey(graph_walk='prefill_text', bs=16, num_tokens=256, cg_key_info=False, lean=frozenset()), BucketKey(graph_walk='prefill_text', bs=16, num_tokens=128, cg_key_info=False, lean=frozenset()), BucketKey(graph_walk='decode', bs=16, num_tokens=32, cg_key_info=True, lean=frozenset()), BucketKey(graph_walk='decode', bs=16, num_tokens=16, cg_key_info=False, lean=frozenset()), BucketKey(graph_walk='prefill_text', bs=8, num_tokens=2048, cg_key_info=False, lean=frozenset()), BucketKey(graph_walk='prefill_text', bs=8, num_tokens=1024, cg_key_info=False, lean=frozenset()), BucketKey(graph_walk='prefill_text', bs=8, num_tokens=512, cg_key_info=False, lean=frozenset()), BucketKey(graph_walk='prefill_text', bs=8, num_tokens=256, cg_key_info=False, lean=frozenset()), BucketKey(graph_walk='prefill_text', bs=8, num_tokens=128, cg_key_info=False, lean=frozenset()), BucketKey(graph_walk='decode', bs=8, num_tokens=16, cg_key_info=True, lean=frozenset()), BucketKey(graph_walk='decode', bs=8, num_tokens=8, cg_key_info=False, lean=frozenset()), BucketKey(graph_walk='prefill_text', bs=4, num_tokens=2048, cg_key_info=False, lean=frozenset()), BucketKey(graph_walk='prefill_text', bs=4, num_tokens=1024, cg_key_info=False, lean=frozenset()), BucketKey(graph_walk='prefill_text', bs=4, num_tokens=512, cg_key_info=False, lean=frozenset()), BucketKey(graph_walk='prefill_text', bs=4, num_tokens=256, cg_key_info=False, lean=frozenset()), BucketKey(graph_walk='prefill_text', bs=4, num_tokens=128, cg_key_info=False, lean=frozenset()), BucketKey(graph_walk='decode', bs=4, num_tokens=8, cg_key_info=True, lean=frozenset()), BucketKey(graph_walk='decode', bs=4, num_tokens=4, cg_key_info=False, lean=frozenset()), BucketKey(graph_walk='prefill_text', bs=2, num_tokens=2048, cg_key_info=False, lean=frozenset()), BucketKey(graph_walk='prefill_text', bs=2, num_tokens=1024, cg_key_info=False, lean=frozenset()), BucketKey(graph_walk='prefill_text', bs=2, num_tokens=512, cg_key_info=False, lean=frozenset()), BucketKey(graph_walk='prefill_text', bs=2, num_tokens=256, cg_key_info=False, lean=frozenset()), BucketKey(graph_walk='prefill_text', bs=2, num_tokens=128, cg_key_info=False, lean=frozenset()), BucketKey(graph_walk='decode', bs=2, num_tokens=4, cg_key_info=True, lean=frozenset()), BucketKey(graph_walk='decode', bs=2, num_tokens=2, cg_key_info=False, lean=frozenset()), BucketKey(graph_walk='prefill_text', bs=1, num_tokens=2048, cg_key_info=False, lean=frozenset()), BucketKey(graph_walk='prefill_text', bs=1, num_tokens=1024, cg_key_info=False, lean=frozenset()), BucketKey(graph_walk='prefill_text', bs=1, num_tokens=512, cg_key_info=False, lean=frozenset()), BucketKey(graph_walk='prefill_text', bs=1, num_tokens=256, cg_key_info=False, lean=frozenset()), BucketKey(graph_walk='prefill_text', bs=1, num_tokens=128, cg_key_info=False, lean=frozenset()), BucketKey(graph_walk='decode', bs=1, num_tokens=2, cg_key_info=True, lean=frozenset()), BucketKey(graph_walk='decode', bs=1, num_tokens=1, cg_key_info=False, lean=frozenset())]
+2026-11-25 21:05:47,049 INFO [worker_0] mstar.engine.accelerator_graph_runner: AcceleratorGraphRunner[LLM]: warmup_and_capture done. shared_static_buffers: 3 entries, 0.02 MB resident (would have been 0.62 MB with per-capture clones — saved 0.60 MB). Total accelerator alloc delta during warmup: 0.00 MB.
+2026-11-25 21:05:47,049 INFO [worker_0] mstar.engine.engine: CapturePlan[cuda:0] LLM: capture took 0 MiB, 0 predicted
+2026-11-25 21:05:47,049 INFO [worker_0] mstar.engine.engine: CapturePlan[cuda:0] LLM piecewise: capture took 0 MiB, 0 predicted
+2026-11-25 21:05:47,050 INFO [worker_0] mstar.engine.accelerator_graph_runner: AcceleratorGraphRunner[vae_decoder]: warmup_and_capture done. shared_static_buffers: 0 entries, 0.00 MB resident (would have been 0.00 MB with per-capture clones — saved 0.00 MB). Total accelerator alloc delta during warmup: 0.00 MB.
+2026-11-25 21:05:47,050 INFO [worker_0] mstar.engine.engine: CapturePlan[cuda:0] vae_decoder: capture took 0 MiB, 0 predicted
+2026-11-25 21:05:47,050 INFO [worker_0] mstar.engine.engine: CapturePlan[cuda:0] vae_decoder piecewise: capture took 0 MiB, 0 predicted
+2026-11-25 21:05:47,050 INFO [worker_0] mstar.engine.accelerator_graph_runner: AcceleratorGraphRunner[vae_encoder]: warmup_and_capture done. shared_static_buffers: 0 entries, 0.00 MB resident (would have been 0.00 MB with per-capture clones — saved 0.00 MB). Total accelerator alloc delta during warmup: 0.00 MB.
+2026-11-25 21:05:47,051 INFO [worker_0] mstar.engine.engine: CapturePlan[cuda:0] vae_encoder: capture took 0 MiB, 0 predicted
+2026-11-25 21:05:47,051 INFO [worker_0] mstar.engine.engine: CapturePlan[cuda:0] vae_encoder piecewise: capture took 0 MiB, 0 predicted
+2026-11-25 21:05:47,052 INFO [worker_0] mstar.engine.accelerator_graph_runner: AcceleratorGraphRunner[vit_encoder]: warmup_and_capture done. shared_static_buffers: 0 entries, 0.00 MB resident (would have been 0.00 MB with per-capture clones — saved 0.00 MB). Total accelerator alloc delta during warmup: 0.00 MB.
+2026-11-25 21:05:47,052 INFO [worker_0] mstar.engine.engine: CapturePlan[cuda:0] vit_encoder: capture took 0 MiB, 0 predicted
+2026-11-25 21:05:47,052 INFO [worker_0] mstar.engine.engine: CapturePlan[cuda:0] vit_encoder piecewise: capture took 0 MiB, 0 predicted
+2026-11-25 21:05:47,052 INFO [worker_0] mstar.engine.engine: CapturePlan[cuda:0]: 2190 MiB free after capture, 278 for the largest eager step
+2026-11-25 21:05:47,056 INFO [worker_0] mstar.engine.engine: Engine: torch.compile applied to LLM
+2026-11-25 21:05:47,060 INFO [worker_0] mstar.engine.engine: Engine: torch.compile applied to vae_decoder
+2026-11-25 21:05:47,063 INFO [worker_0] mstar.engine.engine: Engine: torch.compile applied to vae_encoder
+2026-11-25 21:05:47,067 INFO [worker_0] mstar.engine.engine: Engine: torch.compile applied to vit_encoder
+2026-11-25 21:05:47,751 INFO [worker_0] mstar.worker.worker: Worker worker_0: gc.freeze() after warmup — 1445074 objects moved to the permanent generation
+2026-11-25 21:05:47,753 INFO [worker_0] mstar.worker.step_executor: Worker worker_0: engine runs on dedicated GPU thread
+2026-11-25 21:05:47,753 INFO [worker_0] mstar.worker.step_executor: Worker worker_0: plan_executor enabled — speculative plan() pre-runs on a dedicated thread
+2026-11-25 21:05:47,757 INFO [conductor] mstar.conductor.conductor: Conductor: all 1 worker(s) ready
+2026-11-25 21:05:47,880 INFO [conductor] mstar.utils.gc_freeze: Conductor: gc.freeze() after setup, 393359 objects in the permanent generation
+2026-11-25 21:05:47,886 INFO [api_server] mstar.api_server.entrypoint: All workers ready
+2026-11-25 21:05:48,007 INFO [api_server] mstar.utils.gc_freeze: API server: gc.freeze() after setup, 392399 objects in the permanent generation
+2026-11-25 21:05:48,019 INFO [api_server] mstar.api_server.rust_frontend: Rust frontend started (pid=2712126, port=18203)
+2026-11-25 21:05:48,019 INFO [api_server] mstar.api_server.entrypoint: Starting mstar API server (mstar-server) on port 18203
+2026-11-25 21:05:48,020 INFO [api_server] mstar.api_server.rust_frontend: Rust-frontend bridge serving
+bridging to conductor at /tmp/mstar_rust_frontend_qleq108y
+compressed speech output (mp3, flac, opus) through /home/chaofan/workspaces/mm_reuse_study/envs/mstar/lib/python3.12/site-packages/_soundfile_data/libsndfile_x86_64.so
+WARNING: no API key set (--api-key or MSTAR_API_KEY): any client that can reach 0.0.0.0:18203 can run requests. Set a key, or bind --host 127.0.0.1, unless a gateway in front of this server authenticates clients.
+mstar-server (Rust frontend) for model "bagel" on http://0.0.0.0:18203
+2026-11-25 21:05:48,951 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 0 of its 11 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-25 21:05:55,933 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 0 of its 0 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-25 21:06:23,400 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 11 of its 11 pages, 0 from the host, whole prompt already cached True, replica worker_0
+2026-11-25 21:06:23,524 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 11 of its 11 pages, 0 from the host, whole prompt already cached True, replica worker_0
+2026-11-25 21:06:23,659 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 0/main matched 11 of its 11 pages, 0 from the host, whole prompt already cached True, replica worker_0
+2026-11-25 21:06:23,787 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 1/main matched 11 of its 11 pages, 0 from the host, whole prompt already cached True, replica worker_0
+2026-11-25 21:06:24,094 INFO [worker_0] mstar.engine.resources.kv.manager: KV kv: 1/main matched 11 of its 11 pages, 0 from the host, whole prompt already cached True, replica worker_0
+2026-11-25 21:06:47,758 INFO [conductor] mstar.conductor.conductor: Last 60 s: 7 requests done, 0 queued for admission; 0 running, 0 waiting
+mstar-server: shutting down (draining in-flight, 30s cap)
+2026-11-25 21:10:17,731 INFO [conductor] mstar.conductor.conductor: Shutting down conductor...

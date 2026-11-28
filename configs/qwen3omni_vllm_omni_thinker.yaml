@@ -1,0 +1,23 @@
+# 本研究用（DESIGN 16.6）：上游 vllm_omni/deploy/qwen3_omni_moe_thinking.yaml 的副本，thinker-only，2 卡 TP2。
+# 改动：max_num_seqs 1 → 4（warmup 与提问可同时在服务内）；max_num_batched_tokens 32768（50 帧 × 300 token 不分块）；
+#       enforce_eager false（各框架用其最佳配置；若显存不够再改回 true 并在结果中注明）；采样参数由请求覆盖（temperature 0）。
+pipeline: qwen3_omni_moe_thinker_only
+distributed_executor_backend: mp
+enable_prefix_caching: true
+
+stages:
+  - stage_id: 0
+    devices: "0,1"
+    max_num_seqs: 4
+    max_num_batched_tokens: 32768
+    gpu_memory_utilization: 0.9
+    enforce_eager: false
+    async_scheduling: false
+    tensor_parallel_size: 2
+    default_sampling_params:
+      temperature: 0.4
+      top_p: 0.9
+      top_k: 1
+      max_tokens: 2048
+      seed: 42
+      repetition_penalty: 1.05

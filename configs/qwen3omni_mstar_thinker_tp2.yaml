@@ -1,0 +1,21 @@
+# 本研究用（DESIGN 16.6）：上游 configs/qwen3omni_thinker_tp2.yaml 的副本，3 卡；加 prefix_cache_tp（TP2 下否则前缀缓存静默关闭）与 1024 页 KV 池。
+model: "qwen3_omni"
+max_seq_len: 32768
+node_groups:
+  - node_names: [Thinker]
+    ranks: [0, 1]
+    tp_size: 2
+  
+  - node_names: [audio_encoder, vision_encoder]
+    ranks: [0]
+
+  - node_names: [Talker]
+    ranks: [2]
+  
+  - node_names: [Code2Wav]
+    ranks: [2]
+
+resources:
+  thinker_kv:
+    prefix_cache_tp: true
+    max_num_pages: 1024

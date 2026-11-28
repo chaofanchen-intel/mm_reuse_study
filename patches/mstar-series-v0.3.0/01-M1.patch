@@ -1,0 +1,359 @@
+From 5f3962326d329febd1c6adb43afeeaf68c18ad9c Mon Sep 17 00:00:00 2001
+From: mm_reuse_study <study@localhost>
+Date: Sun, 29 Nov 2026 00:38:50 +0800
+Subject: [PATCH] =?UTF-8?q?mm=5Freuse=5Fstudy=20M1:=20=E7=BC=96=E7=A0=81?=
+ =?UTF-8?q?=E5=99=A8=E8=BE=93=E5=87=BA=E7=BC=93=E5=AD=98=EF=BC=9AQwen3-Omn?=
+ =?UTF-8?q?i=20=E8=A7=86=E8=A7=89=E7=BC=96=E7=A0=81=E5=99=A8=E4=B8=8E=20BA?=
+ =?UTF-8?q?GEL=20ViT=EF=BC=88MSTAR=5FENCODER=5FCACHE=5FMB=EF=BC=89?=
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+---
+ mstar/engine/engine.py                        |  11 ++
+ mstar/model/bagel/submodules.py               |  24 +++
+ .../model/components/encoder_output_cache.py  | 149 ++++++++++++++++++
+ mstar/model/qwen3_omni/submodules.py          |  34 +++-
+ 4 files changed, 216 insertions(+), 2 deletions(-)
+ create mode 100644 mstar/model/components/encoder_output_cache.py
+
+diff --git a/mstar/engine/engine.py b/mstar/engine/engine.py
+index 7817b287b..f8be15bcf 100644
+--- a/mstar/engine/engine.py
++++ b/mstar/engine/engine.py
+@@ -499,6 +499,9 @@ class ExecutingBatch:
+     # rids whose whole walk this node's resources already hold. They run no
+     # forward, but their node still completes so the request reaches its next walk.
+     cached_rids: set[str] = field(default_factory=set)
++    # mm_reuse_study M1: rows whose whole output a submodule served from its own
++    # cache (``pop_served_outputs``); they run no forward and complete like cached_rids
++    served_outputs: dict[str, NameToTensorList] = field(default_factory=dict)
+     # rid -> error, for per-rid stages that raised. The rid leaves the batch;
+     # the rest of it runs.
+     failed_requests: dict[int, str] = field(default_factory=dict)
+@@ -1567,6 +1570,12 @@ class Engine:
+                     input_metadata=metadata.get(rid, EMPTY_INPUT_METADATA),
+                     has_loopback=loopback is not None and loopback[i],
+                 )
++                pop_served = getattr(submodule, "pop_served_outputs", None)
++                served = pop_served(rid) if pop_served is not None and req_inputs is not None else None
++                if served is not None:   # mm_reuse_study M1
++                    batch.served_outputs[rid] = served
++                    batch.cached_rids.add(rid)
++                    req_inputs = None
+                 if req_inputs is not None and probe_prefix:
+                     req_inputs = self._skip_cached_prefix(batch, rid, req_inputs)
+                 if req_inputs is not None and (probe_prefix or mixed):
+@@ -2630,6 +2639,8 @@ class Engine:
+                     )
+             for rid in batch.cached_rids:
+                 self._runner.complete_cached_walk(rid, batch.node_name, batch.step_context.walk_of(rid))
++            for rid, served in batch.served_outputs.items():   # mm_reuse_study M1
++                outputs.per_rid_outputs[rid] = served
+         laps.lap("tail")
+         return outputs
+ 
+diff --git a/mstar/model/bagel/submodules.py b/mstar/model/bagel/submodules.py
+index 85445d4ad..8cc87a0c8 100644
+--- a/mstar/model/bagel/submodules.py
++++ b/mstar/model/bagel/submodules.py
+@@ -358,6 +358,9 @@ def vae_latents(
+     return (height // latent_downsample) * (width // latent_downsample)
+ 
+ 
++from mstar.model.components.encoder_output_cache import EncoderOutputCache  # noqa: E402  (mm_reuse_study M1)
++
++
+ class ViTEncoderSubmodule(NodeSubmodule):
+     """SigLIP2 ViT + connector + vit_pos_embed: pixel patches -> ViT features.
+ 
+@@ -412,6 +415,8 @@ class ViTEncoderSubmodule(NodeSubmodule):
+         # request, so the segment ceiling is the batch size. Raise only if that
+         # changes — and raise the resource's `max_segments_per_request` with it.
+         self._max_images_per_request = 1
++        # mm_reuse_study M1: per-image output cache, opt-in (MSTAR_ENCODER_CACHE_MB)
++        self.output_cache = EncoderOutputCache()
+ 
+     def prepare_inputs(
+         self,
+@@ -423,6 +428,15 @@ class ViTEncoderSubmodule(NodeSubmodule):
+         image_inputs = inputs["image_inputs"]
+ 
+         image_preprocess = vit_preprocess(fwd_info.step_metadata.get("image_preprocess"))
++        if self.output_cache.enabled:   # mm_reuse_study M1: key on the decoded image and the preprocess option
++            ids = (fwd_info.request_id, fwd_info.rid_handle)
++            shape = tuple(image_inputs[0].shape[-2:])
++            grid = (1, 1, vit_patches(*shape, image_preprocess, self.vit_patch_size, self.vit_max_num_patch_per_side))
++            plan = self.output_cache.plan(ids, [image_inputs[0]], [grid], 1, extra=(image_preprocess,))
++            if not plan.encode:   # served from the cache: the engine takes the outputs (pop_served_outputs)
++                return NodeInputs(tensor_inputs={}, kwargs={})
++        else:
++            self.output_cache.log_uncached(fwd_info.request_id, 1)
+         if image_preprocess == "vllm":
+             # Fixed-square option: SiglipImageProcessor resizes to a fixed square
+             # (size = max_num_patch_per_side * patch_size, e.g. 70*14=980),
+@@ -493,6 +507,9 @@ class ViTEncoderSubmodule(NodeSubmodule):
+         )
+         features = self.connector(features)
+         features = features + self.vit_pos_embed(packed_position_ids)
++        rid = engine_inputs.request_ids[0]
++        if rid in self.output_cache.plans:   # mm_reuse_study M1
++            return {"img_emb": self.output_cache.assemble(rid, [features])}
+         return {"img_emb": [features]}
+ 
+     def get_piecewise_accelerator_graph_configs(
+@@ -686,9 +703,16 @@ class ViTEncoderSubmodule(NodeSubmodule):
+         offset = 0
+         for rid, n in zip(engine_inputs.request_ids, seq_lens, strict=True):
+             out[rid] = {"img_emb": [features[offset:offset + n]]}
++            if rid in self.output_cache.plans:   # mm_reuse_study M1
++                out[rid] = {"img_emb": self.output_cache.assemble(rid, out[rid]["img_emb"])}
+             offset += n
+         return out
+ 
++    def pop_served_outputs(self, rid) -> NameToTensorList | None:
++        """mm_reuse_study M1: a row whose image came from the output cache."""
++        full = self.output_cache.pop_served(rid) if self.output_cache.enabled else None
++        return None if full is None else {"img_emb": full}
++
+ 
+ def _unguided(fwd_info: CurrentForwardPassInfo) -> bool:
+     """A guided prompt writes two labels from one input, as `_skip_cached_prefix` refuses."""
+diff --git a/mstar/model/components/encoder_output_cache.py b/mstar/model/components/encoder_output_cache.py
+new file mode 100644
+index 000000000..d85843958
+--- /dev/null
++++ b/mstar/model/components/encoder_output_cache.py
+@@ -0,0 +1,149 @@
++"""Per-item encoder-output cache for packed vision encoders (mm_reuse_study prototype M1).
++
++Opt-in: ``MSTAR_ENCODER_CACHE_MB`` > 0 enables it with that byte cap (LRU).
++``MSTAR_ENCODER_CACHE_LOG`` (a path) appends one line per prepared request, with the
++cache on or off:
++``time  request_id  items  hits  encoded``.
++
++Key: xxh3-128 of each item's pixel bytes, plus its grid, dtype and patch shape.
++The pixel tensor is what preprocessing produced, so resize and normalisation are
++covered. 128-bit non-cryptographic: fine for a study, not for adversarial input.
++
++When every item of a row hits, the submodule hands the assembled outputs to the
++engine (``pop_served_outputs``); the engine marks the row as served by the cache,
++runs no forward for it, and routes these outputs (mstar/engine/engine.py, "M1").
++"""
++from __future__ import annotations
++
++import os
++import time
++from collections import OrderedDict
++from dataclasses import dataclass
++
++import torch
++import xxhash
++
++CACHE_MB = float(os.environ.get("MSTAR_ENCODER_CACHE_MB", "0") or 0)
++# Entries live in pinned host memory: the engine's planner fills the GPU with KV pages and
++# graphs and knows nothing of this cache (a 2 GB device cache OOMed rank 0 on 5880).
++# A hit copies back to the device (~5 MB per 640x480 frame for Qwen3-Omni).
++LOG_PATH = os.environ.get("MSTAR_ENCODER_CACHE_LOG")
++
++
++@dataclass
++class ItemPlan:
++    keys: list[tuple]                       # per item, in prompt order
++    tokens: list[int]                       # merged rows per item
++    cached: list[list[torch.Tensor] | None]  # per item: [embeds, *deepstack] when served from cache
++    encode: list[int]                       # item indices encoded this step, in order
++    ids: tuple = ()                         # every key the plan is stored under
++
++
++class EncoderOutputCache:
++    def __init__(self, cap_mb: float = CACHE_MB):
++        self.cap = int(cap_mb * 2 ** 20)
++        self.device = torch.device("cpu")   # set from the first fresh outputs
++        self.size = 0
++        self.store: OrderedDict[tuple, list[torch.Tensor]] = OrderedDict()
++        self.plans: dict[str, ItemPlan] = {}
++        self.served: dict = {}   # row id -> [embeds, *deepstack], all items from cache
++
++    @property
++    def enabled(self) -> bool:
++        return self.cap > 0
++
++    @staticmethod
++    def key(pixels: torch.Tensor, grid: tuple[int, int, int], extra: tuple = ()) -> tuple:
++        flat = pixels.detach().contiguous()
++        if flat.device.type != "cpu":
++            flat = flat.cpu()
++        digest = xxhash.xxh3_128_hexdigest(flat.view(torch.uint8).numpy().tobytes())
++        return digest, grid, str(pixels.dtype), tuple(pixels.shape[1:]), *extra
++
++    @torch.compiler.disable   # called from compiled forwards (BAGEL's ViT); host-side bookkeeping
++    def plan(self, rid: str | tuple, pixels: list[torch.Tensor], grids: list[tuple[int, int, int]], merge: int,
++             extra: tuple = ()) -> ItemPlan:
++        keys = [self.key(p, g, extra) for p, g in zip(pixels, grids, strict=True)]
++        cached = []
++        for k in keys:
++            hit = self.store.get(k)
++            if hit is not None:
++                self.store.move_to_end(k)
++                hit = [t.to(self.device, non_blocking=True) for t in hit]
++            cached.append(hit)
++        encode = [i for i, c in enumerate(cached) if c is None]
++        ids = rid if isinstance(rid, tuple) else (rid,)
++        plan = ItemPlan(keys, [t * h * w // merge ** 2 for t, h, w in grids], cached, encode, ids)
++        if not encode:   # every item cached: serve the row without a forward
++            full = per_item_cat([c for c in cached])
++            for i in ids:
++                self.served[i] = (full, ids)
++        else:
++            for i in ids:   # the engine may name the row by wire id or by worker handle
++                self.plans[i] = plan
++        if LOG_PATH:
++            hits = sum(c is not None for c in cached)
++            with open(LOG_PATH, "a") as f:
++                f.write(f"{time.time():.6f}\t{ids[0]}\t{len(keys)}\t{hits}\t{len(encode)}\n")
++        return plan
++
++    @staticmethod
++    def debug(msg: str) -> None:
++        if LOG_PATH:
++            with open(LOG_PATH + ".debug", "a") as f:
++                f.write(f"{time.time():.6f}\t{msg}\n")
++
++    @staticmethod
++    def log_uncached(rid, items: int) -> None:
++        """Cache off: still log the request's item count (all encoded), so a baseline is measured alike."""
++        if LOG_PATH:
++            with open(LOG_PATH, "a") as f:
++                f.write(f"{time.time():.6f}\t{rid}\t{items}\t0\t{items}\n")
++
++    def _put(self, key: tuple, tensors: list[torch.Tensor]) -> None:
++        if key in self.store:
++            return
++        nbytes = sum(t.numel() * t.element_size() for t in tensors)
++        if nbytes > self.cap:
++            return
++        self.store[key] = tensors
++        self.size += nbytes
++        while self.size > self.cap:
++            _, old = self.store.popitem(last=False)
++            self.size -= sum(t.numel() * t.element_size() for t in old)
++
++    @torch.compiler.disable   # called from compiled forwards (BAGEL's ViT); host-side bookkeeping
++    def pop_served(self, rid) -> list[torch.Tensor] | None:
++        entry = self.served.get(rid)
++        if entry is None:
++            return None
++        full, ids = entry
++        for i in ids:
++            self.served.pop(i, None)
++        return full
++
++    @torch.compiler.disable   # called from compiled forwards (BAGEL's ViT); host-side bookkeeping
++    def assemble(self, rid: str, fresh: list[torch.Tensor]) -> list[torch.Tensor]:
++        """``fresh``: [embeds, *deepstack] for the encoded items of ``rid``, packed in
++        ``plan.encode`` order. Returns the same list for all items in prompt order,
++        and stores the fresh items."""
++        plan = self.plans[rid]
++        for i in plan.ids:
++            self.plans.pop(i, None)
++        per_item: list[list[torch.Tensor] | None] = list(plan.cached)
++        start = 0
++        self.device = fresh[0].device
++        for i in plan.encode:
++            n = plan.tokens[i]
++            item = [t[start:start + n] for t in fresh]
++            per_item[i] = item
++            self._put(plan.keys[i], [t.to("cpu").pin_memory() if t.is_cuda else t.clone() for t in item])
++            start += n
++        assert start == fresh[0].shape[0], (start, fresh[0].shape)
++        return per_item_cat(per_item)
++
++
++def per_item_cat(per_item: list[list[torch.Tensor]]) -> list[torch.Tensor]:
++    if len(per_item) == 1:
++        return per_item[0]
++    return [torch.cat([item[j] for item in per_item]) for j in range(len(per_item[0]))]
+diff --git a/mstar/model/qwen3_omni/submodules.py b/mstar/model/qwen3_omni/submodules.py
+index a4e33c814..8ad9ab422 100644
+--- a/mstar/model/qwen3_omni/submodules.py
++++ b/mstar/model/qwen3_omni/submodules.py
+@@ -154,6 +154,9 @@ class AudioEncoderSubmodule(AuTEncoderSubmodule):
+ # ===================================================================
+ 
+ 
++from mstar.model.components.encoder_output_cache import EncoderOutputCache  # noqa: E402  (mm_reuse_study M1)
++
++
+ class VisionEncoderSubmodule(PackedBlockLoopEncoder):
+     """The ViT, which turns a request's pixel patches into Thinker-width
+     embeddings and the deepstack features.
+@@ -178,6 +181,8 @@ class VisionEncoderSubmodule(PackedBlockLoopEncoder):
+ 
+     def __init__(self, vision_encoder: Qwen3OmniVisionTower, config: Qwen3OmniModelConfig):
+         super().__init__(vision_encoder, config.vision, "vision_embeds")
++        # mm_reuse_study M1: per-image output cache, opt-in (MSTAR_ENCODER_CACHE_MB)
++        self.output_cache = EncoderOutputCache()
+ 
+     def bind_state(self, handles: Mapping[str, Any]) -> None:
+         self.vision = handles[VISION_TOKENS]
+@@ -212,12 +217,23 @@ class VisionEncoderSubmodule(PackedBlockLoopEncoder):
+         # Built here, not in the forward, so the tower reads nothing off the host;
+         # and built on the host, as Qwen3.5's encoder does: on the device, the
+         # grid upload and the per-patch index maths each block on the stream.
++        pixel_values = torch.cat(list(inputs["pixel_values"]), dim=0)
++        if self.output_cache.enabled:
++            # mm_reuse_study M1: encode only the images not already cached
++            per_image = list(pixel_values.split([t * h * w for t, h, w in grid]))
++            plan = self.output_cache.plan((fwd_info.request_id, fwd_info.rid_handle), per_image, grid, merge)
++            if not plan.encode:   # every image cached: the engine takes the outputs (pop_served_outputs)
++                return NodeInputs(input_seq_len=0, tensor_inputs={})
++            grid = [grid[i] for i in plan.encode]
++            pixel_values = torch.cat([per_image[i] for i in plan.encode], dim=0)
++        else:
++            self.output_cache.log_uncached(fwd_info.request_id, len(grid))
+         indices, weights = vision_interpolation(grid, self.config.num_grid_per_side, merge)
+         return NodeInputs(
+             # what the engine leases the captured block loop's bucket by
+             input_seq_len=sum(t * h * w for t, h, w in grid),
+             tensor_inputs={
+-                "pixel_values": torch.cat(list(inputs["pixel_values"]), dim=0),
++                "pixel_values": pixel_values,
+                 "indices": to_device_nonblocking(indices, device),
+                 "weights": to_device_nonblocking(weights, device),
+                 "position_ids": to_device_nonblocking(vision_grid_position_ids(grid, merge), device),
+@@ -226,6 +242,13 @@ class VisionEncoderSubmodule(PackedBlockLoopEncoder):
+             resource_step_info={"main": vision_seq_lengths(grid)},
+         )
+ 
++    def pop_served_outputs(self, rid) -> NameToTensorList | None:
++        """mm_reuse_study M1: a row whose images all came from the output cache."""
++        full = self.output_cache.pop_served(rid) if self.output_cache.enabled else None
++        if full is None:
++            return None
++        return {self.output: [full[0]], "deepstack": list(full[1:])}
++
+     def _capture_block_loop(self, inp: PiecewiseCallInputs) -> dict[str, torch.Tensor]:
+         """The captured region: reads the runner's buffers, never rebinds."""
+         s = inp.static_inputs
+@@ -252,9 +275,16 @@ class VisionEncoderSubmodule(PackedBlockLoopEncoder):
+             taps = [out.get_view(f"deepstack_{i}") for i in range(len(self.config.deepstack_visual_indexes))]
+             encoded = out.get_view("hidden"), taps
+         embeds, deepstack = tower.merge(*encoded)
+-        return self._split_rows(
++        rows = self._split_rows(
+             engine_inputs.request_ids, {self.output: [embeds], "deepstack": deepstack}, row_patches,
+         )
++        if self.output_cache.enabled:
++            # mm_reuse_study M1: put cached images back in prompt order, store the new ones
++            for rid, out in rows.items():
++                if rid in self.output_cache.plans:
++                    full = self.output_cache.assemble(rid, [out[self.output][0], *out["deepstack"]])
++                    rows[rid] = {self.output: [full[0]], "deepstack": list(full[1:])}
++        return rows
+ 
+ 
+ # ===================================================================
+-- 
+2.43.0
+

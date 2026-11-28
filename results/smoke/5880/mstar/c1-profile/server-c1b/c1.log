@@ -1,0 +1,184 @@
+1795861577.226377	chatcmpl-fd2777d3227f414b890b0bda612e7f99#1	encoder_prepare	[(device(type='cuda', index=0), torch.bfloat16, (3600, 1536))]
+1795861577.226590	chatcmpl-fd2777d3227f414b890b0bda612e7f99#1	first=0	items=3	skip=0
+1795861577.390085	chatcmpl-fd2777d3227f414b890b0bda612e7f99#1	thinker_prepare	prefill_vision	rank=cuda:0
+1795861577.391022	chatcmpl-fd2777d3227f414b890b0bda612e7f99#1	thinker_prepare	prefill_vision	rank=cuda:1
+1795861577.578531	chatcmpl-f913040bfb55434487cadc2bf4bc38c4#2	encoder_prepare	[(device(type='cuda', index=0), torch.bfloat16, (3600, 1536))]
+1795861577.578746	chatcmpl-f913040bfb55434487cadc2bf4bc38c4#2	first=0	items=3	skip=2
+1795861577.585879	chatcmpl-f913040bfb55434487cadc2bf4bc38c4#2	thinker_prepare	prefill_vision	rank=cuda:0
+1795861577.585919	chatcmpl-f913040bfb55434487cadc2bf4bc38c4#2	thinker_prepare	prefill_vision	rank=cuda:1
+1795861577.894259	chatcmpl-582b0191e4014ba59396932c87ed01cf#3	encoder_prepare	[(device(type='cuda', index=0), torch.bfloat16, (9600, 1536))]
+1795861577.894448	chatcmpl-582b0191e4014ba59396932c87ed01cf#3	first=0	items=8	skip=0
+1795861578.105849	chatcmpl-582b0191e4014ba59396932c87ed01cf#3	thinker_prepare	prefill_vision	rank=cuda:0
+1795861578.106298	chatcmpl-582b0191e4014ba59396932c87ed01cf#3	thinker_prepare	prefill_vision	rank=cuda:1
+1795861580.102656	chatcmpl-5877ba8bf1e74d3c9030764309e2ebef#4	encoder_prepare	[(device(type='cuda', index=0), torch.bfloat16, (9600, 1536))]
+1795861580.102866	chatcmpl-5877ba8bf1e74d3c9030764309e2ebef#4	first=0	items=8	skip=7
+1795861580.110218	chatcmpl-5877ba8bf1e74d3c9030764309e2ebef#4	thinker_prepare	prefill_vision	rank=cuda:1
+1795861580.110334	chatcmpl-5877ba8bf1e74d3c9030764309e2ebef#4	thinker_prepare	prefill_vision	rank=cuda:0
+1795861580.412251	chatcmpl-8d40dbd4e1474409ac5efbe0fb26ff2e#5	encoder_prepare	[(device(type='cuda', index=0), torch.bfloat16, (9600, 1536))]
+1795861580.412376	chatcmpl-8d40dbd4e1474409ac5efbe0fb26ff2e#5	first=0	items=8	skip=0
+1795861580.595624	chatcmpl-8d40dbd4e1474409ac5efbe0fb26ff2e#5	thinker_prepare	prefill_vision	rank=cuda:0
+1795861580.595643	chatcmpl-8d40dbd4e1474409ac5efbe0fb26ff2e#5	thinker_prepare	prefill_vision	rank=cuda:1
+1795861580.958763	chatcmpl-687e2ebe033f46abb87cfac2d3c05108#6	encoder_prepare	[(device(type='cuda', index=0), torch.bfloat16, (9600, 1536))]
+1795861580.959022	chatcmpl-687e2ebe033f46abb87cfac2d3c05108#6	first=0	items=8	skip=7
+1795861580.966016	chatcmpl-687e2ebe033f46abb87cfac2d3c05108#6	thinker_prepare	prefill_vision	rank=cuda:0
+1795861580.966121	chatcmpl-687e2ebe033f46abb87cfac2d3c05108#6	thinker_prepare	prefill_vision	rank=cuda:1
+1795861581.474910	chatcmpl-6b430d263dfd4051a208743dcea00b10#7	encoder_prepare	[(device(type='cuda', index=0), torch.bfloat16, (19200, 1536))]
+1795861581.475104	chatcmpl-6b430d263dfd4051a208743dcea00b10#7	first=0	items=16	skip=0
+1795861581.891006	chatcmpl-6b430d263dfd4051a208743dcea00b10#7	thinker_prepare	prefill_vision	rank=cuda:0
+1795861581.891698	chatcmpl-6b430d263dfd4051a208743dcea00b10#7	thinker_prepare	prefill_vision	rank=cuda:1
+1795861582.196283	chatcmpl-6b430d263dfd4051a208743dcea00b10#7	encoder_prepare	[(device(type='cuda', index=0), torch.bfloat16, (4800, 1536))]
+1795861582.196382	chatcmpl-6b430d263dfd4051a208743dcea00b10#7	first=16	items=4	skip=0
+1795861582.297194	chatcmpl-6b430d263dfd4051a208743dcea00b10#7	thinker_prepare	prefill_vision	rank=cuda:0
+1795861582.297791	chatcmpl-6b430d263dfd4051a208743dcea00b10#7	thinker_prepare	prefill_vision	rank=cuda:1
+1795861582.937235	chatcmpl-fb4754b1cb0b44c592d8acdcd079c9e2#8	encoder_prepare	[]
+1795861582.937329	chatcmpl-fb4754b1cb0b44c592d8acdcd079c9e2#8	first=0	items=16	skip=16
+1795861582.941209	chatcmpl-fb4754b1cb0b44c592d8acdcd079c9e2#8	thinker_prepare	prefill_vision	rank=cuda:0
+1795861582.941963	chatcmpl-fb4754b1cb0b44c592d8acdcd079c9e2#8	thinker_prepare	prefill_vision	rank=cuda:1
+1795861582.958612	chatcmpl-fb4754b1cb0b44c592d8acdcd079c9e2#8	encoder_prepare	[(device(type='cuda', index=0), torch.bfloat16, (4800, 1536))]
+1795861582.958716	chatcmpl-fb4754b1cb0b44c592d8acdcd079c9e2#8	first=16	items=4	skip=3
+1795861582.965339	chatcmpl-fb4754b1cb0b44c592d8acdcd079c9e2#8	thinker_prepare	prefill_vision	rank=cuda:0
+1795861582.965739	chatcmpl-fb4754b1cb0b44c592d8acdcd079c9e2#8	thinker_prepare	prefill_vision	rank=cuda:1
+1795861583.554655	chatcmpl-21808134d9ec445f805f3421eb81f182#9	encoder_prepare	[(device(type='cuda', index=0), torch.bfloat16, (9600, 1536))]
+1795861583.554760	chatcmpl-21808134d9ec445f805f3421eb81f182#9	first=0	items=8	skip=0
+1795861583.737817	chatcmpl-21808134d9ec445f805f3421eb81f182#9	thinker_prepare	prefill_vision	rank=cuda:0
+1795861583.738027	chatcmpl-21808134d9ec445f805f3421eb81f182#9	thinker_prepare	prefill_vision	rank=cuda:1
+1795861585.025779	chatcmpl-9d792bc35bc0420a904696c297fb79aa#10	encoder_prepare	[(device(type='cuda', index=0), torch.bfloat16, (9600, 1536))]
+1795861585.025908	chatcmpl-9d792bc35bc0420a904696c297fb79aa#10	first=0	items=8	skip=7
+1795861585.031519	chatcmpl-9d792bc35bc0420a904696c297fb79aa#10	thinker_prepare	prefill_vision	rank=cuda:0
+1795861585.031601	chatcmpl-9d792bc35bc0420a904696c297fb79aa#10	thinker_prepare	prefill_vision	rank=cuda:1
+1795861586.208646	chatcmpl-e102109ffc9f46c7a4dc89240b560c55#11	encoder_prepare	[(device(type='cuda', index=0), torch.bfloat16, (9600, 1536))]
+1795861586.208810	chatcmpl-e102109ffc9f46c7a4dc89240b560c55#11	first=0	items=8	skip=7
+1795861586.213814	chatcmpl-e102109ffc9f46c7a4dc89240b560c55#11	thinker_prepare	prefill_vision	rank=cuda:0
+1795861586.214277	chatcmpl-e102109ffc9f46c7a4dc89240b560c55#11	thinker_prepare	prefill_vision	rank=cuda:1
+1795861587.377260	chatcmpl-51b04e258b744fc782f83fddfb64b040#12	encoder_prepare	[(device(type='cuda', index=0), torch.bfloat16, (9600, 1536))]
+1795861587.377555	chatcmpl-51b04e258b744fc782f83fddfb64b040#12	first=0	items=8	skip=7
+1795861587.383636	chatcmpl-51b04e258b744fc782f83fddfb64b040#12	thinker_prepare	prefill_vision	rank=cuda:1
+1795861587.383886	chatcmpl-51b04e258b744fc782f83fddfb64b040#12	thinker_prepare	prefill_vision	rank=cuda:0
+1795861589.220331	chatcmpl-501fb2ebc0774115ae07cb8ae640e4e1#13	encoder_prepare	[(device(type='cuda', index=0), torch.bfloat16, (19200, 1536))]
+1795861589.220413	chatcmpl-501fb2ebc0774115ae07cb8ae640e4e1#13	first=0	items=16	skip=0
+1795861589.588636	chatcmpl-501fb2ebc0774115ae07cb8ae640e4e1#13	thinker_prepare	prefill_vision	rank=cuda:1
+1795861589.588799	chatcmpl-501fb2ebc0774115ae07cb8ae640e4e1#13	thinker_prepare	prefill_vision	rank=cuda:0
+1795861589.894120	chatcmpl-501fb2ebc0774115ae07cb8ae640e4e1#13	encoder_prepare	[(device(type='cuda', index=0), torch.bfloat16, (19200, 1536))]
+1795861589.894206	chatcmpl-501fb2ebc0774115ae07cb8ae640e4e1#13	first=16	items=16	skip=0
+1795861590.267444	chatcmpl-501fb2ebc0774115ae07cb8ae640e4e1#13	thinker_prepare	prefill_vision	rank=cuda:1
+1795861590.267984	chatcmpl-501fb2ebc0774115ae07cb8ae640e4e1#13	thinker_prepare	prefill_vision	rank=cuda:0
+1795861590.618863	chatcmpl-501fb2ebc0774115ae07cb8ae640e4e1#13	encoder_prepare	[(device(type='cuda', index=0), torch.bfloat16, (19200, 1536))]
+1795861590.618960	chatcmpl-501fb2ebc0774115ae07cb8ae640e4e1#13	first=32	items=16	skip=0
+1795861590.987643	chatcmpl-501fb2ebc0774115ae07cb8ae640e4e1#13	thinker_prepare	prefill_vision	rank=cuda:1
+1795861590.988218	chatcmpl-501fb2ebc0774115ae07cb8ae640e4e1#13	thinker_prepare	prefill_vision	rank=cuda:0
+1795861592.825025	chatcmpl-0d90d390c1f441fc9db0a81431194936#14	encoder_prepare	[]
+1795861592.825155	chatcmpl-0d90d390c1f441fc9db0a81431194936#14	first=0	items=16	skip=16
+1795861592.830994	chatcmpl-0d90d390c1f441fc9db0a81431194936#14	thinker_prepare	prefill_vision	rank=cuda:0
+1795861592.831196	chatcmpl-0d90d390c1f441fc9db0a81431194936#14	thinker_prepare	prefill_vision	rank=cuda:1
+1795861592.847164	chatcmpl-0d90d390c1f441fc9db0a81431194936#14	encoder_prepare	[]
+1795861592.847283	chatcmpl-0d90d390c1f441fc9db0a81431194936#14	first=16	items=16	skip=16
+1795861592.851215	chatcmpl-0d90d390c1f441fc9db0a81431194936#14	thinker_prepare	prefill_vision	rank=cuda:1
+1795861592.851445	chatcmpl-0d90d390c1f441fc9db0a81431194936#14	thinker_prepare	prefill_vision	rank=cuda:0
+1795861592.867507	chatcmpl-0d90d390c1f441fc9db0a81431194936#14	encoder_prepare	[(device(type='cuda', index=0), torch.bfloat16, (19200, 1536))]
+1795861592.867619	chatcmpl-0d90d390c1f441fc9db0a81431194936#14	first=32	items=16	skip=15
+1795861592.872488	chatcmpl-0d90d390c1f441fc9db0a81431194936#14	thinker_prepare	prefill_vision	rank=cuda:0
+1795861592.873181	chatcmpl-0d90d390c1f441fc9db0a81431194936#14	thinker_prepare	prefill_vision	rank=cuda:1
+1795861594.379785	chatcmpl-38bd194a0de24e2eaf8154885c90b26b#15	encoder_prepare	[]
+1795861594.379938	chatcmpl-38bd194a0de24e2eaf8154885c90b26b#15	first=0	items=16	skip=16
+1795861594.386631	chatcmpl-38bd194a0de24e2eaf8154885c90b26b#15	thinker_prepare	prefill_vision	rank=cuda:0
+1795861594.387299	chatcmpl-38bd194a0de24e2eaf8154885c90b26b#15	thinker_prepare	prefill_vision	rank=cuda:1
+1795861594.402323	chatcmpl-38bd194a0de24e2eaf8154885c90b26b#15	encoder_prepare	[]
+1795861594.402405	chatcmpl-38bd194a0de24e2eaf8154885c90b26b#15	first=16	items=16	skip=16
+1795861594.405456	chatcmpl-38bd194a0de24e2eaf8154885c90b26b#15	thinker_prepare	prefill_vision	rank=cuda:0
+1795861594.405617	chatcmpl-38bd194a0de24e2eaf8154885c90b26b#15	thinker_prepare	prefill_vision	rank=cuda:1
+1795861594.421750	chatcmpl-38bd194a0de24e2eaf8154885c90b26b#15	encoder_prepare	[(device(type='cuda', index=0), torch.bfloat16, (19200, 1536))]
+1795861594.421863	chatcmpl-38bd194a0de24e2eaf8154885c90b26b#15	first=32	items=16	skip=15
+1795861594.428989	chatcmpl-38bd194a0de24e2eaf8154885c90b26b#15	thinker_prepare	prefill_vision	rank=cuda:0
+1795861594.429272	chatcmpl-38bd194a0de24e2eaf8154885c90b26b#15	thinker_prepare	prefill_vision	rank=cuda:1
+1795861595.976744	chatcmpl-5b7ecdcef55947f19d0e41dda030554d#16	encoder_prepare	[]
+1795861595.976852	chatcmpl-5b7ecdcef55947f19d0e41dda030554d#16	first=0	items=16	skip=16
+1795861595.980978	chatcmpl-5b7ecdcef55947f19d0e41dda030554d#16	thinker_prepare	prefill_vision	rank=cuda:0
+1795861595.981216	chatcmpl-5b7ecdcef55947f19d0e41dda030554d#16	thinker_prepare	prefill_vision	rank=cuda:1
+1795861595.995830	chatcmpl-5b7ecdcef55947f19d0e41dda030554d#16	encoder_prepare	[]
+1795861595.995936	chatcmpl-5b7ecdcef55947f19d0e41dda030554d#16	first=16	items=16	skip=16
+1795861595.999711	chatcmpl-5b7ecdcef55947f19d0e41dda030554d#16	thinker_prepare	prefill_vision	rank=cuda:1
+1795861595.999758	chatcmpl-5b7ecdcef55947f19d0e41dda030554d#16	thinker_prepare	prefill_vision	rank=cuda:0
+1795861596.014663	chatcmpl-5b7ecdcef55947f19d0e41dda030554d#16	encoder_prepare	[(device(type='cuda', index=0), torch.bfloat16, (19200, 1536))]
+1795861596.014802	chatcmpl-5b7ecdcef55947f19d0e41dda030554d#16	first=32	items=16	skip=15
+1795861596.021825	chatcmpl-5b7ecdcef55947f19d0e41dda030554d#16	thinker_prepare	prefill_vision	rank=cuda:1
+1795861596.021893	chatcmpl-5b7ecdcef55947f19d0e41dda030554d#16	thinker_prepare	prefill_vision	rank=cuda:0
+1795861597.404978	chatcmpl-ef5abe415dc54f189a8cba8e01a4239f#17	encoder_prepare	[(device(type='cuda', index=0), torch.bfloat16, (19200, 1536))]
+1795861597.405124	chatcmpl-ef5abe415dc54f189a8cba8e01a4239f#17	first=0	items=16	skip=0
+1795861597.784902	chatcmpl-ef5abe415dc54f189a8cba8e01a4239f#17	thinker_prepare	prefill_vision	rank=cuda:0
+1795861597.785088	chatcmpl-ef5abe415dc54f189a8cba8e01a4239f#17	thinker_prepare	prefill_vision	rank=cuda:1
+1795861598.083079	chatcmpl-ef5abe415dc54f189a8cba8e01a4239f#17	encoder_prepare	[(device(type='cuda', index=0), torch.bfloat16, (1200, 1536))]
+1795861598.083165	chatcmpl-ef5abe415dc54f189a8cba8e01a4239f#17	first=16	items=1	skip=0
+1795861598.120329	chatcmpl-ef5abe415dc54f189a8cba8e01a4239f#17	thinker_prepare	prefill_vision	rank=cuda:0
+1795861598.120359	chatcmpl-ef5abe415dc54f189a8cba8e01a4239f#17	thinker_prepare	prefill_vision	rank=cuda:1
+1795861599.392853	chatcmpl-cbdff8afb6b243639b9e7ba29bb44e55#18	encoder_prepare	[]
+1795861599.392929	chatcmpl-cbdff8afb6b243639b9e7ba29bb44e55#18	first=0	items=16	skip=16
+1795861599.395249	chatcmpl-cbdff8afb6b243639b9e7ba29bb44e55#18	thinker_prepare	prefill_vision	rank=cuda:0
+1795861599.395284	chatcmpl-cbdff8afb6b243639b9e7ba29bb44e55#18	thinker_prepare	prefill_vision	rank=cuda:1
+1795861599.404229	chatcmpl-cbdff8afb6b243639b9e7ba29bb44e55#18	encoder_prepare	[(device(type='cuda', index=0), torch.bfloat16, (2400, 1536))]
+1795861599.404331	chatcmpl-cbdff8afb6b243639b9e7ba29bb44e55#18	first=16	items=2	skip=0
+1795861599.441812	chatcmpl-cbdff8afb6b243639b9e7ba29bb44e55#18	thinker_prepare	prefill_vision	rank=cuda:0
+1795861599.441888	chatcmpl-cbdff8afb6b243639b9e7ba29bb44e55#18	thinker_prepare	prefill_vision	rank=cuda:1
+1795861600.728954	chatcmpl-c235699f4a6d43b29c2fdb5307ff76cb#19	encoder_prepare	[]
+1795861600.729053	chatcmpl-c235699f4a6d43b29c2fdb5307ff76cb#19	first=0	items=16	skip=16
+1795861600.731884	chatcmpl-c235699f4a6d43b29c2fdb5307ff76cb#19	thinker_prepare	prefill_vision	rank=cuda:0
+1795861600.731931	chatcmpl-c235699f4a6d43b29c2fdb5307ff76cb#19	thinker_prepare	prefill_vision	rank=cuda:1
+1795861600.741205	chatcmpl-c235699f4a6d43b29c2fdb5307ff76cb#19	encoder_prepare	[(device(type='cuda', index=0), torch.bfloat16, (3600, 1536))]
+1795861600.741318	chatcmpl-c235699f4a6d43b29c2fdb5307ff76cb#19	first=16	items=3	skip=1
+1795861600.790764	chatcmpl-c235699f4a6d43b29c2fdb5307ff76cb#19	thinker_prepare	prefill_vision	rank=cuda:0
+1795861600.790909	chatcmpl-c235699f4a6d43b29c2fdb5307ff76cb#19	thinker_prepare	prefill_vision	rank=cuda:1
+1795861602.106351	chatcmpl-ab97e8232aa14fbca60346faba9d1f4f#20	encoder_prepare	[]
+1795861602.106477	chatcmpl-ab97e8232aa14fbca60346faba9d1f4f#20	first=0	items=16	skip=16
+1795861602.111221	chatcmpl-ab97e8232aa14fbca60346faba9d1f4f#20	thinker_prepare	prefill_vision	rank=cuda:0
+1795861602.111873	chatcmpl-ab97e8232aa14fbca60346faba9d1f4f#20	thinker_prepare	prefill_vision	rank=cuda:1
+1795861602.129905	chatcmpl-ab97e8232aa14fbca60346faba9d1f4f#20	encoder_prepare	[(device(type='cuda', index=0), torch.bfloat16, (4800, 1536))]
+1795861602.130010	chatcmpl-ab97e8232aa14fbca60346faba9d1f4f#20	first=16	items=4	skip=2
+1795861602.169352	chatcmpl-ab97e8232aa14fbca60346faba9d1f4f#20	thinker_prepare	prefill_vision	rank=cuda:0
+1795861602.169693	chatcmpl-ab97e8232aa14fbca60346faba9d1f4f#20	thinker_prepare	prefill_vision	rank=cuda:1
+1795861603.901231	chatcmpl-c8e23ec6cc624153a1eae0400e01f224#21	encoder_prepare	[(device(type='cuda', index=0), torch.bfloat16, (19200, 1536))]
+1795861603.901322	chatcmpl-c8e23ec6cc624153a1eae0400e01f224#21	first=0	items=16	skip=0
+1795861604.277549	chatcmpl-c8e23ec6cc624153a1eae0400e01f224#21	thinker_prepare	prefill_vision	rank=cuda:1
+1795861604.277586	chatcmpl-c8e23ec6cc624153a1eae0400e01f224#21	thinker_prepare	prefill_vision	rank=cuda:0
+1795861604.576168	chatcmpl-c8e23ec6cc624153a1eae0400e01f224#21	encoder_prepare	[(device(type='cuda', index=0), torch.bfloat16, (19200, 1536))]
+1795861604.576257	chatcmpl-c8e23ec6cc624153a1eae0400e01f224#21	first=16	items=16	skip=0
+1795861604.956855	chatcmpl-c8e23ec6cc624153a1eae0400e01f224#21	thinker_prepare	prefill_vision	rank=cuda:0
+1795861604.957026	chatcmpl-c8e23ec6cc624153a1eae0400e01f224#21	thinker_prepare	prefill_vision	rank=cuda:1
+1795861605.299491	chatcmpl-c8e23ec6cc624153a1eae0400e01f224#21	encoder_prepare	[(device(type='cuda', index=0), torch.bfloat16, (10800, 1536))]
+1795861605.299575	chatcmpl-c8e23ec6cc624153a1eae0400e01f224#21	first=32	items=9	skip=0
+1795861605.504128	chatcmpl-c8e23ec6cc624153a1eae0400e01f224#21	thinker_prepare	prefill_vision	rank=cuda:0
+1795861605.504269	chatcmpl-c8e23ec6cc624153a1eae0400e01f224#21	thinker_prepare	prefill_vision	rank=cuda:1
+1795861607.130010	chatcmpl-8845df6fa14b4e2197a8cfd424543d8f#22	encoder_prepare	[]
+1795861607.130135	chatcmpl-8845df6fa14b4e2197a8cfd424543d8f#22	first=0	items=16	skip=16
+1795861607.133534	chatcmpl-8845df6fa14b4e2197a8cfd424543d8f#22	thinker_prepare	prefill_vision	rank=cuda:1
+1795861607.133682	chatcmpl-8845df6fa14b4e2197a8cfd424543d8f#22	thinker_prepare	prefill_vision	rank=cuda:0
+1795861607.143900	chatcmpl-8845df6fa14b4e2197a8cfd424543d8f#22	encoder_prepare	[]
+1795861607.144005	chatcmpl-8845df6fa14b4e2197a8cfd424543d8f#22	first=16	items=16	skip=16
+1795861607.146806	chatcmpl-8845df6fa14b4e2197a8cfd424543d8f#22	thinker_prepare	prefill_vision	rank=cuda:1
+1795861607.146929	chatcmpl-8845df6fa14b4e2197a8cfd424543d8f#22	thinker_prepare	prefill_vision	rank=cuda:0
+1795861607.159040	chatcmpl-8845df6fa14b4e2197a8cfd424543d8f#22	encoder_prepare	[(device(type='cuda', index=0), torch.bfloat16, (12000, 1536))]
+1795861607.159181	chatcmpl-8845df6fa14b4e2197a8cfd424543d8f#22	first=32	items=10	skip=8
+1795861607.196433	chatcmpl-8845df6fa14b4e2197a8cfd424543d8f#22	thinker_prepare	prefill_vision	rank=cuda:1
+1795861607.196823	chatcmpl-8845df6fa14b4e2197a8cfd424543d8f#22	thinker_prepare	prefill_vision	rank=cuda:0
+1795861608.733389	chatcmpl-1f693431bded41e7a4ffb3cd691e9293#23	encoder_prepare	[]
+1795861608.733642	chatcmpl-1f693431bded41e7a4ffb3cd691e9293#23	first=0	items=16	skip=16
+1795861608.738986	chatcmpl-1f693431bded41e7a4ffb3cd691e9293#23	thinker_prepare	prefill_vision	rank=cuda:0
+1795861608.739538	chatcmpl-1f693431bded41e7a4ffb3cd691e9293#23	thinker_prepare	prefill_vision	rank=cuda:1
+1795861608.755969	chatcmpl-1f693431bded41e7a4ffb3cd691e9293#23	encoder_prepare	[]
+1795861608.756086	chatcmpl-1f693431bded41e7a4ffb3cd691e9293#23	first=16	items=16	skip=16
+1795861608.760978	chatcmpl-1f693431bded41e7a4ffb3cd691e9293#23	thinker_prepare	prefill_vision	rank=cuda:1
+1795861608.761375	chatcmpl-1f693431bded41e7a4ffb3cd691e9293#23	thinker_prepare	prefill_vision	rank=cuda:0
+1795861608.782226	chatcmpl-1f693431bded41e7a4ffb3cd691e9293#23	encoder_prepare	[(device(type='cuda', index=0), torch.bfloat16, (13200, 1536))]
+1795861608.782339	chatcmpl-1f693431bded41e7a4ffb3cd691e9293#23	first=32	items=11	skip=9
+1795861608.829279	chatcmpl-1f693431bded41e7a4ffb3cd691e9293#23	thinker_prepare	prefill_vision	rank=cuda:0
+1795861608.829592	chatcmpl-1f693431bded41e7a4ffb3cd691e9293#23	thinker_prepare	prefill_vision	rank=cuda:1
+1795861610.314403	chatcmpl-841a483ee628401e9be910ea75d9704f#24	encoder_prepare	[]
+1795861610.314485	chatcmpl-841a483ee628401e9be910ea75d9704f#24	first=0	items=16	skip=16
+1795861610.318239	chatcmpl-841a483ee628401e9be910ea75d9704f#24	thinker_prepare	prefill_vision	rank=cuda:0
+1795861610.318466	chatcmpl-841a483ee628401e9be910ea75d9704f#24	thinker_prepare	prefill_vision	rank=cuda:1
+1795861610.332902	chatcmpl-841a483ee628401e9be910ea75d9704f#24	encoder_prepare	[]
+1795861610.333010	chatcmpl-841a483ee628401e9be910ea75d9704f#24	first=16	items=16	skip=16
+1795861610.335644	chatcmpl-841a483ee628401e9be910ea75d9704f#24	thinker_prepare	prefill_vision	rank=cuda:0
+1795861610.335749	chatcmpl-841a483ee628401e9be910ea75d9704f#24	thinker_prepare	prefill_vision	rank=cuda:1
+1795861610.348648	chatcmpl-841a483ee628401e9be910ea75d9704f#24	encoder_prepare	[(device(type='cuda', index=0), torch.bfloat16, (14400, 1536))]
+1795861610.348810	chatcmpl-841a483ee628401e9be910ea75d9704f#24	first=32	items=12	skip=10
+1795861610.388534	chatcmpl-841a483ee628401e9be910ea75d9704f#24	thinker_prepare	prefill_vision	rank=cuda:0
+1795861610.389439	chatcmpl-841a483ee628401e9be910ea75d9704f#24	thinker_prepare	prefill_vision	rank=cuda:1

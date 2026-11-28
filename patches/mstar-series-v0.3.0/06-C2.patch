@@ -1,0 +1,266 @@
+From efdd25b3182c06514d3f425a500668272a4f155a Mon Sep 17 00:00:00 2001
+From: mm_reuse_study <study@localhost>
+Date: Sun, 29 Nov 2026 00:38:51 +0800
+Subject: [PATCH] =?UTF-8?q?mm=5Freuse=5Fstudy=20C2:=20=E7=BC=96=E7=A0=81?=
+ =?UTF-8?q?=E6=8F=90=E5=89=8D=EF=BC=9AVisionAhead=20=E5=88=86=E5=8C=BA?=
+ =?UTF-8?q?=E4=B8=8E=E7=AC=AC=E4=BA=8C=E4=B8=AA=20ViT=20=E8=8A=82=E7=82=B9?=
+ =?UTF-8?q?=EF=BC=88MSTAR=5FC2=EF=BC=89?=
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+---
+ .../model/components/encoder_output_cache.py  | 32 +++++++++++----
+ mstar/model/qwen3_omni/qwen3_omni_model.py    | 37 +++++++++++++++--
+ mstar/model/qwen3_omni/submodules.py          | 40 +++++++++++++++++--
+ 3 files changed, 96 insertions(+), 13 deletions(-)
+
+diff --git a/mstar/model/components/encoder_output_cache.py b/mstar/model/components/encoder_output_cache.py
+index c1941cee1..9a7b46d23 100644
+--- a/mstar/model/components/encoder_output_cache.py
++++ b/mstar/model/components/encoder_output_cache.py
+@@ -43,8 +43,8 @@ class EncoderOutputCache:
+     def __init__(self, cap_mb: float = CACHE_MB):
+         self.cap = int(cap_mb * 2 ** 20)
+         self.device = torch.device("cpu")   # set from the first fresh outputs
+-        self.size = 0
+-        self.store: OrderedDict[tuple, list[torch.Tensor]] = OrderedDict()
++        # store and its byte count, shareable between two encoder nodes of one process (C2: `share`)
++        self._shared = {"size": 0, "store": OrderedDict()}
+         self.plans: dict[str, ItemPlan] = {}
+         self.served: dict = {}   # row id -> [embeds, *deepstack], all items from cache
+ 
+@@ -52,6 +52,28 @@ class EncoderOutputCache:
+     def enabled(self) -> bool:
+         return self.cap > 0
+ 
++    @property
++    def store(self) -> OrderedDict:
++        return self._shared["store"]
++
++    @property
++    def size(self) -> int:
++        return self._shared["size"]
++
++    @size.setter
++    def size(self, n: int) -> None:
++        self._shared["size"] = n
++
++    def share(self, other: "EncoderOutputCache") -> None:
++        """mm_reuse_study C2: use ``other``'s entries (another node's cache in this process)."""
++        self._shared = other._shared
++
++    def keys_for(self, pixels, grids, extra: tuple = (), digests: list | None = None) -> list[tuple]:
++        if digests is not None:
++            return [("given", d, g, str(p.dtype), tuple(p.shape[1:]), *extra)
++                    for d, p, g in zip(digests, pixels, grids, strict=True)]
++        return [self.key(p, g, extra) for p, g in zip(pixels, grids, strict=True)]
++
+     @staticmethod
+     def key(pixels: torch.Tensor, grid: tuple[int, int, int], extra: tuple = ()) -> tuple:
+         flat = pixels.detach().contiguous()
+@@ -66,11 +88,7 @@ class EncoderOutputCache:
+         """``digests``: per item, a key the caller already has (M4: the data worker's), used
+         instead of hashing the pixels; it is paired with the grid, dtype and patch shape all the same."""
+         _t0 = time.perf_counter()
+-        if digests is not None:
+-            keys = [("given", d, g, str(p.dtype), tuple(p.shape[1:]), *extra)
+-                    for d, p, g in zip(digests, pixels, grids, strict=True)]
+-        else:
+-            keys = [self.key(p, g, extra) for p, g in zip(pixels, grids, strict=True)]
++        keys = self.keys_for(pixels, grids, extra, digests)
+         _t1 = time.perf_counter()
+         cached = []
+         for k in keys:
+diff --git a/mstar/model/qwen3_omni/qwen3_omni_model.py b/mstar/model/qwen3_omni/qwen3_omni_model.py
+index 1e74d7549..6e34bdb37 100644
+--- a/mstar/model/qwen3_omni/qwen3_omni_model.py
++++ b/mstar/model/qwen3_omni/qwen3_omni_model.py
+@@ -240,6 +240,12 @@ GROUP_IMAGES = int(os.environ.get("MSTAR_GROUP_IMAGES", "0") or 0)
+ # pixels it serves; pixel_values travel as bf16 (the patch embed casts to bf16 anyway); and the decoded
+ # images, which no Qwen3-Omni node reads, are not stored for the workers.
+ MEDIA_KEYS = os.environ.get("MSTAR_MEDIA_KEYS", "0") == "1"
++# mm_reuse_study C2 (MSTAR_C2=1, needs M1): a "VisionAhead" partition encodes a request's later image groups
++# on its own node (``vision_ahead``, a second ViT beside ``vision_encoder``, sharing its output cache) from
++# admission on, while the Thinker prefills the earlier groups; the Thinker's own encoder walk then takes the
++# group from the cache.
++C2 = os.environ.get("MSTAR_C2", "0") == "1"
++VISION_AHEAD = "vision_ahead"
+ 
+ 
+ def _key_tensor(hexdigest: str) -> torch.Tensor:
+@@ -454,7 +460,7 @@ class Qwen3OmniModel(Model):
+             Array(AUDIO_TOKENS, nodes={"audio_encoder"}, layers=frozenset(range(a.encoder_layers)), max_len=0,
+                   entry=KVEntry(heads=a.encoder_attention_heads, head_dim=a.head_dim),
+                   reads={AUDIO_ATTN: Read(mask=Block(), op=Attend(q_heads=a.encoder_attention_heads))}),
+-            Array(VISION_TOKENS, nodes={"vision_encoder"}, layers=frozenset(range(v.depth)), max_len=0,
++            Array(VISION_TOKENS, nodes={"vision_encoder", *([VISION_AHEAD] if C2 else [])}, layers=frozenset(range(v.depth)), max_len=0,
+                   entry=KVEntry(heads=v.num_heads, head_dim=v.head_dim),
+                   reads={VISION_ATTN: Read(mask=Block(), op=Attend(q_heads=v.num_heads))}),
+             # every walk may split, where the deployment sets the shard's exchange: all_gather or
+@@ -869,6 +875,12 @@ class Qwen3OmniModel(Model):
+             "talker_last_prefill": talker_last_prefill,
+             "talker_decode": talker_decode,
+             "code2wav_chunk": code2wav_chunk,
++            **({VISION_AHEAD: GraphNode(   # mm_reuse_study C2: encode only; the outputs land in the cache
++                name=VISION_AHEAD,
++                input_names=["pixel_values", "image_grid_thw", *(["image_keys"] if MEDIA_KEYS else [])],
++                outputs=[GraphEdge(next_node=EMPTY_DESTINATION, name="vision_embeds"),
++                         GraphEdge(next_node=EMPTY_DESTINATION, name="deepstack")],
++            )} if C2 else {}),
+         }
+ 
+     # -----------------------------------------------------------------------
+@@ -892,11 +904,12 @@ class Qwen3OmniModel(Model):
+                 name="Code2Wav",
+                 graph_walks={"code2wav_chunk"},
+             ),
++            *([PartitionDefinition(name="VisionAhead", graph_walks={VISION_AHEAD})] if C2 else []),
+         ]
+ 
+     def get_partition_topology(self) -> PartitionTopology:
+         return PartitionTopology(
+-            partitions=["Thinker", "Talker", "Code2Wav"],
++            partitions=["Thinker", "Talker", "Code2Wav", *(["VisionAhead"] if C2 else [])],
+             connections=[
+                 Connection(
+                     from_partition="Thinker",
+@@ -968,6 +981,8 @@ class Qwen3OmniModel(Model):
+                 })
+                 for k, (walk, bind, text_before) in enumerate(prefills)
+             ] + [WalkStep(self._decode_walk(audio_output), bind={"text_inputs": "new_token"}, step_metadata=thinker)]
++        if partition_name == "VisionAhead":
++            return self._vision_ahead_plan(input_modalities, audio_output)
+         if partition_name not in ("Talker", "Code2Wav"):
+             raise ValueError(f"Unknown partition: {partition_name!r}")
+         # an explicit voice is checked even for text-only output: an unknown one is a 400 at admission
+@@ -984,6 +999,22 @@ class Qwen3OmniModel(Model):
+             WalkStep("talker_decode", step_metadata={"talker_max_tokens": talker_max_tokens}),
+         ]
+ 
++    def _vision_ahead_plan(self, input_modalities: list[str], audio_output: bool) -> list[WalkStep]:
++        """mm_reuse_study C2: one encode-only step per image group, in prompt order. Image-only prompts
++        with text out."""
++        if audio_output or not set(input_modalities) <= {TEXT, "image"}:
++            return []
++        plan = []
++        steps = _thinker_steps(prefill_plan(parts_from_modalities(input_modalities)))
++        groups = [[p.index for p in step.parts if p.modality == "image"] for step in steps]
++        # group 0 too: the worker may schedule this partition's first step before the Thinker's first
++        # encode, and whichever runs second takes the group from the cache
++        for images in [g for g in groups if g]:
++            bind = {name: span_name(key, images[0]) for name, key in self._MM_WALKS["image"][1].items()}
++            plan.append(WalkStep(VISION_AHEAD, bind=bind, step_metadata={
++                c1_registry.FIRST: images[0], c1_registry.COUNT: len(images)}))
++        return plan
++
+     @staticmethod
+     def _decode_walk(audio_output: bool) -> str:
+         return "thinker_decode" if audio_output else THINKER_TEXT_DECODE
+@@ -1492,7 +1523,7 @@ class Qwen3OmniModel(Model):
+             return self._create_code2wav_submodule(device)
+         elif node_name == "audio_encoder":
+             return self._create_audio_encoder_submodule(device, autocast_dtype)
+-        elif node_name == "vision_encoder":
++        elif node_name in ("vision_encoder", VISION_AHEAD):
+             return self._create_vision_encoder_submodule(device, autocast_dtype)
+         return None
+ 
+diff --git a/mstar/model/qwen3_omni/submodules.py b/mstar/model/qwen3_omni/submodules.py
+index b666cd6c9..10d38e046 100644
+--- a/mstar/model/qwen3_omni/submodules.py
++++ b/mstar/model/qwen3_omni/submodules.py
+@@ -80,6 +80,7 @@ from mstar.model.qwen3_omni.config import (
+     Qwen3OmniModelConfig,
+ )
+ from mstar.model.qwen3_omni.qwen3_omni_model import TEXT_BEFORE, image_span
++from mstar.model.qwen3_omni.qwen3_omni_model import C2, VISION_AHEAD  # mm_reuse_study C2
+ from mstar.model.submodule_base import (
+     ARNodeInputs,
+     ARNodeSubmodule,
+@@ -160,6 +161,9 @@ from mstar.model.components import c1_registry  # noqa: E402  (mm_reuse_study C1
+ LOG_C1 = os.environ.get("MSTAR_C1_LOG")
+ 
+ 
++_C2_CACHE = None   # mm_reuse_study C2: the first ViT node's output cache in this process
++
++
+ class VisionEncoderSubmodule(PackedBlockLoopEncoder):
+     """The ViT, which turns a request's pixel patches into Thinker-width
+     embeddings and the deepstack features.
+@@ -187,6 +191,12 @@ class VisionEncoderSubmodule(PackedBlockLoopEncoder):
+         # mm_reuse_study M1: per-image output cache, opt-in (MSTAR_ENCODER_CACHE_MB)
+         self.output_cache = EncoderOutputCache()
+         self._c1_served: dict = {}   # mm_reuse_study C1
++        if C2 and self.output_cache.enabled:   # mm_reuse_study C2: both ViT nodes of a process share entries
++            global _C2_CACHE
++            if _C2_CACHE is None:
++                _C2_CACHE = self.output_cache
++            else:
++                self.output_cache.share(_C2_CACHE)
+ 
+     def bind_state(self, handles: Mapping[str, Any]) -> None:
+         self.vision = handles[VISION_TOKENS]
+@@ -225,7 +235,8 @@ class VisionEncoderSubmodule(PackedBlockLoopEncoder):
+             with open(LOG_C1, "a") as f:
+                 f.write(f"{time.time():.6f}\t{fwd_info.request_id}\tencoder_prepare\t"
+                         f"{[(t.device, t.dtype, tuple(t.shape)) for t in inputs.get('pixel_values', ())]}\n")
+-        skip = self._c1_skip(fwd_info, len(grid))
++        ahead = graph_walk == VISION_AHEAD
++        skip = self._c1_skip(fwd_info, len(grid), drop=not ahead)
+         if skip == len(grid) and skip:   # mm_reuse_study C1: every image held (the conductor may not send pixels)
+             empty = torch.empty(0, self.config.out_hidden_size, dtype=torch.bfloat16, device=device)
+             served = {self.output: [empty], "deepstack": [empty] * len(self.config.deepstack_visual_indexes)}
+@@ -240,8 +251,31 @@ class VisionEncoderSubmodule(PackedBlockLoopEncoder):
+             grid = grid[skip:]
+             if keys:
+                 inputs = {**inputs, "image_keys": [torch.cat([k.reshape(-1, 2) for k in keys])[skip:]]}
++        if ahead and self.output_cache.enabled:
++            # mm_reuse_study C2: encode only what the cache lacks; nothing to copy back for a held image
++            self.output_cache.device = device
++            per_image = list(pixel_values.split([t * h * w for t, h, w in grid]))
++            keys = inputs.get("image_keys")
++            digests = None if not keys else [tuple(r) for k in keys for r in k.reshape(-1, 2).tolist()]
++            digests = digests if digests and len(digests) == len(grid) else None
++            have = self.output_cache.keys_for(per_image, grid, digests=digests)
++            missing = [i for i, k in enumerate(have) if k not in self.output_cache.store]
++            if LOG_C1:
++                with open(LOG_C1, "a") as f:
++                    f.write(f"{time.time():.6f}\t{fwd_info.request_id}\tahead\titems={len(grid)}\tencode={len(missing)}\n")
++            if not missing:
++                empty = torch.empty(0, self.config.out_hidden_size, dtype=torch.bfloat16, device=device)
++                served = {self.output: [empty], "deepstack": [empty] * len(self.config.deepstack_visual_indexes)}
++                for i in (fwd_info.request_id, fwd_info.rid_handle):
++                    self._c1_served[i] = served
++                return NodeInputs(input_seq_len=0, tensor_inputs={})
++            grid = [grid[i] for i in missing]
++            pixel_values = torch.cat([per_image[i] for i in missing], dim=0)
++            if digests:
++                inputs = {**inputs, "image_keys": [torch.tensor([digests[i] for i in missing], dtype=torch.int64)]}
+         if self.output_cache.enabled:
+             # mm_reuse_study M1: encode only the images not already cached
++            self.output_cache.device = device   # C2: the other node may have filled the cache
+             per_image = list(pixel_values.split([t * h * w for t, h, w in grid]))
+             keys = inputs.get("image_keys")   # M4: keyed by the data worker, so no pixel is read here
+             digests = None if not keys else [tuple(r) for k in keys for r in k.reshape(-1, 2).tolist()]
+@@ -267,7 +301,7 @@ class VisionEncoderSubmodule(PackedBlockLoopEncoder):
+             resource_step_info={"main": vision_seq_lengths(grid)},
+         )
+ 
+-    def _c1_skip(self, fwd_info: CurrentForwardPassInfo, items: int) -> int:
++    def _c1_skip(self, fwd_info: CurrentForwardPassInfo, items: int, drop: bool = True) -> int:
+         """mm_reuse_study C1: how many of this step's leading images the Thinker's prefix lease holds."""
+         if not c1_registry.ENABLED:
+             return 0
+@@ -276,7 +310,7 @@ class VisionEncoderSubmodule(PackedBlockLoopEncoder):
+             return 0
+         covered = c1_registry.read(fwd_info.request_id)
+         skip = max(0, min(covered - first, items))
+-        if skip < items:   # the request's later steps start past what is held
++        if skip < items and drop:   # the request's later steps start past what is held
+             c1_registry.drop(fwd_info.request_id)
+         if LOG_C1:
+             with open(LOG_C1, "a") as f:
+-- 
+2.43.0
+

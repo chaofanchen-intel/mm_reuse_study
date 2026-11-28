@@ -1,0 +1,1160 @@
+
+  ✓ mstar serving 'qwen3_omni' on http://localhost:18512
+
+  Python SDK:
+    from mstar import MStarClient
+    client = MStarClient("http://localhost:18512")
+    print(client.chat("Hello!").text)
+    client.chat("Say hi", output_modalities=("text","audio")).save_audio("out.wav")
+    client.tts("Hello there", voice="Ethan").to_wav("out.wav")
+
+  OpenAI-compatible:
+    from openai import OpenAI
+    oai = OpenAI(base_url="http://localhost:18512/v1", api_key="none")
+    oai.chat.completions.create(model="qwen3_omni", messages=[{"role":"user","content":"hi"}])
+    oai.audio.speech.create(model="qwen3_omni", input="hi", voice="Ethan")
+
+[transformers] Unrecognized keys in `rope_parameters` for 'rope_type'='default': {'interleaved', 'mrope_section'}
+[transformers] Unrecognized keys in `rope_parameters` for 'rope_type'='default': {'interleaved', 'mrope_section'}
+2026-11-28 20:01:26,237 INFO [api_server] mstar.api_server.entrypoint: API server: result threads not pinned (not pinned: the deepest idle state is C1_ACPI at 1 µs on CPUs 0-255, under the 100 µs from which pinning could pay (step_thread_core always pins anyway))
+2026-11-28 20:01:26,245 INFO [api_server] mstar.communication.tensors: SHM: swept 0 entries of dead deployment namespace 73897a451850
+2026-11-28 20:01:26,246 INFO [api_server] mstar.communication.arena: ARENA: /dev/shm has 451222 MiB free for 4 arenas and their spill files; each arena grows to 32 segments of 256 MiB (MSTAR_SHM_ARENA_MAX_SEGMENTS and _SEGMENT_MB override)
+2026-11-28 20:01:26,251 INFO [api_server] mstar.communication.communicator: control mesh transport: rust 0.1.1 from /home/chaofan/workspaces/mm_reuse_study/envs/mstar/lib/python3.12/site-packages/mstar_rust/__init__.py
+2026-11-28 20:01:26,374 INFO [api_server] mstar.communication.arena: ARENA: grew to 1 segments (256 MiB total, 256 MiB free, largest free block 256 MiB, 0 MiB pinned)
+2026-11-28 20:01:26,374 INFO [api_server] mstar.communication.communicator: control mesh transport: rust 0.1.1 from /home/chaofan/workspaces/mm_reuse_study/envs/mstar/lib/python3.12/site-packages/mstar_rust/__init__.py
+2026-11-28 20:01:26,414 INFO [api_server] mstar.api_server.entrypoint: Conductor process started (pid=1339157, model=qwen3_omni)
+2026-11-28 20:01:26,414 INFO [api_server] mstar.api_server.entrypoint: Waiting for workers to finish setup (loading weights, capturing accelerator graphs)...
+2026-11-28 20:01:26,416 INFO [api_server] mstar.engine.resources.spec: Resource specs after YAML overrides: [KVSpec(resource_key='thinker_kv', nodes={'Thinker'}, config=PagedKVConfig(num_layers=48, num_kv_heads=4, head_dim=128, num_qo_heads=32, max_seq_len=65536, max_num_pages=1024, page_size=None, layout=<KVLayout.NHD: 'NHD'>, cpu_offload_pages=0, prefix_cache_salt='', prefix_cache=True, prefix_cache_tp=True, context_parallel=False, kv_lora_rank=None, qk_rope_head_dim=None), leader=None), AttentionSpec(resource_key='thinker_attn', nodes={'Thinker'}, config=AttentionConfig(kv_cache='thinker_kv', backend=<AttnBackend.AUTO: 'auto'>, flashinfer_backend='auto', sm_scale=None, splits=(), decode_tensor_cores=True, decode_fmha=False, sliding_window=None, layers=None)), PositionSpec(resource_key='thinker_pos', nodes={'Thinker'}, config=PositionConfig(kv_cache='thinker_kv', backend=<PosBackend.ROPE: 'rope'>, scheme=<PosScheme.SEQUENTIAL: 'sequential'>, block_step=1, rotary_dim=None, interleave=False, rope_scale=1.0, rope_theta=10000.0, rope_dtype=None, rope_table_dtype=None, low_freq_factor=None, high_freq_factor=None, old_context_len=None, longrope=None)), KVSpec(resource_key='talker_kv', nodes={'Talker'}, config=PagedKVConfig(num_layers=20, num_kv_heads=2, head_dim=128, num_qo_heads=16, max_seq_len=65536, max_num_pages=2048, page_size=None, layout=<KVLayout.NHD: 'NHD'>, cpu_offload_pages=0, prefix_cache_salt='', prefix_cache=True, prefix_cache_tp=False, context_parallel=False, kv_lora_rank=None, qk_rope_head_dim=None), leader=None), AttentionSpec(resource_key='talker_attn', nodes={'Talker'}, config=AttentionConfig(kv_cache='talker_kv', backend=<AttnBackend.AUTO: 'auto'>, flashinfer_backend='auto', sm_scale=None, splits=(), decode_tensor_cores=True, decode_fmha=False, sliding_window=None, layers=None)), PositionSpec(resource_key='talker_pos', nodes={'Talker'}, config=PositionConfig(kv_cache='talker_kv', backend=<PosBackend.ROPE: 'rope'>, scheme=<PosScheme.SEQUENTIAL: 'sequential'>, block_step=1, rotary_dim=None, interleave=False, rope_scale=1.0, rope_theta=1000000.0, rope_dtype=None, rope_table_dtype=None, low_freq_factor=1.0, high_freq_factor=1.0, old_context_len=8192, longrope=None)), RaggedAttentionSpec(resource_key='audio_attn', nodes={'audio_encoder'}, config=RaggedAttentionConfig(num_qo_heads=20, num_kv_heads=20, head_dim=64, sm_scale=0.125, max_segments_per_request=40, max_segments_per_step=None, max_tokens_per_request=None, backend=<RaggedAttnBackend.AUTO: 'auto'>, flashinfer_backend=None, compile_op=False, dtype=None, workspace_mb=256), labels=frozenset({'main'}), sp_exchange='none'), RaggedAttentionSpec(resource_key='vision_attn', nodes={'vision_encoder', 'vision_ahead'}, config=RaggedAttentionConfig(num_qo_heads=16, num_kv_heads=16, head_dim=72, sm_scale=0.11785113019775792, max_segments_per_request=1, max_segments_per_step=32, max_tokens_per_request=None, backend=<RaggedAttnBackend.AUTO: 'auto'>, flashinfer_backend=None, compile_op=False, dtype=None, workspace_mb=128), labels=frozenset({'main'}), sp_exchange='none'), SamplerSpec(resource_key='thinker_sampler', nodes={'Thinker'}, vocab_size=152064, enable_repetition_penalty=True, enable_min_p=False, loopback_state={}, max_repetition_window=0, min_tokens_stop_ids=(), enable_top_p_first=False, enable_logprobs=False, enable_processed_logprobs=False, greedy_capture=None), SamplerSpec(resource_key='talker_sampler', nodes={'Talker'}, vocab_size=3072, enable_repetition_penalty=True, enable_min_p=False, loopback_state={}, max_repetition_window=0, min_tokens_stop_ids=(), enable_top_p_first=False, enable_logprobs=False, enable_processed_logprobs=False, greedy_capture=None), SamplerSpec(resource_key='code_sampler', nodes={'Talker'}, vocab_size=2048, enable_repetition_penalty=False, enable_min_p=False, loopback_state={}, max_repetition_window=0, min_tokens_stop_ids=(), enable_top_p_first=False, enable_logprobs=False, enable_processed_logprobs=False, greedy_capture=None), SeqShardSpec(resource_key='thinker_shard', nodes={'Thinker'}, labels=('main',), axis=0, walks=None, min_tokens=0, exchange='none', exchanges=True)]
+2026-11-28 20:01:28,979 INFO [conductor] mstar.api_server.entrypoint: yaml configs/qwen3omni_mstar_thinker_tp2_bigstep_enc2_c2.yaml has no model_kwargs section; using model defaults
+[transformers] Unrecognized keys in `rope_parameters` for 'rope_type'='default': {'mrope_section', 'interleaved'}
+[transformers] Unrecognized keys in `rope_parameters` for 'rope_type'='default': {'mrope_section', 'interleaved'}
+2026-11-28 20:01:31,455 INFO [conductor] mstar.conductor.conductor: Detected worker device type: cuda
+2026-11-28 20:01:31,455 INFO [conductor] mstar.conductor.conductor: Compile caches: Inductor /home/chaofan/.cache/mstar/torchinductor, Triton /home/chaofan/.cache/mstar/torchinductor/triton
+2026-11-28 20:01:31,457 INFO [conductor] mstar.engine.resources.spec: Resource specs after YAML overrides: [KVSpec(resource_key='thinker_kv', nodes={'Thinker'}, config=PagedKVConfig(num_layers=48, num_kv_heads=4, head_dim=128, num_qo_heads=32, max_seq_len=65536, max_num_pages=1024, page_size=None, layout=<KVLayout.NHD: 'NHD'>, cpu_offload_pages=0, prefix_cache_salt='', prefix_cache=True, prefix_cache_tp=True, context_parallel=False, kv_lora_rank=None, qk_rope_head_dim=None), leader=None), AttentionSpec(resource_key='thinker_attn', nodes={'Thinker'}, config=AttentionConfig(kv_cache='thinker_kv', backend=<AttnBackend.AUTO: 'auto'>, flashinfer_backend='auto', sm_scale=None, splits=(), decode_tensor_cores=True, decode_fmha=False, sliding_window=None, layers=None)), PositionSpec(resource_key='thinker_pos', nodes={'Thinker'}, config=PositionConfig(kv_cache='thinker_kv', backend=<PosBackend.ROPE: 'rope'>, scheme=<PosScheme.SEQUENTIAL: 'sequential'>, block_step=1, rotary_dim=None, interleave=False, rope_scale=1.0, rope_theta=10000.0, rope_dtype=None, rope_table_dtype=None, low_freq_factor=None, high_freq_factor=None, old_context_len=None, longrope=None)), KVSpec(resource_key='talker_kv', nodes={'Talker'}, config=PagedKVConfig(num_layers=20, num_kv_heads=2, head_dim=128, num_qo_heads=16, max_seq_len=65536, max_num_pages=2048, page_size=None, layout=<KVLayout.NHD: 'NHD'>, cpu_offload_pages=0, prefix_cache_salt='', prefix_cache=True, prefix_cache_tp=False, context_parallel=False, kv_lora_rank=None, qk_rope_head_dim=None), leader=None), AttentionSpec(resource_key='talker_attn', nodes={'Talker'}, config=AttentionConfig(kv_cache='talker_kv', backend=<AttnBackend.AUTO: 'auto'>, flashinfer_backend='auto', sm_scale=None, splits=(), decode_tensor_cores=True, decode_fmha=False, sliding_window=None, layers=None)), PositionSpec(resource_key='talker_pos', nodes={'Talker'}, config=PositionConfig(kv_cache='talker_kv', backend=<PosBackend.ROPE: 'rope'>, scheme=<PosScheme.SEQUENTIAL: 'sequential'>, block_step=1, rotary_dim=None, interleave=False, rope_scale=1.0, rope_theta=1000000.0, rope_dtype=None, rope_table_dtype=None, low_freq_factor=1.0, high_freq_factor=1.0, old_context_len=8192, longrope=None)), RaggedAttentionSpec(resource_key='audio_attn', nodes={'audio_encoder'}, config=RaggedAttentionConfig(num_qo_heads=20, num_kv_heads=20, head_dim=64, sm_scale=0.125, max_segments_per_request=40, max_segments_per_step=None, max_tokens_per_request=None, backend=<RaggedAttnBackend.AUTO: 'auto'>, flashinfer_backend=None, compile_op=False, dtype=None, workspace_mb=256), labels=frozenset({'main'}), sp_exchange='none'), RaggedAttentionSpec(resource_key='vision_attn', nodes={'vision_encoder', 'vision_ahead'}, config=RaggedAttentionConfig(num_qo_heads=16, num_kv_heads=16, head_dim=72, sm_scale=0.11785113019775792, max_segments_per_request=1, max_segments_per_step=32, max_tokens_per_request=None, backend=<RaggedAttnBackend.AUTO: 'auto'>, flashinfer_backend=None, compile_op=False, dtype=None, workspace_mb=128), labels=frozenset({'main'}), sp_exchange='none'), SamplerSpec(resource_key='thinker_sampler', nodes={'Thinker'}, vocab_size=152064, enable_repetition_penalty=True, enable_min_p=False, loopback_state={}, max_repetition_window=0, min_tokens_stop_ids=(), enable_top_p_first=False, enable_logprobs=False, enable_processed_logprobs=False, greedy_capture=None), SamplerSpec(resource_key='talker_sampler', nodes={'Talker'}, vocab_size=3072, enable_repetition_penalty=True, enable_min_p=False, loopback_state={}, max_repetition_window=0, min_tokens_stop_ids=(), enable_top_p_first=False, enable_logprobs=False, enable_processed_logprobs=False, greedy_capture=None), SamplerSpec(resource_key='code_sampler', nodes={'Talker'}, vocab_size=2048, enable_repetition_penalty=False, enable_min_p=False, loopback_state={}, max_repetition_window=0, min_tokens_stop_ids=(), enable_top_p_first=False, enable_logprobs=False, enable_processed_logprobs=False, greedy_capture=None), SeqShardSpec(resource_key='thinker_shard', nodes={'Thinker'}, labels=('main',), axis=0, walks=None, min_tokens=0, exchange='none', exchanges=True)]
+2026-11-28 20:01:45,575 INFO [conductor] mstar.communication.communicator: control mesh transport: rust 0.1.1 from /home/chaofan/workspaces/mm_reuse_study/envs/mstar/lib/python3.12/site-packages/mstar_rust/__init__.py
+2026-11-28 20:01:45,576 INFO [conductor] mstar.conductor.conductor: Conductor waiting for 3 worker(s) to finish setup
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 1 is connected to 1 peer ranks. Expected number of connected peer ranks is : 1
+[Gloo] Rank 0 is connected to 1 peer ranks. Expected number of connected peer ranks is : 1
+2026-11-28 20:01:46,440 INFO [worker_2] mstar.communication.communicator: control mesh transport: rust 0.1.1 from /home/chaofan/workspaces/mm_reuse_study/envs/mstar/lib/python3.12/site-packages/mstar_rust/__init__.py
+2026-11-28 20:01:46,455 INFO [worker_0] mstar.communication.communicator: control mesh transport: rust 0.1.1 from /home/chaofan/workspaces/mm_reuse_study/envs/mstar/lib/python3.12/site-packages/mstar_rust/__init__.py
+2026-11-28 20:01:46,467 INFO [worker_1] mstar.communication.communicator: control mesh transport: rust 0.1.1 from /home/chaofan/workspaces/mm_reuse_study/envs/mstar/lib/python3.12/site-packages/mstar_rust/__init__.py
+2026-11-28 20:01:46,601 INFO [worker_2] mstar.communication.arena: ARENA: grew to 1 segments (256 MiB total, 256 MiB free, largest free block 256 MiB, 256 MiB pinned)
+2026-11-28 20:01:46,609 INFO [worker_2] mstar.engine.resources.spec: Resource specs after YAML overrides: [KVSpec(resource_key='thinker_kv', nodes={'Thinker'}, config=PagedKVConfig(num_layers=48, num_kv_heads=4, head_dim=128, num_qo_heads=32, max_seq_len=65536, max_num_pages=1024, page_size=None, layout=<KVLayout.NHD: 'NHD'>, cpu_offload_pages=0, prefix_cache_salt='', prefix_cache=True, prefix_cache_tp=True, context_parallel=False, kv_lora_rank=None, qk_rope_head_dim=None), leader=None), AttentionSpec(resource_key='thinker_attn', nodes={'Thinker'}, config=AttentionConfig(kv_cache='thinker_kv', backend=<AttnBackend.AUTO: 'auto'>, flashinfer_backend='auto', sm_scale=None, splits=(), decode_tensor_cores=True, decode_fmha=False, sliding_window=None, layers=None)), PositionSpec(resource_key='thinker_pos', nodes={'Thinker'}, config=PositionConfig(kv_cache='thinker_kv', backend=<PosBackend.ROPE: 'rope'>, scheme=<PosScheme.SEQUENTIAL: 'sequential'>, block_step=1, rotary_dim=None, interleave=False, rope_scale=1.0, rope_theta=10000.0, rope_dtype=None, rope_table_dtype=None, low_freq_factor=None, high_freq_factor=None, old_context_len=None, longrope=None)), KVSpec(resource_key='talker_kv', nodes={'Talker'}, config=PagedKVConfig(num_layers=20, num_kv_heads=2, head_dim=128, num_qo_heads=16, max_seq_len=65536, max_num_pages=2048, page_size=None, layout=<KVLayout.NHD: 'NHD'>, cpu_offload_pages=0, prefix_cache_salt='', prefix_cache=True, prefix_cache_tp=False, context_parallel=False, kv_lora_rank=None, qk_rope_head_dim=None), leader=None), AttentionSpec(resource_key='talker_attn', nodes={'Talker'}, config=AttentionConfig(kv_cache='talker_kv', backend=<AttnBackend.AUTO: 'auto'>, flashinfer_backend='auto', sm_scale=None, splits=(), decode_tensor_cores=True, decode_fmha=False, sliding_window=None, layers=None)), PositionSpec(resource_key='talker_pos', nodes={'Talker'}, config=PositionConfig(kv_cache='talker_kv', backend=<PosBackend.ROPE: 'rope'>, scheme=<PosScheme.SEQUENTIAL: 'sequential'>, block_step=1, rotary_dim=None, interleave=False, rope_scale=1.0, rope_theta=1000000.0, rope_dtype=None, rope_table_dtype=None, low_freq_factor=1.0, high_freq_factor=1.0, old_context_len=8192, longrope=None)), RaggedAttentionSpec(resource_key='audio_attn', nodes={'audio_encoder'}, config=RaggedAttentionConfig(num_qo_heads=20, num_kv_heads=20, head_dim=64, sm_scale=0.125, max_segments_per_request=40, max_segments_per_step=None, max_tokens_per_request=None, backend=<RaggedAttnBackend.AUTO: 'auto'>, flashinfer_backend=None, compile_op=False, dtype=None, workspace_mb=256), labels=frozenset({'main'}), sp_exchange='none'), RaggedAttentionSpec(resource_key='vision_attn', nodes={'vision_ahead', 'vision_encoder'}, config=RaggedAttentionConfig(num_qo_heads=16, num_kv_heads=16, head_dim=72, sm_scale=0.11785113019775792, max_segments_per_request=1, max_segments_per_step=32, max_tokens_per_request=None, backend=<RaggedAttnBackend.AUTO: 'auto'>, flashinfer_backend=None, compile_op=False, dtype=None, workspace_mb=128), labels=frozenset({'main'}), sp_exchange='none'), SamplerSpec(resource_key='thinker_sampler', nodes={'Thinker'}, vocab_size=152064, enable_repetition_penalty=True, enable_min_p=False, loopback_state={}, max_repetition_window=0, min_tokens_stop_ids=(), enable_top_p_first=False, enable_logprobs=False, enable_processed_logprobs=False, greedy_capture=None), SamplerSpec(resource_key='talker_sampler', nodes={'Talker'}, vocab_size=3072, enable_repetition_penalty=True, enable_min_p=False, loopback_state={}, max_repetition_window=0, min_tokens_stop_ids=(), enable_top_p_first=False, enable_logprobs=False, enable_processed_logprobs=False, greedy_capture=None), SamplerSpec(resource_key='code_sampler', nodes={'Talker'}, vocab_size=2048, enable_repetition_penalty=False, enable_min_p=False, loopback_state={}, max_repetition_window=0, min_tokens_stop_ids=(), enable_top_p_first=False, enable_logprobs=False, enable_processed_logprobs=False, greedy_capture=None), SeqShardSpec(resource_key='thinker_shard', nodes={'Thinker'}, labels=('main',), axis=0, walks=None, min_tokens=0, exchange='none', exchanges=True)]
+2026-11-28 20:01:46,632 INFO [worker_1] mstar.communication.arena: ARENA: grew to 1 segments (256 MiB total, 256 MiB free, largest free block 256 MiB, 256 MiB pinned)
+2026-11-28 20:01:46,641 INFO [worker_1] mstar.engine.resources.spec: Resource specs after YAML overrides: [KVSpec(resource_key='thinker_kv', nodes={'Thinker'}, config=PagedKVConfig(num_layers=48, num_kv_heads=4, head_dim=128, num_qo_heads=32, max_seq_len=65536, max_num_pages=1024, page_size=None, layout=<KVLayout.NHD: 'NHD'>, cpu_offload_pages=0, prefix_cache_salt='', prefix_cache=True, prefix_cache_tp=True, context_parallel=False, kv_lora_rank=None, qk_rope_head_dim=None), leader=None), AttentionSpec(resource_key='thinker_attn', nodes={'Thinker'}, config=AttentionConfig(kv_cache='thinker_kv', backend=<AttnBackend.AUTO: 'auto'>, flashinfer_backend='auto', sm_scale=None, splits=(), decode_tensor_cores=True, decode_fmha=False, sliding_window=None, layers=None)), PositionSpec(resource_key='thinker_pos', nodes={'Thinker'}, config=PositionConfig(kv_cache='thinker_kv', backend=<PosBackend.ROPE: 'rope'>, scheme=<PosScheme.SEQUENTIAL: 'sequential'>, block_step=1, rotary_dim=None, interleave=False, rope_scale=1.0, rope_theta=10000.0, rope_dtype=None, rope_table_dtype=None, low_freq_factor=None, high_freq_factor=None, old_context_len=None, longrope=None)), KVSpec(resource_key='talker_kv', nodes={'Talker'}, config=PagedKVConfig(num_layers=20, num_kv_heads=2, head_dim=128, num_qo_heads=16, max_seq_len=65536, max_num_pages=2048, page_size=None, layout=<KVLayout.NHD: 'NHD'>, cpu_offload_pages=0, prefix_cache_salt='', prefix_cache=True, prefix_cache_tp=False, context_parallel=False, kv_lora_rank=None, qk_rope_head_dim=None), leader=None), AttentionSpec(resource_key='talker_attn', nodes={'Talker'}, config=AttentionConfig(kv_cache='talker_kv', backend=<AttnBackend.AUTO: 'auto'>, flashinfer_backend='auto', sm_scale=None, splits=(), decode_tensor_cores=True, decode_fmha=False, sliding_window=None, layers=None)), PositionSpec(resource_key='talker_pos', nodes={'Talker'}, config=PositionConfig(kv_cache='talker_kv', backend=<PosBackend.ROPE: 'rope'>, scheme=<PosScheme.SEQUENTIAL: 'sequential'>, block_step=1, rotary_dim=None, interleave=False, rope_scale=1.0, rope_theta=1000000.0, rope_dtype=None, rope_table_dtype=None, low_freq_factor=1.0, high_freq_factor=1.0, old_context_len=8192, longrope=None)), RaggedAttentionSpec(resource_key='audio_attn', nodes={'audio_encoder'}, config=RaggedAttentionConfig(num_qo_heads=20, num_kv_heads=20, head_dim=64, sm_scale=0.125, max_segments_per_request=40, max_segments_per_step=None, max_tokens_per_request=None, backend=<RaggedAttnBackend.AUTO: 'auto'>, flashinfer_backend=None, compile_op=False, dtype=None, workspace_mb=256), labels=frozenset({'main'}), sp_exchange='none'), RaggedAttentionSpec(resource_key='vision_attn', nodes={'vision_ahead', 'vision_encoder'}, config=RaggedAttentionConfig(num_qo_heads=16, num_kv_heads=16, head_dim=72, sm_scale=0.11785113019775792, max_segments_per_request=1, max_segments_per_step=32, max_tokens_per_request=None, backend=<RaggedAttnBackend.AUTO: 'auto'>, flashinfer_backend=None, compile_op=False, dtype=None, workspace_mb=128), labels=frozenset({'main'}), sp_exchange='none'), SamplerSpec(resource_key='thinker_sampler', nodes={'Thinker'}, vocab_size=152064, enable_repetition_penalty=True, enable_min_p=False, loopback_state={}, max_repetition_window=0, min_tokens_stop_ids=(), enable_top_p_first=False, enable_logprobs=False, enable_processed_logprobs=False, greedy_capture=None), SamplerSpec(resource_key='talker_sampler', nodes={'Talker'}, vocab_size=3072, enable_repetition_penalty=True, enable_min_p=False, loopback_state={}, max_repetition_window=0, min_tokens_stop_ids=(), enable_top_p_first=False, enable_logprobs=False, enable_processed_logprobs=False, greedy_capture=None), SamplerSpec(resource_key='code_sampler', nodes={'Talker'}, vocab_size=2048, enable_repetition_penalty=False, enable_min_p=False, loopback_state={}, max_repetition_window=0, min_tokens_stop_ids=(), enable_top_p_first=False, enable_logprobs=False, enable_processed_logprobs=False, greedy_capture=None), SeqShardSpec(resource_key='thinker_shard', nodes={'Thinker'}, labels=('main',), axis=0, walks=None, min_tokens=0, exchange='none', exchanges=True)]
+2026-11-28 20:01:46,648 INFO [worker_0] mstar.communication.arena: ARENA: grew to 1 segments (256 MiB total, 256 MiB free, largest free block 256 MiB, 256 MiB pinned)
+2026-11-28 20:01:46,658 INFO [worker_0] mstar.engine.resources.spec: Resource specs after YAML overrides: [KVSpec(resource_key='thinker_kv', nodes={'Thinker'}, config=PagedKVConfig(num_layers=48, num_kv_heads=4, head_dim=128, num_qo_heads=32, max_seq_len=65536, max_num_pages=1024, page_size=None, layout=<KVLayout.NHD: 'NHD'>, cpu_offload_pages=0, prefix_cache_salt='', prefix_cache=True, prefix_cache_tp=True, context_parallel=False, kv_lora_rank=None, qk_rope_head_dim=None), leader=None), AttentionSpec(resource_key='thinker_attn', nodes={'Thinker'}, config=AttentionConfig(kv_cache='thinker_kv', backend=<AttnBackend.AUTO: 'auto'>, flashinfer_backend='auto', sm_scale=None, splits=(), decode_tensor_cores=True, decode_fmha=False, sliding_window=None, layers=None)), PositionSpec(resource_key='thinker_pos', nodes={'Thinker'}, config=PositionConfig(kv_cache='thinker_kv', backend=<PosBackend.ROPE: 'rope'>, scheme=<PosScheme.SEQUENTIAL: 'sequential'>, block_step=1, rotary_dim=None, interleave=False, rope_scale=1.0, rope_theta=10000.0, rope_dtype=None, rope_table_dtype=None, low_freq_factor=None, high_freq_factor=None, old_context_len=None, longrope=None)), KVSpec(resource_key='talker_kv', nodes={'Talker'}, config=PagedKVConfig(num_layers=20, num_kv_heads=2, head_dim=128, num_qo_heads=16, max_seq_len=65536, max_num_pages=2048, page_size=None, layout=<KVLayout.NHD: 'NHD'>, cpu_offload_pages=0, prefix_cache_salt='', prefix_cache=True, prefix_cache_tp=False, context_parallel=False, kv_lora_rank=None, qk_rope_head_dim=None), leader=None), AttentionSpec(resource_key='talker_attn', nodes={'Talker'}, config=AttentionConfig(kv_cache='talker_kv', backend=<AttnBackend.AUTO: 'auto'>, flashinfer_backend='auto', sm_scale=None, splits=(), decode_tensor_cores=True, decode_fmha=False, sliding_window=None, layers=None)), PositionSpec(resource_key='talker_pos', nodes={'Talker'}, config=PositionConfig(kv_cache='talker_kv', backend=<PosBackend.ROPE: 'rope'>, scheme=<PosScheme.SEQUENTIAL: 'sequential'>, block_step=1, rotary_dim=None, interleave=False, rope_scale=1.0, rope_theta=1000000.0, rope_dtype=None, rope_table_dtype=None, low_freq_factor=1.0, high_freq_factor=1.0, old_context_len=8192, longrope=None)), RaggedAttentionSpec(resource_key='audio_attn', nodes={'audio_encoder'}, config=RaggedAttentionConfig(num_qo_heads=20, num_kv_heads=20, head_dim=64, sm_scale=0.125, max_segments_per_request=40, max_segments_per_step=None, max_tokens_per_request=None, backend=<RaggedAttnBackend.AUTO: 'auto'>, flashinfer_backend=None, compile_op=False, dtype=None, workspace_mb=256), labels=frozenset({'main'}), sp_exchange='none'), RaggedAttentionSpec(resource_key='vision_attn', nodes={'vision_ahead', 'vision_encoder'}, config=RaggedAttentionConfig(num_qo_heads=16, num_kv_heads=16, head_dim=72, sm_scale=0.11785113019775792, max_segments_per_request=1, max_segments_per_step=32, max_tokens_per_request=None, backend=<RaggedAttnBackend.AUTO: 'auto'>, flashinfer_backend=None, compile_op=False, dtype=None, workspace_mb=128), labels=frozenset({'main'}), sp_exchange='none'), SamplerSpec(resource_key='thinker_sampler', nodes={'Thinker'}, vocab_size=152064, enable_repetition_penalty=True, enable_min_p=False, loopback_state={}, max_repetition_window=0, min_tokens_stop_ids=(), enable_top_p_first=False, enable_logprobs=False, enable_processed_logprobs=False, greedy_capture=None), SamplerSpec(resource_key='talker_sampler', nodes={'Talker'}, vocab_size=3072, enable_repetition_penalty=True, enable_min_p=False, loopback_state={}, max_repetition_window=0, min_tokens_stop_ids=(), enable_top_p_first=False, enable_logprobs=False, enable_processed_logprobs=False, greedy_capture=None), SamplerSpec(resource_key='code_sampler', nodes={'Talker'}, vocab_size=2048, enable_repetition_penalty=False, enable_min_p=False, loopback_state={}, max_repetition_window=0, min_tokens_stop_ids=(), enable_top_p_first=False, enable_logprobs=False, enable_processed_logprobs=False, greedy_capture=None), SeqShardSpec(resource_key='thinker_shard', nodes={'Thinker'}, labels=('main',), axis=0, walks=None, min_tokens=0, exchange='none', exchanges=True)]
+2026-11-28 20:01:48,918 INFO [worker_2] mstar.model.qwen3_omni.qwen3_omni_model: Successfully loaded Qwen3-Omni submodule for Code2Wav
+2026-11-28 20:01:52,453 INFO [worker_2] mstar.model.qwen3_omni.submodules: TalkerSubmodule: pre-computed TTS special embeddings via Thinker embed_tokens + Talker text_projection
+2026-11-28 20:01:52,464 INFO [worker_2] mstar.model.qwen3_omni.qwen3_omni_model: Successfully loaded Qwen3-Omni submodule for Talker
+2026-11-28 20:01:52,823 INFO [worker_2] mstar.model.qwen3_omni.qwen3_omni_model: Successfully loaded Qwen3-Omni submodule for audio_encoder
+2026-11-28 20:01:53,074 INFO [worker_2] mstar.model.qwen3_omni.qwen3_omni_model: Successfully loaded Qwen3-Omni submodule for vision_ahead
+2026-11-28 20:01:53,297 INFO [worker_2] mstar.model.qwen3_omni.qwen3_omni_model: Successfully loaded Qwen3-Omni submodule for vision_encoder
+2026-11-28 20:01:53,302 INFO [worker_2] mstar.engine.resources.kv.manager: KV talker_kv: 5.00 GiB on this rank, 2048 pages of 128 slots
+2026-11-28 20:01:53,338 INFO [worker_2] mstar.kernels.registry: kernel table: no ragged_attention bfloat16 num_qo_heads=20,num_kv_heads=20,head_dim=64 entry for NVIDIA RTX 5880 Ada Generation; built-in configs. To tune it: python -m benchmark.kernels.sweep ragged_attention --dtype bfloat16 --shape num_qo_heads=20,num_kv_heads=20,head_dim=64
+2026-11-28 20:01:53,338 INFO [worker_2] mstar.kernels.registry: kernel table: no ragged_attention bfloat16 num_qo_heads=16,num_kv_heads=16,head_dim=72 entry for NVIDIA RTX 5880 Ada Generation; built-in configs. To tune it: python -m benchmark.kernels.sweep ragged_attention --dtype bfloat16 --shape num_qo_heads=16,num_kv_heads=16,head_dim=72
+2026-11-28 20:01:53,364 INFO [worker_2] mstar.worker.engine_manager: Engine loaded on device cuda:2 for nodes ['Code2Wav', 'Talker', 'audio_encoder', 'vision_ahead', 'vision_encoder']
+2026-11-28 20:01:59,038 INFO [worker_1] mstar.model.loader.base: Qwen3OmniThinkerModel: 876 checkpoint keys matched no parameter (e.g. ['audio_tower.conv2d1.bias', 'audio_tower.conv2d1.weight', 'audio_tower.conv2d2.bias']); 0 of 435 parameters got no weight
+2026-11-28 20:01:59,047 INFO [worker_1] mstar.model.qwen3_omni.qwen3_omni_model: Successfully loaded Qwen3-Omni submodule for Thinker
+2026-11-28 20:01:59,246 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 6.00 GiB on this rank, 1024 pages of 128 slots
+2026-11-28 20:01:59,255 INFO [worker_1] mstar.engine.engine: KV thinker_kv: prefix cache open for main on Thinker
+2026-11-28 20:01:59,255 WARNING [worker_1] mstar.engine.engine: KV thinker_kv: prefix cache on with cpu_offload_pages 0: a decode step that finds nothing to evict holds its requests until they time out. Set max_concurrent_requests to the pool's pages over the pages one request needs. cpu_offload_pages gives the worker a victim, but one that shares most of its prompt frees little
+2026-11-28 20:01:59,268 INFO [worker_1] mstar.worker.engine_manager: Engine loaded on device cuda:1 for nodes ['Thinker']
+2026-11-28 20:01:59,315 INFO [worker_1] mstar.worker.lockstep: Worker worker_1: TP async scheduling ON for ['Thinker'] (follower)
+2026-11-28 20:01:59,850 INFO [worker_0] mstar.model.loader.base: Qwen3OmniThinkerModel: 876 checkpoint keys matched no parameter (e.g. ['audio_tower.conv2d1.bias', 'audio_tower.conv2d1.weight', 'audio_tower.conv2d2.bias']); 0 of 435 parameters got no weight
+2026-11-28 20:01:59,864 INFO [worker_0] mstar.model.qwen3_omni.qwen3_omni_model: Successfully loaded Qwen3-Omni submodule for Thinker
+2026-11-28 20:02:00,045 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 6.00 GiB on this rank, 1024 pages of 128 slots
+2026-11-28 20:02:00,056 INFO [worker_0] mstar.engine.engine: KV thinker_kv: prefix cache open for main on Thinker
+2026-11-28 20:02:00,056 WARNING [worker_0] mstar.engine.engine: KV thinker_kv: prefix cache on with cpu_offload_pages 0: a decode step that finds nothing to evict holds its requests until they time out. Set max_concurrent_requests to the pool's pages over the pages one request needs. cpu_offload_pages gives the worker a victim, but one that shares most of its prompt frees little
+2026-11-28 20:02:00,068 INFO [worker_0] mstar.worker.engine_manager: Engine loaded on device cuda:0 for nodes ['Thinker']
+2026-11-28 20:02:00,089 INFO [worker_0] mstar.worker.lockstep: Worker worker_0: TP async scheduling ON for ['Thinker'] (leader)
+2026-11-28 20:02:02,455 INFO [worker_2] mstar.engine.accelerator_graph_runner: audio_encoder_aut_encode bs=8 total_tokens=4096: graph executable memory, 10265 bytes a node, 19 MiB held for the walk's graphs
+2026-11-28 20:02:03,693 INFO [worker_2] mstar.engine.accelerator_graph_runner: vision_ahead_vision_block_loop bs=1 total_tokens=8192: graph executable memory, 7917 bytes a node, 18 MiB held for the walk's graphs
+/home/chaofan/workspaces/mm_reuse_study/envs/mstar/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py:2056: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS="+dynamo" for a DEBUG stack trace.
+  torch._dynamo.utils.warn_once(msg)
+2026-11-28 20:02:03,966 INFO [worker_0] mstar.kernels.registry: kernel table: no moe_decode bfloat16 H=2048,E=128,I=384,K=8 entry for NVIDIA RTX 5880 Ada Generation; built-in configs. To tune it: the sweep doesn't time this dtype; measure an entry end to end (benchmark/kernels/README.md)
+/home/chaofan/workspaces/mm_reuse_study/envs/mstar/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py:2056: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS="+dynamo" for a DEBUG stack trace.
+  torch._dynamo.utils.warn_once(msg)
+2026-11-28 20:02:03,985 INFO [worker_1] mstar.kernels.registry: kernel table: no moe_decode bfloat16 H=2048,E=128,I=384,K=8 entry for NVIDIA RTX 5880 Ada Generation; built-in configs. To tune it: the sweep doesn't time this dtype; measure an entry end to end (benchmark/kernels/README.md)
+2026-11-28 20:02:04,522 INFO [worker_0] mstar.kernels.registry: kernel table: no moe_gemm bfloat16 E=128,N=768,K=2048,top_k=8 entry for NVIDIA RTX 5880 Ada Generation; built-in configs. To tune it: python -m benchmark.kernels.sweep moe_gemm --dtype bfloat16 --shape E=128,N=768,K=2048,top_k=8
+2026-11-28 20:02:04,576 INFO [worker_1] mstar.kernels.registry: kernel table: no moe_gemm bfloat16 E=128,N=768,K=2048,top_k=8 entry for NVIDIA RTX 5880 Ada Generation; built-in configs. To tune it: python -m benchmark.kernels.sweep moe_gemm --dtype bfloat16 --shape E=128,N=768,K=2048,top_k=8
+2026-11-28 20:02:04,947 INFO [worker_2] mstar.engine.accelerator_graph_runner: vision_encoder_vision_block_loop bs=1 total_tokens=8192: graph executable memory, 9676 bytes a node, 24 MiB held for the walk's graphs
+2026-11-28 20:02:05,904 INFO [worker_2] mstar.engine.engine: CapturePlan[cuda:2]: 30658 MiB free, 421 for the largest eager step
+2026-11-28 20:02:05,904 INFO [worker_2] mstar.engine.engine: CapturePlan[cuda:2] audio_encoder piecewise: 12 of 12 buckets, 362 MiB predicted, 160 outside the allocator
+2026-11-28 20:02:05,904 INFO [worker_2] mstar.engine.engine: CapturePlan[cuda:2] vision_ahead piecewise: 6 of 6 buckets, 884 MiB predicted, 108 outside the allocator
+2026-11-28 20:02:05,904 INFO [worker_2] mstar.engine.engine: CapturePlan[cuda:2] vision_encoder piecewise: 6 of 6 buckets, 884 MiB predicted, 132 outside the allocator
+2026-11-28 20:02:05,904 INFO [worker_2] mstar.engine.resources.attn.workspace: FlashInfer workspaces of audio_attn: 2, 512 MiB in all
+2026-11-28 20:02:05,904 INFO [worker_2] mstar.engine.resources.attn.workspace: FlashInfer workspaces of vision_attn: 2, 256 MiB in all
+2026-11-28 20:02:05,904 INFO [worker_2] mstar.engine.accelerator_graph_runner: AcceleratorGraphRunner[Code2Wav]: warmup_and_capture done. shared_static_buffers: 0 entries, 0.00 MB resident (would have been 0.00 MB with per-capture clones — saved 0.00 MB). Total accelerator alloc delta during warmup: 0.00 MB.
+2026-11-28 20:02:05,905 INFO [worker_2] mstar.engine.engine: CapturePlan[cuda:2] Code2Wav: capture took 0 MiB, 0 predicted
+2026-11-28 20:02:05,905 INFO [worker_2] mstar.engine.engine: CapturePlan[cuda:2] Code2Wav piecewise: capture took 0 MiB, 0 predicted
+2026-11-28 20:02:05,906 INFO [worker_2] mstar.engine.accelerator_graph_runner: AcceleratorGraphRunner[Talker]: warmup_and_capture done. shared_static_buffers: 0 entries, 0.00 MB resident (would have been 0.00 MB with per-capture clones — saved 0.00 MB). Total accelerator alloc delta during warmup: 0.00 MB.
+2026-11-28 20:02:05,906 INFO [worker_2] mstar.engine.engine: CapturePlan[cuda:2] Talker: capture took 0 MiB, 0 predicted
+2026-11-28 20:02:05,906 INFO [worker_2] mstar.engine.engine: CapturePlan[cuda:2] Talker piecewise: capture took 0 MiB, 0 predicted
+2026-11-28 20:02:05,906 INFO [worker_2] mstar.engine.accelerator_graph_runner: AcceleratorGraphRunner[audio_encoder]: warmup_and_capture done. shared_static_buffers: 0 entries, 0.00 MB resident (would have been 0.00 MB with per-capture clones — saved 0.00 MB). Total accelerator alloc delta during warmup: 0.00 MB.
+2026-11-28 20:02:05,906 INFO [worker_2] mstar.engine.engine: CapturePlan[cuda:2] audio_encoder: capture took 0 MiB, 0 predicted
+2026-11-28 20:02:05,940 INFO [worker_2] mstar.engine.accelerator_graph_runner: PiecewiseAcceleratorGraphRunner[audio_encoder_aut_encode]: captured bs=8 total_tokens=4096 (2 slots)
+2026-11-28 20:02:05,964 INFO [worker_2] mstar.engine.accelerator_graph_runner: PiecewiseAcceleratorGraphRunner[audio_encoder_aut_encode]: captured bs=8 total_tokens=2048 (2 slots)
+2026-11-28 20:02:05,989 INFO [worker_2] mstar.engine.accelerator_graph_runner: PiecewiseAcceleratorGraphRunner[audio_encoder_aut_encode]: captured bs=8 total_tokens=1536 (2 slots)
+2026-11-28 20:02:06,015 INFO [worker_2] mstar.engine.accelerator_graph_runner: PiecewiseAcceleratorGraphRunner[audio_encoder_aut_encode]: captured bs=8 total_tokens=1024 (2 slots)
+2026-11-28 20:02:06,041 INFO [worker_2] mstar.engine.accelerator_graph_runner: PiecewiseAcceleratorGraphRunner[audio_encoder_aut_encode]: captured bs=8 total_tokens=768 (2 slots)
+2026-11-28 20:02:06,068 INFO [worker_2] mstar.engine.accelerator_graph_runner: PiecewiseAcceleratorGraphRunner[audio_encoder_aut_encode]: captured bs=8 total_tokens=512 (2 slots)
+2026-11-28 20:02:06,102 INFO [worker_2] mstar.engine.accelerator_graph_runner: PiecewiseAcceleratorGraphRunner[audio_encoder_aut_encode]: captured bs=8 total_tokens=384 (2 slots)
+2026-11-28 20:02:06,132 INFO [worker_2] mstar.engine.accelerator_graph_runner: PiecewiseAcceleratorGraphRunner[audio_encoder_aut_encode]: captured bs=8 total_tokens=256 (2 slots)
+2026-11-28 20:02:06,160 INFO [worker_2] mstar.engine.accelerator_graph_runner: PiecewiseAcceleratorGraphRunner[audio_encoder_aut_encode]: captured bs=8 total_tokens=192 (2 slots)
+2026-11-28 20:02:06,176 INFO [worker_1] mstar.engine.accelerator_graph_runner: Thinker prefill_text[bs=32,tokens=2048] slot=0: graph executable memory, 19436 bytes a node, 28 MiB held for the walk's graphs
+2026-11-28 20:02:06,181 INFO [worker_0] mstar.engine.accelerator_graph_runner: Thinker prefill_text[bs=32,tokens=2048] slot=0: graph executable memory, 19436 bytes a node, 28 MiB held for the walk's graphs
+2026-11-28 20:02:06,185 INFO [worker_2] mstar.engine.accelerator_graph_runner: PiecewiseAcceleratorGraphRunner[audio_encoder_aut_encode]: captured bs=8 total_tokens=128 (2 slots)
+2026-11-28 20:02:06,208 INFO [worker_2] mstar.engine.accelerator_graph_runner: PiecewiseAcceleratorGraphRunner[audio_encoder_aut_encode]: captured bs=8 total_tokens=64 (2 slots)
+2026-11-28 20:02:06,230 INFO [worker_2] mstar.engine.accelerator_graph_runner: PiecewiseAcceleratorGraphRunner[audio_encoder_aut_encode]: captured bs=8 total_tokens=3072 (2 slots)
+2026-11-28 20:02:06,230 INFO [worker_2] mstar.engine.engine: CapturePlan[cuda:2] audio_encoder piecewise: capture took 194 MiB, 362 predicted
+2026-11-28 20:02:06,231 INFO [worker_2] mstar.engine.accelerator_graph_runner: AcceleratorGraphRunner[vision_ahead]: warmup_and_capture done. shared_static_buffers: 0 entries, 0.00 MB resident (would have been 0.00 MB with per-capture clones — saved 0.00 MB). Total accelerator alloc delta during warmup: 0.00 MB.
+2026-11-28 20:02:06,231 INFO [worker_2] mstar.engine.engine: CapturePlan[cuda:2] vision_ahead: capture took 0 MiB, 0 predicted
+2026-11-28 20:02:06,271 INFO [worker_2] mstar.engine.accelerator_graph_runner: PiecewiseAcceleratorGraphRunner[vision_ahead_vision_block_loop]: captured bs=1 total_tokens=8192 (2 slots)
+2026-11-28 20:02:06,305 INFO [worker_2] mstar.engine.accelerator_graph_runner: PiecewiseAcceleratorGraphRunner[vision_ahead_vision_block_loop]: captured bs=1 total_tokens=2048 (2 slots)
+2026-11-28 20:02:06,339 INFO [worker_2] mstar.engine.accelerator_graph_runner: PiecewiseAcceleratorGraphRunner[vision_ahead_vision_block_loop]: captured bs=1 total_tokens=1024 (2 slots)
+2026-11-28 20:02:06,372 INFO [worker_2] mstar.engine.accelerator_graph_runner: PiecewiseAcceleratorGraphRunner[vision_ahead_vision_block_loop]: captured bs=1 total_tokens=512 (2 slots)
+2026-11-28 20:02:06,407 INFO [worker_2] mstar.engine.accelerator_graph_runner: PiecewiseAcceleratorGraphRunner[vision_ahead_vision_block_loop]: captured bs=1 total_tokens=256 (2 slots)
+2026-11-28 20:02:06,444 INFO [worker_2] mstar.engine.accelerator_graph_runner: PiecewiseAcceleratorGraphRunner[vision_ahead_vision_block_loop]: captured bs=1 total_tokens=4096 (2 slots)
+2026-11-28 20:02:06,444 INFO [worker_2] mstar.engine.engine: CapturePlan[cuda:2] vision_ahead piecewise: capture took 848 MiB, 884 predicted
+2026-11-28 20:02:06,445 INFO [worker_2] mstar.engine.accelerator_graph_runner: AcceleratorGraphRunner[vision_encoder]: warmup_and_capture done. shared_static_buffers: 0 entries, 0.00 MB resident (would have been 0.00 MB with per-capture clones — saved 0.00 MB). Total accelerator alloc delta during warmup: 0.00 MB.
+2026-11-28 20:02:06,445 INFO [worker_2] mstar.engine.engine: CapturePlan[cuda:2] vision_encoder: capture took 0 MiB, 0 predicted
+2026-11-28 20:02:06,483 INFO [worker_2] mstar.engine.accelerator_graph_runner: PiecewiseAcceleratorGraphRunner[vision_encoder_vision_block_loop]: captured bs=1 total_tokens=8192 (2 slots)
+2026-11-28 20:02:06,516 INFO [worker_2] mstar.engine.accelerator_graph_runner: PiecewiseAcceleratorGraphRunner[vision_encoder_vision_block_loop]: captured bs=1 total_tokens=2048 (2 slots)
+2026-11-28 20:02:06,550 INFO [worker_2] mstar.engine.accelerator_graph_runner: PiecewiseAcceleratorGraphRunner[vision_encoder_vision_block_loop]: captured bs=1 total_tokens=1024 (2 slots)
+2026-11-28 20:02:06,603 INFO [worker_2] mstar.engine.accelerator_graph_runner: PiecewiseAcceleratorGraphRunner[vision_encoder_vision_block_loop]: captured bs=1 total_tokens=512 (2 slots)
+2026-11-28 20:02:06,638 INFO [worker_2] mstar.engine.accelerator_graph_runner: PiecewiseAcceleratorGraphRunner[vision_encoder_vision_block_loop]: captured bs=1 total_tokens=256 (2 slots)
+2026-11-28 20:02:06,673 INFO [worker_2] mstar.engine.accelerator_graph_runner: PiecewiseAcceleratorGraphRunner[vision_encoder_vision_block_loop]: captured bs=1 total_tokens=4096 (2 slots)
+2026-11-28 20:02:06,673 INFO [worker_2] mstar.engine.engine: CapturePlan[cuda:2] vision_encoder piecewise: capture took 866 MiB, 884 predicted
+2026-11-28 20:02:06,673 INFO [worker_2] mstar.engine.engine: CapturePlan[cuda:2]: 28476 MiB free after capture, 421 for the largest eager step
+2026-11-28 20:02:06,674 INFO [worker_2] mstar.engine.engine: Engine: torch.compile disabled for Code2Wav (submodule opt-out)
+2026-11-28 20:02:06,678 INFO [worker_2] mstar.engine.engine: Engine: torch.compile applied to Talker
+2026-11-28 20:02:06,678 INFO [worker_2] mstar.engine.engine: Engine: torch.compile disabled for audio_encoder (submodule opt-out)
+2026-11-28 20:02:06,678 INFO [worker_2] mstar.engine.engine: Engine: torch.compile disabled for vision_ahead (submodule opt-out)
+2026-11-28 20:02:06,678 INFO [worker_2] mstar.engine.engine: Engine: torch.compile disabled for vision_encoder (submodule opt-out)
+2026-11-28 20:02:06,860 INFO [worker_1] mstar.engine.accelerator_graph_runner: Thinker prefill_vision[bs=32,tokens=2048,key=deepstack] slot=0: graph executable memory, 19382 bytes a node, 28 MiB held for the walk's graphs
+2026-11-28 20:02:06,864 INFO [worker_0] mstar.engine.accelerator_graph_runner: Thinker prefill_vision[bs=32,tokens=2048,key=deepstack] slot=0: graph executable memory, 19382 bytes a node, 28 MiB held for the walk's graphs
+2026-11-28 20:02:16,136 INFO [worker_0] mstar.engine.accelerator_graph_runner: Thinker thinker_text_decode[bs=32,tokens=32] slot=0: graph executable memory, 20400 bytes a node, 28 MiB held for the walk's graphs
+2026-11-28 20:02:16,144 INFO [worker_1] mstar.engine.accelerator_graph_runner: Thinker thinker_text_decode[bs=32,tokens=32] slot=0: graph executable memory, 20400 bytes a node, 28 MiB held for the walk's graphs
+2026-11-28 20:02:16,965 INFO [worker_0] mstar.engine.accelerator_graph_runner: Thinker thinker_decode[bs=32,tokens=32] slot=0: graph executable memory, 20361 bytes a node, 28 MiB held for the walk's graphs
+2026-11-28 20:02:16,968 INFO [worker_1] mstar.engine.accelerator_graph_runner: Thinker thinker_decode[bs=32,tokens=32] slot=0: graph executable memory, 20361 bytes a node, 28 MiB held for the walk's graphs
+2026-11-28 20:02:44,326 INFO [worker_1] mstar.engine.accelerator_graph_runner: Thinker thinker_text_decode[bs=32,tokens=32,lean=thinker_sampler] slot=0: graph executable memory, 18504 bytes a node, 24 MiB held for the walk's graphs
+2026-11-28 20:02:44,331 INFO [worker_0] mstar.engine.accelerator_graph_runner: Thinker thinker_text_decode[bs=32,tokens=32,lean=thinker_sampler] slot=0: graph executable memory, 18504 bytes a node, 24 MiB held for the walk's graphs
+2026-11-28 20:02:44,631 INFO [worker_0] mstar.engine.accelerator_graph_runner: Thinker thinker_decode[bs=32,tokens=32,lean=thinker_sampler] slot=0: graph executable memory, 20520 bytes a node, 28 MiB held for the walk's graphs
+2026-11-28 20:02:44,636 INFO [worker_1] mstar.engine.accelerator_graph_runner: Thinker thinker_decode[bs=32,tokens=32,lean=thinker_sampler] slot=0: graph executable memory, 20520 bytes a node, 28 MiB held for the walk's graphs
+2026-11-28 20:02:47,165 INFO [worker_1] mstar.engine.engine: CapturePlan[cuda:1]: 9344 MiB free, 108 for the largest eager step
+2026-11-28 20:02:47,165 INFO [worker_1] mstar.engine.engine: CapturePlan[cuda:1] Thinker: 74 of 74 buckets (12 of 12 lean twins), 1084 MiB predicted, 2918 outside the allocator
+2026-11-28 20:02:47,165 INFO [worker_1] mstar.engine.resources.attn.workspace: FlashInfer workspaces of thinker_kv: 2, 1024 MiB in all
+2026-11-28 20:02:47,171 INFO [worker_0] mstar.engine.engine: CapturePlan[cuda:0]: 9336 MiB free, 108 for the largest eager step
+2026-11-28 20:02:47,171 INFO [worker_0] mstar.engine.engine: CapturePlan[cuda:0] Thinker: 74 of 74 buckets (12 of 12 lean twins), 1084 MiB predicted, 2918 outside the allocator
+2026-11-28 20:02:47,171 INFO [worker_0] mstar.engine.resources.attn.workspace: FlashInfer workspaces of thinker_kv: 2, 1024 MiB in all
+2026-11-28 20:02:47,334 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=32,tokens=2048] (2 slots)
+2026-11-28 20:02:47,337 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=32,tokens=2048] (2 slots)
+2026-11-28 20:02:47,466 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_vision[bs=32,tokens=2048,key=deepstack] (2 slots)
+2026-11-28 20:02:47,470 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_vision[bs=32,tokens=2048,key=deepstack] (2 slots)
+2026-11-28 20:02:47,596 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=16,tokens=2048] (2 slots)
+2026-11-28 20:02:47,598 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=16,tokens=2048] (2 slots)
+2026-11-28 20:02:47,724 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_vision[bs=16,tokens=2048,key=deepstack] (2 slots)
+2026-11-28 20:02:47,724 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_vision[bs=16,tokens=2048,key=deepstack] (2 slots)
+2026-11-28 20:02:47,854 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=8,tokens=2048] (2 slots)
+2026-11-28 20:02:47,855 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=8,tokens=2048] (2 slots)
+2026-11-28 20:02:47,977 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=4,tokens=2048] (2 slots)
+2026-11-28 20:02:47,977 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=4,tokens=2048] (2 slots)
+2026-11-28 20:02:48,108 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_vision[bs=4,tokens=2048,key=deepstack] (2 slots)
+2026-11-28 20:02:48,112 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_vision[bs=4,tokens=2048,key=deepstack] (2 slots)
+2026-11-28 20:02:48,240 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=2,tokens=2048] (2 slots)
+2026-11-28 20:02:48,244 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=2,tokens=2048] (2 slots)
+2026-11-28 20:02:48,370 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=1,tokens=2048] (2 slots)
+2026-11-28 20:02:48,374 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=1,tokens=2048] (2 slots)
+2026-11-28 20:02:48,508 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_vision[bs=1,tokens=2048,key=deepstack] (2 slots)
+2026-11-28 20:02:48,509 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_vision[bs=1,tokens=2048,key=deepstack] (2 slots)
+2026-11-28 20:02:48,639 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=16,tokens=1024] (2 slots)
+2026-11-28 20:02:48,642 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=16,tokens=1024] (2 slots)
+2026-11-28 20:02:48,775 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_vision[bs=16,tokens=1024,key=deepstack] (2 slots)
+2026-11-28 20:02:48,778 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_vision[bs=16,tokens=1024,key=deepstack] (2 slots)
+2026-11-28 20:02:48,903 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=8,tokens=1024] (2 slots)
+2026-11-28 20:02:48,903 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=8,tokens=1024] (2 slots)
+2026-11-28 20:02:49,027 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=4,tokens=1024] (2 slots)
+2026-11-28 20:02:49,030 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=4,tokens=1024] (2 slots)
+2026-11-28 20:02:49,177 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_vision[bs=4,tokens=1024,key=deepstack] (2 slots)
+2026-11-28 20:02:49,180 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_vision[bs=4,tokens=1024,key=deepstack] (2 slots)
+2026-11-28 20:02:49,323 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=2,tokens=1024] (2 slots)
+2026-11-28 20:02:49,335 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=2,tokens=1024] (2 slots)
+2026-11-28 20:02:49,468 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=1,tokens=1024] (2 slots)
+2026-11-28 20:02:49,479 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=1,tokens=1024] (2 slots)
+2026-11-28 20:02:49,610 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_vision[bs=1,tokens=1024,key=deepstack] (2 slots)
+2026-11-28 20:02:49,618 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_vision[bs=1,tokens=1024,key=deepstack] (2 slots)
+2026-11-28 20:02:49,753 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=32,tokens=512] (2 slots)
+2026-11-28 20:02:49,761 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=32,tokens=512] (2 slots)
+2026-11-28 20:02:49,896 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_vision[bs=32,tokens=512,key=deepstack] (2 slots)
+2026-11-28 20:02:49,904 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_vision[bs=32,tokens=512,key=deepstack] (2 slots)
+2026-11-28 20:02:50,039 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=16,tokens=512] (2 slots)
+2026-11-28 20:02:50,045 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=16,tokens=512] (2 slots)
+2026-11-28 20:02:50,177 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_vision[bs=16,tokens=512,key=deepstack] (2 slots)
+2026-11-28 20:02:50,185 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_vision[bs=16,tokens=512,key=deepstack] (2 slots)
+2026-11-28 20:02:50,319 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=8,tokens=512] (2 slots)
+2026-11-28 20:02:50,328 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=8,tokens=512] (2 slots)
+2026-11-28 20:02:50,469 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=4,tokens=512] (2 slots)
+2026-11-28 20:02:50,479 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=4,tokens=512] (2 slots)
+2026-11-28 20:02:50,621 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_vision[bs=4,tokens=512,key=deepstack] (2 slots)
+2026-11-28 20:02:50,622 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_vision[bs=4,tokens=512,key=deepstack] (2 slots)
+2026-11-28 20:02:50,758 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=2,tokens=512] (2 slots)
+2026-11-28 20:02:50,766 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=2,tokens=512] (2 slots)
+2026-11-28 20:02:50,895 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=1,tokens=512] (2 slots)
+2026-11-28 20:02:50,907 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=1,tokens=512] (2 slots)
+2026-11-28 20:02:51,037 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_vision[bs=1,tokens=512,key=deepstack] (2 slots)
+2026-11-28 20:02:51,046 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_vision[bs=1,tokens=512,key=deepstack] (2 slots)
+2026-11-28 20:02:51,183 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=32,tokens=256] (2 slots)
+2026-11-28 20:02:51,190 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=32,tokens=256] (2 slots)
+2026-11-28 20:02:51,330 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_vision[bs=32,tokens=256,key=deepstack] (2 slots)
+2026-11-28 20:02:51,338 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_vision[bs=32,tokens=256,key=deepstack] (2 slots)
+2026-11-28 20:02:51,467 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=16,tokens=256] (2 slots)
+2026-11-28 20:02:51,477 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=16,tokens=256] (2 slots)
+2026-11-28 20:02:51,632 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_vision[bs=16,tokens=256,key=deepstack] (2 slots)
+2026-11-28 20:02:51,634 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_vision[bs=16,tokens=256,key=deepstack] (2 slots)
+2026-11-28 20:02:51,774 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=8,tokens=256] (2 slots)
+2026-11-28 20:02:51,785 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=8,tokens=256] (2 slots)
+2026-11-28 20:02:51,919 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=4,tokens=256] (2 slots)
+2026-11-28 20:02:51,930 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=4,tokens=256] (2 slots)
+2026-11-28 20:02:52,063 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_vision[bs=4,tokens=256,key=deepstack] (2 slots)
+2026-11-28 20:02:52,073 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_vision[bs=4,tokens=256,key=deepstack] (2 slots)
+2026-11-28 20:02:52,203 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=2,tokens=256] (2 slots)
+2026-11-28 20:02:52,213 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=2,tokens=256] (2 slots)
+2026-11-28 20:02:52,345 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=1,tokens=256] (2 slots)
+2026-11-28 20:02:52,355 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=1,tokens=256] (2 slots)
+2026-11-28 20:02:52,491 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_vision[bs=1,tokens=256,key=deepstack] (2 slots)
+2026-11-28 20:02:52,502 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_vision[bs=1,tokens=256,key=deepstack] (2 slots)
+2026-11-28 20:02:52,636 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=32,tokens=128] (2 slots)
+2026-11-28 20:02:52,646 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=32,tokens=128] (2 slots)
+2026-11-28 20:02:52,782 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_vision[bs=32,tokens=128,key=deepstack] (2 slots)
+2026-11-28 20:02:52,792 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_vision[bs=32,tokens=128,key=deepstack] (2 slots)
+2026-11-28 20:02:52,943 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=16,tokens=128] (2 slots)
+2026-11-28 20:02:52,951 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=16,tokens=128] (2 slots)
+2026-11-28 20:02:53,084 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_vision[bs=16,tokens=128,key=deepstack] (2 slots)
+2026-11-28 20:02:53,084 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_vision[bs=16,tokens=128,key=deepstack] (2 slots)
+2026-11-28 20:02:53,210 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=8,tokens=128] (2 slots)
+2026-11-28 20:02:53,211 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=8,tokens=128] (2 slots)
+2026-11-28 20:02:53,335 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=4,tokens=128] (2 slots)
+2026-11-28 20:02:53,335 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=4,tokens=128] (2 slots)
+2026-11-28 20:02:53,462 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_vision[bs=4,tokens=128,key=deepstack] (2 slots)
+2026-11-28 20:02:53,463 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_vision[bs=4,tokens=128,key=deepstack] (2 slots)
+2026-11-28 20:02:53,588 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=2,tokens=128] (2 slots)
+2026-11-28 20:02:53,594 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=2,tokens=128] (2 slots)
+2026-11-28 20:02:53,723 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=1,tokens=128] (2 slots)
+2026-11-28 20:02:53,726 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=1,tokens=128] (2 slots)
+2026-11-28 20:02:53,856 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_vision[bs=1,tokens=128,key=deepstack] (2 slots)
+2026-11-28 20:02:53,866 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_vision[bs=1,tokens=128,key=deepstack] (2 slots)
+2026-11-28 20:02:54,010 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=32,tokens=1024] (2 slots)
+2026-11-28 20:02:54,014 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_text[bs=32,tokens=1024] (2 slots)
+2026-11-28 20:02:54,156 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_vision[bs=32,tokens=1024,key=deepstack] (2 slots)
+2026-11-28 20:02:54,160 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: prefill_vision[bs=32,tokens=1024,key=deepstack] (2 slots)
+2026-11-28 20:02:54,312 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_text_decode[bs=32,tokens=32] (2 slots)
+2026-11-28 20:02:54,313 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_text_decode[bs=32,tokens=32] (2 slots)
+2026-11-28 20:02:54,445 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_decode[bs=32,tokens=32] (2 slots)
+2026-11-28 20:02:54,452 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_decode[bs=32,tokens=32] (2 slots)
+2026-11-28 20:02:54,580 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_text_decode[bs=8,tokens=8] (2 slots)
+2026-11-28 20:02:54,588 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_text_decode[bs=8,tokens=8] (2 slots)
+2026-11-28 20:02:54,721 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_text_decode[bs=4,tokens=4] (2 slots)
+2026-11-28 20:02:54,722 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_text_decode[bs=4,tokens=4] (2 slots)
+2026-11-28 20:02:54,860 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_text_decode[bs=2,tokens=2] (2 slots)
+2026-11-28 20:02:54,867 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_text_decode[bs=2,tokens=2] (2 slots)
+2026-11-28 20:02:54,993 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_text_decode[bs=1,tokens=1] (2 slots)
+2026-11-28 20:02:54,994 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_text_decode[bs=1,tokens=1] (2 slots)
+2026-11-28 20:02:55,139 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_decode[bs=8,tokens=8] (2 slots)
+2026-11-28 20:02:55,140 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_decode[bs=8,tokens=8] (2 slots)
+2026-11-28 20:02:55,272 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_decode[bs=4,tokens=4] (2 slots)
+2026-11-28 20:02:55,273 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_decode[bs=4,tokens=4] (2 slots)
+2026-11-28 20:02:55,393 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_decode[bs=2,tokens=2] (2 slots)
+2026-11-28 20:02:55,407 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_decode[bs=2,tokens=2] (2 slots)
+2026-11-28 20:02:55,525 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_decode[bs=1,tokens=1] (2 slots)
+2026-11-28 20:02:55,526 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_decode[bs=1,tokens=1] (2 slots)
+2026-11-28 20:02:55,664 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_text_decode[bs=16,tokens=16] (2 slots)
+2026-11-28 20:02:55,675 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_text_decode[bs=16,tokens=16] (2 slots)
+2026-11-28 20:02:55,807 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_decode[bs=16,tokens=16] (2 slots)
+2026-11-28 20:02:55,813 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_decode[bs=16,tokens=16] (2 slots)
+2026-11-28 20:02:55,944 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_text_decode[bs=32,tokens=32,lean=thinker_sampler] (2 slots)
+2026-11-28 20:02:55,951 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_text_decode[bs=32,tokens=32,lean=thinker_sampler] (2 slots)
+2026-11-28 20:02:56,085 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_decode[bs=32,tokens=32,lean=thinker_sampler] (2 slots)
+2026-11-28 20:02:56,092 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_decode[bs=32,tokens=32,lean=thinker_sampler] (2 slots)
+2026-11-28 20:02:56,225 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_text_decode[bs=8,tokens=8,lean=thinker_sampler] (2 slots)
+2026-11-28 20:02:56,231 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_text_decode[bs=8,tokens=8,lean=thinker_sampler] (2 slots)
+2026-11-28 20:02:56,349 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_text_decode[bs=4,tokens=4,lean=thinker_sampler] (2 slots)
+2026-11-28 20:02:56,354 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_text_decode[bs=4,tokens=4,lean=thinker_sampler] (2 slots)
+2026-11-28 20:02:56,477 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_text_decode[bs=2,tokens=2,lean=thinker_sampler] (2 slots)
+2026-11-28 20:02:56,482 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_text_decode[bs=2,tokens=2,lean=thinker_sampler] (2 slots)
+2026-11-28 20:02:56,596 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_text_decode[bs=1,tokens=1,lean=thinker_sampler] (2 slots)
+2026-11-28 20:02:56,602 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_text_decode[bs=1,tokens=1,lean=thinker_sampler] (2 slots)
+2026-11-28 20:02:56,739 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_decode[bs=8,tokens=8,lean=thinker_sampler] (2 slots)
+2026-11-28 20:02:56,748 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_decode[bs=8,tokens=8,lean=thinker_sampler] (2 slots)
+2026-11-28 20:02:56,868 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_decode[bs=4,tokens=4,lean=thinker_sampler] (2 slots)
+2026-11-28 20:02:56,876 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_decode[bs=4,tokens=4,lean=thinker_sampler] (2 slots)
+2026-11-28 20:02:56,997 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_decode[bs=2,tokens=2,lean=thinker_sampler] (2 slots)
+2026-11-28 20:02:57,003 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_decode[bs=2,tokens=2,lean=thinker_sampler] (2 slots)
+2026-11-28 20:02:57,125 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_decode[bs=1,tokens=1,lean=thinker_sampler] (2 slots)
+2026-11-28 20:02:57,126 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_decode[bs=1,tokens=1,lean=thinker_sampler] (2 slots)
+2026-11-28 20:02:57,267 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_text_decode[bs=16,tokens=16,lean=thinker_sampler] (2 slots)
+2026-11-28 20:02:57,273 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_text_decode[bs=16,tokens=16,lean=thinker_sampler] (2 slots)
+2026-11-28 20:02:57,419 INFO [worker_1] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_decode[bs=16,tokens=16,lean=thinker_sampler] (2 slots)
+2026-11-28 20:02:57,419 INFO [worker_0] mstar.engine.accelerator_graph_runner: Captured accelerator graph for Thinker: thinker_decode[bs=16,tokens=16,lean=thinker_sampler] (2 slots)
+2026-11-28 20:02:57,434 INFO [worker_1] mstar.engine.accelerator_graph_runner: AcceleratorGraphRunner[Thinker]: warmup_and_capture done. shared_static_buffers: 11 entries, 42.00 MB resident (would have been 1441.51 MB with per-capture clones — saved 1399.51 MB). Total accelerator alloc delta during warmup: 630.19 MB.
+2026-11-28 20:02:57,434 INFO [worker_1] mstar.engine.engine: CapturePlan[cuda:1] Thinker: capture took 722 MiB, 1084 predicted
+2026-11-28 20:02:57,434 INFO [worker_0] mstar.engine.accelerator_graph_runner: AcceleratorGraphRunner[Thinker]: warmup_and_capture done. shared_static_buffers: 11 entries, 42.00 MB resident (would have been 1441.51 MB with per-capture clones — saved 1399.51 MB). Total accelerator alloc delta during warmup: 630.19 MB.
+2026-11-28 20:02:57,434 INFO [worker_1] mstar.engine.engine: CapturePlan[cuda:1] Thinker piecewise: capture took 0 MiB, 0 predicted
+2026-11-28 20:02:57,435 INFO [worker_1] mstar.engine.engine: CapturePlan[cuda:1]: 6256 MiB free after capture, 108 for the largest eager step
+2026-11-28 20:02:57,435 INFO [worker_0] mstar.engine.engine: CapturePlan[cuda:0] Thinker: capture took 722 MiB, 1084 predicted
+2026-11-28 20:02:57,435 INFO [worker_0] mstar.engine.engine: CapturePlan[cuda:0] Thinker piecewise: capture took 0 MiB, 0 predicted
+2026-11-28 20:02:57,435 INFO [worker_0] mstar.engine.engine: CapturePlan[cuda:0]: 6248 MiB free after capture, 108 for the largest eager step
+2026-11-28 20:02:57,440 INFO [worker_0] mstar.engine.engine: Engine: torch.compile applied to Thinker
+2026-11-28 20:02:57,440 INFO [worker_1] mstar.engine.engine: Engine: torch.compile applied to Thinker
+2026-11-28 20:02:58,241 INFO [worker_2] mstar.worker.worker: Worker worker_2: gc.freeze() after warmup — 743847 objects moved to the permanent generation
+2026-11-28 20:02:58,247 INFO [worker_2] mstar.worker.step_executor: Worker worker_2: engine runs on dedicated GPU thread
+2026-11-28 20:02:58,251 INFO [worker_2] mstar.worker.step_executor: Worker worker_2: plan_executor enabled — speculative plan() pre-runs on a dedicated thread
+2026-11-28 20:02:58,353 INFO [worker_1] mstar.worker.worker: Worker worker_1: gc.freeze() after warmup — 1172917 objects moved to the permanent generation
+2026-11-28 20:02:58,356 INFO [worker_1] mstar.worker.step_executor: Worker worker_1: engine runs on dedicated GPU thread
+2026-11-28 20:02:58,362 INFO [worker_1] mstar.worker.step_executor: Worker worker_1: plan_executor enabled — speculative plan() pre-runs on a dedicated thread
+2026-11-28 20:02:58,364 INFO [worker_0] mstar.worker.worker: Worker worker_0: gc.freeze() after warmup — 1274120 objects moved to the permanent generation
+2026-11-28 20:02:58,366 INFO [worker_0] mstar.worker.step_executor: Worker worker_0: engine runs on dedicated GPU thread
+2026-11-28 20:02:58,366 INFO [worker_0] mstar.worker.step_executor: Worker worker_0: plan_executor enabled — speculative plan() pre-runs on a dedicated thread
+2026-11-28 20:02:58,369 INFO [conductor] mstar.conductor.conductor: Conductor: all 3 worker(s) ready
+2026-11-28 20:02:58,517 INFO [conductor] mstar.utils.gc_freeze: Conductor: gc.freeze() after setup, 440711 objects in the permanent generation
+2026-11-28 20:02:58,527 INFO [api_server] mstar.api_server.entrypoint: All workers ready
+2026-11-28 20:02:58,667 INFO [api_server] mstar.utils.gc_freeze: API server: gc.freeze() after setup, 439202 objects in the permanent generation
+2026-11-28 20:02:58,673 INFO [api_server] mstar.api_server.rust_frontend: Rust frontend started (pid=1349988, port=18512)
+2026-11-28 20:02:58,673 INFO [api_server] mstar.api_server.entrypoint: Starting mstar API server (mstar-server) on port 18512
+2026-11-28 20:02:58,674 INFO [api_server] mstar.api_server.rust_frontend: Rust-frontend bridge serving
+bridging to conductor at /tmp/mstar_rust_frontend_obyq9rmx
+compressed speech output (mp3, flac, opus) through /home/chaofan/workspaces/mm_reuse_study/envs/mstar/lib/python3.12/site-packages/_soundfile_data/libsndfile_x86_64.so
+WARNING: no API key set (--api-key or MSTAR_API_KEY): any client that can reach 0.0.0.0:18512 can run requests. Set a key, or bind --host 127.0.0.1, unless a gateway in front of this server authenticates clients.
+mstar-server (Rust frontend) for model "qwen3_omni" on http://0.0.0.0:18512
+2026-11-28 20:03:00,986 INFO [api_server] mstar.communication.arena: ARENA stats: {'segments': 1, 'total_bytes': 268435456, 'free_bytes': 268435456, 'largest_free_block': 268435456, 'pinned_bytes': 0, 'live_slots': 0, 'spill_files': 0}
+2026-11-28 20:03:01,107 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 0 of its 7 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:03:01,107 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 0 of its 7 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:03:01,352 INFO [worker_2] mstar.communication.arena: ARENA stats: {'segments': 1, 'total_bytes': 268435456, 'free_bytes': 268435456, 'largest_free_block': 268435456, 'pinned_bytes': 536870912, 'live_slots': 0, 'spill_files': 0}
+2026-11-28 20:03:01,539 INFO [worker_0] mstar.communication.arena: ARENA stats: {'segments': 1, 'total_bytes': 268435456, 'free_bytes': 268435456, 'largest_free_block': 268435456, 'pinned_bytes': 805306368, 'live_slots': 0, 'spill_files': 0}
+2026-11-28 20:03:01,539 INFO [worker_1] mstar.communication.arena: ARENA stats: {'segments': 1, 'total_bytes': 268435456, 'free_bytes': 268435456, 'largest_free_block': 268435456, 'pinned_bytes': 805306368, 'live_slots': 0, 'spill_files': 0}
+2026-11-28 20:03:01,628 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 7 of its 7 pages, 0 from the host, whole prompt already cached True, replica worker_1
+2026-11-28 20:03:01,629 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 7 of its 7 pages, 0 from the host, whole prompt already cached True, replica worker_0
+2026-11-28 20:03:01,911 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 0 of its 19 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:03:01,911 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 0 of its 19 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:03:04,142 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 19 of its 19 pages, 0 from the host, whole prompt already cached True, replica worker_1
+2026-11-28 20:03:04,146 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 19 of its 19 pages, 0 from the host, whole prompt already cached True, replica worker_0
+2026-11-28 20:03:04,427 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 0 of its 19 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:03:04,427 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 0 of its 19 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:03:04,976 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 19 of its 19 pages, 0 from the host, whole prompt already cached True, replica worker_0
+2026-11-28 20:03:04,978 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 19 of its 19 pages, 0 from the host, whole prompt already cached True, replica worker_1
+2026-11-28 20:03:05,465 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 0 of its 47 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:03:05,466 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 0 of its 47 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:03:06,855 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 47 of its 47 pages, 0 from the host, whole prompt already cached True, replica worker_0
+2026-11-28 20:03:06,856 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 47 of its 47 pages, 0 from the host, whole prompt already cached True, replica worker_1
+2026-11-28 20:03:07,257 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 0 of its 2 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:03:07,258 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 0 of its 2 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:03:07,765 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 0 of its 4 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:03:07,765 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 0 of its 4 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:03:08,228 WARNING [api_server] mstar.api_server.entrypoint: Ignoring model_kwargs this model does not read: ['model_kwargs']
+2026-11-28 20:03:08,306 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 2 of its 7 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:03:08,307 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 2 of its 7 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:03:08,792 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 4 of its 9 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:03:08,792 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 4 of its 9 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:03:09,310 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 7 of its 12 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:03:09,310 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 7 of its 12 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:03:09,806 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 9 of its 14 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:03:09,806 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 9 of its 14 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:03:10,318 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 11 of its 16 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:03:10,321 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 11 of its 16 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:03:10,808 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 14 of its 19 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:03:10,809 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 14 of its 19 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:03:11,325 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 16 of its 21 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:03:11,327 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 16 of its 21 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:03:11,855 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 19 of its 23 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:03:11,856 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 19 of its 23 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:03:12,326 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 21 of its 26 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:03:12,326 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 21 of its 26 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:03:12,816 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 23 of its 28 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:03:12,820 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 23 of its 28 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:03:13,379 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 26 of its 30 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:03:13,380 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 26 of its 30 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:03:13,866 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 28 of its 33 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:03:13,872 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 28 of its 33 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:03:14,322 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 30 of its 35 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:03:14,322 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 30 of its 35 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:03:14,826 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 33 of its 37 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:03:14,836 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 33 of its 37 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:03:15,285 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 35 of its 38 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:03:15,288 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 35 of its 38 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:03:15,496 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 37 of its 40 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:03:15,499 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 37 of its 40 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:03:15,804 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 37 of its 42 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:03:15,809 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 37 of its 42 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:03:16,324 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 40 of its 45 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:03:16,327 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 40 of its 45 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:03:16,844 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 42 of its 47 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:03:16,845 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 42 of its 47 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:03:17,363 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 45 of its 49 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:03:17,364 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 45 of its 49 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:03:17,857 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 47 of its 52 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:03:17,862 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 47 of its 52 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:03:18,357 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 49 of its 54 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:03:18,360 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 49 of its 54 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:03:18,830 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 52 of its 56 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:03:18,831 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 52 of its 56 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:03:19,338 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 54 of its 59 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:03:19,340 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 54 of its 59 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:03:19,840 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 56 of its 61 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:03:19,843 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 56 of its 61 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:03:20,354 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 59 of its 63 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:03:20,354 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 59 of its 63 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:03:20,864 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 61 of its 66 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:03:20,866 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 61 of its 66 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:03:21,365 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 63 of its 68 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:03:21,366 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 63 of its 68 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:03:21,843 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 66 of its 71 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:03:21,844 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 66 of its 71 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:03:22,384 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 68 of its 73 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:03:22,386 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 68 of its 73 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:03:22,893 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 70 of its 75 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:03:22,894 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 70 of its 75 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:03:23,326 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 73 of its 75 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:03:23,333 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 73 of its 75 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:03:23,578 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 75 of its 78 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:03:23,578 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 75 of its 78 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:03:23,877 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 75 of its 80 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:03:23,877 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 75 of its 80 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:03:24,363 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 78 of its 82 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:03:24,363 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 78 of its 82 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:03:24,875 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 80 of its 85 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:03:24,879 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 80 of its 85 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:03:25,383 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 82 of its 87 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:03:25,384 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 82 of its 87 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:03:25,945 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 85 of its 89 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:03:25,945 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 85 of its 89 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:03:26,439 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 87 of its 92 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:03:26,441 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 87 of its 92 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:03:26,892 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 89 of its 94 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:03:26,894 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 89 of its 94 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:03:27,397 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 92 of its 96 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:03:27,400 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 92 of its 96 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:03:27,928 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 94 of its 99 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:03:27,933 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 94 of its 99 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:03:28,400 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 96 of its 101 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:03:28,400 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 96 of its 101 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:03:28,891 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 99 of its 104 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:03:28,900 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 99 of its 104 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:03:29,398 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 101 of its 106 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:03:29,400 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 101 of its 106 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:03:29,890 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 103 of its 108 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:03:29,892 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 103 of its 108 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:03:30,450 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 106 of its 111 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:03:30,456 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 106 of its 111 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:03:31,053 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 108 of its 113 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:03:31,057 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 108 of its 113 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:03:31,367 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 111 of its 113 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:03:31,369 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 111 of its 113 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:03:58,369 INFO [conductor] mstar.conductor.conductor: Last 60 s: 59 requests done, 0 queued for admission; 0 running, 0 waiting
+2026-11-28 20:04:08,133 INFO [api_server] mstar.communication.arena: ARENA stats: {'segments': 1, 'total_bytes': 268435456, 'free_bytes': 268435456, 'largest_free_block': 268435456, 'pinned_bytes': 0, 'live_slots': 0, 'spill_files': 0}
+2026-11-28 20:04:08,153 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 0 of its 2 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:04:08,153 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 0 of its 2 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:04:08,190 INFO [worker_2] mstar.communication.arena: ARENA stats: {'segments': 1, 'total_bytes': 268435456, 'free_bytes': 268435456, 'largest_free_block': 268435456, 'pinned_bytes': 536870912, 'live_slots': 0, 'spill_files': 0}
+2026-11-28 20:04:08,278 INFO [worker_0] mstar.communication.arena: ARENA stats: {'segments': 1, 'total_bytes': 268435456, 'free_bytes': 268435456, 'largest_free_block': 268435456, 'pinned_bytes': 805306368, 'live_slots': 0, 'spill_files': 0}
+2026-11-28 20:04:08,278 INFO [worker_1] mstar.communication.arena: ARENA stats: {'segments': 1, 'total_bytes': 268435456, 'free_bytes': 268435456, 'largest_free_block': 268435456, 'pinned_bytes': 805306368, 'live_slots': 0, 'spill_files': 0}
+2026-11-28 20:04:08,648 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 0 of its 4 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:04:08,648 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 0 of its 4 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:04:09,173 ERROR [worker_2] mstar.engine.engine: request 0 failed (node=vision_encoder, walk=prefill_vision) [error id 78b3ed105bda]: RuntimeError: C4: chatcmpl-0565619a420a40f78b6ac45e3515c260#62: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+Traceback (most recent call last):
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/engine/engine.py", line 1574, in _prepare_inputs
+    req_inputs = prepare(
+                 ^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/model/qwen3_omni/submodules.py", line 256, in prepare_inputs
+    raise RuntimeError(f"C4: {fwd_info.request_id}: images {fwd_info.step_metadata.get(c1_registry.FIRST)}"
+RuntimeError: C4: chatcmpl-0565619a420a40f78b6ac45e3515c260#62: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+2026-11-28 20:04:09,177 ERROR [worker_2] mstar.worker.step_pipeline: Worker worker_2 failing request chatcmpl-0565619a420a40f78b6ac45e3515c260#62: internal error (error id 78b3ed105bda)
+2026-11-28 20:04:09,178 ERROR [conductor] mstar.conductor.conductor: Request chatcmpl-0565619a420a40f78b6ac45e3515c260#62 failed on a worker: internal error (error id 78b3ed105bda)
+2026-11-28 20:04:09,178 INFO [conductor] mstar.conductor.conductor: Draining request chatcmpl-0565619a420a40f78b6ac45e3515c260#62 (4 participants) before teardown
+2026-11-28 20:04:09,179 ERROR [api_server] mstar.api_server.entrypoint: Request chatcmpl-0565619a420a40f78b6ac45e3515c260#62 failed in the engine: internal error (error id 78b3ed105bda)
+2026-11-28 20:04:09,205 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 2 of its 7 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:04:09,208 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 2 of its 7 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:04:09,683 ERROR [worker_2] mstar.engine.engine: request 0 failed (node=vision_encoder, walk=prefill_vision) [error id 301a3047d75e]: RuntimeError: C4: chatcmpl-6956bbcb43d645eba583291e1d67b439#64: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+Traceback (most recent call last):
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/engine/engine.py", line 1574, in _prepare_inputs
+    req_inputs = prepare(
+                 ^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/model/qwen3_omni/submodules.py", line 256, in prepare_inputs
+    raise RuntimeError(f"C4: {fwd_info.request_id}: images {fwd_info.step_metadata.get(c1_registry.FIRST)}"
+RuntimeError: C4: chatcmpl-6956bbcb43d645eba583291e1d67b439#64: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+2026-11-28 20:04:09,684 ERROR [worker_2] mstar.worker.step_pipeline: Worker worker_2 failing request chatcmpl-6956bbcb43d645eba583291e1d67b439#64: internal error (error id 301a3047d75e)
+2026-11-28 20:04:09,685 ERROR [conductor] mstar.conductor.conductor: Request chatcmpl-6956bbcb43d645eba583291e1d67b439#64 failed on a worker: internal error (error id 301a3047d75e)
+2026-11-28 20:04:09,685 INFO [conductor] mstar.conductor.conductor: Draining request chatcmpl-6956bbcb43d645eba583291e1d67b439#64 (4 participants) before teardown
+2026-11-28 20:04:09,686 ERROR [api_server] mstar.api_server.entrypoint: Request chatcmpl-6956bbcb43d645eba583291e1d67b439#64 failed in the engine: internal error (error id 301a3047d75e)
+2026-11-28 20:04:09,729 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 7 of its 9 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:04:09,733 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 7 of its 9 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:04:10,216 ERROR [worker_2] mstar.engine.engine: request 0 failed (node=vision_encoder, walk=prefill_vision) [error id 66172d9821fb]: RuntimeError: C4: chatcmpl-af3af584d1074214bee581925f3ec431#66: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+Traceback (most recent call last):
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/engine/engine.py", line 1574, in _prepare_inputs
+    req_inputs = prepare(
+                 ^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/model/qwen3_omni/submodules.py", line 256, in prepare_inputs
+    raise RuntimeError(f"C4: {fwd_info.request_id}: images {fwd_info.step_metadata.get(c1_registry.FIRST)}"
+RuntimeError: C4: chatcmpl-af3af584d1074214bee581925f3ec431#66: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+2026-11-28 20:04:10,221 ERROR [worker_2] mstar.worker.step_pipeline: Worker worker_2 failing request chatcmpl-af3af584d1074214bee581925f3ec431#66: internal error (error id 66172d9821fb)
+2026-11-28 20:04:10,227 ERROR [conductor] mstar.conductor.conductor: Request chatcmpl-af3af584d1074214bee581925f3ec431#66 failed on a worker: internal error (error id 66172d9821fb)
+2026-11-28 20:04:10,227 INFO [conductor] mstar.conductor.conductor: Draining request chatcmpl-af3af584d1074214bee581925f3ec431#66 (4 participants) before teardown
+2026-11-28 20:04:10,238 ERROR [api_server] mstar.api_server.entrypoint: Request chatcmpl-af3af584d1074214bee581925f3ec431#66 failed in the engine: internal error (error id 66172d9821fb)
+2026-11-28 20:04:10,325 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 9 of its 12 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:04:10,325 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 9 of its 12 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:04:10,734 ERROR [worker_2] mstar.engine.engine: request 0 failed (node=vision_encoder, walk=prefill_vision) [error id a2056325bc88]: RuntimeError: C4: chatcmpl-19298b298f5345aaa0c1e8c8a5f3cf18#68: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+Traceback (most recent call last):
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/engine/engine.py", line 1574, in _prepare_inputs
+    req_inputs = prepare(
+                 ^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/model/qwen3_omni/submodules.py", line 256, in prepare_inputs
+    raise RuntimeError(f"C4: {fwd_info.request_id}: images {fwd_info.step_metadata.get(c1_registry.FIRST)}"
+RuntimeError: C4: chatcmpl-19298b298f5345aaa0c1e8c8a5f3cf18#68: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+2026-11-28 20:04:10,735 ERROR [worker_2] mstar.worker.step_pipeline: Worker worker_2 failing request chatcmpl-19298b298f5345aaa0c1e8c8a5f3cf18#68: internal error (error id a2056325bc88)
+2026-11-28 20:04:10,736 ERROR [conductor] mstar.conductor.conductor: Request chatcmpl-19298b298f5345aaa0c1e8c8a5f3cf18#68 failed on a worker: internal error (error id a2056325bc88)
+2026-11-28 20:04:10,736 INFO [conductor] mstar.conductor.conductor: Draining request chatcmpl-19298b298f5345aaa0c1e8c8a5f3cf18#68 (4 participants) before teardown
+2026-11-28 20:04:10,736 ERROR [api_server] mstar.api_server.entrypoint: Request chatcmpl-19298b298f5345aaa0c1e8c8a5f3cf18#68 failed in the engine: internal error (error id a2056325bc88)
+2026-11-28 20:04:10,806 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 11 of its 14 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:04:10,807 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 11 of its 14 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:04:11,170 ERROR [worker_2] mstar.engine.engine: request 0 failed (node=vision_encoder, walk=prefill_vision) [error id 455a953e8e99]: RuntimeError: C4: chatcmpl-a18484b25bd34cdfad853a7a8b748b31#70: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+Traceback (most recent call last):
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/engine/engine.py", line 1574, in _prepare_inputs
+    req_inputs = prepare(
+                 ^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/model/qwen3_omni/submodules.py", line 256, in prepare_inputs
+    raise RuntimeError(f"C4: {fwd_info.request_id}: images {fwd_info.step_metadata.get(c1_registry.FIRST)}"
+RuntimeError: C4: chatcmpl-a18484b25bd34cdfad853a7a8b748b31#70: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+2026-11-28 20:04:11,170 ERROR [worker_2] mstar.worker.step_pipeline: Worker worker_2 failing request chatcmpl-a18484b25bd34cdfad853a7a8b748b31#70: internal error (error id 455a953e8e99)
+2026-11-28 20:04:11,171 ERROR [conductor] mstar.conductor.conductor: Request chatcmpl-a18484b25bd34cdfad853a7a8b748b31#70 failed on a worker: internal error (error id 455a953e8e99)
+2026-11-28 20:04:11,171 INFO [conductor] mstar.conductor.conductor: Draining request chatcmpl-a18484b25bd34cdfad853a7a8b748b31#70 (4 participants) before teardown
+2026-11-28 20:04:11,172 ERROR [api_server] mstar.api_server.entrypoint: Request chatcmpl-a18484b25bd34cdfad853a7a8b748b31#70 failed in the engine: internal error (error id 455a953e8e99)
+2026-11-28 20:04:11,225 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 14 of its 16 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:04:11,227 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 14 of its 16 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:04:11,691 ERROR [worker_2] mstar.engine.engine: request 0 failed (node=vision_encoder, walk=prefill_vision) [error id dec974c35091]: RuntimeError: C4: chatcmpl-5626c7fe9db34a3c8ad6719704f9e134#72: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+Traceback (most recent call last):
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/engine/engine.py", line 1574, in _prepare_inputs
+    req_inputs = prepare(
+                 ^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/model/qwen3_omni/submodules.py", line 256, in prepare_inputs
+    raise RuntimeError(f"C4: {fwd_info.request_id}: images {fwd_info.step_metadata.get(c1_registry.FIRST)}"
+RuntimeError: C4: chatcmpl-5626c7fe9db34a3c8ad6719704f9e134#72: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+2026-11-28 20:04:11,692 ERROR [worker_2] mstar.worker.step_pipeline: Worker worker_2 failing request chatcmpl-5626c7fe9db34a3c8ad6719704f9e134#72: internal error (error id dec974c35091)
+2026-11-28 20:04:11,692 ERROR [conductor] mstar.conductor.conductor: Request chatcmpl-5626c7fe9db34a3c8ad6719704f9e134#72 failed on a worker: internal error (error id dec974c35091)
+2026-11-28 20:04:11,692 INFO [conductor] mstar.conductor.conductor: Draining request chatcmpl-5626c7fe9db34a3c8ad6719704f9e134#72 (4 participants) before teardown
+2026-11-28 20:04:11,694 ERROR [api_server] mstar.api_server.entrypoint: Request chatcmpl-5626c7fe9db34a3c8ad6719704f9e134#72 failed in the engine: internal error (error id dec974c35091)
+2026-11-28 20:04:11,742 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 16 of its 19 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:04:11,745 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 16 of its 19 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:04:12,172 ERROR [worker_2] mstar.engine.engine: request 0 failed (node=vision_encoder, walk=prefill_vision) [error id 80a6126a5f38]: RuntimeError: C4: chatcmpl-df535c6665414bc2960117a4ac21af53#74: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+Traceback (most recent call last):
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/engine/engine.py", line 1574, in _prepare_inputs
+    req_inputs = prepare(
+                 ^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/model/qwen3_omni/submodules.py", line 256, in prepare_inputs
+    raise RuntimeError(f"C4: {fwd_info.request_id}: images {fwd_info.step_metadata.get(c1_registry.FIRST)}"
+RuntimeError: C4: chatcmpl-df535c6665414bc2960117a4ac21af53#74: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+2026-11-28 20:04:12,174 ERROR [worker_2] mstar.worker.step_pipeline: Worker worker_2 failing request chatcmpl-df535c6665414bc2960117a4ac21af53#74: internal error (error id 80a6126a5f38)
+2026-11-28 20:04:12,174 ERROR [conductor] mstar.conductor.conductor: Request chatcmpl-df535c6665414bc2960117a4ac21af53#74 failed on a worker: internal error (error id 80a6126a5f38)
+2026-11-28 20:04:12,174 INFO [conductor] mstar.conductor.conductor: Draining request chatcmpl-df535c6665414bc2960117a4ac21af53#74 (4 participants) before teardown
+2026-11-28 20:04:12,175 ERROR [api_server] mstar.api_server.entrypoint: Request chatcmpl-df535c6665414bc2960117a4ac21af53#74 failed in the engine: internal error (error id 80a6126a5f38)
+2026-11-28 20:04:12,215 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 19 of its 21 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:04:12,215 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 19 of its 21 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:04:12,672 ERROR [worker_2] mstar.engine.engine: request 0 failed (node=vision_encoder, walk=prefill_vision) [error id 8e31bbdc92e9]: RuntimeError: C4: chatcmpl-7eeb9fc4243a4604a02470813cc8f969#76: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+Traceback (most recent call last):
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/engine/engine.py", line 1574, in _prepare_inputs
+    req_inputs = prepare(
+                 ^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/model/qwen3_omni/submodules.py", line 256, in prepare_inputs
+    raise RuntimeError(f"C4: {fwd_info.request_id}: images {fwd_info.step_metadata.get(c1_registry.FIRST)}"
+RuntimeError: C4: chatcmpl-7eeb9fc4243a4604a02470813cc8f969#76: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+2026-11-28 20:04:12,675 ERROR [worker_2] mstar.worker.step_pipeline: Worker worker_2 failing request chatcmpl-7eeb9fc4243a4604a02470813cc8f969#76: internal error (error id 8e31bbdc92e9)
+2026-11-28 20:04:12,676 ERROR [conductor] mstar.conductor.conductor: Request chatcmpl-7eeb9fc4243a4604a02470813cc8f969#76 failed on a worker: internal error (error id 8e31bbdc92e9)
+2026-11-28 20:04:12,676 INFO [conductor] mstar.conductor.conductor: Draining request chatcmpl-7eeb9fc4243a4604a02470813cc8f969#76 (4 participants) before teardown
+2026-11-28 20:04:12,677 ERROR [api_server] mstar.api_server.entrypoint: Request chatcmpl-7eeb9fc4243a4604a02470813cc8f969#76 failed in the engine: internal error (error id 8e31bbdc92e9)
+2026-11-28 20:04:12,739 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 21 of its 23 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:04:12,747 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 21 of its 23 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:04:13,173 ERROR [worker_2] mstar.engine.engine: request 0 failed (node=vision_encoder, walk=prefill_vision) [error id 05102275344c]: RuntimeError: C4: chatcmpl-3f9a2c5b99c348d6896218adf9e476fa#78: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+Traceback (most recent call last):
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/engine/engine.py", line 1574, in _prepare_inputs
+    req_inputs = prepare(
+                 ^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/model/qwen3_omni/submodules.py", line 256, in prepare_inputs
+    raise RuntimeError(f"C4: {fwd_info.request_id}: images {fwd_info.step_metadata.get(c1_registry.FIRST)}"
+RuntimeError: C4: chatcmpl-3f9a2c5b99c348d6896218adf9e476fa#78: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+2026-11-28 20:04:13,174 ERROR [worker_2] mstar.worker.step_pipeline: Worker worker_2 failing request chatcmpl-3f9a2c5b99c348d6896218adf9e476fa#78: internal error (error id 05102275344c)
+2026-11-28 20:04:13,177 ERROR [conductor] mstar.conductor.conductor: Request chatcmpl-3f9a2c5b99c348d6896218adf9e476fa#78 failed on a worker: internal error (error id 05102275344c)
+2026-11-28 20:04:13,177 INFO [conductor] mstar.conductor.conductor: Draining request chatcmpl-3f9a2c5b99c348d6896218adf9e476fa#78 (4 participants) before teardown
+2026-11-28 20:04:13,180 ERROR [api_server] mstar.api_server.entrypoint: Request chatcmpl-3f9a2c5b99c348d6896218adf9e476fa#78 failed in the engine: internal error (error id 05102275344c)
+2026-11-28 20:04:13,234 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 23 of its 26 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:04:13,234 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 23 of its 26 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:04:13,672 ERROR [worker_2] mstar.engine.engine: request 0 failed (node=vision_encoder, walk=prefill_vision) [error id 0eb2e2795b5f]: RuntimeError: C4: chatcmpl-dc224f0ba6a34cd49d6f770ce189adf5#80: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+Traceback (most recent call last):
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/engine/engine.py", line 1574, in _prepare_inputs
+    req_inputs = prepare(
+                 ^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/model/qwen3_omni/submodules.py", line 256, in prepare_inputs
+    raise RuntimeError(f"C4: {fwd_info.request_id}: images {fwd_info.step_metadata.get(c1_registry.FIRST)}"
+RuntimeError: C4: chatcmpl-dc224f0ba6a34cd49d6f770ce189adf5#80: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+2026-11-28 20:04:13,673 ERROR [worker_2] mstar.worker.step_pipeline: Worker worker_2 failing request chatcmpl-dc224f0ba6a34cd49d6f770ce189adf5#80: internal error (error id 0eb2e2795b5f)
+2026-11-28 20:04:13,673 ERROR [conductor] mstar.conductor.conductor: Request chatcmpl-dc224f0ba6a34cd49d6f770ce189adf5#80 failed on a worker: internal error (error id 0eb2e2795b5f)
+2026-11-28 20:04:13,673 INFO [conductor] mstar.conductor.conductor: Draining request chatcmpl-dc224f0ba6a34cd49d6f770ce189adf5#80 (4 participants) before teardown
+2026-11-28 20:04:13,674 ERROR [api_server] mstar.api_server.entrypoint: Request chatcmpl-dc224f0ba6a34cd49d6f770ce189adf5#80 failed in the engine: internal error (error id 0eb2e2795b5f)
+2026-11-28 20:04:13,731 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 26 of its 28 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:04:13,740 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 26 of its 28 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:04:14,176 ERROR [worker_2] mstar.engine.engine: request 0 failed (node=vision_encoder, walk=prefill_vision) [error id f5df3c69b71f]: RuntimeError: C4: chatcmpl-e1c6a7c16c554889acbb7ce7cc5b38c4#82: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+Traceback (most recent call last):
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/engine/engine.py", line 1574, in _prepare_inputs
+    req_inputs = prepare(
+                 ^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/model/qwen3_omni/submodules.py", line 256, in prepare_inputs
+    raise RuntimeError(f"C4: {fwd_info.request_id}: images {fwd_info.step_metadata.get(c1_registry.FIRST)}"
+RuntimeError: C4: chatcmpl-e1c6a7c16c554889acbb7ce7cc5b38c4#82: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+2026-11-28 20:04:14,179 ERROR [worker_2] mstar.worker.step_pipeline: Worker worker_2 failing request chatcmpl-e1c6a7c16c554889acbb7ce7cc5b38c4#82: internal error (error id f5df3c69b71f)
+2026-11-28 20:04:14,180 ERROR [conductor] mstar.conductor.conductor: Request chatcmpl-e1c6a7c16c554889acbb7ce7cc5b38c4#82 failed on a worker: internal error (error id f5df3c69b71f)
+2026-11-28 20:04:14,180 INFO [conductor] mstar.conductor.conductor: Draining request chatcmpl-e1c6a7c16c554889acbb7ce7cc5b38c4#82 (4 participants) before teardown
+2026-11-28 20:04:14,181 ERROR [api_server] mstar.api_server.entrypoint: Request chatcmpl-e1c6a7c16c554889acbb7ce7cc5b38c4#82 failed in the engine: internal error (error id f5df3c69b71f)
+2026-11-28 20:04:14,240 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 28 of its 30 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:04:14,248 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 28 of its 30 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:04:14,678 ERROR [worker_2] mstar.engine.engine: request 0 failed (node=vision_encoder, walk=prefill_vision) [error id 571e341bd9b4]: RuntimeError: C4: chatcmpl-ceb79b2b5015442da4f5a1c3318f578c#84: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+Traceback (most recent call last):
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/engine/engine.py", line 1574, in _prepare_inputs
+    req_inputs = prepare(
+                 ^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/model/qwen3_omni/submodules.py", line 256, in prepare_inputs
+    raise RuntimeError(f"C4: {fwd_info.request_id}: images {fwd_info.step_metadata.get(c1_registry.FIRST)}"
+RuntimeError: C4: chatcmpl-ceb79b2b5015442da4f5a1c3318f578c#84: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+2026-11-28 20:04:14,681 ERROR [worker_2] mstar.worker.step_pipeline: Worker worker_2 failing request chatcmpl-ceb79b2b5015442da4f5a1c3318f578c#84: internal error (error id 571e341bd9b4)
+2026-11-28 20:04:14,682 ERROR [conductor] mstar.conductor.conductor: Request chatcmpl-ceb79b2b5015442da4f5a1c3318f578c#84 failed on a worker: internal error (error id 571e341bd9b4)
+2026-11-28 20:04:14,682 INFO [conductor] mstar.conductor.conductor: Draining request chatcmpl-ceb79b2b5015442da4f5a1c3318f578c#84 (4 participants) before teardown
+2026-11-28 20:04:14,683 ERROR [api_server] mstar.api_server.entrypoint: Request chatcmpl-ceb79b2b5015442da4f5a1c3318f578c#84 failed in the engine: internal error (error id 571e341bd9b4)
+2026-11-28 20:04:14,744 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 30 of its 33 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:04:14,752 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 30 of its 33 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:04:15,176 ERROR [worker_2] mstar.engine.engine: request 0 failed (node=vision_encoder, walk=prefill_vision) [error id c936355dbd0e]: RuntimeError: C4: chatcmpl-98674623edd0482da178d32fd35356be#86: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+Traceback (most recent call last):
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/engine/engine.py", line 1574, in _prepare_inputs
+    req_inputs = prepare(
+                 ^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/model/qwen3_omni/submodules.py", line 256, in prepare_inputs
+    raise RuntimeError(f"C4: {fwd_info.request_id}: images {fwd_info.step_metadata.get(c1_registry.FIRST)}"
+RuntimeError: C4: chatcmpl-98674623edd0482da178d32fd35356be#86: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+2026-11-28 20:04:15,176 ERROR [worker_2] mstar.worker.step_pipeline: Worker worker_2 failing request chatcmpl-98674623edd0482da178d32fd35356be#86: internal error (error id c936355dbd0e)
+2026-11-28 20:04:15,176 ERROR [conductor] mstar.conductor.conductor: Request chatcmpl-98674623edd0482da178d32fd35356be#86 failed on a worker: internal error (error id c936355dbd0e)
+2026-11-28 20:04:15,177 INFO [conductor] mstar.conductor.conductor: Draining request chatcmpl-98674623edd0482da178d32fd35356be#86 (4 participants) before teardown
+2026-11-28 20:04:15,178 ERROR [api_server] mstar.api_server.entrypoint: Request chatcmpl-98674623edd0482da178d32fd35356be#86 failed in the engine: internal error (error id c936355dbd0e)
+2026-11-28 20:04:15,263 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 33 of its 35 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:04:15,264 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 33 of its 35 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:04:15,689 ERROR [worker_2] mstar.engine.engine: request 0 failed (node=vision_encoder, walk=prefill_vision) [error id 72689ca3a6e8]: RuntimeError: C4: chatcmpl-23a5501893e9435a95be95003e623dda#88: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+Traceback (most recent call last):
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/engine/engine.py", line 1574, in _prepare_inputs
+    req_inputs = prepare(
+                 ^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/model/qwen3_omni/submodules.py", line 256, in prepare_inputs
+    raise RuntimeError(f"C4: {fwd_info.request_id}: images {fwd_info.step_metadata.get(c1_registry.FIRST)}"
+RuntimeError: C4: chatcmpl-23a5501893e9435a95be95003e623dda#88: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+2026-11-28 20:04:15,691 ERROR [worker_2] mstar.worker.step_pipeline: Worker worker_2 failing request chatcmpl-23a5501893e9435a95be95003e623dda#88: internal error (error id 72689ca3a6e8)
+2026-11-28 20:04:15,691 ERROR [conductor] mstar.conductor.conductor: Request chatcmpl-23a5501893e9435a95be95003e623dda#88 failed on a worker: internal error (error id 72689ca3a6e8)
+2026-11-28 20:04:15,691 INFO [conductor] mstar.conductor.conductor: Draining request chatcmpl-23a5501893e9435a95be95003e623dda#88 (4 participants) before teardown
+2026-11-28 20:04:15,694 ERROR [api_server] mstar.api_server.entrypoint: Request chatcmpl-23a5501893e9435a95be95003e623dda#88 failed in the engine: internal error (error id 72689ca3a6e8)
+2026-11-28 20:04:15,762 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 35 of its 37 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:04:15,762 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 35 of its 37 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:04:16,118 ERROR [worker_2] mstar.engine.engine: request 0 failed (node=vision_encoder, walk=prefill_vision) [error id 179df30a3b73]: RuntimeError: C4: chatcmpl-03ce335dd4514eb48b15757318cb4f4f#90: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+Traceback (most recent call last):
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/engine/engine.py", line 1574, in _prepare_inputs
+    req_inputs = prepare(
+                 ^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/model/qwen3_omni/submodules.py", line 256, in prepare_inputs
+    raise RuntimeError(f"C4: {fwd_info.request_id}: images {fwd_info.step_metadata.get(c1_registry.FIRST)}"
+RuntimeError: C4: chatcmpl-03ce335dd4514eb48b15757318cb4f4f#90: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+2026-11-28 20:04:16,119 ERROR [worker_2] mstar.worker.step_pipeline: Worker worker_2 failing request chatcmpl-03ce335dd4514eb48b15757318cb4f4f#90: internal error (error id 179df30a3b73)
+2026-11-28 20:04:16,119 ERROR [conductor] mstar.conductor.conductor: Request chatcmpl-03ce335dd4514eb48b15757318cb4f4f#90 failed on a worker: internal error (error id 179df30a3b73)
+2026-11-28 20:04:16,119 INFO [conductor] mstar.conductor.conductor: Draining request chatcmpl-03ce335dd4514eb48b15757318cb4f4f#90 (4 participants) before teardown
+2026-11-28 20:04:16,120 ERROR [api_server] mstar.api_server.entrypoint: Request chatcmpl-03ce335dd4514eb48b15757318cb4f4f#90 failed in the engine: internal error (error id 179df30a3b73)
+2026-11-28 20:04:16,189 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 37 of its 38 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:04:16,189 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 37 of its 38 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:04:16,338 ERROR [worker_2] mstar.engine.engine: request 0 failed (node=vision_encoder, walk=prefill_vision) [error id e0e3bf02d9f1]: RuntimeError: C4: chatcmpl-235a96cf601e4768b3cb1ddb3ae8a85e#92: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+Traceback (most recent call last):
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/engine/engine.py", line 1574, in _prepare_inputs
+    req_inputs = prepare(
+                 ^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/model/qwen3_omni/submodules.py", line 256, in prepare_inputs
+    raise RuntimeError(f"C4: {fwd_info.request_id}: images {fwd_info.step_metadata.get(c1_registry.FIRST)}"
+RuntimeError: C4: chatcmpl-235a96cf601e4768b3cb1ddb3ae8a85e#92: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+2026-11-28 20:04:16,338 ERROR [worker_2] mstar.worker.step_pipeline: Worker worker_2 failing request chatcmpl-235a96cf601e4768b3cb1ddb3ae8a85e#92: internal error (error id e0e3bf02d9f1)
+2026-11-28 20:04:16,339 ERROR [conductor] mstar.conductor.conductor: Request chatcmpl-235a96cf601e4768b3cb1ddb3ae8a85e#92 failed on a worker: internal error (error id e0e3bf02d9f1)
+2026-11-28 20:04:16,339 INFO [conductor] mstar.conductor.conductor: Draining request chatcmpl-235a96cf601e4768b3cb1ddb3ae8a85e#92 (4 participants) before teardown
+2026-11-28 20:04:16,340 ERROR [api_server] mstar.api_server.entrypoint: Request chatcmpl-235a96cf601e4768b3cb1ddb3ae8a85e#92 failed in the engine: internal error (error id e0e3bf02d9f1)
+2026-11-28 20:04:16,425 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 37 of its 40 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:04:16,428 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 37 of its 40 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:04:16,689 ERROR [worker_2] mstar.engine.engine: request 0 failed (node=vision_encoder, walk=prefill_vision) [error id ee8b55b17247]: RuntimeError: C4: chatcmpl-be3ea9b51d8f40cd95aa606bf2052546#94: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+Traceback (most recent call last):
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/engine/engine.py", line 1574, in _prepare_inputs
+    req_inputs = prepare(
+                 ^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/model/qwen3_omni/submodules.py", line 256, in prepare_inputs
+    raise RuntimeError(f"C4: {fwd_info.request_id}: images {fwd_info.step_metadata.get(c1_registry.FIRST)}"
+RuntimeError: C4: chatcmpl-be3ea9b51d8f40cd95aa606bf2052546#94: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+2026-11-28 20:04:16,690 ERROR [worker_2] mstar.worker.step_pipeline: Worker worker_2 failing request chatcmpl-be3ea9b51d8f40cd95aa606bf2052546#94: internal error (error id ee8b55b17247)
+2026-11-28 20:04:16,690 ERROR [conductor] mstar.conductor.conductor: Request chatcmpl-be3ea9b51d8f40cd95aa606bf2052546#94 failed on a worker: internal error (error id ee8b55b17247)
+2026-11-28 20:04:16,690 INFO [conductor] mstar.conductor.conductor: Draining request chatcmpl-be3ea9b51d8f40cd95aa606bf2052546#94 (4 participants) before teardown
+2026-11-28 20:04:16,691 ERROR [api_server] mstar.api_server.entrypoint: Request chatcmpl-be3ea9b51d8f40cd95aa606bf2052546#94 failed in the engine: internal error (error id ee8b55b17247)
+2026-11-28 20:04:16,772 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 40 of its 42 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:04:16,773 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 40 of its 42 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:04:17,163 ERROR [worker_2] mstar.engine.engine: request 0 failed (node=vision_encoder, walk=prefill_vision) [error id 4512aa234147]: RuntimeError: C4: chatcmpl-ede95f013f024292afc36d54ef9a0913#96: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+Traceback (most recent call last):
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/engine/engine.py", line 1574, in _prepare_inputs
+    req_inputs = prepare(
+                 ^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/model/qwen3_omni/submodules.py", line 256, in prepare_inputs
+    raise RuntimeError(f"C4: {fwd_info.request_id}: images {fwd_info.step_metadata.get(c1_registry.FIRST)}"
+RuntimeError: C4: chatcmpl-ede95f013f024292afc36d54ef9a0913#96: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+2026-11-28 20:04:17,164 ERROR [worker_2] mstar.worker.step_pipeline: Worker worker_2 failing request chatcmpl-ede95f013f024292afc36d54ef9a0913#96: internal error (error id 4512aa234147)
+2026-11-28 20:04:17,164 ERROR [conductor] mstar.conductor.conductor: Request chatcmpl-ede95f013f024292afc36d54ef9a0913#96 failed on a worker: internal error (error id 4512aa234147)
+2026-11-28 20:04:17,164 INFO [conductor] mstar.conductor.conductor: Draining request chatcmpl-ede95f013f024292afc36d54ef9a0913#96 (4 participants) before teardown
+2026-11-28 20:04:17,165 ERROR [api_server] mstar.api_server.entrypoint: Request chatcmpl-ede95f013f024292afc36d54ef9a0913#96 failed in the engine: internal error (error id 4512aa234147)
+2026-11-28 20:04:17,264 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 42 of its 45 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:04:17,265 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 42 of its 45 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:04:17,718 ERROR [worker_2] mstar.engine.engine: request 0 failed (node=vision_encoder, walk=prefill_vision) [error id 8daff720fc05]: RuntimeError: C4: chatcmpl-8247a3eb6a4c4811a99221490d1099e1#98: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+Traceback (most recent call last):
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/engine/engine.py", line 1574, in _prepare_inputs
+    req_inputs = prepare(
+                 ^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/model/qwen3_omni/submodules.py", line 256, in prepare_inputs
+    raise RuntimeError(f"C4: {fwd_info.request_id}: images {fwd_info.step_metadata.get(c1_registry.FIRST)}"
+RuntimeError: C4: chatcmpl-8247a3eb6a4c4811a99221490d1099e1#98: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+2026-11-28 20:04:17,719 ERROR [worker_2] mstar.worker.step_pipeline: Worker worker_2 failing request chatcmpl-8247a3eb6a4c4811a99221490d1099e1#98: internal error (error id 8daff720fc05)
+2026-11-28 20:04:17,719 ERROR [conductor] mstar.conductor.conductor: Request chatcmpl-8247a3eb6a4c4811a99221490d1099e1#98 failed on a worker: internal error (error id 8daff720fc05)
+2026-11-28 20:04:17,719 INFO [conductor] mstar.conductor.conductor: Draining request chatcmpl-8247a3eb6a4c4811a99221490d1099e1#98 (4 participants) before teardown
+2026-11-28 20:04:17,720 ERROR [api_server] mstar.api_server.entrypoint: Request chatcmpl-8247a3eb6a4c4811a99221490d1099e1#98 failed in the engine: internal error (error id 8daff720fc05)
+2026-11-28 20:04:17,839 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 45 of its 47 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:04:17,840 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 45 of its 47 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:04:18,167 ERROR [worker_2] mstar.engine.engine: request 0 failed (node=vision_encoder, walk=prefill_vision) [error id 8e66dbc1e4e5]: RuntimeError: C4: chatcmpl-bf93794006184778b74608849f340cfe#100: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+Traceback (most recent call last):
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/engine/engine.py", line 1574, in _prepare_inputs
+    req_inputs = prepare(
+                 ^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/model/qwen3_omni/submodules.py", line 256, in prepare_inputs
+    raise RuntimeError(f"C4: {fwd_info.request_id}: images {fwd_info.step_metadata.get(c1_registry.FIRST)}"
+RuntimeError: C4: chatcmpl-bf93794006184778b74608849f340cfe#100: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+2026-11-28 20:04:18,168 ERROR [worker_2] mstar.worker.step_pipeline: Worker worker_2 failing request chatcmpl-bf93794006184778b74608849f340cfe#100: internal error (error id 8e66dbc1e4e5)
+2026-11-28 20:04:18,169 ERROR [conductor] mstar.conductor.conductor: Request chatcmpl-bf93794006184778b74608849f340cfe#100 failed on a worker: internal error (error id 8e66dbc1e4e5)
+2026-11-28 20:04:18,169 INFO [conductor] mstar.conductor.conductor: Draining request chatcmpl-bf93794006184778b74608849f340cfe#100 (4 participants) before teardown
+2026-11-28 20:04:18,170 ERROR [api_server] mstar.api_server.entrypoint: Request chatcmpl-bf93794006184778b74608849f340cfe#100 failed in the engine: internal error (error id 8e66dbc1e4e5)
+2026-11-28 20:04:18,322 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 47 of its 49 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:04:18,323 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 47 of its 49 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:04:18,659 ERROR [worker_2] mstar.engine.engine: request 0 failed (node=vision_encoder, walk=prefill_vision) [error id e6310e1d6d64]: RuntimeError: C4: chatcmpl-8b22dac009f34a0f896303d236c543a6#102: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+Traceback (most recent call last):
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/engine/engine.py", line 1574, in _prepare_inputs
+    req_inputs = prepare(
+                 ^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/model/qwen3_omni/submodules.py", line 256, in prepare_inputs
+    raise RuntimeError(f"C4: {fwd_info.request_id}: images {fwd_info.step_metadata.get(c1_registry.FIRST)}"
+RuntimeError: C4: chatcmpl-8b22dac009f34a0f896303d236c543a6#102: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+2026-11-28 20:04:18,660 ERROR [worker_2] mstar.worker.step_pipeline: Worker worker_2 failing request chatcmpl-8b22dac009f34a0f896303d236c543a6#102: internal error (error id e6310e1d6d64)
+2026-11-28 20:04:18,660 ERROR [conductor] mstar.conductor.conductor: Request chatcmpl-8b22dac009f34a0f896303d236c543a6#102 failed on a worker: internal error (error id e6310e1d6d64)
+2026-11-28 20:04:18,661 INFO [conductor] mstar.conductor.conductor: Draining request chatcmpl-8b22dac009f34a0f896303d236c543a6#102 (4 participants) before teardown
+2026-11-28 20:04:18,661 ERROR [api_server] mstar.api_server.entrypoint: Request chatcmpl-8b22dac009f34a0f896303d236c543a6#102 failed in the engine: internal error (error id e6310e1d6d64)
+2026-11-28 20:04:18,745 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 49 of its 52 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:04:18,748 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 49 of its 52 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:04:19,166 ERROR [worker_2] mstar.engine.engine: request 0 failed (node=vision_encoder, walk=prefill_vision) [error id 87e438232a4a]: RuntimeError: C4: chatcmpl-026cb9a837434c36be52fdb33187fb71#104: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+Traceback (most recent call last):
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/engine/engine.py", line 1574, in _prepare_inputs
+    req_inputs = prepare(
+                 ^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/model/qwen3_omni/submodules.py", line 256, in prepare_inputs
+    raise RuntimeError(f"C4: {fwd_info.request_id}: images {fwd_info.step_metadata.get(c1_registry.FIRST)}"
+RuntimeError: C4: chatcmpl-026cb9a837434c36be52fdb33187fb71#104: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+2026-11-28 20:04:19,167 ERROR [worker_2] mstar.worker.step_pipeline: Worker worker_2 failing request chatcmpl-026cb9a837434c36be52fdb33187fb71#104: internal error (error id 87e438232a4a)
+2026-11-28 20:04:19,167 ERROR [conductor] mstar.conductor.conductor: Request chatcmpl-026cb9a837434c36be52fdb33187fb71#104 failed on a worker: internal error (error id 87e438232a4a)
+2026-11-28 20:04:19,167 INFO [conductor] mstar.conductor.conductor: Draining request chatcmpl-026cb9a837434c36be52fdb33187fb71#104 (4 participants) before teardown
+2026-11-28 20:04:19,168 ERROR [api_server] mstar.api_server.entrypoint: Request chatcmpl-026cb9a837434c36be52fdb33187fb71#104 failed in the engine: internal error (error id 87e438232a4a)
+2026-11-28 20:04:19,261 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 52 of its 54 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:04:19,265 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 52 of its 54 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:04:19,688 ERROR [worker_2] mstar.engine.engine: request 0 failed (node=vision_encoder, walk=prefill_vision) [error id 72e4b39ee23e]: RuntimeError: C4: chatcmpl-f24a77931e7f4700bc7a7574bb6aab18#106: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+Traceback (most recent call last):
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/engine/engine.py", line 1574, in _prepare_inputs
+    req_inputs = prepare(
+                 ^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/model/qwen3_omni/submodules.py", line 256, in prepare_inputs
+    raise RuntimeError(f"C4: {fwd_info.request_id}: images {fwd_info.step_metadata.get(c1_registry.FIRST)}"
+RuntimeError: C4: chatcmpl-f24a77931e7f4700bc7a7574bb6aab18#106: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+2026-11-28 20:04:19,688 ERROR [worker_2] mstar.worker.step_pipeline: Worker worker_2 failing request chatcmpl-f24a77931e7f4700bc7a7574bb6aab18#106: internal error (error id 72e4b39ee23e)
+2026-11-28 20:04:19,689 ERROR [conductor] mstar.conductor.conductor: Request chatcmpl-f24a77931e7f4700bc7a7574bb6aab18#106 failed on a worker: internal error (error id 72e4b39ee23e)
+2026-11-28 20:04:19,689 INFO [conductor] mstar.conductor.conductor: Draining request chatcmpl-f24a77931e7f4700bc7a7574bb6aab18#106 (4 participants) before teardown
+2026-11-28 20:04:19,690 ERROR [api_server] mstar.api_server.entrypoint: Request chatcmpl-f24a77931e7f4700bc7a7574bb6aab18#106 failed in the engine: internal error (error id 72e4b39ee23e)
+2026-11-28 20:04:19,795 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 54 of its 56 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:04:19,795 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 54 of its 56 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:04:20,193 ERROR [worker_2] mstar.engine.engine: request 0 failed (node=vision_encoder, walk=prefill_vision) [error id cebadde0a6f5]: RuntimeError: C4: chatcmpl-f1babb36ec9049b68b4f5deeb01e35b1#108: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+Traceback (most recent call last):
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/engine/engine.py", line 1574, in _prepare_inputs
+    req_inputs = prepare(
+                 ^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/model/qwen3_omni/submodules.py", line 256, in prepare_inputs
+    raise RuntimeError(f"C4: {fwd_info.request_id}: images {fwd_info.step_metadata.get(c1_registry.FIRST)}"
+RuntimeError: C4: chatcmpl-f1babb36ec9049b68b4f5deeb01e35b1#108: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+2026-11-28 20:04:20,195 ERROR [worker_2] mstar.worker.step_pipeline: Worker worker_2 failing request chatcmpl-f1babb36ec9049b68b4f5deeb01e35b1#108: internal error (error id cebadde0a6f5)
+2026-11-28 20:04:20,195 ERROR [conductor] mstar.conductor.conductor: Request chatcmpl-f1babb36ec9049b68b4f5deeb01e35b1#108 failed on a worker: internal error (error id cebadde0a6f5)
+2026-11-28 20:04:20,195 INFO [conductor] mstar.conductor.conductor: Draining request chatcmpl-f1babb36ec9049b68b4f5deeb01e35b1#108 (4 participants) before teardown
+2026-11-28 20:04:20,196 ERROR [api_server] mstar.api_server.entrypoint: Request chatcmpl-f1babb36ec9049b68b4f5deeb01e35b1#108 failed in the engine: internal error (error id cebadde0a6f5)
+2026-11-28 20:04:20,343 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 56 of its 59 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:04:20,344 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 56 of its 59 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:04:20,698 ERROR [worker_2] mstar.engine.engine: request 0 failed (node=vision_encoder, walk=prefill_vision) [error id aab5f3e46fa4]: RuntimeError: C4: chatcmpl-c360913053d64aa099fa96335adf45d0#110: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+Traceback (most recent call last):
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/engine/engine.py", line 1574, in _prepare_inputs
+    req_inputs = prepare(
+                 ^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/model/qwen3_omni/submodules.py", line 256, in prepare_inputs
+    raise RuntimeError(f"C4: {fwd_info.request_id}: images {fwd_info.step_metadata.get(c1_registry.FIRST)}"
+RuntimeError: C4: chatcmpl-c360913053d64aa099fa96335adf45d0#110: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+2026-11-28 20:04:20,699 ERROR [worker_2] mstar.worker.step_pipeline: Worker worker_2 failing request chatcmpl-c360913053d64aa099fa96335adf45d0#110: internal error (error id aab5f3e46fa4)
+2026-11-28 20:04:20,700 ERROR [conductor] mstar.conductor.conductor: Request chatcmpl-c360913053d64aa099fa96335adf45d0#110 failed on a worker: internal error (error id aab5f3e46fa4)
+2026-11-28 20:04:20,700 INFO [conductor] mstar.conductor.conductor: Draining request chatcmpl-c360913053d64aa099fa96335adf45d0#110 (4 participants) before teardown
+2026-11-28 20:04:20,701 ERROR [api_server] mstar.api_server.entrypoint: Request chatcmpl-c360913053d64aa099fa96335adf45d0#110 failed in the engine: internal error (error id aab5f3e46fa4)
+2026-11-28 20:04:20,867 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 59 of its 61 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:04:20,868 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 59 of its 61 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:04:21,164 ERROR [worker_2] mstar.engine.engine: request 0 failed (node=vision_encoder, walk=prefill_vision) [error id 445ecc38dd12]: RuntimeError: C4: chatcmpl-388790fd98714f6e92a892375a93bb35#112: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+Traceback (most recent call last):
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/engine/engine.py", line 1574, in _prepare_inputs
+    req_inputs = prepare(
+                 ^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/model/qwen3_omni/submodules.py", line 256, in prepare_inputs
+    raise RuntimeError(f"C4: {fwd_info.request_id}: images {fwd_info.step_metadata.get(c1_registry.FIRST)}"
+RuntimeError: C4: chatcmpl-388790fd98714f6e92a892375a93bb35#112: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+2026-11-28 20:04:21,167 ERROR [worker_2] mstar.worker.step_pipeline: Worker worker_2 failing request chatcmpl-388790fd98714f6e92a892375a93bb35#112: internal error (error id 445ecc38dd12)
+2026-11-28 20:04:21,167 ERROR [conductor] mstar.conductor.conductor: Request chatcmpl-388790fd98714f6e92a892375a93bb35#112 failed on a worker: internal error (error id 445ecc38dd12)
+2026-11-28 20:04:21,167 INFO [conductor] mstar.conductor.conductor: Draining request chatcmpl-388790fd98714f6e92a892375a93bb35#112 (4 participants) before teardown
+2026-11-28 20:04:21,173 ERROR [api_server] mstar.api_server.entrypoint: Request chatcmpl-388790fd98714f6e92a892375a93bb35#112 failed in the engine: internal error (error id 445ecc38dd12)
+2026-11-28 20:04:21,290 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 61 of its 63 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:04:21,290 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 61 of its 63 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:04:21,678 ERROR [worker_2] mstar.engine.engine: request 0 failed (node=vision_encoder, walk=prefill_vision) [error id e883600fc159]: RuntimeError: C4: chatcmpl-cd01fb3005b449c5ae357b0410bb5084#114: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+Traceback (most recent call last):
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/engine/engine.py", line 1574, in _prepare_inputs
+    req_inputs = prepare(
+                 ^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/model/qwen3_omni/submodules.py", line 256, in prepare_inputs
+    raise RuntimeError(f"C4: {fwd_info.request_id}: images {fwd_info.step_metadata.get(c1_registry.FIRST)}"
+RuntimeError: C4: chatcmpl-cd01fb3005b449c5ae357b0410bb5084#114: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+2026-11-28 20:04:21,678 ERROR [worker_2] mstar.worker.step_pipeline: Worker worker_2 failing request chatcmpl-cd01fb3005b449c5ae357b0410bb5084#114: internal error (error id e883600fc159)
+2026-11-28 20:04:21,678 ERROR [conductor] mstar.conductor.conductor: Request chatcmpl-cd01fb3005b449c5ae357b0410bb5084#114 failed on a worker: internal error (error id e883600fc159)
+2026-11-28 20:04:21,679 INFO [conductor] mstar.conductor.conductor: Draining request chatcmpl-cd01fb3005b449c5ae357b0410bb5084#114 (4 participants) before teardown
+2026-11-28 20:04:21,679 ERROR [api_server] mstar.api_server.entrypoint: Request chatcmpl-cd01fb3005b449c5ae357b0410bb5084#114 failed in the engine: internal error (error id e883600fc159)
+2026-11-28 20:04:21,804 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 63 of its 66 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:04:21,804 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 63 of its 66 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:04:22,187 ERROR [worker_2] mstar.engine.engine: request 0 failed (node=vision_encoder, walk=prefill_vision) [error id faedf0b644c8]: RuntimeError: C4: chatcmpl-80457fd2db9c4cf093db94926f2e61e5#116: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+Traceback (most recent call last):
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/engine/engine.py", line 1574, in _prepare_inputs
+    req_inputs = prepare(
+                 ^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/model/qwen3_omni/submodules.py", line 256, in prepare_inputs
+    raise RuntimeError(f"C4: {fwd_info.request_id}: images {fwd_info.step_metadata.get(c1_registry.FIRST)}"
+RuntimeError: C4: chatcmpl-80457fd2db9c4cf093db94926f2e61e5#116: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+2026-11-28 20:04:22,188 ERROR [worker_2] mstar.worker.step_pipeline: Worker worker_2 failing request chatcmpl-80457fd2db9c4cf093db94926f2e61e5#116: internal error (error id faedf0b644c8)
+2026-11-28 20:04:22,188 ERROR [conductor] mstar.conductor.conductor: Request chatcmpl-80457fd2db9c4cf093db94926f2e61e5#116 failed on a worker: internal error (error id faedf0b644c8)
+2026-11-28 20:04:22,188 INFO [conductor] mstar.conductor.conductor: Draining request chatcmpl-80457fd2db9c4cf093db94926f2e61e5#116 (4 participants) before teardown
+2026-11-28 20:04:22,189 ERROR [api_server] mstar.api_server.entrypoint: Request chatcmpl-80457fd2db9c4cf093db94926f2e61e5#116 failed in the engine: internal error (error id faedf0b644c8)
+2026-11-28 20:04:22,290 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 66 of its 68 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:04:22,290 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 66 of its 68 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:04:22,674 ERROR [worker_2] mstar.engine.engine: request 0 failed (node=vision_encoder, walk=prefill_vision) [error id fe656136a3d3]: RuntimeError: C4: chatcmpl-4e73588b17ba4e95b0318031c1517362#118: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+Traceback (most recent call last):
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/engine/engine.py", line 1574, in _prepare_inputs
+    req_inputs = prepare(
+                 ^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/model/qwen3_omni/submodules.py", line 256, in prepare_inputs
+    raise RuntimeError(f"C4: {fwd_info.request_id}: images {fwd_info.step_metadata.get(c1_registry.FIRST)}"
+RuntimeError: C4: chatcmpl-4e73588b17ba4e95b0318031c1517362#118: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+2026-11-28 20:04:22,676 ERROR [worker_2] mstar.worker.step_pipeline: Worker worker_2 failing request chatcmpl-4e73588b17ba4e95b0318031c1517362#118: internal error (error id fe656136a3d3)
+2026-11-28 20:04:22,677 ERROR [conductor] mstar.conductor.conductor: Request chatcmpl-4e73588b17ba4e95b0318031c1517362#118 failed on a worker: internal error (error id fe656136a3d3)
+2026-11-28 20:04:22,677 INFO [conductor] mstar.conductor.conductor: Draining request chatcmpl-4e73588b17ba4e95b0318031c1517362#118 (4 participants) before teardown
+2026-11-28 20:04:22,678 ERROR [api_server] mstar.api_server.entrypoint: Request chatcmpl-4e73588b17ba4e95b0318031c1517362#118 failed in the engine: internal error (error id fe656136a3d3)
+2026-11-28 20:04:22,800 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 68 of its 71 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:04:22,800 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 68 of its 71 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:04:23,231 ERROR [worker_2] mstar.engine.engine: request 0 failed (node=vision_encoder, walk=prefill_vision) [error id a929dbecfa06]: RuntimeError: C4: chatcmpl-7196ed76636b4cda81fdd3bad0a7bf5a#120: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+Traceback (most recent call last):
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/engine/engine.py", line 1574, in _prepare_inputs
+    req_inputs = prepare(
+                 ^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/model/qwen3_omni/submodules.py", line 256, in prepare_inputs
+    raise RuntimeError(f"C4: {fwd_info.request_id}: images {fwd_info.step_metadata.get(c1_registry.FIRST)}"
+RuntimeError: C4: chatcmpl-7196ed76636b4cda81fdd3bad0a7bf5a#120: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+2026-11-28 20:04:23,233 ERROR [worker_2] mstar.worker.step_pipeline: Worker worker_2 failing request chatcmpl-7196ed76636b4cda81fdd3bad0a7bf5a#120: internal error (error id a929dbecfa06)
+2026-11-28 20:04:23,233 ERROR [conductor] mstar.conductor.conductor: Request chatcmpl-7196ed76636b4cda81fdd3bad0a7bf5a#120 failed on a worker: internal error (error id a929dbecfa06)
+2026-11-28 20:04:23,233 INFO [conductor] mstar.conductor.conductor: Draining request chatcmpl-7196ed76636b4cda81fdd3bad0a7bf5a#120 (4 participants) before teardown
+2026-11-28 20:04:23,239 ERROR [api_server] mstar.api_server.entrypoint: Request chatcmpl-7196ed76636b4cda81fdd3bad0a7bf5a#120 failed in the engine: internal error (error id a929dbecfa06)
+2026-11-28 20:04:23,347 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 70 of its 73 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:04:23,352 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 70 of its 73 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:04:23,692 ERROR [worker_2] mstar.engine.engine: request 0 failed (node=vision_encoder, walk=prefill_vision) [error id 6df156630c75]: RuntimeError: C4: chatcmpl-f6161a64f5b7435cbf193b9ef244c3ec#122: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+Traceback (most recent call last):
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/engine/engine.py", line 1574, in _prepare_inputs
+    req_inputs = prepare(
+                 ^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/model/qwen3_omni/submodules.py", line 256, in prepare_inputs
+    raise RuntimeError(f"C4: {fwd_info.request_id}: images {fwd_info.step_metadata.get(c1_registry.FIRST)}"
+RuntimeError: C4: chatcmpl-f6161a64f5b7435cbf193b9ef244c3ec#122: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+2026-11-28 20:04:23,694 ERROR [worker_2] mstar.worker.step_pipeline: Worker worker_2 failing request chatcmpl-f6161a64f5b7435cbf193b9ef244c3ec#122: internal error (error id 6df156630c75)
+2026-11-28 20:04:23,695 ERROR [conductor] mstar.conductor.conductor: Request chatcmpl-f6161a64f5b7435cbf193b9ef244c3ec#122 failed on a worker: internal error (error id 6df156630c75)
+2026-11-28 20:04:23,695 INFO [conductor] mstar.conductor.conductor: Draining request chatcmpl-f6161a64f5b7435cbf193b9ef244c3ec#122 (4 participants) before teardown
+2026-11-28 20:04:23,695 ERROR [api_server] mstar.api_server.entrypoint: Request chatcmpl-f6161a64f5b7435cbf193b9ef244c3ec#122 failed in the engine: internal error (error id 6df156630c75)
+2026-11-28 20:04:23,837 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 73 of its 75 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:04:23,840 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 73 of its 75 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:04:24,122 ERROR [worker_2] mstar.engine.engine: request 0 failed (node=vision_encoder, walk=prefill_vision) [error id 8b027d13ce6a]: RuntimeError: C4: chatcmpl-21c7b1fed7da4c3dbef2ea0f31476281#124: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+Traceback (most recent call last):
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/engine/engine.py", line 1574, in _prepare_inputs
+    req_inputs = prepare(
+                 ^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/model/qwen3_omni/submodules.py", line 256, in prepare_inputs
+    raise RuntimeError(f"C4: {fwd_info.request_id}: images {fwd_info.step_metadata.get(c1_registry.FIRST)}"
+RuntimeError: C4: chatcmpl-21c7b1fed7da4c3dbef2ea0f31476281#124: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+2026-11-28 20:04:24,123 ERROR [worker_2] mstar.worker.step_pipeline: Worker worker_2 failing request chatcmpl-21c7b1fed7da4c3dbef2ea0f31476281#124: internal error (error id 8b027d13ce6a)
+2026-11-28 20:04:24,123 ERROR [conductor] mstar.conductor.conductor: Request chatcmpl-21c7b1fed7da4c3dbef2ea0f31476281#124 failed on a worker: internal error (error id 8b027d13ce6a)
+2026-11-28 20:04:24,123 INFO [conductor] mstar.conductor.conductor: Draining request chatcmpl-21c7b1fed7da4c3dbef2ea0f31476281#124 (4 participants) before teardown
+2026-11-28 20:04:24,124 ERROR [api_server] mstar.api_server.entrypoint: Request chatcmpl-21c7b1fed7da4c3dbef2ea0f31476281#124 failed in the engine: internal error (error id 8b027d13ce6a)
+2026-11-28 20:04:24,284 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 75 of its 75 pages, 0 from the host, whole prompt already cached True, replica worker_1
+2026-11-28 20:04:24,289 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 75 of its 75 pages, 0 from the host, whole prompt already cached True, replica worker_0
+2026-11-28 20:04:24,426 ERROR [worker_2] mstar.engine.engine: request 0 failed (node=vision_encoder, walk=prefill_vision) [error id 8bd17c9afbbc]: RuntimeError: C4: chatcmpl-b0425ac85c054b4492e6f0ad2643930e#126: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+Traceback (most recent call last):
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/engine/engine.py", line 1574, in _prepare_inputs
+    req_inputs = prepare(
+                 ^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/model/qwen3_omni/submodules.py", line 256, in prepare_inputs
+    raise RuntimeError(f"C4: {fwd_info.request_id}: images {fwd_info.step_metadata.get(c1_registry.FIRST)}"
+RuntimeError: C4: chatcmpl-b0425ac85c054b4492e6f0ad2643930e#126: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+2026-11-28 20:04:24,427 ERROR [worker_2] mstar.worker.step_pipeline: Worker worker_2 failing request chatcmpl-b0425ac85c054b4492e6f0ad2643930e#126: internal error (error id 8bd17c9afbbc)
+2026-11-28 20:04:24,427 ERROR [conductor] mstar.conductor.conductor: Request chatcmpl-b0425ac85c054b4492e6f0ad2643930e#126 failed on a worker: internal error (error id 8bd17c9afbbc)
+2026-11-28 20:04:24,427 INFO [conductor] mstar.conductor.conductor: Draining request chatcmpl-b0425ac85c054b4492e6f0ad2643930e#126 (4 participants) before teardown
+2026-11-28 20:04:24,428 ERROR [api_server] mstar.api_server.entrypoint: Request chatcmpl-b0425ac85c054b4492e6f0ad2643930e#126 failed in the engine: internal error (error id 8bd17c9afbbc)
+2026-11-28 20:04:24,570 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 75 of its 78 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:04:24,575 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 75 of its 78 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:04:24,799 ERROR [worker_2] mstar.engine.engine: request 0 failed (node=vision_encoder, walk=prefill_vision) [error id f0764c8a728e]: RuntimeError: C4: chatcmpl-ba64dade36da42cb80799a0dd1fad7db#128: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+Traceback (most recent call last):
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/engine/engine.py", line 1574, in _prepare_inputs
+    req_inputs = prepare(
+                 ^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/model/qwen3_omni/submodules.py", line 256, in prepare_inputs
+    raise RuntimeError(f"C4: {fwd_info.request_id}: images {fwd_info.step_metadata.get(c1_registry.FIRST)}"
+RuntimeError: C4: chatcmpl-ba64dade36da42cb80799a0dd1fad7db#128: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+2026-11-28 20:04:24,799 ERROR [worker_2] mstar.worker.step_pipeline: Worker worker_2 failing request chatcmpl-ba64dade36da42cb80799a0dd1fad7db#128: internal error (error id f0764c8a728e)
+2026-11-28 20:04:24,800 ERROR [conductor] mstar.conductor.conductor: Request chatcmpl-ba64dade36da42cb80799a0dd1fad7db#128 failed on a worker: internal error (error id f0764c8a728e)
+2026-11-28 20:04:24,800 INFO [conductor] mstar.conductor.conductor: Draining request chatcmpl-ba64dade36da42cb80799a0dd1fad7db#128 (4 participants) before teardown
+2026-11-28 20:04:24,800 ERROR [api_server] mstar.api_server.entrypoint: Request chatcmpl-ba64dade36da42cb80799a0dd1fad7db#128 failed in the engine: internal error (error id f0764c8a728e)
+2026-11-28 20:04:24,949 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 78 of its 80 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:04:24,951 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 78 of its 80 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:04:25,178 ERROR [worker_2] mstar.engine.engine: request 0 failed (node=vision_encoder, walk=prefill_vision) [error id c5729352c540]: RuntimeError: C4: chatcmpl-9ae54750ae7a4af697a8472c20cbddc6#130: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+Traceback (most recent call last):
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/engine/engine.py", line 1574, in _prepare_inputs
+    req_inputs = prepare(
+                 ^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/model/qwen3_omni/submodules.py", line 256, in prepare_inputs
+    raise RuntimeError(f"C4: {fwd_info.request_id}: images {fwd_info.step_metadata.get(c1_registry.FIRST)}"
+RuntimeError: C4: chatcmpl-9ae54750ae7a4af697a8472c20cbddc6#130: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+2026-11-28 20:04:25,179 ERROR [worker_2] mstar.worker.step_pipeline: Worker worker_2 failing request chatcmpl-9ae54750ae7a4af697a8472c20cbddc6#130: internal error (error id c5729352c540)
+2026-11-28 20:04:25,179 ERROR [conductor] mstar.conductor.conductor: Request chatcmpl-9ae54750ae7a4af697a8472c20cbddc6#130 failed on a worker: internal error (error id c5729352c540)
+2026-11-28 20:04:25,179 INFO [conductor] mstar.conductor.conductor: Draining request chatcmpl-9ae54750ae7a4af697a8472c20cbddc6#130 (4 participants) before teardown
+2026-11-28 20:04:25,180 ERROR [api_server] mstar.api_server.entrypoint: Request chatcmpl-9ae54750ae7a4af697a8472c20cbddc6#130 failed in the engine: internal error (error id c5729352c540)
+2026-11-28 20:04:25,328 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 80 of its 82 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:04:25,329 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 80 of its 82 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:04:25,697 ERROR [worker_2] mstar.engine.engine: request 0 failed (node=vision_encoder, walk=prefill_vision) [error id e23350c5bd91]: RuntimeError: C4: chatcmpl-531e920bcbaa40729d06cb793c050c54#132: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+Traceback (most recent call last):
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/engine/engine.py", line 1574, in _prepare_inputs
+    req_inputs = prepare(
+                 ^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/model/qwen3_omni/submodules.py", line 256, in prepare_inputs
+    raise RuntimeError(f"C4: {fwd_info.request_id}: images {fwd_info.step_metadata.get(c1_registry.FIRST)}"
+RuntimeError: C4: chatcmpl-531e920bcbaa40729d06cb793c050c54#132: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+2026-11-28 20:04:25,698 ERROR [worker_2] mstar.worker.step_pipeline: Worker worker_2 failing request chatcmpl-531e920bcbaa40729d06cb793c050c54#132: internal error (error id e23350c5bd91)
+2026-11-28 20:04:25,699 ERROR [conductor] mstar.conductor.conductor: Request chatcmpl-531e920bcbaa40729d06cb793c050c54#132 failed on a worker: internal error (error id e23350c5bd91)
+2026-11-28 20:04:25,699 INFO [conductor] mstar.conductor.conductor: Draining request chatcmpl-531e920bcbaa40729d06cb793c050c54#132 (4 participants) before teardown
+2026-11-28 20:04:25,700 ERROR [api_server] mstar.api_server.entrypoint: Request chatcmpl-531e920bcbaa40729d06cb793c050c54#132 failed in the engine: internal error (error id e23350c5bd91)
+2026-11-28 20:04:25,848 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 82 of its 85 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:04:25,848 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 82 of its 85 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:04:26,215 ERROR [worker_2] mstar.engine.engine: request 0 failed (node=vision_encoder, walk=prefill_vision) [error id 15b992394ff1]: RuntimeError: C4: chatcmpl-9c844037c98949078e9e1b20d388d4d2#134: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+Traceback (most recent call last):
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/engine/engine.py", line 1574, in _prepare_inputs
+    req_inputs = prepare(
+                 ^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/model/qwen3_omni/submodules.py", line 256, in prepare_inputs
+    raise RuntimeError(f"C4: {fwd_info.request_id}: images {fwd_info.step_metadata.get(c1_registry.FIRST)}"
+RuntimeError: C4: chatcmpl-9c844037c98949078e9e1b20d388d4d2#134: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+2026-11-28 20:04:26,217 ERROR [worker_2] mstar.worker.step_pipeline: Worker worker_2 failing request chatcmpl-9c844037c98949078e9e1b20d388d4d2#134: internal error (error id 15b992394ff1)
+2026-11-28 20:04:26,217 ERROR [conductor] mstar.conductor.conductor: Request chatcmpl-9c844037c98949078e9e1b20d388d4d2#134 failed on a worker: internal error (error id 15b992394ff1)
+2026-11-28 20:04:26,217 INFO [conductor] mstar.conductor.conductor: Draining request chatcmpl-9c844037c98949078e9e1b20d388d4d2#134 (4 participants) before teardown
+2026-11-28 20:04:26,217 ERROR [api_server] mstar.api_server.entrypoint: Request chatcmpl-9c844037c98949078e9e1b20d388d4d2#134 failed in the engine: internal error (error id 15b992394ff1)
+2026-11-28 20:04:26,364 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 85 of its 87 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:04:26,366 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 85 of its 87 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:04:26,661 ERROR [worker_2] mstar.engine.engine: request 0 failed (node=vision_encoder, walk=prefill_vision) [error id 55e66ddee281]: RuntimeError: C4: chatcmpl-2911cc30e4be4289a15d8a5f788ed44b#136: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+Traceback (most recent call last):
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/engine/engine.py", line 1574, in _prepare_inputs
+    req_inputs = prepare(
+                 ^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/model/qwen3_omni/submodules.py", line 256, in prepare_inputs
+    raise RuntimeError(f"C4: {fwd_info.request_id}: images {fwd_info.step_metadata.get(c1_registry.FIRST)}"
+RuntimeError: C4: chatcmpl-2911cc30e4be4289a15d8a5f788ed44b#136: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+2026-11-28 20:04:26,661 ERROR [worker_2] mstar.worker.step_pipeline: Worker worker_2 failing request chatcmpl-2911cc30e4be4289a15d8a5f788ed44b#136: internal error (error id 55e66ddee281)
+2026-11-28 20:04:26,661 ERROR [conductor] mstar.conductor.conductor: Request chatcmpl-2911cc30e4be4289a15d8a5f788ed44b#136 failed on a worker: internal error (error id 55e66ddee281)
+2026-11-28 20:04:26,661 INFO [conductor] mstar.conductor.conductor: Draining request chatcmpl-2911cc30e4be4289a15d8a5f788ed44b#136 (4 participants) before teardown
+2026-11-28 20:04:26,662 ERROR [api_server] mstar.api_server.entrypoint: Request chatcmpl-2911cc30e4be4289a15d8a5f788ed44b#136 failed in the engine: internal error (error id 55e66ddee281)
+2026-11-28 20:04:26,808 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 87 of its 89 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:04:26,808 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 87 of its 89 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:04:27,196 ERROR [worker_2] mstar.engine.engine: request 0 failed (node=vision_encoder, walk=prefill_vision) [error id 47a67778c809]: RuntimeError: C4: chatcmpl-31d459d6184f4b16b4b87b4d692e837f#138: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+Traceback (most recent call last):
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/engine/engine.py", line 1574, in _prepare_inputs
+    req_inputs = prepare(
+                 ^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/model/qwen3_omni/submodules.py", line 256, in prepare_inputs
+    raise RuntimeError(f"C4: {fwd_info.request_id}: images {fwd_info.step_metadata.get(c1_registry.FIRST)}"
+RuntimeError: C4: chatcmpl-31d459d6184f4b16b4b87b4d692e837f#138: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+2026-11-28 20:04:27,196 ERROR [worker_2] mstar.worker.step_pipeline: Worker worker_2 failing request chatcmpl-31d459d6184f4b16b4b87b4d692e837f#138: internal error (error id 47a67778c809)
+2026-11-28 20:04:27,197 ERROR [conductor] mstar.conductor.conductor: Request chatcmpl-31d459d6184f4b16b4b87b4d692e837f#138 failed on a worker: internal error (error id 47a67778c809)
+2026-11-28 20:04:27,197 INFO [conductor] mstar.conductor.conductor: Draining request chatcmpl-31d459d6184f4b16b4b87b4d692e837f#138 (4 participants) before teardown
+2026-11-28 20:04:27,197 ERROR [api_server] mstar.api_server.entrypoint: Request chatcmpl-31d459d6184f4b16b4b87b4d692e837f#138 failed in the engine: internal error (error id 47a67778c809)
+2026-11-28 20:04:27,338 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 89 of its 92 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:04:27,341 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 89 of its 92 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:04:27,680 ERROR [worker_2] mstar.engine.engine: request 0 failed (node=vision_encoder, walk=prefill_vision) [error id 1c35d7f9a66c]: RuntimeError: C4: chatcmpl-c9372070672e4a7e88b37f713b49f7b9#140: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+Traceback (most recent call last):
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/engine/engine.py", line 1574, in _prepare_inputs
+    req_inputs = prepare(
+                 ^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/model/qwen3_omni/submodules.py", line 256, in prepare_inputs
+    raise RuntimeError(f"C4: {fwd_info.request_id}: images {fwd_info.step_metadata.get(c1_registry.FIRST)}"
+RuntimeError: C4: chatcmpl-c9372070672e4a7e88b37f713b49f7b9#140: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+2026-11-28 20:04:27,681 ERROR [worker_2] mstar.worker.step_pipeline: Worker worker_2 failing request chatcmpl-c9372070672e4a7e88b37f713b49f7b9#140: internal error (error id 1c35d7f9a66c)
+2026-11-28 20:04:27,681 ERROR [conductor] mstar.conductor.conductor: Request chatcmpl-c9372070672e4a7e88b37f713b49f7b9#140 failed on a worker: internal error (error id 1c35d7f9a66c)
+2026-11-28 20:04:27,681 INFO [conductor] mstar.conductor.conductor: Draining request chatcmpl-c9372070672e4a7e88b37f713b49f7b9#140 (4 participants) before teardown
+2026-11-28 20:04:27,683 ERROR [api_server] mstar.api_server.entrypoint: Request chatcmpl-c9372070672e4a7e88b37f713b49f7b9#140 failed in the engine: internal error (error id 1c35d7f9a66c)
+2026-11-28 20:04:27,838 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 92 of its 94 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:04:27,840 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 92 of its 94 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:04:28,200 ERROR [worker_2] mstar.engine.engine: request 0 failed (node=vision_encoder, walk=prefill_vision) [error id 0ba0c17db327]: RuntimeError: C4: chatcmpl-42167f5766de438092e93ccd3af939aa#142: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+Traceback (most recent call last):
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/engine/engine.py", line 1574, in _prepare_inputs
+    req_inputs = prepare(
+                 ^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/model/qwen3_omni/submodules.py", line 256, in prepare_inputs
+    raise RuntimeError(f"C4: {fwd_info.request_id}: images {fwd_info.step_metadata.get(c1_registry.FIRST)}"
+RuntimeError: C4: chatcmpl-42167f5766de438092e93ccd3af939aa#142: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+2026-11-28 20:04:28,201 ERROR [worker_2] mstar.worker.step_pipeline: Worker worker_2 failing request chatcmpl-42167f5766de438092e93ccd3af939aa#142: internal error (error id 0ba0c17db327)
+2026-11-28 20:04:28,201 ERROR [conductor] mstar.conductor.conductor: Request chatcmpl-42167f5766de438092e93ccd3af939aa#142 failed on a worker: internal error (error id 0ba0c17db327)
+2026-11-28 20:04:28,201 INFO [conductor] mstar.conductor.conductor: Draining request chatcmpl-42167f5766de438092e93ccd3af939aa#142 (4 participants) before teardown
+2026-11-28 20:04:28,202 ERROR [api_server] mstar.api_server.entrypoint: Request chatcmpl-42167f5766de438092e93ccd3af939aa#142 failed in the engine: internal error (error id 0ba0c17db327)
+2026-11-28 20:04:28,375 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 94 of its 96 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:04:28,377 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 94 of its 96 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:04:28,723 ERROR [worker_2] mstar.engine.engine: request 0 failed (node=vision_encoder, walk=prefill_vision) [error id 9701f9feeb6d]: RuntimeError: C4: chatcmpl-f13901c11fb643ebbfdafb1e1ac5be0e#144: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+Traceback (most recent call last):
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/engine/engine.py", line 1574, in _prepare_inputs
+    req_inputs = prepare(
+                 ^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/model/qwen3_omni/submodules.py", line 256, in prepare_inputs
+    raise RuntimeError(f"C4: {fwd_info.request_id}: images {fwd_info.step_metadata.get(c1_registry.FIRST)}"
+RuntimeError: C4: chatcmpl-f13901c11fb643ebbfdafb1e1ac5be0e#144: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+2026-11-28 20:04:28,725 ERROR [worker_2] mstar.worker.step_pipeline: Worker worker_2 failing request chatcmpl-f13901c11fb643ebbfdafb1e1ac5be0e#144: internal error (error id 9701f9feeb6d)
+2026-11-28 20:04:28,725 ERROR [conductor] mstar.conductor.conductor: Request chatcmpl-f13901c11fb643ebbfdafb1e1ac5be0e#144 failed on a worker: internal error (error id 9701f9feeb6d)
+2026-11-28 20:04:28,725 INFO [conductor] mstar.conductor.conductor: Draining request chatcmpl-f13901c11fb643ebbfdafb1e1ac5be0e#144 (4 participants) before teardown
+2026-11-28 20:04:28,729 ERROR [api_server] mstar.api_server.entrypoint: Request chatcmpl-f13901c11fb643ebbfdafb1e1ac5be0e#144 failed in the engine: internal error (error id 9701f9feeb6d)
+2026-11-28 20:04:28,932 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 96 of its 99 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:04:28,933 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 96 of its 99 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:04:29,175 ERROR [worker_2] mstar.engine.engine: request 0 failed (node=vision_encoder, walk=prefill_vision) [error id ea4f438bdad8]: RuntimeError: C4: chatcmpl-48ce56e47c5544da916aeacd04a20a3f#146: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+Traceback (most recent call last):
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/engine/engine.py", line 1574, in _prepare_inputs
+    req_inputs = prepare(
+                 ^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/model/qwen3_omni/submodules.py", line 256, in prepare_inputs
+    raise RuntimeError(f"C4: {fwd_info.request_id}: images {fwd_info.step_metadata.get(c1_registry.FIRST)}"
+RuntimeError: C4: chatcmpl-48ce56e47c5544da916aeacd04a20a3f#146: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+2026-11-28 20:04:29,177 ERROR [worker_2] mstar.worker.step_pipeline: Worker worker_2 failing request chatcmpl-48ce56e47c5544da916aeacd04a20a3f#146: internal error (error id ea4f438bdad8)
+2026-11-28 20:04:29,178 ERROR [conductor] mstar.conductor.conductor: Request chatcmpl-48ce56e47c5544da916aeacd04a20a3f#146 failed on a worker: internal error (error id ea4f438bdad8)
+2026-11-28 20:04:29,178 INFO [conductor] mstar.conductor.conductor: Draining request chatcmpl-48ce56e47c5544da916aeacd04a20a3f#146 (4 participants) before teardown
+2026-11-28 20:04:29,179 ERROR [api_server] mstar.api_server.entrypoint: Request chatcmpl-48ce56e47c5544da916aeacd04a20a3f#146 failed in the engine: internal error (error id ea4f438bdad8)
+2026-11-28 20:04:29,343 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 99 of its 101 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:04:29,344 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 99 of its 101 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:04:29,675 ERROR [worker_2] mstar.engine.engine: request 0 failed (node=vision_encoder, walk=prefill_vision) [error id aaaf3844cb41]: RuntimeError: C4: chatcmpl-00af3877e3ac4d6a8120c2c33e7edf0a#148: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+Traceback (most recent call last):
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/engine/engine.py", line 1574, in _prepare_inputs
+    req_inputs = prepare(
+                 ^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/model/qwen3_omni/submodules.py", line 256, in prepare_inputs
+    raise RuntimeError(f"C4: {fwd_info.request_id}: images {fwd_info.step_metadata.get(c1_registry.FIRST)}"
+RuntimeError: C4: chatcmpl-00af3877e3ac4d6a8120c2c33e7edf0a#148: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+2026-11-28 20:04:29,676 ERROR [worker_2] mstar.worker.step_pipeline: Worker worker_2 failing request chatcmpl-00af3877e3ac4d6a8120c2c33e7edf0a#148: internal error (error id aaaf3844cb41)
+2026-11-28 20:04:29,677 ERROR [conductor] mstar.conductor.conductor: Request chatcmpl-00af3877e3ac4d6a8120c2c33e7edf0a#148 failed on a worker: internal error (error id aaaf3844cb41)
+2026-11-28 20:04:29,677 INFO [conductor] mstar.conductor.conductor: Draining request chatcmpl-00af3877e3ac4d6a8120c2c33e7edf0a#148 (4 participants) before teardown
+2026-11-28 20:04:29,678 ERROR [api_server] mstar.api_server.entrypoint: Request chatcmpl-00af3877e3ac4d6a8120c2c33e7edf0a#148 failed in the engine: internal error (error id aaaf3844cb41)
+2026-11-28 20:04:29,829 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 101 of its 104 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:04:29,831 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 101 of its 104 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:04:30,182 ERROR [worker_2] mstar.engine.engine: request 0 failed (node=vision_encoder, walk=prefill_vision) [error id bc5b7fc831e5]: RuntimeError: C4: chatcmpl-8814ea9125a34d8cbb6882c45bb6ac1d#150: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+Traceback (most recent call last):
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/engine/engine.py", line 1574, in _prepare_inputs
+    req_inputs = prepare(
+                 ^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/model/qwen3_omni/submodules.py", line 256, in prepare_inputs
+    raise RuntimeError(f"C4: {fwd_info.request_id}: images {fwd_info.step_metadata.get(c1_registry.FIRST)}"
+RuntimeError: C4: chatcmpl-8814ea9125a34d8cbb6882c45bb6ac1d#150: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+2026-11-28 20:04:30,183 ERROR [worker_2] mstar.worker.step_pipeline: Worker worker_2 failing request chatcmpl-8814ea9125a34d8cbb6882c45bb6ac1d#150: internal error (error id bc5b7fc831e5)
+2026-11-28 20:04:30,183 ERROR [conductor] mstar.conductor.conductor: Request chatcmpl-8814ea9125a34d8cbb6882c45bb6ac1d#150 failed on a worker: internal error (error id bc5b7fc831e5)
+2026-11-28 20:04:30,183 INFO [conductor] mstar.conductor.conductor: Draining request chatcmpl-8814ea9125a34d8cbb6882c45bb6ac1d#150 (4 participants) before teardown
+2026-11-28 20:04:30,187 ERROR [api_server] mstar.api_server.entrypoint: Request chatcmpl-8814ea9125a34d8cbb6882c45bb6ac1d#150 failed in the engine: internal error (error id bc5b7fc831e5)
+2026-11-28 20:04:30,365 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 103 of its 106 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:04:30,365 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 103 of its 106 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:04:30,682 ERROR [worker_2] mstar.engine.engine: request 0 failed (node=vision_encoder, walk=prefill_vision) [error id 91fde29c4025]: RuntimeError: C4: chatcmpl-41626ff36a384005a63ba42fd5d5e951#152: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+Traceback (most recent call last):
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/engine/engine.py", line 1574, in _prepare_inputs
+    req_inputs = prepare(
+                 ^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/model/qwen3_omni/submodules.py", line 256, in prepare_inputs
+    raise RuntimeError(f"C4: {fwd_info.request_id}: images {fwd_info.step_metadata.get(c1_registry.FIRST)}"
+RuntimeError: C4: chatcmpl-41626ff36a384005a63ba42fd5d5e951#152: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+2026-11-28 20:04:30,684 ERROR [worker_2] mstar.worker.step_pipeline: Worker worker_2 failing request chatcmpl-41626ff36a384005a63ba42fd5d5e951#152: internal error (error id 91fde29c4025)
+2026-11-28 20:04:30,685 ERROR [conductor] mstar.conductor.conductor: Request chatcmpl-41626ff36a384005a63ba42fd5d5e951#152 failed on a worker: internal error (error id 91fde29c4025)
+2026-11-28 20:04:30,685 INFO [conductor] mstar.conductor.conductor: Draining request chatcmpl-41626ff36a384005a63ba42fd5d5e951#152 (4 participants) before teardown
+2026-11-28 20:04:30,687 ERROR [api_server] mstar.api_server.entrypoint: Request chatcmpl-41626ff36a384005a63ba42fd5d5e951#152 failed in the engine: internal error (error id 91fde29c4025)
+2026-11-28 20:04:30,894 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 106 of its 108 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:04:30,894 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 106 of its 108 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:04:31,186 ERROR [worker_2] mstar.engine.engine: request 0 failed (node=vision_encoder, walk=prefill_vision) [error id 4d477b9bbdae]: RuntimeError: C4: chatcmpl-4960c9f740aa4c1cbd517bd11a6fce84#154: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+Traceback (most recent call last):
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/engine/engine.py", line 1574, in _prepare_inputs
+    req_inputs = prepare(
+                 ^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/model/qwen3_omni/submodules.py", line 256, in prepare_inputs
+    raise RuntimeError(f"C4: {fwd_info.request_id}: images {fwd_info.step_metadata.get(c1_registry.FIRST)}"
+RuntimeError: C4: chatcmpl-4960c9f740aa4c1cbd517bd11a6fce84#154: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+2026-11-28 20:04:31,188 ERROR [worker_2] mstar.worker.step_pipeline: Worker worker_2 failing request chatcmpl-4960c9f740aa4c1cbd517bd11a6fce84#154: internal error (error id 4d477b9bbdae)
+2026-11-28 20:04:31,188 ERROR [conductor] mstar.conductor.conductor: Request chatcmpl-4960c9f740aa4c1cbd517bd11a6fce84#154 failed on a worker: internal error (error id 4d477b9bbdae)
+2026-11-28 20:04:31,189 INFO [conductor] mstar.conductor.conductor: Draining request chatcmpl-4960c9f740aa4c1cbd517bd11a6fce84#154 (4 participants) before teardown
+2026-11-28 20:04:31,189 ERROR [api_server] mstar.api_server.entrypoint: Request chatcmpl-4960c9f740aa4c1cbd517bd11a6fce84#154 failed in the engine: internal error (error id 4d477b9bbdae)
+2026-11-28 20:04:31,433 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 108 of its 111 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:04:31,433 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 108 of its 111 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:04:31,742 ERROR [worker_2] mstar.engine.engine: request 0 failed (node=vision_encoder, walk=prefill_vision) [error id eafbefa17b8c]: RuntimeError: C4: chatcmpl-b3a1bbe21f42451c9ef618075417c817#156: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+Traceback (most recent call last):
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/engine/engine.py", line 1574, in _prepare_inputs
+    req_inputs = prepare(
+                 ^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/model/qwen3_omni/submodules.py", line 256, in prepare_inputs
+    raise RuntimeError(f"C4: {fwd_info.request_id}: images {fwd_info.step_metadata.get(c1_registry.FIRST)}"
+RuntimeError: C4: chatcmpl-b3a1bbe21f42451c9ef618075417c817#156: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+2026-11-28 20:04:31,746 ERROR [worker_2] mstar.worker.step_pipeline: Worker worker_2 failing request chatcmpl-b3a1bbe21f42451c9ef618075417c817#156: internal error (error id eafbefa17b8c)
+2026-11-28 20:04:31,747 ERROR [conductor] mstar.conductor.conductor: Request chatcmpl-b3a1bbe21f42451c9ef618075417c817#156 failed on a worker: internal error (error id eafbefa17b8c)
+2026-11-28 20:04:31,747 INFO [conductor] mstar.conductor.conductor: Draining request chatcmpl-b3a1bbe21f42451c9ef618075417c817#156 (4 participants) before teardown
+2026-11-28 20:04:31,757 ERROR [api_server] mstar.api_server.entrypoint: Request chatcmpl-b3a1bbe21f42451c9ef618075417c817#156 failed in the engine: internal error (error id eafbefa17b8c)
+2026-11-28 20:04:32,089 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 111 of its 113 pages, 0 from the host, whole prompt already cached False, replica worker_1
+2026-11-28 20:04:32,089 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 0/main matched 111 of its 113 pages, 0 from the host, whole prompt already cached False, replica worker_0
+2026-11-28 20:04:32,100 INFO [api_server] mstar.api_server.entrypoint: Client cancelled request chatcmpl-660ec8dad2bb4a7f8b3c51f2725de5a6#157; releasing resources
+2026-11-28 20:04:32,106 INFO [conductor] mstar.conductor.conductor: Draining request chatcmpl-660ec8dad2bb4a7f8b3c51f2725de5a6#157 (4 participants) before teardown
+2026-11-28 20:04:32,181 WARNING [api_server] mstar.api_server.entrypoint: Message for unknown request chatcmpl-660ec8dad2bb4a7f8b3c51f2725de5a6#157: result_tensors
+2026-11-28 20:04:32,207 ERROR [worker_2] mstar.engine.engine: request 1 failed (node=vision_encoder, walk=prefill_vision) [error id 3dbf7a3f64f9]: RuntimeError: C4: chatcmpl-214ce8972010482e8447a20512cca0d1#158: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+Traceback (most recent call last):
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/engine/engine.py", line 1574, in _prepare_inputs
+    req_inputs = prepare(
+                 ^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/model/qwen3_omni/submodules.py", line 256, in prepare_inputs
+    raise RuntimeError(f"C4: {fwd_info.request_id}: images {fwd_info.step_metadata.get(c1_registry.FIRST)}"
+RuntimeError: C4: chatcmpl-214ce8972010482e8447a20512cca0d1#158: images 0+ were sent without pixels, but the prefix lease holds only 0 of them
+2026-11-28 20:04:32,208 ERROR [worker_2] mstar.worker.step_pipeline: Worker worker_2 failing request chatcmpl-214ce8972010482e8447a20512cca0d1#158: internal error (error id 3dbf7a3f64f9)
+2026-11-28 20:04:32,211 ERROR [conductor] mstar.conductor.conductor: Request chatcmpl-214ce8972010482e8447a20512cca0d1#158 failed on a worker: internal error (error id 3dbf7a3f64f9)
+2026-11-28 20:04:32,211 INFO [conductor] mstar.conductor.conductor: Draining request chatcmpl-214ce8972010482e8447a20512cca0d1#158 (4 participants) before teardown
+2026-11-28 20:04:32,218 ERROR [api_server] mstar.api_server.entrypoint: Request chatcmpl-214ce8972010482e8447a20512cca0d1#158 failed in the engine: internal error (error id 3dbf7a3f64f9)
+2026-11-28 20:04:32,403 INFO [worker_0] mstar.engine.resources.kv.manager: KV thinker_kv: 1/main matched 113 of its 113 pages, 0 from the host, whole prompt already cached True, replica worker_0
+2026-11-28 20:04:32,407 INFO [worker_1] mstar.engine.resources.kv.manager: KV thinker_kv: 1/main matched 113 of its 113 pages, 0 from the host, whole prompt already cached True, replica worker_1
+2026-11-28 20:04:58,370 INFO [conductor] mstar.conductor.conductor: Last 60 s: 50 requests done, 0 queued for admission; 0 running, 0 waiting
+mstar-server: shutting down (draining in-flight, 30s cap)
+2026-11-28 20:05:26,869 ERROR [worker_1] mstar.utils.orphan: Worker worker_1: the conductor process is gone, exiting
+Exception ignored in atexit callback: <bound method finalize._exitfunc of <class 'weakref.finalize'>>
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/weakref.py", line 666, in _exitfunc
+    f()
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/conductor/conductor.py", line 325, in _graceful_exit
+    raise SystemExit(0)
+SystemExit: 0

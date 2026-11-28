@@ -1,0 +1,582 @@
+1795688142.653794	1777416	embed_multimodal	keys=pixel_values_img2img,vit_pixel_values_img2img
+1795688142.956638	1777416	encode_vit	shape=(3, 980, 980)
+1795688143.190852	1777416	encode_vit	shape=(3, 980, 980)
+1795688143.366966	1777416	encode_vit	shape=(3, 980, 980)
+1795688172.121174	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-b0640a4649dcd0f mm_hash=ea56b35b23a92efc2a384a6b
+1795688172.129481	1777416	embed_multimodal	keys=pixel_values
+1795688172.129619	1777416	encode_vit	shape=(3, 518, 518)
+1795688174.913503	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-af88f52db4c0153 mm_hash=b04362128b7d76b3a4255761
+1795688174.920004	1777416	embed_multimodal	keys=pixel_values
+1795688174.920097	1777416	encode_vit	shape=(3, 518, 518)
+1795688177.587078	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-90bd5d4aebdae71 mm_hash=79f16cafc7080ca0c84d7e34
+1795688177.593612	1777416	embed_multimodal	keys=pixel_values
+1795688177.593770	1777416	encode_vit	shape=(3, 518, 518)
+1795688181.100955	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-a3bbc089b72f4d0 mm_hash=32194d5b9274a3a11f2e4b7b
+1795688181.113955	1777416	embed_multimodal	keys=pixel_values
+1795688181.114017	1777416	encode_vit	shape=(3, 980, 980)
+1795688184.636886	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-8b05a79f4f1ea40 mm_hash=81d3147256a8a0673a18bcd4
+1795688184.643346	1777416	embed_multimodal	keys=pixel_values
+1795688184.643448	1777416	encode_vit	shape=(3, 980, 980)
+1795688188.253342	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-a6615c7fc867ab2 mm_hash=f508a8cfb8245af662703212
+1795688188.260197	1777416	embed_multimodal	keys=pixel_values
+1795688188.260316	1777416	encode_vit	shape=(3, 980, 980)
+1795688191.759721	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-926308bc07b3304 mm_hash=d34e19d8b3beb9c0aea3b1a1
+1795688191.766232	1777416	embed_multimodal	keys=pixel_values
+1795688191.766380	1777416	encode_vit	shape=(3, 518, 518)
+1795688194.545713	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-a5ede77cb232d93 mm_hash=90ab01d4e2974ba5a669439a
+1795688194.551823	1777416	embed_multimodal	keys=pixel_values
+1795688194.551968	1777416	encode_vit	shape=(3, 518, 518)
+1795688197.333072	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-93156d2bb1937c2 mm_hash=9587ae50aecb288cf2a29ef7
+1795688197.339440	1777416	embed_multimodal	keys=pixel_values
+1795688197.339588	1777416	encode_vit	shape=(3, 518, 518)
+1795688200.113555	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-8f0e784b1b8f1e2 mm_hash=58b3f6335037197d0139392d
+1795688200.119692	1777416	embed_multimodal	keys=pixel_values
+1795688200.119840	1777416	encode_vit	shape=(3, 518, 518)
+1795688202.874323	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-ada7fd2b73fcbc9 mm_hash=71076dc11058af4d86911b68
+1795688202.880348	1777416	embed_multimodal	keys=pixel_values
+1795688202.880496	1777416	encode_vit	shape=(3, 518, 518)
+1795688205.866855	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-8d0656e6739e90a mm_hash=d7056a7cb132045463ce85b2
+1795688205.875985	1777416	embed_multimodal	keys=pixel_values
+1795688205.876137	1777416	encode_vit	shape=(3, 980, 980)
+1795688209.320408	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-a79034b1586c170 mm_hash=d7056a7cb132045463ce85b2
+1795688212.916035	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-a9d84a2f2ec42b3 mm_hash=d7056a7cb132045463ce85b2
+1795688216.375495	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-acda157db3b1a67 mm_hash=d7056a7cb132045463ce85b2
+1795688219.784971	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-971ef8504a2fc16 mm_hash=d7056a7cb132045463ce85b2
+1795688223.453480	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-8f699ac0773c38e mm_hash=39d9844f39a0eb5082a626c7
+1795688223.465477	1777416	embed_multimodal	keys=pixel_values
+1795688223.465627	1777416	encode_vit	shape=(3, 980, 980)
+1795688227.239855	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-8b4e80c3b0a1147 mm_hash=daa127882b78fde5398d339d
+1795688227.248291	1777416	embed_multimodal	keys=pixel_values
+1795688227.248430	1777416	encode_vit	shape=(3, 980, 980)
+1795688230.986022	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-a4560e243c28071 mm_hash=548515c0980ef7e826e4045b
+1795688230.994975	1777416	embed_multimodal	keys=pixel_values
+1795688230.995126	1777416	encode_vit	shape=(3, 980, 980)
+1795688234.750377	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-ae91dc35c108635 mm_hash=6377fd85e941def6867bc794
+1795688234.758132	1777416	embed_multimodal	keys=pixel_values
+1795688234.758271	1777416	encode_vit	shape=(3, 980, 980)
+1795688238.602049	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-a5eb67788d5b5e1 mm_hash=e251bdc74f47b7a9ff0fafc5
+1795688238.610732	1777416	embed_multimodal	keys=pixel_values
+1795688238.610886	1777416	encode_vit	shape=(3, 980, 980)
+1795688242.167203	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-84043e41d4b3b21 mm_hash=be5770a2993fbc8cca426da2
+1795688242.171685	1777416	embed_multimodal	keys=pixel_values
+1795688242.171799	1777416	encode_vit	shape=(3, 518, 518)
+1795688244.918358	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-bcccbdeae72a572 mm_hash=be5770a2993fbc8cca426da2
+1795688247.639768	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-a0967379a6ed216 mm_hash=be5770a2993fbc8cca426da2
+1795688250.307427	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-97f7a61e99ec715 mm_hash=be5770a2993fbc8cca426da2
+1795688252.985305	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-aec66729c27fc5c mm_hash=be5770a2993fbc8cca426da2
+1795688255.715952	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-be59acde61ed0a9 mm_hash=11d2620075c7cbe1bb8379e6
+1795688255.721656	1777416	embed_multimodal	keys=pixel_values
+1795688255.721799	1777416	encode_vit	shape=(3, 518, 518)
+1795688258.414774	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-ac5c6dea1e90ed4 mm_hash=11d2620075c7cbe1bb8379e6
+1795688261.333480	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-892a2f36c702290 mm_hash=11d2620075c7cbe1bb8379e6
+1795688264.123823	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-9cacebc23c2064e mm_hash=11d2620075c7cbe1bb8379e6
+1795688266.779767	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-84024ac80598ac7 mm_hash=11d2620075c7cbe1bb8379e6
+1795688269.834806	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-946d76431c58b31 mm_hash=5de91ca9413c99e235c3535f
+1795688269.843495	1777416	embed_multimodal	keys=pixel_values
+1795688269.843645	1777416	encode_vit	shape=(3, 980, 980)
+1795688273.311031	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-b86fc7fae213f39 mm_hash=5de91ca9413c99e235c3535f
+1795688276.641175	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-a033d2e1bed8966 mm_hash=5de91ca9413c99e235c3535f
+1795688279.977479	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-ace922e862fabcd mm_hash=5de91ca9413c99e235c3535f
+1795688283.316136	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-b266737f226c55f mm_hash=5de91ca9413c99e235c3535f
+1795688286.977728	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-8870233fa13fd16 mm_hash=7ccc63ea575a504ae3490b16
+1795688286.985095	1777416	embed_multimodal	keys=pixel_values
+1795688286.985219	1777416	encode_vit	shape=(3, 980, 980)
+1795688290.499773	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-84382d4746ef19c mm_hash=7ccc63ea575a504ae3490b16
+1795688293.875981	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-8e87593e73113e4 mm_hash=7ccc63ea575a504ae3490b16
+1795688297.234728	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-b46c2ae33408755 mm_hash=7ccc63ea575a504ae3490b16
+1795688300.703826	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-aa2273a91eafab9 mm_hash=a2f40f587f1dc684a96832df
+1795688300.709124	1777416	embed_multimodal	keys=pixel_values
+1795688300.709257	1777416	encode_vit	shape=(3, 518, 518)
+1795688303.471391	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-a5502ed162096a9 mm_hash=a2f40f587f1dc684a96832df
+1795688306.151035	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-97a538d1616dc24 mm_hash=a2f40f587f1dc684a96832df
+1795688308.856568	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-997db85c8ddbf26 mm_hash=a2f40f587f1dc684a96832df
+1795688311.881110	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-9c84e42426974f4 mm_hash=798b2dcd56d8253359cad115
+1795688311.890031	1777416	embed_multimodal	keys=pixel_values
+1795688311.890182	1777416	encode_vit	shape=(3, 980, 980)
+1795688315.373714	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-adfdbf5410be9c2 mm_hash=798b2dcd56d8253359cad115
+1795688318.995301	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-a25ad126905dbff mm_hash=798b2dcd56d8253359cad115
+1795688322.509235	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-a3f872bb1a0f43b mm_hash=798b2dcd56d8253359cad115
+1795688325.920438	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-b18d303656abf11 mm_hash=798b2dcd56d8253359cad115
+1795688329.408392	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-a08ea9786b76720 mm_hash=1885ff879766f7f75a1afe25
+1795688329.414428	1777416	embed_multimodal	keys=pixel_values
+1795688329.414581	1777416	encode_vit	shape=(3, 518, 518)
+1795688332.083021	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-a02b038e5e41804 mm_hash=1885ff879766f7f75a1afe25
+1795688335.005399	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-aa3f85f373e57f1 mm_hash=1885ff879766f7f75a1afe25
+1795688337.803957	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-91e29291e99222d mm_hash=1885ff879766f7f75a1afe25
+1795688340.501615	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-a0952f1e93389e6 mm_hash=1885ff879766f7f75a1afe25
+1795688343.329291	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-b4c2a3fa3ad4581 mm_hash=245e3bd5e5cc87b50811cd5a
+1795688343.335233	1777416	embed_multimodal	keys=pixel_values
+1795688343.335412	1777416	encode_vit	shape=(3, 518, 518)
+1795688346.170494	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-a88276dd029e362 mm_hash=0aea862e5fa8f7c687f15c75
+1795688346.176614	1777416	embed_multimodal	keys=pixel_values
+1795688346.176777	1777416	encode_vit	shape=(3, 518, 518)
+1795688348.952190	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-8f4b28be5e7115a mm_hash=26978e32273936817def9a4b
+1795688348.957937	1777416	embed_multimodal	keys=pixel_values
+1795688348.958085	1777416	encode_vit	shape=(3, 518, 518)
+1795688351.730162	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-b88139563c32abc mm_hash=20a03b343ac5b8a1b13b2d28
+1795688351.735888	1777416	embed_multimodal	keys=pixel_values
+1795688351.736033	1777416	encode_vit	shape=(3, 518, 518)
+1795688354.540962	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-bfbbc8e78412bcd mm_hash=ace4ead68ee31a7ef8efd241
+1795688354.545901	1777416	embed_multimodal	keys=pixel_values
+1795688354.546055	1777416	encode_vit	shape=(3, 518, 518)
+1795688357.599928	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-8e79a7a4dd60574 mm_hash=efd5ccd54f8ee283d0dfd632
+1795688357.608418	1777416	embed_multimodal	keys=pixel_values
+1795688357.608578	1777416	encode_vit	shape=(3, 980, 980)
+1795688361.348643	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-aa544809123c1bb mm_hash=339b6a36303437b38d4960be
+1795688361.357049	1777416	embed_multimodal	keys=pixel_values
+1795688361.357198	1777416	encode_vit	shape=(3, 980, 980)
+1795688365.103250	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-acb8f8f9beddbea mm_hash=86dfdaced133740a21df50fe
+1795688365.110406	1777416	embed_multimodal	keys=pixel_values
+1795688365.110508	1777416	encode_vit	shape=(3, 980, 980)
+1795688368.936661	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-85a25de39f38096 mm_hash=4f6afcc957207b8646dc3575
+1795688368.944907	1777416	embed_multimodal	keys=pixel_values
+1795688368.945058	1777416	encode_vit	shape=(3, 980, 980)
+1795688372.654734	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-ace79a3369545e0 mm_hash=ce9a2ec4ee512c730557080e
+1795688372.663104	1777416	embed_multimodal	keys=pixel_values
+1795688372.663257	1777416	encode_vit	shape=(3, 980, 980)
+1795688376.424035	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-9e9045ed31fe693 mm_hash=8bd769ba5f05e054cd4cf888
+1795688376.431530	1777416	embed_multimodal	keys=pixel_values
+1795688376.431642	1777416	encode_vit	shape=(3, 980, 980)
+1795688379.890640	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-a4332c8ec3ebef8 mm_hash=8bd769ba5f05e054cd4cf888
+1795688383.251466	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-b2ce189abdf1f69 mm_hash=8bd769ba5f05e054cd4cf888
+1795688386.606679	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-a318089393a8960 mm_hash=8bd769ba5f05e054cd4cf888
+1795688389.950398	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-a9fc16701cc4ac1 mm_hash=8bd769ba5f05e054cd4cf888
+1795688393.370829	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-92893a3055215c5 mm_hash=788ece94dc1f446828d89589
+1795688393.376575	1777416	embed_multimodal	keys=pixel_values
+1795688393.376722	1777416	encode_vit	shape=(3, 518, 518)
+1795688396.070220	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-a7226d968538245 mm_hash=788ece94dc1f446828d89589
+1795688398.754551	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-b500767d8f9c123 mm_hash=788ece94dc1f446828d89589
+1795688401.449944	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-b564eac4cc8321c mm_hash=788ece94dc1f446828d89589
+1795688404.101076	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-97f72b3db3426e5 mm_hash=788ece94dc1f446828d89589
+1795688407.119174	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-ade04b19706d358 mm_hash=f597c80cace0eff4d917dde2
+1795688407.125890	1777416	embed_multimodal	keys=pixel_values
+1795688407.125970	1777416	encode_vit	shape=(3, 980, 980)
+1795688410.573604	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-bdf0f1fba3bffbd mm_hash=f597c80cace0eff4d917dde2
+1795688413.965500	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-889d69b6967995f mm_hash=f597c80cace0eff4d917dde2
+1795688417.283059	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-bef9995d5a24faa mm_hash=f597c80cace0eff4d917dde2
+1795688420.768853	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-b6238e632c1a93f mm_hash=be07d7edac9b7beb873db8a9
+1795688420.773399	1777416	embed_multimodal	keys=pixel_values
+1795688420.773514	1777416	encode_vit	shape=(3, 518, 518)
+1795688423.481233	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-b6b2ad560e07890 mm_hash=be07d7edac9b7beb873db8a9
+1795688426.132614	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-974a303f8f31297 mm_hash=be07d7edac9b7beb873db8a9
+1795688428.785917	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-b06fffbbb4e1c88 mm_hash=be07d7edac9b7beb873db8a9
+1795688431.814070	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-9358257ab7b04e8 mm_hash=c962331c75bd1b7bb4b3d866
+1795688431.820812	1777416	embed_multimodal	keys=pixel_values
+1795688431.820884	1777416	encode_vit	shape=(3, 980, 980)
+1795688435.594459	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-8e881dda5e44a1f mm_hash=8cfb5bba92d289c5c0efd0a9
+1795688435.601262	1777416	embed_multimodal	keys=pixel_values
+1795688435.601335	1777416	encode_vit	shape=(3, 980, 980)
+1795688439.366170	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-8fce4939ed88756 mm_hash=ee21bd1585819d42a7d72aa9
+1795688439.373174	1777416	embed_multimodal	keys=pixel_values
+1795688439.373246	1777416	encode_vit	shape=(3, 980, 980)
+1795688443.135783	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-a7cc20d2bd6baba mm_hash=a5ed4fd772368395af9fd666
+1795688443.143245	1777416	embed_multimodal	keys=pixel_values
+1795688443.143361	1777416	encode_vit	shape=(3, 980, 980)
+1795688446.896248	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-9f0cd28f7afa4c5 mm_hash=475339c46ef0cbdc66b47b0e
+1795688446.904436	1777416	embed_multimodal	keys=pixel_values
+1795688446.904520	1777416	encode_vit	shape=(3, 980, 980)
+1795688450.397161	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-bfde33c417875d3 mm_hash=cbd29ee3283a0aa80db89296
+1795688450.403046	1777416	embed_multimodal	keys=pixel_values
+1795688450.403197	1777416	encode_vit	shape=(3, 518, 518)
+1795688453.174814	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-8905bead8f4bb3a mm_hash=5498bc4598bc3804f5aa9075
+1795688453.180507	1777416	embed_multimodal	keys=pixel_values
+1795688453.180653	1777416	encode_vit	shape=(3, 518, 518)
+1795688455.946290	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-850d34a4ec77c12 mm_hash=836a98c7191c45c00d4224ce
+1795688455.951432	1777416	embed_multimodal	keys=pixel_values
+1795688455.951561	1777416	encode_vit	shape=(3, 518, 518)
+1795688458.706127	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-adff3772ddb5561 mm_hash=4f5710fac5885a8ef355559f
+1795688458.711642	1777416	embed_multimodal	keys=pixel_values
+1795688458.711735	1777416	encode_vit	shape=(3, 518, 518)
+1795688461.516439	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-bb97f764a81ce74 mm_hash=00e3b009447b50e6eff09e62
+1795688461.522035	1777416	embed_multimodal	keys=pixel_values
+1795688461.522176	1777416	encode_vit	shape=(3, 518, 518)
+1795688464.567118	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-8471bdade1d03bb mm_hash=aae0e386e320ef2825073f91
+1795688464.575725	1777416	embed_multimodal	keys=pixel_values
+1795688464.575872	1777416	encode_vit	shape=(3, 980, 980)
+1795688468.037586	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-9b9376b596ebba7 mm_hash=aae0e386e320ef2825073f91
+1795688471.428579	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-9202043d4c8a066 mm_hash=aae0e386e320ef2825073f91
+1795688474.785976	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-827c20f99fe9a7d mm_hash=aae0e386e320ef2825073f91
+1795688478.150106	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-9f0f0adf596f071 mm_hash=aae0e386e320ef2825073f91
+1795688481.591962	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-b0e5473d4d0c199 mm_hash=0f62f7199aac79644dbb7337
+1795688481.596744	1777416	embed_multimodal	keys=pixel_values
+1795688481.596834	1777416	encode_vit	shape=(3, 518, 518)
+1795688484.285745	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-89fb1690b5f1903 mm_hash=0f62f7199aac79644dbb7337
+1795688486.963038	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-9ca7fab571df5c1 mm_hash=0f62f7199aac79644dbb7337
+1795688489.669029	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-8dca8aab092c53b mm_hash=0f62f7199aac79644dbb7337
+1795688492.465573	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-b13a2d001a998af mm_hash=7864eb503e09a2068cd92d0c
+1795688492.471079	1777416	embed_multimodal	keys=pixel_values
+1795688492.471221	1777416	encode_vit	shape=(3, 518, 518)
+1795688495.138138	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-8d0a7c04c6bd688 mm_hash=7864eb503e09a2068cd92d0c
+1795688497.940979	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-9bd5358cc2816c0 mm_hash=7864eb503e09a2068cd92d0c
+1795688500.749179	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-b792448580fb8ec mm_hash=7864eb503e09a2068cd92d0c
+1795688503.375427	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-895ea4dfb3db192 mm_hash=7864eb503e09a2068cd92d0c
+1795688506.399030	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-878044099c0ae5c mm_hash=6a026c904a6e9ed7fb81f46a
+1795688506.405233	1777416	embed_multimodal	keys=pixel_values
+1795688506.405329	1777416	encode_vit	shape=(3, 980, 980)
+1795688509.854432	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-a7eb2b0b31b6175 mm_hash=6a026c904a6e9ed7fb81f46a
+1795688513.530176	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-958f7a682e1dbb9 mm_hash=6a026c904a6e9ed7fb81f46a
+1795688517.027447	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-a1a3b76ceb38e0c mm_hash=6a026c904a6e9ed7fb81f46a
+1795688520.387876	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-8176abe225955da mm_hash=6a026c904a6e9ed7fb81f46a
+1795688524.065505	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-bad97de946ba917 mm_hash=7c971e6420c48649947eae9a
+1795688524.073187	1777416	embed_multimodal	keys=pixel_values
+1795688524.073330	1777416	encode_vit	shape=(3, 980, 980)
+1795688527.547775	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-89f0c179886d80f mm_hash=7c971e6420c48649947eae9a
+1795688530.881303	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-95c91381c992505 mm_hash=7c971e6420c48649947eae9a
+1795688534.312616	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-9cdb83cf8c466e7 mm_hash=7c971e6420c48649947eae9a
+1795688537.755795	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-9f53555bd2b4985 mm_hash=87a6715a5f8ac48eacfa9ca8
+1795688537.761137	1777416	embed_multimodal	keys=pixel_values
+1795688537.761255	1777416	encode_vit	shape=(3, 518, 518)
+1795688540.472966	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-8d128c2eaa92863 mm_hash=87a6715a5f8ac48eacfa9ca8
+1795688543.121867	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-a7c9adb8c3fd295 mm_hash=87a6715a5f8ac48eacfa9ca8
+1795688545.801527	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-bfc29a92d03cfb9 mm_hash=87a6715a5f8ac48eacfa9ca8
+1795688548.444760	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-b50123c18137c14 mm_hash=87a6715a5f8ac48eacfa9ca8
+1795688551.473584	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-9a244659eb6b543 mm_hash=f4f61967cfa03a7dab58ff6f
+1795688551.481980	1777416	embed_multimodal	keys=pixel_values
+1795688551.482119	1777416	encode_vit	shape=(3, 980, 980)
+1795688554.967548	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-beea4ae62325506 mm_hash=f4f61967cfa03a7dab58ff6f
+1795688558.315709	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-8b5911a09caa785 mm_hash=f4f61967cfa03a7dab58ff6f
+1795688561.679273	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-892be352fda5861 mm_hash=f4f61967cfa03a7dab58ff6f
+1795688565.028207	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-839b92ca38b586b mm_hash=f4f61967cfa03a7dab58ff6f
+1795688568.697891	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-85a76d3f31533e9 mm_hash=4100e7990b1333f2e2d2154e
+1795688568.706367	1777416	embed_multimodal	keys=pixel_values
+1795688568.706514	1777416	encode_vit	shape=(3, 980, 980)
+1795688572.186482	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-a0170dd8cbc4992 mm_hash=4100e7990b1333f2e2d2154e
+1795688575.605298	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-b8bde666c538ee2 mm_hash=4100e7990b1333f2e2d2154e
+1795688579.019360	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-94127f19062b7fb mm_hash=4100e7990b1333f2e2d2154e
+1795688582.681720	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-bae8b4039bc8394 mm_hash=fdd57dc122cddb30101257c0
+1795688582.690107	1777416	embed_multimodal	keys=pixel_values
+1795688582.690255	1777416	encode_vit	shape=(3, 980, 980)
+1795688586.102645	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-aa522450b041975 mm_hash=fdd57dc122cddb30101257c0
+1795688589.720229	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-9c973156d26f611 mm_hash=fdd57dc122cddb30101257c0
+1795688593.210454	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-b641effa11bebaa mm_hash=fdd57dc122cddb30101257c0
+1795688596.576710	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-b8e09dba6f36ebf mm_hash=fdd57dc122cddb30101257c0
+1795688600.018695	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-8cea51eedc2c2a4 mm_hash=edc8e79bbdedad011ecc3de8
+1795688600.020680	1777416	embed_multimodal	keys=pixel_values
+1795688600.020733	1777416	encode_vit	shape=(3, 518, 518)
+1795688602.727650	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-9333138dadf7c73 mm_hash=edc8e79bbdedad011ecc3de8
+1795688605.400309	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-bcf57dec8170ca4 mm_hash=edc8e79bbdedad011ecc3de8
+1795688608.031154	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-b0ad38e44cccb36 mm_hash=edc8e79bbdedad011ecc3de8
+1795688610.706243	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-8426780423d8553 mm_hash=edc8e79bbdedad011ecc3de8
+1795688613.483821	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-82502e58de7583b mm_hash=dcfe8e4a2fe3059213128389
+1795688613.489273	1777416	embed_multimodal	keys=pixel_values
+1795688613.489417	1777416	encode_vit	shape=(3, 518, 518)
+1795688616.223065	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-96fbe9c17c8705f mm_hash=dcfe8e4a2fe3059213128389
+1795688618.935288	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-86e7d00499ca30d mm_hash=dcfe8e4a2fe3059213128389
+1795688621.626786	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-92ac404f6013e44 mm_hash=dcfe8e4a2fe3059213128389
+1795688624.674575	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-a34fd50199519d2 mm_hash=cd7d2f2dd0233f4d07d06ea3
+1795688624.682831	1777416	embed_multimodal	keys=pixel_values
+1795688624.683012	1777416	encode_vit	shape=(3, 980, 980)
+1795688628.450432	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-9e1d1680024ac3b mm_hash=db739e9fdb82c8b397826a79
+1795688628.459238	1777416	embed_multimodal	keys=pixel_values
+1795688628.459412	1777416	encode_vit	shape=(3, 980, 980)
+1795688632.261673	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-81b0d76dacf1dac mm_hash=a4431144114250f3c834127e
+1795688632.269301	1777416	embed_multimodal	keys=pixel_values
+1795688632.269397	1777416	encode_vit	shape=(3, 980, 980)
+1795688636.012335	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-b35d2481dfca639 mm_hash=9f506013be4dfdc5e93abc18
+1795688636.020679	1777416	embed_multimodal	keys=pixel_values
+1795688636.020830	1777416	encode_vit	shape=(3, 980, 980)
+1795688639.800118	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-a747898b6133742 mm_hash=4acab75cea13f60c8466de65
+1795688639.808349	1777416	embed_multimodal	keys=pixel_values
+1795688639.808487	1777416	encode_vit	shape=(3, 980, 980)
+1795688643.380026	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-8af83ab25abcb1f mm_hash=b3038fada8980cae1bcd01ee
+1795688643.385389	1777416	embed_multimodal	keys=pixel_values
+1795688643.385493	1777416	encode_vit	shape=(3, 518, 518)
+1795688646.117189	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-89cb5b2bab40b7d mm_hash=b3038fada8980cae1bcd01ee
+1795688649.043211	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-bf097c61fa1bc87 mm_hash=b3038fada8980cae1bcd01ee
+1795688651.861887	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-87d596441122dd8 mm_hash=b3038fada8980cae1bcd01ee
+1795688654.553668	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-988c706e9ad52f3 mm_hash=b3038fada8980cae1bcd01ee
+1795688657.403007	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-905863fbe9a8c33 mm_hash=49c8baf6d9f65babb7d3c130
+1795688657.408577	1777416	embed_multimodal	keys=pixel_values
+1795688657.408725	1777416	encode_vit	shape=(3, 518, 518)
+1795688660.169109	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-b1c7a6ddc9497c3 mm_hash=22330031d267e8ddfebea696
+1795688660.174597	1777416	embed_multimodal	keys=pixel_values
+1795688660.174738	1777416	encode_vit	shape=(3, 518, 518)
+1795688662.981342	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-b1528d4b551e2a6 mm_hash=ae49dd22567721df7fe3f1a0
+1795688662.986801	1777416	embed_multimodal	keys=pixel_values
+1795688662.986970	1777416	encode_vit	shape=(3, 518, 518)
+1795688665.754136	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-96f1fefc98fa87c mm_hash=85a11161deb00c30294b4379
+1795688665.757987	1777416	embed_multimodal	keys=pixel_values
+1795688665.758087	1777416	encode_vit	shape=(3, 518, 518)
+1795688668.565798	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-a73a8d4339e8941 mm_hash=dfd229856e0cceddd2517663
+1795688668.571498	1777416	embed_multimodal	keys=pixel_values
+1795688668.571644	1777416	encode_vit	shape=(3, 518, 518)
+1795688671.365867	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-83c8ac76e7e1810 mm_hash=7181061e3d37916684077d56
+1795688671.371427	1777416	embed_multimodal	keys=pixel_values
+1795688671.371578	1777416	encode_vit	shape=(3, 518, 518)
+1795688674.095977	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-af29f46ddad8901 mm_hash=7181061e3d37916684077d56
+1795688677.016708	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-a19ff1a904bd7f8 mm_hash=7181061e3d37916684077d56
+1795688679.837200	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-9e034a9f6386d75 mm_hash=7181061e3d37916684077d56
+1795688682.627252	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-8c9cb4d5f047094 mm_hash=7181061e3d37916684077d56
+1795688685.417411	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-9447b55ba9cdd27 mm_hash=e326ffb500c72d3e66b64548
+1795688685.423058	1777416	embed_multimodal	keys=pixel_values
+1795688685.423201	1777416	encode_vit	shape=(3, 518, 518)
+1795688688.115944	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-9705c331e5b7130 mm_hash=e326ffb500c72d3e66b64548
+1795688690.805532	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-823bef467b51df5 mm_hash=e326ffb500c72d3e66b64548
+1795688693.494796	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-b2af052d25f52bf mm_hash=e326ffb500c72d3e66b64548
+1795688696.625400	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-bfd18d8b4d90bf0 mm_hash=832b600378816bf4520a1230
+1795688696.632786	1777416	embed_multimodal	keys=pixel_values
+1795688696.632922	1777416	encode_vit	shape=(3, 980, 980)
+1795688700.107888	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-96fab89f6089210 mm_hash=832b600378816bf4520a1230
+1795688703.475152	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-a706d65731634c7 mm_hash=832b600378816bf4520a1230
+1795688706.862170	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-89ac7a914785ddf mm_hash=832b600378816bf4520a1230
+1795688710.560898	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-af344764d072984 mm_hash=4afd8766233e54dcec7448d9
+1795688710.569594	1777416	embed_multimodal	keys=pixel_values
+1795688710.569746	1777416	encode_vit	shape=(3, 980, 980)
+1795688714.014279	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-8182dcf5038a1b9 mm_hash=4afd8766233e54dcec7448d9
+1795688717.580175	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-beddcbf83a21583 mm_hash=4afd8766233e54dcec7448d9
+1795688721.083542	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-95bca173ecdb6c4 mm_hash=4afd8766233e54dcec7448d9
+1795688724.451394	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-82140f9fa6bd1f8 mm_hash=4afd8766233e54dcec7448d9
+1795688727.859749	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-8a71795e76f7595 mm_hash=0bf8357713fd303fc34b610e
+1795688727.865262	1777416	embed_multimodal	keys=pixel_values
+1795688727.865396	1777416	encode_vit	shape=(3, 518, 518)
+1795688730.605870	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-8b31bd8e004fb92 mm_hash=55dc8de57bec3b5c940f1a06
+1795688730.610868	1777416	embed_multimodal	keys=pixel_values
+1795688730.611048	1777416	encode_vit	shape=(3, 518, 518)
+1795688733.499805	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-a611d3bd8918740 mm_hash=546b82508c3c578464cfa70c
+1795688733.504677	1777416	embed_multimodal	keys=pixel_values
+1795688733.504801	1777416	encode_vit	shape=(3, 518, 518)
+1795688736.374476	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-9799312e5d0c115 mm_hash=8bb130d86f835d7b5c205695
+1795688736.380031	1777416	embed_multimodal	keys=pixel_values
+1795688736.380176	1777416	encode_vit	shape=(3, 518, 518)
+1795688739.160712	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-825b92b0d495898 mm_hash=56a368895d6e5f0499dcf762
+1795688739.166305	1777416	embed_multimodal	keys=pixel_values
+1795688739.166440	1777416	encode_vit	shape=(3, 518, 518)
+1795688741.911953	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-89ba2ac62254084 mm_hash=f1e85cd475a3ee87b76e0078
+1795688741.917335	1777416	embed_multimodal	keys=pixel_values
+1795688741.917465	1777416	encode_vit	shape=(3, 518, 518)
+1795688744.620849	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-af21f296732f9f9 mm_hash=f1e85cd475a3ee87b76e0078
+1795688747.338024	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-8f1a05fc84e8028 mm_hash=f1e85cd475a3ee87b76e0078
+1795688750.053600	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-adeca440d085350 mm_hash=f1e85cd475a3ee87b76e0078
+1795688752.721281	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-a3514b80de71bc8 mm_hash=f1e85cd475a3ee87b76e0078
+1795688755.736278	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-b50c221ca851804 mm_hash=87b5626d1a360e818ad89352
+1795688755.744365	1777416	embed_multimodal	keys=pixel_values
+1795688755.744440	1777416	encode_vit	shape=(3, 980, 980)
+1795688759.232783	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-bbaa9abc38817e4 mm_hash=87b5626d1a360e818ad89352
+1795688762.626988	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-9be1135db0de2fd mm_hash=87b5626d1a360e818ad89352
+1795688765.998381	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-a250da39dcfe6ac mm_hash=87b5626d1a360e818ad89352
+1795688769.343053	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-8971c7851053ca6 mm_hash=87b5626d1a360e818ad89352
+1795688773.097098	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-89731c6da7c06ec mm_hash=209a9428704b715cd1464870
+1795688773.104605	1777416	embed_multimodal	keys=pixel_values
+1795688773.104680	1777416	encode_vit	shape=(3, 980, 980)
+1795688776.904549	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-b2c25a1c785448d mm_hash=61e880a19d8fa342cb260940
+1795688776.912557	1777416	embed_multimodal	keys=pixel_values
+1795688776.912639	1777416	encode_vit	shape=(3, 980, 980)
+1795688780.652958	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-9481b4c29a4430c mm_hash=c91be9922f0bb3509ca2a083
+1795688780.660915	1777416	embed_multimodal	keys=pixel_values
+1795688780.660997	1777416	encode_vit	shape=(3, 980, 980)
+1795688784.429080	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-8409fc3bc33bda4 mm_hash=b28f4ce3702c8503f21c105f
+1795688784.436833	1777416	embed_multimodal	keys=pixel_values
+1795688784.436906	1777416	encode_vit	shape=(3, 980, 980)
+1795688788.172991	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-afa77ee0d3c81b2 mm_hash=3fca4a92ea9cfff21167fe99
+1795688788.181672	1777416	embed_multimodal	keys=pixel_values
+1795688788.181818	1777416	encode_vit	shape=(3, 980, 980)
+1795688791.931642	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-bc34ba7310a8190 mm_hash=17265e2c699f814e189f4f77
+1795688791.940212	1777416	embed_multimodal	keys=pixel_values
+1795688791.940302	1777416	encode_vit	shape=(3, 980, 980)
+1795688795.406706	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-ae9f2e4d913c0f3 mm_hash=17265e2c699f814e189f4f77
+1795688799.007400	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-b634c75e5e3e047 mm_hash=17265e2c699f814e189f4f77
+1795688802.496717	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-880e404eec6643f mm_hash=17265e2c699f814e189f4f77
+1795688805.901724	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-a5a2ef45706b19c mm_hash=17265e2c699f814e189f4f77
+1795688809.587506	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-b80e33f822289fc mm_hash=1be2393c5a475bb717b91e2a
+1795688809.596082	1777416	embed_multimodal	keys=pixel_values
+1795688809.596234	1777416	encode_vit	shape=(3, 980, 980)
+1795688813.084780	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-a6cdcb16040d66a mm_hash=1be2393c5a475bb717b91e2a
+1795688816.457573	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-89b8bc74dfb1114 mm_hash=1be2393c5a475bb717b91e2a
+1795688819.814962	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-ab03663caf7afa1 mm_hash=1be2393c5a475bb717b91e2a
+1795688823.218694	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-b912f8eef623042 mm_hash=1be2393c5a475bb717b91e2a
+1795688826.891764	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-9becd561dc52472 mm_hash=622d1f60b61906a2113e0422
+1795688826.897634	1777416	embed_multimodal	keys=pixel_values
+1795688826.897731	1777416	encode_vit	shape=(3, 980, 980)
+1795688830.687300	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-a7a1dbafc805a6b mm_hash=4f9f4955cc952c85bd90d4d1
+1795688830.695673	1777416	embed_multimodal	keys=pixel_values
+1795688830.695748	1777416	encode_vit	shape=(3, 980, 980)
+1795688834.465451	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-9e05125d475ca22 mm_hash=8faa318b37bc6ce70b754ecd
+1795688834.472888	1777416	embed_multimodal	keys=pixel_values
+1795688834.472961	1777416	encode_vit	shape=(3, 980, 980)
+1795688838.218067	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-b8f3cfad186bbc2 mm_hash=33bd882cfca51b5df549323a
+1795688838.225353	1777416	embed_multimodal	keys=pixel_values
+1795688838.225430	1777416	encode_vit	shape=(3, 980, 980)
+1795688842.016288	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-8a6c0dc311bba5d mm_hash=aa6116a40e9fb3aae718d6e7
+1795688842.024121	1777416	embed_multimodal	keys=pixel_values
+1795688842.024193	1777416	encode_vit	shape=(3, 980, 980)
+1795688845.545017	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-ba0c168537d06e3 mm_hash=1d6134b0a76df602d56e2dae
+1795688845.550533	1777416	embed_multimodal	keys=pixel_values
+1795688845.550682	1777416	encode_vit	shape=(3, 518, 518)
+1795688848.245729	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-b95f29b721b1089 mm_hash=1d6134b0a76df602d56e2dae
+1795688851.411895	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-93eb318f6425717 mm_hash=1d6134b0a76df602d56e2dae
+1795688854.231994	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-ac32f37405874ce mm_hash=1d6134b0a76df602d56e2dae
+1795688856.869920	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-aeb3764577c7efd mm_hash=1d6134b0a76df602d56e2dae
+1795688859.626005	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-bb6224572706f2a mm_hash=53228701499bc74f64f58559
+1795688859.630780	1777416	embed_multimodal	keys=pixel_values
+1795688859.630904	1777416	encode_vit	shape=(3, 518, 518)
+1795688862.363928	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-a5557e73f210e6b mm_hash=53228701499bc74f64f58559
+1795688865.083950	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-9e9ecf873e4ccd5 mm_hash=53228701499bc74f64f58559
+1795688867.796206	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-9b6b695164008aa mm_hash=53228701499bc74f64f58559
+1795688870.455927	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-ae9bc76f9b842fd mm_hash=53228701499bc74f64f58559
+1795688873.235605	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-b99f061499393b5 mm_hash=c6ce4c34fb1651a1f80088bd
+1795688873.240743	1777416	embed_multimodal	keys=pixel_values
+1795688873.240838	1777416	encode_vit	shape=(3, 518, 518)
+1795688876.026388	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-9db2cab8a4b10d5 mm_hash=0479845b49197821636a2589
+1795688876.030168	1777416	embed_multimodal	keys=pixel_values
+1795688876.030267	1777416	encode_vit	shape=(3, 518, 518)
+1795688878.889745	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-91103646a003e05 mm_hash=362f03fff9edb557bead94de
+1795688878.895496	1777416	embed_multimodal	keys=pixel_values
+1795688878.895590	1777416	encode_vit	shape=(3, 518, 518)
+1795688881.693672	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-a7c3f31e340c12a mm_hash=759367c5d5774d2813af2720
+1795688881.699575	1777416	embed_multimodal	keys=pixel_values
+1795688881.699658	1777416	encode_vit	shape=(3, 518, 518)
+1795688884.471264	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-b6154b526e7387b mm_hash=b5be54d677193e7583837685
+1795688884.476399	1777416	embed_multimodal	keys=pixel_values
+1795688884.476484	1777416	encode_vit	shape=(3, 518, 518)
+1795688887.247097	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-8bf90150d583dae mm_hash=d93fcadf8e2c5b9bb962144a
+1795688887.253009	1777416	embed_multimodal	keys=pixel_values
+1795688887.253157	1777416	encode_vit	shape=(3, 518, 518)
+1795688889.943870	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-985c4cb53385167 mm_hash=d93fcadf8e2c5b9bb962144a
+1795688892.650399	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-a04000fbdfece78 mm_hash=d93fcadf8e2c5b9bb962144a
+1795688895.366597	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-b23c46b6aa3571d mm_hash=d93fcadf8e2c5b9bb962144a
+1795688898.422668	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-bb3dfb7217e09ec mm_hash=2deadcfcde326098af3b7814
+1795688898.431221	1777416	embed_multimodal	keys=pixel_values
+1795688898.431377	1777416	encode_vit	shape=(3, 980, 980)
+1795688901.924052	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-bb6809388041d96 mm_hash=2deadcfcde326098af3b7814
+1795688905.333319	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-9ff45e2691e2fed mm_hash=2deadcfcde326098af3b7814
+1795688908.640907	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-b88b3838c05b48e mm_hash=2deadcfcde326098af3b7814
+1795688912.054890	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-be2eaf36f352610 mm_hash=d46e4cd47aa1f9e569cda2f0
+1795688912.060459	1777416	embed_multimodal	keys=pixel_values
+1795688912.060604	1777416	encode_vit	shape=(3, 518, 518)
+1795688914.723497	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-8427f54d08e8943 mm_hash=d46e4cd47aa1f9e569cda2f0
+1795688917.417978	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-a88225e28693d47 mm_hash=d46e4cd47aa1f9e569cda2f0
+1795688920.096671	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-94730afc3d315d2 mm_hash=d46e4cd47aa1f9e569cda2f0
+1795688922.744201	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-99e07667e453436 mm_hash=d46e4cd47aa1f9e569cda2f0
+1795688925.522484	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-b46a857dbb58794 mm_hash=b28bdd0e0ccb39e678662bc4
+1795688925.527764	1777416	embed_multimodal	keys=pixel_values
+1795688925.527910	1777416	encode_vit	shape=(3, 518, 518)
+1795688928.302953	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-a61215e5f9cd78c mm_hash=8b4cec633de72161ab4f2112
+1795688928.308612	1777416	embed_multimodal	keys=pixel_values
+1795688928.308754	1777416	encode_vit	shape=(3, 518, 518)
+1795688931.069374	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-ba8b18875091923 mm_hash=d0135509e9b0b526805b418e
+1795688931.075432	1777416	embed_multimodal	keys=pixel_values
+1795688931.075584	1777416	encode_vit	shape=(3, 518, 518)
+1795688933.857201	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-9ec559beac23c1e mm_hash=8a5fd30444d1f40af16bf0fb
+1795688933.862829	1777416	embed_multimodal	keys=pixel_values
+1795688933.862995	1777416	encode_vit	shape=(3, 518, 518)
+1795688936.635511	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-8e1ef31e0899d73 mm_hash=405ebb6e06fe1757478756b9
+1795688936.641060	1777416	embed_multimodal	keys=pixel_values
+1795688936.641205	1777416	encode_vit	shape=(3, 518, 518)
+1795688939.679476	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-a43119734e9558e mm_hash=5905db68f5a89d2545abb36e
+1795688939.687790	1777416	embed_multimodal	keys=pixel_values
+1795688939.687863	1777416	encode_vit	shape=(3, 980, 980)
+1795688943.167414	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-acb1cfa07370673 mm_hash=5905db68f5a89d2545abb36e
+1795688946.565572	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-867377a631442d5 mm_hash=5905db68f5a89d2545abb36e
+1795688949.853407	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-975355681396c86 mm_hash=5905db68f5a89d2545abb36e
+1795688953.255806	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-bcdd1e880141915 mm_hash=cb0c681769c6d004980b7734
+1795688953.260663	1777416	embed_multimodal	keys=pixel_values
+1795688953.260760	1777416	encode_vit	shape=(3, 518, 518)
+1795688955.975896	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-8c808111749ce36 mm_hash=cb0c681769c6d004980b7734
+1795688958.742806	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-aba3aed8d35192d mm_hash=cb0c681769c6d004980b7734
+1795688961.416558	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-ad6b0577a2731c1 mm_hash=cb0c681769c6d004980b7734
+1795688964.178320	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-8f6bf71c580f35a mm_hash=df5608c69db1849b4101eeb9
+1795688964.184001	1777416	embed_multimodal	keys=pixel_values
+1795688964.184146	1777416	encode_vit	shape=(3, 518, 518)
+1795688966.891236	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-b5a31f20cedaccf mm_hash=df5608c69db1849b4101eeb9
+1795688969.713943	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-a14f6bca1f8c4d0 mm_hash=df5608c69db1849b4101eeb9
+1795688972.508463	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-b4f55b00500c8e3 mm_hash=df5608c69db1849b4101eeb9
+1795688975.201781	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-93b45cd92f81112 mm_hash=df5608c69db1849b4101eeb9
+1795688978.249054	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-ac2adb0b8d8060b mm_hash=f53a1b535c5cef1e989972e1
+1795688978.257453	1777416	embed_multimodal	keys=pixel_values
+1795688978.257613	1777416	encode_vit	shape=(3, 980, 980)
+1795688981.709712	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-9ea1c7ca589271b mm_hash=f53a1b535c5cef1e989972e1
+1795688985.071688	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-9d8d49897726e20 mm_hash=f53a1b535c5cef1e989972e1
+1795688988.408060	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-a34200c87be3c82 mm_hash=f53a1b535c5cef1e989972e1
+1795688991.726150	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-b068d91717ec59e mm_hash=f53a1b535c5cef1e989972e1
+1795688995.417295	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-91ba8ecac41f5c3 mm_hash=2d06c0c078ac276fa7733617
+1795688995.425975	1777416	embed_multimodal	keys=pixel_values
+1795688995.426126	1777416	encode_vit	shape=(3, 980, 980)
+1795688999.200259	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-b803b98c8e9637c mm_hash=888b8dc508c42dd4a68e0895
+1795688999.208606	1777416	embed_multimodal	keys=pixel_values
+1795688999.208755	1777416	encode_vit	shape=(3, 980, 980)
+1795689002.966040	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-b56e299cf95b33f mm_hash=2368904d32d5578a2008d2c4
+1795689002.974546	1777416	embed_multimodal	keys=pixel_values
+1795689002.974692	1777416	encode_vit	shape=(3, 980, 980)
+1795689006.730248	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-ab2dd98d13c6ce2 mm_hash=1dd3456b8c5894c3e15f6288
+1795689006.737779	1777416	embed_multimodal	keys=pixel_values
+1795689006.737914	1777416	encode_vit	shape=(3, 980, 980)
+1795689010.585625	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-81dae4943be8625 mm_hash=497090e5e592111998b19121
+1795689010.594582	1777416	embed_multimodal	keys=pixel_values
+1795689010.594743	1777416	encode_vit	shape=(3, 980, 980)
+1795689014.318560	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-85706f468442ad8 mm_hash=1cf91ef37b52151a42d0a1a5
+1795689014.326884	1777416	embed_multimodal	keys=pixel_values
+1795689014.327050	1777416	encode_vit	shape=(3, 980, 980)
+1795689017.814788	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-8fd93a3f7222ffd mm_hash=1cf91ef37b52151a42d0a1a5
+1795689021.467902	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-a0d2eaad5d95016 mm_hash=1cf91ef37b52151a42d0a1a5
+1795689024.975049	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-9669e5aae702f7b mm_hash=1cf91ef37b52151a42d0a1a5
+1795689028.370393	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-9b00b67bba3ef80 mm_hash=1cf91ef37b52151a42d0a1a5
+1795689032.027721	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-b62e9131f6e5831 mm_hash=b650d9d17b0b18164bf2e3d4
+1795689032.036009	1777416	embed_multimodal	keys=pixel_values
+1795689032.036160	1777416	encode_vit	shape=(3, 980, 980)
+1795689035.485871	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-a40628b0a88170d mm_hash=b650d9d17b0b18164bf2e3d4
+1795689038.848057	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-a1eca937705ca8c mm_hash=b650d9d17b0b18164bf2e3d4
+1795689042.219568	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-92a52063dbab973 mm_hash=b650d9d17b0b18164bf2e3d4
+1795689045.549504	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-8aee7650361a163 mm_hash=b650d9d17b0b18164bf2e3d4
+1795689048.954392	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-acd05da50a18d04 mm_hash=0c9306bd5b56c2572ce5c0da
+1795689048.960464	1777416	embed_multimodal	keys=pixel_values
+1795689048.960614	1777416	encode_vit	shape=(3, 518, 518)
+1795689051.660930	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-b0410186afa5bab mm_hash=0c9306bd5b56c2572ce5c0da
+1795689054.314966	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-8417516ae001f52 mm_hash=0c9306bd5b56c2572ce5c0da
+1795689057.010181	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-9e8e1501eb39f78 mm_hash=0c9306bd5b56c2572ce5c0da
+1795689059.751786	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-a3b64edb5b1196f mm_hash=0c9306bd5b56c2572ce5c0da
+1795689062.554680	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-80d0b82d709e0ba mm_hash=901f531310b48778c7634150
+1795689062.560305	1777416	embed_multimodal	keys=pixel_values
+1795689062.560396	1777416	encode_vit	shape=(3, 518, 518)
+1795689065.241083	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-8ba8869fe6e3ec8 mm_hash=901f531310b48778c7634150
+1795689067.926477	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-b0612db2a511634 mm_hash=901f531310b48778c7634150
+1795689070.607476	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-b8c4df6fe187ef7 mm_hash=901f531310b48778c7634150
+1795689073.407174	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-a28cb8f2e40d915 mm_hash=ae9407c5c7e6f64760e1098f
+1795689073.412805	1777416	embed_multimodal	keys=pixel_values
+1795689073.412950	1777416	encode_vit	shape=(3, 518, 518)
+1795689076.223461	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-9e90d61a92fc27e mm_hash=2feb05e605bcc6a4cdf21e4f
+1795689076.228902	1777416	embed_multimodal	keys=pixel_values
+1795689076.229031	1777416	encode_vit	shape=(3, 518, 518)
+1795689079.038763	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-87359fbbfde96e8 mm_hash=81671530159f444dc17fe116
+1795689079.043930	1777416	embed_multimodal	keys=pixel_values
+1795689079.044059	1777416	encode_vit	shape=(3, 518, 518)
+1795689081.841558	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-a6bb77845b91f9d mm_hash=d4e08fa7e1590299561f5190
+1795689081.847062	1777416	embed_multimodal	keys=pixel_values
+1795689081.847205	1777416	encode_vit	shape=(3, 518, 518)
+1795689084.614805	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-9e7dc291fd4479a mm_hash=e707cc3575f3f1bd66cea484
+1795689084.620378	1777416	embed_multimodal	keys=pixel_values
+1795689084.620520	1777416	encode_vit	shape=(3, 518, 518)
+1795689087.624842	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-90d7f2294358d3b mm_hash=b68244be2a301154f1c68020
+1795689087.633356	1777416	embed_multimodal	keys=pixel_values
+1795689087.633509	1777416	encode_vit	shape=(3, 980, 980)
+1795689091.098239	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-b41765105136dad mm_hash=b68244be2a301154f1c68020
+1795689094.846038	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-95a0fd38123aeab mm_hash=b68244be2a301154f1c68020
+1795689098.312220	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-b9f8943fb748928 mm_hash=b68244be2a301154f1c68020
+1795689101.764298	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-aedc41cbdc459ca mm_hash=b68244be2a301154f1c68020
+1795689105.217466	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-932ee2923e43b6a mm_hash=8aa28302b70126299da848ae
+1795689105.223303	1777416	embed_multimodal	keys=pixel_values
+1795689105.223460	1777416	encode_vit	shape=(3, 518, 518)
+1795689107.935546	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-99646d943355355 mm_hash=8aa28302b70126299da848ae
+1795689111.165496	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-b9f022048d4bef1 mm_hash=8aa28302b70126299da848ae
+1795689113.966507	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-86058c4bb7253de mm_hash=8aa28302b70126299da848ae
+1795689116.672882	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-a9a8fd0f29cf482 mm_hash=8aa28302b70126299da848ae
+1795689119.698911	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-956dfa271b66d9e mm_hash=7710aeda467b02ca982c47bc
+1795689119.707388	1777416	embed_multimodal	keys=pixel_values
+1795689119.707538	1777416	encode_vit	shape=(3, 980, 980)
+1795689123.171031	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-b4fd47bca916eaf mm_hash=7710aeda467b02ca982c47bc
+1795689126.544095	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-b1737d6a677e280 mm_hash=7710aeda467b02ca982c47bc
+1795689129.954192	1777416	ecm_check	hit=True input_id=0 req=chatcmpl-bee2753bb9ad33c mm_hash=7710aeda467b02ca982c47bc
+1795689133.627715	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-88034d7b6610e3d mm_hash=cf63abc02b339bada5669d09
+1795689133.635581	1777416	embed_multimodal	keys=pixel_values
+1795689133.635710	1777416	encode_vit	shape=(3, 980, 980)
+1795689137.426797	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-9bd83dfc79ed12b mm_hash=f76ee4709746de7f05db5ee2
+1795689137.435362	1777416	embed_multimodal	keys=pixel_values
+1795689137.435521	1777416	encode_vit	shape=(3, 980, 980)
+1795689141.231123	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-9b783952166dc36 mm_hash=091d4606bb05c644a8efc52b
+1795689141.239717	1777416	embed_multimodal	keys=pixel_values
+1795689141.239875	1777416	encode_vit	shape=(3, 980, 980)
+1795689144.986199	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-8eb34180741c405 mm_hash=954015a7e21cb2380590d76b
+1795689144.993845	1777416	embed_multimodal	keys=pixel_values
+1795689144.993970	1777416	encode_vit	shape=(3, 980, 980)
+1795689148.749133	1777416	ecm_check	hit=False input_id=0 req=chatcmpl-ac4e515bb953488 mm_hash=eb77421373c133a22c30d7fd
+1795689148.757592	1777416	embed_multimodal	keys=pixel_values
+1795689148.757740	1777416	encode_vit	shape=(3, 980, 980)

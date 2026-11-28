@@ -1,0 +1,49 @@
+{
+  "name": "c4-hint",
+  "framework": "mstar",
+  "machine": "5880",
+  "host": "edgeaihost210",
+  "port": 18512,
+  "base_url": "http://localhost:18512",
+  "gpus": "0,1,2",
+  "gpu_info": [
+    "0, NVIDIA RTX 5880 Ada Generation, 580.178.04",
+    "1, NVIDIA RTX 5880 Ada Generation, 580.178.04",
+    "2, NVIDIA RTX 5880 Ada Generation, 580.178.04"
+  ],
+  "config": "configs/qwen3omni_mstar_thinker_tp2_bigstep_enc2_c2.yaml",
+  "config_sha256": "f9c75c14b271b49cd516d1525c77489d220458d28e970906789e9a86e57d8d59",
+  "shim_mode": "off",
+  "framework_commit": "2c8ffde8f7fd321c29aad3d1aad3e8cc8e8dc175",
+  "framework_dirty": true,
+  "framework_diff_sha256": "bbfa7247c050e4fa26d97498260e0084d526d12ad181ef12f66f7c8ef0fa220c",
+  "framework_untracked": 2,
+  "study_env": {
+    "MSTAR_C1": "1",
+    "MSTAR_C2": "1",
+    "MSTAR_C4": "1",
+    "MSTAR_MEDIA_KEYS": "1",
+    "MSTAR_ENCODER_CACHE_LOG": "/home/chaofan/workspaces/mm_reuse_study/results/smoke/5880/mstar/c4-profile/hint-keep0/server/encoder_cache.log",
+    "MSTAR_ENCODER_CACHE_MB": "2048",
+    "MSTAR_C1_LOG": "/home/chaofan/workspaces/mm_reuse_study/results/smoke/5880/mstar/c4-profile/hint-keep0/server/c1.log",
+    "MSTAR_GROUP_IMAGES": "16",
+    "MSTAR_MAX_MEDIA_FILES": "64",
+    "MSTAR_C4_KEEP": "0",
+    "MSTAR_SPEECH_NODES_EAGER": "1",
+    "MSTAR_PREPROCESS_CACHE_MB": "4096"
+  },
+  "command": [
+    "/home/chaofan/workspaces/mm_reuse_study/envs/mstar/bin/mstar",
+    "serve",
+    "qwen3_omni",
+    "--config",
+    "configs/qwen3omni_mstar_thinker_tp2_bigstep_enc2_c2.yaml",
+    "--port",
+    "18512",
+    "--enable-metrics"
+  ],
+  "cwd": "/home/chaofan/workspaces/mm_reuse_study",
+  "pid": 2879076,
+  "started_at": "2026-11-28T23:48:32+0800",
+  "log": "results/smoke/5880/mstar/c4-profile/hint-keep0/server/server.log"
+}

@@ -1,0 +1,50 @@
+[
+ {
+  "sid": "eqA",
+  "n": 3,
+  "q": "Describe the colors ",
+  "text": "Purple\nPurple\nYellow"
+ },
+ {
+  "sid": "eqA",
+  "n": 3,
+  "q": "How many images are ",
+  "text": "There are 3 images. The last one is yellow."
+ },
+ {
+  "sid": "eqB",
+  "n": 8,
+  "q": "Describe the colors ",
+  "text": "Yellow\nYellow\nYellow\nYellow\nOrange\nOrange\nWhite\nWhite"
+ },
+ {
+  "sid": "eqB",
+  "n": 8,
+  "q": "How many images are ",
+  "text": "There are 8 images. The last one is white."
+ },
+ {
+  "sid": "eqC",
+  "n": 8,
+  "q": "Describe the colors ",
+  "text": "Blue\nBlue\nYellow\nYellow\nBlack\nBlack\nGreen\nGreen"
+ },
+ {
+  "sid": "eqC",
+  "n": 8,
+  "q": "How many images are ",
+  "text": "There are 8 images. The last one is green."
+ },
+ {
+  "sid": "eqD",
+  "n": 20,
+  "q": "Describe the colors ",
+  "text": "Purple\nPurple\nBlue\nBlue\nOrange\nOrange\nYellow\nYellow\nOrange\nOrange\nBlack\nBlack\nRed\nRed\nBlue\nBlue\nRed\nRed\nWhite\nWhite"
+ },
+ {
+  "sid": "eqD",
+  "n": 20,
+  "q": "How many images are ",
+  "text": "There are 20 images. The last one is white."
+ }
+]

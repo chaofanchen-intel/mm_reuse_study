@@ -1,0 +1,34 @@
+{
+  "name": "g1-vo-pfx1",
+  "framework": "vllm-omni",
+  "machine": "5880",
+  "host": "edgeaihost210",
+  "port": 18401,
+  "base_url": "http://localhost:18401",
+  "gpus": "0,1",
+  "gpu_info": [
+    "0, NVIDIA RTX 5880 Ada Generation, 580.178.04",
+    "1, NVIDIA RTX 5880 Ada Generation, 580.178.04"
+  ],
+  "config": "configs/bagel_vllm_omni_audit.yaml",
+  "config_sha256": "585f24c82f55c51e5562a1dcc3530762fde209b6d7bd5baddc7dc7f121d655fe",
+  "shim_mode": "count",
+  "framework_commit": "06a28821a7f72bdb436c3df656b10f67fded0846",
+  "framework_dirty": false,
+  "command": [
+    "/home/chaofan/workspaces/mm_reuse_study/envs/vllm-omni/bin/vllm",
+    "serve",
+    "/home/chaofan/workspaces/mm_reuse_study/models/cache/models--ByteDance-Seed--BAGEL-7B-MoT/snapshots/5019f57d168e5816e8f3f701b17cc816bb7cf24b",
+    "--omni",
+    "--port",
+    "18401",
+    "--deploy-config",
+    "configs/bagel_vllm_omni_audit.yaml",
+    "--served-model-name",
+    "bagel"
+  ],
+  "cwd": "/home/chaofan/workspaces/mm_reuse_study",
+  "pid": 1663428,
+  "started_at": "2026-11-26T17:56:11+0800",
+  "log": "results/g1/5880/vllm-omni/pfx1/server/server.log"
+}

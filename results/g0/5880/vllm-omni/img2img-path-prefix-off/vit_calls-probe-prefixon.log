@@ -1,0 +1,10 @@
+1795619464.837	3424124	ecm_check	hit=False input_id=0 req=chatcmpl-999 mm_hash=f0d7de3ea652505758a8b374
+1795619464.851	3424124	embed_multimodal	keys=pixel_values_img2img,vit_pixel_values_img2img
+1795619464.869	3424124	encode_vit	shape=(3, 518, 518)
+1795619465.525	3424124	ecm_check	hit=False input_id=0 req=chatcmpl-999 mm_hash=960703e56bd4f2ef53ac7068
+1795619465.528	3424124	embed_multimodal	keys=pixel_values_img2img,vit_pixel_values_img2img
+1795619465.550	3424124	encode_vit	shape=(3, 518, 518)
+1795619502.535	3424124	ecm_check	hit=False input_id=0 req=chatcmpl-bb3 mm_hash=fbc08783e8339350d9ed32b5
+1795619502.553	3424124	embed_multimodal	keys=pixel_values_img2img,vit_pixel_values_img2img
+1795619502.569	3424124	encode_vit	shape=(3, 518, 518)
+1795619502.959	3424124	ecm_check	hit=True input_id=0 req=chatcmpl-bb3 mm_hash=960703e56bd4f2ef53ac7068

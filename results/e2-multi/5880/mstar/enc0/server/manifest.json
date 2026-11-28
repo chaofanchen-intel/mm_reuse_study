@@ -1,0 +1,44 @@
+{
+  "name": "e2-mstar-enc0",
+  "framework": "mstar",
+  "machine": "5880",
+  "host": "edgeaihost210",
+  "port": 18502,
+  "base_url": "http://localhost:18502",
+  "gpus": "0,1,2",
+  "gpu_info": [
+    "0, NVIDIA RTX 5880 Ada Generation, 580.178.04",
+    "1, NVIDIA RTX 5880 Ada Generation, 580.178.04",
+    "2, NVIDIA RTX 5880 Ada Generation, 580.178.04"
+  ],
+  "config": "configs/qwen3omni_mstar_thinker_tp2_bigstep.yaml",
+  "config_sha256": "ec24056059ce8611b564f5d786b70170e6ff448ae0bdebfba65f6bc92752cb82",
+  "shim_mode": "off",
+  "framework_commit": "2c8ffde8f7fd321c29aad3d1aad3e8cc8e8dc175",
+  "framework_dirty": true,
+  "framework_diff_sha256": "7d0617e6aaff6ceb5d68e4cfe8219b9e6b41a1221cfdd302f4f1ea0930f27d84",
+  "framework_untracked": 1,
+  "study_env": {
+    "MSTAR_MEDIA_KEYS": "1",
+    "MSTAR_ENCODER_CACHE_LOG": "/home/chaofan/workspaces/mm_reuse_study/results/e2-multi/5880/mstar/enc0/server/encoder_cache.log",
+    "MSTAR_ENCODER_CACHE_MB": "2048",
+    "MSTAR_GROUP_IMAGES": "16",
+    "MSTAR_MAX_MEDIA_FILES": "64",
+    "MSTAR_SPEECH_NODES_EAGER": "1",
+    "MSTAR_PREPROCESS_CACHE_MB": "4096"
+  },
+  "command": [
+    "/home/chaofan/workspaces/mm_reuse_study/envs/mstar/bin/mstar",
+    "serve",
+    "qwen3_omni",
+    "--config",
+    "configs/qwen3omni_mstar_thinker_tp2_bigstep.yaml",
+    "--port",
+    "18502",
+    "--enable-metrics"
+  ],
+  "cwd": "/home/chaofan/workspaces/mm_reuse_study",
+  "pid": 265786,
+  "started_at": "2026-11-28T17:06:50+0800",
+  "log": "results/e2-multi/5880/mstar/enc0/server/server.log"
+}

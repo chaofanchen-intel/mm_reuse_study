@@ -1,0 +1,179 @@
+From 3ae9020923009a96eca7a9d99ac62f66c72f9b6a Mon Sep 17 00:00:00 2001
+From: mm_reuse_study <study@localhost>
+Date: Sat, 28 Nov 2026 23:56:29 +0800
+Subject: [PATCH] =?UTF-8?q?mm=5Freuse=5Fstudy=20M3:=20=E7=9B=B8=E9=82=BB?=
+ =?UTF-8?q?=E5=9B=BE=E5=83=8F=E5=90=88=E6=88=90=E4=B8=80=E4=B8=AA=20walk?=
+ =?UTF-8?q?=EF=BC=88MSTAR=5FGROUP=5FIMAGES=EF=BC=89?=
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+---
+ mstar/model/qwen3_omni/qwen3_omni_model.py | 46 +++++++++++++++--
+ mstar/model/qwen3_omni/submodules.py       | 60 +++++++++++++++++++++-
+ 2 files changed, 100 insertions(+), 6 deletions(-)
+
+diff --git a/mstar/model/qwen3_omni/qwen3_omni_model.py b/mstar/model/qwen3_omni/qwen3_omni_model.py
+index 830afeadc..654630a31 100644
+--- a/mstar/model/qwen3_omni/qwen3_omni_model.py
++++ b/mstar/model/qwen3_omni/qwen3_omni_model.py
+@@ -30,6 +30,7 @@ Text-only mode:
+     partition runs.  Talker and Code2Wav are idle.
+ """
+ 
++import os
+ import logging
+ from pathlib import Path
+ from typing import Any, NamedTuple
+@@ -214,13 +215,36 @@ def _thinker_steps(plan: list[PromptPart]) -> list[ThinkerStep]:
+         return [ThinkerStep("prefill_text", [part]) for part in plan]
+     steps: list[ThinkerStep] = []
+     start = 0
+-    for at in media:
+-        end = len(plan) if at == media[-1] else at + 1
+-        steps.append(ThinkerStep(Qwen3OmniModel._MM_WALKS[plan[at].modality][0], plan[start:end]))
++    for group in _media_groups(plan, media):
++        end = len(plan) if group[-1] == media[-1] else group[-1] + 1
++        steps.append(ThinkerStep(Qwen3OmniModel._MM_WALKS[plan[group[0]].modality][0], plan[start:end]))
+         start = end
+     return steps
+ 
+ 
++# mm_reuse_study M3: consecutive images with no text between them prefill in one walk
++# (one vision-encoder call and one Thinker row), instead of a walk pair per image.
++# MSTAR_GROUP_IMAGES=N: at most N images per group (unset/0/1: a walk pair per image, as upstream).
++# Kept small: a long grouped row (8 images, ~2400 tokens) lost its prefix hits and diverged the TP ranks.
++GROUP_IMAGES = int(os.environ.get("MSTAR_GROUP_IMAGES", "0") or 0)
++
++
++
++def _media_groups(plan: list[PromptPart], media: list[int]) -> list[list[int]]:
++    """The attachments, each its own group, or with ``GROUP_IMAGES`` each run of
++    adjacent images (plan neighbours, so no text between them) as one group."""
++    groups: list[list[int]] = []
++    for at in media:
++        if (
++            GROUP_IMAGES > 1 and groups and len(groups[-1]) < GROUP_IMAGES and plan[at].modality == "image"
++            and plan[groups[-1][-1]].modality == "image" and groups[-1][-1] == at - 1
++        ):
++            groups[-1].append(at)
++        else:
++            groups.append([at])
++    return groups
++
++
+ class ImageSpan(NamedTuple):
+     length: int
+     advance: int
+@@ -1135,9 +1159,21 @@ class Qwen3OmniModel(Model):
+         of their own (`split_spans`)."""
+         texts = tensors["text_inputs"]
+         out = {**tensors, "text_inputs": []}
+-        for k, step in enumerate(_thinker_steps(plan)):
++        steps = _thinker_steps(plan)
++        for k, step in enumerate(steps):
+             out[span_name("text_inputs", k)] = [texts[part.index] for part in step.parts if part.modality == TEXT]
+-        return split_spans(out, self.MEDIA_SPANS)[0]
++        out = split_spans(out, self.MEDIA_SPANS)[0]
++        for step in steps:   # M3: a group's images travel as one signal, under its first image's name
++            images = [part.index for part in step.parts if part.modality == "image"]
++            if len(images) > 1:
++                first = images[0]
++                out[span_name("pixel_values", first)] = [torch.cat(
++                    [out.pop(span_name("pixel_values", i))[0] if i != first else out[span_name("pixel_values", i)][0]
++                     for i in images])]
++                out[span_name("image_grid_thw", first)] = [torch.cat(
++                    [out.pop(span_name("image_grid_thw", i))[0].reshape(-1, 3) if i != first
++                     else out[span_name("image_grid_thw", i)][0].reshape(-1, 3) for i in images])]
++        return out
+ 
+     def prompt_tokens(self, tensors: NameToTensorList, kv_layout: dict[str, dict[str, LabelLayout]]) -> int:
+         # text_inputs leaves out each attachment, whose span in the Thinker's layout counts its sentinels and rows
+diff --git a/mstar/model/qwen3_omni/submodules.py b/mstar/model/qwen3_omni/submodules.py
+index 8ad9ab422..914bf6b23 100644
+--- a/mstar/model/qwen3_omni/submodules.py
++++ b/mstar/model/qwen3_omni/submodules.py
+@@ -390,7 +390,10 @@ class ThinkerSubmodule(ARNodeSubmodule):
+         if name is not None and name in inputs:
+             # the attachment's row carries the text around it (`_audio_row`, `_spliced_row`)
+             around = sum(text.shape[0] for text in inputs.get("text_inputs", ()))
+-            return InputSeqLenInfo(inputs[name][0].shape[0] + 2 + around)
++            # M3: a grouped row holds several images, each between its own two sentinels
++            grids = inputs.get("image_grid_thw") if graph_walk == "prefill_vision" else None
++            items = int(grids[0].reshape(-1, 3).shape[0]) if grids else 1
++            return InputSeqLenInfo(inputs[name][0].shape[0] + 2 * items + around)
+         return None
+ 
+     def prepare_inputs(
+@@ -439,6 +442,9 @@ class ThinkerSubmodule(ARNodeSubmodule):
+         if graph_walk == "prefill_audio":
+             return self._audio_row(fwd_info, inputs, start_pos)
+ 
++        if graph_walk == "prefill_vision" and inputs["image_grid_thw"][0].reshape(-1, 3).shape[0] > 1:
++            return self._grouped_image_row(fwd_info, inputs, start_pos)   # mm_reuse_study M3
++
+         if graph_walk == "prefill_vision":
+             before, after = self._text_around(fwd_info, inputs)
+             vision_embeds = inputs["vision_embeds"][0].to(device)
+@@ -499,6 +505,58 @@ class ThinkerSubmodule(ARNodeSubmodule):
+             row.tensor_inputs["deepstack"] = deepstack
+             return row
+ 
++    def _grouped_image_row(
++        self, fwd_info: CurrentForwardPassInfo, inputs: NameToTensorList, start_pos: int,
++    ) -> ARNodeInputs:
++        """mm_reuse_study M3: several images in one row, each laid out as a
++        single-image row lays it out (sentinels, grid positions, the advance
++        ``image_span`` gives), one after the other, so positions and KV equal
++        those of the walk-per-image plan."""
++        device = self.get_device()
++        merge = self.config.vision.spatial_merge_size
++        before, after = self._text_around(fwd_info, inputs)
++        vision_embeds = inputs["vision_embeds"][0].to(device)
++        grids = inputs["image_grid_thw"][0].reshape(-1, 3)
++        counts = [int(g.prod()) // merge ** 2 for g in grids]
++        assert sum(counts) == vision_embeds.shape[0], (counts, vision_embeds.shape)
++        media_pos = start_pos + before.shape[0]
++        pos = media_pos
++        embeds, pos_ids, offsets = [], [], []
++        row_start = 0
++        at = before.shape[0]   # row offset of the current image's BOS within the spliced row
++        for grid, n in zip(grids, counts):
++            emb = vision_embeds[row_start:row_start + n]
++            embeds.append(self._wrap_vision_input(emb))
++            vis = get_rope_index_vision(
++                grid.to(device), pos + 1, position_id_per_seconds=self.config.thinker.position_id_per_seconds,
++                device=device, spatial_merge_size=merge, seconds_per_grid=None,
++            )
++            end_base = pos + image_span(grid, merge).advance - 1
++            pos_ids.append(torch.cat([get_rope_index_text(1, pos, device), vis,
++                                      get_rope_index_text(1, end_base, device)], dim=1))
++            offsets.append((at + 1, row_start, n))
++            at += n + 2
++            row_start += n
++            pos = end_base + 1
++        total = sum(counts) + 2 * len(counts)
++        mm_mask = None
++        if fwd_info.step_metadata.get("audio_output", True):
++            mm_mask = torch.ones(total, dtype=torch.bool, device=device)
++            for row_at, _, n in offsets:
++                mm_mask[row_at - 1 - before.shape[0]].fill_(False)
++                mm_mask[row_at + n - before.shape[0]].fill_(False)
++        row = self._spliced_row(
++            before, after, torch.cat(embeds), torch.cat(pos_ids, dim=1), mm_mask, start_pos, int(pos - media_pos),
++        )
++        deepstack = []
++        for deepstack_inp in inputs["deepstack"]:
++            full = torch.zeros_like(row.input_embeds)
++            for row_at, src, n in offsets:
++                full[row_at:row_at + n] = deepstack_inp[src:src + n]
++            deepstack.append(full)
++        row.tensor_inputs["deepstack"] = deepstack
++        return row
++
+     def _media_mask(self, media_len: int, fwd_info: CurrentForwardPassInfo) -> torch.Tensor | None:
+         """Which rows of an attachment and its two sentinels are media, for the
+         Talker; None for a request with no audio output, which never reads it.
+-- 
+2.43.0
+

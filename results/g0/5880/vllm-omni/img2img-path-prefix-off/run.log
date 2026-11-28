@@ -1,0 +1,11 @@
+A-image-first-q0              21978 ms  prefix 0/0  vit 2  emb 2  ans='The red'
+A-image-first-q1              21689 ms  prefix 0/0  vit 1  emb 1  ans=''
+A-image-first-q2              22001 ms  prefix 0/0  vit 1  emb 1  ans='【Answer'
+A-image-first-q3              22089 ms  prefix 0/0  vit 1  emb 1  ans='````'
+B-text-first-q0               22247 ms  prefix 0/0  vit 1  emb 1  ans='The red'
+B-text-first-q1               22349 ms  prefix 0/0  vit 1  emb 1  ans='ToTo'
+A-new-image-B                 22437 ms  prefix 0/0  vit 2  emb 2  ans='<th？\n\n'
+t2i-512                       20016 ms  status=200  vit 0  emb 0
+i2i-ref-A-0                   22386 ms  status=200  vit 1  emb 1
+i2i-ref-A-1                   22346 ms  status=200  vit 0  emb 0
+wrote results/g0/vllm-omni-noprefix/requests.jsonl

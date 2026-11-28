@@ -1,0 +1,451 @@
+W1126 18:16:39.154000 1784813 torch/_opaque_base.py:6] torch._opaque_base is deprecated, use torch._custom_class_base instead
+W1126 18:16:39.155000 1784813 torch/_library/opaque_object.py:288] register_opaque_type is deprecated, use register_custom_class instead
+W1126 18:16:39.155000 1784813 torch/_library/opaque_object.py:211] typ='value' is deprecated, use typ='constant' instead
+[0;36m(MainProcess pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:16:50[0m [90m[logo.py:52][0m        [97m█     █     █▄   ▄█[0m    [34m   ▄▀▀[38;5;208m▀▀▄ [0m[97m█▄   ▄█ █▄    █ ▀█▀ [0m
+[0;36m(MainProcess pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:16:50[0m [90m[logo.py:52][0m  [38;5;208m▄▄[0m [34m▄█[0m [97m█     █     █ ▀▄▀ █[0m[97m  ▄▄▄ [0m[34m █    [38;5;208m█ [0m[97m█ ▀▄▀ █ █ ▀▄  █  █  [0m
+[0;36m(MainProcess pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:16:50[0m [90m[logo.py:52][0m   [38;5;208m█[0m[34m▄█▀[0m [97m█     █     █     █[0m[97m      [0m[34m █    [38;5;208m█ [0m[97m█     █ █   ▀▄█  █  [0m
+[0;36m(MainProcess pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:16:50[0m [90m[logo.py:52][0m    [34m▀▀[0m  [97m▀▀▀▀▀ ▀▀▀▀▀ ▀     ▀[0m      [35m  ▀▀▀▀  [0m[97m▀     ▀ ▀     ▀ ▀▀▀ [0m
+[0;36m(MainProcess pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:16:50[0m [90m[logo.py:52][0m 
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:16:50[0m [90m[startup.py:38][0m vLLM server version 0.34.0, serving model /home/chaofan/workspaces/mm_reuse_study/models/cache/models--Qwen--Qwen3-Omni-30B-A3B-Instruct/snapshots/26291f793822fb6be9555850f06dfe95f2d7e695
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:16:50[0m [90m[startup.py:96][0m non-default args: {'model_tag': '/home/chaofan/workspaces/mm_reuse_study/models/cache/models--Qwen--Qwen3-Omni-30B-A3B-Instruct/snapshots/26291f793822fb6be9555850f06dfe95f2d7e695', 'port': 18511, 'model': '/home/chaofan/workspaces/mm_reuse_study/models/cache/models--Qwen--Qwen3-Omni-30B-A3B-Instruct/snapshots/26291f793822fb6be9555850f06dfe95f2d7e695', 'served_model_name': ['qwen3_omni']}
+[transformers] Unrecognized keys in `rope_parameters` for 'rope_type'='default': {'mrope_section', 'interleaved'}
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:16:50[0m [90m[omni_base.py:217][0m [AsyncOmni] Initializing with model /home/chaofan/workspaces/mm_reuse_study/models/cache/models--Qwen--Qwen3-Omni-30B-A3B-Instruct/snapshots/26291f793822fb6be9555850f06dfe95f2d7e695
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:16:50[0m [90m[omni_engine_base.py:206][0m [OmniEngine] Initializing with model /home/chaofan/workspaces/mm_reuse_study/models/cache/models--Qwen--Qwen3-Omni-30B-A3B-Instruct/snapshots/26291f793822fb6be9555850f06dfe95f2d7e695
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:16:50[0m [90m[omni_engine_base.py:368][0m [OmniEngine] Launching Orchestrator thread with 1 stages
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:16:51[0m [90m[initialization.py:452][0m Loaded OmniTransferConfig with 0 connector configurations
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:16:51[0m [90m[stage_init_utils.py:807][0m [stage_init] Set moe_backend=triton for Qwen3-Omni stage
+[transformers] Unrecognized keys in `rope_parameters` for 'rope_type'='default': {'mrope_section', 'interleaved'}
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:16:51[0m [90m[model.py:761][0m Resolved architecture: Qwen3OmniMoeForConditionalGeneration
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:16:51[0m [90m[model.py:2214][0m Using max model len 65536
+[0;36m(APIServer pid=1784813)[0;0m [33mWARNING[0m [90m11-26 18:16:51[0m [90m[model.py:1136][0m Model does not support mm_device_do_normalize, forcing mm_device_do_normalize = False.
+[transformers] Unrecognized keys in `rope_parameters` for 'rope_type'='default': {'mrope_section', 'interleaved'}
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:16:51[0m [90m[scheduler.py:354][0m Chunked prefill is enabled with max_num_batched_tokens=32768.
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:16:51[0m [90m[kernel.py:517][0m Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['native'], fused_add_rms_norm=['native'], gelu_and_mul_sparse=['triton', 'native'])
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:16:51[0m [90m[stage_utils.py:178][0m Stage 0 logical-to-physical device mapping: 0->2, 1->3
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:16:51[0m [90m[stage_utils.py:178][0m Stage 0 logical-to-physical device mapping: 0->2, 1->3
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:16:51[0m [90m[numa_utils.py:140][0m Auto-detected NUMA nodes for GPUs: [1, 1]
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:16:51[0m [90m[numa_utils.py:607][0m Launching EngineCore subprocess (local_rank=0, dp_local_rank=0) with numactl --cpunodebind=1 --preferred=1
+W1126 18:16:52.912000 1786352 torch/_opaque_base.py:6] torch._opaque_base is deprecated, use torch._custom_class_base instead
+W1126 18:16:52.913000 1786352 torch/_library/opaque_object.py:288] register_opaque_type is deprecated, use register_custom_class instead
+W1126 18:16:52.913000 1786352 torch/_library/opaque_object.py:211] typ='value' is deprecated, use typ='constant' instead
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=1786352)[0;0m [32mINFO[0m [90m11-26 18:17:03[0m [90m[core.py:153][0m Initializing a V1 LLM engine (v0.34.0) with config: model='/home/chaofan/workspaces/mm_reuse_study/models/cache/models--Qwen--Qwen3-Omni-30B-A3B-Instruct/snapshots/26291f793822fb6be9555850f06dfe95f2d7e695', speculative_config=None, tokenizer='/home/chaofan/workspaces/mm_reuse_study/models/cache/models--Qwen--Qwen3-Omni-30B-A3B-Instruct/snapshots/26291f793822fb6be9555850f06dfe95f2d7e695', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=65536, download_dir=None, load_format=auto, tensor_parallel_size=2, pipeline_parallel_size=1, data_parallel_size=1, decode_context_parallel_size=1, dcp_comm_backend=ag_rs, disable_custom_all_reduce=False, quantization=None, quantization_config=None, enforce_eager=False, aux_output_config=AuxOutputConfig(enable_return_routed_experts=False, max_bytes=None), kv_cache_dtype=auto, device_config=cuda, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser='', reasoning_parser_plugin='', enable_in_reasoning=False), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None, per_request_spec_decode_metrics='none', kv_cache_metrics=False, kv_cache_metrics_sample=0.01, custom_histogram_buckets=None, cudagraph_metrics=False, enable_layerwise_nvtx_tracing=False, enable_mfu_metrics=False, enable_mm_processor_stats=False, enable_logging_iteration_details=False, jit_monitor_mode='warn', jit_monitor_verbose=False), seed=0, served_model_name=qwen3_omni, enable_prefix_caching=True, enable_chunked_prefill=True, pooler_config=None, compilation_config={'mode': <CompilationMode.VLLM_COMPILE: 3>, 'debug_dump_path': None, 'cache_dir': '', 'compile_cache_save_format': 'binary', 'backend': 'inductor', 'custom_ops': ['none'], 'ir_enable_torch_wrap': True, 'splitting_ops': ['vllm::unified_attention_with_output', 'vllm::unified_mla_attention_with_output', 'vllm::mamba_mixer2', 'vllm::mamba_mixer', 'vllm::short_conv', 'vllm::zaya_cca', 'vllm::qwen4_exp_ple_short_conv', 'vllm::qwen4_exp_qsa_with_output', 'vllm::qwen4_exp_qsa_prepare_with_output', 'vllm::linear_attention', 'vllm::qwen_gdn_attention_core', 'vllm::qwen_gdn_attention_core_fused_norm_packed', 'vllm::gdn_attention_core_xpu', 'vllm::olmo_hybrid_gdn_full_forward', 'vllm::sparse_attn_indexer', 'vllm::rocm_aiter_sparse_attn_indexer', 'vllm::deepseek_v4_attention', 'vllm::hpc_rope_norm_forward', 'vllm::step5_csa_attention', 'vllm::unified_kv_cache_update', 'vllm::unified_mla_kv_cache_update'], 'compile_mm_encoder': False, 'cudagraph_mm_encoder': False, 'encoder_cudagraph_token_budgets': [], 'encoder_cudagraph_max_token_budget': 5120, 'encoder_cudagraph_max_vision_items_per_batch': 0, 'encoder_cudagraph_max_frames_per_batch': None, 'cudagraph_decoder_replay': True, 'decoder_replay_cudagraph_capture_sizes': [], 'decoder_replay_trim_threshold': 768, 'compile_sizes': [], 'compile_ranges_endpoints': [32768], 'inductor_compile_config': {'enable_auto_functionalized_v2': False, 'combo_kernels': True, 'benchmark_combo_kernel': True}, 'inductor_passes': {}, 'cudagraph_mode': <CUDAGraphMode.FULL_AND_PIECEWISE: (2, 1)>, 'use_breakable_cudagraph': False, 'cudagraph_num_of_warmups': 1, 'cudagraph_capture_sizes': [1, 2, 4, 8], 'prefill_cudagraph_capture_token_sizes': [1, 2, 4, 8], 'max_prefill_cudagraph_capture_tokens': 8, 'decode_cudagraph_capture_request_sizes': [1, 2, 4], 'max_decode_cudagraph_capture_requests': 4, 'max_decode_cudagraph_capture_tokens': None, 'cudagraph_copy_inputs': False, 'cudagraph_specialize_lora': True, 'use_inductor_graph_partition': False, 'pass_config': {'fuse_norm_quant': False, 'fuse_act_quant': False, 'fuse_attn_quant': False, 'fuse_allreduce_rms': False, 'enable_qk_norm_rope_fusion': False, 'fuse_rope_kvcache_cat_mla': False, 'fuse_act_padding': False, 'fuse_qk_norm_rope_kvcache': False}, 'max_cudagraph_capture_size': 8, 'dynamic_shapes_config': {'type': <DynamicShapesType.BACKED: 'backed'>, 'evaluate_guards': False, 'assume_32_bit_indexing': False}, 'local_cache_dir': None, 'fast_moe_cold_start': False, 'static_all_moe_layers': []}, kernel_config=KernelConfig(ir_op_priority=IrOpPriorityConfig(rms_norm=['native'], fused_add_rms_norm=['native'], gelu_and_mul_sparse=['triton', 'native']), enable_flashinfer_autotune=True, enable_rocm_segmented_attn_autotune=False, enable_rocm_aiter_gemm_warmup=False, enable_cutedsl_warmup=True, enable_jit_warmup=True, monokernel=False, moe_backend='triton', sparse_indexer_topk_backend='auto', linear_backend='auto', linear_backend_per_quant=None, rdna_hybrid_w4a16_prefill_dequant='disable')
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=1786352)[0;0m [32mINFO[0m [90m11-26 18:17:03[0m [90m[multiproc_executor.py:191][0m DP group leader: node_rank=0, node_rank_within_dp=0, master_addr=127.0.0.1, mq_connect_ip=10.239.180.106 (local), world_size=2, local_world_size=2
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=1786352)[0;0m [32mINFO[0m [90m11-26 18:17:03[0m [90m[numa_utils.py:607][0m Launching worker subprocess (local_rank=0, dp_local_rank=None) with numactl --cpunodebind=1 --preferred=1
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=1786352)[0;0m [32mINFO[0m [90m11-26 18:17:03[0m [90m[numa_utils.py:607][0m Launching worker subprocess (local_rank=1, dp_local_rank=None) with numactl --cpunodebind=1 --preferred=1
+W1126 18:17:04.384000 1787774 torch/_opaque_base.py:6] torch._opaque_base is deprecated, use torch._custom_class_base instead
+W1126 18:17:04.384000 1787774 torch/_library/opaque_object.py:288] register_opaque_type is deprecated, use register_custom_class instead
+W1126 18:17:04.385000 1787774 torch/_library/opaque_object.py:211] typ='value' is deprecated, use typ='constant' instead
+W1126 18:17:04.422000 1787776 torch/_opaque_base.py:6] torch._opaque_base is deprecated, use torch._custom_class_base instead
+W1126 18:17:04.423000 1787776 torch/_library/opaque_object.py:288] register_opaque_type is deprecated, use register_custom_class instead
+W1126 18:17:04.424000 1787776 torch/_library/opaque_object.py:211] typ='value' is deprecated, use typ='constant' instead
+[0;36m(Worker pid=1787774)[0;0m [32mINFO[0m [90m11-26 18:17:14[0m [90m[parallel_state.py:1935][0m world_size=2 rank=0 local_rank=0 distributed_init_method=file:///tmp/vllm_dist_79651000b7e14c1b9888a378b6e75ecb backend=nccl
+[0;36m(Worker pid=1787776)[0;0m [32mINFO[0m [90m11-26 18:17:14[0m [90m[parallel_state.py:1935][0m world_size=2 rank=1 local_rank=1 distributed_init_method=file:///tmp/vllm_dist_79651000b7e14c1b9888a378b6e75ecb backend=nccl
+[0;36m(Worker pid=1787774)[0;0m [32mINFO[0m [90m11-26 18:17:14[0m [90m[pynccl.py:148][0m vLLM is using nccl==2.30.7
+[0;36m(Worker pid=1787776)[0;0m [33mWARNING[0m [90m11-26 18:17:15[0m [90m[symm_mem.py:67][0m SymmMemCommunicator: Device capability 8.9 not supported, communicator is not available.
+[0;36m(Worker pid=1787774)[0;0m [33mWARNING[0m [90m11-26 18:17:15[0m [90m[symm_mem.py:67][0m SymmMemCommunicator: Device capability 8.9 not supported, communicator is not available.
+[0;36m(Worker pid=1787774)[0;0m [33mWARNING[0m [90m11-26 18:17:15[0m [90m[flashinfer_all_reduce.py:446][0m FlashInfer All Reduce is disabled because it is not supported for world_size=2.
+[0;36m(Worker pid=1787776)[0;0m [33mWARNING[0m [90m11-26 18:17:15[0m [90m[flashinfer_all_reduce.py:446][0m FlashInfer All Reduce is disabled because it is not supported for world_size=2.
+[0;36m(Worker pid=1787774)[0;0m [32mINFO[0m [90m11-26 18:17:15[0m [90m[cuda_communicator.py:380][0m Using ['CUSTOM', 'PYNCCL'] all-reduce backends (in dispatch order) for group 'tp:0' out of potential backends: ['FLASHINFER_PCIE_IPC', 'FLASHINFER', 'NCCL_SYMM_MEM', 'QUICK_REDUCE', 'AITER_CUSTOM', 'CUSTOM', 'SYMM_MEM', 'PYNCCL'].
+[0;36m(Worker pid=1787774)[0;0m [32mINFO[0m [90m11-26 18:17:15[0m [90m[cuda_communicator.py:380][0m Using ['PYNCCL'] all-reduce backends (in dispatch order) for group 'ep:0' out of potential backends: ['FLASHINFER_PCIE_IPC', 'FLASHINFER', 'NCCL_SYMM_MEM', 'QUICK_REDUCE', 'AITER_CUSTOM', 'CUSTOM', 'SYMM_MEM', 'PYNCCL'].
+[0;36m(Worker pid=1787774)[0;0m [32mINFO[0m [90m11-26 18:17:15[0m [90m[parallel_state.py:2394][0m rank 0 in world size 2 is assigned as DP rank 0, PP rank 0, PCP rank 0, TP rank 0, ETP rank 0, EP rank 0, EPLB rank N/A
+[0;36m(Worker pid=1787774)[0;0m [32mINFO[0m [90m11-26 18:17:15[0m [90m[gpu_ar_worker.py:140][0m Using MR v2 OmniARModelRunner for omni AR stage (stage_id=0 model_stage=thinker).
+[0;36m(Worker pid=1787774)[0;0m [32mINFO[0m [90m11-26 18:17:15[0m [90m[cuda.py:239][0m NVIDIA Confidential Computing not detected via NVML
+[0;36m(Worker pid=1787776)[0;0m [32mINFO[0m [90m11-26 18:17:15[0m [90m[gpu_ar_worker.py:140][0m Using MR v2 OmniARModelRunner for omni AR stage (stage_id=0 model_stage=thinker).
+[0;36m(Worker pid=1787776)[0;0m [32mINFO[0m [90m11-26 18:17:15[0m [90m[cuda.py:239][0m NVIDIA Confidential Computing not detected via NVML
+[0;36m(Worker_TP1 pid=1787776)[0;0m [33mWARNING[0m [90m11-26 18:17:15[0m [90m[base.py:473][0m [LLM Worker 1] Sleep Mode DISABLED.
+[0;36m(Worker_TP1 pid=1787776)[0;0m [33mWARNING[0m [90m11-26 18:17:15[0m [90m[base.py:473][0m [LLM Worker 1] Sleep Mode DISABLED.
+[0;36m(Worker_TP0 pid=1787774)[0;0m [33mWARNING[0m [90m11-26 18:17:15[0m [90m[base.py:473][0m [LLM Worker 0] Sleep Mode DISABLED.
+[0;36m(Worker_TP0 pid=1787774)[0;0m [33mWARNING[0m [90m11-26 18:17:15[0m [90m[base.py:473][0m [LLM Worker 0] Sleep Mode DISABLED.
+[0;36m(Worker_TP0 pid=1787774)[0;0m [32mINFO[0m [90m11-26 18:17:16[0m [90m[model_runner.py:412][0m Loading model from scratch...
+[0;36m(Worker_TP0 pid=1787774)[0;0m [32mINFO[0m [90m11-26 18:17:16[0m [90m[cuda.py:608][0m Using backend AttentionBackendEnum.FLASH_ATTN for vit attention
+[0;36m(Worker_TP0 pid=1787774)[0;0m [32mINFO[0m [90m11-26 18:17:16[0m [90m[mm_encoder_attention.py:372][0m Using AttentionBackendEnum.FLASH_ATTN for MMEncoderAttention.
+[0;36m(Worker_TP0 pid=1787774)[0;0m [32mINFO[0m [90m11-26 18:17:16[0m [90m[cuda.py:549][0m Using FLASH_ATTN attention backend out of potential backends: ['FLASH_ATTN', 'FLASHINFER', 'TRITON_ATTN', 'FLEX_ATTENTION'].
+[0;36m(Worker_TP0 pid=1787774)[0;0m [32mINFO[0m [90m11-26 18:17:16[0m [90m[flash_attn.py:1131][0m Using FlashAttention version 2
+[0;36m(Worker_TP0 pid=1787774)[0;0m [32mINFO[0m [90m11-26 18:17:16[0m [90m[base.py:237][0m Using TRITON Unquantized MoE backend out of potential backends: ['FlashInfer TRTLLM', 'FlashInfer CUTLASS', 'TRITON', 'BATCHED_TRITON'].
+[0;36m(Worker_TP0 pid=1787774)[0;0m [32mINFO[0m [90m11-26 18:17:16[0m [90m[base_loader.py:95][0m Initializing model took 0.473482 seconds
+[0;36m(Worker_TP0 pid=1787774)[0;0m [32mINFO[0m [90m11-26 18:17:16[0m [90m[weight_utils.py:1154][0m Filesystem type for checkpoints: EXT4. Checkpoint size: 65.68 GiB. Available RAM: 840.82 GiB.
+[0;36m(Worker_TP0 pid=1787774)[0;0m [32mINFO[0m [90m11-26 18:17:16[0m [90m[weight_utils.py:1177][0m Auto-prefetch is disabled because the filesystem (EXT4) is not a recognized network FS (NFS/Lustre). If you want to force prefetching, start vLLM with --safetensors-load-strategy=prefetch.
+Loading safetensors checkpoint shards:   0% Completed | 0/15 [00:00<?, ?it/s]
+Loading safetensors checkpoint shards:   7% Completed | 1/15 [00:04<01:02,  4.49s/it]
+Loading safetensors checkpoint shards:  13% Completed | 2/15 [00:09<01:03,  4.86s/it]
+Loading safetensors checkpoint shards:  20% Completed | 3/15 [00:10<00:38,  3.23s/it]
+Loading safetensors checkpoint shards:  27% Completed | 4/15 [00:11<00:25,  2.34s/it]
+Loading safetensors checkpoint shards:  33% Completed | 5/15 [00:12<00:18,  1.84s/it]
+Loading safetensors checkpoint shards:  40% Completed | 6/15 [00:14<00:14,  1.65s/it]
+Loading safetensors checkpoint shards:  47% Completed | 7/15 [00:15<00:12,  1.55s/it]
+Loading safetensors checkpoint shards:  53% Completed | 8/15 [00:16<00:09,  1.33s/it]
+Loading safetensors checkpoint shards:  60% Completed | 9/15 [00:17<00:08,  1.40s/it]
+Loading safetensors checkpoint shards:  67% Completed | 10/15 [00:18<00:06,  1.28s/it]
+Loading safetensors checkpoint shards:  73% Completed | 11/15 [00:20<00:04,  1.25s/it]
+Loading safetensors checkpoint shards:  80% Completed | 12/15 [00:21<00:03,  1.18s/it]
+Loading safetensors checkpoint shards:  87% Completed | 13/15 [00:21<00:01,  1.01it/s]
+Loading safetensors checkpoint shards:  93% Completed | 14/15 [00:21<00:00,  1.32it/s]
+Loading safetensors checkpoint shards: 100% Completed | 15/15 [00:21<00:00,  1.46s/it]
+
+[0;36m(Worker_TP1 pid=1787776)[0;0m [32mINFO[0m [90m11-26 18:17:38[0m [90m[qwen3_omni.py:2046][0m Loaded 1183 weights for Qwen3OmniMoe (stage=thinker)
+[0;36m(Worker_TP0 pid=1787774)[0;0m [32mINFO[0m [90m11-26 18:17:38[0m [90m[qwen3_omni.py:2046][0m Loaded 1183 weights for Qwen3OmniMoe (stage=thinker)
+[0;36m(Worker_TP0 pid=1787774)[0;0m [32mINFO[0m [90m11-26 18:17:38[0m [90m[default_loader.py:543][0m Loading weights took 21.90 seconds
+[0;36m(Worker_TP0 pid=1787774)[0;0m [32mINFO[0m [90m11-26 18:17:38[0m [90m[base.py:286][0m Using MoEPrepareAndFinalizeNoDPEPModular
+[0;36m(Worker_TP0 pid=1787774)[0;0m [32mINFO[0m [90m11-26 18:17:38[0m [90m[base.py:288][0m Using TritonExperts MoE backend
+[0;36m(Worker_TP0 pid=1787774)[0;0m [32mINFO[0m [90m11-26 18:17:39[0m [90m[model_runner.py:441][0m Model loading took 30.04 GiB memory and 23.955631 seconds
+[0;36m(Worker_TP1 pid=1787776)[0;0m [32mINFO[0m [90m11-26 18:17:39[0m [90m[model_runner.py:441][0m Model loading took 30.04 GiB memory and 24.063210 seconds
+[0;36m(Worker_TP0 pid=1787774)[0;0m [32mINFO[0m [90m11-26 18:17:39[0m [90m[topk_topp_sampler.py:119][0m Using FlashInfer for top-p & top-k sampling.
+[0;36m(Worker_TP0 pid=1787774)[0;0m [32mINFO[0m [90m11-26 18:17:39[0m [90m[torch_utils.py:301][0m Reducing Torch threads from 32 to 1 for serving. Set OMP_NUM_THREADS in the external environment to override.
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=1786352)[0;0m [32mINFO[0m [90m11-26 18:17:40[0m [90m[torch_utils.py:301][0m Reducing Torch threads from 32 to 1 for serving. Set OMP_NUM_THREADS in the external environment to override.
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=1786352)[0;0m [32mINFO[0m [90m11-26 18:17:40[0m [90m[utils.py:419][0m Using LBNHC KV cache layout.
+[transformers] Unrecognized keys in `rope_parameters` for 'rope_type'='default': {'interleaved', 'mrope_section'}
+[transformers] Unrecognized keys in `rope_parameters` for 'rope_type'='default': {'interleaved', 'mrope_section'}
+[transformers] Unrecognized keys in `rope_parameters` for 'rope_type'='default': {'interleaved', 'mrope_section'}
+[transformers] Unrecognized keys in `rope_parameters` for 'rope_type'='default': {'interleaved', 'mrope_section'}
+[transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+[transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+[transformers] Unrecognized keys in `rope_parameters` for 'rope_type'='default': {'interleaved', 'mrope_section'}
+[transformers] Unrecognized keys in `rope_parameters` for 'rope_type'='default': {'interleaved', 'mrope_section'}
+[transformers] Qwen2VL video processing does not apply the per-frame pixel cap the reference implementation (qwen-vl-utils) applies, so some videos cost far more tokens than they would there. In v5.22 the capped behavior will become the default and `cap_pixels_per_frame` will be removed. Pass `cap_pixels_per_frame=True` to adopt the reference behavior now, or `False` to keep the current behavior and silence this warning.
+[transformers] Qwen2VL video processing does not apply the per-frame pixel cap the reference implementation (qwen-vl-utils) applies, so some videos cost far more tokens than they would there. In v5.22 the capped behavior will become the default and `cap_pixels_per_frame` will be removed. Pass `cap_pixels_per_frame=True` to adopt the reference behavior now, or `False` to keep the current behavior and silence this warning.
+[0;36m(Worker_TP0 pid=1787774)[0;0m [32mINFO[0m [90m11-26 18:17:42[0m [90m[encoder_runner.py:131][0m Encoder cache will be initialized with a budget of 62720 tokens, and profiled with 1 video items of the maximum feature size.
+[0;36m(Worker_TP1 pid=1787776)[0;0m [32mINFO[0m [90m11-26 18:17:43[0m [90m[monitor.py:40][0m [backbone] Starting torch.compile
+[0;36m(Worker_TP0 pid=1787774)[0;0m [32mINFO[0m [90m11-26 18:17:43[0m [90m[monitor.py:40][0m [backbone] Starting torch.compile
+[0;36m(Worker_TP1 pid=1787776)[0;0m [32mINFO[0m [90m11-26 18:17:53[0m [90m[backends.py:1110][0m [backbone] Using cache directory: /home/chaofan/.cache/vllm/torch_compile_cache/16151ab311/rank_1_0/backbone for vLLM's torch.compile
+[0;36m(Worker_TP1 pid=1787776)[0;0m [32mINFO[0m [90m11-26 18:17:53[0m [90m[backends.py:1167][0m [backbone] Dynamo bytecode transform time: 10.13 s
+[0;36m(Worker_TP0 pid=1787774)[0;0m [32mINFO[0m [90m11-26 18:17:53[0m [90m[backends.py:1110][0m [backbone] Using cache directory: /home/chaofan/.cache/vllm/torch_compile_cache/16151ab311/rank_0_0/backbone for vLLM's torch.compile
+[0;36m(Worker_TP0 pid=1787774)[0;0m [32mINFO[0m [90m11-26 18:17:53[0m [90m[backends.py:1167][0m [backbone] Dynamo bytecode transform time: 10.16 s
+[0;36m(Worker_TP1 pid=1787776)[0;0m [32mINFO[0m [90m11-26 18:18:13[0m [90m[backends.py:421][0m [backbone] Compiling a graph for compile range (1, 32768) takes 19.66 s
+[0;36m(Worker_TP0 pid=1787774)[0;0m [32mINFO[0m [90m11-26 18:18:13[0m [90m[backends.py:421][0m [backbone] Compiling a graph for compile range (1, 32768) takes 19.71 s
+[0;36m(Worker_TP1 pid=1787776)[0;0m [32mINFO[0m [90m11-26 18:18:19[0m [90m[backends.py:952][0m collected artifacts: 49 entries, 6 artifacts, 14840286 bytes total
+[0;36m(Worker_TP1 pid=1787776)[0;0m [32mINFO[0m [90m11-26 18:18:19[0m [90m[decorators.py:752][0m [backbone] saved AOT compiled function to /home/chaofan/.cache/vllm/torch_compile_cache/torch_aot_compile/b82e1d9111ef6a9db6eb60c1ec64055b258eca39bc94e5c4e6e7a5f03a7946a1/rank_1_0/model
+[0;36m(Worker_TP1 pid=1787776)[0;0m [32mINFO[0m [90m11-26 18:18:19[0m [90m[monitor.py:62][0m [backbone] torch.compile took 36.28 s in total
+[0;36m(Worker_TP0 pid=1787774)[0;0m [32mINFO[0m [90m11-26 18:18:19[0m [90m[backends.py:952][0m collected artifacts: 49 entries, 6 artifacts, 14840382 bytes total
+[0;36m(Worker_TP0 pid=1787774)[0;0m [32mINFO[0m [90m11-26 18:18:19[0m [90m[decorators.py:752][0m [backbone] saved AOT compiled function to /home/chaofan/.cache/vllm/torch_compile_cache/torch_aot_compile/b82e1d9111ef6a9db6eb60c1ec64055b258eca39bc94e5c4e6e7a5f03a7946a1/rank_0_0/model
+[0;36m(Worker_TP0 pid=1787774)[0;0m [32mINFO[0m [90m11-26 18:18:19[0m [90m[monitor.py:62][0m [backbone] torch.compile took 36.36 s in total
+[0;36m(Worker_TP0 pid=1787774)[0;0m [33mWARNING[0m [90m11-26 18:18:19[0m [90m[fused_moe.py:1253][0m Using default MoE config. Performance might be sub-optimal! Config file not found at /home/chaofan/workspaces/mm_reuse_study/envs/vllm-omni/lib/python3.12/site-packages/vllm/model_executor/layers/fused_moe/configs/E=128,N=384,device_name=NVIDIA_RTX_5880_Ada_Generation.json
+[0;36m(Worker_TP1 pid=1787776)[0;0m [32mINFO[0m [90m11-26 18:18:20[0m [90m[monitor.py:91][0m [backbone] Initial profiling/warmup run took 1.18 s
+[0;36m(Worker_TP0 pid=1787774)[0;0m [32mINFO[0m [90m11-26 18:18:20[0m [90m[monitor.py:91][0m [backbone] Initial profiling/warmup run took 1.10 s
+[0;36m(Worker_TP0 pid=1787774)[0;0m [32mINFO[0m [90m11-26 18:18:25[0m [90m[base.py:402][0m Available KV cache memory: 9.32 GiB (device-level profiling)
+[0;36m(Worker_TP0 pid=1787774)[0;0m [33mWARNING[0m [90m11-26 18:18:25[0m [90m[base.py:473][0m [LLM Worker 0] Sleep Mode DISABLED.
+[0;36m(Worker_TP1 pid=1787776)[0;0m [33mWARNING[0m [90m11-26 18:18:25[0m [90m[base.py:473][0m [LLM Worker 1] Sleep Mode DISABLED.
+[0;36m(Worker_TP0 pid=1787774)[0;0m [33mWARNING[0m [90m11-26 18:18:25[0m [90m[base.py:473][0m [LLM Worker 0] Sleep Mode DISABLED.
+[0;36m(Worker_TP1 pid=1787776)[0;0m [33mWARNING[0m [90m11-26 18:18:25[0m [90m[base.py:473][0m [LLM Worker 1] Sleep Mode DISABLED.
+[0;36m(Worker_TP1 pid=1787776)[0;0m [32mINFO[0m [90m11-26 18:18:38[0m [90m[moe_prefill_warmup.py:148][0m MoE prefill warmup ran 29 batch sizes (9..4097) in 13.02s.
+[0;36m(Worker_TP0 pid=1787774)[0;0m [32mINFO[0m [90m11-26 18:18:38[0m [90m[moe_prefill_warmup.py:148][0m MoE prefill warmup ran 29 batch sizes (9..4097) in 13.02s.
+[0;36m(Worker_TP1 pid=1787776)[0;0m [32mINFO[0m [90m11-26 18:18:38[0m [90m[kernel_warmup.py:294][0m JIT kernel warmup starting.
+[0;36m(Worker_TP0 pid=1787774)[0;0m [32mINFO[0m [90m11-26 18:18:38[0m [90m[kernel_warmup.py:294][0m JIT kernel warmup starting.
+JIT kernel warmup (40 compile keys):   0%|          | 0/4 [00:00<?, ?kernel/s]JIT kernel warmup (40 compile keys): 100%|██████████| 4/4 [00:00<00:00, 30.19kernel/s, _DecoratedTritonJitKernel (8 keys)]JIT kernel warmup (40 compile keys): 100%|██████████| 4/4 [00:11<00:00,  3.00s/kernel, _DecoratedTritonJitKernel (8 keys)]
+[0;36m(Worker_TP0 pid=1787774)[0;0m [32mINFO[0m [90m11-26 18:18:50[0m [90m[kernel_warmup.py:304][0m JIT kernel warmup finished in 12.02s.
+[0;36m(Worker_TP1 pid=1787776)[0;0m [32mINFO[0m [90m11-26 18:18:50[0m [90m[kernel_warmup.py:304][0m JIT kernel warmup finished in 12.06s.
+[0;36m(Worker_TP0 pid=1787774)[0;0m [32mINFO[0m [90m11-26 18:18:50[0m [90m[qwen_vl_triton_warmup.py:102][0m Warmed M-RoPE Triton kernels.
+[0;36m(Worker_TP1 pid=1787776)[0;0m [32mINFO[0m [90m11-26 18:18:50[0m [90m[qwen_vl_triton_warmup.py:102][0m Warmed M-RoPE Triton kernels.
+[0;36m(Worker_TP0 pid=1787774)[0;0m [32mINFO[0m [90m11-26 18:18:51[0m [90m[block_pool.py:54][0m prefix_cache: initialized mirror [3181, 64, 2048] for key __hidden_states__
+[0;36m(Worker_TP0 pid=1787774)[0;0m [32mINFO[0m [90m11-26 18:18:51[0m [90m[block_pool.py:54][0m prefix_cache: initialized mirror [3181, 64, 2048] for key hidden_states.layer_24
+[0;36m(Worker_TP0 pid=1787774)[0;0m [32mINFO[0m [90m11-26 18:18:51[0m [90m[block_pool.py:54][0m prefix_cache: initialized mirror [3181, 64, 2048] for key hidden_states.layer_0
+[0;36m(Worker_TP1 pid=1787776)[0;0m [32mINFO[0m [90m11-26 18:18:51[0m [90m[block_pool.py:54][0m prefix_cache: initialized mirror [3181, 64, 2048] for key __hidden_states__
+[0;36m(Worker_TP1 pid=1787776)[0;0m [32mINFO[0m [90m11-26 18:18:51[0m [90m[block_pool.py:54][0m prefix_cache: initialized mirror [3181, 64, 2048] for key hidden_states.layer_24
+[0;36m(Worker_TP1 pid=1787776)[0;0m [32mINFO[0m [90m11-26 18:18:51[0m [90m[block_pool.py:54][0m prefix_cache: initialized mirror [3181, 64, 2048] for key hidden_states.layer_0
+Capturing CUDA graphs (PIECEWISE):   0%|          | 0/4 [00:00<?, ?it/s]Capturing CUDA graphs (PIECEWISE):  25%|██▌       | 1/4 [00:00<00:00,  9.26it/s]Capturing CUDA graphs (PIECEWISE):  50%|█████     | 2/4 [00:00<00:00,  9.63it/s]Capturing CUDA graphs (PIECEWISE):  75%|███████▌  | 3/4 [00:00<00:00,  9.76it/s]Capturing CUDA graphs (PIECEWISE): 100%|██████████| 4/4 [00:00<00:00,  9.68it/s]Capturing CUDA graphs (PIECEWISE): 100%|██████████| 4/4 [00:00<00:00,  9.65it/s]
+Capturing CUDA graphs (FULL):   0%|          | 0/3 [00:00<?, ?it/s]Capturing CUDA graphs (FULL):  67%|██████▋   | 2/3 [00:00<00:00, 11.55it/s]Capturing CUDA graphs (FULL): 100%|██████████| 3/3 [00:00<00:00, 11.89it/s]
+[0;36m(Worker_TP0 pid=1787774)[0;0m [32mINFO[0m [90m11-26 18:18:59[0m [90m[model_runner.py:1216][0m Graph capturing finished in 2 secs, took 0.09 GiB
+[0;36m(Worker_TP0 pid=1787774)[0;0m [32mINFO[0m [90m11-26 18:18:59[0m [90m[gpu_worker.py:1175][0m Free memory on device (46.77/47.37 GiB) on startup. Desired GPU memory utilization is (0.9, 42.63 GiB). Actual usage is 32.58 GiB for consumed memory (weights + non-torch), 0.85 GiB for peak activation, and 0.09 GiB for CUDAGraph memory. Replace gpu_memory_utilization config with `--kv-cache-memory=9629117236` (8.97 GiB) to fit into requested memory, or `--kv-cache-memory=14070577152` (13.1 GiB) to fully utilize gpu memory. Current kv cache memory in use is 9.32 GiB.
+[0;36m(Worker_TP1 pid=1787776)[0;0m [32mINFO[0m [90m11-26 18:18:59[0m [90m[model_runner.py:1216][0m Graph capturing finished in 2 secs, took 0.09 GiB
+[0;36m(Worker_TP1 pid=1787776)[0;0m [32mINFO[0m [90m11-26 18:18:59[0m [90m[gpu_worker.py:1175][0m Free memory on device (46.77/47.37 GiB) on startup. Desired GPU memory utilization is (0.9, 42.63 GiB). Actual usage is 32.58 GiB for consumed memory (weights + non-torch), 0.85 GiB for peak activation, and 0.09 GiB for CUDAGraph memory. Replace gpu_memory_utilization config with `--kv-cache-memory=9629117236` (8.97 GiB) to fit into requested memory, or `--kv-cache-memory=14070577152` (13.1 GiB) to fully utilize gpu memory. Current kv cache memory in use is 9.32 GiB.
+[0;36m(Worker_TP0 pid=1787774)[0;0m [32mINFO[0m [90m11-26 18:18:59[0m [90m[jit_monitor.py:87][0m Kernel JIT monitor activated; monitored JIT compilations during inference will use mode=warn.
+[0;36m(Worker_TP1 pid=1787776)[0;0m [32mINFO[0m [90m11-26 18:18:59[0m [90m[jit_monitor.py:87][0m Kernel JIT monitor activated; monitored JIT compilations during inference will use mode=warn.
+[0;36m(Worker_TP0 pid=1787774)[0;0m [33mWARNING[0m [90m11-26 18:19:00[0m [90m[extensible_kv_cache.py:662][0m gpu_memory_utilization=0.9 caps this instance at 42.63 GiB, keeping 3.03 GiB of free device memory out of the KV cache. The extensible KV cache is sized from the memory measured after warmup and CUDA graph capture, so vLLM's own use needs no headroom below 1.0. Leave gpu_memory_utilization unset unless it leaves room for memory vLLM does not measure: other processes sharing the GPU (including ones that allocate on it later), the CPU on a unified-memory device, weight transfer buffers for weight updates, or a KV connector's own device buffers.
+[0;36m(Worker_TP0 pid=1787774)[0;0m [32mINFO[0m [90m11-26 18:19:00[0m [90m[extensible_kv_cache.py:693][0m Memory after warmup: 14.26 GiB free, 0.09 GiB committed to the KV cache, 1.84 GiB kept for transient activations (1.48 GiB allocated at peak, 1.84 GiB of torch reservation growth); 2848 KV cache blocks (8.34 GiB) fit within the requested 42.63 GiB. Torch may reserve up to 37.86 GiB.
+[0;36m(Worker_TP1 pid=1787776)[0;0m [32mINFO[0m [90m11-26 18:19:00[0m [90m[extensible_kv_cache.py:693][0m Memory after warmup: 14.26 GiB free, 0.09 GiB committed to the KV cache, 1.84 GiB kept for transient activations (1.48 GiB allocated at peak, 1.84 GiB of torch reservation growth); 2848 KV cache blocks (8.34 GiB) fit within the requested 42.63 GiB. Torch may reserve up to 37.86 GiB.
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=1786352)[0;0m [32mINFO[0m [90m11-26 18:19:00[0m [90m[kv_cache_utils.py:1168][0m GPU KV cache size: 182,272 tokens, Maximum concurrency for 65,536 tokens per request: 2.78x
+[0;36m(Worker_TP1 pid=1787776)[0;0m [32mINFO[0m [90m11-26 18:19:00[0m [90m[extensible_kv_cache.py:536][0m Extended KV cache to 2848 blocks (8.34 GiB).
+[0;36m(Worker_TP0 pid=1787774)[0;0m [32mINFO[0m [90m11-26 18:19:00[0m [90m[extensible_kv_cache.py:536][0m Extended KV cache to 2848 blocks (8.34 GiB).
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=1786352)[0;0m [32mINFO[0m [90m11-26 18:19:00[0m [90m[core.py:451][0m init engine (profile, create kv cache, warmup model) took 80.24 s (compilation: 36.36 s)
+[transformers] Unrecognized keys in `rope_parameters` for 'rope_type'='default': {'interleaved', 'mrope_section'}
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=1786352)[0;0m [33mWARNING[0m [90m11-26 18:19:00[0m [90m[scheduler.py:282][0m Using custom scheduler class vllm_omni.core.sched.omni_ar_scheduler.OmniARScheduler. This scheduler interface is not public and compatibility may not be maintained. If you have subclassed Scheduler instead of AsyncScheduler, you will see degraded performance due to async scheduling being disabled.
+[transformers] Unrecognized keys in `rope_parameters` for 'rope_type'='default': {'interleaved', 'mrope_section'}
+[transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+[transformers] Unrecognized keys in `rope_parameters` for 'rope_type'='default': {'interleaved', 'mrope_section'}
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=1786352)[0;0m [32mINFO[0m [90m11-26 18:19:02[0m [90m[kernel.py:517][0m Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['native'], fused_add_rms_norm=['native'], gelu_and_mul_sparse=['triton', 'native'])
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:02[0m [90m[stage_engine_core_client.py:196][0m [StageEngineCoreClient] stage-0 [rep-0] initializing EngineCore
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:02[0m [90m[stage_engine_core_client.py:256][0m [StageEngineCoreClient] stage-0 [rep-0] EngineCore running
+[transformers] Unrecognized keys in `rope_parameters` for 'rope_type'='default': {'mrope_section', 'interleaved'}
+[transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+[transformers] Unrecognized keys in `rope_parameters` for 'rope_type'='default': {'mrope_section', 'interleaved'}
+[transformers] Unrecognized keys in `rope_parameters` for 'rope_type'='default': {'mrope_section', 'interleaved'}
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:05[0m [90m[orchestrator.py:620][0m [Orchestrator] Starting event loop
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:05[0m [90m[orchestrator.py:1586][0m [Orchestrator] Event-driven orchestration loop enabled (VLLM_OMNI_EVENT_DRIVEN_ORCH): 1 LLM replica readers, 0 diffusion pollers
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:05[0m [90m[omni_engine_base.py:401][0m [OmniEngine] Orchestrator ready with 1 stages
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:05[0m [90m[omni_base.py:238][0m [AsyncOmni] AsyncOmniEngine initialized in 134.88 seconds
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:05[0m [90m[omni_base.py:257][0m [AsyncOmni] Initialized with 1 stages for model /home/chaofan/workspaces/mm_reuse_study/models/cache/models--Qwen--Qwen3-Omni-30B-A3B-Instruct/snapshots/26291f793822fb6be9555850f06dfe95f2d7e695
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:06[0m [90m[factories.py:105][0m Scale-out endpoints are disabled. Restart vllm serve with --enable-scale-out to enable them.
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:06[0m [90m[api_server.py:1041][0m Supported tasks: {'generate'}
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:06[0m [90m[chat_template.py:54][0m Loaded chat template from /home/chaofan/workspaces/mm_reuse_study/models/cache/models--Qwen--Qwen3-Omni-30B-A3B-Instruct/snapshots/26291f793822fb6be9555850f06dfe95f2d7e695/chat_template.json
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:06[0m [90m[hf.py:743][0m Detected the chat template content format to be 'openai'. You can set `--chat-template-content-format` to override this.
+[transformers] Qwen2VL video processing does not apply the per-frame pixel cap the reference implementation (qwen-vl-utils) applies, so some videos cost far more tokens than they would there. In v5.22 the capped behavior will become the default and `cap_pixels_per_frame` will be removed. Pass `cap_pixels_per_frame=True` to adopt the reference behavior now, or `False` to keep the current behavior and silence this warning.
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:06[0m [90m[base.py:283][0m Multi-modal warmup completed in 0.588s
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:06[0m [90m[serving.py:108][0m Robot OpenPI serving disabled for model qwen3_omni
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:06[0m [90m[api_server.py:558][0m Starting vLLM API server 0 on http://0.0.0.0:18511
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:06[0m [90m[launcher.py:188][0m Available routes are:
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:06[0m [90m[launcher.py:197][0m Route: /openapi.json, Methods: GET, HEAD
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:06[0m [90m[launcher.py:197][0m Route: /docs, Methods: GET, HEAD
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:06[0m [90m[launcher.py:197][0m Route: /docs/oauth2-redirect, Methods: GET, HEAD
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:06[0m [90m[launcher.py:197][0m Route: /redoc, Methods: GET, HEAD
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:06[0m [90m[launcher.py:197][0m Route: /load, Methods: GET
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:06[0m [90m[launcher.py:197][0m Route: /version, Methods: GET
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:06[0m [90m[launcher.py:197][0m Route: /kv_event_sources, Methods: GET
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:06[0m [90m[launcher.py:197][0m Route: /metrics, Methods: GET
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:06[0m [90m[launcher.py:197][0m Route: /tokenize, Methods: POST
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:06[0m [90m[launcher.py:197][0m Route: /detokenize, Methods: POST
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:06[0m [90m[launcher.py:197][0m Route: /v1/systemone, Methods: POST
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:06[0m [90m[launcher.py:197][0m Route: /v1/decisions, Methods: POST
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:06[0m [90m[launcher.py:197][0m Route: /ping, Methods: GET
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:06[0m [90m[launcher.py:197][0m Route: /ping, Methods: POST
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:06[0m [90m[launcher.py:197][0m Route: /invocations, Methods: POST
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:06[0m [90m[launcher.py:197][0m Route: /v1/responses, Methods: POST
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:06[0m [90m[launcher.py:197][0m Route: /v1/responses/{response_id}, Methods: GET
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:06[0m [90m[launcher.py:197][0m Route: /v1/responses/{response_id}/cancel, Methods: POST
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:06[0m [90m[launcher.py:197][0m Route: /v1/completions, Methods: POST
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:06[0m [90m[launcher.py:197][0m Route: /v1/messages, Methods: POST
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:06[0m [90m[launcher.py:197][0m Route: /v1/messages/count_tokens, Methods: POST
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:06[0m [90m[launcher.py:197][0m Route: /generative_scoring, Methods: POST
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:06[0m [90m[launcher.py:197][0m Route: /scale_elastic_ep, Methods: POST
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:06[0m [90m[launcher.py:197][0m Route: /is_scaling_elastic_ep, Methods: POST
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:06[0m [90m[launcher.py:197][0m Route: /v1/chat/completions/render, Methods: POST
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:06[0m [90m[launcher.py:197][0m Route: /v1/messages/render, Methods: POST
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:06[0m [90m[launcher.py:197][0m Route: /v1/completions/render, Methods: POST
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:06[0m [90m[launcher.py:197][0m Route: /v1/responses/render, Methods: POST
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:06[0m [90m[launcher.py:197][0m Route: /v1/chat/completions/derender, Methods: POST
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:06[0m [90m[launcher.py:197][0m Route: /v1/completions/derender, Methods: POST
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:06[0m [90m[launcher.py:197][0m Route: /inference/v1/generate, Methods: POST
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:06[0m [90m[launcher.py:197][0m Route: /inference/v1/abort_requests, Methods: POST
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:06[0m [90m[launcher.py:197][0m Route: /v1/chat/completions, Methods: POST
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:06[0m [90m[launcher.py:197][0m Route: /v1/chat/completions/batch, Methods: POST
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:06[0m [90m[launcher.py:197][0m Route: /v1/audio/speech, Methods: POST
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:06[0m [90m[launcher.py:197][0m Route: /v1/audio/speech/batch, Methods: POST
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:06[0m [90m[launcher.py:197][0m Route: /v1/audio/generate, Methods: POST
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:06[0m [90m[launcher.py:197][0m Route: /v1/audio/voices, Methods: GET
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:06[0m [90m[launcher.py:197][0m Route: /v1/audio/voices, Methods: POST
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:06[0m [90m[launcher.py:197][0m Route: /v1/audio/voices/{name}, Methods: DELETE
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:06[0m [90m[launcher.py:197][0m Route: /v1/realtime/sessions, Methods: POST
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:06[0m [90m[launcher.py:197][0m Route: /v1/realtime/sessions/{session_id}/step, Methods: POST
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:06[0m [90m[launcher.py:197][0m Route: /v1/realtime/sessions/{session_id}/reset, Methods: POST
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:06[0m [90m[launcher.py:197][0m Route: /v1/realtime/sessions/{session_id}/close, Methods: POST
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:06[0m [90m[launcher.py:197][0m Route: /v1/realtime/sessions/{session_id}/status, Methods: GET
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:06[0m [90m[launcher.py:197][0m Route: /health, Methods: GET
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:06[0m [90m[launcher.py:197][0m Route: /v1/models, Methods: GET
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:06[0m [90m[launcher.py:197][0m Route: /v1/images/generations, Methods: POST
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:06[0m [90m[launcher.py:197][0m Route: /v1/images/edits, Methods: POST
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:06[0m [90m[launcher.py:197][0m Route: /v1/images/segmentations, Methods: POST
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:06[0m [90m[launcher.py:197][0m Route: /v1/videos/segmentations, Methods: POST
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:06[0m [90m[launcher.py:197][0m Route: /v1/videos/depth, Methods: POST
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:06[0m [90m[launcher.py:197][0m Route: /v1/videos, Methods: POST
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:06[0m [90m[launcher.py:197][0m Route: /v1/videos/sync, Methods: POST
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:06[0m [90m[launcher.py:197][0m Route: /v1/videos, Methods: GET
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:06[0m [90m[launcher.py:197][0m Route: /v1/videos/{video_id}, Methods: GET
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:06[0m [90m[launcher.py:197][0m Route: /v1/videos/{video_id}, Methods: DELETE
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:06[0m [90m[launcher.py:197][0m Route: /v1/videos/{video_id}/content, Methods: GET
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:06[0m [90m[launcher.py:197][0m Route: /v1/omni/sleep, Methods: POST
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:06[0m [90m[launcher.py:197][0m Route: /v1/omni/wakeup, Methods: POST
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:06[0m [90m[launcher.py:197][0m Route: /v1/run, Methods: POST
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:06[0m [90m[launcher.py:208][0m Route: /v1/audio/speech/stream, Endpoint: streaming_speech
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:06[0m [90m[launcher.py:208][0m Route: /v1/video/chat/stream, Endpoint: streaming_video_chat
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:06[0m [90m[launcher.py:208][0m Route: /v1/realtime/video, Endpoint: streaming_video_output
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:06[0m [90m[launcher.py:208][0m Route: /v1/realtime, Endpoint: realtime_websocket
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:06[0m [90m[launcher.py:208][0m Route: /v1/duplex, Endpoint: duplex_websocket
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:06[0m [90m[launcher.py:208][0m Route: /v1/realtime/robot/openpi, Endpoint: realtime_robot_openpi
+INFO:     Started server process [1784813]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:58986 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58988 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58990 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58994 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:31[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-b3ef7338110ba27d-b52e0e22 total=0.47s preprocess=0.00s engine=0.47s stages=[0:0.47s]
+INFO:     127.0.0.1:58996 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58998 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59000 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:35[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-a1b2b488cf937420-8c5b946e total=0.46s preprocess=0.00s engine=0.46s stages=[0:0.46s]
+INFO:     127.0.0.1:59002 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59004 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59006 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:40[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-9658f4d2b319b413-955e8b2b total=0.48s preprocess=0.00s engine=0.48s stages=[0:0.48s]
+INFO:     127.0.0.1:59008 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59010 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59012 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59014 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:47[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-970421d59e029eb3-9cab945c total=0.10s preprocess=0.00s engine=0.10s stages=[0:0.10s]
+INFO:     127.0.0.1:59016 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:48[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-addb980c3b5c5ac6-b83d137e total=0.08s preprocess=0.00s engine=0.08s stages=[0:0.09s]
+INFO:     127.0.0.1:59018 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:48[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-a50df95851c408ff-904d4141 total=0.09s preprocess=0.00s engine=0.09s stages=[0:0.09s]
+INFO:     127.0.0.1:59020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:49[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-a6ea85b2e493ac2e-a020a73d total=0.08s preprocess=0.00s engine=0.08s stages=[0:0.08s]
+INFO:     127.0.0.1:59022 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:49[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-b9bc32ee77ad328c-84ef4f68 total=0.09s preprocess=0.00s engine=0.09s stages=[0:0.09s]
+INFO:     127.0.0.1:59024 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:50[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-886d480f6cc197a3-9b3a8e01 total=0.09s preprocess=0.00s engine=0.09s stages=[0:0.09s]
+INFO:     127.0.0.1:59026 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:50[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-8290a5cd86a7ac65-81df5d17 total=0.10s preprocess=0.00s engine=0.10s stages=[0:0.10s]
+INFO:     127.0.0.1:59030 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:51[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-9985de0c491d2df8-8bcbf735 total=0.10s preprocess=0.00s engine=0.10s stages=[0:0.10s]
+INFO:     127.0.0.1:59034 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:51[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-9e406d6846117511-a773bec7 total=0.09s preprocess=0.00s engine=0.09s stages=[0:0.10s]
+INFO:     127.0.0.1:59036 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:52[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-8a3663114c9a68bb-93992ef5 total=0.09s preprocess=0.00s engine=0.09s stages=[0:0.09s]
+INFO:     127.0.0.1:59038 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59040 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:54[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-bfa48e35b49e474c-94c72596 total=0.07s preprocess=0.00s engine=0.07s stages=[0:0.07s]
+INFO:     127.0.0.1:59044 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59046 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:56[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-86e953d9638f4aef-bfdf2267 total=0.10s preprocess=0.00s engine=0.10s stages=[0:0.10s]
+INFO:     127.0.0.1:59048 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:57[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-b47c34e79fb128c7-bad228f6 total=0.37s preprocess=0.00s engine=0.37s stages=[0:0.37s]
+INFO:     127.0.0.1:59050 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:57[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-93658e8b1e39fdbc-9d50685d total=0.09s preprocess=0.00s engine=0.09s stages=[0:0.09s]
+INFO:     127.0.0.1:59054 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59056 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:19:59[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-9e0d8bcb02871583-9bd2d4f0 total=0.08s preprocess=0.00s engine=0.08s stages=[0:0.08s]
+INFO:     127.0.0.1:59058 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59060 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:20:02[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-90dff341027bc63a-a496ee5e total=0.10s preprocess=0.00s engine=0.10s stages=[0:0.11s]
+INFO:     127.0.0.1:59062 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:20:02[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-bfafbf2ba1d0de9d-929e0b37 total=0.38s preprocess=0.00s engine=0.38s stages=[0:0.38s]
+INFO:     127.0.0.1:59064 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:20:02[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-8c56d19cce5b1af4-a009e2fb total=0.09s preprocess=0.00s engine=0.09s stages=[0:0.09s]
+INFO:     127.0.0.1:59066 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59070 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:20:04[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-900bc99e84340d57-ba5ef304 total=0.08s preprocess=0.00s engine=0.07s stages=[0:0.08s]
+INFO:     127.0.0.1:59072 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59074 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59076 - "GET /metrics HTTP/1.1" 200 OK
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:20:39[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-8093e52bfbbe52b3-8750cf6c total=0.10s preprocess=0.00s engine=0.10s stages=[0:0.10s]
+INFO:     127.0.0.1:59078 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59082 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59084 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59086 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59088 - "GET /metrics HTTP/1.1" 200 OK
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:20:49[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-ac8ebd514928bdf6-b71b5830 total=0.06s preprocess=0.00s engine=0.06s stages=[0:0.06s]
+INFO:     127.0.0.1:59090 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59092 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59094 - "GET /metrics HTTP/1.1" 200 OK
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:21:16[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-b1ea3ac50ff469b8-97b0d065 total=0.18s preprocess=0.00s engine=0.18s stages=[0:0.18s]
+INFO:     127.0.0.1:59096 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59098 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59100 - "GET /metrics HTTP/1.1" 200 OK
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:21:20[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-bb3aaf7a81099e33-92208d6c total=0.09s preprocess=0.00s engine=0.09s stages=[0:0.09s]
+INFO:     127.0.0.1:59102 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59104 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59106 - "GET /metrics HTTP/1.1" 200 OK
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:21:23[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-b0b71b38126e79a1-bb65d9b0 total=0.09s preprocess=0.00s engine=0.09s stages=[0:0.09s]
+INFO:     127.0.0.1:59108 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59110 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59112 - "GET /metrics HTTP/1.1" 200 OK
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:21:26[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-904035fbcce0c9aa-ba8de8d9 total=0.07s preprocess=0.00s engine=0.07s stages=[0:0.07s]
+INFO:     127.0.0.1:59114 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59116 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59118 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59120 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:22:06[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-8180e9a6a3b56f7d-b26d9173 total=0.17s preprocess=0.00s engine=0.17s stages=[0:0.17s]
+INFO:     127.0.0.1:59122 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59124 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59126 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59128 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:22:16[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-a368babea453a40c-82a3e67d total=0.10s preprocess=0.00s engine=0.10s stages=[0:0.10s]
+INFO:     127.0.0.1:59130 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59132 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59134 - "GET /metrics HTTP/1.1" 200 OK
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:22:25[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-bbd3b2fb741a6aa9-818f4159 total=0.10s preprocess=0.00s engine=0.10s stages=[0:0.10s]
+INFO:     127.0.0.1:59136 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59138 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59140 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59142 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:22:45[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-874fc3da839b8aff-bf80a4a9 total=0.16s preprocess=0.00s engine=0.16s stages=[0:0.16s]
+INFO:     127.0.0.1:59142 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:22:46[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-8d8523403f6eaec5-ab59ea10 total=0.23s preprocess=0.00s engine=0.23s stages=[0:0.23s]
+INFO:     127.0.0.1:59142 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:22:46[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-97f8cf740dd3c8a6-876d23c0 total=0.08s preprocess=0.00s engine=0.08s stages=[0:0.08s]
+INFO:     127.0.0.1:59144 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59148 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59150 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59152 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:22:53[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-aca6db2727cb8593-abd0f52a total=0.16s preprocess=0.00s engine=0.16s stages=[0:0.16s]
+INFO:     127.0.0.1:59154 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59156 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:23:45[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-b8078d25823f6d18-819d3251 total=0.06s preprocess=0.00s engine=0.06s stages=[0:0.06s]
+INFO:     127.0.0.1:59158 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59160 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:23:47[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-91f73b6fb5727041-bd9a641d total=0.09s preprocess=0.00s engine=0.09s stages=[0:0.09s]
+INFO:     127.0.0.1:59162 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:23:47[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-89ad6c07c736cd03-b7fc0de5 total=0.08s preprocess=0.00s engine=0.08s stages=[0:0.08s]
+INFO:     127.0.0.1:59164 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:23:48[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-9dd209c2d8e907a1-96698d06 total=0.08s preprocess=0.00s engine=0.08s stages=[0:0.08s]
+INFO:     127.0.0.1:59166 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:23:48[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-9c2908633256b885-99a9ecae total=0.09s preprocess=0.00s engine=0.09s stages=[0:0.09s]
+INFO:     127.0.0.1:59168 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:23:49[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-afdb9a3ad2fc43fe-89d62944 total=0.08s preprocess=0.00s engine=0.08s stages=[0:0.08s]
+INFO:     127.0.0.1:59170 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:23:49[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-b641da8f06b1316b-be4622e8 total=0.09s preprocess=0.00s engine=0.09s stages=[0:0.09s]
+INFO:     127.0.0.1:59172 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:23:50[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-8f0c6bd7453f4f1b-9b3b646b total=0.09s preprocess=0.00s engine=0.08s stages=[0:0.09s]
+INFO:     127.0.0.1:59174 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:23:50[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-b4a614217db480db-9d3cb39c total=0.10s preprocess=0.00s engine=0.10s stages=[0:0.10s]
+INFO:     127.0.0.1:59176 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:23:51[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-ae858d863ed392bd-b6289765 total=0.08s preprocess=0.00s engine=0.08s stages=[0:0.08s]
+INFO:     127.0.0.1:59178 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:23:51[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-94f558ccfb4e3a73-ad7b05f5 total=0.09s preprocess=0.00s engine=0.09s stages=[0:0.09s]
+INFO:     127.0.0.1:59180 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:23:52[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-9142ece6af8f43ad-9fe24a5d total=0.05s preprocess=0.00s engine=0.05s stages=[0:0.05s]
+INFO:     127.0.0.1:59182 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59184 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:23:54[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-90e4cb236a61c966-b57092f8 total=0.08s preprocess=0.00s engine=0.08s stages=[0:0.08s]
+INFO:     127.0.0.1:59186 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:23:56[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-8590a3a8df60ea97-a1e45cde total=0.06s preprocess=0.00s engine=0.06s stages=[0:0.06s]
+INFO:     127.0.0.1:59188 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59190 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:23:58[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-bda540163e562035-8ce35611 total=0.10s preprocess=0.00s engine=0.10s stages=[0:0.10s]
+INFO:     127.0.0.1:59192 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:23:59[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-ba4f271ebf9e125c-8d6f01ed total=0.40s preprocess=0.00s engine=0.40s stages=[0:0.40s]
+INFO:     127.0.0.1:59194 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:23:59[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-9023eaa25ab5b374-97603d96 total=0.05s preprocess=0.00s engine=0.05s stages=[0:0.05s]
+INFO:     127.0.0.1:59196 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59198 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:24:01[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-869f1e734f530fc4-b15532f2 total=0.08s preprocess=0.00s engine=0.08s stages=[0:0.08s]
+INFO:     127.0.0.1:59200 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:24:03[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-ab954375567d763a-b0c62a20 total=0.06s preprocess=0.00s engine=0.06s stages=[0:0.06s]
+INFO:     127.0.0.1:59202 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59204 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:24:05[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-840d372ed94f1484-ae175f4f total=0.12s preprocess=0.00s engine=0.12s stages=[0:0.12s]
+INFO:     127.0.0.1:59206 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:24:06[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-8e60fc0c0bba34ba-9c800261 total=0.42s preprocess=0.00s engine=0.42s stages=[0:0.42s]
+INFO:     127.0.0.1:59208 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:24:06[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-8627ce034160f004-aa2b7187 total=0.05s preprocess=0.00s engine=0.05s stages=[0:0.05s]
+INFO:     127.0.0.1:59212 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59214 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:24:08[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-94ab4e273c0d5a6b-9370eca7 total=0.07s preprocess=0.00s engine=0.07s stages=[0:0.08s]
+INFO:     127.0.0.1:59218 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:24:10[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-a0720675d25d52e3-a801d3f3 total=0.06s preprocess=0.00s engine=0.06s stages=[0:0.06s]
+INFO:     127.0.0.1:59220 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59222 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:24:12[0m [90m[stats.py:957][0m [OmniTiming] req=chatcmpl-b814310050d89e82-bb6f7804 total=0.05s preprocess=0.00s engine=0.05s stages=[0:0.05s]
+INFO:     127.0.0.1:59226 - "GET /metrics HTTP/1.1" 200 OK
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:25:15[0m [90m[launcher.py:256][0m [shutdown] API server: shutdown triggered
+[0;36m(Worker_TP0 pid=1787774)[0;0m [32mINFO[0m [90m11-26 18:25:15[0m [90m[multiproc_executor.py:978][0m Parent process exited, terminating worker queues
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=1786352)[0;0m [32mINFO[0m [90m11-26 18:25:15[0m [90m[multiproc_executor.py:614][0m [shutdown] Executor: waiting for worker exit count=2
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:25:15[0m [90m[launcher.py:269][0m [shutdown] API server: stopping engine client mode=abort timeout=0s
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:25:15[0m [90m[omni_base.py:789][0m [AsyncOmni] Shutting down
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:25:15[0m [90m[omni_engine_base.py:992][0m [OmniEngine] Shutting down Orchestrator
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:25:15[0m [90m[orchestrator.py:817][0m [Orchestrator] Received shutdown signal
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:25:15[0m [90m[orchestrator.py:4006][0m [Orchestrator] Shutting down all 1 client(s)
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:25:15[0m [90m[core_client.py:822][0m [shutdown] MPClient: start timeout=default
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:25:15[0m [90m[core_client.py:824][0m [shutdown] MPClient: stopping engine manager
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:25:15[0m [90m[utils.py:628][0m [shutdown] Process manager: send sigterm to process StageEngineCoreProc_stage0_replica0
+[0;36m(StageEngineCoreProc_stage0_replica0 pid=1786352)[0;0m [32mINFO[0m [90m11-26 18:25:20[0m [90m[multiproc_executor.py:621][0m [shutdown] Executor: all workers exited gracefully
+[0;36m(APIServer pid=1784813)[0;0m [33mWARNING[0m [90m11-26 18:25:20[0m [90m[utils.py:648][0m [shutdown] Process manager: force killing remaining processes count=1
+[0;36m(APIServer pid=1784813)[0;0m [33mWARNING[0m [90m11-26 18:25:20[0m [90m[utils.py:653][0m [shutdown] Process manager: force killing remaining process StageEngineCoreProc_stage0_replica0 pid 1786352
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:25:20[0m [90m[core_client.py:826][0m [shutdown] MPClient: engine manager stopped
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:25:20[0m [90m[core_client.py:827][0m [shutdown] MPClient: cleaning up background resources
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:25:20[0m [90m[core_client.py:829][0m [shutdown] MPClient: complete
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:25:20[0m [90m[stage_pool.py:2230][0m [StagePool] Stage 0 replica 0 shut down
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:25:20[0m [90m[launcher.py:278][0m [shutdown] API server: engine client stopped
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:25:20[0m [90m[launcher.py:281][0m [shutdown] API server: signalling HTTP server shutdown
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:25:21[0m [90m[launcher.py:304][0m [shutdown] API server: shutting down FastAPI HTTP server
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+[0;36m(APIServer pid=1784813)[0;0m [32mINFO[0m [90m11-26 18:25:21[0m [90m[omni_base.py:789][0m [AsyncOmni] Shutting down

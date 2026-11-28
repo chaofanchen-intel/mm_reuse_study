@@ -1,0 +1,72 @@
+1795854712.482437	process_prompt images=3 hits=0 image_loop_ms=11.5
+1795854712.485199	prepare_input rid=chatcmpl-05c3049ef99542b1ade42dd11920c889#1 load_media_ms=69.6 process_prompt_ms=63.2 layout_keys_ms=0.9
+1795854712.492322	store_persisted rid=chatcmpl-05c3049ef99542b1ade42dd11920c889#1 ms=7.0 bytes=11059656
+1795854712.957254	process_prompt images=3 hits=3 image_loop_ms=4.2
+1795854712.959731	prepare_input rid=chatcmpl-252b436a89c3444caa2a3f5ef13827f3#2 load_media_ms=6.0 process_prompt_ms=10.1 layout_keys_ms=0.6
+1795854712.961161	store_persisted rid=chatcmpl-252b436a89c3444caa2a3f5ef13827f3#2 ms=1.3 bytes=11059664
+1795854713.225539	process_prompt images=8 hits=0 image_loop_ms=22.0
+1795854713.229730	prepare_input rid=chatcmpl-b1c5320ccbbc42e9aafa2674cda18042#3 load_media_ms=24.9 process_prompt_ms=29.8 layout_keys_ms=1.0
+1795854713.246655	store_persisted rid=chatcmpl-b1c5320ccbbc42e9aafa2674cda18042#3 ms=16.8 bytes=29491856
+1795854713.942750	process_prompt images=8 hits=8 image_loop_ms=13.4
+1795854713.947461	prepare_input rid=chatcmpl-eeaaa9c4bde24f42ab980d2e6acf759f#4 load_media_ms=16.3 process_prompt_ms=21.6 layout_keys_ms=1.1
+1795854713.950931	store_persisted rid=chatcmpl-eeaaa9c4bde24f42ab980d2e6acf759f#4 ms=3.4 bytes=29491864
+1795854714.223516	process_prompt images=8 hits=0 image_loop_ms=20.9
+1795854714.227727	prepare_input rid=chatcmpl-79a630b58986426c9fd1fd9d0377ef3a#5 load_media_ms=20.8 process_prompt_ms=27.8 layout_keys_ms=1.1
+1795854714.231609	store_persisted rid=chatcmpl-79a630b58986426c9fd1fd9d0377ef3a#5 ms=3.8 bytes=29491856
+1795854714.944745	process_prompt images=8 hits=8 image_loop_ms=11.2
+1795854714.950047	prepare_input rid=chatcmpl-ba774b9e9f514756bf4dc52f36394d2e#6 load_media_ms=15.6 process_prompt_ms=26.6 layout_keys_ms=1.0
+1795854714.957756	store_persisted rid=chatcmpl-ba774b9e9f514756bf4dc52f36394d2e#6 ms=7.6 bytes=29491864
+1795854715.401829	process_prompt images=20 hits=0 image_loop_ms=57.4
+1795854715.412355	prepare_input rid=chatcmpl-7ea53319b02a4955b3877141d81438a5#7 load_media_ms=40.5 process_prompt_ms=74.2 layout_keys_ms=2.3
+1795854715.439446	store_persisted rid=chatcmpl-7ea53319b02a4955b3877141d81438a5#7 ms=27.0 bytes=73729136
+1795854717.298798	process_prompt images=20 hits=20 image_loop_ms=27.8
+1795854717.309415	prepare_input rid=chatcmpl-a10c45e07ac04074bed30cd79047d133#8 load_media_ms=38.0 process_prompt_ms=44.9 layout_keys_ms=2.2
+1795854717.318433	store_persisted rid=chatcmpl-a10c45e07ac04074bed30cd79047d133#8 ms=8.9 bytes=73729144
+1795854717.810135	process_prompt images=3 hits=3 image_loop_ms=4.3
+1795854717.811505	prepare_input rid=chatcmpl-c1c2522b957a4153aa108aafd812f0d0#9 load_media_ms=16.2 process_prompt_ms=9.8 layout_keys_ms=0.5
+1795854717.815061	store_persisted rid=chatcmpl-c1c2522b957a4153aa108aafd812f0d0#9 ms=3.5 bytes=11059656
+1795854717.958647	process_prompt images=3 hits=3 image_loop_ms=4.1
+1795854717.959962	prepare_input rid=chatcmpl-2c0d0a0770a44ea5963e3c59731e3a1c#10 load_media_ms=15.5 process_prompt_ms=6.6 layout_keys_ms=0.5
+1795854717.963456	store_persisted rid=chatcmpl-2c0d0a0770a44ea5963e3c59731e3a1c#10 ms=3.4 bytes=11059664
+1795854718.213767	process_prompt images=8 hits=8 image_loop_ms=11.3
+1795854718.217202	prepare_input rid=chatcmpl-07fbc249a8b54b62858fae02ce6a232d#11 load_media_ms=26.2 process_prompt_ms=17.8 layout_keys_ms=1.1
+1795854718.224743	store_persisted rid=chatcmpl-07fbc249a8b54b62858fae02ce6a232d#11 ms=7.4 bytes=29491856
+1795854718.518402	process_prompt images=8 hits=8 image_loop_ms=11.1
+1795854718.521731	prepare_input rid=chatcmpl-faf6239aa7fb4fadbff557eec8543b3f#12 load_media_ms=24.4 process_prompt_ms=18.5 layout_keys_ms=1.1
+1795854718.527275	store_persisted rid=chatcmpl-faf6239aa7fb4fadbff557eec8543b3f#12 ms=5.5 bytes=29491864
+1795854718.809394	process_prompt images=8 hits=8 image_loop_ms=14.9
+1795854718.813472	prepare_input rid=chatcmpl-98273c17ca6441e7a6589a1ce09adb87#13 load_media_ms=27.2 process_prompt_ms=22.0 layout_keys_ms=1.6
+1795854718.821473	store_persisted rid=chatcmpl-98273c17ca6441e7a6589a1ce09adb87#13 ms=7.9 bytes=29491856
+1795854719.116984	process_prompt images=8 hits=8 image_loop_ms=11.0
+1795854719.120095	prepare_input rid=chatcmpl-66897b3b9fef4648b80db61396c470b8#14 load_media_ms=23.9 process_prompt_ms=17.1 layout_keys_ms=1.0
+1795854719.128263	store_persisted rid=chatcmpl-66897b3b9fef4648b80db61396c470b8#14 ms=8.1 bytes=29491864
+1795854719.545696	process_prompt images=20 hits=20 image_loop_ms=28.0
+1795854719.558726	prepare_input rid=chatcmpl-76412f0cd66440d395e23cea3c2279c6#15 load_media_ms=44.4 process_prompt_ms=50.1 layout_keys_ms=2.1
+1795854719.575014	store_persisted rid=chatcmpl-76412f0cd66440d395e23cea3c2279c6#15 ms=16.2 bytes=73729136
+1795854720.237779	process_prompt images=20 hits=20 image_loop_ms=27.6
+1795854720.257035	prepare_input rid=chatcmpl-68f52585911e4e2199c4dcd7c3d60fc0#16 load_media_ms=47.3 process_prompt_ms=53.7 layout_keys_ms=2.1
+1795854720.272820	store_persisted rid=chatcmpl-68f52585911e4e2199c4dcd7c3d60fc0#16 ms=15.7 bytes=73729144
+1795854720.853669	process_prompt images=8 hits=0 image_loop_ms=19.1
+1795854720.858186	prepare_input rid=chatcmpl-efdcc27fc8144436b2c74696fd5286d6#17 load_media_ms=25.4 process_prompt_ms=26.3 layout_keys_ms=1.0
+1795854720.865816	store_persisted rid=chatcmpl-efdcc27fc8144436b2c74696fd5286d6#17 ms=7.5 bytes=29491744
+1795854722.560269	process_prompt images=8 hits=8 image_loop_ms=11.2
+1795854722.563096	prepare_input rid=chatcmpl-c9c8e10971cc46cf8f22772ad7b50006#18 load_media_ms=20.9 process_prompt_ms=16.7 layout_keys_ms=1.0
+1795854722.571531	store_persisted rid=chatcmpl-c9c8e10971cc46cf8f22772ad7b50006#18 ms=8.3 bytes=29491744
+1795854723.756865	process_prompt images=8 hits=8 image_loop_ms=10.9
+1795854723.759684	prepare_input rid=chatcmpl-3a64bcf1e74949cfac34a7643f85bc95#19 load_media_ms=20.4 process_prompt_ms=16.9 layout_keys_ms=1.0
+1795854723.767252	store_persisted rid=chatcmpl-3a64bcf1e74949cfac34a7643f85bc95#19 ms=7.4 bytes=29491744
+1795854724.967812	process_prompt images=8 hits=8 image_loop_ms=10.9
+1795854724.970570	prepare_input rid=chatcmpl-c95ddc7d54df46c983aa9b22eeb6951e#20 load_media_ms=20.6 process_prompt_ms=16.6 layout_keys_ms=1.0
+1795854724.975285	store_persisted rid=chatcmpl-c95ddc7d54df46c983aa9b22eeb6951e#20 ms=4.6 bytes=29491744
+1795854726.728585	process_prompt images=48 hits=0 image_loop_ms=149.0
+1795854726.758610	prepare_input rid=chatcmpl-a714ede23e0e43d5904aa4367f94e33f#21 load_media_ms=108.1 process_prompt_ms=213.2 layout_keys_ms=5.0
+1795854726.809057	store_persisted rid=chatcmpl-a714ede23e0e43d5904aa4367f94e33f#21 ms=50.4 bytes=176949344
+1795854731.515525	process_prompt images=48 hits=48 image_loop_ms=67.9
+1795854731.548831	prepare_input rid=chatcmpl-c7b22c3cec6a4b7cbf75c72bc23eb3e4#22 load_media_ms=98.6 process_prompt_ms=118.9 layout_keys_ms=4.8
+1795854731.575836	store_persisted rid=chatcmpl-c7b22c3cec6a4b7cbf75c72bc23eb3e4#22 ms=26.9 bytes=176949344
+1795854733.397491	process_prompt images=48 hits=48 image_loop_ms=68.0
+1795854733.423258	prepare_input rid=chatcmpl-8186a34285ec45a09677b9b9224e3f94#23 load_media_ms=99.1 process_prompt_ms=108.0 layout_keys_ms=4.9
+1795854733.451946	store_persisted rid=chatcmpl-8186a34285ec45a09677b9b9224e3f94#23 ms=28.6 bytes=176949344
+1795854735.256612	process_prompt images=48 hits=48 image_loop_ms=68.2
+1795854735.286346	prepare_input rid=chatcmpl-86a6fd9993c448fea7cd0cfc9755bfa2#24 load_media_ms=98.4 process_prompt_ms=112.3 layout_keys_ms=4.9
+1795854735.315150	store_persisted rid=chatcmpl-86a6fd9993c448fea7cd0cfc9755bfa2#24 ms=28.7 bytes=176949344

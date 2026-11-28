@@ -13,11 +13,15 @@
 """
 from __future__ import annotations
 
+import os
+
 from . import Observation, counter_delta, scrape
 
 # 模型 → (编码器节点, LLM 中消费媒体的 walk)
 MODEL_LAYOUT = {
     "bagel": {"encoders": {"vit_encoder", "vae_encoder"}, "media_walks": {("LLM", "prefill_vit")}},
+    "qwen3_omni": {"encoders": {"vision_encoder", "audio_encoder"},
+                   "media_walks": {("Thinker", "prefill_vision"), ("Thinker", "prefill_audio")}},
 }
 
 
@@ -37,8 +41,13 @@ class MStarAdapter:
         """请求级关闭前缀缓存：prefix_cache=False 随 model_kwargs 传递（serving.mdx）。"""
         return {} if prefix_cache else {"prefix_cache": False}
 
+    def _enc_log(self) -> str:
+        return os.path.join(os.path.dirname(self.manifest.get("log", "")), "encoder_cache.log")
+
     def snapshot(self) -> dict:
-        return {"metrics": scrape(self.base, ("mstar_",))}
+        log = self._enc_log()
+        return {"metrics": scrape(self.base, ("mstar_",)),
+                "enc_offset": os.path.getsize(log) if os.path.exists(log) else 0}
 
     def observe(self, before: dict, after: dict, has_media: bool) -> Observation:
         d = counter_delta(before["metrics"], after["metrics"])
@@ -72,5 +81,17 @@ class MStarAdapter:
                 obs.prefix_coverage = "partial"
             else:
                 obs.prefix_coverage = "none"
+        # 本研究的编码项日志（external/mstar 含 M1 改动时才有）：每个请求的图像数、缓存命中数、实际编码数
+        start, end = before.get("enc_offset", 0), after.get("enc_offset", 0)
+        if end > start:
+            with open(self._enc_log(), "rb") as f:
+                f.seek(start)
+                lines = [ln.split("\t") for ln in f.read(end - start).decode().splitlines() if ln.count("\t") >= 4 and "=" not in ln.split("\t")[4]]
+            items = sum(int(x[2]) for x in lines)
+            hits = sum(int(x[3]) for x in lines)
+            obs.node_calls["vision_items"] = items
+            obs.node_calls["vision_items_cached"] = hits
+            obs.node_calls["vision_items_encoded"] = sum(int(x[4]) for x in lines)
+            obs.encoder_cache_hit = hits > 0
         obs.raw = {f"{n}{dict(l)}": v for (n, l), v in d.items()}
         return obs

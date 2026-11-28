@@ -1,0 +1,1262 @@
+[17:20:49] g1-mstar：等待 1 张稳定空闲的卡（第 1 次）
+[17:21:50] g1-mstar：GPU 0
+serve: g1-mstar 已启动（PID 1438532，GPU 0，端口 18301，日志 results/g1/5880/mstar/pfx-arms/server/server.log）
+serve: g1-mstar 就绪（http://localhost:18301/metrics）
+   0 W warmup r0 s0  512  ttft  5140.4  e2e  6200.6  enc 1  pfx 0/1405 none  'Green' ok
+   1 W warmup r0 s1  512  ttft   294.7  e2e   330.6  enc 1  pfx 0/1405 none  'Green' ok
+   2 W warmup r0 s2  512  ttft   279.3  e2e   313.3  enc 1  pfx 0/1405 none  'Red' ok
+   3 W warmup r0 s0  980  ttft  1277.4  e2e  1311.6  enc 1  pfx 0/4936 none  'yellow' ok
+   4 W warmup r0 s1  980  ttft   848.8  e2e   882.9  enc 1  pfx 0/4936 none  'blue' ok
+   5 W warmup r0 s2  980  ttft   860.7  e2e   895.7  enc 1  pfx 0/4936 none  'Green' ok
+   6   s3 r0 s0  512  ttft   273.0  e2e   303.6  enc 1  pfx 0/1405 none  'orange' ok
+   7   s3 r0 s1  512  ttft   280.9  e2e   316.0  enc 1  pfx 0/1405 none  'black' ok
+   8   s3 r0 s2  512  ttft   273.6  e2e   307.8  enc 1  pfx 0/1405 none  'Red' ok
+   9   s3 r0 s3  512  ttft   279.9  e2e   313.1  enc 1  pfx 0/1405 none  'Green' ok
+  10   s3 r0 s4  512  ttft   262.4  e2e   295.7  enc 1  pfx 0/1405 none  'yellow' ok
+  11   s1 r0 s0  980  ttft   813.1  e2e   844.8  enc 1  pfx 0/4936 none  'white' ok
+  12   s1 r0 s1  980  ttft   163.9  e2e   513.5  enc 1  pfx 4916/4935 full  'Yes, the image is mostly a sin'
+  13   s1 r0 s2  980  ttft   152.4  e2e   351.4  enc 1  pfx 4916/4929 full  'system\nwhite background\nblank '
+  14   s1 r0 s3  980  ttft   145.5  e2e   441.5  enc 1  pfx 4916/4935 full  'No, there is no text in this i'
+  15   s1 r0 s4  980  ttft   154.2  e2e   428.1  enc 1  pfx 4916/4929 full  '"Blank Canvas" or "Empty Space'
+  16   s3 r0 s0  980  ttft   832.7  e2e   861.2  enc 1  pfx 0/4936 none  'white' ok
+  17   s3 r0 s1  980  ttft   843.8  e2e   875.0  enc 1  pfx 0/4936 none  'blue' ok
+  18   s3 r0 s2  980  ttft   860.2  e2e   898.1  enc 1  pfx 0/4936 none  'blue' ok
+  19   s3 r0 s3  980  ttft   841.9  e2e   880.4  enc 1  pfx 0/4936 none  'white' ok
+  20   s3 r0 s4  980  ttft   844.8  e2e   879.0  enc 1  pfx 0/4936 none  'yellow' ok
+  21   s2 r0 s0  512  ttft   276.1  e2e   307.7  enc 1  pfx 0/1405 none  'black' ok
+  22   s2 r0 s1  512  ttft   284.7  e2e   320.7  enc 1  pfx 0/1408 none  'black' ok
+  23   s2 r0 s2  512  ttft   292.7  e2e   328.9  enc 1  pfx 0/1409 none  'black' ok
+  24   s2 r0 s3  512  ttft   282.3  e2e   317.3  enc 1  pfx 0/1409 none  'black' ok
+  25   s2 r0 s4  512  ttft   288.5  e2e   325.1  enc 1  pfx 0/1409 none  'black' ok
+  26   s1 r0 s0  512  ttft   286.8  e2e   323.4  enc 1  pfx 0/1405 none  'red' ok
+  27   s1 r0 s1  512  ttft   104.6  e2e   454.1  enc 1  pfx 1385/1404 full  'Yes, the image is mostly a sin'
+  28   s1 r0 s2  512  ttft   102.9  e2e   713.1  enc 1  pfx 1385/1398 full  'Sure, here is a description of'
+  29   s1 r0 s3  512  ttft   108.8  e2e   456.7  enc 1  pfx 1385/1404 full  'No, there is no text in this i'
+  30   s1 r0 s4  512  ttft   106.8  e2e   182.2  enc 1  pfx 1385/1398 full  'Red background'
+  31   s2 r0 s0  980  ttft   849.1  e2e   885.9  enc 1  pfx 0/4936 none  'orange' ok
+  32   s2 r0 s1  980  ttft   841.8  e2e   877.3  enc 1  pfx 0/4939 none  'orange' ok
+  33   s2 r0 s2  980  ttft   839.1  e2e   874.7  enc 1  pfx 0/4940 none  'orange' ok
+  34   s2 r0 s3  980  ttft   830.4  e2e   864.9  enc 1  pfx 0/4940 none  'orange' ok
+  35   s2 r0 s4  980  ttft   836.3  e2e   871.6  enc 1  pfx 0/4940 none  'orange' ok
+  36   s4 r0 s0  980  ttft   847.6  e2e   883.5  enc 1  pfx 0/4936 none  'orange' ok
+  37   s4 r0 s1  980  ttft   182.9  e2e   220.9  enc 1  pfx 4916/4961 full  'warm'
+  38   s4 r0 s2  980  ttft   181.3  e2e   260.7  enc 1  pfx 4916/4981 full  'carrot'
+  39   s4 r0 s3  980  ttft   159.7  e2e   194.7  enc 1  pfx 4916/5008 full  'orange' ok
+  40   s4 r0 s0  512  ttft   290.4  e2e   323.6  enc 1  pfx 0/1405 none  'Green' ok
+  41   s4 r0 s1  512  ttft    94.9  e2e   129.2  enc 1  pfx 1385/1430 full  'Cool'
+  42   s4 r0 s2  512  ttft   112.0  e2e   242.4  enc 1  pfx 1408/1450 full  'Grass'
+  43   s4 r0 s3  512  ttft    98.2  e2e   136.3  enc 1  pfx 1408/1477 full  'Green' ok
+  44   s1 r1 s0  980  ttft   849.5  e2e   886.7  enc 1  pfx 0/4936 none  'purple' ok
+  45   s1 r1 s1  980  ttft   152.6  e2e   469.8  enc 1  pfx 4916/4935 full  'Yes, the image is mostly a sin'
+  46   s1 r1 s2  980  ttft   160.4  e2e   194.5  enc 1  pfx 4916/4929 full  'system'
+  47   s1 r1 s3  980  ttft   165.4  e2e   441.7  enc 1  pfx 4916/4935 full  'No, there is no text in this i'
+  48   s1 r1 s4  980  ttft   164.2  e2e   224.9  enc 1  pfx 4916/4929 full  'Purple Background'
+  49   s1 r1 s0  512  ttft   271.1  e2e   306.8  enc 1  pfx 0/1405 none  'Red' ok
+  50   s1 r1 s1  512  ttft   102.8  e2e   444.2  enc 1  pfx 1385/1404 full  'Yes, the image is mostly a sin'
+  51   s1 r1 s2  512  ttft    90.4  e2e   540.3  enc 1  pfx 1385/1398 full  'The image is a solid red color'
+  52   s1 r1 s3  512  ttft   104.7  e2e   445.3  enc 1  pfx 1385/1404 full  'No, there is no text in this i'
+  53   s1 r1 s4  512  ttft   106.3  e2e   170.0  enc 1  pfx 1385/1398 full  'Red background'
+  54   s3 r1 s0  512  ttft   289.6  e2e   325.3  enc 1  pfx 0/1405 none  'black' ok
+  55   s3 r1 s1  512  ttft   292.7  e2e   329.8  enc 1  pfx 0/1405 none  'blue' ok
+  56   s3 r1 s2  512  ttft   260.6  e2e   294.8  enc 1  pfx 0/1405 none  'white' ok
+  57   s3 r1 s3  512  ttft   285.5  e2e   323.4  enc 1  pfx 0/1405 none  'red' ok
+  58   s3 r1 s4  512  ttft   274.7  e2e   312.2  enc 1  pfx 0/1405 none  'blue' ok
+  59   s3 r1 s0  980  ttft   849.4  e2e   883.6  enc 1  pfx 0/4936 none  'white' ok
+  60   s3 r1 s1  980  ttft   868.9  e2e   904.3  enc 1  pfx 0/4936 none  'purple' ok
+  61   s3 r1 s2  980  ttft   861.0  e2e   893.9  enc 1  pfx 0/4936 none  'white' ok
+  62   s3 r1 s3  980  ttft   855.7  e2e   891.4  enc 1  pfx 0/4936 none  'white' ok
+  63   s3 r1 s4  980  ttft   821.6  e2e   853.9  enc 1  pfx 0/4936 none  'purple' ok
+  64   s2 r1 s0  980  ttft   850.6  e2e   885.1  enc 1  pfx 0/4936 none  'yellow' ok
+  65   s2 r1 s1  980  ttft   849.9  e2e   886.8  enc 1  pfx 0/4939 none  'yellow' ok
+  66   s2 r1 s2  980  ttft   845.1  e2e   880.3  enc 1  pfx 0/4940 none  'yellow' ok
+  67   s2 r1 s3  980  ttft   837.5  e2e   871.0  enc 1  pfx 0/4940 none  'yellow' ok
+  68   s2 r1 s4  980  ttft   817.7  e2e   854.1  enc 1  pfx 0/4940 none  'Yellow' ok
+  69   s2 r1 s0  512  ttft   268.9  e2e   302.9  enc 1  pfx 0/1405 none  'black' ok
+  70   s2 r1 s1  512  ttft   275.5  e2e   310.6  enc 1  pfx 0/1408 none  'black' ok
+  71   s2 r1 s2  512  ttft   266.7  e2e   298.2  enc 1  pfx 0/1409 none  'black' ok
+  72   s2 r1 s3  512  ttft   288.6  e2e   325.6  enc 1  pfx 0/1409 none  'black' ok
+  73   s2 r1 s4  512  ttft   281.0  e2e   317.4  enc 1  pfx 0/1409 none  'black' ok
+  74   s4 r1 s0  980  ttft   869.1  e2e   907.8  enc 1  pfx 0/4936 none  'white' ok
+  75   s4 r1 s1  980  ttft   170.2  e2e   246.6  enc 1  pfx 4916/4961 full  'neither'
+  76   s4 r1 s2  980  ttft   147.5  e2e   180.7  enc 1  pfx 4916/4982 full  'snow'
+  77   s4 r1 s3  980  ttft   161.9  e2e   192.8  enc 1  pfx 4916/5008 full  'white' ok
+  78   s4 r1 s0  512  ttft   269.2  e2e   300.0  enc 1  pfx 0/1405 none  'orange' ok
+  79   s4 r1 s1  512  ttft   104.3  e2e   143.4  enc 1  pfx 1385/1430 full  'warm'
+  80   s4 r1 s2  512  ttft    86.3  e2e   152.6  enc 1  pfx 1408/1450 full  'carrot'
+  81   s4 r1 s3  512  ttft   100.5  e2e   139.2  enc 1  pfx 1408/1477 full  'orange' ok
+  82   s3 r2 s0  980  ttft   816.1  e2e   854.5  enc 1  pfx 0/4936 none  'purple' ok
+  83   s3 r2 s1  980  ttft   838.1  e2e   871.9  enc 1  pfx 0/4936 none  'white' ok
+  84   s3 r2 s2  980  ttft   853.7  e2e   888.0  enc 1  pfx 0/4936 none  'yellow' ok
+  85   s3 r2 s3  980  ttft   865.1  e2e   901.1  enc 1  pfx 0/4936 none  'purple' ok
+  86   s3 r2 s4  980  ttft   865.3  e2e   901.5  enc 1  pfx 0/4936 none  'blue' ok
+  87   s3 r2 s0  512  ttft   301.2  e2e   337.5  enc 1  pfx 0/1405 none  'white' ok
+  88   s3 r2 s1  512  ttft   277.8  e2e   310.3  enc 1  pfx 0/1405 none  'orange' ok
+  89   s3 r2 s2  512  ttft   288.4  e2e   325.6  enc 1  pfx 0/1405 none  'orange' ok
+  90   s3 r2 s3  512  ttft   298.4  e2e   335.8  enc 1  pfx 0/1405 none  'blue' ok
+  91   s3 r2 s4  512  ttft   294.7  e2e   331.2  enc 1  pfx 0/1405 none  'black' ok
+  92   s2 r2 s0  980  ttft   818.3  e2e   852.6  enc 1  pfx 0/4936 none  'orange' ok
+  93   s2 r2 s1  980  ttft   855.5  e2e   893.6  enc 1  pfx 0/4939 none  'orange' ok
+  94   s2 r2 s2  980  ttft   838.9  e2e   877.7  enc 1  pfx 0/4940 none  'orange' ok
+  95   s2 r2 s3  980  ttft   849.0  e2e   887.4  enc 1  pfx 0/4940 none  'orange' ok
+  96   s2 r2 s4  980  ttft   849.7  e2e   881.9  enc 1  pfx 0/4940 none  'orange' ok
+  97   s4 r2 s0  512  ttft   266.0  e2e   301.4  enc 1  pfx 0/1405 none  'Green' ok
+  98   s4 r2 s1  512  ttft    78.0  e2e   107.1  enc 1  pfx 1385/1430 full  'Cool'
+  99   s4 r2 s2  512  ttft    79.0  e2e   134.6  enc 1  pfx 1408/1450 full  'Grass'
+ 100   s4 r2 s3  512  ttft    92.4  e2e   124.4  enc 1  pfx 1408/1477 full  'Green' ok
+ 101   s1 r2 s0  512  ttft   278.9  e2e   311.2  enc 1  pfx 0/1405 none  'white' ok
+ 102   s1 r2 s1  512  ttft    85.6  e2e   406.1  enc 1  pfx 1385/1404 full  'Yes, the image is mostly a sin'
+ 103   s1 r2 s2  512  ttft    82.1  e2e   391.8  enc 1  pfx 1385/1398 full  'system\nwhite background\nblank '
+ 104   s1 r2 s3  512  ttft    91.4  e2e   375.3  enc 1  pfx 1385/1404 full  'No, there is no text in this i'
+ 105   s1 r2 s4  512  ttft    92.8  e2e   263.3  enc 1  pfx 1385/1398 full  '"Minimalist White Background"'
+ 106   s1 r2 s0  980  ttft   851.2  e2e   898.7  enc 1  pfx 0/4936 none  'white' ok
+ 107   s1 r2 s1  980  ttft   151.4  e2e   417.4  enc 1  pfx 4916/4935 full  'Yes, the image is mostly a sin'
+ 108   s1 r2 s2  980  ttft   157.2  e2e   292.6  enc 1  pfx 4916/4929 full  'white background\nblank space'
+ 109   s1 r2 s3  980  ttft   151.0  e2e   417.8  enc 1  pfx 4916/4935 full  'No, there is no text in this i'
+ 110   s1 r2 s4  980  ttft   154.9  e2e   428.4  enc 1  pfx 4916/4929 full  '"Blank Canvas" or "Minimalist '
+ 111   s4 r2 s0  980  ttft   860.9  e2e   900.7  enc 1  pfx 0/4936 none  'black' ok
+ 112   s4 r2 s1  980  ttft   173.1  e2e   210.7  enc 1  pfx 4916/4961 full  'cool'
+ 113   s4 r2 s2  980  ttft   159.4  e2e   226.0  enc 1  pfx 4916/4981 full  'night sky'
+ 114   s4 r2 s3  980  ttft   157.9  e2e   195.6  enc 1  pfx 4916/5008 full  'black' ok
+ 115   s2 r2 s0  512  ttft   295.9  e2e   333.2  enc 1  pfx 0/1405 none  'red' ok
+ 116   s2 r2 s1  512  ttft   292.9  e2e   330.4  enc 1  pfx 0/1408 none  'red' ok
+ 117   s2 r2 s2  512  ttft   273.1  e2e   312.8  enc 1  pfx 0/1409 none  'red' ok
+ 118   s2 r2 s3  512  ttft   245.1  e2e   276.2  enc 1  pfx 0/1409 none  'Red' ok
+ 119   s2 r2 s4  512  ttft   298.4  e2e   335.8  enc 1  pfx 0/1409 none  'Red' ok
+ 120   s2 r3 s0  980  ttft   872.5  e2e   914.9  enc 1  pfx 0/4936 none  'black' ok
+ 121   s2 r3 s1  980  ttft   866.1  e2e   917.3  enc 1  pfx 0/4939 none  'black' ok
+ 122   s2 r3 s2  980  ttft   853.9  e2e   890.7  enc 1  pfx 0/4940 none  'black' ok
+ 123   s2 r3 s3  980  ttft   859.6  e2e   900.5  enc 1  pfx 0/4940 none  'black' ok
+ 124   s2 r3 s4  980  ttft   891.3  e2e   932.4  enc 1  pfx 0/4940 none  'black' ok
+ 125   s4 r3 s0  980  ttft   858.2  e2e   892.1  enc 1  pfx 0/4936 none  'purple' ok
+ 126   s4 r3 s1  980  ttft   198.8  e2e   231.7  enc 1  pfx 4864/4961 partial  'cool'
+ 127   s4 r3 s2  980  ttft   201.2  e2e   277.0  enc 1  pfx 4864/4981 partial  'grapes'
+ 128   s4 r3 s3  980  ttft   199.5  e2e   238.8  enc 1  pfx 4864/5008 partial  'purple' ok
+ 129   s1 r3 s0  980  ttft   868.3  e2e   909.9  enc 1  pfx 0/4936 none  'blue' ok
+ 130   s1 r3 s1  980  ttft   194.8  e2e   548.3  enc 1  pfx 4864/4935 partial  'Yes, the image is mostly a sin'
+ 131   s1 r3 s2  980  ttft   180.9  e2e   305.7  enc 1  pfx 4864/4929 partial  'system\nblue background'
+ 132   s1 r3 s3  980  ttft   205.2  e2e   556.5  enc 1  pfx 4864/4935 partial  'No, there is no text in this i'
+ 133   s1 r3 s4  980  ttft   217.6  e2e   397.3  enc 1  pfx 4864/4929 partial  '"Solid Blue Background"'
+ 134   s2 r3 s0  512  ttft   262.1  e2e   297.4  enc 1  pfx 0/1405 none  'white' ok
+ 135   s2 r3 s1  512  ttft   289.3  e2e   328.0  enc 1  pfx 0/1408 none  'white' ok
+ 136   s2 r3 s2  512  ttft   279.7  e2e   317.0  enc 1  pfx 0/1409 none  'White' ok
+ 137   s2 r3 s3  512  ttft   272.1  e2e   307.5  enc 1  pfx 0/1409 none  'White' ok
+ 138   s2 r3 s4  512  ttft   296.9  e2e   341.7  enc 1  pfx 0/1409 none  'White' ok
+ 139   s4 r3 s0  512  ttft   284.9  e2e   328.5  enc 1  pfx 0/1405 none  'Red' ok
+ 140   s4 r3 s1  512  ttft   127.3  e2e   165.4  enc 1  pfx 1280/1430 partial  'Warm'
+ 141   s4 r3 s2  512  ttft   114.3  e2e   156.0  enc 1  pfx 1408/1450 full  'Apple'
+ 142   s4 r3 s3  512  ttft   100.7  e2e   134.2  enc 1  pfx 1408/1476 full  'Red' ok
+ 143   s3 r3 s0  980  ttft   864.4  e2e   906.0  enc 1  pfx 0/4936 none  'black' ok
+ 144   s3 r3 s1  980  ttft   891.4  e2e   935.4  enc 1  pfx 0/4936 none  'yellow' ok
+ 145   s3 r3 s2  980  ttft   862.2  e2e   900.0  enc 1  pfx 0/4936 none  'black' ok
+ 146   s3 r3 s3  980  ttft   832.0  e2e   866.9  enc 1  pfx 0/4936 none  'purple' ok
+ 147   s3 r3 s4  980  ttft   861.7  e2e   897.2  enc 1  pfx 0/4936 none  'black' ok
+ 148   s1 r3 s0  512  ttft   283.1  e2e   317.7  enc 1  pfx 0/1405 none  'Red' ok
+ 149   s1 r3 s1  512  ttft   136.2  e2e   479.5  enc 1  pfx 1280/1404 partial  'Yes, the image is mostly a sin'
+ 150   s1 r3 s2  512  ttft    97.4  e2e   497.8  enc 1  pfx 1280/1398 partial  'The image is a solid red squar'
+ 151   s1 r3 s3  512  ttft   130.6  e2e   469.1  enc 1  pfx 1280/1404 partial  'No, there is no text in this i'
+ 152   s1 r3 s4  512  ttft   133.0  e2e   207.0  enc 1  pfx 1280/1398 partial  'Red background'
+ 153   s3 r3 s0  512  ttft   241.9  e2e   270.6  enc 1  pfx 0/1405 none  'black' ok
+ 154   s3 r3 s1  512  ttft   295.3  e2e   330.2  enc 1  pfx 0/1405 none  'orange' ok
+ 155   s3 r3 s2  512  ttft   277.0  e2e   311.4  enc 1  pfx 0/1405 none  'Red' ok
+ 156   s3 r3 s3  512  ttft   275.6  e2e   310.0  enc 1  pfx 0/1405 none  'black' ok
+ 157   s3 r3 s4  512  ttft   258.2  e2e   287.3  enc 1  pfx 0/1405 none  'white' ok
+wrote results/g1/5880/mstar/pfx-arms/records.jsonl
+   0 W warmup r0 s0  512  ttft   254.6  e2e   283.0  enc 1  pfx None/None none  'Green' ok
+   1 W warmup r0 s0  980  ttft   857.7  e2e   893.9  enc 1  pfx None/None none  'purple' ok
+   2   s3 r0 s0  512  ttft   271.5  e2e   306.7  enc 1  pfx None/None none  'black' ok
+   3   s3 r0 s1  512  ttft   282.7  e2e   318.2  enc 1  pfx None/None none  'blue' ok
+   4   s3 r0 s2  512  ttft   265.6  e2e   296.6  enc 1  pfx None/None none  'yellow' ok
+   5   s3 r0 s3  512  ttft   295.6  e2e   331.0  enc 1  pfx None/None none  'orange' ok
+   6   s3 r0 s4  512  ttft   287.1  e2e   322.2  enc 1  pfx None/None none  'Red' ok
+   7   s1 r0 s0  980  ttft   863.8  e2e   899.9  enc 1  pfx None/None none  'white' ok
+   8   s1 r0 s1  980  ttft   837.9  e2e  1119.1  enc 1  pfx None/None none  'Yes, the image is mostly a sin'
+   9   s1 r0 s2  980  ttft   832.4  e2e   896.8  enc 1  pfx None/None none  'white background'
+  10   s1 r0 s3  980  ttft   839.0  e2e  1183.3  enc 1  pfx None/None none  'No, there is no text in this i'
+  11   s1 r0 s4  980  ttft   852.7  e2e  1126.6  enc 1  pfx None/None none  '"Blank Canvas" or "Empty Space'
+  12   s3 r0 s0  980  ttft   855.5  e2e   889.7  enc 1  pfx None/None none  'Red' ok
+  13   s3 r0 s1  980  ttft   843.7  e2e   878.1  enc 1  pfx None/None none  'purple' ok
+  14   s3 r0 s2  980  ttft   874.2  e2e   932.2  enc 1  pfx None/None none  'Green' ok
+  15   s3 r0 s3  980  ttft   831.9  e2e   865.8  enc 1  pfx None/None none  'white' ok
+  16   s3 r0 s4  980  ttft   862.2  e2e   898.6  enc 1  pfx None/None none  'yellow' ok
+  17   s2 r0 s0  512  ttft   291.4  e2e   326.9  enc 1  pfx None/None none  'purple' ok
+  18   s2 r0 s1  512  ttft   295.5  e2e   331.7  enc 1  pfx None/None none  'Purple' ok
+  19   s2 r0 s2  512  ttft   260.0  e2e   295.0  enc 1  pfx None/None none  'Purple' ok
+  20   s2 r0 s3  512  ttft   294.9  e2e   331.4  enc 1  pfx None/None none  'Purple' ok
+  21   s2 r0 s4  512  ttft   259.1  e2e   287.7  enc 1  pfx None/None none  'Purple' ok
+  22   s1 r0 s0  512  ttft   277.0  e2e   311.3  enc 1  pfx None/None none  'orange' ok
+  23   s1 r0 s1  512  ttft   290.0  e2e   628.2  enc 1  pfx None/None none  'Yes, the image is mostly a sin'
+  24   s1 r0 s2  512  ttft   291.9  e2e   901.5  enc 1  pfx None/None none  'Sure, here is a description of'
+  25   s1 r0 s3  512  ttft   281.9  e2e   616.5  enc 1  pfx None/None none  'No, there is no text in this i'
+  26   s1 r0 s4  512  ttft   289.1  e2e   834.5  enc 1  pfx None/None none  "Sure, here's a short title for"
+  27   s2 r0 s0  980  ttft   855.2  e2e   891.1  enc 1  pfx None/None none  'white' ok
+  28   s2 r0 s1  980  ttft   849.3  e2e   884.4  enc 1  pfx None/None none  'white' ok
+  29   s2 r0 s2  980  ttft   845.6  e2e   879.9  enc 1  pfx None/None none  'white' ok
+  30   s2 r0 s3  980  ttft   859.7  e2e   895.4  enc 1  pfx None/None none  'White' ok
+  31   s2 r0 s4  980  ttft   837.3  e2e   874.1  enc 1  pfx None/None none  'white' ok
+  32   s4 r0 s0  980  ttft   823.9  e2e   857.6  enc 1  pfx None/None none  'yellow' ok
+  33   s4 r0 s1  980  ttft   860.1  e2e   896.9  enc 1  pfx None/None none  'warm'
+  34   s4 r0 s2  980  ttft   850.5  e2e   909.3  enc 1  pfx None/None none  'lemon'
+  35   s4 r0 s3  980  ttft   868.2  e2e   902.5  enc 1  pfx None/None none  'yellow' ok
+  36   s4 r0 s0  512  ttft   284.6  e2e   322.3  enc 1  pfx None/None none  'Green' ok
+  37   s4 r0 s1  512  ttft   288.3  e2e   322.4  enc 1  pfx None/None none  'Cool'
+  38   s4 r0 s2  512  ttft   277.6  e2e   350.7  enc 1  pfx None/None none  'Grass'
+  39   s4 r0 s3  512  ttft   294.3  e2e   330.9  enc 1  pfx None/None none  'Green' ok
+  40   s1 r1 s0  980  ttft   869.8  e2e   905.7  enc 1  pfx None/None none  'yellow' ok
+  41   s1 r1 s1  980  ttft   868.7  e2e  1176.7  enc 1  pfx None/None none  'Yes, the image is mostly a sin'
+  42   s1 r1 s2  980  ttft   851.5  e2e   890.2  enc 1  pfx None/None none  'system'
+  43   s1 r1 s3  980  ttft   852.4  e2e  1195.3  enc 1  pfx None/None none  'No, there is no text in this i'
+  44   s1 r1 s4  980  ttft   836.6  e2e  1175.5  enc 1  pfx None/None none  '"Golden Background" or "Yellow'
+  45   s1 r1 s0  512  ttft   264.0  e2e   291.5  enc 1  pfx None/None none  'black' ok
+  46   s1 r1 s1  512  ttft   291.6  e2e   611.5  enc 1  pfx None/None none  'Yes, the image is mostly a sin'
+  47   s1 r1 s2  512  ttft   279.4  e2e   475.9  enc 1  pfx None/None none  'black background, no visible c'
+  48   s1 r1 s3  512  ttft   270.9  e2e   604.4  enc 1  pfx None/None none  'No, there is no text in this i'
+  49   s1 r1 s4  512  ttft   288.8  e2e   439.3  enc 1  pfx None/None none  'A completely black image.'
+  50   s3 r1 s0  512  ttft   297.5  e2e   334.0  enc 1  pfx None/None none  'orange' ok
+  51   s3 r1 s1  512  ttft   279.9  e2e   318.8  enc 1  pfx None/None none  'purple' ok
+  52   s3 r1 s2  512  ttft   291.3  e2e   327.3  enc 1  pfx None/None none  'blue' ok
+  53   s3 r1 s3  512  ttft   277.5  e2e   311.9  enc 1  pfx None/None none  'blue' ok
+  54   s3 r1 s4  512  ttft   292.0  e2e   327.0  enc 1  pfx None/None none  'purple' ok
+  55   s3 r1 s0  980  ttft   857.4  e2e   891.2  enc 1  pfx None/None none  'Green' ok
+  56   s3 r1 s1  980  ttft   857.7  e2e   893.5  enc 1  pfx None/None none  'Red' ok
+  57   s3 r1 s2  980  ttft   849.8  e2e   886.4  enc 1  pfx None/None none  'Green' ok
+  58   s3 r1 s3  980  ttft   841.5  e2e   876.2  enc 1  pfx None/None none  'Green' ok
+  59   s3 r1 s4  980  ttft   842.2  e2e   877.0  enc 1  pfx None/None none  'Red' ok
+  60   s2 r1 s0  980  ttft   842.3  e2e   877.0  enc 1  pfx None/None none  'blue' ok
+  61   s2 r1 s1  980  ttft   839.3  e2e   868.3  enc 1  pfx None/None none  'blue' ok
+  62   s2 r1 s2  980  ttft   859.2  e2e   895.1  enc 1  pfx None/None none  'blue' ok
+  63   s2 r1 s3  980  ttft   858.0  e2e   894.5  enc 1  pfx None/None none  'blue' ok
+  64   s2 r1 s4  980  ttft   864.8  e2e   904.7  enc 1  pfx None/None none  'Blue' ok
+  65   s2 r1 s0  512  ttft   287.7  e2e   326.5  enc 1  pfx None/None none  'blue' ok
+  66   s2 r1 s1  512  ttft   279.2  e2e   313.5  enc 1  pfx None/None none  'blue' ok
+  67   s2 r1 s2  512  ttft   280.4  e2e   315.9  enc 1  pfx None/None none  'blue' ok
+  68   s2 r1 s3  512  ttft   297.9  e2e   333.3  enc 1  pfx None/None none  'blue' ok
+  69   s2 r1 s4  512  ttft   257.8  e2e   291.7  enc 1  pfx None/None none  'blue' ok
+  70   s4 r1 s0  980  ttft   862.3  e2e   897.5  enc 1  pfx None/None none  'Red' ok
+  71   s4 r1 s1  980  ttft   858.9  e2e   895.1  enc 1  pfx None/None none  'Warm'
+  72   s4 r1 s2  980  ttft   870.6  e2e   907.5  enc 1  pfx None/None none  'Apple'
+  73   s4 r1 s3  980  ttft   864.5  e2e   898.7  enc 1  pfx None/None none  'Red' ok
+  74   s4 r1 s0  512  ttft   287.2  e2e   324.0  enc 1  pfx None/None none  'white' ok
+  75   s4 r1 s1  512  ttft   265.7  e2e   323.6  enc 1  pfx None/None none  'neither'
+  76   s4 r1 s2  512  ttft   279.9  e2e   314.5  enc 1  pfx None/None none  'paper'
+  77   s4 r1 s3  512  ttft   237.2  e2e   266.4  enc 1  pfx None/None none  'white' ok
+  78   s3 r2 s0  980  ttft   824.7  e2e   859.8  enc 1  pfx None/None none  'Red' ok
+  79   s3 r2 s1  980  ttft   833.8  e2e   867.0  enc 1  pfx None/None none  'black' ok
+  80   s3 r2 s2  980  ttft   843.3  e2e   878.7  enc 1  pfx None/None none  'white' ok
+  81   s3 r2 s3  980  ttft   830.3  e2e   866.4  enc 1  pfx None/None none  'white' ok
+  82   s3 r2 s4  980  ttft   871.6  e2e   905.2  enc 1  pfx None/None none  'blue' ok
+  83   s3 r2 s0  512  ttft   298.7  e2e   339.7  enc 1  pfx None/None none  'Green' ok
+  84   s3 r2 s1  512  ttft   244.1  e2e   280.4  enc 1  pfx None/None none  'Green' ok
+  85   s3 r2 s2  512  ttft   248.3  e2e   284.3  enc 1  pfx None/None none  'blue' ok
+  86   s3 r2 s3  512  ttft   285.0  e2e   319.3  enc 1  pfx None/None none  'white' ok
+  87   s3 r2 s4  512  ttft   290.8  e2e   327.9  enc 1  pfx None/None none  'black' ok
+  88   s2 r2 s0  980  ttft   847.1  e2e   879.3  enc 1  pfx None/None none  'purple' ok
+  89   s2 r2 s1  980  ttft   807.5  e2e   843.6  enc 1  pfx None/None none  'Purple' ok
+  90   s2 r2 s2  980  ttft   863.3  e2e   900.2  enc 1  pfx None/None none  'Purple' ok
+  91   s2 r2 s3  980  ttft   852.7  e2e   888.1  enc 1  pfx None/None none  'Purple' ok
+  92   s2 r2 s4  980  ttft   839.2  e2e   876.9  enc 1  pfx None/None none  'Purple' ok
+  93   s4 r2 s0  512  ttft   292.7  e2e   328.0  enc 1  pfx None/None none  'Purple' ok
+  94   s4 r2 s1  512  ttft   294.4  e2e   329.7  enc 1  pfx None/None none  'Cool'
+  95   s4 r2 s2  512  ttft   285.9  e2e   389.4  enc 1  pfx None/None none  'Grapes'
+  96   s4 r2 s3  512  ttft   265.9  e2e   298.9  enc 1  pfx None/None none  'Purple' ok
+  97   s1 r2 s0  512  ttft   283.0  e2e   318.5  enc 1  pfx None/None none  'yellow' ok
+  98   s1 r2 s1  512  ttft   286.1  e2e   620.9  enc 1  pfx None/None none  'Yes, the image is mostly a sin'
+  99   s1 r2 s2  512  ttft   257.9  e2e   292.4  enc 1  pfx None/None none  'system'
+ 100   s1 r2 s3  512  ttft   260.0  e2e   522.1  enc 1  pfx None/None none  'No, there is no text in this i'
+ 101   s1 r2 s4  512  ttft   298.7  e2e   564.3  enc 1  pfx None/None none  'Sure, how about "Golden Backgr'
+ 102   s1 r2 s0  980  ttft   866.6  e2e   899.1  enc 1  pfx None/None none  'purple' ok
+ 103   s1 r2 s1  980  ttft   844.7  e2e  1186.6  enc 1  pfx None/None none  'Yes, the image is mostly a sin'
+ 104   s1 r2 s2  980  ttft   853.7  e2e   883.4  enc 1  pfx None/None none  'system'
+ 105   s1 r2 s3  980  ttft   826.3  e2e  1162.1  enc 1  pfx None/None none  'No, there is no text in this i'
+ 106   s1 r2 s4  980  ttft   843.7  e2e  1062.1  enc 1  pfx None/None none  '"Vibrant Purple Background"'
+ 107   s4 r2 s0  980  ttft   826.7  e2e   857.4  enc 1  pfx None/None none  'yellow' ok
+ 108   s4 r2 s1  980  ttft   842.6  e2e   875.6  enc 1  pfx None/None none  'warm'
+ 109   s4 r2 s2  980  ttft   847.8  e2e   913.0  enc 1  pfx None/None none  'lemon'
+ 110   s4 r2 s3  980  ttft   836.9  e2e   871.9  enc 1  pfx None/None none  'yellow' ok
+ 111   s2 r2 s0  512  ttft   289.7  e2e   324.9  enc 1  pfx None/None none  'orange' ok
+ 112   s2 r2 s1  512  ttft   286.4  e2e   320.9  enc 1  pfx None/None none  'orange' ok
+ 113   s2 r2 s2  512  ttft   270.0  e2e   298.5  enc 1  pfx None/None none  'orange' ok
+ 114   s2 r2 s3  512  ttft   283.9  e2e   316.1  enc 1  pfx None/None none  'orange' ok
+ 115   s2 r2 s4  512  ttft   280.6  e2e   314.5  enc 1  pfx None/None none  'orange' ok
+ 116   s2 r3 s0  980  ttft   846.3  e2e   879.7  enc 1  pfx None/None none  'blue' ok
+ 117   s2 r3 s1  980  ttft   839.8  e2e   869.5  enc 1  pfx None/None none  'blue' ok
+ 118   s2 r3 s2  980  ttft   845.3  e2e   879.6  enc 1  pfx None/None none  'blue' ok
+ 119   s2 r3 s3  980  ttft   830.5  e2e   864.3  enc 1  pfx None/None none  'blue' ok
+ 120   s2 r3 s4  980  ttft   877.1  e2e   912.6  enc 1  pfx None/None none  'Blue' ok
+ 121   s4 r3 s0  980  ttft   859.9  e2e   895.0  enc 1  pfx None/None none  'white' ok
+ 122   s4 r3 s1  980  ttft   837.0  e2e   904.5  enc 1  pfx None/None none  'neither'
+ 123   s4 r3 s2  980  ttft   867.6  e2e   903.1  enc 1  pfx None/None none  'snow'
+ 124   s4 r3 s3  980  ttft   860.2  e2e   893.5  enc 1  pfx None/None none  'white' ok
+ 125   s1 r3 s0  980  ttft   859.5  e2e   890.5  enc 1  pfx None/None none  'orange' ok
+ 126   s1 r3 s1  980  ttft   837.6  e2e  1172.6  enc 1  pfx None/None none  'Yes, the image is mostly a sin'
+ 127   s1 r3 s2  980  ttft   860.8  e2e   894.2  enc 1  pfx None/None none  'system'
+ 128   s1 r3 s3  980  ttft   888.2  e2e  1229.1  enc 1  pfx None/None none  'No, there is no text in this i'
+ 129   s1 r3 s4  980  ttft   853.3  e2e   919.8  enc 1  pfx None/None none  'Orange Background'
+ 130   s2 r3 s0  512  ttft   292.5  e2e   321.6  enc 1  pfx None/None none  'Green' ok
+ 131   s2 r3 s1  512  ttft   305.8  e2e   349.0  enc 1  pfx None/None none  'Green' ok
+ 132   s2 r3 s2  512  ttft   279.5  e2e   316.1  enc 1  pfx None/None none  'Green' ok
+ 133   s2 r3 s3  512  ttft   252.7  e2e   287.6  enc 1  pfx None/None none  'Green' ok
+ 134   s2 r3 s4  512  ttft   292.6  e2e   330.9  enc 1  pfx None/None none  'Green' ok
+ 135   s4 r3 s0  512  ttft   283.9  e2e   318.9  enc 1  pfx None/None none  'blue' ok
+ 136   s4 r3 s1  512  ttft   292.1  e2e   323.1  enc 1  pfx None/None none  'cool'
+ 137   s4 r3 s2  512  ttft   312.3  e2e   360.4  enc 1  pfx None/None none  'sky'
+ 138   s4 r3 s3  512  ttft   272.7  e2e   302.8  enc 1  pfx None/None none  'blue' ok
+ 139   s3 r3 s0  980  ttft   880.4  e2e   917.8  enc 1  pfx None/None none  'purple' ok
+ 140   s3 r3 s1  980  ttft   889.4  e2e   926.2  enc 1  pfx None/None none  'yellow' ok
+ 141   s3 r3 s2  980  ttft   833.0  e2e   867.8  enc 1  pfx None/None none  'black' ok
+ 142   s3 r3 s3  980  ttft   862.8  e2e   898.9  enc 1  pfx None/None none  'white' ok
+ 143   s3 r3 s4  980  ttft   853.6  e2e   889.0  enc 1  pfx None/None none  'orange' ok
+ 144   s1 r3 s0  512  ttft   288.9  e2e   325.8  enc 1  pfx None/None none  'Green' ok
+ 145   s1 r3 s1  512  ttft   276.1  e2e   608.0  enc 1  pfx None/None none  'Yes, the image is mostly a sin'
+ 146   s1 r3 s2  512  ttft   258.9  e2e   294.6  enc 1  pfx None/None none  'system'
+ 147   s1 r3 s3  512  ttft   281.5  e2e   625.2  enc 1  pfx None/None none  'No, there is no text in this i'
+ 148   s1 r3 s4  512  ttft   286.6  e2e   558.6  enc 1  pfx None/None none  'Sure, how about "Green Backgro'
+ 149   s3 r3 s0  512  ttft   267.1  e2e   300.5  enc 1  pfx None/None none  'orange' ok
+ 150   s3 r3 s1  512  ttft   288.7  e2e   324.2  enc 1  pfx None/None none  'yellow' ok
+ 151   s3 r3 s2  512  ttft   290.6  e2e   324.1  enc 1  pfx None/None none  'white' ok
+ 152   s3 r3 s3  512  ttft   274.3  e2e   310.7  enc 1  pfx None/None none  'yellow' ok
+ 153   s3 r3 s4  512  ttft   260.5  e2e   296.6  enc 1  pfx None/None none  'purple' ok
+wrote results/g1/5880/mstar/pfx-arms/records.jsonl
+   0 W warmup r0 s0  512  ttft   274.6  e2e   309.0  enc 1  pfx 0/1405 none  'orange' ok
+   1 W warmup r0 s0  980  ttft   853.4  e2e   888.2  enc 1  pfx 0/4936 none  'blue' ok
+   2   s2 r0 s0  980  ttft   849.8  e2e   886.3  enc 1  pfx 0/4936 none  'Red' ok
+   3   s2 r0 s1  980  ttft   848.5  e2e   883.5  enc 1  pfx 0/4939 none  'red' ok
+   4   s2 r0 s2  980  ttft   861.2  e2e   899.7  enc 1  pfx 0/4940 none  'Red' ok
+   5   s2 r0 s3  980  ttft   873.0  e2e   908.7  enc 1  pfx 0/4940 none  'Red' ok
+   6   s2 r0 s4  980  ttft   873.3  e2e   909.9  enc 1  pfx 0/4940 none  'Red' ok
+   7   s4 r0 s0  512  ttft   302.1  e2e   344.5  enc 1  pfx 0/1405 none  'blue' ok
+   8   s4 r0 s1  512  ttft   128.5  e2e   169.2  enc 1  pfx 1280/1430 partial  'cool'
+   9   s4 r0 s2  512  ttft   104.5  e2e   140.4  enc 1  pfx 1408/1450 full  'sky'
+  10   s4 r0 s3  512  ttft   118.5  e2e   160.4  enc 1  pfx 1408/1476 full  'blue' ok
+  11   s1 r0 s0  980  ttft   840.0  e2e   877.3  enc 1  pfx 0/4936 none  'Red' ok
+  12   s1 r0 s1  980  ttft   198.6  e2e   546.1  enc 1  pfx 4864/4935 partial  'Yes, the image is mostly a sin'
+  13   s1 r0 s2  980  ttft   183.5  e2e   491.9  enc 1  pfx 4864/4929 partial  'system\nuser\nred background\nsqu'
+  14   s1 r0 s3  980  ttft   191.6  e2e   526.8  enc 1  pfx 4864/4935 partial  'No, there is no text in this i'
+  15   s1 r0 s4  980  ttft   166.9  e2e   236.5  enc 1  pfx 4864/4929 partial  'Red Background'
+  16   s3 r0 s0  980  ttft   817.9  e2e   851.3  enc 1  pfx 0/4936 none  'yellow' ok
+  17   s3 r0 s1  980  ttft   824.0  e2e   853.6  enc 1  pfx 0/4936 none  'Red' ok
+  18   s3 r0 s2  980  ttft   816.5  e2e   845.2  enc 1  pfx 0/4936 none  'white' ok
+  19   s3 r0 s3  980  ttft   867.8  e2e   903.5  enc 1  pfx 0/4936 none  'Red' ok
+  20   s3 r0 s4  980  ttft   858.3  e2e   894.8  enc 1  pfx 0/4936 none  'white' ok
+  21   s4 r0 s0  980  ttft   854.2  e2e   889.6  enc 1  pfx 0/4936 none  'blue' ok
+  22   s4 r0 s1  980  ttft   202.0  e2e   236.2  enc 1  pfx 4864/4961 partial  'cool'
+  23   s4 r0 s2  980  ttft   193.9  e2e   229.8  enc 1  pfx 4864/4981 partial  'sky'
+  24   s4 r0 s3  980  ttft   181.7  e2e   214.6  enc 1  pfx 4864/5007 partial  'blue' ok
+  25   s1 r0 s0  512  ttft   305.9  e2e   340.8  enc 1  pfx 0/1405 none  'black' ok
+  26   s1 r0 s1  512  ttft   150.4  e2e   498.4  enc 1  pfx 1280/1404 partial  'Yes, the image is mostly a sin'
+  27   s1 r0 s2  512  ttft   104.2  e2e   311.3  enc 1  pfx 1280/1398 partial  'black background, no visible c'
+  28   s1 r0 s3  512  ttft   137.4  e2e   482.3  enc 1  pfx 1280/1404 partial  'No, there is no text in this i'
+  29   s1 r0 s4  512  ttft   139.8  e2e   324.2  enc 1  pfx 1280/1398 partial  'A completely black image.'
+  30   s3 r0 s0  512  ttft   302.2  e2e   338.7  enc 1  pfx 0/1405 none  'black' ok
+  31   s3 r0 s1  512  ttft   297.7  e2e   336.3  enc 1  pfx 0/1405 none  'Red' ok
+  32   s3 r0 s2  512  ttft   287.8  e2e   320.6  enc 1  pfx 0/1405 none  'blue' ok
+  33   s3 r0 s3  512  ttft   292.9  e2e   329.2  enc 1  pfx 0/1405 none  'yellow' ok
+  34   s3 r0 s4  512  ttft   267.7  e2e   304.5  enc 1  pfx 0/1405 none  'white' ok
+  35   s2 r0 s0  512  ttft   267.7  e2e   303.6  enc 1  pfx 0/1405 none  'yellow' ok
+  36   s2 r0 s1  512  ttft   297.9  e2e   334.1  enc 1  pfx 0/1408 none  'yellow' ok
+  37   s2 r0 s2  512  ttft   247.6  e2e   280.8  enc 1  pfx 0/1409 none  'yellow' ok
+  38   s2 r0 s3  512  ttft   285.2  e2e   321.3  enc 1  pfx 0/1409 none  'yellow' ok
+  39   s2 r0 s4  512  ttft   259.4  e2e   288.1  enc 1  pfx 0/1409 none  'yellow' ok
+  40   s2 r1 s0  512  ttft   280.0  e2e   315.8  enc 1  pfx 0/1405 none  'blue' ok
+  41   s2 r1 s1  512  ttft   293.9  e2e   328.9  enc 1  pfx 0/1408 none  'blue' ok
+  42   s2 r1 s2  512  ttft   292.7  e2e   328.9  enc 1  pfx 0/1409 none  'blue' ok
+  43   s2 r1 s3  512  ttft   266.8  e2e   299.8  enc 1  pfx 0/1409 none  'blue' ok
+  44   s2 r1 s4  512  ttft   264.9  e2e   301.1  enc 1  pfx 0/1409 none  'blue' ok
+  45   s4 r1 s0  512  ttft   287.4  e2e   323.2  enc 1  pfx 0/1405 none  'yellow' ok
+  46   s4 r1 s1  512  ttft   123.7  e2e   164.5  enc 1  pfx 1280/1430 partial  'warm'
+  47   s4 r1 s2  512  ttft    92.9  e2e   155.1  enc 1  pfx 1408/1450 full  'lemon'
+  48   s4 r1 s3  512  ttft   105.1  e2e   142.2  enc 1  pfx 1408/1477 full  'yellow' ok
+  49   s3 r1 s0  512  ttft   269.8  e2e   303.2  enc 1  pfx 0/1405 none  'orange' ok
+  50   s3 r1 s1  512  ttft   278.8  e2e   313.6  enc 1  pfx 0/1405 none  'yellow' ok
+  51   s3 r1 s2  512  ttft   282.3  e2e   316.3  enc 1  pfx 0/1405 none  'red' ok
+  52   s3 r1 s3  512  ttft   265.1  e2e   301.2  enc 1  pfx 0/1405 none  'Red' ok
+  53   s3 r1 s4  512  ttft   302.0  e2e   338.9  enc 1  pfx 0/1405 none  'red' ok
+  54   s1 r1 s0  512  ttft   277.6  e2e   308.5  enc 1  pfx 0/1405 none  'yellow' ok
+  55   s1 r1 s1  512  ttft   141.7  e2e   464.3  enc 1  pfx 1280/1404 partial  'Yes, the image is mostly a sin'
+  56   s1 r1 s2  512  ttft   122.3  e2e   156.7  enc 1  pfx 1280/1398 partial  'system'
+  57   s1 r1 s3  512  ttft   109.5  e2e   419.6  enc 1  pfx 1280/1404 partial  'No, there is no text in this i'
+  58   s1 r1 s4  512  ttft   112.8  e2e   778.5  enc 1  pfx 1280/1398 partial  "Sure, here's a short title for"
+  59   s1 r1 s0  980  ttft   840.3  e2e   875.2  enc 1  pfx 0/4936 none  'blue' ok
+  60   s1 r1 s1  980  ttft   173.7  e2e   498.1  enc 1  pfx 4864/4935 partial  'Yes, the image is mostly a sin'
+  61   s1 r1 s2  980  ttft   188.0  e2e   223.3  enc 1  pfx 4864/4929 partial  'system'
+  62   s1 r1 s3  980  ttft   210.9  e2e   561.7  enc 1  pfx 4864/4935 partial  'No, there is no text in this i'
+  63   s1 r1 s4  980  ttft   183.0  e2e   351.1  enc 1  pfx 4864/4929 partial  '"Solid Blue Background"'
+  64   s2 r1 s0  980  ttft   851.7  e2e   888.9  enc 1  pfx 0/4936 none  'orange' ok
+  65   s2 r1 s1  980  ttft   832.6  e2e   866.9  enc 1  pfx 0/4939 none  'orange' ok
+  66   s2 r1 s2  980  ttft   855.1  e2e   889.2  enc 1  pfx 0/4940 none  'orange' ok
+  67   s2 r1 s3  980  ttft   860.1  e2e   894.3  enc 1  pfx 0/4940 none  'orange' ok
+  68   s2 r1 s4  980  ttft   849.9  e2e   883.1  enc 1  pfx 0/4940 none  'Orange' ok
+  69   s3 r1 s0  980  ttft   851.9  e2e   887.3  enc 1  pfx 0/4936 none  'orange' ok
+  70   s3 r1 s1  980  ttft   840.6  e2e   874.1  enc 1  pfx 0/4936 none  'blue' ok
+  71   s3 r1 s2  980  ttft   836.9  e2e   871.1  enc 1  pfx 0/4936 none  'orange' ok
+  72   s3 r1 s3  980  ttft   847.6  e2e   881.7  enc 1  pfx 0/4936 none  'white' ok
+  73   s3 r1 s4  980  ttft   864.7  e2e   900.4  enc 1  pfx 0/4936 none  'black' ok
+  74   s4 r1 s0  980  ttft   866.0  e2e   903.5  enc 1  pfx 0/4936 none  'Green' ok
+  75   s4 r1 s1  980  ttft   195.7  e2e   237.0  enc 1  pfx 4864/4961 partial  'Cool'
+  76   s4 r1 s2  980  ttft   195.7  e2e   270.8  enc 1  pfx 4864/4981 partial  'Grass'
+  77   s4 r1 s3  980  ttft   192.7  e2e   228.1  enc 1  pfx 4864/5008 partial  'Green' ok
+  78   s2 r2 s0  512  ttft   257.2  e2e   292.4  enc 1  pfx 0/1405 none  'yellow' ok
+  79   s2 r2 s1  512  ttft   274.7  e2e   310.4  enc 1  pfx 0/1408 none  'yellow' ok
+  80   s2 r2 s2  512  ttft   268.3  e2e   304.4  enc 1  pfx 0/1409 none  'yellow' ok
+  81   s2 r2 s3  512  ttft   273.8  e2e   312.8  enc 1  pfx 0/1409 none  'yellow' ok
+  82   s2 r2 s4  512  ttft   283.6  e2e   317.3  enc 1  pfx 0/1409 none  'yellow' ok
+  83   s3 r2 s0  980  ttft   830.0  e2e   867.3  enc 1  pfx 0/4936 none  'black' ok
+  84   s3 r2 s1  980  ttft   854.4  e2e   889.7  enc 1  pfx 0/4936 none  'white' ok
+  85   s3 r2 s2  980  ttft   836.6  e2e   870.6  enc 1  pfx 0/4936 none  'yellow' ok
+  86   s3 r2 s3  980  ttft   856.6  e2e   891.6  enc 1  pfx 0/4936 none  'yellow' ok
+  87   s3 r2 s4  980  ttft   844.4  e2e   881.1  enc 1  pfx 0/4936 none  'Green' ok
+  88   s1 r2 s0  980  ttft   848.3  e2e   886.6  enc 1  pfx 0/4936 none  'white' ok
+  89   s1 r2 s1  980  ttft   195.5  e2e   536.9  enc 1  pfx 4864/4935 partial  'Yes, the image is mostly a sin'
+  90   s1 r2 s2  980  ttft   193.6  e2e   357.4  enc 1  pfx 4864/4929 partial  'white background\nblank space'
+  91   s1 r2 s3  980  ttft   193.1  e2e   501.1  enc 1  pfx 4864/4935 partial  'No, there is no text in this i'
+  92   s1 r2 s4  980  ttft   218.0  e2e   554.3  enc 1  pfx 4864/4929 partial  '"Blank Canvas" or "Minimalist '
+  93   s4 r2 s0  980  ttft   847.2  e2e   878.6  enc 1  pfx 0/4936 none  'white' ok
+  94   s4 r2 s1  980  ttft   197.6  e2e   261.1  enc 1  pfx 4864/4961 partial  'neither'
+  95   s4 r2 s2  980  ttft   200.6  e2e   241.7  enc 1  pfx 4864/4982 partial  'snow'
+  96   s4 r2 s3  980  ttft   206.4  e2e   241.3  enc 1  pfx 4864/5008 partial  'white' ok
+  97   s1 r2 s0  512  ttft   294.8  e2e   330.0  enc 1  pfx 0/1405 none  'blue' ok
+  98   s1 r2 s1  512  ttft   123.8  e2e   441.5  enc 1  pfx 1280/1404 partial  'Yes, the image is mostly a sin'
+  99   s1 r2 s2  512  ttft   121.7  e2e   450.3  enc 1  pfx 1280/1398 partial  'system\nblue background\nno obje'
+ 100   s1 r2 s3  512  ttft   104.9  e2e   413.9  enc 1  pfx 1280/1404 partial  'No, there is no text in this i'
+ 101   s1 r2 s4  512  ttft   123.5  e2e   663.2  enc 1  pfx 1280/1398 partial  "Sure, here's a short title for"
+ 102   s3 r2 s0  512  ttft   287.7  e2e   320.8  enc 1  pfx 0/1405 none  'blue' ok
+ 103   s3 r2 s1  512  ttft   273.5  e2e   309.2  enc 1  pfx 0/1405 none  'yellow' ok
+ 104   s3 r2 s2  512  ttft   278.1  e2e   314.1  enc 1  pfx 0/1405 none  'red' ok
+ 105   s3 r2 s3  512  ttft   287.3  e2e   321.8  enc 1  pfx 0/1405 none  'Red' ok
+ 106   s3 r2 s4  512  ttft   292.8  e2e   329.4  enc 1  pfx 0/1405 none  'Purple' ok
+ 107   s2 r2 s0  980  ttft   843.2  e2e   877.1  enc 1  pfx 0/4936 none  'white' ok
+ 108   s2 r2 s1  980  ttft   853.9  e2e   889.8  enc 1  pfx 0/4939 none  'white' ok
+ 109   s2 r2 s2  980  ttft   847.5  e2e   882.1  enc 1  pfx 0/4940 none  'white' ok
+ 110   s2 r2 s3  980  ttft   842.4  e2e   874.8  enc 1  pfx 0/4940 none  'White' ok
+ 111   s2 r2 s4  980  ttft   849.7  e2e   885.4  enc 1  pfx 0/4940 none  'white' ok
+ 112   s4 r2 s0  512  ttft   259.4  e2e   295.0  enc 1  pfx 0/1405 none  'black' ok
+ 113   s4 r2 s1  512  ttft   136.9  e2e   170.7  enc 1  pfx 1280/1430 partial  'cool'
+ 114   s4 r2 s2  512  ttft    86.0  e2e   145.7  enc 1  pfx 1408/1450 full  'night sky'
+ 115   s4 r2 s3  512  ttft    68.7  e2e    96.8  enc 1  pfx 1408/1477 full  'black' ok
+ 116   s4 r3 s0  980  ttft   862.8  e2e   898.3  enc 1  pfx 0/4936 none  'Red' ok
+ 117   s4 r3 s1  980  ttft   197.7  e2e   233.1  enc 1  pfx 4864/4961 partial  'Warm'
+ 118   s4 r3 s2  980  ttft   203.5  e2e   240.6  enc 1  pfx 4864/4981 partial  'Apple'
+ 119   s4 r3 s3  980  ttft   206.1  e2e   244.4  enc 1  pfx 4864/5007 partial  'Red' ok
+ 120   s2 r3 s0  980  ttft   839.1  e2e   874.6  enc 1  pfx 0/4936 none  'black' ok
+ 121   s2 r3 s1  980  ttft   853.8  e2e   887.3  enc 1  pfx 0/4939 none  'black' ok
+ 122   s2 r3 s2  980  ttft   870.2  e2e   906.0  enc 1  pfx 0/4940 none  'black' ok
+ 123   s2 r3 s3  980  ttft   864.1  e2e   897.4  enc 1  pfx 0/4940 none  'black' ok
+ 124   s2 r3 s4  980  ttft   833.2  e2e   864.8  enc 1  pfx 0/4940 none  'black' ok
+ 125   s4 r3 s0  512  ttft   297.0  e2e   334.7  enc 1  pfx 0/1405 none  'yellow' ok
+ 126   s4 r3 s1  512  ttft   134.8  e2e   171.5  enc 1  pfx 1280/1430 partial  'warm'
+ 127   s4 r3 s2  512  ttft   104.2  e2e   179.9  enc 1  pfx 1408/1450 full  'lemon'
+ 128   s4 r3 s3  512  ttft    87.1  e2e   118.9  enc 1  pfx 1408/1477 full  'yellow' ok
+ 129   s3 r3 s0  512  ttft   269.7  e2e   301.4  enc 1  pfx 0/1405 none  'blue' ok
+ 130   s3 r3 s1  512  ttft   266.9  e2e   302.5  enc 1  pfx 0/1405 none  'yellow' ok
+ 131   s3 r3 s2  512  ttft   249.4  e2e   279.1  enc 1  pfx 0/1405 none  'Purple' ok
+ 132   s3 r3 s3  512  ttft   281.8  e2e   317.5  enc 1  pfx 0/1405 none  'purple' ok
+ 133   s3 r3 s4  512  ttft   249.8  e2e   279.9  enc 1  pfx 0/1405 none  'Purple' ok
+ 134   s3 r3 s0  980  ttft   840.1  e2e   873.8  enc 1  pfx 0/4936 none  'orange' ok
+ 135   s3 r3 s1  980  ttft   848.9  e2e   885.3  enc 1  pfx 0/4936 none  'orange' ok
+ 136   s3 r3 s2  980  ttft   818.2  e2e   853.5  enc 1  pfx 0/4936 none  'Red' ok
+ 137   s3 r3 s3  980  ttft   796.4  e2e   826.2  enc 1  pfx 0/4936 none  'Red' ok
+ 138   s3 r3 s4  980  ttft   870.5  e2e   904.0  enc 1  pfx 0/4936 none  'white' ok
+ 139   s1 r3 s0  512  ttft   289.7  e2e   323.1  enc 1  pfx 0/1405 none  'red' ok
+ 140   s1 r3 s1  512  ttft   139.5  e2e   489.9  enc 1  pfx 1280/1404 partial  'Yes, the image is mostly a sin'
+ 141   s1 r3 s2  512  ttft    93.2  e2e   534.2  enc 1  pfx 1280/1398 partial  'The image is a solid red color'
+ 142   s1 r3 s3  512  ttft   121.5  e2e   385.8  enc 1  pfx 1280/1404 partial  'No, there is no text in this i'
+ 143   s1 r3 s4  512  ttft   135.2  e2e   206.5  enc 1  pfx 1280/1398 partial  'Red background'
+ 144   s2 r3 s0  512  ttft   283.6  e2e   322.0  enc 1  pfx 0/1405 none  'blue' ok
+ 145   s2 r3 s1  512  ttft   299.2  e2e   335.1  enc 1  pfx 0/1408 none  'blue' ok
+ 146   s2 r3 s2  512  ttft   277.3  e2e   314.1  enc 1  pfx 0/1409 none  'blue' ok
+ 147   s2 r3 s3  512  ttft   272.6  e2e   305.8  enc 1  pfx 0/1409 none  'blue' ok
+ 148   s2 r3 s4  512  ttft   299.6  e2e   336.7  enc 1  pfx 0/1409 none  'Blue' ok
+ 149   s1 r3 s0  980  ttft   836.3  e2e   865.2  enc 1  pfx 0/4936 none  'black' ok
+ 150   s1 r3 s1  980  ttft   198.2  e2e   539.5  enc 1  pfx 4864/4935 partial  'Yes, the image is mostly a sin'
+ 151   s1 r3 s2  980  ttft   200.2  e2e   372.4  enc 1  pfx 4864/4929 partial  'black background, no content'
+ 152   s1 r3 s3  980  ttft   203.4  e2e   543.9  enc 1  pfx 4864/4935 partial  'No, there is no text in this i'
+ 153   s1 r3 s4  980  ttft   197.5  e2e   321.7  enc 1  pfx 4864/4929 partial  '"Black Background"'
+wrote results/g1/5880/mstar/pfx-arms/records.jsonl
+   0 W warmup r0 s0  512  ttft   252.3  e2e   281.3  enc 1  pfx None/None none  'yellow' ok
+   1 W warmup r0 s0  980  ttft   844.3  e2e   878.7  enc 1  pfx None/None none  'yellow' ok
+   2   s2 r0 s0  980  ttft   859.9  e2e   895.0  enc 1  pfx None/None none  'Red' ok
+   3   s2 r0 s1  980  ttft   861.3  e2e   896.5  enc 1  pfx None/None none  'red' ok
+   4   s2 r0 s2  980  ttft   842.3  e2e   881.1  enc 1  pfx None/None none  'Red' ok
+   5   s2 r0 s3  980  ttft   848.0  e2e   886.8  enc 1  pfx None/None none  'Red' ok
+   6   s2 r0 s4  980  ttft   857.2  e2e   889.4  enc 1  pfx None/None none  'Red' ok
+   7   s4 r0 s0  512  ttft   253.0  e2e   285.6  enc 1  pfx None/None none  'blue' ok
+   8   s4 r0 s1  512  ttft   267.1  e2e   297.7  enc 1  pfx None/None none  'cool'
+   9   s4 r0 s2  512  ttft   258.5  e2e   292.9  enc 1  pfx None/None none  'sky'
+  10   s4 r0 s3  512  ttft   291.8  e2e   325.8  enc 1  pfx None/None none  'blue' ok
+  11   s1 r0 s0  980  ttft   821.8  e2e   856.7  enc 1  pfx None/None none  'blue' ok
+  12   s1 r0 s1  980  ttft   833.4  e2e  1112.2  enc 1  pfx None/None none  'Yes, the image is mostly a sin'
+  13   s1 r0 s2  980  ttft   841.5  e2e   875.8  enc 1  pfx None/None none  'system'
+  14   s1 r0 s3  980  ttft   865.1  e2e  1180.5  enc 1  pfx None/None none  'No, there is no text in this i'
+  15   s1 r0 s4  980  ttft   856.6  e2e  1014.7  enc 1  pfx None/None none  '"Solid Blue Background"'
+  16   s3 r0 s0  980  ttft   859.1  e2e   896.0  enc 1  pfx None/None none  'white' ok
+  17   s3 r0 s1  980  ttft   867.6  e2e   901.8  enc 1  pfx None/None none  'Red' ok
+  18   s3 r0 s2  980  ttft   835.6  e2e   870.4  enc 1  pfx None/None none  'Red' ok
+  19   s3 r0 s3  980  ttft   869.8  e2e   905.3  enc 1  pfx None/None none  'orange' ok
+  20   s3 r0 s4  980  ttft   859.8  e2e   895.0  enc 1  pfx None/None none  'blue' ok
+  21   s4 r0 s0  980  ttft   861.9  e2e   897.6  enc 1  pfx None/None none  'white' ok
+  22   s4 r0 s1  980  ttft   845.0  e2e   917.5  enc 1  pfx None/None none  'neither'
+  23   s4 r0 s2  980  ttft   865.6  e2e   900.3  enc 1  pfx None/None none  'snow'
+  24   s4 r0 s3  980  ttft   855.4  e2e   891.3  enc 1  pfx None/None none  'white' ok
+  25   s1 r0 s0  512  ttft   288.9  e2e   325.2  enc 1  pfx None/None none  'blue' ok
+  26   s1 r0 s1  512  ttft   285.1  e2e   622.6  enc 1  pfx None/None none  'Yes, the image is mostly a sin'
+  27   s1 r0 s2  512  ttft   290.0  e2e   626.8  enc 1  pfx None/None none  'system\nblue background\nno obje'
+  28   s1 r0 s3  512  ttft   263.0  e2e   598.5  enc 1  pfx None/None none  'No, there is no text in this i'
+  29   s1 r0 s4  512  ttft   290.9  e2e   775.3  enc 1  pfx None/None none  "Sure, here's a short title for"
+  30   s3 r0 s0  512  ttft   287.9  e2e   319.0  enc 1  pfx None/None none  'white' ok
+  31   s3 r0 s1  512  ttft   251.8  e2e   288.3  enc 1  pfx None/None none  'white' ok
+  32   s3 r0 s2  512  ttft   278.2  e2e   311.3  enc 1  pfx None/None none  'orange' ok
+  33   s3 r0 s3  512  ttft   292.8  e2e   328.1  enc 1  pfx None/None none  'Green' ok
+  34   s3 r0 s4  512  ttft   288.5  e2e   322.4  enc 1  pfx None/None none  'Purple' ok
+  35   s2 r0 s0  512  ttft   276.4  e2e   312.9  enc 1  pfx None/None none  'Red' ok
+  36   s2 r0 s1  512  ttft   284.2  e2e   319.8  enc 1  pfx None/None none  'red' ok
+  37   s2 r0 s2  512  ttft   291.1  e2e   324.2  enc 1  pfx None/None none  'red' ok
+  38   s2 r0 s3  512  ttft   285.8  e2e   320.0  enc 1  pfx None/None none  'Red' ok
+  39   s2 r0 s4  512  ttft   259.1  e2e   286.1  enc 1  pfx None/None none  'Red' ok
+  40   s2 r1 s0  512  ttft   303.6  e2e   339.4  enc 1  pfx None/None none  'black' ok
+  41   s2 r1 s1  512  ttft   267.4  e2e   303.5  enc 1  pfx None/None none  'black' ok
+  42   s2 r1 s2  512  ttft   285.7  e2e   320.8  enc 1  pfx None/None none  'black' ok
+  43   s2 r1 s3  512  ttft   289.5  e2e   325.5  enc 1  pfx None/None none  'black' ok
+  44   s2 r1 s4  512  ttft   273.1  e2e   307.4  enc 1  pfx None/None none  'black' ok
+  45   s4 r1 s0  512  ttft   272.5  e2e   306.8  enc 1  pfx None/None none  'orange' ok
+  46   s4 r1 s1  512  ttft   283.1  e2e   315.8  enc 1  pfx None/None none  'warm'
+  47   s4 r1 s2  512  ttft   293.8  e2e   361.5  enc 1  pfx None/None none  'carrot'
+  48   s4 r1 s3  512  ttft   289.8  e2e   324.6  enc 1  pfx None/None none  'orange' ok
+  49   s3 r1 s0  512  ttft   265.5  e2e   299.0  enc 1  pfx None/None none  'purple' ok
+  50   s3 r1 s1  512  ttft   293.3  e2e   329.8  enc 1  pfx None/None none  'Red' ok
+  51   s3 r1 s2  512  ttft   286.0  e2e   322.1  enc 1  pfx None/None none  'yellow' ok
+  52   s3 r1 s3  512  ttft   284.9  e2e   319.9  enc 1  pfx None/None none  'blue' ok
+  53   s3 r1 s4  512  ttft   296.0  e2e   333.3  enc 1  pfx None/None none  'blue' ok
+  54   s1 r1 s0  512  ttft   291.9  e2e   325.9  enc 1  pfx None/None none  'orange' ok
+  55   s1 r1 s1  512  ttft   281.4  e2e   629.4  enc 1  pfx None/None none  'Yes, the image is mostly a sin'
+  56   s1 r1 s2  512  ttft   257.2  e2e   853.4  enc 1  pfx None/None none  'Sure, here is a description of'
+  57   s1 r1 s3  512  ttft   304.0  e2e   641.6  enc 1  pfx None/None none  'No, there is no text in this i'
+  58   s1 r1 s4  512  ttft   277.1  e2e   778.5  enc 1  pfx None/None none  "Sure, here's a short title for"
+  59   s1 r1 s0  980  ttft   863.8  e2e   899.2  enc 1  pfx None/None none  'blue' ok
+  60   s1 r1 s1  980  ttft   867.5  e2e  1199.5  enc 1  pfx None/None none  'Yes, the image is mostly a sin'
+  61   s1 r1 s2  980  ttft   826.3  e2e  1125.0  enc 1  pfx None/None none  'system\nuser\nblue background\nsq'
+  62   s1 r1 s3  980  ttft   859.0  e2e  1168.9  enc 1  pfx None/None none  'No, there is no text in this i'
+  63   s1 r1 s4  980  ttft   870.9  e2e  1039.9  enc 1  pfx None/None none  '"Solid Blue Background"'
+  64   s2 r1 s0  980  ttft   851.4  e2e   886.3  enc 1  pfx None/None none  'white' ok
+  65   s2 r1 s1  980  ttft   844.2  e2e   880.7  enc 1  pfx None/None none  'white' ok
+  66   s2 r1 s2  980  ttft   869.1  e2e   901.9  enc 1  pfx None/None none  'white' ok
+  67   s2 r1 s3  980  ttft   854.1  e2e   889.4  enc 1  pfx None/None none  'White' ok
+  68   s2 r1 s4  980  ttft   858.3  e2e   891.7  enc 1  pfx None/None none  'white' ok
+  69   s3 r1 s0  980  ttft   858.1  e2e   895.9  enc 1  pfx None/None none  'Green' ok
+  70   s3 r1 s1  980  ttft   870.7  e2e   904.3  enc 1  pfx None/None none  'black' ok
+  71   s3 r1 s2  980  ttft   860.8  e2e   899.1  enc 1  pfx None/None none  'Green' ok
+  72   s3 r1 s3  980  ttft   848.8  e2e   881.5  enc 1  pfx None/None none  'yellow' ok
+  73   s3 r1 s4  980  ttft   861.7  e2e   899.6  enc 1  pfx None/None none  'orange' ok
+  74   s4 r1 s0  980  ttft   819.3  e2e   854.5  enc 1  pfx None/None none  'purple' ok
+  75   s4 r1 s1  980  ttft   878.9  e2e   913.5  enc 1  pfx None/None none  'cool'
+  76   s4 r1 s2  980  ttft   862.4  e2e   926.5  enc 1  pfx None/None none  'grapes'
+  77   s4 r1 s3  980  ttft   842.1  e2e   875.2  enc 1  pfx None/None none  'purple' ok
+  78   s2 r2 s0  512  ttft   298.1  e2e   336.8  enc 1  pfx None/None none  'orange' ok
+  79   s2 r2 s1  512  ttft   279.3  e2e   315.9  enc 1  pfx None/None none  'orange' ok
+  80   s2 r2 s2  512  ttft   303.0  e2e   337.8  enc 1  pfx None/None none  'orange' ok
+  81   s2 r2 s3  512  ttft   263.3  e2e   297.3  enc 1  pfx None/None none  'orange' ok
+  82   s2 r2 s4  512  ttft   293.6  e2e   326.9  enc 1  pfx None/None none  'orange' ok
+  83   s3 r2 s0  980  ttft   867.6  e2e   902.6  enc 1  pfx None/None none  'yellow' ok
+  84   s3 r2 s1  980  ttft   853.2  e2e   887.6  enc 1  pfx None/None none  'Green' ok
+  85   s3 r2 s2  980  ttft   856.5  e2e   891.8  enc 1  pfx None/None none  'white' ok
+  86   s3 r2 s3  980  ttft   854.6  e2e   891.4  enc 1  pfx None/None none  'yellow' ok
+  87   s3 r2 s4  980  ttft   862.1  e2e   899.6  enc 1  pfx None/None none  'Red' ok
+  88   s1 r2 s0  980  ttft   850.8  e2e   884.2  enc 1  pfx None/None none  'white' ok
+  89   s1 r2 s1  980  ttft   850.4  e2e  1191.2  enc 1  pfx None/None none  'Yes, the image is mostly a sin'
+  90   s1 r2 s2  980  ttft   857.1  e2e  1013.5  enc 1  pfx None/None none  'system\nwhite background'
+  91   s1 r2 s3  980  ttft   839.1  e2e  1156.0  enc 1  pfx None/None none  'No, there is no text in this i'
+  92   s1 r2 s4  980  ttft   832.7  e2e  1136.8  enc 1  pfx None/None none  '"Blank Canvas" or "Empty Space'
+  93   s4 r2 s0  980  ttft   875.8  e2e   911.4  enc 1  pfx None/None none  'Green' ok
+  94   s4 r2 s1  980  ttft   852.8  e2e   889.0  enc 1  pfx None/None none  'Cool'
+  95   s4 r2 s2  980  ttft   853.7  e2e   922.4  enc 1  pfx None/None none  'Grass'
+  96   s4 r2 s3  980  ttft   854.8  e2e   889.0  enc 1  pfx None/None none  'Green' ok
+  97   s1 r2 s0  512  ttft   267.9  e2e   303.2  enc 1  pfx None/None none  'Red' ok
+  98   s1 r2 s1  512  ttft   267.5  e2e   595.9  enc 1  pfx None/None none  'Yes, the image is mostly a sin'
+  99   s1 r2 s2  512  ttft   291.8  e2e   894.3  enc 1  pfx None/None none  'Sure, here is a description of'
+ 100   s1 r2 s3  512  ttft   262.0  e2e   597.2  enc 1  pfx None/None none  'No, there is no text in this i'
+ 101   s1 r2 s4  512  ttft   302.6  e2e   369.5  enc 1  pfx None/None none  'Red background'
+ 102   s3 r2 s0  512  ttft   269.1  e2e   304.7  enc 1  pfx None/None none  'blue' ok
+ 103   s3 r2 s1  512  ttft   286.8  e2e   329.3  enc 1  pfx None/None none  'white' ok
+ 104   s3 r2 s2  512  ttft   282.7  e2e   315.7  enc 1  pfx None/None none  'black' ok
+ 105   s3 r2 s3  512  ttft   286.4  e2e   319.9  enc 1  pfx None/None none  'black' ok
+ 106   s3 r2 s4  512  ttft   286.0  e2e   319.4  enc 1  pfx None/None none  'blue' ok
+ 107   s2 r2 s0  980  ttft   829.3  e2e   858.9  enc 1  pfx None/None none  'yellow' ok
+ 108   s2 r2 s1  980  ttft   857.5  e2e   892.6  enc 1  pfx None/None none  'yellow' ok
+ 109   s2 r2 s2  980  ttft   861.4  e2e   894.5  enc 1  pfx None/None none  'yellow' ok
+ 110   s2 r2 s3  980  ttft   873.6  e2e   911.7  enc 1  pfx None/None none  'yellow' ok
+ 111   s2 r2 s4  980  ttft   843.8  e2e   890.5  enc 1  pfx None/None none  'Yellow' ok
+ 112   s4 r2 s0  512  ttft   304.4  e2e   339.4  enc 1  pfx None/None none  'Red' ok
+ 113   s4 r2 s1  512  ttft   270.1  e2e   306.3  enc 1  pfx None/None none  'Warm'
+ 114   s4 r2 s2  512  ttft   301.4  e2e   339.8  enc 1  pfx None/None none  'Apple'
+ 115   s4 r2 s3  512  ttft   262.6  e2e   290.9  enc 1  pfx None/None none  'Red' ok
+ 116   s4 r3 s0  980  ttft   852.1  e2e   888.0  enc 1  pfx None/None none  'yellow' ok
+ 117   s4 r3 s1  980  ttft   867.7  e2e   907.2  enc 1  pfx None/None none  'warm'
+ 118   s4 r3 s2  980  ttft   867.2  e2e   935.5  enc 1  pfx None/None none  'lemon'
+ 119   s4 r3 s3  980  ttft   831.1  e2e   866.5  enc 1  pfx None/None none  'yellow' ok
+ 120   s2 r3 s0  980  ttft   863.0  e2e   897.0  enc 1  pfx None/None none  'yellow' ok
+ 121   s2 r3 s1  980  ttft   854.6  e2e   889.7  enc 1  pfx None/None none  'yellow' ok
+ 122   s2 r3 s2  980  ttft   861.6  e2e   897.7  enc 1  pfx None/None none  'yellow' ok
+ 123   s2 r3 s3  980  ttft   830.1  e2e   867.7  enc 1  pfx None/None none  'yellow' ok
+ 124   s2 r3 s4  980  ttft   869.0  e2e   902.9  enc 1  pfx None/None none  'Yellow' ok
+ 125   s4 r3 s0  512  ttft   295.5  e2e   328.9  enc 1  pfx None/None none  'Red' ok
+ 126   s4 r3 s1  512  ttft   269.6  e2e   304.1  enc 1  pfx None/None none  'Warm'
+ 127   s4 r3 s2  512  ttft   290.9  e2e   327.6  enc 1  pfx None/None none  'Apple'
+ 128   s4 r3 s3  512  ttft   295.5  e2e   330.1  enc 1  pfx None/None none  'Red' ok
+ 129   s3 r3 s0  512  ttft   257.0  e2e   293.2  enc 1  pfx None/None none  'orange' ok
+ 130   s3 r3 s1  512  ttft   271.4  e2e   306.4  enc 1  pfx None/None none  'Purple' ok
+ 131   s3 r3 s2  512  ttft   277.4  e2e   312.2  enc 1  pfx None/None none  'yellow' ok
+ 132   s3 r3 s3  512  ttft   272.1  e2e   308.5  enc 1  pfx None/None none  'black' ok
+ 133   s3 r3 s4  512  ttft   273.5  e2e   308.6  enc 1  pfx None/None none  'black' ok
+ 134   s3 r3 s0  980  ttft   862.8  e2e   896.5  enc 1  pfx None/None none  'Red' ok
+ 135   s3 r3 s1  980  ttft   806.7  e2e   834.5  enc 1  pfx None/None none  'blue' ok
+ 136   s3 r3 s2  980  ttft   835.0  e2e   872.7  enc 1  pfx None/None none  'black' ok
+ 137   s3 r3 s3  980  ttft   849.8  e2e   883.7  enc 1  pfx None/None none  'Red' ok
+ 138   s3 r3 s4  980  ttft   848.3  e2e   884.1  enc 1  pfx None/None none  'white' ok
+ 139   s1 r3 s0  512  ttft   254.7  e2e   297.5  enc 1  pfx None/None none  'Green' ok
+ 140   s1 r3 s1  512  ttft   289.2  e2e   610.3  enc 1  pfx None/None none  'Yes, the image is mostly a sin'
+ 141   s1 r3 s2  512  ttft   288.8  e2e   325.0  enc 1  pfx None/None none  'system'
+ 142   s1 r3 s3  512  ttft   289.2  e2e   638.4  enc 1  pfx None/None none  'No, there is no text in this i'
+ 143   s1 r3 s4  512  ttft   316.5  e2e   567.8  enc 1  pfx None/None none  'Sure, how about "Green Screen"'
+ 144   s2 r3 s0  512  ttft   266.1  e2e   299.3  enc 1  pfx None/None none  'purple' ok
+ 145   s2 r3 s1  512  ttft   284.7  e2e   315.6  enc 1  pfx None/None none  'Purple' ok
+ 146   s2 r3 s2  512  ttft   268.7  e2e   307.1  enc 1  pfx None/None none  'Purple' ok
+ 147   s2 r3 s3  512  ttft   312.7  e2e   360.9  enc 1  pfx None/None none  'Purple' ok
+ 148   s2 r3 s4  512  ttft   259.4  e2e   290.5  enc 1  pfx None/None none  'Purple' ok
+ 149   s1 r3 s0  980  ttft   852.8  e2e   889.4  enc 1  pfx None/None none  'black' ok
+ 150   s1 r3 s1  980  ttft   864.4  e2e  1203.2  enc 1  pfx None/None none  'Yes, the image is mostly a sin'
+ 151   s1 r3 s2  980  ttft   850.0  e2e  1037.6  enc 1  pfx None/None none  'black background, no visible c'
+ 152   s1 r3 s3  980  ttft   840.8  e2e  1164.6  enc 1  pfx None/None none  'No, there is no text in this i'
+ 153   s1 r3 s4  980  ttft   854.1  e2e   988.7  enc 1  pfx None/None none  '"Black Background"'
+wrote results/g1/5880/mstar/pfx-arms/records.jsonl
+stop: g1-mstar 已停止
+[17:55:10] g1-vo-pfx1：等待 2 张稳定空闲的卡（第 1 次）
+[17:56:10] g1-vo-pfx1：GPU 0,1
+serve: g1-vo-pfx1 已启动（PID 1663428，GPU 0,1，端口 18401，shim count，日志 results/g1/5880/vllm-omni/pfx1/server/server.log）
+serve: g1-vo-pfx1 就绪（http://localhost:18401/health）
+   0 W warmup r0 s0  512  ttft   836.4  e2e   854.1  enc 1/miss  pfx 0/1396 none  'White' ok
+   1 W warmup r0 s1  512  ttft   237.9  e2e   254.9  enc 1/miss  pfx 0/1396 none  'yellow' ok
+   2 W warmup r0 s2  512  ttft   240.7  e2e   258.6  enc 1/miss  pfx 0/1396 none  'Blue' ok
+   3 W warmup r0 s0  980  ttft  1070.1  e2e  1085.3  enc 1/miss  pfx 0/4927 none  'Green' ok
+   4 W warmup r0 s1  980  ttft  1061.7  e2e  1079.1  enc 1/miss  pfx 0/4927 none  'Yellow' ok
+   5 W warmup r0 s2  980  ttft  1068.1  e2e  1083.6  enc 1/miss  pfx 0/4927 none  'Blue' ok
+   6   s3 r0 s0  512  ttft   239.2  e2e   256.2  enc 1/miss  pfx 0/1396 none  'Red' ok
+   7   s3 r0 s1  512  ttft   248.6  e2e   259.2  enc 1/miss  pfx 0/1396 none  'Purple' ok
+   8   s3 r0 s2  512  ttft   267.3  e2e   284.3  enc 1/miss  pfx 0/1396 none  'Green' ok
+   9   s3 r0 s3  512  ttft   246.0  e2e   265.3  enc 1/miss  pfx 0/1396 none  'black' ok
+  10   s3 r0 s4  512  ttft   242.7  e2e   260.0  enc 1/miss  pfx 0/1396 none  'blue' ok
+  11   s1 r0 s0  980  ttft  1045.4  e2e  1063.1  enc 1/miss  pfx 0/4927 none  'Red' ok
+  12   s1 r0 s1  980  ttft    93.8  e2e   538.5  enc 0/hit  pfx 4864/4926 partial  'Yes, the image is predominantl'
+  13   s1 r0 s2  980  ttft    90.2  e2e   226.6  enc 0/hit  pfx 4864/4920 partial  'Solid red background, no objec'
+  14   s1 r0 s3  980  ttft    86.8  e2e   120.1  enc 0/hit  pfx 4864/4926 partial  'No.'
+  15   s1 r0 s4  980  ttft   101.9  e2e   134.7  enc 0/hit  pfx 4864/4920 partial  'Red Background'
+  16   s3 r0 s0  980  ttft  1087.1  e2e  1102.7  enc 1/miss  pfx 0/4927 none  'Red' ok
+  17   s3 r0 s1  980  ttft  1061.1  e2e  1076.5  enc 1/miss  pfx 0/4927 none  'Green' ok
+  18   s3 r0 s2  980  ttft  1034.6  e2e  1051.0  enc 1/miss  pfx 0/4927 none  'Green' ok
+  19   s3 r0 s3  980  ttft  1076.4  e2e  1093.8  enc 1/miss  pfx 0/4927 none  'Red' ok
+  20   s3 r0 s4  980  ttft  1048.5  e2e  1064.2  enc 1/miss  pfx 0/4927 none  'Red' ok
+  21   s2 r0 s0  512  ttft   262.8  e2e   280.1  enc 1/miss  pfx 0/1396 none  'Blue' ok
+  22   s2 r0 s1  512  ttft   223.0  e2e   240.4  enc 0/hit  pfx 0/1399 none  'Blue' ok
+  23   s2 r0 s2  512  ttft   213.9  e2e   231.3  enc 0/hit  pfx 0/1400 none  'Blue' ok
+  24   s2 r0 s3  512  ttft   197.4  e2e   214.7  enc 0/hit  pfx 0/1400 none  'Blue' ok
+  25   s2 r0 s4  512  ttft   215.8  e2e   232.5  enc 0/hit  pfx 0/1400 none  'blue' ok
+  26   s1 r0 s0  512  ttft   239.4  e2e   257.6  enc 1/miss  pfx 0/1396 none  'Purple' ok
+  27   s1 r0 s1  512  ttft    79.1  e2e   346.7  enc 0/hit  pfx 1344/1395 partial  'Yes, the image is predominantl'
+  28   s1 r0 s2  512  ttft    75.7  e2e   211.0  enc 0/hit  pfx 1344/1389 partial  'Solid purple background, no ob'
+  29   s1 r0 s3  512  ttft    67.1  e2e   100.8  enc 0/hit  pfx 1344/1395 partial  'No.'
+  30   s1 r0 s4  512  ttft    54.7  e2e    88.3  enc 0/hit  pfx 1344/1389 partial  'Purple Background'
+  31   s2 r0 s0  980  ttft  1077.4  e2e  1094.1  enc 1/miss  pfx 0/4927 none  'White' ok
+  32   s2 r0 s1  980  ttft   887.7  e2e   904.4  enc 0/hit  pfx 0/4930 none  'White' ok
+  33   s2 r0 s2  980  ttft   883.9  e2e   901.6  enc 0/hit  pfx 0/4931 none  'White' ok
+  34   s2 r0 s3  980  ttft   882.6  e2e   899.9  enc 0/hit  pfx 0/4931 none  'White' ok
+  35   s2 r0 s4  980  ttft   894.0  e2e   910.8  enc 0/hit  pfx 0/4931 none  'White' ok
+  36   s4 r0 s0  980  ttft  1060.8  e2e  1079.1  enc 1/miss  pfx 0/4927 none  'black' ok
+  37   s4 r0 s1  980  ttft    85.1  e2e   101.1  enc 0  pfx 4928/4946 full  'cool'
+  38   s4 r0 s2  980  ttft    99.4  e2e   115.1  enc 0  pfx 4928/4960 full  'space'
+  39   s4 r0 s3  980  ttft    96.6  e2e   114.1  enc 0  pfx 4928/4980 full  'black' ok
+  40   s4 r0 s0  512  ttft   267.0  e2e   284.5  enc 1/miss  pfx 0/1396 none  'Red' ok
+  41   s4 r0 s1  512  ttft    62.8  e2e    79.4  enc 0/hit  pfx 1344/1415 partial  'Warm'
+  42   s4 r0 s2  512  ttft    63.8  e2e    79.9  enc 0  pfx 1408/1429 full  'Apple'
+  43   s4 r0 s3  512  ttft    60.4  e2e    77.2  enc 0  pfx 1408/1449 full  'Red' ok
+  44   s1 r1 s0  980  ttft  1036.3  e2e  1054.0  enc 1/miss  pfx 0/4927 none  'Red' ok
+  45   s1 r1 s1  980  ttft    83.0  e2e   306.6  enc 0/hit  pfx 4864/4926 partial  'Yes, the image is predominantl'
+  46   s1 r1 s2  980  ttft    87.6  e2e   223.4  enc 0/hit  pfx 4864/4920 partial  'Solid red background, no objec'
+  47   s1 r1 s3  980  ttft    99.9  e2e   133.8  enc 0/hit  pfx 4864/4926 partial  'No.'
+  48   s1 r1 s4  980  ttft    88.4  e2e   121.4  enc 0/hit  pfx 4864/4920 partial  'Red Background'
+  49   s1 r1 s0  512  ttft   260.4  e2e   277.8  enc 1/miss  pfx 0/1396 none  'White' ok
+  50   s1 r1 s1  512  ttft    65.0  e2e   232.6  enc 0/hit  pfx 1344/1395 partial  'Yes, the image is mostly a sin'
+  51   s1 r1 s2  512  ttft    50.5  e2e   184.6  enc 0/hit  pfx 1344/1389 partial  'Blank white background, no vis'
+  52   s1 r1 s3  512  ttft    68.5  e2e    86.4  enc 0/hit  pfx 1344/1395 partial  'No'
+  53   s1 r1 s4  512  ttft    64.7  e2e    98.1  enc 0/hit  pfx 1344/1389 partial  'Blank Canvas'
+  54   s3 r1 s0  512  ttft   260.3  e2e   277.8  enc 1/miss  pfx 0/1396 none  'Red' ok
+  55   s3 r1 s1  512  ttft   245.3  e2e   263.7  enc 1/miss  pfx 0/1396 none  'blue' ok
+  56   s3 r1 s2  512  ttft   240.9  e2e   258.8  enc 1/miss  pfx 0/1396 none  'black' ok
+  57   s3 r1 s3  512  ttft   226.1  e2e   244.0  enc 1/miss  pfx 0/1396 none  'White' ok
+  58   s3 r1 s4  512  ttft   234.4  e2e   251.9  enc 1/miss  pfx 0/1396 none  'Purple' ok
+  59   s3 r1 s0  980  ttft  1040.5  e2e  1056.8  enc 1/miss  pfx 0/4927 none  'black' ok
+  60   s3 r1 s1  980  ttft  1058.4  e2e  1074.9  enc 1/miss  pfx 0/4927 none  'Yellow' ok
+  61   s3 r1 s2  980  ttft  1041.6  e2e  1059.5  enc 1/miss  pfx 0/4927 none  'Blue' ok
+  62   s3 r1 s3  980  ttft  1041.9  e2e  1058.2  enc 1/miss  pfx 0/4927 none  'White' ok
+  63   s3 r1 s4  980  ttft  1055.5  e2e  1073.4  enc 1/miss  pfx 0/4927 none  'Red' ok
+  64   s2 r1 s0  980  ttft  1066.9  e2e  1083.5  enc 1/miss  pfx 0/4927 none  'Orange' ok
+  65   s2 r1 s1  980  ttft   894.9  e2e   911.4  enc 0/hit  pfx 0/4930 none  'Orange' ok
+  66   s2 r1 s2  980  ttft   893.3  e2e   910.4  enc 0/hit  pfx 0/4931 none  'Orange' ok
+  67   s2 r1 s3  980  ttft   894.0  e2e   910.4  enc 0/hit  pfx 0/4931 none  'Orange' ok
+  68   s2 r1 s4  980  ttft   879.7  e2e   896.7  enc 0/hit  pfx 0/4931 none  'orange' ok
+  69   s2 r1 s0  512  ttft   247.8  e2e   265.6  enc 1/miss  pfx 0/1396 none  'blue' ok
+  70   s2 r1 s1  512  ttft   203.6  e2e   220.8  enc 0/hit  pfx 0/1399 none  'Blue' ok
+  71   s2 r1 s2  512  ttft   216.4  e2e   233.9  enc 0/hit  pfx 0/1400 none  'Blue' ok
+  72   s2 r1 s3  512  ttft   200.0  e2e   217.9  enc 0/hit  pfx 0/1400 none  'Blue' ok
+  73   s2 r1 s4  512  ttft   209.0  e2e   226.3  enc 0/hit  pfx 0/1400 none  'blue' ok
+  74   s4 r1 s0  980  ttft  1084.5  e2e  1101.5  enc 1/miss  pfx 0/4927 none  'Green' ok
+  75   s4 r1 s1  980  ttft    84.4  e2e   100.3  enc 0  pfx 4928/4946 full  'Cool'
+  76   s4 r1 s2  980  ttft    95.5  e2e   128.2  enc 0  pfx 4928/4960 full  'Grass'
+  77   s4 r1 s3  980  ttft    94.4  e2e   110.0  enc 0  pfx 4928/4981 full  'Green' ok
+  78   s4 r1 s0  512  ttft   260.6  e2e   277.9  enc 1/miss  pfx 0/1396 none  'Black' ok
+  79   s4 r1 s1  512  ttft    84.4  e2e   102.0  enc 0/hit  pfx 1344/1415 partial  'Cool'
+  80   s4 r1 s2  512  ttft    57.3  e2e    73.6  enc 0  pfx 1408/1429 full  'Sky'
+  81   s4 r1 s3  512  ttft    53.3  e2e    70.0  enc 0  pfx 1408/1449 full  'Black' ok
+  82   s3 r2 s0  980  ttft  1061.0  e2e  1077.2  enc 1/miss  pfx 0/4927 none  'Green' ok
+  83   s3 r2 s1  980  ttft  1046.6  e2e  1063.9  enc 1/miss  pfx 0/4927 none  'Red' ok
+  84   s3 r2 s2  980  ttft  1043.9  e2e  1060.9  enc 1/miss  pfx 0/4927 none  'Purple' ok
+  85   s3 r2 s3  980  ttft  1042.3  e2e  1060.0  enc 1/miss  pfx 0/4927 none  'Red' ok
+  86   s3 r2 s4  980  ttft  1037.3  e2e  1055.1  enc 1/miss  pfx 0/4927 none  'blue' ok
+  87   s3 r2 s0  512  ttft   258.2  e2e   275.6  enc 1/miss  pfx 0/1396 none  'yellow' ok
+  88   s3 r2 s1  512  ttft   245.7  e2e   263.3  enc 1/miss  pfx 0/1396 none  'White' ok
+  89   s3 r2 s2  512  ttft   242.0  e2e   259.7  enc 1/miss  pfx 0/1396 none  'White' ok
+  90   s3 r2 s3  512  ttft   228.2  e2e   246.2  enc 1/miss  pfx 0/1396 none  'Blue' ok
+  91   s3 r2 s4  512  ttft   237.4  e2e   254.2  enc 1/miss  pfx 0/1396 none  'yellow' ok
+  92   s2 r2 s0  980  ttft  1070.2  e2e  1088.0  enc 1/miss  pfx 0/4927 none  'Blue' ok
+  93   s2 r2 s1  980  ttft   879.1  e2e   894.8  enc 0/hit  pfx 0/4930 none  'Blue' ok
+  94   s2 r2 s2  980  ttft   889.5  e2e   906.4  enc 0/hit  pfx 0/4931 none  'Blue' ok
+  95   s2 r2 s3  980  ttft   904.6  e2e   921.5  enc 0/hit  pfx 0/4931 none  'Blue' ok
+  96   s2 r2 s4  980  ttft   898.9  e2e   915.7  enc 0/hit  pfx 0/4931 none  'blue' ok
+  97   s4 r2 s0  512  ttft   258.5  e2e   276.3  enc 1/miss  pfx 0/1396 none  'yellow' ok
+  98   s4 r2 s1  512  ttft    68.2  e2e    85.1  enc 0/hit  pfx 1344/1415 partial  'warm'
+  99   s4 r2 s2  512  ttft    70.7  e2e   104.8  enc 0  pfx 1408/1429 full  'lemon'
+ 100   s4 r2 s3  512  ttft    75.7  e2e    91.9  enc 0  pfx 1408/1450 full  'yellow' ok
+ 101   s1 r2 s0  512  ttft   255.3  e2e   272.0  enc 1/miss  pfx 0/1396 none  'Blue' ok
+ 102   s1 r2 s1  512  ttft    60.0  e2e   295.0  enc 0/hit  pfx 1344/1395 partial  'Yes, the image is predominantl'
+ 103   s1 r2 s2  512  ttft    64.3  e2e   199.2  enc 0/hit  pfx 1344/1389 partial  'Solid blue background, no obje'
+ 104   s1 r2 s3  512  ttft    71.7  e2e   106.2  enc 0/hit  pfx 1344/1395 partial  'No.'
+ 105   s1 r2 s4  512  ttft    68.3  e2e   136.5  enc 0/hit  pfx 1344/1389 partial  '"Blue Sky"'
+ 106   s1 r2 s0  980  ttft  1111.4  e2e  1127.8  enc 1/miss  pfx 0/4927 none  'Blue' ok
+ 107   s1 r2 s1  980  ttft   101.1  e2e   322.4  enc 0/hit  pfx 4864/4926 partial  'Yes, the image is predominantl'
+ 108   s1 r2 s2  980  ttft    93.2  e2e   229.8  enc 0/hit  pfx 4864/4920 partial  'Solid blue background, no obje'
+ 109   s1 r2 s3  980  ttft   112.2  e2e   145.0  enc 0/hit  pfx 4864/4926 partial  'No.'
+ 110   s1 r2 s4  980  ttft   104.3  e2e   138.2  enc 0/hit  pfx 4864/4920 partial  'Blue Background'
+ 111   s4 r2 s0  980  ttft  1080.9  e2e  1098.2  enc 1/miss  pfx 0/4927 none  'black' ok
+ 112   s4 r2 s1  980  ttft    97.5  e2e   115.3  enc 0  pfx 4928/4946 full  'cool'
+ 113   s4 r2 s2  980  ttft   115.1  e2e   131.7  enc 0  pfx 4928/4960 full  'space'
+ 114   s4 r2 s3  980  ttft   109.0  e2e   125.1  enc 0  pfx 4928/4980 full  'black' ok
+ 115   s2 r2 s0  512  ttft   267.6  e2e   284.3  enc 1/miss  pfx 0/1396 none  'Green' ok
+ 116   s2 r2 s1  512  ttft   205.6  e2e   222.6  enc 0/hit  pfx 0/1399 none  'Green' ok
+ 117   s2 r2 s2  512  ttft   197.3  e2e   214.1  enc 0/hit  pfx 0/1400 none  'Green' ok
+ 118   s2 r2 s3  512  ttft   205.6  e2e   224.3  enc 0/hit  pfx 0/1400 none  'Green' ok
+ 119   s2 r2 s4  512  ttft   214.1  e2e   231.0  enc 0/hit  pfx 0/1400 none  'green' ok
+ 120   s2 r3 s0  980  ttft  1069.8  e2e  1087.7  enc 1/miss  pfx 0/4927 none  'Yellow' ok
+ 121   s2 r3 s1  980  ttft   877.0  e2e   894.5  enc 0/hit  pfx 0/4930 none  'Yellow' ok
+ 122   s2 r3 s2  980  ttft   878.6  e2e   894.7  enc 0/hit  pfx 0/4931 none  'Yellow' ok
+ 123   s2 r3 s3  980  ttft   884.8  e2e   901.8  enc 0/hit  pfx 0/4931 none  'Yellow' ok
+ 124   s2 r3 s4  980  ttft   892.2  e2e   910.7  enc 0/hit  pfx 0/4931 none  'yellow' ok
+ 125   s4 r3 s0  980  ttft  1049.7  e2e  1067.0  enc 1/miss  pfx 0/4927 none  'White' ok
+ 126   s4 r3 s1  980  ttft   100.5  e2e   117.5  enc 0  pfx 4928/4946 full  'Cool'
+ 127   s4 r3 s2  980  ttft   103.5  e2e   136.4  enc 0  pfx 4928/4960 full  'Clouds'
+ 128   s4 r3 s3  980  ttft    94.8  e2e   111.0  enc 0  pfx 4928/4981 full  'White' ok
+ 129   s1 r3 s0  980  ttft  1054.5  e2e  1071.6  enc 1/miss  pfx 0/4927 none  'black' ok
+ 130   s1 r3 s1  980  ttft   101.0  e2e   374.5  enc 0/hit  pfx 4864/4926 partial  'Yes, the image is predominantl'
+ 131   s1 r3 s2  980  ttft   104.1  e2e   223.6  enc 0/hit  pfx 4864/4920 partial  'Black background, no visible c'
+ 132   s1 r3 s3  980  ttft   100.6  e2e   133.9  enc 0/hit  pfx 4864/4926 partial  'No.'
+ 133   s1 r3 s4  980  ttft   110.4  e2e   143.8  enc 0/hit  pfx 4864/4920 partial  'Black Background'
+ 134   s2 r3 s0  512  ttft   262.3  e2e   280.0  enc 1/miss  pfx 0/1396 none  'Black' ok
+ 135   s2 r3 s1  512  ttft   223.6  e2e   240.9  enc 0/hit  pfx 0/1399 none  'Black' ok
+ 136   s2 r3 s2  512  ttft   211.6  e2e   230.0  enc 0/hit  pfx 0/1400 none  'Black' ok
+ 137   s2 r3 s3  512  ttft   219.7  e2e   237.5  enc 0/hit  pfx 0/1400 none  'Black' ok
+ 138   s2 r3 s4  512  ttft   219.7  e2e   236.7  enc 0/hit  pfx 0/1400 none  'black' ok
+ 139   s4 r3 s0  512  ttft   255.4  e2e   273.1  enc 1/miss  pfx 0/1396 none  'White' ok
+ 140   s4 r3 s1  512  ttft    75.8  e2e    92.9  enc 0/hit  pfx 1344/1415 partial  'Cool'
+ 141   s4 r3 s2  512  ttft    75.9  e2e   108.8  enc 0  pfx 1408/1429 full  'Clouds'
+ 142   s4 r3 s3  512  ttft    76.2  e2e    92.6  enc 0  pfx 1408/1450 full  'White' ok
+ 143   s3 r3 s0  980  ttft  1072.7  e2e  1089.6  enc 1/miss  pfx 0/4927 none  'White' ok
+ 144   s3 r3 s1  980  ttft  1079.0  e2e  1096.5  enc 1/miss  pfx 0/4927 none  'black' ok
+ 145   s3 r3 s2  980  ttft  1073.1  e2e  1090.3  enc 1/miss  pfx 0/4927 none  'Blue' ok
+ 146   s3 r3 s3  980  ttft  1053.7  e2e  1070.7  enc 1/miss  pfx 0/4927 none  'White' ok
+ 147   s3 r3 s4  980  ttft  1067.7  e2e  1084.3  enc 1/miss  pfx 0/4927 none  'Red' ok
+ 148   s1 r3 s0  512  ttft   239.4  e2e   257.0  enc 1/miss  pfx 0/1396 none  'yellow' ok
+ 149   s1 r3 s1  512  ttft    68.4  e2e   320.3  enc 0/hit  pfx 1344/1395 partial  'Yes, the image is predominantl'
+ 150   s1 r3 s2  512  ttft    70.7  e2e   204.1  enc 0/hit  pfx 1344/1389 partial  'Solid yellow background, no ob'
+ 151   s1 r3 s3  512  ttft    64.2  e2e    78.8  enc 0/hit  pfx 1344/1395 partial  'No'
+ 152   s1 r3 s4  512  ttft    70.8  e2e   138.5  enc 0/hit  pfx 1344/1389 partial  '"Golden Background"'
+ 153   s3 r3 s0  512  ttft   230.2  e2e   247.7  enc 1/miss  pfx 0/1396 none  'yellow' ok
+ 154   s3 r3 s1  512  ttft   258.5  e2e   276.2  enc 1/miss  pfx 0/1396 none  'yellow' ok
+ 155   s3 r3 s2  512  ttft   256.5  e2e   274.7  enc 1/miss  pfx 0/1396 none  'yellow' ok
+ 156   s3 r3 s3  512  ttft   213.5  e2e   230.9  enc 1/miss  pfx 0/1396 none  'White' ok
+ 157   s3 r3 s4  512  ttft   224.2  e2e   241.6  enc 1/miss  pfx 0/1396 none  'black' ok
+ 158   s1 r4 s0  512  ttft   239.5  e2e   256.8  enc 1/miss  pfx 0/1396 none  'Black' ok
+ 159   s1 r4 s1  512  ttft    81.5  e2e   349.4  enc 0/hit  pfx 1344/1395 partial  'Yes, the image is predominantl'
+ 160   s1 r4 s2  512  ttft    70.9  e2e   188.7  enc 0/hit  pfx 1344/1389 partial  'Black background, no visible c'
+ 161   s1 r4 s3  512  ttft    65.6  e2e    99.9  enc 0/hit  pfx 1344/1395 partial  'No.'
+ 162   s1 r4 s4  512  ttft    68.6  e2e   101.9  enc 0/hit  pfx 1344/1389 partial  'Black Background'
+ 163   s4 r4 s0  512  ttft   258.5  e2e   276.3  enc 1/miss  pfx 0/1396 none  'Purple' ok
+ 164   s4 r4 s1  512  ttft    69.2  e2e    86.1  enc 0/hit  pfx 1344/1415 partial  'Cool'
+ 165   s4 r4 s2  512  ttft    68.6  e2e   119.2  enc 0  pfx 1408/1429 full  'Grapes'
+ 166   s4 r4 s3  512  ttft    76.3  e2e    92.3  enc 0  pfx 1408/1451 full  'Purple' ok
+ 167   s4 r4 s0  980  ttft  1068.1  e2e  1084.9  enc 1/miss  pfx 0/4927 none  'White' ok
+ 168   s4 r4 s1  980  ttft    97.4  e2e   113.8  enc 0  pfx 4928/4946 full  'Cool'
+ 169   s4 r4 s2  980  ttft   104.7  e2e   138.4  enc 0  pfx 4928/4960 full  'Clouds'
+ 170   s4 r4 s3  980  ttft    91.1  e2e   107.0  enc 0  pfx 4928/4981 full  'White' ok
+ 171   s1 r4 s0  980  ttft  1064.5  e2e  1082.2  enc 1/miss  pfx 0/4927 none  'black' ok
+ 172   s1 r4 s1  980  ttft    96.7  e2e   370.5  enc 0/hit  pfx 4864/4926 partial  'Yes, the image is predominantl'
+ 173   s1 r4 s2  980  ttft   102.1  e2e   222.0  enc 0/hit  pfx 4864/4920 partial  'Black background, no visible c'
+ 174   s1 r4 s3  980  ttft   101.2  e2e   135.3  enc 0/hit  pfx 4864/4926 partial  'No.'
+ 175   s1 r4 s4  980  ttft   100.6  e2e   135.1  enc 0/hit  pfx 4864/4920 partial  'Black Background'
+ 176   s3 r4 s0  512  ttft   262.0  e2e   279.3  enc 1/miss  pfx 0/1396 none  'Red' ok
+ 177   s3 r4 s1  512  ttft   238.5  e2e   255.7  enc 1/miss  pfx 0/1396 none  'Red' ok
+ 178   s3 r4 s2  512  ttft   260.3  e2e   278.6  enc 1/miss  pfx 0/1396 none  'Purple' ok
+ 179   s3 r4 s3  512  ttft   258.6  e2e   276.1  enc 1/miss  pfx 0/1396 none  'Black' ok
+ 180   s3 r4 s4  512  ttft   251.8  e2e   269.3  enc 1/miss  pfx 0/1396 none  'black' ok
+ 181   s2 r4 s0  512  ttft   230.8  e2e   249.0  enc 1/miss  pfx 0/1396 none  'Red' ok
+ 182   s2 r4 s1  512  ttft   196.3  e2e   213.6  enc 0/hit  pfx 0/1399 none  'Red' ok
+ 183   s2 r4 s2  512  ttft   195.5  e2e   212.9  enc 0/hit  pfx 0/1400 none  'Red' ok
+ 184   s2 r4 s3  512  ttft   221.8  e2e   239.2  enc 0/hit  pfx 0/1400 none  'Red' ok
+ 185   s2 r4 s4  512  ttft   187.3  e2e   204.7  enc 0/hit  pfx 0/1400 none  'red' ok
+ 186   s2 r4 s0  980  ttft  1048.8  e2e  1066.5  enc 1/miss  pfx 0/4927 none  'black' ok
+ 187   s2 r4 s1  980  ttft   891.5  e2e   908.4  enc 0/hit  pfx 0/4930 none  'Black' ok
+ 188   s2 r4 s2  980  ttft   879.4  e2e   896.3  enc 0/hit  pfx 0/4931 none  'Black' ok
+ 189   s2 r4 s3  980  ttft   892.3  e2e   911.3  enc 0/hit  pfx 0/4931 none  'Black' ok
+ 190   s2 r4 s4  980  ttft   887.0  e2e   905.2  enc 0/hit  pfx 0/4931 none  'black' ok
+ 191   s3 r4 s0  980  ttft  1073.5  e2e  1090.3  enc 1/miss  pfx 0/4927 none  'Red' ok
+ 192   s3 r4 s1  980  ttft  1071.5  e2e  1089.9  enc 1/miss  pfx 0/4927 none  'Red' ok
+ 193   s3 r4 s2  980  ttft  1051.7  e2e  1069.1  enc 1/miss  pfx 0/4927 none  'Red' ok
+ 194   s3 r4 s3  980  ttft  1034.5  e2e  1052.7  enc 1/miss  pfx 0/4927 none  'Orange' ok
+ 195   s3 r4 s4  980  ttft  1061.6  e2e  1077.4  enc 1/miss  pfx 0/4927 none  'White' ok
+ 196   s1 r5 s0  980  ttft  1029.1  e2e  1045.2  enc 1/miss  pfx 0/4927 none  'Blue' ok
+ 197   s1 r5 s1  980  ttft    99.6  e2e   338.9  enc 0/hit  pfx 4864/4926 partial  'Yes, the image is predominantl'
+ 198   s1 r5 s2  980  ttft    95.1  e2e   232.0  enc 0/hit  pfx 4864/4920 partial  'Solid blue background, no obje'
+ 199   s1 r5 s3  980  ttft    99.6  e2e   133.5  enc 0/hit  pfx 4864/4926 partial  'No.'
+ 200   s1 r5 s4  980  ttft   101.5  e2e   134.7  enc 0/hit  pfx 4864/4920 partial  'Blue Sky'
+ 201   s2 r5 s0  980  ttft  1059.3  e2e  1076.1  enc 1/miss  pfx 0/4927 none  'Orange' ok
+ 202   s2 r5 s1  980  ttft   882.0  e2e   898.5  enc 0/hit  pfx 0/4930 none  'Orange' ok
+ 203   s2 r5 s2  980  ttft   892.1  e2e   908.7  enc 0/hit  pfx 0/4931 none  'Orange' ok
+ 204   s2 r5 s3  980  ttft   896.5  e2e   914.3  enc 0/hit  pfx 0/4931 none  'Orange' ok
+ 205   s2 r5 s4  980  ttft   887.8  e2e   905.8  enc 0/hit  pfx 0/4931 none  'orange' ok
+ 206   s3 r5 s0  980  ttft  1037.8  e2e  1054.4  enc 1/miss  pfx 0/4927 none  'White' ok
+ 207   s3 r5 s1  980  ttft  1054.2  e2e  1071.4  enc 1/miss  pfx 0/4927 none  'Purple' ok
+ 208   s3 r5 s2  980  ttft  1061.4  e2e  1077.8  enc 1/miss  pfx 0/4927 none  'blue' ok
+ 209   s3 r5 s3  980  ttft  1064.6  e2e  1081.9  enc 1/miss  pfx 0/4927 none  'White' ok
+ 210   s3 r5 s4  980  ttft  1063.4  e2e  1081.4  enc 1/miss  pfx 0/4927 none  'Blue' ok
+ 211   s1 r5 s0  512  ttft   262.6  e2e   280.2  enc 1/miss  pfx 0/1396 none  'Red' ok
+ 212   s1 r5 s1  512  ttft    60.2  e2e   329.2  enc 0/hit  pfx 1344/1395 partial  'Yes, the image is predominantl'
+ 213   s1 r5 s2  512  ttft    67.2  e2e   202.0  enc 0/hit  pfx 1344/1389 partial  'Solid red background, no objec'
+ 214   s1 r5 s3  512  ttft    64.4  e2e    98.1  enc 0/hit  pfx 1344/1395 partial  'No.'
+ 215   s1 r5 s4  512  ttft    66.2  e2e    99.9  enc 0/hit  pfx 1344/1389 partial  'Red Background'
+ 216   s2 r5 s0  512  ttft   250.0  e2e   267.1  enc 1/miss  pfx 0/1396 none  'Green' ok
+ 217   s2 r5 s1  512  ttft   220.0  e2e   237.5  enc 0/hit  pfx 0/1399 none  'Green' ok
+ 218   s2 r5 s2  512  ttft   221.3  e2e   238.4  enc 0/hit  pfx 0/1400 none  'Green' ok
+ 219   s2 r5 s3  512  ttft   224.6  e2e   242.7  enc 0/hit  pfx 0/1400 none  'Green' ok
+ 220   s2 r5 s4  512  ttft   218.1  e2e   235.9  enc 0/hit  pfx 0/1400 none  'green' ok
+ 221   s3 r5 s0  512  ttft   253.1  e2e   270.4  enc 1/miss  pfx 0/1396 none  'Red' ok
+ 222   s3 r5 s1  512  ttft   245.9  e2e   262.8  enc 1/miss  pfx 0/1396 none  'orange' ok
+ 223   s3 r5 s2  512  ttft   254.2  e2e   271.9  enc 1/miss  pfx 0/1396 none  'Green' ok
+ 224   s3 r5 s3  512  ttft   260.1  e2e   277.6  enc 1/miss  pfx 0/1396 none  'black' ok
+ 225   s3 r5 s4  512  ttft   259.2  e2e   276.6  enc 1/miss  pfx 0/1396 none  'orange' ok
+ 226   s4 r5 s0  512  ttft   256.9  e2e   274.6  enc 1/miss  pfx 0/1396 none  'Red' ok
+ 227   s4 r5 s1  512  ttft    63.4  e2e    79.5  enc 0/hit  pfx 1344/1415 partial  'Warm'
+ 228   s4 r5 s2  512  ttft    68.8  e2e    85.6  enc 0  pfx 1408/1429 full  'Apple'
+ 229   s4 r5 s3  512  ttft    49.0  e2e    66.1  enc 0  pfx 1408/1449 full  'Red' ok
+ 230   s4 r5 s0  980  ttft  1072.8  e2e  1087.6  enc 1/miss  pfx 0/4927 none  'black' ok
+ 231   s4 r5 s1  980  ttft    97.1  e2e   113.7  enc 0  pfx 4928/4946 full  'cool'
+ 232   s4 r5 s2  980  ttft    98.3  e2e   114.1  enc 0  pfx 4928/4960 full  'space'
+ 233   s4 r5 s3  980  ttft   101.9  e2e   118.5  enc 0  pfx 4928/4980 full  'black' ok
+ 234   s2 r6 s0  512  ttft   229.3  e2e   247.1  enc 1/miss  pfx 0/1396 none  'Purple' ok
+ 235   s2 r6 s1  512  ttft   198.0  e2e   215.3  enc 0/hit  pfx 0/1399 none  'Purple' ok
+ 236   s2 r6 s2  512  ttft   195.3  e2e   213.1  enc 0/hit  pfx 0/1400 none  'Purple' ok
+ 237   s2 r6 s3  512  ttft   218.0  e2e   235.6  enc 0/hit  pfx 0/1400 none  'Purple' ok
+ 238   s2 r6 s4  512  ttft   206.8  e2e   224.4  enc 0/hit  pfx 0/1400 none  'purple' ok
+ 239   s3 r6 s0  512  ttft   256.0  e2e   273.7  enc 1/miss  pfx 0/1396 none  'Blue' ok
+ 240   s3 r6 s1  512  ttft   239.0  e2e   256.3  enc 1/miss  pfx 0/1396 none  'Red' ok
+ 241   s3 r6 s2  512  ttft   258.7  e2e   275.8  enc 1/miss  pfx 0/1396 none  'red' ok
+ 242   s3 r6 s3  512  ttft   243.4  e2e   260.7  enc 1/miss  pfx 0/1396 none  'Green' ok
+ 243   s3 r6 s4  512  ttft   230.0  e2e   247.3  enc 1/miss  pfx 0/1396 none  'White' ok
+ 244   s4 r6 s0  980  ttft  1061.5  e2e  1077.7  enc 1/miss  pfx 0/4927 none  'black' ok
+ 245   s4 r6 s1  980  ttft   107.3  e2e   123.1  enc 0  pfx 4928/4946 full  'cool'
+ 246   s4 r6 s2  980  ttft    91.7  e2e   107.5  enc 0  pfx 4928/4960 full  'space'
+ 247   s4 r6 s3  980  ttft    99.7  e2e   116.2  enc 0  pfx 4928/4980 full  'black' ok
+ 248   s4 r6 s0  512  ttft   261.6  e2e   279.1  enc 1/miss  pfx 0/1396 none  'yellow' ok
+ 249   s4 r6 s1  512  ttft    64.6  e2e    81.2  enc 0/hit  pfx 1344/1415 partial  'warm'
+ 250   s4 r6 s2  512  ttft    64.6  e2e    80.9  enc 0  pfx 1408/1429 full  'sun'
+ 251   s4 r6 s3  512  ttft    71.0  e2e    87.6  enc 0  pfx 1408/1449 full  'yellow' ok
+ 252   s1 r6 s0  512  ttft   253.9  e2e   271.3  enc 1/miss  pfx 0/1396 none  'orange' ok
+ 253   s1 r6 s1  512  ttft    66.9  e2e   335.4  enc 0/hit  pfx 1344/1395 partial  'Yes, the image is predominantl'
+ 254   s1 r6 s2  512  ttft    66.3  e2e   217.7  enc 0/hit  pfx 1344/1389 partial  'Orange background, solid color'
+ 255   s1 r6 s3  512  ttft    66.3  e2e    83.6  enc 0/hit  pfx 1344/1395 partial  'No'
+ 256   s1 r6 s4  512  ttft    67.1  e2e   100.4  enc 0/hit  pfx 1344/1389 partial  'Orange Background'
+ 257   s2 r6 s0  980  ttft  1063.5  e2e  1080.6  enc 1/miss  pfx 0/4927 none  'White' ok
+ 258   s2 r6 s1  980  ttft   895.6  e2e   912.3  enc 0/hit  pfx 0/4930 none  'White' ok
+ 259   s2 r6 s2  980  ttft   893.8  e2e   910.8  enc 0/hit  pfx 0/4931 none  'White' ok
+ 260   s2 r6 s3  980  ttft   885.9  e2e   902.7  enc 0/hit  pfx 0/4931 none  'White' ok
+ 261   s2 r6 s4  980  ttft   889.3  e2e   907.5  enc 0/hit  pfx 0/4931 none  'white' ok
+ 262   s3 r6 s0  980  ttft  1057.4  e2e  1074.3  enc 1/miss  pfx 0/4927 none  'Purple' ok
+ 263   s3 r6 s1  980  ttft  1039.3  e2e  1056.5  enc 1/miss  pfx 0/4927 none  'black' ok
+ 264   s3 r6 s2  980  ttft  1068.9  e2e  1085.8  enc 1/miss  pfx 0/4927 none  'Green' ok
+ 265   s3 r6 s3  980  ttft  1042.9  e2e  1059.9  enc 1/miss  pfx 0/4927 none  'Orange' ok
+ 266   s3 r6 s4  980  ttft  1065.0  e2e  1083.2  enc 1/miss  pfx 0/4927 none  'Orange' ok
+ 267   s1 r6 s0  980  ttft  1057.7  e2e  1075.1  enc 1/miss  pfx 0/4927 none  'Purple' ok
+ 268   s1 r6 s1  980  ttft   104.2  e2e   581.2  enc 0/hit  pfx 4864/4926 partial  'Yes, the image is predominantl'
+ 269   s1 r6 s2  980  ttft    95.8  e2e   232.9  enc 0/hit  pfx 4864/4920 partial  'Solid purple background, no ob'
+ 270   s1 r6 s3  980  ttft   105.6  e2e   139.5  enc 0/hit  pfx 4864/4926 partial  'No.'
+ 271   s1 r6 s4  980  ttft   100.8  e2e   134.6  enc 0/hit  pfx 4864/4920 partial  'Purple Background'
+ 272   s2 r7 s0  980  ttft  1052.0  e2e  1069.9  enc 1/miss  pfx 0/4927 none  'Purple' ok
+ 273   s2 r7 s1  980  ttft   867.0  e2e   901.7  enc 0/hit  pfx 0/4930 none  'Purple.' ok
+ 274   s2 r7 s2  980  ttft   887.3  e2e   904.5  enc 0/hit  pfx 0/4931 none  'Purple' ok
+ 275   s2 r7 s3  980  ttft   870.5  e2e   887.6  enc 0/hit  pfx 0/4931 none  'Purple' ok
+ 276   s2 r7 s4  980  ttft   886.1  e2e   904.1  enc 0/hit  pfx 0/4931 none  'purple' ok
+ 277   s2 r7 s0  512  ttft   236.4  e2e   254.0  enc 1/miss  pfx 0/1396 none  'Red' ok
+ 278   s2 r7 s1  512  ttft   197.1  e2e   215.5  enc 0/hit  pfx 0/1399 none  'Red' ok
+ 279   s2 r7 s2  512  ttft   189.8  e2e   207.8  enc 0/hit  pfx 0/1400 none  'Red' ok
+ 280   s2 r7 s3  512  ttft   201.3  e2e   218.8  enc 0/hit  pfx 0/1400 none  'Red' ok
+ 281   s2 r7 s4  512  ttft   215.2  e2e   232.6  enc 0/hit  pfx 0/1400 none  'red' ok
+ 282   s4 r7 s0  512  ttft   233.1  e2e   251.7  enc 1/miss  pfx 0/1396 none  'White' ok
+ 283   s4 r7 s1  512  ttft    67.2  e2e    83.1  enc 0/hit  pfx 1344/1415 partial  'Cool'
+ 284   s4 r7 s2  512  ttft    72.4  e2e    88.7  enc 0  pfx 1408/1429 full  'Snow'
+ 285   s4 r7 s3  512  ttft    71.6  e2e    87.6  enc 0  pfx 1408/1449 full  'White' ok
+ 286   s3 r7 s0  512  ttft   206.4  e2e   223.7  enc 1/miss  pfx 0/1396 none  'Green' ok
+ 287   s3 r7 s1  512  ttft   243.2  e2e   261.0  enc 1/miss  pfx 0/1396 none  'Purple' ok
+ 288   s3 r7 s2  512  ttft   240.1  e2e   257.5  enc 1/miss  pfx 0/1396 none  'Red' ok
+ 289   s3 r7 s3  512  ttft   254.0  e2e   271.8  enc 1/miss  pfx 0/1396 none  'Green' ok
+ 290   s3 r7 s4  512  ttft   259.1  e2e   276.3  enc 1/miss  pfx 0/1396 none  'Green' ok
+ 291   s1 r7 s0  980  ttft  1045.4  e2e  1063.4  enc 1/miss  pfx 0/4927 none  'Yellow' ok
+ 292   s1 r7 s1  980  ttft   105.9  e2e   328.5  enc 0/hit  pfx 4864/4926 partial  'Yes, the image is predominantl'
+ 293   s1 r7 s2  980  ttft    98.0  e2e   234.4  enc 0/hit  pfx 4864/4920 partial  'Solid yellow background, no ob'
+ 294   s1 r7 s3  980  ttft   101.9  e2e   135.6  enc 0/hit  pfx 4864/4926 partial  'No.'
+ 295   s1 r7 s4  980  ttft    79.2  e2e   146.8  enc 0/hit  pfx 4864/4920 partial  '"Golden Background"'
+ 296   s1 r7 s0  512  ttft   260.2  e2e   278.0  enc 1/miss  pfx 0/1396 none  'yellow' ok
+ 297   s1 r7 s1  512  ttft    73.5  e2e   341.8  enc 0/hit  pfx 1344/1395 partial  'Yes, the image is predominantl'
+ 298   s1 r7 s2  512  ttft    71.3  e2e   206.0  enc 0/hit  pfx 1344/1389 partial  'Solid yellow background, no ob'
+ 299   s1 r7 s3  512  ttft    60.3  e2e    80.0  enc 0/hit  pfx 1344/1395 partial  'No'
+ 300   s1 r7 s4  512  ttft    69.8  e2e   103.2  enc 0/hit  pfx 1344/1389 partial  'Yellow Background'
+ 301   s4 r7 s0  980  ttft  1053.1  e2e  1069.6  enc 1/miss  pfx 0/4927 none  'Red' ok
+ 302   s4 r7 s1  980  ttft    92.0  e2e   108.0  enc 0  pfx 4928/4946 full  'Warm'
+ 303   s4 r7 s2  980  ttft    94.8  e2e   110.5  enc 0  pfx 4928/4960 full  'Apple'
+ 304   s4 r7 s3  980  ttft   108.5  e2e   124.7  enc 0  pfx 4928/4980 full  'Red' ok
+ 305   s3 r7 s0  980  ttft  1064.9  e2e  1082.2  enc 1/miss  pfx 0/4927 none  'black' ok
+ 306   s3 r7 s1  980  ttft  1066.6  e2e  1084.1  enc 1/miss  pfx 0/4927 none  'Green' ok
+ 307   s3 r7 s2  980  ttft  1059.4  e2e  1075.9  enc 1/miss  pfx 0/4927 none  'Orange' ok
+ 308   s3 r7 s3  980  ttft  1062.4  e2e  1079.0  enc 1/miss  pfx 0/4927 none  'Green' ok
+ 309   s3 r7 s4  980  ttft  1055.5  e2e  1072.3  enc 1/miss  pfx 0/4927 none  'Purple' ok
+wrote results/g1/5880/vllm-omni/pfx1/records.jsonl
+stop: g1-vo-pfx1 已停止
+[18:13:46] g1-vo-pfx0：等待 2 张稳定空闲的卡（第 1 次）
+[18:14:46] g1-vo-pfx0：GPU 0,1
+serve: g1-vo-pfx0 已启动（PID 1773039，GPU 0,1，端口 18401，shim count，日志 results/g1/5880/vllm-omni/pfx0/server/server.log）
+serve: g1-vo-pfx0 就绪（http://localhost:18401/health）
+   0 W warmup r0 s0  512  ttft   313.8  e2e   331.9  enc 1/miss  pfx None/None none  'White' ok
+   1 W warmup r0 s1  512  ttft   238.0  e2e   257.0  enc 1/miss  pfx None/None none  'Red' ok
+   2 W warmup r0 s2  512  ttft   248.5  e2e   265.5  enc 1/miss  pfx None/None none  'black' ok
+   3 W warmup r0 s0  980  ttft  1045.1  e2e  1062.2  enc 1/miss  pfx None/None none  'Green' ok
+   4 W warmup r0 s1  980  ttft  1070.0  e2e  1088.1  enc 1/miss  pfx None/None none  'Yellow' ok
+   5 W warmup r0 s2  980  ttft  1029.8  e2e  1047.7  enc 1/miss  pfx None/None none  'Purple' ok
+   6   s3 r0 s0  512  ttft   259.4  e2e   276.9  enc 1/miss  pfx None/None none  'Green' ok
+   7   s3 r0 s1  512  ttft   258.3  e2e   274.6  enc 1/miss  pfx None/None none  'blue' ok
+   8   s3 r0 s2  512  ttft   254.6  e2e   272.8  enc 1/miss  pfx None/None none  'Red' ok
+   9   s3 r0 s3  512  ttft   241.4  e2e   259.5  enc 1/miss  pfx None/None none  'blue' ok
+  10   s3 r0 s4  512  ttft   253.8  e2e   271.4  enc 1/miss  pfx None/None none  'Blue' ok
+  11   s1 r0 s0  980  ttft  1052.1  e2e  1070.1  enc 1/miss  pfx None/None none  'Blue' ok
+  12   s1 r0 s1  980  ttft   886.8  e2e  1128.7  enc 0/hit  pfx None/None none  'Yes, the image is predominantl'
+  13   s1 r0 s2  980  ttft   880.2  e2e  1019.2  enc 0/hit  pfx None/None none  'Solid blue background, no obje'
+  14   s1 r0 s3  980  ttft   888.1  e2e   922.6  enc 0/hit  pfx None/None none  'No.'
+  15   s1 r0 s4  980  ttft   871.1  e2e   903.0  enc 0/hit  pfx None/None none  'Blue Sky'
+  16   s3 r0 s0  980  ttft  1046.0  e2e  1062.7  enc 1/miss  pfx None/None none  'Orange' ok
+  17   s3 r0 s1  980  ttft  1051.6  e2e  1068.3  enc 1/miss  pfx None/None none  'Purple' ok
+  18   s3 r0 s2  980  ttft  1070.0  e2e  1087.3  enc 1/miss  pfx None/None none  'Purple' ok
+  19   s3 r0 s3  980  ttft  1061.9  e2e  1078.4  enc 1/miss  pfx None/None none  'black' ok
+  20   s3 r0 s4  980  ttft  1045.6  e2e  1061.6  enc 1/miss  pfx None/None none  'Green' ok
+  21   s2 r0 s0  512  ttft   259.7  e2e   276.8  enc 1/miss  pfx None/None none  'Green' ok
+  22   s2 r0 s1  512  ttft   222.0  e2e   239.1  enc 0/hit  pfx None/None none  'Green' ok
+  23   s2 r0 s2  512  ttft   202.3  e2e   219.3  enc 0/hit  pfx None/None none  'Green' ok
+  24   s2 r0 s3  512  ttft   227.6  e2e   244.3  enc 0/hit  pfx None/None none  'Green' ok
+  25   s2 r0 s4  512  ttft   219.4  e2e   236.0  enc 0/hit  pfx None/None none  'green' ok
+  26   s1 r0 s0  512  ttft   258.7  e2e   275.8  enc 1/miss  pfx None/None none  'blue' ok
+  27   s1 r0 s1  512  ttft   218.2  e2e   456.8  enc 0/hit  pfx None/None none  'Yes, the image is predominantl'
+  28   s1 r0 s2  512  ttft   215.6  e2e   352.0  enc 0/hit  pfx None/None none  'Solid blue background, no obje'
+  29   s1 r0 s3  512  ttft   217.2  e2e   251.8  enc 0/hit  pfx None/None none  'No.'
+  30   s1 r0 s4  512  ttft   220.3  e2e   289.6  enc 0/hit  pfx None/None none  '"Blue Sky"'
+  31   s2 r0 s0  980  ttft  1048.1  e2e  1064.5  enc 1/miss  pfx None/None none  'black' ok
+  32   s2 r0 s1  980  ttft   869.7  e2e   886.3  enc 0/hit  pfx None/None none  'Black' ok
+  33   s2 r0 s2  980  ttft   895.8  e2e   912.2  enc 0/hit  pfx None/None none  'Black' ok
+  34   s2 r0 s3  980  ttft   889.9  e2e   906.8  enc 0/hit  pfx None/None none  'Black' ok
+  35   s2 r0 s4  980  ttft   873.6  e2e   890.6  enc 0/hit  pfx None/None none  'black' ok
+  36   s4 r0 s0  980  ttft  1055.9  e2e  1072.4  enc 1/miss  pfx None/None none  'Green' ok
+  37   s4 r0 s1  980  ttft   894.6  e2e   911.5  enc 0/hit  pfx None/None none  'Cool'
+  38   s4 r0 s2  980  ttft   880.1  e2e   914.3  enc 0/hit  pfx None/None none  'Grass'
+  39   s4 r0 s3  980  ttft   884.5  e2e   900.4  enc 0/hit  pfx None/None none  'Green' ok
+  40   s4 r0 s0  512  ttft   262.8  e2e   280.2  enc 1/miss  pfx None/None none  'yellow' ok
+  41   s4 r0 s1  512  ttft   216.1  e2e   233.4  enc 0/hit  pfx None/None none  'warm'
+  42   s4 r0 s2  512  ttft   227.3  e2e   244.5  enc 0/hit  pfx None/None none  'sun'
+  43   s4 r0 s3  512  ttft   214.1  e2e   230.6  enc 0/hit  pfx None/None none  'yellow' ok
+  44   s1 r1 s0  980  ttft  1061.0  e2e  1077.3  enc 1/miss  pfx None/None none  'Purple' ok
+  45   s1 r1 s1  980  ttft   889.5  e2e  1131.2  enc 0/hit  pfx None/None none  'Yes, the image is predominantl'
+  46   s1 r1 s2  980  ttft   890.0  e2e  1029.0  enc 0/hit  pfx None/None none  'Solid purple background, no ob'
+  47   s1 r1 s3  980  ttft   890.4  e2e   924.8  enc 0/hit  pfx None/None none  'No.'
+  48   s1 r1 s4  980  ttft   888.9  e2e   923.3  enc 0/hit  pfx None/None none  'Purple Background'
+  49   s1 r1 s0  512  ttft   240.7  e2e   258.0  enc 1/miss  pfx None/None none  'blue' ok
+  50   s1 r1 s1  512  ttft   202.3  e2e   473.4  enc 0/hit  pfx None/None none  'Yes, the image is predominantl'
+  51   s1 r1 s2  512  ttft   216.6  e2e   354.3  enc 0/hit  pfx None/None none  'Solid blue background, no obje'
+  52   s1 r1 s3  512  ttft   220.0  e2e   255.4  enc 0/hit  pfx None/None none  'No.'
+  53   s1 r1 s4  512  ttft   216.4  e2e   258.1  enc 0/hit  pfx None/None none  'Blue background'
+  54   s3 r1 s0  512  ttft   260.3  e2e   276.9  enc 1/miss  pfx None/None none  'yellow' ok
+  55   s3 r1 s1  512  ttft   264.4  e2e   281.6  enc 1/miss  pfx None/None none  'black' ok
+  56   s3 r1 s2  512  ttft   239.2  e2e   256.9  enc 1/miss  pfx None/None none  'Blue' ok
+  57   s3 r1 s3  512  ttft   256.9  e2e   274.6  enc 1/miss  pfx None/None none  'Red' ok
+  58   s3 r1 s4  512  ttft   232.9  e2e   251.1  enc 1/miss  pfx None/None none  'yellow' ok
+  59   s3 r1 s0  980  ttft  1038.9  e2e  1055.6  enc 1/miss  pfx None/None none  'Green' ok
+  60   s3 r1 s1  980  ttft  1046.1  e2e  1063.1  enc 1/miss  pfx None/None none  'Blue' ok
+  61   s3 r1 s2  980  ttft  1055.5  e2e  1073.6  enc 1/miss  pfx None/None none  'Orange' ok
+  62   s3 r1 s3  980  ttft  1030.2  e2e  1046.8  enc 1/miss  pfx None/None none  'Red' ok
+  63   s3 r1 s4  980  ttft  1063.7  e2e  1080.3  enc 1/miss  pfx None/None none  'Orange' ok
+  64   s2 r1 s0  980  ttft  1050.4  e2e  1067.4  enc 1/miss  pfx None/None none  'Green' ok
+  65   s2 r1 s1  980  ttft   896.6  e2e   912.7  enc 0/hit  pfx None/None none  'Green' ok
+  66   s2 r1 s2  980  ttft   883.7  e2e   899.8  enc 0/hit  pfx None/None none  'Green' ok
+  67   s2 r1 s3  980  ttft   886.9  e2e   903.2  enc 0/hit  pfx None/None none  'Green' ok
+  68   s2 r1 s4  980  ttft   887.9  e2e   904.8  enc 0/hit  pfx None/None none  'Green' ok
+  69   s2 r1 s0  512  ttft   232.0  e2e   249.5  enc 1/miss  pfx None/None none  'orange' ok
+  70   s2 r1 s1  512  ttft   219.5  e2e   237.6  enc 0/hit  pfx None/None none  'Orange' ok
+  71   s2 r1 s2  512  ttft   221.2  e2e   238.8  enc 0/hit  pfx None/None none  'Orange' ok
+  72   s2 r1 s3  512  ttft   204.6  e2e   222.3  enc 0/hit  pfx None/None none  'Orange' ok
+  73   s2 r1 s4  512  ttft   209.4  e2e   227.2  enc 0/hit  pfx None/None none  'orange' ok
+  74   s4 r1 s0  980  ttft  1065.9  e2e  1082.5  enc 1/miss  pfx None/None none  'black' ok
+  75   s4 r1 s1  980  ttft   898.3  e2e   914.7  enc 0/hit  pfx None/None none  'cool'
+  76   s4 r1 s2  980  ttft   869.9  e2e   887.6  enc 0/hit  pfx None/None none  'space'
+  77   s4 r1 s3  980  ttft   898.7  e2e   915.3  enc 0/hit  pfx None/None none  'black' ok
+  78   s4 r1 s0  512  ttft   247.8  e2e   265.4  enc 1/miss  pfx None/None none  'blue' ok
+  79   s4 r1 s1  512  ttft   199.4  e2e   217.0  enc 0/hit  pfx None/None none  'cool'
+  80   s4 r1 s2  512  ttft   203.0  e2e   220.8  enc 0/hit  pfx None/None none  'sky'
+  81   s4 r1 s3  512  ttft   235.9  e2e   252.8  enc 0/hit  pfx None/None none  'blue' ok
+  82   s3 r2 s0  980  ttft  1045.5  e2e  1063.0  enc 1/miss  pfx None/None none  'blue' ok
+  83   s3 r2 s1  980  ttft  1056.3  e2e  1072.1  enc 1/miss  pfx None/None none  'Red' ok
+  84   s3 r2 s2  980  ttft  1048.5  e2e  1065.3  enc 1/miss  pfx None/None none  'Red' ok
+  85   s3 r2 s3  980  ttft  1049.7  e2e  1066.4  enc 1/miss  pfx None/None none  'Purple' ok
+  86   s3 r2 s4  980  ttft  1060.7  e2e  1077.5  enc 1/miss  pfx None/None none  'White' ok
+  87   s3 r2 s0  512  ttft   260.9  e2e   278.4  enc 1/miss  pfx None/None none  'black' ok
+  88   s3 r2 s1  512  ttft   254.2  e2e   271.8  enc 1/miss  pfx None/None none  'orange' ok
+  89   s3 r2 s2  512  ttft   234.2  e2e   252.1  enc 1/miss  pfx None/None none  'Purple' ok
+  90   s3 r2 s3  512  ttft   250.3  e2e   267.5  enc 1/miss  pfx None/None none  'orange' ok
+  91   s3 r2 s4  512  ttft   256.7  e2e   266.6  enc 1/miss  pfx None/None none  'orange' ok
+  92   s2 r2 s0  980  ttft  1058.6  e2e  1075.8  enc 1/miss  pfx None/None none  'Green' ok
+  93   s2 r2 s1  980  ttft   896.7  e2e   913.7  enc 0/hit  pfx None/None none  'Green' ok
+  94   s2 r2 s2  980  ttft   896.6  e2e   912.8  enc 0/hit  pfx None/None none  'Green' ok
+  95   s2 r2 s3  980  ttft   900.9  e2e   919.1  enc 0/hit  pfx None/None none  'Green' ok
+  96   s2 r2 s4  980  ttft   901.8  e2e   918.2  enc 0/hit  pfx None/None none  'Green' ok
+  97   s4 r2 s0  512  ttft   262.3  e2e   279.8  enc 1/miss  pfx None/None none  'Green' ok
+  98   s4 r2 s1  512  ttft   231.2  e2e   248.3  enc 0/hit  pfx None/None none  'Cool'
+  99   s4 r2 s2  512  ttft   231.8  e2e   266.5  enc 0/hit  pfx None/None none  'Grass'
+ 100   s4 r2 s3  512  ttft   235.5  e2e   253.4  enc 0/hit  pfx None/None none  'Green' ok
+ 101   s1 r2 s0  512  ttft   228.4  e2e   246.2  enc 1/miss  pfx None/None none  'White' ok
+ 102   s1 r2 s1  512  ttft   191.0  e2e   362.5  enc 0/hit  pfx None/None none  'Yes, the image is mostly a sin'
+ 103   s1 r2 s2  512  ttft   192.4  e2e   330.4  enc 0/hit  pfx None/None none  'Blank white background, no vis'
+ 104   s1 r2 s3  512  ttft   185.9  e2e   203.0  enc 0/hit  pfx None/None none  'No'
+ 105   s1 r2 s4  512  ttft   220.1  e2e   254.8  enc 0/hit  pfx None/None none  'Blank Image'
+ 106   s1 r2 s0  980  ttft  1061.3  e2e  1079.0  enc 1/miss  pfx None/None none  'Green' ok
+ 107   s1 r2 s1  980  ttft   896.7  e2e  1190.4  enc 0/hit  pfx None/None none  'Yes, the image is predominantl'
+ 108   s1 r2 s2  980  ttft   892.2  e2e  1031.3  enc 0/hit  pfx None/None none  'Solid green background, no obj'
+ 109   s1 r2 s3  980  ttft   892.4  e2e   926.9  enc 0/hit  pfx None/None none  'No.'
+ 110   s1 r2 s4  980  ttft   888.6  e2e   923.0  enc 0/hit  pfx None/None none  'Green Background'
+ 111   s4 r2 s0  980  ttft  1068.4  e2e  1085.1  enc 1/miss  pfx None/None none  'Purple' ok
+ 112   s4 r2 s1  980  ttft   877.6  e2e   894.2  enc 0/hit  pfx None/None none  'Cool'
+ 113   s4 r2 s2  980  ttft   893.6  e2e   945.9  enc 0/hit  pfx None/None none  'Grapes'
+ 114   s4 r2 s3  980  ttft   909.6  e2e   926.1  enc 0/hit  pfx None/None none  'Purple' ok
+ 115   s2 r2 s0  512  ttft   264.8  e2e   282.2  enc 1/miss  pfx None/None none  'Red' ok
+ 116   s2 r2 s1  512  ttft   202.9  e2e   219.8  enc 0/hit  pfx None/None none  'Red' ok
+ 117   s2 r2 s2  512  ttft   219.3  e2e   236.0  enc 0/hit  pfx None/None none  'Red' ok
+ 118   s2 r2 s3  512  ttft   193.8  e2e   211.0  enc 0/hit  pfx None/None none  'Red' ok
+ 119   s2 r2 s4  512  ttft   216.0  e2e   233.5  enc 0/hit  pfx None/None none  'red' ok
+ 120   s2 r3 s0  980  ttft  1062.8  e2e  1078.4  enc 1/miss  pfx None/None none  'White' ok
+ 121   s2 r3 s1  980  ttft   876.9  e2e   894.1  enc 0/hit  pfx None/None none  'White' ok
+ 122   s2 r3 s2  980  ttft   890.5  e2e   907.2  enc 0/hit  pfx None/None none  'White' ok
+ 123   s2 r3 s3  980  ttft   894.2  e2e   911.1  enc 0/hit  pfx None/None none  'White' ok
+ 124   s2 r3 s4  980  ttft   892.3  e2e   910.0  enc 0/hit  pfx None/None none  'white' ok
+ 125   s4 r3 s0  980  ttft  1061.6  e2e  1078.8  enc 1/miss  pfx None/None none  'Red' ok
+ 126   s4 r3 s1  980  ttft   895.8  e2e   912.2  enc 0/hit  pfx None/None none  'Warm'
+ 127   s4 r3 s2  980  ttft   878.3  e2e   894.9  enc 0/hit  pfx None/None none  'Apple'
+ 128   s4 r3 s3  980  ttft   899.2  e2e   916.1  enc 0/hit  pfx None/None none  'Red' ok
+ 129   s1 r3 s0  980  ttft  1059.6  e2e  1076.0  enc 1/miss  pfx None/None none  'Green' ok
+ 130   s1 r3 s1  980  ttft   871.5  e2e  1097.7  enc 0/hit  pfx None/None none  'Yes, the image is predominantl'
+ 131   s1 r3 s2  980  ttft   892.9  e2e  1050.7  enc 0/hit  pfx None/None none  'Solid green background, no obj'
+ 132   s1 r3 s3  980  ttft   892.4  e2e   926.7  enc 0/hit  pfx None/None none  'No.'
+ 133   s1 r3 s4  980  ttft   889.1  e2e   923.7  enc 0/hit  pfx None/None none  'Green Background'
+ 134   s2 r3 s0  512  ttft   258.5  e2e   275.7  enc 1/miss  pfx None/None none  'Green' ok
+ 135   s2 r3 s1  512  ttft   214.0  e2e   231.3  enc 0/hit  pfx None/None none  'Green' ok
+ 136   s2 r3 s2  512  ttft   215.7  e2e   232.2  enc 0/hit  pfx None/None none  'Green' ok
+ 137   s2 r3 s3  512  ttft   219.9  e2e   237.4  enc 0/hit  pfx None/None none  'Green' ok
+ 138   s2 r3 s4  512  ttft   218.2  e2e   236.9  enc 0/hit  pfx None/None none  'green' ok
+ 139   s4 r3 s0  512  ttft   266.1  e2e   283.7  enc 1/miss  pfx None/None none  'Purple' ok
+ 140   s4 r3 s1  512  ttft   235.8  e2e   253.4  enc 0/hit  pfx None/None none  'Cool'
+ 141   s4 r3 s2  512  ttft   223.1  e2e   275.0  enc 0/hit  pfx None/None none  'Grapes'
+ 142   s4 r3 s3  512  ttft   223.9  e2e   241.7  enc 0/hit  pfx None/None none  'Purple' ok
+ 143   s3 r3 s0  980  ttft  1051.7  e2e  1069.4  enc 1/miss  pfx None/None none  'Purple' ok
+ 144   s3 r3 s1  980  ttft  1059.4  e2e  1077.2  enc 1/miss  pfx None/None none  'White' ok
+ 145   s3 r3 s2  980  ttft  1056.2  e2e  1073.9  enc 1/miss  pfx None/None none  'Orange' ok
+ 146   s3 r3 s3  980  ttft  1068.7  e2e  1085.5  enc 1/miss  pfx None/None none  'White' ok
+ 147   s3 r3 s4  980  ttft  1065.7  e2e  1081.3  enc 1/miss  pfx None/None none  'Yellow' ok
+ 148   s1 r3 s0  512  ttft   267.0  e2e   284.1  enc 1/miss  pfx None/None none  'yellow' ok
+ 149   s1 r3 s1  512  ttft   223.9  e2e   494.5  enc 0/hit  pfx None/None none  'Yes, the image is predominantl'
+ 150   s1 r3 s2  512  ttft   208.4  e2e   345.6  enc 0/hit  pfx None/None none  'Solid yellow background, no ob'
+ 151   s1 r3 s3  512  ttft   221.3  e2e   255.6  enc 0/hit  pfx None/None none  'No.'
+ 152   s1 r3 s4  512  ttft   224.1  e2e   259.8  enc 0/hit  pfx None/None none  'Yellow Background'
+ 153   s3 r3 s0  512  ttft   255.7  e2e   273.7  enc 1/miss  pfx None/None none  'Red' ok
+ 154   s3 r3 s1  512  ttft   257.4  e2e   275.2  enc 1/miss  pfx None/None none  'Purple' ok
+ 155   s3 r3 s2  512  ttft   252.3  e2e   270.2  enc 1/miss  pfx None/None none  'yellow' ok
+ 156   s3 r3 s3  512  ttft   262.5  e2e   279.8  enc 1/miss  pfx None/None none  'Purple' ok
+ 157   s3 r3 s4  512  ttft   257.8  e2e   275.5  enc 1/miss  pfx None/None none  'White' ok
+ 158   s1 r4 s0  512  ttft   257.6  e2e   275.1  enc 1/miss  pfx None/None none  'black' ok
+ 159   s1 r4 s1  512  ttft   217.0  e2e   488.1  enc 0/hit  pfx None/None none  'Yes, the image is predominantl'
+ 160   s1 r4 s2  512  ttft   220.5  e2e   341.4  enc 0/hit  pfx None/None none  'Black background, no visible c'
+ 161   s1 r4 s3  512  ttft   215.7  e2e   251.4  enc 0/hit  pfx None/None none  'No.'
+ 162   s1 r4 s4  512  ttft   219.2  e2e   253.6  enc 0/hit  pfx None/None none  'Black Background'
+ 163   s4 r4 s0  512  ttft   254.1  e2e   272.0  enc 1/miss  pfx None/None none  'Blue' ok
+ 164   s4 r4 s1  512  ttft   234.4  e2e   251.6  enc 0/hit  pfx None/None none  'Cool'
+ 165   s4 r4 s2  512  ttft   225.8  e2e   243.7  enc 0/hit  pfx None/None none  'Sky'
+ 166   s4 r4 s3  512  ttft   231.0  e2e   248.1  enc 0/hit  pfx None/None none  'Blue' ok
+ 167   s4 r4 s0  980  ttft  1056.7  e2e  1073.2  enc 1/miss  pfx None/None none  'Red' ok
+ 168   s4 r4 s1  980  ttft   901.7  e2e   918.2  enc 0/hit  pfx None/None none  'Warm'
+ 169   s4 r4 s2  980  ttft   914.5  e2e   932.2  enc 0/hit  pfx None/None none  'Apple'
+ 170   s4 r4 s3  980  ttft   895.4  e2e   911.8  enc 0/hit  pfx None/None none  'Red' ok
+ 171   s1 r4 s0  980  ttft  1040.1  e2e  1057.4  enc 1/miss  pfx None/None none  'blue' ok
+ 172   s1 r4 s1  980  ttft   903.3  e2e  1145.9  enc 0/hit  pfx None/None none  'Yes, the image is predominantl'
+ 173   s1 r4 s2  980  ttft   872.8  e2e  1011.9  enc 0/hit  pfx None/None none  'Solid blue background, no obje'
+ 174   s1 r4 s3  980  ttft   885.6  e2e   920.9  enc 0/hit  pfx None/None none  'No.'
+ 175   s1 r4 s4  980  ttft   869.8  e2e   903.9  enc 0/hit  pfx None/None none  'Blue Sky'
+ 176   s3 r4 s0  512  ttft   221.0  e2e   239.3  enc 1/miss  pfx None/None none  'Blue' ok
+ 177   s3 r4 s1  512  ttft   226.7  e2e   244.8  enc 1/miss  pfx None/None none  'blue' ok
+ 178   s3 r4 s2  512  ttft   257.0  e2e   274.8  enc 1/miss  pfx None/None none  'Red' ok
+ 179   s3 r4 s3  512  ttft   257.9  e2e   274.9  enc 1/miss  pfx None/None none  'Green' ok
+ 180   s3 r4 s4  512  ttft   258.1  e2e   275.7  enc 1/miss  pfx None/None none  'Green' ok
+ 181   s2 r4 s0  512  ttft   252.6  e2e   270.4  enc 1/miss  pfx None/None none  'White' ok
+ 182   s2 r4 s1  512  ttft   218.9  e2e   236.5  enc 0/hit  pfx None/None none  'White' ok
+ 183   s2 r4 s2  512  ttft   197.2  e2e   214.5  enc 0/hit  pfx None/None none  'White' ok
+ 184   s2 r4 s3  512  ttft   215.2  e2e   232.9  enc 0/hit  pfx None/None none  'White' ok
+ 185   s2 r4 s4  512  ttft   210.1  e2e   227.9  enc 0/hit  pfx None/None none  'white' ok
+ 186   s2 r4 s0  980  ttft  1048.4  e2e  1065.6  enc 1/miss  pfx None/None none  'Purple' ok
+ 187   s2 r4 s1  980  ttft   864.7  e2e   899.3  enc 0/hit  pfx None/None none  'Purple.' ok
+ 188   s2 r4 s2  980  ttft   887.2  e2e   905.0  enc 0/hit  pfx None/None none  'Purple' ok
+ 189   s2 r4 s3  980  ttft   889.9  e2e   906.1  enc 0/hit  pfx None/None none  'Purple' ok
+ 190   s2 r4 s4  980  ttft   889.1  e2e   905.8  enc 0/hit  pfx None/None none  'purple' ok
+ 191   s3 r4 s0  980  ttft  1051.9  e2e  1069.0  enc 1/miss  pfx None/None none  'Purple' ok
+ 192   s3 r4 s1  980  ttft  1045.4  e2e  1061.9  enc 1/miss  pfx None/None none  'black' ok
+ 193   s3 r4 s2  980  ttft  1060.9  e2e  1077.6  enc 1/miss  pfx None/None none  'Purple' ok
+ 194   s3 r4 s3  980  ttft  1044.5  e2e  1061.4  enc 1/miss  pfx None/None none  'Red' ok
+ 195   s3 r4 s4  980  ttft  1053.3  e2e  1069.7  enc 1/miss  pfx None/None none  'White' ok
+ 196   s1 r5 s0  980  ttft  1058.7  e2e  1076.0  enc 1/miss  pfx None/None none  'blue' ok
+ 197   s1 r5 s1  980  ttft   887.6  e2e  1130.6  enc 0/hit  pfx None/None none  'Yes, the image is predominantl'
+ 198   s1 r5 s2  980  ttft   889.9  e2e  1029.3  enc 0/hit  pfx None/None none  'Solid blue background, no obje'
+ 199   s1 r5 s3  980  ttft   899.2  e2e   933.8  enc 0/hit  pfx None/None none  'No.'
+ 200   s1 r5 s4  980  ttft   891.8  e2e   926.4  enc 0/hit  pfx None/None none  'Blue Sky'
+ 201   s2 r5 s0  980  ttft  1045.0  e2e  1061.6  enc 1/miss  pfx None/None none  'Blue' ok
+ 202   s2 r5 s1  980  ttft   893.7  e2e   910.9  enc 0/hit  pfx None/None none  'Blue' ok
+ 203   s2 r5 s2  980  ttft   894.6  e2e   911.9  enc 0/hit  pfx None/None none  'Blue' ok
+ 204   s2 r5 s3  980  ttft   889.9  e2e   906.7  enc 0/hit  pfx None/None none  'Blue' ok
+ 205   s2 r5 s4  980  ttft   902.6  e2e   919.5  enc 0/hit  pfx None/None none  'blue' ok
+ 206   s3 r5 s0  980  ttft  1063.1  e2e  1079.6  enc 1/miss  pfx None/None none  'black' ok
+ 207   s3 r5 s1  980  ttft  1058.8  e2e  1076.3  enc 1/miss  pfx None/None none  'blue' ok
+ 208   s3 r5 s2  980  ttft  1060.4  e2e  1078.5  enc 1/miss  pfx None/None none  'Purple' ok
+ 209   s3 r5 s3  980  ttft  1068.5  e2e  1086.4  enc 1/miss  pfx None/None none  'White' ok
+ 210   s3 r5 s4  980  ttft  1073.9  e2e  1090.8  enc 1/miss  pfx None/None none  'Orange' ok
+ 211   s1 r5 s0  512  ttft   251.0  e2e   268.5  enc 1/miss  pfx None/None none  'Red' ok
+ 212   s1 r5 s1  512  ttft   195.2  e2e   718.9  enc 0/hit  pfx None/None none  'Yes, the image is predominantl'
+ 213   s1 r5 s2  512  ttft   216.9  e2e   353.3  enc 0/hit  pfx None/None none  'Solid red background, no objec'
+ 214   s1 r5 s3  512  ttft   218.8  e2e   253.2  enc 0/hit  pfx None/None none  'No.'
+ 215   s1 r5 s4  512  ttft   214.9  e2e   250.6  enc 0/hit  pfx None/None none  'Red Background'
+ 216   s2 r5 s0  512  ttft   261.5  e2e   278.7  enc 1/miss  pfx None/None none  'Red' ok
+ 217   s2 r5 s1  512  ttft   220.6  e2e   238.5  enc 0/hit  pfx None/None none  'Red' ok
+ 218   s2 r5 s2  512  ttft   225.2  e2e   242.6  enc 0/hit  pfx None/None none  'Red' ok
+ 219   s2 r5 s3  512  ttft   201.6  e2e   219.1  enc 0/hit  pfx None/None none  'Red' ok
+ 220   s2 r5 s4  512  ttft   212.2  e2e   229.6  enc 0/hit  pfx None/None none  'red' ok
+ 221   s3 r5 s0  512  ttft   255.2  e2e   272.0  enc 1/miss  pfx None/None none  'Red' ok
+ 222   s3 r5 s1  512  ttft   256.0  e2e   274.2  enc 1/miss  pfx None/None none  'Blue' ok
+ 223   s3 r5 s2  512  ttft   235.4  e2e   253.7  enc 1/miss  pfx None/None none  'Green' ok
+ 224   s3 r5 s3  512  ttft   238.7  e2e   255.7  enc 1/miss  pfx None/None none  'yellow' ok
+ 225   s3 r5 s4  512  ttft   226.1  e2e   243.3  enc 1/miss  pfx None/None none  'Purple' ok
+ 226   s4 r5 s0  512  ttft   256.4  e2e   273.0  enc 1/miss  pfx None/None none  'White' ok
+ 227   s4 r5 s1  512  ttft   206.6  e2e   223.8  enc 0/hit  pfx None/None none  'Cool'
+ 228   s4 r5 s2  512  ttft   231.7  e2e   266.4  enc 0/hit  pfx None/None none  'Clouds'
+ 229   s4 r5 s3  512  ttft   230.2  e2e   247.4  enc 0/hit  pfx None/None none  'White' ok
+ 230   s4 r5 s0  980  ttft  1050.2  e2e  1067.5  enc 1/miss  pfx None/None none  'Green' ok
+ 231   s4 r5 s1  980  ttft   901.7  e2e   917.9  enc 0/hit  pfx None/None none  'Cool'
+ 232   s4 r5 s2  980  ttft   879.5  e2e   914.1  enc 0/hit  pfx None/None none  'Grass'
+ 233   s4 r5 s3  980  ttft   899.6  e2e   916.8  enc 0/hit  pfx None/None none  'Green' ok
+ 234   s2 r6 s0  512  ttft   231.8  e2e   249.5  enc 1/miss  pfx None/None none  'Green' ok
+ 235   s2 r6 s1  512  ttft   189.1  e2e   206.9  enc 0/hit  pfx None/None none  'Green' ok
+ 236   s2 r6 s2  512  ttft   217.2  e2e   234.1  enc 0/hit  pfx None/None none  'Green' ok
+ 237   s2 r6 s3  512  ttft   217.2  e2e   234.9  enc 0/hit  pfx None/None none  'Green' ok
+ 238   s2 r6 s4  512  ttft   221.4  e2e   238.7  enc 0/hit  pfx None/None none  'green' ok
+ 239   s3 r6 s0  512  ttft   256.6  e2e   274.4  enc 1/miss  pfx None/None none  'yellow' ok
+ 240   s3 r6 s1  512  ttft   260.3  e2e   278.1  enc 1/miss  pfx None/None none  'Blue' ok
+ 241   s3 r6 s2  512  ttft   231.6  e2e   249.0  enc 1/miss  pfx None/None none  'Red' ok
+ 242   s3 r6 s3  512  ttft   253.0  e2e   271.1  enc 1/miss  pfx None/None none  'White' ok
+ 243   s3 r6 s4  512  ttft   253.4  e2e   271.3  enc 1/miss  pfx None/None none  'yellow' ok
+ 244   s4 r6 s0  980  ttft  1061.2  e2e  1078.3  enc 1/miss  pfx None/None none  'Orange' ok
+ 245   s4 r6 s1  980  ttft   901.9  e2e   918.3  enc 0/hit  pfx None/None none  'Warm'
+ 246   s4 r6 s2  980  ttft   884.3  e2e   900.1  enc 0/hit  pfx None/None none  'Orange'
+ 247   s4 r6 s3  980  ttft   879.2  e2e   896.3  enc 0/hit  pfx None/None none  'Orange' ok
+ 248   s4 r6 s0  512  ttft   260.0  e2e   277.5  enc 1/miss  pfx None/None none  'Blue' ok
+ 249   s4 r6 s1  512  ttft   231.4  e2e   248.6  enc 0/hit  pfx None/None none  'Cool'
+ 250   s4 r6 s2  512  ttft   209.6  e2e   226.9  enc 0/hit  pfx None/None none  'Sky'
+ 251   s4 r6 s3  512  ttft   226.8  e2e   244.0  enc 0/hit  pfx None/None none  'Blue' ok
+ 252   s1 r6 s0  512  ttft   232.8  e2e   250.4  enc 1/miss  pfx None/None none  'White' ok
+ 253   s1 r6 s1  512  ttft   214.0  e2e   384.7  enc 0/hit  pfx None/None none  'Yes, the image is mostly a sin'
+ 254   s1 r6 s2  512  ttft   198.1  e2e   335.0  enc 0/hit  pfx None/None none  'Blank white background, no vis'
+ 255   s1 r6 s3  512  ttft   213.6  e2e   248.6  enc 0/hit  pfx None/None none  'No.'
+ 256   s1 r6 s4  512  ttft   219.6  e2e   254.4  enc 0/hit  pfx None/None none  'Blank Canvas'
+ 257   s2 r6 s0  980  ttft  1063.9  e2e  1080.4  enc 1/miss  pfx None/None none  'Orange' ok
+ 258   s2 r6 s1  980  ttft   886.0  e2e   902.7  enc 0/hit  pfx None/None none  'Orange' ok
+ 259   s2 r6 s2  980  ttft   887.3  e2e   903.9  enc 0/hit  pfx None/None none  'Orange' ok
+ 260   s2 r6 s3  980  ttft   876.1  e2e   893.2  enc 0/hit  pfx None/None none  'Orange' ok
+ 261   s2 r6 s4  980  ttft   898.6  e2e   915.6  enc 0/hit  pfx None/None none  'orange' ok
+ 262   s3 r6 s0  980  ttft  1057.1  e2e  1075.0  enc 1/miss  pfx None/None none  'White' ok
+ 263   s3 r6 s1  980  ttft  1063.4  e2e  1081.4  enc 1/miss  pfx None/None none  'blue' ok
+ 264   s3 r6 s2  980  ttft  1047.2  e2e  1064.2  enc 1/miss  pfx None/None none  'Green' ok
+ 265   s3 r6 s3  980  ttft  1064.5  e2e  1082.0  enc 1/miss  pfx None/None none  'Green' ok
+ 266   s3 r6 s4  980  ttft  1052.8  e2e  1069.3  enc 1/miss  pfx None/None none  'Green' ok
+ 267   s1 r6 s0  980  ttft  1057.6  e2e  1074.7  enc 1/miss  pfx None/None none  'black' ok
+ 268   s1 r6 s1  980  ttft   892.1  e2e  1168.7  enc 0/hit  pfx None/None none  'Yes, the image is predominantl'
+ 269   s1 r6 s2  980  ttft   894.8  e2e  1016.5  enc 0/hit  pfx None/None none  'Black background, no visible c'
+ 270   s1 r6 s3  980  ttft   885.4  e2e   920.2  enc 0/hit  pfx None/None none  'No.'
+ 271   s1 r6 s4  980  ttft   872.0  e2e   907.1  enc 0/hit  pfx None/None none  'Black Background'
+ 272   s2 r7 s0  980  ttft  1038.0  e2e  1055.4  enc 1/miss  pfx None/None none  'White' ok
+ 273   s2 r7 s1  980  ttft   904.9  e2e   922.1  enc 0/hit  pfx None/None none  'White' ok
+ 274   s2 r7 s2  980  ttft   890.5  e2e   907.3  enc 0/hit  pfx None/None none  'White' ok
+ 275   s2 r7 s3  980  ttft   867.8  e2e   884.4  enc 0/hit  pfx None/None none  'White' ok
+ 276   s2 r7 s4  980  ttft   905.8  e2e   922.6  enc 0/hit  pfx None/None none  'white' ok
+ 277   s2 r7 s0  512  ttft   255.0  e2e   272.3  enc 1/miss  pfx None/None none  'Blue' ok
+ 278   s2 r7 s1  512  ttft   221.4  e2e   238.6  enc 0/hit  pfx None/None none  'Blue' ok
+ 279   s2 r7 s2  512  ttft   219.5  e2e   237.3  enc 0/hit  pfx None/None none  'Blue' ok
+ 280   s2 r7 s3  512  ttft   222.0  e2e   239.5  enc 0/hit  pfx None/None none  'Blue' ok
+ 281   s2 r7 s4  512  ttft   216.9  e2e   235.0  enc 0/hit  pfx None/None none  'blue' ok
+ 282   s4 r7 s0  512  ttft   257.2  e2e   274.3  enc 1/miss  pfx None/None none  'blue' ok
+ 283   s4 r7 s1  512  ttft   231.2  e2e   248.4  enc 0/hit  pfx None/None none  'cool'
+ 284   s4 r7 s2  512  ttft   232.3  e2e   249.5  enc 0/hit  pfx None/None none  'sky'
+ 285   s4 r7 s3  512  ttft   231.1  e2e   248.3  enc 0/hit  pfx None/None none  'blue' ok
+ 286   s3 r7 s0  512  ttft   234.5  e2e   253.0  enc 1/miss  pfx None/None none  'blue' ok
+ 287   s3 r7 s1  512  ttft   240.1  e2e   257.7  enc 1/miss  pfx None/None none  'Purple' ok
+ 288   s3 r7 s2  512  ttft   257.9  e2e   275.0  enc 1/miss  pfx None/None none  'Red' ok
+ 289   s3 r7 s3  512  ttft   240.1  e2e   257.5  enc 1/miss  pfx None/None none  'black' ok
+ 290   s3 r7 s4  512  ttft   232.0  e2e   249.8  enc 1/miss  pfx None/None none  'Red' ok
+ 291   s1 r7 s0  980  ttft  1060.0  e2e  1078.2  enc 1/miss  pfx None/None none  'Green' ok
+ 292   s1 r7 s1  980  ttft   889.5  e2e  1302.5  enc 0/hit  pfx None/None none  'Yes, the image is predominantl'
+ 293   s1 r7 s2  980  ttft   862.6  e2e  1002.6  enc 0/hit  pfx None/None none  'Solid green background, no obj'
+ 294   s1 r7 s3  980  ttft   883.8  e2e   919.3  enc 0/hit  pfx None/None none  'No.'
+ 295   s1 r7 s4  980  ttft   890.9  e2e   925.2  enc 0/hit  pfx None/None none  'Green Background'
+ 296   s1 r7 s0  512  ttft   265.3  e2e   283.1  enc 1/miss  pfx None/None none  'Green' ok
+ 297   s1 r7 s1  512  ttft   202.8  e2e   724.8  enc 0/hit  pfx None/None none  'Yes, the image is predominantl'
+ 298   s1 r7 s2  512  ttft   225.0  e2e   362.1  enc 0/hit  pfx None/None none  'Solid green background, no obj'
+ 299   s1 r7 s3  512  ttft   216.2  e2e   252.2  enc 0/hit  pfx None/None none  'No.'
+ 300   s1 r7 s4  512  ttft   193.7  e2e   228.3  enc 0/hit  pfx None/None none  'Green Background'
+ 301   s4 r7 s0  980  ttft  1067.8  e2e  1085.9  enc 1/miss  pfx None/None none  'Red' ok
+ 302   s4 r7 s1  980  ttft   888.8  e2e   906.1  enc 0/hit  pfx None/None none  'Warm'
+ 303   s4 r7 s2  980  ttft   889.2  e2e   905.3  enc 0/hit  pfx None/None none  'Apple'
+ 304   s4 r7 s3  980  ttft   903.1  e2e   919.5  enc 0/hit  pfx None/None none  'Red' ok
+ 305   s3 r7 s0  980  ttft  1057.9  e2e  1074.8  enc 1/miss  pfx None/None none  'Yellow' ok
+ 306   s3 r7 s1  980  ttft  1050.1  e2e  1067.8  enc 1/miss  pfx None/None none  'black' ok
+ 307   s3 r7 s2  980  ttft  1039.6  e2e  1057.0  enc 1/miss  pfx None/None none  'White' ok
+ 308   s3 r7 s3  980  ttft  1051.2  e2e  1068.5  enc 1/miss  pfx None/None none  'black' ok
+ 309   s3 r7 s4  980  ttft  1049.8  e2e  1067.5  enc 1/miss  pfx None/None none  'Orange' ok
+wrote results/g1/5880/vllm-omni/pfx0/records.jsonl
+stop: g1-vo-pfx0 已停止
+[18:32:37] 汇总：results/g1/5880/summary.md

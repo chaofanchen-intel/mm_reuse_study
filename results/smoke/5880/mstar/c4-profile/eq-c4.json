@@ -1,0 +1,130 @@
+[
+ {
+  "sid": "eqA",
+  "n": 3,
+  "q": "Describe the colors ",
+  "mode": "full",
+  "text": "Purple\nPurple\nYellow",
+  "same_as_ref": true
+ },
+ {
+  "sid": "eqA",
+  "n": 3,
+  "q": "Describe the colors ",
+  "mode": "c4",
+  "text": "Purple\nPurple\nYellow",
+  "same_as_ref": true
+ },
+ {
+  "sid": "eqA",
+  "n": 3,
+  "q": "How many images are ",
+  "mode": "full",
+  "text": "There are 3 images. The last one is yellow.",
+  "same_as_ref": true
+ },
+ {
+  "sid": "eqA",
+  "n": 3,
+  "q": "How many images are ",
+  "mode": "c4",
+  "text": "There are 3 images. The last one is yellow.",
+  "same_as_ref": true
+ },
+ {
+  "sid": "eqB",
+  "n": 8,
+  "q": "Describe the colors ",
+  "mode": "full",
+  "text": "Yellow\nYellow\nYellow\nYellow\nOrange\nOrange\nWhite\nWhite",
+  "same_as_ref": true
+ },
+ {
+  "sid": "eqB",
+  "n": 8,
+  "q": "Describe the colors ",
+  "mode": "c4",
+  "text": "Yellow\nYellow\nYellow\nYellow\nOrange\nOrange\nWhite\nWhite",
+  "same_as_ref": true
+ },
+ {
+  "sid": "eqB",
+  "n": 8,
+  "q": "How many images are ",
+  "mode": "full",
+  "text": "There are 8 images. The last one is white.",
+  "same_as_ref": true
+ },
+ {
+  "sid": "eqB",
+  "n": 8,
+  "q": "How many images are ",
+  "mode": "c4",
+  "text": "There are 8 images. The last one is white.",
+  "same_as_ref": true
+ },
+ {
+  "sid": "eqC",
+  "n": 8,
+  "q": "Describe the colors ",
+  "mode": "full",
+  "text": "Blue\nBlue\nYellow\nYellow\nBlack\nBlack\nGreen\nGreen",
+  "same_as_ref": true
+ },
+ {
+  "sid": "eqC",
+  "n": 8,
+  "q": "Describe the colors ",
+  "mode": "c4",
+  "text": "Blue\nBlue\nYellow\nYellow\nBlack\nBlack\nGreen\nGreen",
+  "same_as_ref": true
+ },
+ {
+  "sid": "eqC",
+  "n": 8,
+  "q": "How many images are ",
+  "mode": "full",
+  "text": "There are 8 images. The last one is green.",
+  "same_as_ref": true
+ },
+ {
+  "sid": "eqC",
+  "n": 8,
+  "q": "How many images are ",
+  "mode": "c4",
+  "text": "There are 8 images. The last one is green.",
+  "same_as_ref": true
+ },
+ {
+  "sid": "eqD",
+  "n": 20,
+  "q": "Describe the colors ",
+  "mode": "full",
+  "text": "Purple\nPurple\nBlue\nBlue\nOrange\nOrange\nYellow\nYellow\nOrange\nOrange\nBlack\nBlack\nRed\nRed\nBlue\nBlue\nRed\nRed\nWhite\nWhite",
+  "same_as_ref": true
+ },
+ {
+  "sid": "eqD",
+  "n": 20,
+  "q": "Describe the colors ",
+  "mode": "c4",
+  "text": "Purple\nPurple\nBlue\nBlue\nOrange\nOrange\nYellow\nYellow\nOrange\nOrange\nBlack\nBlack\nRed\nRed\nBlue\nBlue\nRed\nRed\nWhite\nWhite",
+  "same_as_ref": true
+ },
+ {
+  "sid": "eqD",
+  "n": 20,
+  "q": "How many images are ",
+  "mode": "full",
+  "text": "There are 20 images. The last one is white.",
+  "same_as_ref": true
+ },
+ {
+  "sid": "eqD",
+  "n": 20,
+  "q": "How many images are ",
+  "mode": "c4",
+  "text": "There are 20 images. The last one is white.",
+  "same_as_ref": true
+ }
+]

@@ -1,0 +1,579 @@
+============================================================
+ Request profile: chatcmpl-2e92f69ff1b941d7886d990bb55a6e65
+============================================================
+ Inputs:
+   text         x1          77 B
+   image        x48      3.4 MiB
+ Outputs:
+   text         x2          10 B
+------------------------------------------------------------
+ Timeline:
+   recv → preprocess done                      496.1 ms
+   preprocess done → conductor ingest            2.8 ms
+   conductor ingest → first chunk             3070.2 ms
+   first chunk → conductor done                 11.1 ms
+   conductor done → last chunk                   0.1 ms
+   last chunk → finish                           1.1 ms
+   total                                      3581.4 ms
+   worker span (same-host clocks)             2988.9 ms
+   last chunk after last output read            11.7 ms
+   output postprocess (sum)                      0.4 ms
+------------------------------------------------------------
+ Graph timings (CPU, ms) — total over request (avg per exec):
+                                       all                 fwd                 pre                post*        
+   Thinker
+     prefill_text       n=1          51.9 (   51.9)      44.7 (   44.7)      6.28 (   6.28)      0.95 (   0.95)
+     prefill_vision     n=3        1496.4 (  498.8)    1488.2 (  496.1)      6.87 (   2.29)      1.27 (   0.42)
+     thinker_text_decode n=1         9.00 (   9.00)      7.84 (   7.84)      0.73 (   0.73)      0.43 (   0.43)
+   vision_encoder
+     prefill_vision     n=3        1226.8 (  408.9)    1143.8 (  381.3)      11.4 (   3.81)      71.6 (   23.9)
+
+   * post overlaps the next step / another in-flight batch under
+     speculative scheduling, so it is not necessarily additive.
+------------------------------------------------------------
+ Tensor transfer   size / transport-time / count:
+   rx (received over the wire), by source → dest:
+     api_server_preprocess_worker → worker_0
+       image_grid_thw            1.1 KiB      0.74 ms  (x3)
+       text_inputs                 224 B      67.0 ms  (x2)
+     api_server_preprocess_worker → worker_1
+       image_grid_thw            1.1 KiB      0.75 ms  (x3)
+       text_inputs                 224 B      64.8 ms  (x2)
+     api_server_preprocess_worker → worker_2
+       image_grid_thw            1.1 KiB      13.4 ms  (x3)
+       image_keys                  768 B      13.4 ms  (x3)
+       pixel_values            168.8 MiB      13.4 ms  (x3)
+     worker_0 → api_server_preprocess_worker
+       text_output                   8 B      0.21 ms  (x1)
+     worker_2 → worker_0
+       deepstack               168.8 MiB      19.0 ms  (x9)
+       vision_embeds            56.2 MiB      19.0 ms  (x3)
+     worker_2 → worker_1
+       deepstack               168.8 MiB      18.7 ms  (x9)
+       vision_embeds            56.2 MiB      18.7 ms  (x3)
+
+   tx (registered/written for send), by source:
+     api_server_preprocess_worker
+       image_grid_thw.0            384 B      0.03 ms  (x1)
+       image_grid_thw.16           384 B      0.01 ms  (x1)
+       image_grid_thw.32           384 B      0.01 ms  (x1)
+       image_keys.0                256 B      0.01 ms  (x1)
+       image_keys.16               256 B      0.01 ms  (x1)
+       image_keys.32               256 B      0.01 ms  (x1)
+       pixel_values.0           56.2 MiB      34.0 ms  (x1)
+       pixel_values.16          56.2 MiB      27.0 ms  (x1)
+       pixel_values.32          56.2 MiB      27.0 ms  (x1)
+       text_inputs.0               184 B      0.41 ms  (x1)
+       text_inputs.3                40 B      0.09 ms  (x1)
+     worker_0
+       new_token                     8 B      0.06 ms  (x1)
+     worker_1
+       new_token                     8 B      0.08 ms  (x1)
+     worker_2
+       deepstack               168.8 MiB      22.1 ms  (x9)
+       vision_embeds            56.2 MiB      7.03 ms  (x3)
+============================================================
+============================================================
+ Request profile: chatcmpl-51048552b3924297b1f3b177a1ef5435
+============================================================
+ Inputs:
+   text         x1          77 B
+   image        x48      3.4 MiB
+ Outputs:
+   text         x2          10 B
+------------------------------------------------------------
+ Timeline:
+   recv → preprocess done                       56.9 ms
+   preprocess done → conductor ingest            0.4 ms
+   conductor ingest → first chunk              143.4 ms
+   first chunk → last chunk                     11.8 ms
+   last chunk → conductor done                   0.1 ms
+   conductor done → finish                       0.8 ms
+   total                                       213.4 ms
+   worker span (same-host clocks)               69.1 ms
+   last chunk after last output read            12.0 ms
+   output postprocess (sum)                      0.1 ms
+------------------------------------------------------------
+ Graph timings (CPU, ms) — total over request (avg per exec):
+                                       all                 fwd                 pre                post*        
+   Thinker
+     prefill_vision     n=1          55.0 (   55.0)      51.2 (   51.2)      1.98 (   1.98)      1.79 (   1.79)
+     thinker_text_decode n=1         8.66 (   8.66)      7.34 (   7.34)      0.82 (   0.82)      0.50 (   0.50)
+
+   * post overlaps the next step / another in-flight batch under
+     speculative scheduling, so it is not necessarily additive.
+------------------------------------------------------------
+ Tensor transfer   size / transport-time / count:
+   rx (received over the wire), by source → dest:
+     api_server_preprocess_worker → worker_0
+       image_grid_thw            1.1 KiB      0.71 ms  (x3)
+       text_inputs                 224 B      0.54 ms  (x2)
+     api_server_preprocess_worker → worker_1
+       image_grid_thw            1.1 KiB      0.37 ms  (x3)
+       text_inputs                 224 B      0.28 ms  (x2)
+     api_server_preprocess_worker → worker_2
+       image_grid_thw            1.1 KiB      0.40 ms  (x3)
+       image_keys                  768 B      0.40 ms  (x3)
+       pixel_values             56.2 MiB      0.16 ms  (x1)
+     worker_0 → api_server_preprocess_worker
+       text_output                   8 B      0.16 ms  (x1)
+     worker_2 → worker_0
+       deepstack                 3.5 MiB      0.50 ms  (x9)
+       vision_embeds             1.2 MiB      0.50 ms  (x3)
+     worker_2 → worker_1
+       deepstack                 3.5 MiB      0.45 ms  (x9)
+       vision_embeds             1.2 MiB      0.45 ms  (x3)
+
+   tx (registered/written for send), by source:
+     api_server_preprocess_worker
+       image_grid_thw.0            384 B      0.02 ms  (x1)
+       image_grid_thw.16           384 B      0.01 ms  (x1)
+       image_grid_thw.32           384 B      0.01 ms  (x1)
+       image_keys.0                256 B      0.01 ms  (x1)
+       image_keys.16               256 B      0.01 ms  (x1)
+       image_keys.32               256 B      0.01 ms  (x1)
+       pixel_values.0           56.2 MiB      8.72 ms  (x1)
+       pixel_values.16          56.2 MiB      7.90 ms  (x1)
+       pixel_values.32          56.2 MiB      7.09 ms  (x1)
+       text_inputs.0               184 B      0.11 ms  (x1)
+       text_inputs.3                40 B      0.03 ms  (x1)
+     worker_0
+       new_token                     8 B      0.16 ms  (x1)
+     worker_1
+       new_token                     8 B      0.18 ms  (x1)
+     worker_2
+       deepstack                 3.5 MiB      0.82 ms  (x9)
+       vision_embeds             1.2 MiB      0.34 ms  (x3)
+============================================================
+============================================================
+ Request profile: chatcmpl-7b28d792b0b04946a230eeaf584880f3
+============================================================
+ Inputs:
+   text         x1          77 B
+   image        x48      3.4 MiB
+ Outputs:
+   text         x2          10 B
+------------------------------------------------------------
+ Timeline:
+   recv → preprocess done                       54.2 ms
+   preprocess done → conductor ingest            1.0 ms
+   conductor ingest → first chunk              130.2 ms
+   first chunk → last chunk                     10.9 ms
+   last chunk → conductor done                   0.1 ms
+   conductor done → finish                       0.6 ms
+   total                                       197.0 ms
+   worker span (same-host clocks)               60.8 ms
+   last chunk after last output read            11.0 ms
+   output postprocess (sum)                      0.0 ms
+------------------------------------------------------------
+ Graph timings (CPU, ms) — total over request (avg per exec):
+                                       all                 fwd                 pre                post*        
+   Thinker
+     prefill_vision     n=1          49.2 (   49.2)      45.3 (   45.3)      2.82 (   2.82)      1.14 (   1.14)
+     thinker_text_decode n=1         8.49 (   8.49)      7.22 (   7.22)      0.99 (   0.99)      0.28 (   0.28)
+
+   * post overlaps the next step / another in-flight batch under
+     speculative scheduling, so it is not necessarily additive.
+------------------------------------------------------------
+ Tensor transfer   size / transport-time / count:
+   rx (received over the wire), by source → dest:
+     api_server_preprocess_worker → worker_0
+       image_grid_thw            1.1 KiB      0.60 ms  (x3)
+       text_inputs                 224 B      0.52 ms  (x2)
+     api_server_preprocess_worker → worker_1
+       image_grid_thw            1.1 KiB      0.41 ms  (x3)
+       text_inputs                 224 B      0.28 ms  (x2)
+     api_server_preprocess_worker → worker_2
+       image_grid_thw            1.1 KiB      0.36 ms  (x3)
+       image_keys                  768 B      0.36 ms  (x3)
+       pixel_values             56.2 MiB      0.12 ms  (x1)
+     worker_0 → api_server_preprocess_worker
+       text_output                   8 B      0.11 ms  (x1)
+     worker_2 → worker_0
+       deepstack                 3.5 MiB      0.37 ms  (x9)
+       vision_embeds             1.2 MiB      0.37 ms  (x3)
+     worker_2 → worker_1
+       deepstack                 3.5 MiB      0.19 ms  (x9)
+       vision_embeds             1.2 MiB      0.19 ms  (x3)
+
+   tx (registered/written for send), by source:
+     api_server_preprocess_worker
+       image_grid_thw.0            384 B      0.02 ms  (x1)
+       image_grid_thw.16           384 B      0.01 ms  (x1)
+       image_grid_thw.32           384 B      0.01 ms  (x1)
+       image_keys.0                256 B      0.01 ms  (x1)
+       image_keys.16               256 B      0.01 ms  (x1)
+       image_keys.32               256 B      0.01 ms  (x1)
+       pixel_values.0           56.2 MiB      7.16 ms  (x1)
+       pixel_values.16          56.2 MiB      7.11 ms  (x1)
+       pixel_values.32          56.2 MiB      7.11 ms  (x1)
+       text_inputs.0               184 B      0.06 ms  (x1)
+       text_inputs.3                40 B      0.01 ms  (x1)
+     worker_0
+       new_token                     8 B      0.13 ms  (x1)
+     worker_1
+       new_token                     8 B      0.06 ms  (x1)
+     worker_2
+       deepstack                 3.5 MiB      1.01 ms  (x9)
+       vision_embeds             1.2 MiB      0.37 ms  (x3)
+============================================================
+============================================================
+ Request profile: chatcmpl-584f9e0af3bd4d20892643dbeb8c743a
+============================================================
+ Inputs:
+   text         x1          77 B
+   image        x48      3.4 MiB
+ Outputs:
+   text         x2          10 B
+------------------------------------------------------------
+ Timeline:
+   recv → preprocess done                       60.9 ms
+   preprocess done → conductor ingest            0.7 ms
+   conductor ingest → first chunk              129.6 ms
+   first chunk → conductor done                  9.4 ms
+   conductor done → last chunk                   1.4 ms
+   last chunk → finish                           0.5 ms
+   total                                       202.4 ms
+   worker span (same-host clocks)               60.9 ms
+   last chunk after last output read            11.4 ms
+   output postprocess (sum)                      0.3 ms
+------------------------------------------------------------
+ Graph timings (CPU, ms) — total over request (avg per exec):
+                                       all                 fwd                 pre                post*        
+   Thinker
+     prefill_vision     n=1          49.0 (   49.0)      46.0 (   46.0)      1.98 (   1.98)      1.06 (   1.06)
+     thinker_text_decode n=1         8.23 (   8.23)      6.95 (   6.95)      0.74 (   0.74)      0.53 (   0.53)
+
+   * post overlaps the next step / another in-flight batch under
+     speculative scheduling, so it is not necessarily additive.
+------------------------------------------------------------
+ Tensor transfer   size / transport-time / count:
+   rx (received over the wire), by source → dest:
+     api_server_preprocess_worker → worker_0
+       image_grid_thw            1.1 KiB      0.62 ms  (x3)
+       text_inputs                 224 B      0.30 ms  (x2)
+     api_server_preprocess_worker → worker_1
+       image_grid_thw            1.1 KiB      0.71 ms  (x3)
+       text_inputs                 224 B      0.45 ms  (x2)
+     api_server_preprocess_worker → worker_2
+       image_grid_thw            1.1 KiB      0.28 ms  (x3)
+       image_keys                  768 B      0.28 ms  (x3)
+       pixel_values             56.2 MiB      0.08 ms  (x1)
+     worker_0 → api_server_preprocess_worker
+       text_output                   8 B      0.60 ms  (x1)
+     worker_2 → worker_0
+       deepstack                 3.5 MiB      0.47 ms  (x9)
+       vision_embeds             1.2 MiB      0.47 ms  (x3)
+     worker_2 → worker_1
+       deepstack                 3.5 MiB      0.42 ms  (x9)
+       vision_embeds             1.2 MiB      0.42 ms  (x3)
+
+   tx (registered/written for send), by source:
+     api_server_preprocess_worker
+       image_grid_thw.0            384 B      0.03 ms  (x1)
+       image_grid_thw.16           384 B      0.01 ms  (x1)
+       image_grid_thw.32           384 B      0.05 ms  (x1)
+       image_keys.0                256 B      0.01 ms  (x1)
+       image_keys.16               256 B      0.01 ms  (x1)
+       image_keys.32               256 B      0.01 ms  (x1)
+       pixel_values.0           56.2 MiB      8.02 ms  (x1)
+       pixel_values.16          56.2 MiB      8.22 ms  (x1)
+       pixel_values.32          56.2 MiB      7.40 ms  (x1)
+       text_inputs.0               184 B      0.06 ms  (x1)
+       text_inputs.3                40 B      0.01 ms  (x1)
+     worker_0
+       new_token                     8 B      0.13 ms  (x1)
+     worker_1
+       new_token                     8 B      0.11 ms  (x1)
+     worker_2
+       deepstack                 3.5 MiB      0.61 ms  (x9)
+       vision_embeds             1.2 MiB      0.23 ms  (x3)
+============================================================
+============================================================
+ Request profile: chatcmpl-1d7e7d7ecb3b41fd8f3d672791e49235
+============================================================
+ Inputs:
+   text         x1          77 B
+   image        x48      3.4 MiB
+ Outputs:
+   text         x2          10 B
+------------------------------------------------------------
+ Timeline:
+   recv → preprocess done                       72.7 ms
+   preprocess done → conductor ingest            0.6 ms
+   conductor ingest → first chunk              143.6 ms
+   first chunk → conductor done                 11.3 ms
+   conductor done → last chunk                   0.7 ms
+   last chunk → finish                           0.8 ms
+   total                                       229.6 ms
+   worker span (same-host clocks)               67.0 ms
+   last chunk after last output read            12.2 ms
+   output postprocess (sum)                      0.1 ms
+------------------------------------------------------------
+ Graph timings (CPU, ms) — total over request (avg per exec):
+                                       all                 fwd                 pre                post*        
+   Thinker
+     prefill_vision     n=1          54.6 (   54.6)      52.2 (   52.2)      1.27 (   1.27)      1.14 (   1.14)
+     thinker_text_decode n=1         8.74 (   8.74)      7.29 (   7.29)      1.04 (   1.04)      0.41 (   0.41)
+
+   * post overlaps the next step / another in-flight batch under
+     speculative scheduling, so it is not necessarily additive.
+------------------------------------------------------------
+ Tensor transfer   size / transport-time / count:
+   rx (received over the wire), by source → dest:
+     api_server_preprocess_worker → worker_0
+       image_grid_thw            1.1 KiB      0.70 ms  (x3)
+       text_inputs                 224 B      0.50 ms  (x2)
+     api_server_preprocess_worker → worker_1
+       image_grid_thw            1.1 KiB      0.64 ms  (x3)
+       text_inputs                 224 B      0.42 ms  (x2)
+     api_server_preprocess_worker → worker_2
+       image_grid_thw            1.1 KiB      0.33 ms  (x3)
+       image_keys                  768 B      0.33 ms  (x3)
+       pixel_values             56.2 MiB      0.09 ms  (x1)
+     worker_0 → api_server_preprocess_worker
+       text_output                   8 B      0.22 ms  (x1)
+     worker_2 → worker_0
+       deepstack                 3.5 MiB      0.73 ms  (x9)
+       vision_embeds             1.2 MiB      0.73 ms  (x3)
+     worker_2 → worker_1
+       deepstack                 3.5 MiB      0.57 ms  (x9)
+       vision_embeds             1.2 MiB      0.57 ms  (x3)
+
+   tx (registered/written for send), by source:
+     api_server_preprocess_worker
+       image_grid_thw.0            384 B      0.03 ms  (x1)
+       image_grid_thw.16           384 B      0.01 ms  (x1)
+       image_grid_thw.32           384 B      0.01 ms  (x1)
+       image_keys.0                256 B      0.01 ms  (x1)
+       image_keys.16               256 B      0.01 ms  (x1)
+       image_keys.32               256 B      0.01 ms  (x1)
+       pixel_values.0           56.2 MiB      14.8 ms  (x1)
+       pixel_values.16          56.2 MiB      11.2 ms  (x1)
+       pixel_values.32          56.2 MiB      11.1 ms  (x1)
+       text_inputs.0               184 B      0.27 ms  (x1)
+       text_inputs.3                40 B      0.06 ms  (x1)
+     worker_0
+       new_token                     8 B      0.13 ms  (x1)
+     worker_1
+       new_token                     8 B      0.15 ms  (x1)
+     worker_2
+       deepstack                 3.5 MiB      0.65 ms  (x9)
+       vision_embeds             1.2 MiB      0.26 ms  (x3)
+============================================================
+============================================================
+ Request profile: chatcmpl-9e40ad5f12cf40ad95330726ed4dc485
+============================================================
+ Inputs:
+   text         x1          77 B
+   image        x48      3.4 MiB
+ Outputs:
+   text         x2          10 B
+------------------------------------------------------------
+ Timeline:
+   recv → preprocess done                       76.8 ms
+   preprocess done → conductor ingest            0.5 ms
+   conductor ingest → first chunk              123.1 ms
+   first chunk → last chunk                     11.7 ms
+   last chunk → conductor done                   0.1 ms
+   conductor done → finish                       0.7 ms
+   total                                       212.8 ms
+   worker span (same-host clocks)               64.3 ms
+   last chunk after last output read            11.9 ms
+   output postprocess (sum)                      0.1 ms
+------------------------------------------------------------
+ Graph timings (CPU, ms) — total over request (avg per exec):
+                                       all                 fwd                 pre                post*        
+   Thinker
+     prefill_vision     n=1          52.5 (   52.5)      49.9 (   49.9)      2.03 (   2.03)      0.52 (   0.52)
+     thinker_text_decode n=1         8.67 (   8.67)      7.25 (   7.25)      1.12 (   1.12)      0.30 (   0.30)
+
+   * post overlaps the next step / another in-flight batch under
+     speculative scheduling, so it is not necessarily additive.
+------------------------------------------------------------
+ Tensor transfer   size / transport-time / count:
+   rx (received over the wire), by source → dest:
+     api_server_preprocess_worker → worker_0
+       image_grid_thw            1.1 KiB      0.34 ms  (x3)
+       text_inputs                 224 B      0.22 ms  (x2)
+     api_server_preprocess_worker → worker_1
+       image_grid_thw            1.1 KiB      0.51 ms  (x3)
+       text_inputs                 224 B      0.46 ms  (x2)
+     api_server_preprocess_worker → worker_2
+       image_grid_thw            1.1 KiB      0.36 ms  (x3)
+       image_keys                  768 B      0.36 ms  (x3)
+       pixel_values             56.2 MiB      0.06 ms  (x1)
+     worker_0 → api_server_preprocess_worker
+       text_output                   8 B      0.14 ms  (x1)
+     worker_2 → worker_0
+       deepstack                 3.5 MiB      0.22 ms  (x9)
+       vision_embeds             1.2 MiB      0.22 ms  (x3)
+     worker_2 → worker_1
+       deepstack                 3.5 MiB      0.49 ms  (x9)
+       vision_embeds             1.2 MiB      0.49 ms  (x3)
+
+   tx (registered/written for send), by source:
+     api_server_preprocess_worker
+       image_grid_thw.0            384 B      0.03 ms  (x1)
+       image_grid_thw.16           384 B      0.01 ms  (x1)
+       image_grid_thw.32           384 B      0.01 ms  (x1)
+       image_keys.0                256 B      0.01 ms  (x1)
+       image_keys.16               256 B      0.01 ms  (x1)
+       image_keys.32               256 B      0.01 ms  (x1)
+       pixel_values.0           56.2 MiB      14.5 ms  (x1)
+       pixel_values.16          56.2 MiB      11.5 ms  (x1)
+       pixel_values.32          56.2 MiB      11.3 ms  (x1)
+       text_inputs.0               184 B      0.21 ms  (x1)
+       text_inputs.3                40 B      0.06 ms  (x1)
+     worker_0
+       new_token                     8 B      0.06 ms  (x1)
+     worker_1
+       new_token                     8 B      0.14 ms  (x1)
+     worker_2
+       deepstack                 3.5 MiB      0.48 ms  (x9)
+       vision_embeds             1.2 MiB      0.19 ms  (x3)
+============================================================
+============================================================
+ Request profile: chatcmpl-10bd9b5693314faaa3f1e2da5e8a080b
+============================================================
+ Inputs:
+   text         x1          77 B
+   image        x48      3.4 MiB
+ Outputs:
+   text         x2          10 B
+------------------------------------------------------------
+ Timeline:
+   recv → preprocess done                       68.0 ms
+   preprocess done → conductor ingest            1.0 ms
+   conductor ingest → first chunk              142.6 ms
+   first chunk → conductor done                 12.5 ms
+   conductor done → last chunk                   0.0 ms
+   last chunk → finish                           0.8 ms
+   total                                       224.9 ms
+   worker span (same-host clocks)               65.2 ms
+   last chunk after last output read            12.8 ms
+   output postprocess (sum)                      0.1 ms
+------------------------------------------------------------
+ Graph timings (CPU, ms) — total over request (avg per exec):
+                                       all                 fwd                 pre                post*        
+   Thinker
+     prefill_vision     n=1          52.1 (   52.1)      48.6 (   48.6)      2.34 (   2.34)      1.13 (   1.13)
+     thinker_text_decode n=1         8.74 (   8.74)      7.54 (   7.54)      0.66 (   0.66)      0.54 (   0.54)
+
+   * post overlaps the next step / another in-flight batch under
+     speculative scheduling, so it is not necessarily additive.
+------------------------------------------------------------
+ Tensor transfer   size / transport-time / count:
+   rx (received over the wire), by source → dest:
+     api_server_preprocess_worker → worker_0
+       image_grid_thw            1.1 KiB      0.49 ms  (x3)
+       text_inputs                 224 B      0.28 ms  (x2)
+     api_server_preprocess_worker → worker_1
+       image_grid_thw            1.1 KiB      0.59 ms  (x3)
+       text_inputs                 224 B      0.58 ms  (x2)
+     api_server_preprocess_worker → worker_2
+       image_grid_thw            1.1 KiB      0.41 ms  (x3)
+       image_keys                  768 B      0.41 ms  (x3)
+       pixel_values             56.2 MiB      0.13 ms  (x1)
+     worker_0 → api_server_preprocess_worker
+       text_output                   8 B      0.20 ms  (x1)
+     worker_2 → worker_0
+       deepstack                 3.5 MiB      0.39 ms  (x9)
+       vision_embeds             1.2 MiB      0.39 ms  (x3)
+     worker_2 → worker_1
+       deepstack                 3.5 MiB      0.42 ms  (x9)
+       vision_embeds             1.2 MiB      0.42 ms  (x3)
+
+   tx (registered/written for send), by source:
+     api_server_preprocess_worker
+       image_grid_thw.0            384 B      0.02 ms  (x1)
+       image_grid_thw.16           384 B      0.01 ms  (x1)
+       image_grid_thw.32           384 B      0.01 ms  (x1)
+       image_keys.0                256 B      0.01 ms  (x1)
+       image_keys.16               256 B      0.01 ms  (x1)
+       image_keys.32               256 B      0.01 ms  (x1)
+       pixel_values.0           56.2 MiB      13.3 ms  (x1)
+       pixel_values.16          56.2 MiB      11.4 ms  (x1)
+       pixel_values.32          56.2 MiB      11.4 ms  (x1)
+       text_inputs.0               184 B      0.18 ms  (x1)
+       text_inputs.3                40 B      0.04 ms  (x1)
+     worker_0
+       new_token                     8 B      0.13 ms  (x1)
+     worker_1
+       new_token                     8 B      0.17 ms  (x1)
+     worker_2
+       deepstack                 3.5 MiB      0.91 ms  (x9)
+       vision_embeds             1.2 MiB      0.35 ms  (x3)
+============================================================
+============================================================
+ Request profile: chatcmpl-9f4948f85af543b6b38355781d555bbf
+============================================================
+ Inputs:
+   text         x1          77 B
+   image        x48      3.4 MiB
+ Outputs:
+   text         x2          10 B
+------------------------------------------------------------
+ Timeline:
+   recv → preprocess done                      130.1 ms
+   preprocess done → conductor ingest            0.4 ms
+   conductor ingest → first chunk              122.6 ms
+   first chunk → conductor done                 10.9 ms
+   conductor done → last chunk                   0.1 ms
+   last chunk → finish                           0.9 ms
+   total                                       265.0 ms
+   worker span (same-host clocks)               69.6 ms
+   last chunk after last output read            11.3 ms
+   output postprocess (sum)                      0.1 ms
+------------------------------------------------------------
+ Graph timings (CPU, ms) — total over request (avg per exec):
+                                       all                 fwd                 pre                post*        
+   Thinker
+     prefill_vision     n=1          57.4 (   57.4)      54.4 (   54.4)      1.83 (   1.83)      1.24 (   1.24)
+     thinker_text_decode n=1         8.48 (   8.48)      6.95 (   6.95)      1.01 (   1.01)      0.51 (   0.51)
+
+   * post overlaps the next step / another in-flight batch under
+     speculative scheduling, so it is not necessarily additive.
+------------------------------------------------------------
+ Tensor transfer   size / transport-time / count:
+   rx (received over the wire), by source → dest:
+     api_server_preprocess_worker → worker_0
+       image_grid_thw            1.1 KiB      0.66 ms  (x3)
+       text_inputs                 224 B      0.52 ms  (x2)
+     api_server_preprocess_worker → worker_1
+       image_grid_thw            1.1 KiB      0.36 ms  (x3)
+       text_inputs                 224 B      0.29 ms  (x2)
+     api_server_preprocess_worker → worker_2
+       image_grid_thw            1.1 KiB      0.20 ms  (x3)
+       image_keys                  768 B      0.20 ms  (x3)
+       pixel_values             56.2 MiB      0.05 ms  (x1)
+     worker_0 → api_server_preprocess_worker
+       text_output                   8 B      0.25 ms  (x1)
+     worker_2 → worker_0
+       deepstack                 3.5 MiB      0.41 ms  (x9)
+       vision_embeds             1.2 MiB      0.41 ms  (x3)
+     worker_2 → worker_1
+       deepstack                 3.5 MiB      0.19 ms  (x9)
+       vision_embeds             1.2 MiB      0.19 ms  (x3)
+
+   tx (registered/written for send), by source:
+     api_server_preprocess_worker
+       image_grid_thw.0            384 B      0.02 ms  (x1)
+       image_grid_thw.16           384 B      0.01 ms  (x1)
+       image_grid_thw.32           384 B      0.01 ms  (x1)
+       image_keys.0                256 B      0.01 ms  (x1)
+       image_keys.16               256 B      0.01 ms  (x1)
+       image_keys.32               256 B      0.01 ms  (x1)
+       pixel_values.0           56.2 MiB      14.9 ms  (x1)
+       pixel_values.16          56.2 MiB      11.1 ms  (x1)
+       pixel_values.32          56.2 MiB      11.0 ms  (x1)
+       text_inputs.0               184 B      0.19 ms  (x1)
+       text_inputs.3                40 B      0.05 ms  (x1)
+     worker_0
+       new_token                     8 B      0.16 ms  (x1)
+     worker_1
+       new_token                     8 B      0.06 ms  (x1)
+     worker_2
+       deepstack                 3.5 MiB      0.44 ms  (x9)
+       vision_embeds             1.2 MiB      0.17 ms  (x3)
+============================================================

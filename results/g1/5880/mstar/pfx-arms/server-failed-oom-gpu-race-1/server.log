@@ -1,0 +1,112 @@
+
+  ✓ mstar serving 'bagel' on http://localhost:18301
+
+  Python SDK:
+    from mstar import MStarClient
+    client = MStarClient("http://localhost:18301")
+    print(client.chat("Hello!").text)
+    open("out.png","wb").write(client.generate_image("a cat in a hat"))
+
+  OpenAI-compatible:
+    from openai import OpenAI
+    oai = OpenAI(base_url="http://localhost:18301/v1", api_key="none")
+    oai.chat.completions.create(model="bagel", messages=[{"role":"user","content":"hi"}])
+    oai.images.generate(model="bagel", prompt="a cat")
+
+2026-11-26 00:00:31,104 INFO [api_server] mstar.api_server.entrypoint: API server: result threads not pinned (not pinned: the deepest idle state is C1_ACPI at 1 µs on CPUs 0-255, under the 100 µs from which pinning could pay (step_thread_core always pins anyway))
+2026-11-26 00:00:31,108 INFO [api_server] mstar.communication.tensors: SHM: swept 0 entries of dead deployment namespace 9965f97a69ad
+2026-11-26 00:00:31,108 INFO [api_server] mstar.communication.tensors: SHM: swept 0 entries of dead deployment namespace 35f120b039a7
+2026-11-26 00:00:31,109 INFO [api_server] mstar.communication.arena: ARENA: /dev/shm has 451222 MiB free for 2 arenas and their spill files; each arena grows to 32 segments of 256 MiB (MSTAR_SHM_ARENA_MAX_SEGMENTS and _SEGMENT_MB override)
+2026-11-26 00:00:31,111 INFO [api_server] mstar.communication.communicator: control mesh transport: rust 0.1.1 from /home/chaofan/workspaces/mm_reuse_study/envs/mstar/lib/python3.12/site-packages/mstar_rust/__init__.py
+2026-11-26 00:00:31,199 INFO [api_server] mstar.communication.arena: ARENA: grew to 1 segments (256 MiB total, 256 MiB free, largest free block 256 MiB, 0 MiB pinned)
+2026-11-26 00:00:31,206 INFO [api_server] mstar.communication.communicator: control mesh transport: rust 0.1.1 from /home/chaofan/workspaces/mm_reuse_study/envs/mstar/lib/python3.12/site-packages/mstar_rust/__init__.py
+2026-11-26 00:00:31,208 INFO [api_server] mstar.api_server.entrypoint: Conductor process started (pid=3736385, model=bagel)
+2026-11-26 00:00:31,209 INFO [api_server] mstar.api_server.entrypoint: Waiting for workers to finish setup (loading weights, capturing accelerator graphs)...
+2026-11-26 00:00:33,829 INFO [conductor] mstar.api_server.entrypoint: yaml configs/bagel_mstar_i2t.yaml has no model_kwargs section; using model defaults
+2026-11-26 00:00:35,205 INFO [conductor] mstar.conductor.conductor: Detected worker device type: cuda
+2026-11-26 00:00:35,205 INFO [conductor] mstar.conductor.conductor: Compile caches: Inductor /home/chaofan/.cache/mstar/torchinductor, Triton /home/chaofan/.cache/mstar/torchinductor/triton
+2026-11-26 00:00:39,098 INFO [conductor] mstar.communication.communicator: control mesh transport: rust 0.1.1 from /home/chaofan/workspaces/mm_reuse_study/envs/mstar/lib/python3.12/site-packages/mstar_rust/__init__.py
+2026-11-26 00:00:39,098 INFO [conductor] mstar.conductor.conductor: Conductor waiting for 1 worker(s) to finish setup
+2026-11-26 00:00:39,428 INFO [worker_0] mstar.communication.communicator: control mesh transport: rust 0.1.1 from /home/chaofan/workspaces/mm_reuse_study/envs/mstar/lib/python3.12/site-packages/mstar_rust/__init__.py
+2026-11-26 00:00:39,749 INFO [worker_0] mstar.communication.arena: ARENA: grew to 1 segments (256 MiB total, 256 MiB free, largest free block 256 MiB, 256 MiB pinned)
+2026-11-26 00:00:47,911 INFO [worker_0] mstar.model.bagel.bagel_model: Successfully loaded in BAGEL submodule for LLM
+2026-11-26 00:00:48,435 INFO [worker_0] mstar.model.bagel.bagel_model: Successfully loaded in BAGEL submodule for vae_decoder
+2026-11-26 00:00:48,437 INFO [worker_0] mstar.model.bagel.bagel_model: Successfully loaded in BAGEL submodule for vae_encoder
+2026-11-26 00:00:49,608 INFO [worker_0] mstar.model.bagel.bagel_model: Successfully loaded in BAGEL submodule for vit_encoder
+2026-11-26 00:00:49,648 INFO [worker_0] mstar.kernels.registry: kernel table: no ragged_attention bfloat16 num_qo_heads=16,num_kv_heads=16,head_dim=72 entry for NVIDIA RTX 5880 Ada Generation; built-in configs. To tune it: python -m benchmark.kernels.sweep ragged_attention --dtype bfloat16 --shape num_qo_heads=16,num_kv_heads=16,head_dim=72
+2026-11-26 00:00:49,685 ERROR [worker_0] mstar.conductor.conductor: Worker worker_0 failed to initialize: CUDA out of memory. Tried to allocate 14.00 GiB. GPU 0 has a total capacity of 47.37 GiB of which 4.63 GiB is free. Including non-PyTorch memory, this process has 27.96 GiB memory in use. Process 3734709 has 14.77 GiB memory in use. Of the allocated memory 27.48 GiB is allocated by PyTorch, and 83.93 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+Traceback (most recent call last):
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/conductor/conductor.py", line 343, in _worker_process_target
+    worker = Worker(
+             ^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/worker/worker.py", line 317, in __init__
+    self.engine_manager = EngineManager.build(
+                          ^^^^^^^^^^^^^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/worker/engine_manager.py", line 510, in build
+    engine.load_model(
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/engine/engine.py", line 830, in load_model
+    self._resources[spec.resource_key] = build_resource(
+                                         ^^^^^^^^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/engine/resources/base.py", line 759, in build_resource
+    resource = spec.resource_class.build(spec, info)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/engine/resources/kv/manager.py", line 846, in build
+    return cls(
+           ^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/engine/resources/kv/manager.py", line 631, in __init__
+    self.kv_cache = KVCache(cfg, device, dtype, placement)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/engine/resources/kv/cache.py", line 184, in __init__
+    self.tensor = torch.zeros(
+                  ^^^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 14.00 GiB. GPU 0 has a total capacity of 47.37 GiB of which 4.63 GiB is free. Including non-PyTorch memory, this process has 27.96 GiB memory in use. Process 3734709 has 14.77 GiB memory in use. Of the allocated memory 27.48 GiB is allocated by PyTorch, and 83.93 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+Process SpawnProcess-1:1:
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/conductor/conductor.py", line 371, in _worker_process_target
+    raise e
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/conductor/conductor.py", line 343, in _worker_process_target
+    worker = Worker(
+             ^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/worker/worker.py", line 317, in __init__
+    self.engine_manager = EngineManager.build(
+                          ^^^^^^^^^^^^^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/worker/engine_manager.py", line 510, in build
+    engine.load_model(
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/engine/engine.py", line 830, in load_model
+    self._resources[spec.resource_key] = build_resource(
+                                         ^^^^^^^^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/engine/resources/base.py", line 759, in build_resource
+    resource = spec.resource_class.build(spec, info)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/engine/resources/kv/manager.py", line 846, in build
+    return cls(
+           ^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/engine/resources/kv/manager.py", line 631, in __init__
+    self.kv_cache = KVCache(cfg, device, dtype, placement)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/engine/resources/kv/cache.py", line 184, in __init__
+    self.tensor = torch.zeros(
+                  ^^^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 14.00 GiB. GPU 0 has a total capacity of 47.37 GiB of which 4.63 GiB is free. Including non-PyTorch memory, this process has 27.96 GiB memory in use. Process 3734709 has 14.77 GiB memory in use. Of the allocated memory 27.48 GiB is allocated by PyTorch, and 83.93 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+Process SpawnProcess-1:
+2026-11-26 00:00:50,688 ERROR [conductor] mstar.conductor.conductor: Worker worker_0 (pid 3736504) exited with exit code 1. It hosted nodes ['LLM', 'vae_decoder', 'vae_encoder', 'vit_encoder']. Shutting the deployment down.
+2026-11-26 00:00:50,688 INFO [conductor] mstar.conductor.conductor: Shutting down conductor...
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/api_server/entrypoint.py", line 258, in _conductor_process_target
+    conductor.run()
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/conductor/conductor.py", line 2514, in run
+    self._wait_for_workers_ready()
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/conductor/conductor.py", line 2348, in _wait_for_workers_ready
+    self._poll_worker_liveness()
+  File "/home/chaofan/workspaces/mm_reuse_study/external/mstar/mstar/conductor/conductor.py", line 1067, in _poll_worker_liveness
+    raise DeadWorkerError(worker_id, p.pid, p.exitcode)
+mstar.conductor.conductor.DeadWorkerError: worker worker_0 (pid 3736504) exited with exit code 1
+2026-11-26 00:00:51,271 ERROR [api_server] mstar.api_server.entrypoint: conductor process exited with exit code 1 before the workers finished setup

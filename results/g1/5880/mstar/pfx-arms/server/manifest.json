@@ -1,0 +1,31 @@
+{
+  "name": "g1-mstar",
+  "framework": "mstar",
+  "machine": "5880",
+  "host": "edgeaihost210",
+  "port": 18301,
+  "base_url": "http://localhost:18301",
+  "gpus": "0",
+  "gpu_info": [
+    "0, NVIDIA RTX 5880 Ada Generation, 580.178.04"
+  ],
+  "config": "configs/bagel_mstar_i2t.yaml",
+  "config_sha256": "275e3461fdb9e295bf9989e9f598aa86bed333a2a17cd9d1c3002ac575de0ef3",
+  "shim_mode": "off",
+  "framework_commit": "2c8ffde8f7fd321c29aad3d1aad3e8cc8e8dc175",
+  "framework_dirty": false,
+  "command": [
+    "/home/chaofan/workspaces/mm_reuse_study/envs/mstar/bin/mstar",
+    "serve",
+    "bagel",
+    "--config",
+    "configs/bagel_mstar_i2t.yaml",
+    "--port",
+    "18301",
+    "--enable-metrics"
+  ],
+  "cwd": "/home/chaofan/workspaces/mm_reuse_study",
+  "pid": 1438532,
+  "started_at": "2026-11-26T17:21:50+0800",
+  "log": "results/g1/5880/mstar/pfx-arms/server/server.log"
+}

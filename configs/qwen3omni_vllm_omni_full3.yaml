@@ -1,0 +1,62 @@
+# 本研究用（V1，DESIGN 16.5）：上游 vllm_omni/deploy/qwen3_omni_moe.yaml 的 3 卡版本（5880 单卡放不下 Thinker）。
+# 改动：阶段 0（Thinker）TP2 放在 0,1；阶段 1（Talker）与阶段 2（Code2Wav）放在 2；其余与上游相同。
+model_runner: v2
+async_chunk: true
+
+connectors:
+  connector_of_shared_memory:
+    name: SharedMemoryConnector
+    extra:
+      initial_codec_chunk_frames: 4
+      codec_chunk_frames: 25
+      codec_left_context_frames: 25
+
+stages:
+  - stage_id: 0
+    max_num_batched_tokens: 32768
+    max_num_seqs: 64
+    gpu_memory_utilization: 0.9
+    moe_backend: triton
+    trust_remote_code: true
+    enable_prefix_caching: true
+    tensor_parallel_size: 2
+    devices: "0,1"
+    default_sampling_params:
+      temperature: 0.0
+      max_tokens: 2048
+
+  - stage_id: 1
+    max_num_batched_tokens: 32768
+    max_num_seqs: 64
+    gpu_memory_utilization: 0.6
+    moe_backend: triton
+    trust_remote_code: true
+    enable_prefix_caching: false
+    devices: "2"
+    input_connectors:
+      from_stage_0: connector_of_shared_memory
+    default_sampling_params:
+      seed: 42
+      temperature: 0.9
+      top_k: 50
+      max_tokens: 4096
+      repetition_penalty: 1.05
+
+  - stage_id: 2
+    max_num_batched_tokens: 65536
+    max_num_seqs: 64
+    gpu_memory_utilization: 0.1
+    enforce_eager: false
+    trust_remote_code: true
+    enable_prefix_caching: false
+    enable_chunked_prefill: false
+    async_scheduling: false
+    devices: "2"
+    input_connectors:
+      from_stage_1: connector_of_shared_memory
+    default_sampling_params:
+      temperature: 0.0
+      top_p: 1.0
+      top_k: -1
+      max_tokens: 65536
+      repetition_penalty: 1.1

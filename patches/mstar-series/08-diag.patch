@@ -1,0 +1,69 @@
+From 41d946eb8081d583c9c59198628f9a5642455a2f Mon Sep 17 00:00:00 2001
+From: mm_reuse_study <study@localhost>
+Date: Sat, 28 Nov 2026 23:56:30 +0800
+Subject: [PATCH] =?UTF-8?q?mm=5Freuse=5Fstudy=20diag:=20=E8=AF=8A=E6=96=AD?=
+ =?UTF-8?q?=E6=97=A5=E5=BF=97=EF=BC=9AThinker=20prefill=20=E6=AD=A5?=
+ =?UTF-8?q?=E8=AE=A1=E6=97=B6=EF=BC=88MSTAR=5FFWD=5FLOG=EF=BC=89=E3=80=81C?=
+ =?UTF-8?q?1=20=E7=99=BB=E8=AE=B0=EF=BC=88MSTAR=5FC1=5FLOG=EF=BC=89?=
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+---
+ mstar/engine/engine.py | 26 ++++++++++++++++++++++++++
+ 1 file changed, 26 insertions(+)
+
+diff --git a/mstar/engine/engine.py b/mstar/engine/engine.py
+index 5be4ce029..d6b1b4af4 100644
+--- a/mstar/engine/engine.py
++++ b/mstar/engine/engine.py
+@@ -123,6 +123,7 @@ if TYPE_CHECKING:
+ logger = logging.getLogger(__name__)
+ 
+ from mstar.model.components import c1_registry  # noqa: E402  (mm_reuse_study C1)
++_FWD_LOG = os.environ.get("MSTAR_FWD_LOG")   # mm_reuse_study diagnostic
+ 
+ 
+ def _c1_check(inputs, matched: int, node_name: str, walk: str) -> None:
+@@ -1826,6 +1827,10 @@ class Engine:
+         for key in leases:
+             covered = getattr(self._runner._resources[key], "c1_covered_items", None)
+             n = covered(rid, node_name, walk) if covered is not None else None
++            if os.environ.get("MSTAR_C1_LOG"):
++                with open(os.environ["MSTAR_C1_LOG"], "a") as f:
++                    f.write(f"{time.time():.6f}\t{self._graph_runtime.get_rid_string(rid)}\tpublish\t{walk}\t"
++                            f"key={key}\tcovered={n}\n")
+             if n:
+                 c1_registry.write(self._graph_runtime.get_rid_string(rid), n)
+                 return
+@@ -2547,6 +2552,27 @@ class Engine:
+         ``release_event`` is set as late as possible before the call that drops
+         the GIL — the replay, or the submodule forward on the eager path."""
+         graph_walk = batch.step_context.graph_walk
++        if _FWD_LOG and batch.node_name == "Thinker" and graph_walk not in ("thinker_text_decode", "thinker_decode"):
++            # mm_reuse_study: where a Thinker prefill step's time goes (diagnostic, MSTAR_FWD_LOG)
++            t0 = time.perf_counter()
++            torch.cuda.synchronize()
++            t1 = time.perf_counter()
++            out = self._forward_inner(batch, submodule_mgmt, cg_runner, engine_inputs, preprocessed, lease,
++                                      running_batched, request_ids, release_event)
++            t2 = time.perf_counter()
++            torch.cuda.synchronize()
++            t3 = time.perf_counter()
++            with open(_FWD_LOG, "a") as f:
++                f.write(f"{t0:.6f}\t{graph_walk}\tdev={torch.cuda.current_device()}\tgraph={lease is not None}\t"
++                        f"rows={len(request_ids)}\tpending_ms={(t1 - t0) * 1e3:.1f}\tlaunch_ms={(t2 - t1) * 1e3:.1f}"
++                        f"\tgpu_tail_ms={(t3 - t2) * 1e3:.1f}\n")
++            return out
++        return self._forward_inner(batch, submodule_mgmt, cg_runner, engine_inputs, preprocessed, lease,
++                                   running_batched, request_ids, release_event)
++
++    def _forward_inner(self, batch, submodule_mgmt, cg_runner, engine_inputs, preprocessed, lease,
++                       running_batched, request_ids, release_event=None) -> BatchedModelOutput:
++        graph_walk = batch.step_context.graph_walk
+         if lease is not None:
+             ctx = batch.step_context
+             if ctx.resident is not None:
+-- 
+2.43.0
+

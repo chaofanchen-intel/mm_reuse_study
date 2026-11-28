@@ -1,0 +1,324 @@
+From 0f6ee198fd5a6d1b163188f81f015526be0f4068 Mon Sep 17 00:00:00 2001
+From: mm_reuse_study <study@localhost>
+Date: Sun, 29 Nov 2026 00:38:51 +0800
+Subject: [PATCH] =?UTF-8?q?mm=5Freuse=5Fstudy=20C4:=20=E6=91=84=E5=83=8F?=
+ =?UTF-8?q?=E5=A4=B4=E4=BC=9A=E8=AF=9D=EF=BC=9A=E5=B7=B2=E4=B8=8A=E4=BC=A0?=
+ =?UTF-8?q?=E7=9A=84=E5=B8=A7=E5=8F=91=E5=BC=95=E7=94=A8=E3=80=81=E9=A2=84?=
+ =?UTF-8?q?=E7=83=AD=E7=BB=84=E6=95=B4=E7=BB=84=E8=B7=B3=E8=BF=87=EF=BC=88?=
+ =?UTF-8?q?MSTAR=5FC4=EF=BC=89?=
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+---
+ mstar/api_server/data_worker.py            |  17 +++-
+ mstar/model/qwen3_omni/qwen3_omni_model.py | 107 +++++++++++++++++----
+ mstar/model/qwen3_omni/submodules.py       |  11 ++-
+ 3 files changed, 112 insertions(+), 23 deletions(-)
+
+diff --git a/mstar/api_server/data_worker.py b/mstar/api_server/data_worker.py
+index 1fd53d813..7f76e8c76 100644
+--- a/mstar/api_server/data_worker.py
++++ b/mstar/api_server/data_worker.py
+@@ -104,6 +104,21 @@ from mstar.utils.ipc_format import (
+ from mstar.utils.threads import Thread, ThreadPool
+ 
+ _PP_LOG = os.environ.get("MSTAR_PREPROCESS_LOG")   # mm_reuse_study profiling
++_C4_FRAMES_DIR = os.environ.get("MSTAR_C4_FRAMES_DIR", "/dev/shm/mstar_c4_frames") \
++    if os.environ.get("MSTAR_C4", "0") == "1" else None   # mm_reuse_study C4
++
++
++def _c4_original(path: str) -> str:
++    """mm_reuse_study C4: a frame reference keys its KV as the frame it names (the model saved that frame's
++    bytes under ``MSTAR_C4_FRAMES_DIR`` when it first loaded them), so a frame sent in full and as a
++    reference share their prefix pages."""
++    if _C4_FRAMES_DIR is None:
++        return path
++    with open(path, "rb") as f:
++        head = f.read(64)
++    if not head.startswith(b"MSTAR-FRAME:"):
++        return path
++    return os.path.join(_C4_FRAMES_DIR, head[len(b"MSTAR-FRAME:"):].decode().strip())
+ 
+ logger = logging.getLogger(__name__)
+ 
+@@ -1634,7 +1649,7 @@ class PreprocessWorkerThread:
+         paths = (file_paths or {}).get(modality, ())
+         if not 0 <= index < len(paths):
+             raise ValueError(f"a digest span names {modality} {index}, but the request sent {len(paths)}")
+-        raw = _sha256(paths[index])
++        raw = _sha256(_c4_original(paths[index]))
+         if _file_state(paths[index]) != file_states[modality][index]:
+             raise _FileChangedError(paths[index])
+         return fingerprint(
+diff --git a/mstar/model/qwen3_omni/qwen3_omni_model.py b/mstar/model/qwen3_omni/qwen3_omni_model.py
+index 6e34bdb37..26ea1319f 100644
+--- a/mstar/model/qwen3_omni/qwen3_omni_model.py
++++ b/mstar/model/qwen3_omni/qwen3_omni_model.py
+@@ -209,7 +209,7 @@ class ThinkerStep(NamedTuple):
+     parts: list[PromptPart]
+ 
+ 
+-def _thinker_steps(plan: list[PromptPart]) -> list[ThinkerStep]:
++def _thinker_steps(plan: list[PromptPart], warm: int = 0) -> list[ThinkerStep]:
+     """``plan`` grouped into Thinker prefills: each attachment with the text
+     before it, the last one also with the text after it. The prefill schedule
+     and the KV layout both read this, so the layout's steps are the ones that run."""
+@@ -223,7 +223,7 @@ def _thinker_steps(plan: list[PromptPart]) -> list[ThinkerStep]:
+         # request's prefix before any image is encoded (one text step per part, as a text-only prompt)
+         steps += [ThinkerStep("prefill_text", [part]) for part in plan[:media[0]]]
+         start = media[0]
+-    for group in _media_groups(plan, media):
++    for group in _media_groups(plan, media, warm):
+         end = len(plan) if group[-1] == media[-1] else group[-1] + 1
+         steps.append(ThinkerStep(Qwen3OmniModel._MM_WALKS[plan[group[0]].modality][0], plan[start:end]))
+         start = end
+@@ -245,9 +245,30 @@ MEDIA_KEYS = os.environ.get("MSTAR_MEDIA_KEYS", "0") == "1"
+ # admission on, while the Thinker prefills the earlier groups; the Thinker's own encoder walk then takes the
+ # group from the cache.
+ C2 = os.environ.get("MSTAR_C2", "0") == "1"
++# mm_reuse_study C4 (MSTAR_C4=1, needs C1): a camera session's requests. A frame the server saved before is
++# sent as a reference (a tiny data URL holding ``MSTAR-FRAME:<xxh3-128 of its bytes>``, see `load_image`), so it is
++# neither uploaded nor decoded again;
++# ``model_kwargs.c4_warm = n`` says the first n images were wholly in an earlier request of the session: they
++# prefill as one group, which C1 skips, and travel without pixels. A group the prefix lease turns out not to
++# hold fails the request (the client resends in full).
++C4 = os.environ.get("MSTAR_C4", "0") == "1"
++C4_WARM = "c4_warm"
++C4_KEEP = int(os.environ.get("MSTAR_C4_KEEP", "0"))   # the warm group's last images still sent with pixels
++C4_MAGIC = b"MSTAR-FRAME:"
++C4_FRAMES_DIR = os.environ.get("MSTAR_C4_FRAMES_DIR", "/dev/shm/mstar_c4_frames")
+ VISION_AHEAD = "vision_ahead"
+ 
+ 
++def _c4_warm(model_kwargs) -> int:
++    """C4: how many leading images the request says an earlier request of its session held whole."""
++    if not C4 or not model_kwargs:
++        return 0
++    warm = model_kwargs.get(C4_WARM) or 0
++    if not isinstance(warm, int) or isinstance(warm, bool) or warm < 0:
++        raise ValueError(f"{C4_WARM} must be a non-negative int")
++    return warm
++
++
+ def _key_tensor(hexdigest: str) -> torch.Tensor:
+     """A 128-bit hex digest as two int64 (M4)."""
+     halves = [int(hexdigest[:16], 16), int(hexdigest[16:32], 16)]
+@@ -329,13 +350,20 @@ _PREPROCESS_CACHE = _PreprocessCache(float(os.environ.get("MSTAR_PREPROCESS_CACH
+ _FILE_MEMO = _FileMemo(_PREPROCESS_CACHE.cap if MEDIA_KEYS else 0)
+ 
+ 
+-def _media_groups(plan: list[PromptPart], media: list[int]) -> list[list[int]]:
++def _media_groups(plan: list[PromptPart], media: list[int], warm: int = 0) -> list[list[int]]:
+     """The attachments, each its own group, or with ``GROUP_IMAGES`` each run of
+-    adjacent images (plan neighbours, so no text between them) as one group."""
++    adjacent images (plan neighbours, so no text between them) as one group.
++    C4: the first ``warm`` images (adjacent, from the first attachment) are one group of their own."""
+     groups: list[list[int]] = []
++    if warm:
++        lead = media[:warm]
++        if len(lead) != warm or any(plan[i].modality != "image" for i in lead) or lead != list(range(lead[0], lead[0] + warm)):
++            raise ValueError(f"c4_warm={warm} must count adjacent leading images of the prompt")
++        groups.append(lead)
++        media = media[warm:]
+     for at in media:
+         if (
+-            GROUP_IMAGES > 1 and groups and len(groups[-1]) < GROUP_IMAGES and plan[at].modality == "image"
++            GROUP_IMAGES > 1 and groups and len(groups) > (1 if warm else 0) and len(groups[-1]) < GROUP_IMAGES and plan[at].modality == "image"
+             and plan[groups[-1][-1]].modality == "image" and groups[-1][-1] == at - 1
+         ):
+             groups[-1].append(at)
+@@ -586,6 +614,7 @@ class Qwen3OmniModel(Model):
+         return frozenset(
+             {stage + knob for stage in stages for knob in SAMPLING_KNOBS}
+             | {"ignore_eos", "voice", "max_output_tokens", "talker_max_output_tokens", "seed"}
++            | ({C4_WARM} if C4 else set())
+         )
+ 
+     def checkpoint_path(self) -> str:
+@@ -967,11 +996,12 @@ class Qwen3OmniModel(Model):
+         audio_output = "audio" in output_modalities
+         if partition_name == "Thinker":
+             thinker = {"audio_output": audio_output}
+-            prefills = self._build_thinker_prefill_schedule(input_modalities)
++            warm = _c4_warm(model_kwargs)
++            prefills = self._build_thinker_prefill_schedule(input_modalities, warm)
+             c1 = [{}] * len(prefills)
+             if c1_registry.ENABLED and not audio_output and set(input_modalities) <= {TEXT, "image"}:
+                 # mm_reuse_study C1: each image step names its images, by index among the request's images
+-                steps = _thinker_steps(prefill_plan(parts_from_modalities(input_modalities)))
++                steps = _thinker_steps(prefill_plan(parts_from_modalities(input_modalities)), warm)
+                 c1 = [{c1_registry.FIRST: images[0], c1_registry.COUNT: len(images)} if images else {}
+                       for images in ([p.index for p in step.parts if p.modality == "image"] for step in steps)]
+             # the last prefill samples the reply's first token
+@@ -982,7 +1012,7 @@ class Qwen3OmniModel(Model):
+                 for k, (walk, bind, text_before) in enumerate(prefills)
+             ] + [WalkStep(self._decode_walk(audio_output), bind={"text_inputs": "new_token"}, step_metadata=thinker)]
+         if partition_name == "VisionAhead":
+-            return self._vision_ahead_plan(input_modalities, audio_output)
++            return self._vision_ahead_plan(input_modalities, audio_output, _c4_warm(model_kwargs))
+         if partition_name not in ("Talker", "Code2Wav"):
+             raise ValueError(f"Unknown partition: {partition_name!r}")
+         # an explicit voice is checked even for text-only output: an unknown one is a 400 at admission
+@@ -999,14 +1029,16 @@ class Qwen3OmniModel(Model):
+             WalkStep("talker_decode", step_metadata={"talker_max_tokens": talker_max_tokens}),
+         ]
+ 
+-    def _vision_ahead_plan(self, input_modalities: list[str], audio_output: bool) -> list[WalkStep]:
++    def _vision_ahead_plan(self, input_modalities: list[str], audio_output: bool, warm: int = 0) -> list[WalkStep]:
+         """mm_reuse_study C2: one encode-only step per image group, in prompt order. Image-only prompts
+         with text out."""
+         if audio_output or not set(input_modalities) <= {TEXT, "image"}:
+             return []
+         plan = []
+-        steps = _thinker_steps(prefill_plan(parts_from_modalities(input_modalities)))
++        steps = _thinker_steps(prefill_plan(parts_from_modalities(input_modalities)), warm)
+         groups = [[p.index for p in step.parts if p.modality == "image"] for step in steps]
++        if warm:   # C4: the session's warm group is held (C1 skips it) and travels without pixels
++            groups = [g for g in groups if g][1:]
+         # group 0 too: the worker may schedule this partition's first step before the Thinker's first
+         # encode, and whichever runs second takes the group from the cache
+         for images in [g for g in groups if g]:
+@@ -1039,7 +1071,9 @@ class Qwen3OmniModel(Model):
+     # the attachment lists whose entries each prefill in a walk of their own
+     MEDIA_SPANS = tuple(sorted({key for _, keys in _MM_WALKS.values() for key in keys.values()}))
+ 
+-    def _build_thinker_prefill_schedule(self, input_modalities: list[str]) -> list[tuple[str, dict[str, str], int]]:
++    def _build_thinker_prefill_schedule(
++        self, input_modalities: list[str], warm: int = 0,
++    ) -> list[tuple[str, dict[str, str], int]]:
+         """The Thinker's prefill walks, an entry per step of ``_thinker_steps``
+         (so a prompt of text, a clip and text is one step), each as
+         ``(walk_name, {input_name: signal}, text_before)``.
+@@ -1053,7 +1087,7 @@ class Qwen3OmniModel(Model):
+         tensors don't fill it.
+         """
+         schedule: list[tuple[str, dict[str, str], int]] = []
+-        for k, step in enumerate(_thinker_steps(prefill_plan(parts_from_modalities(input_modalities)))):
++        for k, step in enumerate(_thinker_steps(prefill_plan(parts_from_modalities(input_modalities)), warm)):
+             bind = {"text_inputs": span_name("text_inputs", k)}
+             if step.walk == "prefill_text":
+                 schedule.append((step.walk, bind, 0))
+@@ -1070,12 +1104,29 @@ class Qwen3OmniModel(Model):
+ 
+     def load_image(self, filepath: str, device: str) -> TensorAndMetadata:
+         """mm_reuse_study M4: a file whose bytes were processed before comes back as a
+-        placeholder carrying that output (``_m4``), without decoding."""
++        placeholder carrying that output (``_m4``), without decoding.
++        C4: a frame reference (a file holding ``MSTAR-FRAME:<xxh3-128 of the frame's bytes>``, sent as a tiny
++        data URL) names a frame the server saved before (``C4_FRAMES_DIR``)."""
+         if _FILE_MEMO.cap <= 0:
+             return super().load_image(filepath, device)
+         import xxhash
+         with open(filepath, "rb") as f:
+-            digest = xxhash.xxh3_128_hexdigest(f.read())
++            raw = f.read()
++        if C4 and raw.startswith(C4_MAGIC):
++            digest = raw[len(C4_MAGIC):].decode(errors="replace").strip()
++            if len(digest) != 32 or any(c not in "0123456789abcdef" for c in digest):
++                raise ValueError("C4: a frame reference holds a 32-digit hex digest")
++            hit = _FILE_MEMO.get(digest)
++            if hit is not None:
++                placeholder = torch.zeros(3, 1, 1)
++                placeholder._m4 = hit
++                return TensorAndMetadata(placeholder)
++            filepath = os.path.join(C4_FRAMES_DIR, digest)
++            if not os.path.exists(filepath):
++                raise ValueError(f"C4: unknown frame {digest}; send its bytes")
++            with open(filepath, "rb") as f:
++                raw = f.read()
++        digest = xxhash.xxh3_128_hexdigest(raw)
+         hit = _FILE_MEMO.get(digest)
+         if hit is not None:
+             placeholder = torch.zeros(3, 1, 1)
+@@ -1083,6 +1134,13 @@ class Qwen3OmniModel(Model):
+             return TensorAndMetadata(placeholder)
+         out = super().load_image(filepath, device)
+         out.data._m4_file = digest
++        if C4:   # keep the frame's bytes for later references, past the memo's LRU
++            kept = os.path.join(C4_FRAMES_DIR, digest)
++            if not os.path.exists(kept):
++                os.makedirs(C4_FRAMES_DIR, exist_ok=True)
++                with open(kept + ".tmp", "wb") as f:
++                    f.write(raw)
++                os.replace(kept + ".tmp", kept)
+         return out
+ 
+     def load_video(
+@@ -1322,19 +1380,25 @@ class Qwen3OmniModel(Model):
+             result["video_grid_thw"] += vid_out["video_grid_thw"]
+             result["pixel_values_videos"].append(vid_out["pixel_values_videos"])
+ 
++        warm = _c4_warm(kwargs)
++        if warm:   # C4: the warm group's pixels stay home (but for its last C4_KEEP images); its grids and keys
++            # still lay out the row
++            for i in range(max(0, warm - C4_KEEP)):
++                pv = result["pixel_values"][i]
++                result["pixel_values"][i] = pv.new_empty((0, *pv.shape[1:]))
+         if not attached:
+-            return ProcessPromptOutput(self._split_steps(result, plan), {})
+-        metadata = self._state_layout(plan, result, "audio" in output_modalities)
+-        return ProcessPromptOutput(self._split_steps(result, plan), metadata)
++            return ProcessPromptOutput(self._split_steps(result, plan, warm), {})
++        metadata = self._state_layout(plan, result, "audio" in output_modalities, warm)
++        return ProcessPromptOutput(self._split_steps(result, plan, warm), metadata)
+ 
+-    def _split_steps(self, tensors: NameToTensorList, plan: list[PromptPart]) -> NameToTensorList:
++    def _split_steps(self, tensors: NameToTensorList, plan: list[PromptPart], warm: int = 0) -> NameToTensorList:
+         """``tensors`` as the walk plan binds them: step ``k`` of ``_thinker_steps``
+         takes its text spans as one signal, ``text_inputs.k`` (``_state_layout``
+         keys its ids spans under it), and each attachment's tensors are signals
+         of their own (`split_spans`)."""
+         texts = tensors["text_inputs"]
+         out = {**tensors, "text_inputs": []}
+-        steps = _thinker_steps(plan)
++        steps = _thinker_steps(plan, warm)
+         for k, step in enumerate(steps):
+             out[span_name("text_inputs", k)] = [texts[part.index] for part in step.parts if part.modality == TEXT]
+         out = split_spans(out, self.MEDIA_SPANS)[0]
+@@ -1358,7 +1422,8 @@ class Qwen3OmniModel(Model):
+         # text_inputs leaves out each attachment, whose span in the Thinker's layout counts its sentinels and rows
+         return sum(span.length for span in kv_layout[THINKER_KV]["main"].spans)
+ 
+-    def _state_layout(self, plan: list[PromptPart], tensors: NameToTensorList, audio_output: bool) -> dict:
++    def _state_layout(self, plan: list[PromptPart], tensors: NameToTensorList, audio_output: bool,
++                      warm: int = 0) -> dict:
+         """What each Thinker prefill step writes and, with audio out, what the Talker writes of it.
+ 
+         The Talker prefills every step's rows except those of a system or earlier
+@@ -1369,7 +1434,7 @@ class Qwen3OmniModel(Model):
+ 
+         merge = self.config.vision.spatial_merge_size
+         thinker, talker_rows, position = [], [], 0
+-        for k, step in enumerate(_thinker_steps(plan)):
++        for k, step in enumerate(_thinker_steps(plan, warm)):
+             talker_rows.append(0)
+             for i, part in enumerate(step.parts):
+                 if part.modality == TEXT:
+diff --git a/mstar/model/qwen3_omni/submodules.py b/mstar/model/qwen3_omni/submodules.py
+index 10d38e046..316621b6a 100644
+--- a/mstar/model/qwen3_omni/submodules.py
++++ b/mstar/model/qwen3_omni/submodules.py
+@@ -245,9 +245,18 @@ class VisionEncoderSubmodule(PackedBlockLoopEncoder):
+             return NodeInputs(input_seq_len=0, tensor_inputs={})
+         listed = list(inputs["pixel_values"])
+         pixel_values = listed[0] if len(listed) == 1 else torch.cat(listed, dim=0)
++        # mm_reuse_study C4: a session's warm group travels without the pixels of its leading images
++        absent, missing = 0, sum(t * h * w for t, h, w in grid) - pixel_values.shape[0]
++        while missing > 0 and absent < len(grid):
++            missing -= grid[absent][0] * grid[absent][1] * grid[absent][2]
++            absent += 1
++        if missing != 0 or absent > skip:
++            raise RuntimeError(f"C4: {fwd_info.request_id}: {absent} images from "
++                               f"{fwd_info.step_metadata.get(c1_registry.FIRST)} came without pixels, but the "
++                               f"prefix lease holds only {skip} of them")
+         if skip:   # mm_reuse_study C1: the leading images the prefix lease holds are not encoded
+             keys = inputs.get("image_keys")
+-            pixel_values = pixel_values[sum(t * h * w for t, h, w in grid[:skip]):]
++            pixel_values = pixel_values[sum(t * h * w for t, h, w in grid[absent:skip]):]
+             grid = grid[skip:]
+             if keys:
+                 inputs = {**inputs, "image_keys": [torch.cat([k.reshape(-1, 2) for k in keys])[skip:]]}
+-- 
+2.43.0
+

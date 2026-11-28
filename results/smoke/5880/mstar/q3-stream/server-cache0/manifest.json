@@ -1,0 +1,41 @@
+{
+  "name": "smoke-ms-q3",
+  "framework": "mstar",
+  "machine": "5880",
+  "host": "edgeaihost210",
+  "port": 18512,
+  "base_url": "http://localhost:18512",
+  "gpus": "0,1,4",
+  "gpu_info": [
+    "0, NVIDIA RTX 5880 Ada Generation, 580.178.04",
+    "1, NVIDIA RTX 5880 Ada Generation, 580.178.04",
+    "4, NVIDIA RTX 5880 Ada Generation, 580.178.04"
+  ],
+  "config": "configs/qwen3omni_mstar_thinker_tp2.yaml",
+  "config_sha256": "a595c057005306962aa69654b769198c38281500070487add1f6a3715d07d2df",
+  "shim_mode": "off",
+  "framework_commit": "2c8ffde8f7fd321c29aad3d1aad3e8cc8e8dc175",
+  "framework_dirty": true,
+  "framework_diff_sha256": "e68bbaed1c9e513d4346f6cd2b7fb3054562f806bac68b6ceb56187cce1607cb",
+  "framework_untracked": 1,
+  "study_env": {
+    "MSTAR_ENCODER_CACHE_LOG": "/home/chaofan/workspaces/mm_reuse_study/results/smoke/5880/mstar/q3-stream/server-cache0/encoder_cache.log",
+    "MSTAR_ENCODER_CACHE_MB": "0",
+    "MSTAR_MAX_MEDIA_FILES": "64",
+    "MSTAR_SPEECH_NODES_EAGER": "1"
+  },
+  "command": [
+    "/home/chaofan/workspaces/mm_reuse_study/envs/mstar/bin/mstar",
+    "serve",
+    "qwen3_omni",
+    "--config",
+    "configs/qwen3omni_mstar_thinker_tp2.yaml",
+    "--port",
+    "18512",
+    "--enable-metrics"
+  ],
+  "cwd": "/home/chaofan/workspaces/mm_reuse_study",
+  "pid": 1976760,
+  "started_at": "2026-11-26T18:49:31+0800",
+  "log": "results/smoke/5880/mstar/q3-stream/server-cache0/server.log"
+}

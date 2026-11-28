@@ -21,14 +21,14 @@
 
 采用**原生安装**（uv），不用 Docker。理由：
 
-- 本机已有用同一套 M\* 源码（commit `2c8ffde8`）验证过的原生环境（`~/workspaces/mstar_xpu/.venv`，2026-11-18），版本与做法可直接沿用。
+- 本机曾用旧基线（commit `2c8ffde8`）验证原生环境（`~/workspaces/mstar_xpu/.venv`，2026-11-18）；这仅作安装经验参考，不代表 `v0.3.0` 已在 XPU 上验证。升级后需重建并重新验收。
 - 上游 vLLM-Omni 的 XPU Dockerfile 依赖 `vllm/vllm-openai-xpu:v0.34.0` 镜像，镜像与 vLLM-Omni 的 XPU 运行时验收尚未完成（上游文档写明 "XPU runtime acceptance remains pending"）。Docker 方案保留作备用。
 
 ## 源码
 
 固定版本写在 [externals.pins](../externals.pins)，两台机器相同：
 
-- `external/mstar`：commit `2c8ffde8`（`main` 最新提交，2026-11-25 核对）
+- `external/mstar`：tag `v0.3.0`（commit `f63242ff`，2026-11-29 核对）
 - `external/vllm-omni`：tag `v0.34.0`（`06a28821`）。这是目前最新的 vLLM-Omni 正式发布（`ls-remote` 核对，没有更高的 v0.3x 正式 tag）。
 
 ```bash
@@ -108,3 +108,5 @@ source scripts/env_xpu_vllm_omni.sh    # vLLM-Omni：PATH
 | `envs/ffmpeg-xpu` | ffmpeg 6.1（conda-forge） |
 | 检查 | `scripts/check_envs_xpu.sh` 通过（2026-11-25）：xpu-smi 3 卡；M\* 与 vLLM-Omni 导入成功；`xpu_available True`，各环境可见 3 张卡；`mstar-server` 存在；TorchCodec 导入成功 |
 | 未做 | 未启动任何服务或推理（smoke 待做）；未验证 TorchCodec 的音视频解码；未验证 vLLM-Omni 上的 BAGEL |
+
+以上 `envs/mstar` 检查记录对应旧源码 commit `2c8ffde8`，不是当前 pin。B70 上检出 `v0.3.0` 后需运行 `scripts/setup_envs_xpu.sh` 和 `scripts/check_envs_xpu.sh` 更新并重新记录；本次未在 B70 主机执行。

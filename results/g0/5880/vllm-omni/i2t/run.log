@@ -1,0 +1,9 @@
+A-image-first-q0                837 ms  prefix 0/1383  vit 1  emb 1  ans='Red'
+A-image-first-q1                167 ms  prefix 1344/1384  vit 0  emb 0  ans='Yes, the image is predominantly red with'
+A-image-first-q2                 86 ms  prefix 1344/1381  vit 0  emb 0  ans='Solid red background'
+A-image-first-q3                159 ms  prefix 1344/1383  vit 0  emb 0  ans='The main object in the image is a'
+B-text-first-q0                  57 ms  prefix 1344/1383  vit 0  emb 0  ans='Red'
+B-text-first-q1                 153 ms  prefix 1344/1384  vit 0  emb 0  ans='Yes, the image is predominantly red with'
+A-new-image-B                   247 ms  prefix 0/1383  vit 1  emb 1  ans='Blue'
+t2i-512                       19022 ms  status=200  vit 0  emb 0
+wrote results/g0/vllm-omni-i2t/requests.jsonl

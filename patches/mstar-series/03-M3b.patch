@@ -1,0 +1,166 @@
+From 4e009d5de76f6f265dd6a9dd7e7cb81730df2a90 Mon Sep 17 00:00:00 2001
+From: mm_reuse_study <study@localhost>
+Date: Sat, 28 Nov 2026 23:56:29 +0800
+Subject: [PATCH] =?UTF-8?q?mm=5Freuse=5Fstudy=20M3b:=20=E5=9B=BE=E5=83=8F?=
+ =?UTF-8?q?=E9=A2=84=E5=A4=84=E7=90=86=E7=BC=93=E5=AD=98=E4=B8=8E=20data?=
+ =?UTF-8?q?=20worker=20=E8=AE=A1=E6=97=B6=EF=BC=88MSTAR=5FPREPROCESS=5FCAC?=
+ =?UTF-8?q?HE=5FMB=20/=20MSTAR=5FPREPROCESS=5FLOG=EF=BC=89?=
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+---
+ mstar/api_server/data_worker.py            | 14 +++++
+ mstar/model/qwen3_omni/qwen3_omni_model.py | 63 +++++++++++++++++++++-
+ 2 files changed, 75 insertions(+), 2 deletions(-)
+
+diff --git a/mstar/api_server/data_worker.py b/mstar/api_server/data_worker.py
+index 502300e76..1fd53d813 100644
+--- a/mstar/api_server/data_worker.py
++++ b/mstar/api_server/data_worker.py
+@@ -103,6 +103,8 @@ from mstar.utils.ipc_format import (
+ )
+ from mstar.utils.threads import Thread, ThreadPool
+ 
++_PP_LOG = os.environ.get("MSTAR_PREPROCESS_LOG")   # mm_reuse_study profiling
++
+ logger = logging.getLogger(__name__)
+ 
+ # Outputs whose postprocess encodes a whole artifact (a PNG takes tens of ms,
+@@ -985,7 +987,9 @@ class PreprocessWorkerThread:
+         if input.raw_inputs and self._keyed_labels and _prefix_cache(input.model_kwargs or {}):
+             # a prefix key hashes each input's file, and these have none
+             raise ValueError("this deployment keys prompts by their media files; send the media as files")
++        _pp_t0 = time.perf_counter()   # mm_reuse_study profiling (MSTAR_PREPROCESS_LOG)
+         tensors, input_metadata = self._load_media(input.file_paths, input.raw_inputs)
++        _pp_t1 = time.perf_counter()
+ 
+ 
+         # Then, tokenize the prompt and let the model augment/transform the
+@@ -1019,6 +1023,7 @@ class PreprocessWorkerThread:
+                 open_streams=open_streams,
+                 **model_kwargs,
+             )
++            _pp_t2 = time.perf_counter()
+             root = input.prefix_root
+             if isinstance(prompt_tensors, ProcessPromptOutput):
+                 selected = input.model_kwargs or {}
+@@ -1056,6 +1061,10 @@ class PreprocessWorkerThread:
+                 model_kwargs.update(self._prefix_keys(
+                     tensors, layouts, rows, input.file_paths, file_states, root=root,
+                 ))
++            if _PP_LOG:
++                with open(_PP_LOG, "a") as f:
++                    f.write(f"{time.time():.6f}\tprepare_input rid={input.request_id} load_media_ms={(_pp_t1 - _pp_t0) * 1000:.1f} "
++                            f"process_prompt_ms={(_pp_t2 - _pp_t1) * 1000:.1f} layout_keys_ms={(time.perf_counter() - _pp_t2) * 1000:.1f}\n")
+         elif input.text is not None:
+             # Fallback: encode as UTF-8 bytes -> uint8 tensor
+             byte_data = input.text.encode("utf-8")
+@@ -1112,7 +1121,12 @@ class PreprocessWorkerThread:
+             stream_items = {name: tensors for name, tensors in
+                             self._framed(call, stream_items, call.ended, per_frame=False).items() if tensors}
+             self._charge_stream_items(call, stream_items)
++        _pp_t3 = time.perf_counter()
+         initial_signals = self._store_persisted(input.request_id, tensors)
++        if _PP_LOG:
++            with open(_PP_LOG, "a") as f:
++                f.write(f"{time.time():.6f}\tstore_persisted rid={input.request_id} ms={(time.perf_counter() - _pp_t3) * 1000:.1f} "
++                        f"bytes={sum(t.numel() * t.element_size() for v in tensors.values() for t in (v if isinstance(v, list) else [v]) if isinstance(t, torch.Tensor))}\n")
+         if stream_items:
+             call.held.append(HeldItems(self._store_held(input.request_id, stream_items), None))
+ 
+diff --git a/mstar/model/qwen3_omni/qwen3_omni_model.py b/mstar/model/qwen3_omni/qwen3_omni_model.py
+index 654630a31..bd8693cbc 100644
+--- a/mstar/model/qwen3_omni/qwen3_omni_model.py
++++ b/mstar/model/qwen3_omni/qwen3_omni_model.py
+@@ -31,6 +31,8 @@ Text-only mode:
+ """
+ 
+ import os
++import time
++from collections import OrderedDict
+ import logging
+ from pathlib import Path
+ from typing import Any, NamedTuple
+@@ -229,6 +231,51 @@ def _thinker_steps(plan: list[PromptPart]) -> list[ThinkerStep]:
+ GROUP_IMAGES = int(os.environ.get("MSTAR_GROUP_IMAGES", "0") or 0)
+ 
+ 
++class _PreprocessCache:
++    """mm_reuse_study M3b: the image processor's output per decoded image, keyed by
++    xxh3-128 of its pixels, shape and dtype plus the processor class (LRU, host
++    memory, ``MSTAR_PREPROCESS_CACHE_MB``; 0 = off). vLLM's processor cache plays
++    this part there. A 640x480 frame: 7.5 ms of processing against 0.05 ms of hashing."""
++
++    def __init__(self, cap_mb: float):
++        self.cap = int(cap_mb * 2 ** 20)
++        self.size = 0
++        self.store: "OrderedDict[tuple, dict]" = OrderedDict()
++
++    @property
++    def enabled(self) -> bool:
++        return self.cap > 0
++
++    @staticmethod
++    def key(img, proc_name: str) -> tuple:
++        import numpy as np
++        import xxhash
++        arr = img.detach().cpu().contiguous().numpy() if isinstance(img, torch.Tensor) else np.asarray(img)
++        return xxhash.xxh3_128_hexdigest(arr.tobytes()), arr.shape, str(arr.dtype), proc_name
++
++    def get(self, key):
++        if key is None or key not in self.store:
++            return None
++        self.store.move_to_end(key)
++        return self.store[key]
++
++    def put(self, key, out) -> None:
++        if key is None or key in self.store:
++            return
++        n = sum(v.numel() * v.element_size() for v in out.values() if isinstance(v, torch.Tensor))
++        if n > self.cap:
++            return
++        self.store[key] = out
++        self.size += n
++        while self.size > self.cap:
++            _, old = self.store.popitem(last=False)
++            self.size -= sum(v.numel() * v.element_size() for v in old.values() if isinstance(v, torch.Tensor))
++
++
++_PP_LOG = os.environ.get("MSTAR_PREPROCESS_LOG")
++
++_PREPROCESS_CACHE = _PreprocessCache(float(os.environ.get("MSTAR_PREPROCESS_CACHE_MB", "0") or 0))
++
+ 
+ def _media_groups(plan: list[PromptPart], media: list[int]) -> list[list[int]]:
+     """The attachments, each its own group, or with ``GROUP_IMAGES`` each run of
+@@ -1101,12 +1148,24 @@ class Qwen3OmniModel(Model):
+ 
+         # Run image_processor / feature_extractor SEPARATELY for the
+         # modality outputs.  These don't touch text_inputs.
++        _t_img, _hits = time.perf_counter(), 0   # mm_reuse_study M3b timing
+         for img in pil_images:
+             img_proc = self._processor.image_processor
+-            # inferred, a 1, 3 or 4 px tall image would be read as channels first
+-            img_out = img_proc(images=[img], return_tensors="pt", input_data_format="channels_last")
++            key = _PREPROCESS_CACHE.key(img, type(img_proc).__name__) if _PREPROCESS_CACHE.enabled else None
++            img_out = _PREPROCESS_CACHE.get(key)   # mm_reuse_study M3b
++            if img_out is None:
++                # inferred, a 1, 3 or 4 px tall image would be read as channels first
++                img_out = img_proc(images=[img], return_tensors="pt", input_data_format="channels_last")
++                if _PREPROCESS_CACHE.enabled:
++                    _PREPROCESS_CACHE.put(key, img_out)
++            else:
++                _hits += 1
+             result["pixel_values"].append(img_out["pixel_values"])
+             result["image_grid_thw"] += img_out["image_grid_thw"]
++        if _PP_LOG and pil_images:
++            with open(_PP_LOG, "a") as f:
++                f.write(f"{time.time():.6f}\tprocess_prompt images={len(pil_images)} hits={_hits} "
++                        f"image_loop_ms={(time.perf_counter() - _t_img) * 1000:.1f}\n")
+ 
+         for audio in np_audios:
+             feat_extractor = self._processor.feature_extractor
+-- 
+2.43.0
+

@@ -1,0 +1,27 @@
+# 本研究用（E2，编码器放置）：同 qwen3omni_mstar_thinker_tp2_bigstep.yaml，但音频与视觉编码器放在 rank 2（与 Talker/Code2Wav 同卡，文本输出时它们空闲），不与 Thinker 的 rank 0 共卡。
+# 默认预算下，超过 1024 token 的分组行被分块 prefill，与前缀缓存、TP2 一起出错（第二次请求 0 命中，随后 "TP ranks diverged"）。
+# 放大预算后分组行不再分块；代价是一个大 prefill 步会挡住同一步里其他请求的 decode。
+model: "qwen3_omni"
+max_seq_len: 32768
+node_groups:
+  - node_names: [Thinker]
+    ranks: [0, 1]
+    tp_size: 2
+  - node_names: [audio_encoder, vision_encoder]
+    ranks: [2]
+  - node_names: [Talker]
+    ranks: [2]
+  - node_names: [Code2Wav]
+    ranks: [2]
+max_batch_tokens:
+  Thinker:
+    thinker_mixed: 16384
+# 图像 prefill 只捕获到 2048 token；更长的步 eager。否则显存够时（编码器不在 rank 0）会捕获 4096–16384 的图，
+# 一组 16 张（约 4900 token）补齐到 8192 回放，比 eager 慢约 40%（results/smoke/5880/mstar/placement-profile/）。
+prefill_token_buckets:
+  Thinker:
+    prefill_vision: [128, 256, 512, 1024, 2048]
+resources:
+  thinker_kv:
+    prefix_cache_tp: true
+    max_num_pages: 1024

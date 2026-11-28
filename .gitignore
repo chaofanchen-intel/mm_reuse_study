@@ -2,7 +2,7 @@ external/
 envs/*
 !envs/*.md
 models
-results/
+# results/
 build/
 __pycache__/
 *.pyc

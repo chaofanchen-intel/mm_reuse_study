@@ -1,0 +1,111 @@
+[17:01:37] e2-vo：等待 2 张稳定空闲的卡（第 1 次）
+[17:02:38] e2-vo：GPU 0,1
+serve: e2-vo 已启动（PID 241059，GPU 0,1，端口 18501，shim count，日志 results/e2-multi/5880/vllm-omni/multi/server/server.log）
+serve: e2-vo 就绪（http://localhost:18501/health）
+solo-1-21425-s0 q0 frames  16 ttft 98.8 itl_med 8.7 itl_max 11.6 chunks 28 X 'The image is dominated by a solid, vibra' 
+solo-1-21425-s0 q1 frames  32 ttft 93.8 itl_med 8.0 itl_max 8.2 chunks 18 X 'The image is dominated by a solid red co' 
+solo-1-21425-s0 q2 frames  48 ttft 141.1 itl_med 8.4 itl_max 8.5 chunks 19 X 'The image is dominated by a solid orange' 
+solo-1-21425-s0 warmups 48 cancelled 0
+conc-1-14971-s0 q0 frames  16 ttft 89.1 itl_med 8.3 itl_max 87.7 chunks 34 X 'The most recent image is dominated by a ' 
+conc-1-14971-s0 q1 frames  32 ttft 110.7 itl_med 8.6 itl_max 101.3 chunks 23 ok 'The image is completely black. It appear' 
+conc-1-14971-s0 q2 frames  48 ttft 131.5 itl_med 9.1 itl_max 117.0 chunks 23 ok 'The image is completely black. It appear' 
+conc-1-14971-s0 warmups 48 cancelled 0
+conc-1-14971-s1 q0 frames  16 ttft 74.0 itl_med 8.4 itl_max 15.5 chunks 21 X 'The most recent image is dominated by a ' 
+conc-1-14971-s1 q1 frames  32 ttft 103.8 itl_med 8.7 itl_max 102.5 chunks 33 X 'The image is dominated by a solid, vibra' 
+conc-1-14971-s1 q2 frames  48 ttft 130.9 itl_med 9.3 itl_max 116.9 chunks 21 X 'The image is a solid, bright orange colo' 
+conc-1-14971-s1 warmups 47 cancelled 0
+conc-1-14971-s2 q0 frames  16 ttft 79.6 itl_med 8.4 itl_max 93.1 chunks 24 X 'The most recent image is a solid, vibran' 
+conc-1-14971-s2 q1 frames  32 ttft 110.6 itl_med 8.5 itl_max 120.3 chunks 23 ok 'The image is completely black. It appear' 
+conc-1-14971-s2 q2 frames  48 ttft 157.6 itl_med 9.3 itl_max 9.6 chunks 27 ok 'The image is dominated by a solid orange' 
+conc-1-14971-s2 warmups 47 cancelled 0
+solo-2-16074-s0 q0 frames  16 ttft 79.2 itl_med 8.6 itl_max 10.1 chunks 21 ok 'The image is completely black. It appear' 
+solo-2-16074-s0 q1 frames  32 ttft 111.9 itl_med 8.9 itl_max 9.1 chunks 23 ok 'The image is completely black. It appear' 
+solo-2-16074-s0 q2 frames  48 ttft 138.8 itl_med 9.2 itl_max 9.6 chunks 33 X 'The image is dominated by a solid, brigh' 
+solo-2-16074-s0 warmups 48 cancelled 0
+conc-2-28355-s0 q0 frames  16 ttft 94.7 itl_med 8.4 itl_max 87.5 chunks 25 X 'The most recent image is dominated by a ' 
+conc-2-28355-s0 q1 frames  32 ttft 118.2 itl_med 8.6 itl_max 103.1 chunks 22 X 'The most recent image is a solid, vibran' 
+conc-2-28355-s0 q2 frames  48 ttft 115.3 itl_med 9.1 itl_max 112.1 chunks 35 X 'The most recent image is dominated by a ' 
+conc-2-28355-s0 warmups 48 cancelled 0
+conc-2-28355-s1 q0 frames  16 ttft 85.1 itl_med 7.5 itl_max 14.7 chunks 21 X 'The most recent image is predominantly w' 
+conc-2-28355-s1 q1 frames  32 ttft 106.2 itl_med 8.7 itl_max 104.0 chunks 25 X 'The most recent image is a solid, vibran' 
+conc-2-28355-s1 q2 frames  48 ttft 130.0 itl_med 9.1 itl_max 112.5 chunks 27 X 'The most recent image is completely blac' 
+conc-2-28355-s1 warmups 47 cancelled 0
+conc-2-28355-s2 q0 frames  16 ttft 88.2 itl_med 8.5 itl_max 95.4 chunks 21 X 'The most recent image is dominated by a ' 
+conc-2-28355-s2 q1 frames  32 ttft 105.4 itl_med 8.5 itl_max 112.1 chunks 30 ok 'The image is dominated by a solid orange' 
+conc-2-28355-s2 q2 frames  48 ttft 142.7 itl_med 9.2 itl_max 9.9 chunks 24 X 'The image is completely white. It appear' 
+conc-2-28355-s2 warmups 47 cancelled 0
+stop: e2-vo 已停止
+[17:05:49] e2-mstar-enc0：等待 3 张稳定空闲的卡（第 1 次）
+[17:06:50] e2-mstar-enc0：GPU 0,1,2
+serve: e2-mstar-enc0 已启动（PID 265786，GPU 0,1,2，端口 18502，日志 results/e2-multi/5880/mstar/enc0/server/server.log）
+serve: e2-mstar-enc0 就绪（http://localhost:18502/metrics）
+solo-1-30407-s0 q0 frames  16 ttft 147.7 itl_med 6.1 itl_max 7.2 chunks 26 ok 'The image is a solid, vibrant purple. It' 
+solo-1-30407-s0 q1 frames  32 ttft 194.5 itl_med 6.4 itl_max 8.1 chunks 26 ok 'The image is a solid, vibrant red. It ha' 
+solo-1-30407-s0 q2 frames  48 ttft 247.9 itl_med 6.7 itl_max 8.0 chunks 20 ok 'The image is completely black. It appear' 
+solo-1-30407-s0 warmups 48 cancelled 0
+conc-1-27302-s0 q0 frames  16 ttft 158.7 itl_med 6.3 itl_max 90.4 chunks 25 ok 'The image is completely black. It appear' 
+conc-1-27302-s0 q1 frames  32 ttft 448.2 itl_med 18.3 itl_max 107.0 chunks 24 ok 'The image is a solid, vibrant purple. It' 
+conc-1-27302-s0 q2 frames  48 ttft 542.1 itl_med 20.7 itl_max 137.1 chunks 23 X 'The image is a solid, vibrant red. It is' 
+conc-1-27302-s0 warmups 42 cancelled 1
+conc-1-27302-s1 q0 frames  16 ttft 281.8 itl_med 10.2 itl_max 90.2 chunks 31 ok 'The image is a solid, vibrant green. It ' 
+conc-1-27302-s1 q1 frames  32 ttft 617.9 itl_med 11.5 itl_max 114.2 chunks 30 X 'The image is dominated by a solid, vibra' 
+conc-1-27302-s1 q2 frames  48 ttft 440.9 itl_med 7.2 itl_max 32.1 chunks 22 ok 'The image is completely black. It appear' 
+conc-1-27302-s1 warmups 41 cancelled 3
+conc-1-27302-s2 q0 frames  16 ttft 197.8 itl_med 22.0 itl_max 103.3 chunks 32 X 'The image is dominated by a solid, vibra' 
+conc-1-27302-s2 q1 frames  32 ttft 248.9 itl_med 9.1 itl_max 205.8 chunks 26 ok 'The image is a solid, bright yellow. It ' 
+conc-1-27302-s2 q2 frames  48 ttft 258.8 itl_med 6.7 itl_max 9.7 chunks 24 ok 'The image is a solid, vibrant orange. It' 
+conc-1-27302-s2 warmups 42 cancelled 0
+solo-2-18664-s0 q0 frames  16 ttft 157.6 itl_med 6.1 itl_max 10.2 chunks 31 X 'The most recent image is a solid, vibran' 
+solo-2-18664-s0 q1 frames  32 ttft 184.3 itl_med 6.4 itl_max 7.9 chunks 22 ok 'The image is completely black. It appear' 
+solo-2-18664-s0 q2 frames  48 ttft 287.8 itl_med 6.7 itl_max 9.3 chunks 29 X 'The image is a solid, dark gray color. I' 
+solo-2-18664-s0 warmups 48 cancelled 0
+conc-2-22658-s0 q0 frames  16 ttft 170.5 itl_med 6.3 itl_max 94.3 chunks 30 X 'The image is dominated by a solid, vibra' 
+conc-2-22658-s0 q1 frames  32 ttft 530.9 itl_med 23.8 itl_max 100.3 chunks 31 X 'The most recent image is a solid, vibran' 
+conc-2-22658-s0 q2 frames  48 ttft 719.7 itl_med 24.4 itl_max 128.3 chunks 27 X 'The most recent image is a solid, vibran' 
+conc-2-22658-s0 warmups 41 cancelled 2
+conc-2-22658-s1 q0 frames  16 ttft 267.1 itl_med 6.7 itl_max 92.0 chunks 27 X 'The most recent image is a solid, bright' 
+conc-2-22658-s1 q1 frames  32 ttft 420.8 itl_med 9.6 itl_max 95.5 chunks 24 ok 'The image is a solid, vibrant red. It is' 
+conc-2-22658-s1 q2 frames  48 ttft 333.7 itl_med 6.8 itl_max 95.3 chunks 26 ok 'The image is a solid, bright yellow. It ' 
+conc-2-22658-s1 warmups 44 cancelled 3
+conc-2-22658-s2 q0 frames  16 ttft 231.3 itl_med 22.9 itl_max 98.8 chunks 24 X 'The most recent image is a solid, bright' 
+conc-2-22658-s2 q1 frames  32 ttft 370.7 itl_med 21.9 itl_max 102.9 chunks 22 ok 'The image is a solid, vibrant blue. It i' 
+conc-2-22658-s2 q2 frames  48 ttft 295.4 itl_med 6.7 itl_max 10.0 chunks 27 ok 'The image is a solid, vibrant green. It ' 
+conc-2-22658-s2 warmups 43 cancelled 1
+stop: e2-mstar-enc0 已停止
+[17:10:56] e2-mstar-enc2：等待 3 张稳定空闲的卡（第 1 次）
+[17:11:56] e2-mstar-enc2：GPU 0,1,2
+serve: e2-mstar-enc2 已启动（PID 301493，GPU 0,1,2，端口 18502，日志 results/e2-multi/5880/mstar/enc2/server/server.log）
+serve: e2-mstar-enc2 就绪（http://localhost:18502/metrics）
+solo-1-9829-s0 q0 frames  16 ttft 153.7 itl_med 6.2 itl_max 10.0 chunks 33 ok 'The image is completely black. It appear' 
+solo-1-9829-s0 q1 frames  32 ttft 293.5 itl_med 6.5 itl_max 10.1 chunks 25 ok 'The image is a solid, bright yellow. It ' 
+solo-1-9829-s0 q2 frames  48 ttft 254.6 itl_med 6.7 itl_max 9.2 chunks 25 ok 'The image is a solid, bright yellow. It ' 
+solo-1-9829-s0 warmups 48 cancelled 0
+conc-1-17993-s0 q0 frames  16 ttft 142.2 itl_med 6.2 itl_max 13.0 chunks 25 X 'The most recent image is a solid, bright' 
+conc-1-17993-s0 q1 frames  32 ttft 351.4 itl_med 6.6 itl_max 100.6 chunks 23 X 'The image is a solid, vibrant purple. It' 
+conc-1-17993-s0 q2 frames  48 ttft 471.4 itl_med 7.2 itl_max 136.3 chunks 27 X 'The image is a solid, vibrant green. It ' 
+conc-1-17993-s0 warmups 47 cancelled 1
+conc-1-17993-s1 q0 frames  16 ttft 150.0 itl_med 6.1 itl_max 9.9 chunks 24 ok 'The image is a solid, vibrant purple. It' 
+conc-1-17993-s1 q1 frames  32 ttft 317.0 itl_med 6.5 itl_max 111.0 chunks 24 X 'The image is a solid, vibrant purple. It' 
+conc-1-17993-s1 q2 frames  48 ttft 315.6 itl_med 6.7 itl_max 28.5 chunks 27 X 'The image is a solid, vibrant green. It ' 
+conc-1-17993-s1 warmups 46 cancelled 0
+conc-1-17993-s2 q0 frames  16 ttft 184.4 itl_med 6.2 itl_max 98.4 chunks 29 X 'The image is dominated by a solid, vibra' 
+conc-1-17993-s2 q1 frames  32 ttft 351.9 itl_med 6.5 itl_max 99.6 chunks 22 ok 'The image is completely black. It appear' 
+conc-1-17993-s2 q2 frames  48 ttft 270.4 itl_med 6.7 itl_max 8.5 chunks 24 ok 'The image is completely black. It appear' 
+conc-1-17993-s2 warmups 47 cancelled 0
+solo-2-668-s0 q0 frames  16 ttft 147.0 itl_med 6.1 itl_max 8.2 chunks 22 X 'The most recent image is completely blac' 
+solo-2-668-s0 q1 frames  32 ttft 199.3 itl_med 6.5 itl_max 8.2 chunks 21 ok 'The image is a solid, bright white. It i' 
+solo-2-668-s0 q2 frames  48 ttft 271.5 itl_med 6.7 itl_max 8.3 chunks 24 ok 'The image is a solid, bright yellow. It ' 
+solo-2-668-s0 warmups 48 cancelled 0
+conc-2-7451-s0 q0 frames  16 ttft 167.0 itl_med 6.2 itl_max 13.5 chunks 22 X 'The most recent image is completely blac' 
+conc-2-7451-s0 q1 frames  32 ttft 303.2 itl_med 6.8 itl_max 101.5 chunks 25 ok 'The image is a solid, vibrant orange col' 
+conc-2-7451-s0 q2 frames  48 ttft 527.8 itl_med 9.2 itl_max 100.9 chunks 28 X 'The most recent image is a solid, vibran' 
+conc-2-7451-s0 warmups 48 cancelled 2
+conc-2-7451-s1 q0 frames  16 ttft 146.8 itl_med 6.1 itl_max 15.7 chunks 26 X 'The image is a solid, vibrant orange. It' 
+conc-2-7451-s1 q1 frames  32 ttft 323.3 itl_med 6.5 itl_max 97.0 chunks 25 X 'The most recent image is a solid, vibran' 
+conc-2-7451-s1 q2 frames  48 ttft 402.6 itl_med 6.7 itl_max 28.0 chunks 27 X 'The most recent image is a solid, vibran' 
+conc-2-7451-s1 warmups 48 cancelled 2
+conc-2-7451-s2 q0 frames  16 ttft 171.7 itl_med 6.4 itl_max 95.3 chunks 27 X 'The most recent image is a solid, light ' 
+conc-2-7451-s2 q1 frames  32 ttft 223.5 itl_med 8.5 itl_max 104.2 chunks 33 X 'The image is a solid, dark gray color. I' 
+conc-2-7451-s2 q2 frames  48 ttft 268.9 itl_med 6.7 itl_max 8.1 chunks 24 ok 'The image is a solid, vibrant blue. It i' 
+conc-2-7451-s2 warmups 47 cancelled 0
+stop: e2-mstar-enc2 已停止
